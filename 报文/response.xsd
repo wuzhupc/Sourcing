@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 被2012 () 使用XMLSpy v编辑的 (http://www.altova.com) by -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="response">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="id">
+					<xs:complexType>
+						<xs:attribute name="value" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ret">
+					<xs:complexType>
+						<xs:attribute name="code" use="required"/>
+						<xs:attribute name="msg"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="data">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="prop" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" use="required"/>
+									<xs:attribute name="value" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="entity" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="entity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="prop" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="name" use="required"/>
+						<xs:attribute name="value" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="entity" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="class" use="required"/>
+			<xs:attribute name="ref" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="list">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="prop" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="value" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="entity" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="prop" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" use="required"/>
+									<xs:attribute name="value" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="entity" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element ref="list" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="class" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ref" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
