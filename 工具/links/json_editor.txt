@@ -1,0 +1,1 @@
+path=D:\\soft\\eclipse-jee-indigo-win32\\JsonEditorPlugin-0.9.4

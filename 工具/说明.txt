@@ -1,0 +1,5 @@
+1 JsonEditorPlugin-0.9.4.zip
+Eclipse下的json编辑器插件
+使用方法，将links文件夹拷贝到eclipse目录下，修改里面的txt文件指到这个zip文件
+
+2　
