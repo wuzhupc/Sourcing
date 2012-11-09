@@ -1,0 +1,10 @@
+{
+    "id": "android34532313413",
+    "command": "mobileinfo_getNewsList",
+    "params": {
+        "devid": "85673678399121",
+        "newstype": "0",
+        "pagesize": "20",
+        "bottomnewsid": "0"
+    }
+}
