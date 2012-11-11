@@ -1,9 +1,9 @@
 {
-    "id": "命令识别号",
-    "command": "mobileinfo_getNewsDetail",
-    "params": {
-        "devid": "设备号",
-        "newstype": "新闻类别，1：行业新闻，2：政策，3：通知，4：专家文章",
-        "newsid": "新闻ID"
-        }
+    "id":"命令识别号",
+    "command":"mobileinfo_getNewsDetail",
+    "params":{
+        "devid":"设备号",
+        "newstype":"新闻类别，1：行业新闻，2：政策，3：通知，4：专家文章",
+        "newsid":"新闻ID"
+    }
 }

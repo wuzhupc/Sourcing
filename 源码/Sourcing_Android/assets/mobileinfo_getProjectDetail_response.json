@@ -1,0 +1,15 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+            "ProjectDetailVO":{
+                "projectid":"项目编号",
+                "projectname":"项目名称",
+                "projectstatus":"项目状态",
+                "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss",
+                "projectcontent":"项目介绍内容信息，直接将项目相关的信息返回"
+            }
+    }
+}

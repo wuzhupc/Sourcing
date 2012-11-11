@@ -1,0 +1,11 @@
+{
+    "id":"命令识别号",
+    "command":"mobileinfo_getNewsComment",
+    "params":{
+        "devid":"设备号",
+        "newstype":"1",
+        "newsid":"34642",
+        "pagesize":"20",
+        "bottomcommentid":"0"
+    }
+}

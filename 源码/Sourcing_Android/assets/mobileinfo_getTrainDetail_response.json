@@ -1,0 +1,13 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+            "TrainDetailVO":{
+                "trainid":"培训机构编号",
+                "trainname":"培训机构名称",
+                "traincontent":"培训机构介绍内容信息，直接将培训机构相关的信息返回"
+            }
+    }
+}

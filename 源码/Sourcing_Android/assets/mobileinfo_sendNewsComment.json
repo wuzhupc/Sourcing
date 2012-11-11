@@ -1,0 +1,12 @@
+{
+    "id":"命令识别号",
+    "command":"mobileinfo_sendNewsComment",
+    "params":{
+        "devid":"设备号",
+        "newstype":"新闻类别，1：行业新闻，2：政策，3：通知，4：专家文章",
+        "newsid":"新闻ID",
+        "userid":"评论者用户ID",
+        "username":"评论者姓名",
+        "conetnt":"评论内容"
+    }
+}

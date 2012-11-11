@@ -1,0 +1,8 @@
+{
+    "id":"命令识别号",
+    "command":"mobileinfo_getJobDetail",
+    "params":{
+        "devid":"设备号",
+        "jobid":"职位编号"
+    }
+}
