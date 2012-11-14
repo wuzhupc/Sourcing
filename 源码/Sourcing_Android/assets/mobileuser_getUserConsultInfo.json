@@ -1,8 +1,9 @@
 {
-    "id": "命令识别号",
-    "command": "mobilever_checkClientVer",
-    "params": {
-        "devid": "设备号",
-        "clientver": "客户端版本",
+    "id":"命令识别号",
+    "command":"mobileuser_getUserConsultInfo",
+    "params":{
+        "devid":"设备号",
+        "pagesize":"每页记录数，默认20",
+        "bottomid":"列表下限的记录ID，默认0，如果非0时，获取此记录ID后pagesize条记录数"
     }
 }

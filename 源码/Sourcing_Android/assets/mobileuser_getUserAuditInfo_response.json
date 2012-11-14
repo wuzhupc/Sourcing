@@ -1,0 +1,26 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+        "list_vos":[
+        "AuditVO":{
+            "auditid":"提交审核编号",
+			"auditcontent":"提交审核内容",            
+            "publishtime":"提交审核时间，格式yyyy-MM-dd HH:mm:ss",
+            "AuditResultVO":{
+                "auditresultid":"审核结果编号",
+                "auditresult":"审核结果,0 通过,1 未通过",
+				"auditresultcontent":"审核结果内容",
+				"publisher":"审核人员",            
+            	"publishtime":"审核结果时间，格式yyyy-MM-dd HH:mm:ss"
+            }
+        },
+        "AuditVO":{
+            ...
+        }
+        ...
+        ]  
+    }
+}

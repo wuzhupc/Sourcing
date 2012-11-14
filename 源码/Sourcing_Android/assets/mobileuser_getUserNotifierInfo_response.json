@@ -1,0 +1,20 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+        "list_vos":[
+        "NotifierVO":{
+            "notifierid":"通知提醒编号",
+			"notifiercontent":"通知提醒内容",
+            "publisher":"通知提醒发布者",            
+            "publishtime":"通知提醒时间，格式yyyy-MM-dd HH:mm:ss"
+        },
+        "NotifierVO":{
+            ...
+        }
+        ...
+        ]  
+    }
+}

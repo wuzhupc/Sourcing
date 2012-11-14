@@ -4,10 +4,22 @@
         "msg":"提示信息"
     },
     "data":{
-        "lastver":"客户端最新版本号",
-        "lastverurl":"最后客户端版本下载地址",
-        "filesize":"最新客户端文件大小，单位字节",
-        "forceupdate":"是否需要强制更新(0.否 1.是)",
-        "updatelog":"更新说明"   
+        "list_vos":[
+        "ConsultVO":{
+            "consultid":"咨询编号",
+			"consultcontent":"咨询内容",            
+            "publishtime":"咨询时间，格式yyyy-MM-dd HH:mm:ss",
+            "ConsultResultVO":{
+                "consultresultid":"咨询答复编号",
+				"consultresultcontent":"咨询答复内容", 
+				"publisher":"咨询答复人员",           
+            	"publishtime":"咨询答复时间，格式yyyy-MM-dd HH:mm:ss"
+            }
+        },
+        "ConsultVO":{
+            ...
+        }
+        ...
+        ]  
     }
 }

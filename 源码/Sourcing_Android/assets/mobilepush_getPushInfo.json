@@ -1,0 +1,9 @@
+{
+    "id":"命令识别号",
+    "command":"mobilepush_getPushInfo",
+    "params":{
+        "devid":"设备号",
+        "userid":"用户ID,如果为空,表示未登录用户",
+        "lastchecktime":"最后检测时间,格式:yyyy-MM-dd HH:mm:ss 如果为空，则默认获取服务端最后一次生成的信息"
+    }
+}
