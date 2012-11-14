@@ -1,0 +1,8 @@
+{
+    "id":"android34532313413",
+    "command":"mobilever_checkClientVer",
+    "params":{
+        "devid":"85673678399121",
+        "clientver":"1.01"
+    }
+}
