@@ -2,4 +2,14 @@
 Eclipse下的json编辑器插件
 使用方法，将links文件夹拷贝到eclipse目录下，修改里面的txt文件指到这个zip文件
 
-2　
+2　CheckStyle：编码风格校验工具 
+更新地址：http://eclipse-cs.sourceforge.net/update/ 
+
+Coverlipse（Cobertura）：测试代码覆盖率 
+更新地址：http://coverlipse.sf.net/update 
+
+eclemma：测试代码覆盖率 
+更新地址：http://update.eclemma.org/ 
+
+Metrics：检测代码的复杂度 
+更新地址：http://metrics.sourceforge.net/update 
