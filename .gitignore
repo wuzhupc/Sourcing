@@ -16,6 +16,7 @@ tags
 TAGS
 !.gitignore
 !.gitattributes
+!.project
 
 #
 # Build generated files
