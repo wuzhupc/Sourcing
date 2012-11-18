@@ -1,8 +1,40 @@
 <resources>
 
-    <string name="app_name">Sourcing</string>
+    <string name="app_name">厦门外包网</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">MainActivity</string>
+    
+    
+	
+	<!-- 网络异常提示信息  -->
+	<string name="prompt_network_connect_timeout">连接超时！</string>
+	<string name="prompt_network_read_timeout">读取超时！</string>
+	<string name="prompt_network_url_error">url地址无效！</string>
+	<string name="prompt_network_error">网络连接失败！</string>
+	<string name="prompt_network_receiving_data_error">数据获取失败！</string>
+	
+	<!-- Dialog 提示信息  -->
+	<string name="dl_title_prompt">提示</string>
+	<string name="dl_title_error">出错啦</string>
+	<string name="dl_msg_receiving_data">正在获取数据...</string>
+	<string name="dl_msg_update_error">获取最新版本信息失败！</string>
+	<string name="dl_btn_ok">确认</string>
+	<string name="dl_btn_back">返回</string>
+	<string name="dl_btn_confirm">确定</string>
+	<string name="dl_btn_cancel">取消</string>
+	<string name="dl_btn_quit">退出</string>
 
+	<!-- 列表项相关  -->
+	<string name="list_item_no_data">没有数据！</string>
+	<string name="list_item_more_msg">更多</string>
+	<string name="list_item_loading_data">正在加载</string>
+    
+    <!-- BaseActivity -->
+    <string name="Base_hit_nosdcard">未找到存储卡!</string>
+    <string name="Base_hit_createstorefolderfail">无法创建缓存文件!</string>
+    <string name="Base_hit_title">提示</string>
+    <string name="Base_hit_defaskclosemsg">确定要退出吗?</string>
+    
+    
 </resources>

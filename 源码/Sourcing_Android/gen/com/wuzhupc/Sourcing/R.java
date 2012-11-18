@@ -10,26 +10,95 @@ package com.wuzhupc.Sourcing;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int btn_normal=0x7f040003;
+        /**  按钮默认和按下颜色 
+         */
+        public static final int btn_pressed=0x7f040002;
+        /**  间隔线 
+         */
+        public static final int btn_space_deep=0x7f040004;
+        public static final int btn_space_light=0x7f040005;
+        /**  Dialog按钮颜色 
+         */
+        public static final int dialog_btn_bg=0x7f040001;
+        public static final int white=0x7f040000;
+    }
+    public static final class dimen {
+        public static final int dialog_button_text_size=0x7f050000;
+    }
     public static final class drawable {
-        public static final int ic_action_search=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static final int common_selector_btn=0x7f020000;
+        public static final int ic_action_search=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int theme_dialog_bg=0x7f020003;
+        public static final int welcome=0x7f020004;
     }
     public static final class id {
-        public static final int menu_settings=0x7f070000;
+        public static final int dialog_footview_btn_center=0x7f090002;
+        public static final int dialog_footview_btn_left=0x7f090000;
+        public static final int dialog_footview_btn_right=0x7f090001;
+        public static final int menu_settings=0x7f090003;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int dialog_footview=0x7f030001;
+        public static final int dialog_footview_1btn=0x7f030002;
+        public static final int dialog_footview_3btn=0x7f030003;
     }
     public static final class menu {
-        public static final int activity_main=0x7f060000;
+        public static final int activity_main=0x7f080000;
     }
     public static final class string {
-        public static final int app_name=0x7f040000;
-        public static final int hello_world=0x7f040001;
-        public static final int menu_settings=0x7f040002;
-        public static final int title_activity_main=0x7f040003;
+        public static final int Base_hit_createstorefolderfail=0x7f060016;
+        public static final int Base_hit_defaskclosemsg=0x7f060018;
+        /**  BaseActivity 
+         */
+        public static final int Base_hit_nosdcard=0x7f060015;
+        public static final int Base_hit_title=0x7f060017;
+        public static final int app_name=0x7f060000;
+        public static final int dl_btn_back=0x7f06000e;
+        public static final int dl_btn_cancel=0x7f060010;
+        public static final int dl_btn_confirm=0x7f06000f;
+        public static final int dl_btn_ok=0x7f06000d;
+        public static final int dl_btn_quit=0x7f060011;
+        public static final int dl_msg_receiving_data=0x7f06000b;
+        public static final int dl_msg_update_error=0x7f06000c;
+        public static final int dl_title_error=0x7f06000a;
+        /**  Dialog 提示信息  
+         */
+        public static final int dl_title_prompt=0x7f060009;
+        public static final int hello_world=0x7f060001;
+        public static final int list_item_loading_data=0x7f060014;
+        public static final int list_item_more_msg=0x7f060013;
+        /**  列表项相关  
+         */
+        public static final int list_item_no_data=0x7f060012;
+        public static final int menu_settings=0x7f060002;
+        /**  网络异常提示信息  
+         */
+        public static final int prompt_network_connect_timeout=0x7f060004;
+        public static final int prompt_network_error=0x7f060007;
+        public static final int prompt_network_read_timeout=0x7f060005;
+        public static final int prompt_network_receiving_data_error=0x7f060008;
+        public static final int prompt_network_url_error=0x7f060006;
+        public static final int title_activity_main=0x7f060003;
     }
     public static final class style {
-        public static final int AppTheme=0x7f050000;
+        /**  Base application theme is the default theme. 
+         */
+        public static final int Theme=0x7f070000;
+        /**  对话框样式 
+         */
+        public static final int Theme_WuzhuDialog_NoFrame=0x7f070003;
+        /**  Variation on the Light theme that turns off the title 
+         */
+        public static final int Theme_WuzhuLight=0x7f070001;
+        /**  Variation on the Light theme that turns off the title 
+         */
+        public static final int Theme_WuzhuLightFullScreen=0x7f070002;
+        /**  对话框按钮样式 
+         */
+        public static final int dialog_button=0x7f070004;
     }
 }
