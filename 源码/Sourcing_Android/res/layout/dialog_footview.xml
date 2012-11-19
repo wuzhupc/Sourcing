@@ -5,7 +5,7 @@
     android:background="@color/dialog_btn_bg" >
 
     <Button
-        android:id="@+id/dialog_footview_btn_left"
+        android:id="@id/dialog_footview_btn_left"
         style="@style/dialog_button"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/dialog_footview_btn_right"
+        android:id="@id/dialog_footview_btn_right"
         style="@style/dialog_button"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"

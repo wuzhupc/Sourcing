@@ -3,29 +3,31 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/dialog_title_ll">
     <include layout="@layout/dialog_title" />
+    </LinearLayout>
     
     <RelativeLayout 
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:background="@color/white_bg"
+        android:background="@color/white"
         >
 	    <TextView
-	        android:id="@+id/simple_dialog_content_tv"
+	        android:id="@+id/dialog_message"
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:padding="10dip"
-	        android:minLines="2"
+	        android:minLines="4"
 	        android:gravity="center_vertical"
-	        android:text=""
-	        android:textColor="@color/listitem_title_color"
-	        android:textSize="@dimen/list_item_text_size"
+	        android:text="消息内容"
+	        android:textColor="@color/dialog_message_textcolor"
+	        android:textSize="@dimen/dialog_message_size"
 	        />
     </RelativeLayout>
-    
-    <include  layout="@layout/dialog_footview_one_button"
-        android:id="@+id/"
+    <include  layout="@layout/dialog_footview_3btn"
+        ></include>
     
 </LinearLayout>

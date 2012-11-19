@@ -4,11 +4,14 @@
     
     <!-- Dialog按钮颜色 -->
     <color name="dialog_btn_bg">#383D49</color>
-
+	<color name="dialog_title_textcolor">#333333</color>
+	<color name="dialog_message_textcolor">#4E4E4E</color>
+	
     <!-- 按钮默认和按下颜色 -->
     <color name="btn_pressed">#18C7EF</color>
     <color name="btn_normal">#10A6CE</color>
     <!-- 间隔线 -->
     <color name="btn_space_deep">#0880B5</color>
     <color name="btn_space_light">#10B2D3</color>
+    
 </resources>
