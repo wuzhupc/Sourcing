@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+        android:background="#00000000">
+
+    <ImageView
+        android:id="@+id/welcome_bg_iv"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/welcome" />
+    
+    <View android:id="@+id/welcome_bottom_v"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#00000000"
+        android:layout_alignParentBottom="true"        
+        />
+    
+    <ImageView
+        android:id="@+id/welcome_separate_iv"
+        android:layout_width="fill_parent"
+        android:layout_height="3dp"
+        android:layout_above="@id/welcome_bottom_v"
+        android:layout_marginBottom="48dp"
+        android:src="@drawable/welcome_separate_line" />
+
+    <TextView
+        android:id="@+id/welcome_url_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/welcome_separate_iv"
+        android:layout_marginBottom="2dp"
+        android:text="@string/welcome_url"
+        android:textColor="#777777"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/welcome_ver_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/welcome_separate_iv"
+        android:layout_marginTop="2dp"
+        android:layout_centerHorizontal="true"
+        android:text="@string/welcome_ver" 
+        android:textColor="#777777"
+        android:textSize="13sp"/>
+
+    <ImageButton
+        android:id="@+id/welcome_close_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#00000000"
+        android:src="@drawable/welcome_close_btn" 
+        android:visibility="gone"/>
+
+</RelativeLayout>

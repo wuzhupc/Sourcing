@@ -47,66 +47,74 @@ public final class R {
         public static final int progress_micro=0x7f02000c;
         public static final int progress_small=0x7f02000d;
         public static final int theme_dialog_bg=0x7f02000e;
-        public static final int welcome=0x7f02000f;
+        public static final int top_title_bg=0x7f02000f;
+        public static final int welcome=0x7f020010;
+        public static final int welcome_close_btn=0x7f020011;
+        public static final int welcome_separate_line=0x7f020012;
     }
     public static final class id {
         public static final int dialog_footview_btn_center=0x7f060000;
         public static final int dialog_footview_btn_left=0x7f060001;
         public static final int dialog_footview_btn_right=0x7f060002;
-        public static final int dialog_footview_spaceone_ll=0x7f060005;
-        public static final int dialog_footview_spacetwo_ll=0x7f060006;
-        public static final int dialog_message=0x7f060004;
-        public static final int dialog_progressbar=0x7f060009;
-        public static final int dialog_title=0x7f060008;
-        public static final int dialog_title_left_image=0x7f060007;
-        public static final int dialog_title_ll=0x7f060003;
-        public static final int menu_settings=0x7f06000a;
+        public static final int dialog_footview_spaceone_ll=0x7f06000b;
+        public static final int dialog_footview_spacetwo_ll=0x7f06000c;
+        public static final int dialog_message=0x7f06000a;
+        public static final int dialog_progressbar=0x7f06000f;
+        public static final int dialog_title=0x7f06000e;
+        public static final int dialog_title_left_image=0x7f06000d;
+        public static final int dialog_title_ll=0x7f060009;
+        public static final int welcome_bg_iv=0x7f060003;
+        public static final int welcome_bottom_v=0x7f060004;
+        public static final int welcome_close_ib=0x7f060008;
+        public static final int welcome_separate_iv=0x7f060005;
+        public static final int welcome_url_tv=0x7f060006;
+        public static final int welcome_ver_tv=0x7f060007;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static final int activity_welcome=0x7f030000;
         public static final int dialog_base=0x7f030001;
         public static final int dialog_footview=0x7f030002;
         public static final int dialog_footview_1btn=0x7f030003;
         public static final int dialog_footview_3btn=0x7f030004;
         public static final int dialog_title=0x7f030005;
     }
-    public static final class menu {
-        public static final int activity_main=0x7f090000;
-    }
     public static final class string {
-        public static final int Base_hit_createstorefolderfail=0x7f070016;
-        public static final int Base_hit_defaskclosemsg=0x7f070018;
+        public static final int Base_hit_createstorefolderfail=0x7f070013;
+        public static final int Base_hit_defaskclosemsg=0x7f070015;
         /**  BaseActivity 
          */
-        public static final int Base_hit_nosdcard=0x7f070015;
-        public static final int Base_hit_title=0x7f070017;
+        public static final int Base_hit_nosdcard=0x7f070012;
+        public static final int Base_hit_title=0x7f070014;
         public static final int app_name=0x7f070000;
-        public static final int dl_btn_back=0x7f07000e;
-        public static final int dl_btn_cancel=0x7f070010;
-        public static final int dl_btn_confirm=0x7f07000f;
-        public static final int dl_btn_ok=0x7f07000d;
-        public static final int dl_btn_quit=0x7f070011;
-        public static final int dl_msg_receiving_data=0x7f07000b;
-        public static final int dl_msg_update_error=0x7f07000c;
-        public static final int dl_title_error=0x7f07000a;
+        public static final int dl_btn_back=0x7f07000b;
+        public static final int dl_btn_cancel=0x7f07000d;
+        public static final int dl_btn_confirm=0x7f07000c;
+        public static final int dl_btn_ok=0x7f07000a;
+        public static final int dl_btn_quit=0x7f07000e;
+        public static final int dl_msg_receiving_data=0x7f070008;
+        public static final int dl_msg_update_error=0x7f070009;
+        public static final int dl_title_error=0x7f070007;
         /**  Dialog 提示信息  
          */
-        public static final int dl_title_prompt=0x7f070009;
-        public static final int hello_world=0x7f070001;
-        public static final int list_item_loading_data=0x7f070014;
-        public static final int list_item_more_msg=0x7f070013;
+        public static final int dl_title_prompt=0x7f070006;
+        public static final int list_item_loading_data=0x7f070011;
+        public static final int list_item_more_msg=0x7f070010;
         /**  列表项相关  
          */
-        public static final int list_item_no_data=0x7f070012;
-        public static final int menu_settings=0x7f070002;
+        public static final int list_item_no_data=0x7f07000f;
         /**  网络异常提示信息  
          */
-        public static final int prompt_network_connect_timeout=0x7f070004;
-        public static final int prompt_network_error=0x7f070007;
-        public static final int prompt_network_read_timeout=0x7f070005;
-        public static final int prompt_network_receiving_data_error=0x7f070008;
-        public static final int prompt_network_url_error=0x7f070006;
-        public static final int title_activity_main=0x7f070003;
+        public static final int prompt_network_connect_timeout=0x7f070001;
+        public static final int prompt_network_error=0x7f070004;
+        public static final int prompt_network_read_timeout=0x7f070002;
+        public static final int prompt_network_receiving_data_error=0x7f070005;
+        public static final int prompt_network_url_error=0x7f070003;
+        public static final int welcome_publish=0x7f070019;
+        /**  WelcomeActivity 
+         */
+        public static final int welcome_title=0x7f070016;
+        public static final int welcome_url=0x7f070018;
+        public static final int welcome_ver=0x7f070017;
     }
     public static final class style {
         /**  Base application theme is the default theme. 

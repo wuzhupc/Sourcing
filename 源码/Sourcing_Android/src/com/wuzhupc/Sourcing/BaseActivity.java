@@ -15,14 +15,13 @@ import android.view.KeyEvent;
 import android.widget.Toast;
 
 /**
- * 
+ * BaseActivity
  * @author wuzhu email:wuzhupc@gmail.com
  * @version 创建时间：2012-11-18 下午8:48:47
  */
 public class BaseActivity extends Activity
 {
 	protected static final String  TAG=BaseActivity.class.getSimpleName();
-	
 
 	/**
 	 * 捕获返回键
