@@ -223,10 +223,7 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 			rd.close();
 			in.close();
 				
-			/****************** Base64解码、解压 *******************/
-			//Log.d("NetTask", "response:\n"+responseContent);
-//			s = StringUtil.decompress(StringUtil.decode(s));
-//			Log.i("NetTask", "__________s = "+s);
+			/****************** Base64解码、解压 *******************/ 
 				
 			isSuccess = true;
 		} catch (Exception e) {

@@ -51,12 +51,10 @@ public class FileUtil
 	public static String getRealPathFromURI(Uri contentUri, Activity activity)
 	{
 		String[] proj = { MediaStore.Images.Media.DATA };
-		Cursor cursor = activity.managedQuery(contentUri, proj, null, null,
-				null);
+		Cursor cursor = activity.managedQuery(contentUri, proj, null, null, null);
 		if (cursor == null)
 			return "";
-		int column_index = cursor
-				.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+		int column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
 		if (cursor.moveToFirst())
 			return cursor.getString(column_index);
 		else
@@ -68,8 +66,7 @@ public class FileUtil
 	 */
 	public static Boolean hasSDCard()
 	{
-		return android.os.Environment.getExternalStorageState().equals(
-				android.os.Environment.MEDIA_MOUNTED);
+		return android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED);
 	}
 
 	/**
@@ -90,8 +87,7 @@ public class FileUtil
 	 */
 	public static String getTempPhotoPath()
 	{
-		return Constants.CSTR_DATASTOREDIR + "images" + File.separator
-				+ "tmpphoto.jpg";
+		return Constants.CSTR_DATASTOREDIR + "images" + File.separator + "tmpphoto.jpg";
 	}
 
 	/**
@@ -168,8 +164,7 @@ public class FileUtil
 		if (dotIndex < 0)
 			return "";
 		/* 获取文件的后缀名 */
-		return filename.substring(dotIndex + 1, filename.length())
-				.toLowerCase();
+		return filename.substring(dotIndex + 1, filename.length()).toLowerCase();
 	}
 
 	/**
@@ -177,45 +172,28 @@ public class FileUtil
 	 */
 	public static final String[][] MIME_MapTable = {
 			// {后缀名， MIME类型}
-			{ ".3gp", "video/3gpp" },
-			{ ".apk", "application/vnd.android.package-archive" },
-			{ ".asf", "video/x-ms-asf" }, { ".avi", "video/x-msvideo" },
-			{ ".bin", "application/octet-stream" }, { ".bmp", "image/bmp" },
-			{ ".c", "text/plain" }, { ".class", "application/octet-stream" },
-			{ ".conf", "text/plain" }, { ".cpp", "text/plain" },
-			{ ".doc", "application/msword" },
-			{ ".exe", "application/octet-stream" }, { ".gif", "image/gif" },
-			{ ".gtar", "application/x-gtar" }, { ".gz", "application/x-gzip" },
-			{ ".h", "text/plain" }, { ".htm", "text/html" },
-			{ ".html", "text/html" }, { ".jar", "application/java-archive" },
-			{ ".java", "text/plain" }, { ".jpeg", "image/jpeg" },
-			{ ".jpg", "image/jpeg" }, { ".js", "application/x-javascript" },
-			{ ".log", "text/plain" }, { ".m3u", "audio/x-mpegurl" },
-			{ ".m4a", "audio/mp4a-latm" }, { ".m4b", "audio/mp4a-latm" },
-			{ ".m4p", "audio/mp4a-latm" }, { ".m4u", "video/vnd.mpegurl" },
-			{ ".m4v", "video/x-m4v" }, { ".mov", "video/quicktime" },
-			{ ".mp2", "audio/x-mpeg" }, { ".mp3", "audio/x-mpeg" },
-			{ ".mp4", "video/mp4" },
-			{ ".mpc", "application/vnd.mpohun.certificate" },
-			{ ".mpe", "video/mpeg" }, { ".mpeg", "video/mpeg" },
-			{ ".mpg", "video/mpeg" }, { ".mpg4", "video/mp4" },
-			{ ".mpga", "audio/mpeg" },
-			{ ".msg", "application/vnd.ms-outlook" }, { ".ogg", "audio/ogg" },
-			{ ".pdf", "application/pdf" }, { ".png", "image/png" },
-			{ ".pps", "application/vnd.ms-powerpoint" },
-			{ ".ppt", "application/vnd.ms-powerpoint" },
-			{ ".prop", "text/plain" },
-			{ ".rar", "application/x-rar-compressed" },
-			{ ".rc", "text/plain" }, { ".rmvb", "audio/x-pn-realaudio" },
-			{ ".rtf", "application/rtf" }, { ".sh", "text/plain" },
-			{ ".tar", "application/x-tar" },
-			{ ".tgz", "application/x-compressed" }, { ".txt", "text/plain" },
-			{ ".wav", "audio/x-wav" }, { ".wma", "audio/x-ms-wma" },
-			{ ".wmv", "audio/x-ms-wmv" },
-			{ ".wps", "application/vnd.ms-works" },
+			{ ".3gp", "video/3gpp" }, { ".apk", "application/vnd.android.package-archive" },
+			{ ".asf", "video/x-ms-asf" }, { ".avi", "video/x-msvideo" }, { ".bin", "application/octet-stream" },
+			{ ".bmp", "image/bmp" }, { ".c", "text/plain" }, { ".class", "application/octet-stream" },
+			{ ".conf", "text/plain" }, { ".cpp", "text/plain" }, { ".doc", "application/msword" },
+			{ ".exe", "application/octet-stream" }, { ".gif", "image/gif" }, { ".gtar", "application/x-gtar" },
+			{ ".gz", "application/x-gzip" }, { ".h", "text/plain" }, { ".htm", "text/html" }, { ".html", "text/html" },
+			{ ".jar", "application/java-archive" }, { ".java", "text/plain" }, { ".jpeg", "image/jpeg" },
+			{ ".jpg", "image/jpeg" }, { ".js", "application/x-javascript" }, { ".log", "text/plain" },
+			{ ".m3u", "audio/x-mpegurl" }, { ".m4a", "audio/mp4a-latm" }, { ".m4b", "audio/mp4a-latm" },
+			{ ".m4p", "audio/mp4a-latm" }, { ".m4u", "video/vnd.mpegurl" }, { ".m4v", "video/x-m4v" },
+			{ ".mov", "video/quicktime" }, { ".mp2", "audio/x-mpeg" }, { ".mp3", "audio/x-mpeg" },
+			{ ".mp4", "video/mp4" }, { ".mpc", "application/vnd.mpohun.certificate" }, { ".mpe", "video/mpeg" },
+			{ ".mpeg", "video/mpeg" }, { ".mpg", "video/mpeg" }, { ".mpg4", "video/mp4" }, { ".mpga", "audio/mpeg" },
+			{ ".msg", "application/vnd.ms-outlook" }, { ".ogg", "audio/ogg" }, { ".pdf", "application/pdf" },
+			{ ".png", "image/png" }, { ".pps", "application/vnd.ms-powerpoint" },
+			{ ".ppt", "application/vnd.ms-powerpoint" }, { ".prop", "text/plain" },
+			{ ".rar", "application/x-rar-compressed" }, { ".rc", "text/plain" }, { ".rmvb", "audio/x-pn-realaudio" },
+			{ ".rtf", "application/rtf" }, { ".sh", "text/plain" }, { ".tar", "application/x-tar" },
+			{ ".tgz", "application/x-compressed" }, { ".txt", "text/plain" }, { ".wav", "audio/x-wav" },
+			{ ".wma", "audio/x-ms-wma" }, { ".wmv", "audio/x-ms-wmv" }, { ".wps", "application/vnd.ms-works" },
 			// {".xml", "text/xml"},
-			{ ".xml", "text/plain" }, { ".z", "application/x-compress" },
-			{ ".zip", "application/zip" }, { "", "*/*" } };
+			{ ".xml", "text/plain" }, { ".z", "application/x-compress" }, { ".zip", "application/zip" }, { "", "*/*" } };
 
 	/**
 	 * 读取文件
@@ -349,20 +327,24 @@ public class FileUtil
 			}
 		}
 	}
-	
+
 	/**
 	 * 写入文件内容,如果原文件存在，不保存原文件内容
-	 * @param file　文件名
-	 * @param data　要写入的数据
+	 * 
+	 * @param file
+	 *            　文件名
+	 * @param data
+	 *            　要写入的数据
 	 */
-	public static void WriteFile(String file, String data) {
-		WriteFile(file, data,false);
+	public static void WriteFile(String file, String data)
+	{
+		WriteFile(file, data, false);
 	}
 
 	/**
 	 * 保存文件内容
 	 */
-	public static void WriteFile(String file, String data,Boolean append)
+	public static void WriteFile(String file, String data, Boolean append)
 	{
 		FileOutputStream fOut = null;
 		OutputStreamWriter osw = null;
@@ -434,7 +416,7 @@ public class FileUtil
 			filePath = filePath.toString();
 			// Log.d("delFolder", filePath.toString());
 			File f = new File(filePath);
-			if(f.exists())
+			if (f.exists())
 				f.delete(); // 删除空文件夹
 			return true;
 
@@ -632,7 +614,7 @@ public class FileUtil
 			filefullpath = filename;
 		else
 			filefullpath = getSDCardPath() + filename;
-		WriteFile(filefullpath, filecontent,false);
+		WriteFile(filefullpath, filecontent, false);
 	}
 
 	/**
@@ -674,57 +656,99 @@ public class FileUtil
 
 		return Constants.CSTR_DATASTOREDIR + fileName;
 	}
-	
+
 	/**
-	 * 获取图片缩略图
-	 * 只有Android2.1以上版本支持
+	 * 获取图片缩略图 只有Android2.1以上版本支持
+	 * 
 	 * @param imgName
-	 * @param kind   MediaStore.Images.Thumbnails.MICRO_KIND
+	 * @param kind
+	 *            MediaStore.Images.Thumbnails.MICRO_KIND
 	 * @return
 	 */
-	public static Bitmap loadImgThumbnail( Activity activity,String imgName, int kind ) 
+	public static Bitmap loadImgThumbnail(Activity activity, String imgName, int kind)
 	{
 		Bitmap bitmap = null;
-		
-        String[] proj = { MediaStore.Images.Media._ID,
-                        MediaStore.Images.Media.DISPLAY_NAME };
-        
-        Cursor cursor = activity.managedQuery(
-                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI, proj,
-                        MediaStore.Images.Media.DISPLAY_NAME + "='" + imgName +"'", null, null);
-       
-        if ( cursor!=null && cursor.getCount()>0 && cursor.moveToFirst() ) 
-        {
-        	ContentResolver crThumb = activity.getContentResolver();
-            BitmapFactory.Options options = new BitmapFactory.Options();
-            options.inSampleSize = 1;
-            bitmap = MediaStore.Images.Thumbnails.getThumbnail(crThumb,
-            		cursor.getInt(0),
-                	kind, options);
-        } 
-        return bitmap;
+
+		String[] proj = { MediaStore.Images.Media._ID, MediaStore.Images.Media.DISPLAY_NAME };
+
+		Cursor cursor = activity.managedQuery(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, proj,
+				MediaStore.Images.Media.DISPLAY_NAME + "='" + imgName + "'", null, null);
+
+		if (cursor != null && cursor.getCount() > 0 && cursor.moveToFirst())
+		{
+			ContentResolver crThumb = activity.getContentResolver();
+			BitmapFactory.Options options = new BitmapFactory.Options();
+			options.inSampleSize = 1;
+			bitmap = MediaStore.Images.Thumbnails.getThumbnail(crThumb, cursor.getInt(0), kind, options);
+		}
+		return bitmap;
+	}
+
+	/**
+	 * 从Assets中读取图片
+	 */
+	@TargetApi(5)
+	public static Bitmap getImageFromAssetsFile(Activity activity, String fileName)
+	{
+		Bitmap image = null;
+		AssetManager am = activity.getResources().getAssets();
+		try
+		{
+			InputStream is = am.open(fileName);
+			image = BitmapFactory.decodeStream(is);
+			is.close();
+		} catch (IOException e)
+		{
+			e.printStackTrace();
+		}
+
+		return image;
 	}
 	
-	/** 
-	 * 从Assets中读取图片  
-	 */  
-	@TargetApi(5)
-	public static Bitmap getImageFromAssetsFile(Activity activity,String fileName)  
-	  {  
-	      Bitmap image = null;  
-	      AssetManager am = activity.getResources().getAssets();  
-	      try  
-	      {  
-	          InputStream is = am.open(fileName);  
-	          image = BitmapFactory.decodeStream(is);  
-	          is.close();  
-	      }  
-	      catch (IOException e)  
-	      {  
-	          e.printStackTrace();  
-	      }  
-	  
-	      return image;  
-	  
-	  } 
+	/**
+	 * 从Assets中读取文件
+	 */
+	public static String readFileFromAssetsFile(Context context, String fileName)
+	{
+		StringBuilder result = new StringBuilder();
+		AssetManager am = context.getResources().getAssets();
+		try
+		{
+			InputStream is = am.open(fileName);
+			Charset cs=Charset.forName("UTF-8");
+			InputStreamReader isr = null;
+			BufferedReader br = null;
+			try
+			{
+				isr = new InputStreamReader(is, cs);
+				br = new BufferedReader(isr);
+				String temp;
+				while ((temp = br.readLine()) != null)
+				{
+					result.append(temp);
+					result.append("\r\n");
+				}
+			} catch (Exception e)
+			{
+				Log.e(TAG, e.getMessage());
+			} finally
+			{
+				try
+				{
+					if (br != null)
+						br.close();
+					if (isr != null)
+						isr.close();
+				} catch (IOException e)
+				{
+					Log.e(TAG, e.getMessage());
+				}
+			}
+			is.close();
+		}
+		catch (Exception e) {
+			Log.e(TAG, e.getMessage());
+		}
+		return result.toString();
+	}
 }

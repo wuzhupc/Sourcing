@@ -20,4 +20,9 @@ public class ResponseVO
 	public void setMsg(String msg){
 		this.msg = msg;
 	}
+	
+	public boolean isSucess()
+	{
+		return this.code==RESPONSE_CODE_SUCESS;
+	}
 }

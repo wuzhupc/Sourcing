@@ -9,8 +9,10 @@ import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.widget.OnKeyDownListener;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
@@ -37,21 +39,22 @@ public class BaseActivity extends Activity
 	/**
 	 * 检查缓存文件夹是否存在
 	 */
-	protected void checkCacheFolder()
+	protected boolean checkCacheFolder()
 	{
 		//判断存储卡是否存在
 		if(!FileUtil.hasSDCard())
 		{
 			//提示
 			hitCloseApplication(R.string.Base_hit_nosdcard);
-			return;
+			return false;
 		}
 		//判断资源文件是否可以创建
 		if(!FileUtil.isExistFolder(Constants.CSTR_DATASTOREDIR))
 		{
 			hitCloseApplication(R.string.Base_hit_createstorefolderfail);
-			return;
+			return false;
 		}
+		return true;
 	}
 	
 	/**
@@ -170,6 +173,37 @@ public class BaseActivity extends Activity
 			this.finish();
 		if (intent != null)
 			startActivity(intent);
+	}
+	/**
+	 * 启动浏览器
+	 * 
+	 * @param url
+	 *            地址
+	 */
+	public void runBrowser(String url)
+	{
+		runBrowser(url, this);
+	}
+
+	/**
+	 * 启动浏览器
+	 * 
+	 * @param url
+	 *            地址
+	 */
+	public static void runBrowser(String url, Context c)
+	{
+		if (StringUtil.isEmpty(url))
+			return;
+		try
+		{
+			Uri uri = Uri.parse(url);
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			c.startActivity(intent);
+		} catch (Exception e)
+		{
+
+		}
 	}
 
 	/**

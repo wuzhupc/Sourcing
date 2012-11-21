@@ -1,6 +1,7 @@
 package com.wuzhupc.Sourcing.vo;
 
 import com.wuzhupc.utils.JavaLangUtil;
+import com.wuzhupc.utils.StringUtil;
 
 /**
  * 客户端版本信息VO
@@ -94,5 +95,18 @@ public class ClientVerVO extends BaseVO
 	public void setUpdatelog(String updatelog)
 	{
 		this.updatelog = updatelog;
+	}
+	
+	/**
+	 * 是否需要更新,比较之前需要对clientver赋当前版本值
+	 * @return
+	 */
+	public boolean hasUpdate()
+	{
+		if(StringUtil.isEmpty(clientver)||StringUtil.isEmpty(lastver))
+			return false;
+		if(clientver.compareToIgnoreCase(lastver)<0&&!StringUtil.isEmpty(lastverurl))
+			return true;
+		return false;
 	}
 }
