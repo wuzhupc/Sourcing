@@ -1,5 +1,7 @@
 package com.wuzhupc.Sourcing;
 
+import java.util.Map;
+
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.Sourcing.vo.ClientVerVO;
 import com.wuzhupc.Sourcing.vo.ResponseVO;
@@ -9,8 +11,9 @@ import com.wuzhupc.utils.PhoneInfoUtil;
 import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
-import android.os.Bundle;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Html;
@@ -82,12 +85,21 @@ public class WelcomeActivity extends BaseActivity
 	 */
 	private ClientVerVO mClientVerVO;
 	
+	/**
+	 * 初始化View
+	 */
 	@Override
-	protected void onCreate(Bundle savedInstanceState) 
+	protected void initView()
 	{
-		super.onCreate(savedInstanceState);
+		//初始化View
+		setContentView(R.layout.activity_welcome);
+		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));		
+	}
+
+	@Override
+	protected void initActions()
+	{
 		setCatureBackKey(true);
-		initView();
 		mNowState = Cint_ShowLogo_State;
 		mMessageNumber = 0;
 		sendMsg(Cint_CompleteShowLogo_MessageID, 2000);
@@ -95,16 +107,6 @@ public class WelcomeActivity extends BaseActivity
 		sendMsg(Cint_StartUserLogin_MessageID, 500);
 		if(!checkCacheFolder())
 			return;
-	}
-	
-	/**
-	 * 初始化View
-	 */
-	private void initView()
-	{
-		//初始化View
-		setContentView(R.layout.activity_welcome);
-		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));		
 	}
 	
 	/**
@@ -123,6 +125,7 @@ public class WelcomeActivity extends BaseActivity
 			mHandler.sendMessage(message);
 	}
 	
+	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler()
 	{
 		@Override
@@ -169,7 +172,17 @@ public class WelcomeActivity extends BaseActivity
 				if (isSuc) 
 				{
 					ResponseVO respVO = new ResponseVO();
-					mClientVerVO = (ClientVerVO) JsonParser.parseJsonToEntity(content, respVO);
+					Map<String, String> value=JsonParser.parseJsonToMap(content,respVO);
+					if(value!=null&&!value.isEmpty())
+					{
+						mClientVerVO = new ClientVerVO();
+						mClientVerVO.setClientver(SettingUtil.getClientVersion(WelcomeActivity.this));
+						mClientVerVO.setLastver(value.get("lastver"));
+						mClientVerVO.setLastverurl(value.get("lastverurl"));
+						mClientVerVO.setFilesize(value.get("filesize"));
+						mClientVerVO.setForceupdate(value.get("forceupdate"));
+						mClientVerVO.setUpdatelog(value.get("updatelog"));
+					}
 					completeGetVersionInfo(respVO);
 				}
 //				else 
@@ -186,7 +199,6 @@ public class WelcomeActivity extends BaseActivity
 			sendMsg(Cint_CompleteCheckClientVer_MessageID, 0);
 			return;
 		}
-		mClientVerVO.setClientver(SettingUtil.getClientVersion(this));
 		//判断版本更新信息
 		if(!mClientVerVO.hasUpdate())
 		{
@@ -204,7 +216,7 @@ public class WelcomeActivity extends BaseActivity
 	{
 		mNowState = Cint_ShowClientUpdate_State;
 		BaseDialog dialog = new BaseDialog(WelcomeActivity.this,BaseDialog.DIALOG_TYPE_TWOBTN);
-		dialog.setTitle(mClientVerVO.getForceupdate()?R.string.welcome_update_title_ex:R.string.welcome_update_title);
+		dialog.setTitle(String.format(this.getResources().getString(mClientVerVO.getForceupdate()?R.string.welcome_update_title_ex:R.string.welcome_update_title),mClientVerVO.getLastver()));
 		dialog.setMessage(
 				Html.fromHtml(
 					String.format(this.getResources().getString(mClientVerVO.getForceupdate()?R.string.welcome_update_content_ex:R.string.welcome_update_content),mClientVerVO.getUpdatelog())));
@@ -240,7 +252,14 @@ public class WelcomeActivity extends BaseActivity
 	 */
 	private void startUserLogin()
 	{
-		//TODO
+		//TODO 读取之前的登录信息
+		//TODO 远程判断
+		completeUserLogin();
+	}
+	
+	private void completeUserLogin()
+	{
+        sendMsg(Cint_CompleteUserLogin_MessageID, 0);
 	}
 	
 	/**
@@ -253,8 +272,8 @@ public class WelcomeActivity extends BaseActivity
 //		startPushMsgService();
 //		
 //		//启动主界面
-//		Intent intent=new Intent(this, HomeActivity.class);
+		Intent intent=new Intent(this, HomeActivity.class);
 //		//intent.putExtra(HomeActivity.CSTR_PARMS_STARTADNEWSURL, mStartLogoNewUrl);
-//		runIntent(true, intent);
+		runIntent(true, intent);
 	}
 }

@@ -6,6 +6,7 @@ import com.wuzhupc.config.ApplicationSet;
 import com.wuzhupc.config.Constants;
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.StringUtil;
+import com.wuzhupc.utils.UIUtil;
 import com.wuzhupc.widget.OnKeyDownListener;
 
 import android.app.Activity;
@@ -13,7 +14,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -21,7 +25,7 @@ import android.widget.Toast;
  * @author wuzhu email:wuzhupc@gmail.com
  * @version 创建时间：2012-11-18 下午8:48:47
  */
-public class BaseActivity extends Activity
+public  abstract class BaseActivity extends Activity
 {
 	protected static final String  TAG=BaseActivity.class.getSimpleName();
 
@@ -35,6 +39,60 @@ public class BaseActivity extends Activity
 	 * 关闭程序时的提示信息
 	 */
 	private String mCloseApplicationAskMsg = "";
+	
+
+	/**
+	 * onCreate 调用initView初始化界面 调用 initActions初始化点击操作
+	 */
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+
+		initView();
+
+		initActions();
+	}
+
+	/**
+	 * 增加内容图片点击操作列表
+	 */
+	protected abstract void initActions();
+
+	/**
+	 * 初始化界面
+	 */
+	protected abstract void initView();
+
+	/**
+	 * 设置标题
+	 * 
+	 * @param title
+	 */
+	public void setTitleText(String title)
+	{
+		((TextView) findViewById(R.id.activity_title_text)).setText(title);
+	}
+
+	/**
+	 * 设置标题字体为粗体
+	 */
+	public void setTitleTextBold()
+	{
+		View v = findViewById(R.id.activity_title_text);
+		if(v!=null)
+			UIUtil.setTitleTextBold((TextView)v);
+	}
+
+	/**
+	 * 点击返回主界面
+	 * 
+	 * @param v
+	 */
+	public void onReturnClick(View v)
+	{
+		this.finish();
+	}
 	
 	/**
 	 * 检查缓存文件夹是否存在

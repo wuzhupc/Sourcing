@@ -38,9 +38,9 @@
     <string name="welcome_ver">版本:%1$s</string>
 	<string name="welcome_url">www.wuzhupc.com</string>
 	<string name="welcome_publish">Copyright ©2012 商务中国 版权所有</string>
-	<string name="welcome_update_title">发现新版本</string>
-	<string name="welcome_update_title_ex">重大更新</string>
+	<string name="welcome_update_title">发现新版本(V%1$s)</string>
+	<string name="welcome_update_title_ex">重大更新(V%1$s)</string>
 	<string name="welcome_update_content">更新内容:&#060;br&#047;&#062;%1$s&#060;br&#047;&#062;</string>
-	<string name="welcome_update_content_ex">更新内容:&#060;br&#047;&#062;%1$s&#060;br&#047;&#062;注意: 当前版本需要更新后才能继续使用。&#060;br&#047;&#062;</string>
+	<string name="welcome_update_content_ex">更新内容:&#060;br&#047;&#062;%1$s&#060;br&#047;&#062;&#060;br&#047;&#062;注意: 当前版本需要更新后才能继续使用。&#060;br&#047;&#062;</string>
 	<string name="welcome_update_btn">升级</string>
 </resources>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item type="id" name="dialog_footview_btn_center" />
     <item type="id" name="dialog_footview_btn_left" />
     <item type="id" name="dialog_footview_btn_right" />
+    <item type="id" name="activity_title_container"/>
+    <item type="id" name="activity_title_text"></item>
 </resources>

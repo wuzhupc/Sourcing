@@ -4,14 +4,23 @@
     
     <!-- Dialog按钮颜色 -->
     <color name="dialog_btn_bg">#383D49</color>
-	<color name="dialog_title_textcolor">#333333</color>
+	<color name="dialog_title_textcolor">#FFFFFF</color>
 	<color name="dialog_message_textcolor">#4E4E4E</color>
 	
     <!-- 按钮默认和按下颜色 -->
-    <color name="btn_pressed">#30a5ff</color>
-    <color name="btn_normal">#178eea</color>
+    <color name="btn_pressed">#508dcc</color>
+    <color name="btn_normal">#2174c9</color>
+    
+    <!-- 背景颜色 -->
+    <color name="activity_title_bg_color">#226fc1</color>
+    
     <!-- 间隔线 -->
-    <color name="btn_space_deep">#0880B5</color>
-    <color name="btn_space_light">#10B2D3</color>
+    <color name="btn_space_deep">#1462af</color>
+    <color name="btn_space_light">#6092c3</color>
+    <!-- 标题间隔线 -->
+    <color name="activity_title_separator">#40ffffff</color>
+    <color name="activity_title_text">#f7f7f7</color>
+    
+    <color name="home_toolbar_bg">#222222</color>
     
 </resources>
