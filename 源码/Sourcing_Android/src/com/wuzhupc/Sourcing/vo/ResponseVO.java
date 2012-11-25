@@ -8,6 +8,18 @@ public class ResponseVO
 	private int code;	// 返回报文状态码：1.正常  2.不正常
 	private String msg;	// 返回报文状态信息；
 	
+	public ResponseVO()
+	{
+		code = RESPONSE_CODE_FAIL;
+		msg = "";
+	}
+	
+	public ResponseVO(int response_code,String msg)
+	{
+		code = response_code;
+		this.msg = msg; 
+	}
+	
 	public int getCode(){
 		return code;
 	}

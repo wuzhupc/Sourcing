@@ -5,7 +5,7 @@
     },
     "data":{
         "list_vos":[
-        "AuditVO":{
+        {"AuditVO":{
             "auditid":"提交审核编号",
 			"auditcontent":"提交审核内容",            
             "publishtime":"提交审核时间，格式yyyy-MM-dd HH:mm:ss",
@@ -16,10 +16,10 @@
 				"publisher":"审核人员",            
             	"publishtime":"审核结果时间，格式yyyy-MM-dd HH:mm:ss"
             }
-        },
-        "AuditVO":{
+        }},
+        {"AuditVO":{
             ...
-        }
+        }}
         ...
         ]  
     }

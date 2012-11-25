@@ -5,15 +5,15 @@
     },
     "data":{
         "list_vos":[
-            "JobsVO":{
+            {"JobsVO":{
                 "jobid":"职位编号",
                 "job":"职位名称",
                 "company":"招聘公司名称",
                 "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss"
-            },
-            "JobsVO":{
+            }},
+            {"JobsVO":{
                 ......
-            }
+            }}
             ......
         ]
     }

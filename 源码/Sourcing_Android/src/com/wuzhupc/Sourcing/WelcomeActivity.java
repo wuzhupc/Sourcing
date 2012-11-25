@@ -185,6 +185,10 @@ public class WelcomeActivity extends BaseActivity
 					}
 					completeGetVersionInfo(respVO);
 				}
+				else
+				{
+					completeGetVersionInfo(new ResponseVO(ResponseVO.RESPONSE_CODE_FAIL,content));
+				}
 //				else 
 //				{
 //			        hitCloseApplication(getString(R.string.prompt_network_error),true);

@@ -5,7 +5,7 @@
     },
     "data":{
         "list_vos":[
-        "DeclareVO":{
+        {"DeclareVO":{
             "declareid":"申报编号",
 			"declarecontent":"申报内容",            
             "publishtime":"申报时间，格式yyyy-MM-dd HH:mm:ss",
@@ -16,10 +16,10 @@
 				"publisher":"申报处理人员",        
             	"publishtime":"申报结果时间，格式yyyy-MM-dd HH:mm:ss"
             }
-        },
-        "DeclareVO":{
+        }},
+        {"DeclareVO":{
             ...
-        }
+        }}
         ...
         ]  
     }

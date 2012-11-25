@@ -5,16 +5,16 @@
     },
     "data":{
         "list_vos":[
-            "ResumeVO":{
+            {"ResumeVO":{
                 "resumeid":"简历编号",
                 "resumetitle":"简历名称",
                 "expectjob":"期望职业",
                 "name":"姓名 ",
                 "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss"
-            },
-            "ResumeVO":{
+            }},
+            {"ResumeVO":{
                 ......
-            }
+            }}
             ......
         ]
     }

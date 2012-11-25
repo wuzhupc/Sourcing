@@ -5,7 +5,7 @@
     },
     "data":{
         "list_vos":[
-        "ConsultVO":{
+        {"ConsultVO":{
             "consultid":"咨询编号",
 			"consultcontent":"咨询内容",            
             "publishtime":"咨询时间，格式yyyy-MM-dd HH:mm:ss",
@@ -15,10 +15,10 @@
 				"publisher":"咨询答复人员",           
             	"publishtime":"咨询答复时间，格式yyyy-MM-dd HH:mm:ss"
             }
-        },
-        "ConsultVO":{
+        }},
+        {"ConsultVO":{
             ...
-        }
+        }}
         ...
         ]  
     }

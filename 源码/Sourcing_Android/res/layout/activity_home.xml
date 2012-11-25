@@ -15,32 +15,53 @@
             android:text="@string/app_name" />
 
         <ProgressBar
-            android:id="@+id/dialog_progressbar"
+            android:id="@+id/home_data_ref_pb"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:indeterminateDrawable="@drawable/progress_small"
             android:visibility="gone" />
 
         <ImageView
+            android:id="@+id/home_data_ref_iv"
             style="@style/TitleBarAction"
             android:clickable="true"
             android:src="@drawable/ic_title_refresh" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/home_toolbar_ll"
+        android:id="@+id/home_menubar_ll"
         android:layout_width="fill_parent"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:background="@drawable/toolbar_bkg"
         android:orientation="horizontal" >
+        <include android:id="@+id/home_menubar_m1_v"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            layout="@layout/widget_menubar_btn" />
+        <include android:id="@+id/home_menubar_m2_v"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            layout="@layout/widget_menubar_btn" />
+        <include android:id="@+id/home_menubar_m3_v"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            layout="@layout/widget_menubar_btn" />
+        <include android:id="@+id/home_menubar_m4_v"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            layout="@layout/widget_menubar_btn" />
     </LinearLayout>
 
     <com.wuzhupc.widget.ExViewFlipper
         android:id="@+id/home_content_vf"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/home_toolbar_ll"
+        android:layout_above="@id/home_menubar_ll"
         android:layout_below="@id/activity_title_container" >
     </com.wuzhupc.widget.ExViewFlipper>
 

@@ -5,7 +5,7 @@
     },
     "data":{
         "list_vos":[
-            "NewsVO":{
+            {"NewsVO":{
 				"headline":"是否是新闻头条，默认0：不是头条，1：头条新闻"
                 "newstype":"新闻类型,1：行业新闻，2：政策，3：通知，4：专家文章",
                 "newsid":"新闻编号",
@@ -18,10 +18,10 @@
                 "source":" 新闻来源",
                 "readernum":"阅读次数",
                 "commentnum":"评论总数"
-            },
-            "NewsVO":{
+            }},
+            {"NewsVO":{
                 ......
-            }
+            }}
             ......
         ]
     }

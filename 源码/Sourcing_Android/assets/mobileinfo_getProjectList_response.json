@@ -5,15 +5,15 @@
     },
     "data":{
         "list_vos":[
-            "ProjectVO":{
+            {"ProjectVO":{
                 "projectid":"项目编号",
                 "projectname":"项目名称",
                 "projectstatus":"项目状态",
                 "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss"
-            },
-            "ProjectVO":{
+            }},
+            {"ProjectVO":{
                 ......
-            }
+            }}
             ......
         ]
     }

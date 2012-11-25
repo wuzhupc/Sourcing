@@ -38,6 +38,7 @@ public final class R {
         public static final int dialog_button_text_size=0x7f050000;
         public static final int dialog_message_size=0x7f050002;
         public static final int dialog_title_size=0x7f050001;
+        public static final int menubar_height=0x7f050008;
         public static final int text_size_about=0x7f050007;
         public static final int text_size_large=0x7f050006;
         public static final int text_size_medium=0x7f050005;
@@ -64,16 +65,17 @@ public final class R {
         public static final int progress_medium=0x7f020010;
         public static final int progress_micro=0x7f020011;
         public static final int progress_small=0x7f020012;
-        public static final int theme_dialog_bg=0x7f020013;
-        public static final int title_bar_refresh_48=0x7f020014;
-        public static final int title_bar_refresh_48_light=0x7f020015;
-        public static final int title_button=0x7f020016;
-        public static final int toolbar_bkg=0x7f020017;
-        public static final int toolbar_bkg_sel=0x7f020018;
-        public static final int top_title_bg=0x7f020019;
-        public static final int welcome=0x7f02001a;
-        public static final int welcome_close_btn=0x7f02001b;
-        public static final int welcome_separate_line=0x7f02001c;
+        public static final int selector_menubar_bk_img=0x7f020013;
+        public static final int theme_dialog_bg=0x7f020014;
+        public static final int title_bar_refresh_48=0x7f020015;
+        public static final int title_bar_refresh_48_light=0x7f020016;
+        public static final int title_button=0x7f020017;
+        public static final int toolbar_bkg=0x7f020018;
+        public static final int toolbar_bkg_sel=0x7f020019;
+        public static final int top_title_bg=0x7f02001a;
+        public static final int welcome=0x7f02001b;
+        public static final int welcome_close_btn=0x7f02001c;
+        public static final int welcome_separate_line=0x7f02001d;
     }
     public static final class id {
         public static final int activity_title_container=0x7f060003;
@@ -81,21 +83,29 @@ public final class R {
         public static final int dialog_footview_btn_center=0x7f060000;
         public static final int dialog_footview_btn_left=0x7f060001;
         public static final int dialog_footview_btn_right=0x7f060002;
-        public static final int dialog_footview_spaceone_ll=0x7f060010;
-        public static final int dialog_footview_spacetwo_ll=0x7f060011;
-        public static final int dialog_message=0x7f06000f;
-        public static final int dialog_progressbar=0x7f060005;
-        public static final int dialog_title=0x7f060013;
-        public static final int dialog_title_left_image=0x7f060012;
-        public static final int dialog_title_ll=0x7f06000e;
-        public static final int home_content_vf=0x7f060007;
-        public static final int home_toolbar_ll=0x7f060006;
-        public static final int welcome_bg_iv=0x7f060008;
-        public static final int welcome_bottom_v=0x7f060009;
-        public static final int welcome_close_ib=0x7f06000d;
-        public static final int welcome_separate_iv=0x7f06000a;
-        public static final int welcome_url_tv=0x7f06000b;
-        public static final int welcome_ver_tv=0x7f06000c;
+        public static final int dialog_footview_spaceone_ll=0x7f060015;
+        public static final int dialog_footview_spacetwo_ll=0x7f060016;
+        public static final int dialog_message=0x7f060014;
+        public static final int dialog_progressbar=0x7f060019;
+        public static final int dialog_title=0x7f060018;
+        public static final int dialog_title_left_image=0x7f060017;
+        public static final int dialog_title_ll=0x7f060013;
+        public static final int home_content_vf=0x7f06000c;
+        public static final int home_data_ref_iv=0x7f060006;
+        public static final int home_data_ref_pb=0x7f060005;
+        public static final int home_menu_icon=0x7f06001a;
+        public static final int home_menu_text=0x7f06001b;
+        public static final int home_menubar_ll=0x7f060007;
+        public static final int home_menubar_m1_v=0x7f060008;
+        public static final int home_menubar_m2_v=0x7f060009;
+        public static final int home_menubar_m3_v=0x7f06000a;
+        public static final int home_menubar_m4_v=0x7f06000b;
+        public static final int welcome_bg_iv=0x7f06000d;
+        public static final int welcome_bottom_v=0x7f06000e;
+        public static final int welcome_close_ib=0x7f060012;
+        public static final int welcome_separate_iv=0x7f06000f;
+        public static final int welcome_url_tv=0x7f060010;
+        public static final int welcome_ver_tv=0x7f060011;
     }
     public static final class layout {
         public static final int activity_home=0x7f030000;
@@ -105,6 +115,7 @@ public final class R {
         public static final int dialog_footview_1btn=0x7f030004;
         public static final int dialog_footview_3btn=0x7f030005;
         public static final int dialog_title=0x7f030006;
+        public static final int widget_menubar_btn=0x7f030007;
     }
     public static final class string {
         public static final int Base_hit_createstorefolderfail=0x7f070028;
@@ -185,6 +196,9 @@ public final class R {
         /**  Dialog 提示信息  
          */
         public static final int dl_title_prompt=0x7f07001b;
+        /**  HomeActivity 
+         */
+        public static final int home_initchannel_fail=0x7f070034;
         /**  服务端接口
          */
         public static final int jsonurl=0x7f070000;
