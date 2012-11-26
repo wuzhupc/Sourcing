@@ -35,26 +35,30 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/toolbar_bkg"
         android:orientation="horizontal" >
-        <include android:id="@+id/home_menubar_m1_v"
+        <com.wuzhupc.widget.MenuBarMenuItemView
+            android:id="@+id/home_menubar_m1_v"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            layout="@layout/widget_menubar_btn" />
-        <include android:id="@+id/home_menubar_m2_v"
+            />
+        <com.wuzhupc.widget.MenuBarMenuItemView
+            android:id="@+id/home_menubar_m2_v"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            layout="@layout/widget_menubar_btn" />
-        <include android:id="@+id/home_menubar_m3_v"
+            />
+        <com.wuzhupc.widget.MenuBarMenuItemView
+            android:id="@+id/home_menubar_m3_v"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            layout="@layout/widget_menubar_btn" />
-        <include android:id="@+id/home_menubar_m4_v"
+            />
+        <com.wuzhupc.widget.MenuBarMenuItemView
+            android:id="@+id/home_menubar_m4_v"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1.0"
-            layout="@layout/widget_menubar_btn" />
+            />
     </LinearLayout>
 
     <com.wuzhupc.widget.ExViewFlipper

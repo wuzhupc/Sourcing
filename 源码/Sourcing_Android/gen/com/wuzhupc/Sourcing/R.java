@@ -32,6 +32,14 @@ public final class R {
         public static final int dialog_message_textcolor=0x7f040003;
         public static final int dialog_title_textcolor=0x7f040002;
         public static final int home_toolbar_bg=0x7f04000b;
+        /**  菜单栏菜单项字体颜色 
+         */
+        public static final int menubar_menuitem_textcolor=0x7f04000c;
+        public static final int subchanneltab_sel_imagecolor=0x7f04000f;
+        public static final int subchanneltab_sel_textcolor=0x7f04000e;
+        /**  子栏目标题栏显示相关颜色 
+         */
+        public static final int subchanneltab_textcolor=0x7f04000d;
         public static final int white=0x7f040000;
     }
     public static final class dimen {
@@ -39,6 +47,9 @@ public final class R {
         public static final int dialog_message_size=0x7f050002;
         public static final int dialog_title_size=0x7f050001;
         public static final int menubar_height=0x7f050008;
+        public static final int subchannel_tab_height=0x7f050009;
+        public static final int subchannel_tab_selimg_width=0x7f05000b;
+        public static final int subchannel_tab_width=0x7f05000a;
         public static final int text_size_about=0x7f050007;
         public static final int text_size_large=0x7f050006;
         public static final int text_size_medium=0x7f050005;
@@ -66,20 +77,24 @@ public final class R {
         public static final int progress_micro=0x7f020011;
         public static final int progress_small=0x7f020012;
         public static final int selector_menubar_bk_img=0x7f020013;
-        public static final int theme_dialog_bg=0x7f020014;
-        public static final int title_bar_refresh_48=0x7f020015;
-        public static final int title_bar_refresh_48_light=0x7f020016;
-        public static final int title_button=0x7f020017;
-        public static final int toolbar_bkg=0x7f020018;
-        public static final int toolbar_bkg_sel=0x7f020019;
-        public static final int top_title_bg=0x7f02001a;
-        public static final int welcome=0x7f02001b;
-        public static final int welcome_close_btn=0x7f02001c;
-        public static final int welcome_separate_line=0x7f02001d;
+        public static final int selector_subchannel_tab_img=0x7f020014;
+        public static final int subchannel_tab_bg=0x7f020015;
+        public static final int theme_dialog_bg=0x7f020016;
+        public static final int title_bar_refresh_48=0x7f020017;
+        public static final int title_bar_refresh_48_light=0x7f020018;
+        public static final int title_button=0x7f020019;
+        public static final int toolbar_bkg=0x7f02001a;
+        public static final int toolbar_bkg_sel=0x7f02001b;
+        public static final int top_title_bg=0x7f02001c;
+        public static final int welcome=0x7f02001d;
+        public static final int welcome_close_btn=0x7f02001e;
+        public static final int welcome_separate_line=0x7f02001f;
     }
     public static final class id {
         public static final int activity_title_container=0x7f060003;
         public static final int activity_title_text=0x7f060004;
+        public static final int base_context_ll=0x7f06001b;
+        public static final int base_subchannel_ll=0x7f06001a;
         public static final int dialog_footview_btn_center=0x7f060000;
         public static final int dialog_footview_btn_left=0x7f060001;
         public static final int dialog_footview_btn_right=0x7f060002;
@@ -93,13 +108,15 @@ public final class R {
         public static final int home_content_vf=0x7f06000c;
         public static final int home_data_ref_iv=0x7f060006;
         public static final int home_data_ref_pb=0x7f060005;
-        public static final int home_menu_icon=0x7f06001a;
-        public static final int home_menu_text=0x7f06001b;
         public static final int home_menubar_ll=0x7f060007;
         public static final int home_menubar_m1_v=0x7f060008;
         public static final int home_menubar_m2_v=0x7f060009;
         public static final int home_menubar_m3_v=0x7f06000a;
         public static final int home_menubar_m4_v=0x7f06000b;
+        public static final int menubar_menuitem_icon=0x7f06001c;
+        public static final int menubar_menuitem_text=0x7f06001d;
+        public static final int subchannel_tab_icon=0x7f06001e;
+        public static final int subchannel_tab_text=0x7f06001f;
         public static final int welcome_bg_iv=0x7f06000d;
         public static final int welcome_bottom_v=0x7f06000e;
         public static final int welcome_close_ib=0x7f060012;
@@ -115,7 +132,9 @@ public final class R {
         public static final int dialog_footview_1btn=0x7f030004;
         public static final int dialog_footview_3btn=0x7f030005;
         public static final int dialog_title=0x7f030006;
-        public static final int widget_menubar_btn=0x7f030007;
+        public static final int view_base=0x7f030007;
+        public static final int widget_menubar_btn=0x7f030008;
+        public static final int widget_subchannel_tab=0x7f030009;
     }
     public static final class string {
         public static final int Base_hit_createstorefolderfail=0x7f070028;

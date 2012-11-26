@@ -49,6 +49,11 @@ public class ChannelVO implements Serializable {
 	private int type;
 	
 	/**
+	 * 是否是第一次载入
+	 */
+	public boolean isFirstLoad=true;
+	
+	/**
 	 * 父类型的栏目ID
 	 */
 	public static final int CHANNELID_FATHER = 0;

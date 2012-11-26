@@ -22,5 +22,11 @@
     <color name="activity_title_text">#f7f7f7</color>
     
     <color name="home_toolbar_bg">#222222</color>
+    <!-- 菜单栏菜单项字体颜色 -->
+    <color name="menubar_menuitem_textcolor">#ffffff</color>
+    <!-- 子栏目标题栏显示相关颜色 -->
+    <color name="subchanneltab_textcolor">#000000</color>
+    <color name="subchanneltab_sel_textcolor">#0084e3</color>
+    <color name="subchanneltab_sel_imagecolor">#0084e3</color>
     
 </resources>

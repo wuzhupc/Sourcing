@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
 import com.wuzhupc.utils.ViewUtil;
 import com.wuzhupc.widget.ExViewFlipper;
+import com.wuzhupc.widget.MenuBarMenuItemView;
 
 import android.view.GestureDetector.OnGestureListener;
 import android.view.GestureDetector;
@@ -173,39 +174,56 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	{
 		//初始化栏目数据
 		mFatherChannelVOs = ChannelVO.getChannels(mChannelVOs,ChannelVO.CHANNELID_FATHER);
-		//初始化菜单栏		
-		View home_menubar_m1_v = findViewById(R.id.home_menubar_m1_v);
-		home_menubar_m1_v.setVisibility(View.GONE);
-		View home_menubar_m2_v = findViewById(R.id.home_menubar_m2_v);
-		home_menubar_m2_v.setVisibility(View.GONE);
-		View home_menubar_m3_v = findViewById(R.id.home_menubar_m3_v);
-		home_menubar_m3_v.setVisibility(View.GONE);
-		View home_menubar_m4_v = findViewById(R.id.home_menubar_m4_v);
-		home_menubar_m4_v.setVisibility(View.GONE);
+		//初始化菜单栏
+		MenuBarMenuItemView[] home_menubar_v=new MenuBarMenuItemView[4];
+
+		home_menubar_v[0] = (MenuBarMenuItemView) findViewById(R.id.home_menubar_m1_v);
+		home_menubar_v[1] = (MenuBarMenuItemView) findViewById(R.id.home_menubar_m2_v);
+		home_menubar_v[2] = (MenuBarMenuItemView) findViewById(R.id.home_menubar_m3_v);
+		home_menubar_v[3] = (MenuBarMenuItemView) findViewById(R.id.home_menubar_m4_v);
+		
+		for(int i=0;i<home_menubar_v.length;i++)
+			home_menubar_v[i].setVisibility(View.GONE);
+		
 		if(mFatherChannelVOs==null&&mFatherChannelVOs.isEmpty())
 			return;
-		View[] home_menubar_v=new View[4];
-		home_menubar_v[0] = home_menubar_m1_v;
-		home_menubar_v[1] = home_menubar_m2_v;
-		home_menubar_v[2] = home_menubar_m3_v;
-		home_menubar_v[3] = home_menubar_m4_v;
+
 		for(int i=0;i<mFatherChannelVOs.size()&&i<home_menubar_v.length;i++)
 		{
 			home_menubar_v[i].setVisibility(View.VISIBLE);
 			ChannelVO vo = mFatherChannelVOs.get(i);
-			TextView tv = (TextView) home_menubar_v[i].findViewById(R.id.home_menu_text);
-			tv.setText(vo.getChannelName());
-			ImageView iv = (ImageView) home_menubar_v[i].findViewById(R.id.home_menu_icon);
+			home_menubar_v[i].getMenuText().setText(vo.getChannelName());
 			if(vo.getType()==ChannelVO.TYPE_FATHER_NEWS)
-				iv.setImageResource(R.drawable.icon_home_tb_news);
+				home_menubar_v[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_news);
 			if(vo.getType()==ChannelVO.TYPE_FATHER_PERSON)
-				iv.setImageResource(R.drawable.icon_home_tb_person);
+				home_menubar_v[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_person);
 			if(vo.getType()==ChannelVO.TYPE_FATHER_USER)
-				iv.setImageResource(R.drawable.icon_home_tb_user);
+				home_menubar_v[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_user);
 			if(vo.getType()==ChannelVO.TYPE_FATHER_MORE)
-				iv.setImageResource(R.drawable.icon_home_tb_more);
+				home_menubar_v[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_more);
+			home_menubar_v[i].setOnClickListener(mMenuBarClickListener);
+			home_menubar_v[i].setIndex(i);
 		}
 	}
+	
+	private View.OnClickListener mMenuBarClickListener = new OnClickListener()
+	{
+		@Override
+		public void onClick(View v)
+		{
+			if(mFatherChannelVOs==null&&mFatherChannelVOs.isEmpty())
+				return;
+			
+			if(v instanceof MenuBarMenuItemView)
+			{
+				MenuBarMenuItemView menuItemView = (MenuBarMenuItemView)v;
+				if(mFatherChannelVOs.size()<=menuItemView.getIndex()||menuItemView.getIndex()<0)
+					return;
+				ChannelVO vo = mFatherChannelVOs.get(menuItemView.getIndex());
+				//TODO
+			} 
+		}
+	};
 	
 	/**
 	 * 根据索引获取栏目ID从列表中

@@ -12,4 +12,7 @@
     <dimen name="text_size_about">15sp</dimen>
     
     <dimen name="menubar_height">48dp</dimen>
+    <dimen name="subchannel_tab_height">36dp</dimen>
+    <dimen name="subchannel_tab_width">60dp</dimen>
+    <dimen name="subchannel_tab_selimg_width">5dp</dimen>
 </resources>
