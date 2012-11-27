@@ -4,11 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Date;
 
 import android.content.Context;
 
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.JavaLangUtil;
+import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
@@ -52,6 +54,11 @@ public class ChannelVO implements Serializable {
 	 * 是否是第一次载入
 	 */
 	public boolean isFirstLoad=true;
+	
+	/**
+	 * 最后一次更新数据时间
+	 */
+	private Date lastUpdateDataTime;
 	
 	/**
 	 * 父类型的栏目ID
@@ -233,7 +240,7 @@ public class ChannelVO implements Serializable {
 	 * @return
 	 */
 	public static ArrayList<ChannelVO> getChannels(ArrayList<ChannelVO> channelVOs,
-			int fatherid)
+			long fatherid)
 	{
 		if(channelVOs==null||channelVOs.isEmpty())
 			return null;
@@ -250,6 +257,24 @@ public class ChannelVO implements Serializable {
 	}
 	
 	
+	public Date getLastUpdateDataTime(Context c)
+	{
+		if(lastUpdateDataTime==null)
+		{
+			//读取设置项
+			lastUpdateDataTime = SettingUtil.getChannelLastUpdateTime(c, channelID);
+		}
+		return lastUpdateDataTime;
+	}
+
+	public void setLastUpdateDataTime(Context c,Date lastUpdateDataTime)
+	{
+		this.lastUpdateDataTime = lastUpdateDataTime;
+		//存取配置信息
+		SettingUtil.setChannelLastUpdateTime(c, channelID, lastUpdateDataTime);
+	}
+
+
 	/**
 	 * 按sort字段排序
 	 * @author wuzhu email:wuzhupc@gmail.com

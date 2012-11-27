@@ -28,5 +28,12 @@
     <color name="subchanneltab_textcolor">#000000</color>
     <color name="subchanneltab_sel_textcolor">#0084e3</color>
     <color name="subchanneltab_sel_imagecolor">#0084e3</color>
+    <!-- listitem相关颜色 -->
+    <color name="listitem_base_normal_start">#F7FBFF</color>
+    <color name="listitem_base_normal_end">#F7FBFF</color>
+    <color name="listitem_base_sel_start">#508dcc</color>
+    <color name="listitem_base_sel_end">#508dcc</color>
     
+    <!-- 下拉显示相关颜色 -->
+    <color name="pull_to_refresh_text_color">#000000</color>
 </resources>

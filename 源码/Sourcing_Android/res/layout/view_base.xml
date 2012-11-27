@@ -3,23 +3,29 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    <HorizontalScrollView android:layout_width="fill_parent"
+
+    <HorizontalScrollView
+        android:id="@+id/base_subchannel_sv"
+        android:layout_width="fill_parent"
         android:layout_height="@dimen/subchannel_tab_height"
         android:background="@drawable/subchannel_tab_bg"
         android:fadingEdge="none"
-        android:scrollbars="none">
-        <LinearLayout android:id="@+id/base_subchannel_ll"
-            android:layout_height="fill_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:id="@+id/base_subchannel_ll"
             android:layout_width="wrap_content"
-            android:orientation="horizontal"
-            android:background="@android:color/transparent">
-            
+            android:layout_height="fill_parent"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal" >
         </LinearLayout>
     </HorizontalScrollView>
-	<LinearLayout
+
+    <LinearLayout
         android:id="@+id/base_context_ll"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical" >
     </LinearLayout>
+
 </LinearLayout>

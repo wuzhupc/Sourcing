@@ -2,17 +2,19 @@ package com.wuzhupc.Sourcing.view;
 
 import java.util.ArrayList;
 
-import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.HomeActivity;
+import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
 import com.wuzhupc.widget.ExViewFlipper;
+import com.wuzhupc.widget.SubChannelTabView;
 
 import android.content.Context;
 import android.view.GestureDetector;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnTouchListener;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 /**
@@ -31,7 +33,7 @@ public abstract class BaseView extends LinearLayout
 	/**
 	 * 手势识别
 	 */
-	private GestureDetector mgd_context;
+	private GestureDetector mgd_content;
 	/**
 	 * 栏目ID
 	 */
@@ -50,12 +52,14 @@ public abstract class BaseView extends LinearLayout
 	/**
 	 * 
 	 */
-	protected ExViewFlipper mvf_context;	
+	protected ExViewFlipper mvf_content;
+	
+	protected LinearLayout mll_content;
 	
 	/**
 	 * 栏目列表
 	 */
-	protected ArrayList<ChannelVO> mChannelList;
+	protected ArrayList<SubChannelTabView> mChannelList;
 	
 	/**
 	 * 构造函数
@@ -67,10 +71,169 @@ public abstract class BaseView extends LinearLayout
 		mContext=context;
 		misInitData=false;
 		if(mContext instanceof HomeActivity)
-			mvf_context=((HomeActivity)mContext).getViewFlipper();
+			mvf_content=((HomeActivity)mContext).getViewFlipper();
 		mNowChannelID=-1l;
 		setFatherChannelID(fatherchannelid);
 	}
+	
+	/**
+	 * 初始化数据，如果需要初始化返回true,不需要初始化返回false
+	 */
+	public  boolean initData()
+	{
+		if(misInitData)
+			return false;
+		initView();
+		initContentView();
+		misInitData = true;
+		setNowChannel(getChannelIDFromList(-1));
+		return misInitData;
+	}
+	/**
+	 * 设置现在选中的栏目
+	 * @param channelid
+	 */
+	protected void setNowChannel(long channelid)
+	{
+		if(mNowChannelID == channelid)
+			return;
+		//设置栏目状态
+		setNavigationSel(mNowChannelID);
+		//根据栏目ID设置内容视图
+		reflashContentView();
+		
+		//TODO 增加对是否是第一次载入的判断，如果是第一次载入，则自动调用刷新功能
+	}
+	/**
+     * 设置某个栏目项为选中状态
+     * @param channelid
+     */
+    private void setNavigationSel(long channelid)
+    {
+    	if(mChannelList==null||mChannelList.isEmpty())
+    		return;
+    	for(int i=0;i<mChannelList.size();i++)
+    	{
+    		SubChannelTabView tabview=mChannelList.get(i);
+    		tabview.setSelected(tabview.getChannelVO().getChannelID()==channelid);
+    	}
+    }
+
+    /**
+	 * 根据当前栏目ID（mNowChannelID），加载内容数据
+	 * @param isfirstload 是否是第一次载入
+	 */
+	public abstract void loadData(Boolean isfirstload);
+	
+	/**
+	 * 根据当前栏目ID（mNowChannelID），刷新数据
+	 */
+	public abstract void reflashData();
+	
+	/**
+	 * 初始化内容部分的View
+	 */
+	public abstract void initContentView();
+	
+	/**
+	 * 刷新内容视图
+	 */
+	public abstract void reflashContentView();
+	/**
+	 * 设置内容视图
+	 * @param v
+	 */
+	public void setContentView(View v)
+	{
+		mll_content.removeAllViews();
+		mll_content.addView(v);
+	}
+	/**
+	 * 初始化View
+	 */
+	private void initView()
+	{
+		View v=LayoutInflater.from(mContext).inflate(R.layout.view_base, mvf_content, false);
+		this.addView(v);
+		initNavigation(v);
+		mll_content = (LinearLayout)v.findViewById(R.id.base_context_ll);
+	}
+	/**
+	 * 初始化栏目栏
+	 */
+	protected void initNavigation(View v)
+	{
+		ScrollView sv = (ScrollView)findViewById(R.id.base_subchannel_sv);
+		LinearLayout ll = (LinearLayout)findViewById(R.id.base_subchannel_ll);
+		sv.setVisibility(View.GONE);
+		if(!(mContext instanceof HomeActivity))
+			return;
+		ArrayList<ChannelVO> channelVOs = ChannelVO.getChannels(
+				((HomeActivity)mContext).getAllChannelVOs(),mFatherChannelID);
+		if(channelVOs==null||channelVOs.isEmpty())
+			return;
+		mChannelList = new ArrayList<SubChannelTabView>(channelVOs.size());
+		for(int i=0;i<mChannelList.size();i++)
+		{
+			SubChannelTabView tabView = new SubChannelTabView(mContext);
+			tabView.setChannelVO(channelVOs.get(i));
+			tabView.setIndex(i);
+			tabView.setOnClickListener(mSubChannelTabViewClickListener);
+			mChannelList.add(tabView);
+			ll.addView(tabView);
+		}
+		sv.setVisibility(View.VISIBLE);
+	}
+	
+	/**
+	 * 子栏目栏点击监听（根据点击ID初始化ViewFlipper里的内容）
+	 */
+	private View.OnClickListener mSubChannelTabViewClickListener = new OnClickListener()
+	{
+		@Override
+		public void onClick(View v)
+		{
+			if(!(v instanceof SubChannelTabView))
+				return;
+			SubChannelTabView tabView = (SubChannelTabView)v;
+			setNowChannel(tabView.getChannelVO().getChannelID());
+		}
+	};
+	
+	/**
+     * 根据索引获取栏目ID从列表中
+     * @param index　索引，为-1时，取默认显示值 
+     * @return
+     */
+    private long getChannelIDFromList(int index)
+    {
+    	if(mChannelList==null||mChannelList.isEmpty())
+    		return -1l;
+    	if(index<0||index>=mChannelList.size())
+    	{
+    		//如果index<0则默认为获取列表里ChannelVO里isdefault值为true的的ID
+    		for(int i=0;i<mChannelList.size();i++)
+    			if(mChannelList.get(i).getChannelVO().getIsDefault()==1)
+    				return mChannelList.get(i).getChannelVO().getChannelID();
+    		//如果index<0且列表里ChannelVO里isdefault值都为false的，则返回第一项
+    		return mChannelList.get(0).getChannelVO().getChannelID();
+    	}
+    	return mChannelList.get(index).getChannelVO().getChannelID();
+    }
+    
+    /**
+     * 获取当前栏目信息
+     * @return
+     */
+    public ChannelVO getNowChannelInfo()
+    {
+    	if(mChannelList==null||mChannelList.isEmpty())
+    		return null;
+    	for(int i=0;i<mChannelList.size();i++)
+			if(mChannelList.get(i).getChannelVO().getChannelID()==mNowChannelID)
+				return mChannelList.get(i).getChannelVO();
+		return null;
+    }
 
 	public long getFatherChannelID()
 	{
@@ -82,14 +245,14 @@ public abstract class BaseView extends LinearLayout
 		this.mFatherChannelID = fatherChannelID;
 	}
 
-	public GestureDetector getGestureDetectorContext()
+	public GestureDetector getGestureDetectorContent()
 	{
-		return mgd_context;
+		return mgd_content;
 	}
 
-	public void setGestureDetectorContext(GestureDetector gd)
+	public void setGestureDetectorContent(GestureDetector gd)
 	{
-		this.mgd_context = gd;
+		this.mgd_content = gd;
 	}
 	
 	/**
@@ -103,7 +266,7 @@ public abstract class BaseView extends LinearLayout
 			@Override
 			public boolean onTouch(View arg0, MotionEvent arg1) {
 				
-				return mgd_context.onTouchEvent(arg1);
+				return mgd_content.onTouchEvent(arg1);
 			}
 		});
 	}

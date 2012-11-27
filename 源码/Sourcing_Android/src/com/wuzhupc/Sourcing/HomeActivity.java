@@ -14,7 +14,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 
 /**
  * 主界面
@@ -48,7 +47,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	/**
 	 * 所有栏目列表
 	 */
-	protected ArrayList<ChannelVO> mChannelVOs;
+	private ArrayList<ChannelVO> mChannelVOs;
 	
 	/**
 	 * 父栏目列表
@@ -224,6 +223,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			} 
 		}
 	};
+	
+	public ArrayList<ChannelVO> getAllChannelVOs()
+	{
+		return mChannelVOs;
+	}
 	
 	/**
 	 * 根据索引获取栏目ID从列表中
