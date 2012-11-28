@@ -65,18 +65,22 @@ containing a value of this type.
         public static final int dialog_message_textcolor=0x7f050003;
         public static final int dialog_title_textcolor=0x7f050002;
         public static final int home_toolbar_bg=0x7f05000b;
+        public static final int listitem_base_headline_bg=0x7f050014;
+        public static final int listitem_base_headline_titlecolor=0x7f050015;
         public static final int listitem_base_normal_end=0x7f050011;
         /**  listitem相关颜色 
          */
         public static final int listitem_base_normal_start=0x7f050010;
         public static final int listitem_base_sel_end=0x7f050013;
         public static final int listitem_base_sel_start=0x7f050012;
+        public static final int listitem_base_summarycolor=0x7f050017;
+        public static final int listitem_base_titlecolor=0x7f050016;
         /**  菜单栏菜单项字体颜色 
          */
         public static final int menubar_menuitem_textcolor=0x7f05000c;
         /**  下拉显示相关颜色 
          */
-        public static final int pull_to_refresh_text_color=0x7f050014;
+        public static final int pull_to_refresh_text_color=0x7f050018;
         public static final int subchanneltab_sel_imagecolor=0x7f05000f;
         public static final int subchanneltab_sel_textcolor=0x7f05000e;
         /**  子栏目标题栏显示相关颜色 
@@ -116,34 +120,35 @@ containing a value of this type.
         public static final int icon_spinner_36=0x7f02000e;
         public static final int icon_spinner_48=0x7f02000f;
         public static final int icon_spinner_72=0x7f020010;
-        public static final int loading_failed=0x7f020011;
-        public static final int logo64_48=0x7f020012;
-        public static final int progress_large=0x7f020013;
-        public static final int progress_medium=0x7f020014;
-        public static final int progress_micro=0x7f020015;
-        public static final int progress_small=0x7f020016;
-        public static final int pulltorefresh_down_arrow=0x7f020017;
-        public static final int pulltorefresh_up_arrow=0x7f020018;
-        public static final int selector_menubar_bk_img=0x7f020019;
-        public static final int selector_subchannel_tab_img=0x7f02001a;
-        public static final int subchannel_tab_bg=0x7f02001b;
-        public static final int theme_dialog_bg=0x7f02001c;
-        public static final int title_bar_refresh_48=0x7f02001d;
-        public static final int title_bar_refresh_48_light=0x7f02001e;
-        public static final int title_button=0x7f02001f;
-        public static final int toolbar_bkg=0x7f020020;
-        public static final int toolbar_bkg_sel=0x7f020021;
-        public static final int top_title_bg=0x7f020022;
-        public static final int welcome=0x7f020023;
-        public static final int welcome_close_btn=0x7f020024;
-        public static final int welcome_separate_line=0x7f020025;
+        public static final int list_base_divider=0x7f020011;
+        public static final int loading_failed=0x7f020012;
+        public static final int logo64_48=0x7f020013;
+        public static final int progress_large=0x7f020014;
+        public static final int progress_medium=0x7f020015;
+        public static final int progress_micro=0x7f020016;
+        public static final int progress_small=0x7f020017;
+        public static final int pulltorefresh_down_arrow=0x7f020018;
+        public static final int pulltorefresh_up_arrow=0x7f020019;
+        public static final int selector_menubar_bk_img=0x7f02001a;
+        public static final int selector_subchannel_tab_img=0x7f02001b;
+        public static final int subchannel_tab_bg=0x7f02001c;
+        public static final int theme_dialog_bg=0x7f02001d;
+        public static final int title_bar_refresh_48=0x7f02001e;
+        public static final int title_bar_refresh_48_light=0x7f02001f;
+        public static final int title_button=0x7f020020;
+        public static final int toolbar_bkg=0x7f020021;
+        public static final int toolbar_bkg_sel=0x7f020022;
+        public static final int top_title_bg=0x7f020023;
+        public static final int welcome=0x7f020024;
+        public static final int welcome_close_btn=0x7f020025;
+        public static final int welcome_separate_line=0x7f020026;
     }
     public static final class id {
         public static final int activity_title_container=0x7f040006;
         public static final int activity_title_text=0x7f040007;
-        public static final int base_context_ll=0x7f040023;
-        public static final int base_subchannel_ll=0x7f040022;
-        public static final int base_subchannel_sv=0x7f040021;
+        public static final int base_context_ll=0x7f040028;
+        public static final int base_subchannel_ll=0x7f040027;
+        public static final int base_subchannel_sv=0x7f040026;
         public static final int both=0x7f040002;
         public static final int dialog_footview_btn_center=0x7f040003;
         public static final int dialog_footview_btn_left=0x7f040004;
@@ -163,18 +168,23 @@ containing a value of this type.
         public static final int home_menubar_m2_v=0x7f04000d;
         public static final int home_menubar_m3_v=0x7f04000e;
         public static final int home_menubar_m4_v=0x7f04000f;
-        public static final int menubar_menuitem_icon=0x7f040024;
-        public static final int menubar_menuitem_text=0x7f040025;
-        public static final int morebotton_pb=0x7f040027;
-        public static final int morebutton_tv=0x7f040026;
+        public static final int list_base_datalist_lv=0x7f04001e;
+        public static final int listitem_base_iv=0x7f04001f;
+        public static final int listitem_base_label_tv=0x7f040022;
+        public static final int listitem_base_summary_tv=0x7f040021;
+        public static final int listitem_base_title_tv=0x7f040020;
+        public static final int menubar_menuitem_icon=0x7f040029;
+        public static final int menubar_menuitem_text=0x7f04002a;
+        public static final int morebotton_pb=0x7f04002c;
+        public static final int morebutton_tv=0x7f04002b;
         public static final int pullDownFromTop=0x7f040000;
         public static final int pullUpFromBottom=0x7f040001;
         public static final int pull_gridview=0x7f040008;
-        public static final int pull_to_refresh_image=0x7f040020;
-        public static final int pull_to_refresh_progress=0x7f04001f;
-        public static final int pull_to_refresh_text=0x7f04001e;
-        public static final int subchannel_tab_icon=0x7f040028;
-        public static final int subchannel_tab_text=0x7f040029;
+        public static final int pull_to_refresh_image=0x7f040025;
+        public static final int pull_to_refresh_progress=0x7f040024;
+        public static final int pull_to_refresh_text=0x7f040023;
+        public static final int subchannel_tab_icon=0x7f04002d;
+        public static final int subchannel_tab_text=0x7f04002e;
         public static final int welcome_bg_iv=0x7f040011;
         public static final int welcome_bottom_v=0x7f040012;
         public static final int welcome_close_ib=0x7f040016;
@@ -190,11 +200,15 @@ containing a value of this type.
         public static final int dialog_footview_1btn=0x7f030004;
         public static final int dialog_footview_3btn=0x7f030005;
         public static final int dialog_title=0x7f030006;
-        public static final int pull_to_refresh_header=0x7f030007;
-        public static final int view_base=0x7f030008;
-        public static final int widget_menubar_btn=0x7f030009;
-        public static final int widget_morebutton=0x7f03000a;
-        public static final int widget_subchannel_tab=0x7f03000b;
+        public static final int list_base=0x7f030007;
+        public static final int listitem_base=0x7f030008;
+        public static final int listitem_base_headline=0x7f030009;
+        public static final int listitem_base_label=0x7f03000a;
+        public static final int pull_to_refresh_header=0x7f03000b;
+        public static final int view_base=0x7f03000c;
+        public static final int widget_menubar_btn=0x7f03000d;
+        public static final int widget_morebutton=0x7f03000e;
+        public static final int widget_subchannel_tab=0x7f03000f;
     }
     public static final class string {
         public static final int Base_hit_createstorefolderfail=0x7f07002b;

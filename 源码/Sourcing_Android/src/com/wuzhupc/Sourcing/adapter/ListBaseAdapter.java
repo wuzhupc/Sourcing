@@ -2,11 +2,10 @@ package com.wuzhupc.Sourcing.adapter;
 
 import java.util.List;
 
-import com.wuzhupc.Sourcing.HomeActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.vo.NewsVO;
-import com.wuzhupc.config.Constants;
 import com.wuzhupc.services.ImageService;
+import com.wuzhupc.utils.ImageUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.widget.MoreButton;
 
@@ -15,10 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ListBaseAdapter extends BaseAdapter
@@ -71,88 +67,52 @@ public class ListBaseAdapter extends BaseAdapter
 
 		if (obj instanceof String)
 		{
-			view = LayoutInflater.from(mContext).inflate(
-					R.layout.listbaseitemlabel, null);
+			view = LayoutInflater.from(mContext).inflate(R.layout.listitem_base_label, null);
 			((TextView) view).setText((String) obj);
 		} else if (obj instanceof MoreButton)
 		{
-			view = LayoutInflater.from(mContext).inflate(
-					R.layout.list_item_footer, null);
-			
-			RelativeLayout moreBtn_rl=(RelativeLayout)view.findViewById(R.id.morebutton_rl);
-			
-			if(((HomeActivity)mContext).getApplicationSet().isSwitchMode){
-				moreBtn_rl.setBackgroundResource(R.color.listbaseitem_color);
-			}else{
-				moreBtn_rl.setBackgroundResource(R.drawable.listbaseitem_drawable);
-			}
-			
+			view = LayoutInflater.from(mContext).inflate(R.layout.widget_morebutton, null);
+
 			((MoreButton) obj).setView(view);
 		} else if (obj instanceof NewsVO)
 		{
-			NewsVO vo=(NewsVO) obj;
-			//头条(且只有第一条才显示成头条样式)
-			if (position==0&&vo.getNewsType() == Constants.NEWS_TYPE_HEADLINE)
+			NewsVO vo = (NewsVO) obj;
+			// 头条(且只有第一条才显示成头条样式)
+			if (position == 0 && vo.isHeadline())
 			{
-				view = LayoutInflater.from(mContext).inflate(
-						R.layout.exerciselistheadline, null);//listbaseitemheadline
-				FrameLayout bottom_ll=(FrameLayout)view.findViewById(R.id.listitem_fl);
-				if(((HomeActivity)mContext).getApplicationSet().isSwitchMode){
-					bottom_ll.setBackgroundResource(R.color.listbaseitem_color);	
-				}else{
-					  bottom_ll.setBackgroundResource(R.drawable.listbaseitem_drawable);
-				}
-			} else// if (vo.getNewsType() == Constants.NEWS_TYPE_NORMAL)
+				view = LayoutInflater.from(mContext).inflate(R.layout.listitem_base_headline, null);
+			} else
+			// if (vo.getNewsType() == Constants.NEWS_TYPE_NORMAL)
 			{
-				view = LayoutInflater.from(mContext).inflate(
-						R.layout.exerciselistitem, null);//listbaseitem
-				
-				LinearLayout bottom_ll=(LinearLayout)view.findViewById(R.id.exerciselistitem_bottom_ll);
-				if(((HomeActivity)mContext).getApplicationSet().isSwitchMode){
-					bottom_ll.setBackgroundResource(R.color.listbaseitem_color);	
-				}else{
-					  bottom_ll.setBackgroundResource(R.drawable.listbaseitem_drawable);
-				}
+				view = LayoutInflater.from(mContext).inflate(R.layout.listitem_base, null);
 			}
-
-			
-			TextView title_tv = (TextView) view.findViewById(R.id.eli_title);//lbi_title
-			TextView summary_tv = (TextView) view
-					.findViewById(R.id.eli_status_tv);//lbi_content_tv
-			ImageView titlePic_iv = (ImageView) view
-					.findViewById(R.id.eli_image_iv);//lbi_image_iv
-						
-
+			TextView title_tv = (TextView) view.findViewById(R.id.listitem_base_title_tv);// lbi_title
+			TextView summary_tv = (TextView) view.findViewById(R.id.listitem_base_summary_tv);// lbi_content_tv
+			ImageView titlePic_iv = (ImageView) view.findViewById(R.id.listitem_base_iv);// lbi_image_iv
 			title_tv.setText(vo.getTitle());
-			summary_tv.setText(vo.getNewsSummary());
+			summary_tv.setText(vo.getNewssummary());
 
-			//头条(且只有第一条才显示成头条样式)
-			if(position==0&&vo.getNewsType() == NewsVO.NEWS_TYPE_HEADLINE)
+			// 头条(且只有第一条才显示成头条样式)
+			if (position == 0 && vo.isHeadline())
 			{
-				//头条时，加载中图
-				imageService.setThumbnail(titlePic_iv,
-						vo.getTitlePic(), null,ImageUtil.IMAGE_DEFMEDIUMWIDTH,ImageUtil.IMAGE_DEFMEDIUMHEIGHT);
-			}
-			else
-			if(!StringUtil.isEmpty(vo.getSmallTitlePic()))
+				// 头条时，加载中图
+				imageService.setThumbnail(titlePic_iv, vo.getTitlepic(), null, ImageUtil.IMAGE_DEFMEDIUMWIDTH,
+						ImageUtil.IMAGE_DEFMEDIUMHEIGHT);
+			} else if (!StringUtil.isEmpty(vo.getTitlepic_small()))
 			{
-				//非头条时，有小图载入小图
-				imageService.setThumbnail(titlePic_iv,
-						vo.getSmallTitlePic(), null,ImageUtil.IMAGE_DEFSMALLWIDTH,ImageUtil.IMAGE_DEFSMALLHEIGHT);
-			}else
-				if(!StringUtil.isEmpty(vo.getTitlePic()))
-				{
-					//非头条时，无小图但有大图载入在图
-					imageService.setThumbnail(titlePic_iv,
-							vo.getTitlePic(), null,ImageUtil.IMAGE_DEFSMALLWIDTH,ImageUtil.IMAGE_DEFSMALLHEIGHT);
-				}
-			else
+				// 非头条时，有小图载入小图
+				imageService.setThumbnail(titlePic_iv, vo.getTitlepic_small(), null, ImageUtil.IMAGE_DEFSMALLWIDTH,
+						ImageUtil.IMAGE_DEFSMALLHEIGHT);
+			} else if (!StringUtil.isEmpty(vo.getTitlepic()))
+			{
+				// 非头条时，无小图但有大图载入在图
+				imageService.setThumbnail(titlePic_iv, vo.getTitlepic(), null, ImageUtil.IMAGE_DEFSMALLWIDTH,
+						ImageUtil.IMAGE_DEFSMALLHEIGHT);
+			} else
 			{
 				titlePic_iv.setVisibility(View.GONE);
 			}
-
 		}
-
 		return view;
 	}
 

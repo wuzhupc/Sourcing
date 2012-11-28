@@ -33,4 +33,6 @@ public class Constants
 	/** 每帧读取的数据流量 */
 	public static final int READ_DATA_LENGTH = 1024;
 	
+	public static final int CINT_PAGE_SIZE = 20;
+	
 }

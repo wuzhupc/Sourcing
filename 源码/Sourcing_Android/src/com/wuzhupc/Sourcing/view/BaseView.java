@@ -97,6 +97,7 @@ public abstract class BaseView extends LinearLayout
 	{
 		if(mNowChannelID == channelid)
 			return;
+		mNowChannelID=channelid;
 		//设置栏目状态
 		setNavigationSel(mNowChannelID);
 		//根据栏目ID设置内容视图
@@ -234,6 +235,14 @@ public abstract class BaseView extends LinearLayout
 				return mChannelList.get(i).getChannelVO();
 		return null;
     }
+    /**
+	 * 获取当前栏目ID
+	 * @return
+	 */
+	public long getNowChannelID()
+	{
+		return mNowChannelID;
+	}
 
 	public long getFatherChannelID()
 	{

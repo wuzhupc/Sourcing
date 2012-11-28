@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 热点排行、新闻纵横 列表 分类项 布局 -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listitem_base_label_tv"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:paddingBottom="2dip"
+    android:paddingRight="10dip"
+    android:paddingTop="2dip"
+    android:text="@string/list_item_no_data"
+    android:textColor="@android:color/white"
+    android:textSize="@dimen/text_size_medium" >
+</TextView>

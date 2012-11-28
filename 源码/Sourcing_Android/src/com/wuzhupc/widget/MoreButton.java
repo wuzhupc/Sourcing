@@ -72,9 +72,7 @@ public class MoreButton
 	private void notifyView()
 	{
 		if (view == null)
-		{
 			return;
-		}
 		//widget_morebutton.xml
 		((TextView) view.findViewById(R.id.morebutton_tv)).setText(title);
 		((ProgressBar) view.findViewById(R.id.morebotton_pb)).setVisibility(showProgress ? View.VISIBLE : View.GONE);

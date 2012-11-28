@@ -33,6 +33,10 @@
     <color name="listitem_base_normal_end">#F7FBFF</color>
     <color name="listitem_base_sel_start">#508dcc</color>
     <color name="listitem_base_sel_end">#508dcc</color>
+    <color name="listitem_base_headline_bg">#44000000</color>
+    <color name="listitem_base_headline_titlecolor">#f7f7f7</color>
+    <color name="listitem_base_titlecolor">#222222</color>
+    <color name="listitem_base_summarycolor">#909090</color>
     
     <!-- 下拉显示相关颜色 -->
     <color name="pull_to_refresh_text_color">#000000</color>
