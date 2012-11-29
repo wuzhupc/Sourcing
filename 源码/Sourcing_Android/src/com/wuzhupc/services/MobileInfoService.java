@@ -8,7 +8,7 @@ import com.wuzhupc.utils.json.JsonCreater;
 import android.content.Context;
 
 /**
- * info信息获取
+ * info信息获取service
  * @author wuzhu email:wuzhupc@gmail.com
  * @version 创建时间：2012-11-28 下午10:13:43
  */

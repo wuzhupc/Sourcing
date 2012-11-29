@@ -221,9 +221,6 @@ containing a value of this type.
         /**  检查客户端版本  
          */
         public static final int cmd_json_check_client_ver=0x7f070004;
-        /**  获取用户申报进度 
-         */
-        public static final int cmd_json_get_declare_info=0x7f070015;
         /**  获取职位详情  
          */
         public static final int cmd_json_get_job_detail=0x7f07000d;
@@ -266,6 +263,9 @@ containing a value of this type.
         /**  获取用户咨询信息 
          */
         public static final int cmd_json_get_user_consult_info=0x7f070012;
+        /**  获取用户申报进度 
+         */
+        public static final int cmd_json_get_user_declare_info=0x7f070015;
         /**  获取用户通知提醒信息 
          */
         public static final int cmd_json_get_user_notifier_info=0x7f070016;

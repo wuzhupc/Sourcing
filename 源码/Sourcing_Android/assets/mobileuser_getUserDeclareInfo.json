@@ -1,8 +1,9 @@
 {
     "id":"命令识别号",
-    "command":"mobileuser_getUesrDeclareInfo",
+    "command":"mobileuser_getUserDeclareInfo",
     "params":{
         "devid":"设备号",
+        "userid":"用户ID",
         "pagesize":"每页记录数，默认20",
         "bottomid":"列表下限的记录ID，默认0，如果非0时，获取此记录ID后pagesize条记录数"
     }

@@ -52,7 +52,7 @@
 	<!-- 获取用户审核结果 -->
 	<string name="cmd_json_get_user_audit_info">mobileuser_getUserAuditInfo</string>
 	<!-- 获取用户申报进度 -->
-	<string name="cmd_json_get_declare_info">mobileuser_getUesrDeclareInfo</string>
+	<string name="cmd_json_get_user_declare_info">mobileuser_getUserDeclareInfo</string>
 	<!-- 获取用户通知提醒信息 -->
 	<string name="cmd_json_get_user_notifier_info">mobileuser_getUserNotifierInfo</string>
 	<!-- 获取用户推送信息 -->
