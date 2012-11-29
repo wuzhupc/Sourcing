@@ -49,6 +49,16 @@ public class JsonCreater
 		mParamsMap.put(name, value);
 	}
 	
+	public void setParam(String name,int value)
+	{
+		setParam(name,String.valueOf(value));
+	}
+	
+	public void setParam(String name,long value)
+	{
+		setParam(name,String.valueOf(value));
+	}
+	
 	public String createJson(String id, String commandname)
 	{
 		if(StringUtil.isEmpty(id))

@@ -7,7 +7,6 @@ import com.wuzhupc.Sourcing.vo.ClientVerVO;
 import com.wuzhupc.Sourcing.vo.ResponseVO;
 import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
 import com.wuzhupc.services.ClientJsonService;
-import com.wuzhupc.utils.PhoneInfoUtil;
 import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
@@ -165,7 +164,7 @@ public class WelcomeActivity extends BaseActivity
 	private void startGetVersionInfo()
 	{
 		ClientJsonService clientService = new ClientJsonService(this);
-		clientService.checkClientUpdate(PhoneInfoUtil.GetIMEI(WelcomeActivity.this),0l,SettingUtil.getClientVersion(this), new IBaseReceiver() {
+		clientService.checkClientUpdate(0l,SettingUtil.getClientVersion(this), new IBaseReceiver() {
 			
 			@Override
 			public void receiveCompleted(boolean isSuc, String content) {

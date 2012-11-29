@@ -2,13 +2,14 @@ package com.wuzhupc.services;
 
 import java.util.Hashtable;
 
+import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
-import com.wuzhupc.Sourcing.vo.ResponseVO;
+import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.config.Constants;
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.NetUtil;
+import com.wuzhupc.utils.PhoneInfoUtil;
 import com.wuzhupc.utils.StringUtil;
-import com.wuzhupc.utils.json.JsonParser;
 import com.wuzhupc.utils.net.NetTask;
 import com.wuzhupc.utils.net.NetTask.INetComplete;
 
@@ -33,6 +34,20 @@ public abstract class BaseJsonService
 	public BaseJsonService(Context c)
 	{
 		mContext=c;
+	}
+	
+	protected String getDevID()
+	{
+		return PhoneInfoUtil.GetIMEI(mContext);
+	}
+	
+	protected UserVO getUserVO()
+	{
+		if(mContext instanceof BaseActivity)
+		{
+			return ((BaseActivity)mContext).getApplicationSet().getUserVO();
+		}
+		return null;
 	}
 	
 	/**

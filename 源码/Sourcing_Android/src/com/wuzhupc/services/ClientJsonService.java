@@ -19,10 +19,10 @@ public class ClientJsonService extends BaseJsonService
 	 * @param curClientVer
 	 * @param iReceiver
 	 */
-	public void checkClientUpdate(String devid,Long memberid,String curClientVer, IBaseReceiver iReceiver) 
+	public void checkClientUpdate(Long memberid,String curClientVer, IBaseReceiver iReceiver) 
 	{
 		JsonCreater creater=JsonCreater.startJson();
-		creater.setParam("devid",devid);
+		creater.setParam("devid",getDevID());
 		if (memberid!=null&& memberid != 0 ) 
 		{
 			creater.setParam("memberid", JavaLangUtil.LongToStr(memberid));
