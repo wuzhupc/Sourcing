@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#f7f7f7</color>
+    <color name="white">#fcf2e9</color>
     
     <!-- Dialog按钮颜色 -->
     <color name="dialog_btn_bg">#383D49</color>
@@ -8,15 +8,15 @@
 	<color name="dialog_message_textcolor">#4E4E4E</color>
 	
     <!-- 按钮默认和按下颜色 -->
-    <color name="btn_pressed">#508dcc</color>
-    <color name="btn_normal">#2174c9</color>
+    <color name="btn_pressed">#f01e04</color>
+    <color name="btn_normal">#c42a06</color>
     
     <!-- 背景颜色 -->
-    <color name="activity_title_bg_color">#226fc1</color>
+    <color name="activity_title_bg_color">#c42a06</color>
     
     <!-- 间隔线 -->
-    <color name="btn_space_deep">#1462af</color>
-    <color name="btn_space_light">#6092c3</color>
+    <color name="btn_space_deep">#ae2201</color>
+    <color name="btn_space_light">#ef280f</color>
     <!-- 标题间隔线 -->
     <color name="activity_title_separator">#40ffffff</color>
     <color name="activity_title_text">#f7f7f7</color>
@@ -29,11 +29,11 @@
     <color name="subchanneltab_sel_textcolor">#0084e3</color>
     <color name="subchanneltab_sel_imagecolor">#0084e3</color>
     <!-- listitem相关颜色 -->
-    <color name="listitem_base_normal_start">#F7FBFF</color>
-    <color name="listitem_base_normal_end">#F7FBFF</color>
-    <color name="listitem_base_sel_start">#508dcc</color>
-    <color name="listitem_base_sel_end">#508dcc</color>
-    <color name="listitem_base_headline_bg">#44000000</color>
+    <color name="listitem_base_normal_start">#fbf8f1</color>
+    <color name="listitem_base_normal_end">#fbf8f1</color>
+    <color name="listitem_base_sel_start">#fcf0e4</color>
+    <color name="listitem_base_sel_end">#fcf0e4</color>
+    <color name="listitem_base_headline_bg">#44d34306</color>
     <color name="listitem_base_headline_titlecolor">#f7f7f7</color>
     <color name="listitem_base_titlecolor">#222222</color>
     <color name="listitem_base_summarycolor">#909090</color>

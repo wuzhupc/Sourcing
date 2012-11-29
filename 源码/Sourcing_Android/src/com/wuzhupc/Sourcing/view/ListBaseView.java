@@ -1,6 +1,7 @@
 package com.wuzhupc.Sourcing.view;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
@@ -13,7 +14,14 @@ import android.widget.AdapterView.OnItemClickListener;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.adapter.ListBaseAdapter;
 import com.wuzhupc.Sourcing.vo.NewsVO;
+import com.wuzhupc.Sourcing.vo.ResponseVO;
 import com.wuzhupc.config.Constants;
+import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
+import com.wuzhupc.services.MobileInfoService;
+import com.wuzhupc.utils.CacheUtil;
+import com.wuzhupc.utils.SettingUtil;
+import com.wuzhupc.utils.StringUtil;
+import com.wuzhupc.utils.json.JsonParser;
 import com.wuzhupc.widget.MoreButton;
 import com.wuzhupc.widget.refreshview.PullToRefreshListView;
 
@@ -42,7 +50,7 @@ public class ListBaseView extends BaseView
 
 	protected ListBaseAdapter mAdapter; // 列表 adapter
 
-	protected String mLastNewsId; // 最后一条消息id
+	protected long mLastNewsId; // 最后一条消息id
 
 	/**
 	 * 构造函数
@@ -67,9 +75,11 @@ public class ListBaseView extends BaseView
 		mDataList.clear(); // 切换频道，清空列表数据
 		if (mMoreButton == null)
 			mMoreButton = new MoreButton();
-		long channelId = getNowChannelID(); // 当前频道id
-		//TODO 读取本地缓存的数据
-		List<NewsVO> list = new ArrayList<NewsVO>();
+		//读取本地缓存的数据
+		List<NewsVO> list = null;
+		String content = CacheUtil.getCacheContent(getNowChannelInfo());
+		if(!StringUtil.isEmpty(content))
+			list = (List<NewsVO>) JsonParser.parseJsonToList(content, new ResponseVO());
 		if (list != null && !list.isEmpty())
 		{
 			getLastNewsId(list);
@@ -193,17 +203,92 @@ public class ListBaseView extends BaseView
 			Object obj = list.get(i);
 			if (obj instanceof NewsVO)
 			{
-				mLastNewsId = Long.toString(((NewsVO) obj).getNewsid());
+				mLastNewsId = ((NewsVO) obj).getNewsid();
 				break;
 			}
 		}
 	}
+	
+	/**
+	 * 从新闻列表里获取 新闻主题 的条目(除去列表头与尾的条目)
+	 * 
+	 * @param list
+	 * @return
+	 */
+	protected ArrayList<NewsVO> getNewsList(List list)
+	{
+		ArrayList<NewsVO> ls = new ArrayList<NewsVO>();
+
+		for (Object obj : list)
+		{
+			if (obj instanceof NewsVO)
+			{
+				ls.add((NewsVO) obj);
+			}
+		}
+
+		return ls;
+	}
+	
 	/**
 	 * 从服务端获取最新数据
 	 */
 	protected void loadNewData()
 	{
-		//TODO
+		MobileInfoService newsService= new MobileInfoService(mContext);
+		final long channelId = getNowChannelID();
+		if(mPullRefreshListView!=null)
+			mPullRefreshListView.setRefreshing(true);//   数据刷新提示
+		keepMainTitleReflashStauts();
+		newsService.getNewsList(getNowChannelInfo().getType(), 0l, new IBaseReceiver()
+		{
+			@SuppressWarnings("unchecked")
+			@Override
+			public void receiveCompleted(boolean isSuc, String content)
+			{
+				// 刷新过程中切换频道，不对列表结果进行处理
+				if(channelId!=getNowChannelID())
+					return;
+				stopMainTitleReflashStauts();
+				if(mPullRefreshListView!=null)
+					 mPullRefreshListView.onRefreshComplete();// 停止刷新按钮动画
+				if(!isSuc)
+				{
+					showHint(content);
+					return;
+				}
+				ResponseVO respVO = new ResponseVO();
+				List<?> list = JsonParser.parseJsonToList(content, respVO);
+				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
+				{
+					// 报文返回错误
+					showHint(respVO.getMsg());
+					return;
+				}
+				// 报文返回正常
+				// 存储最近刷新的列表
+				CacheUtil.cacheContent(getNowChannelInfo(), content);
+				SettingUtil.setChannelLastUpdateTime(mContext, getNowChannelID(), new Date());
+				mDataList.clear(); // 刷新列表，清空列表数据
+				if (list == null || list.isEmpty())// 加入无数据提示
+					mDataList.add(mContext.getString(R.string.list_item_no_data));
+				else
+				{
+					getLastNewsId(list);
+					mDataList.addAll(list);
+					// 判断是否在列表底部加上更多按钮
+					if (list.size() >= Constants.CINT_PAGE_SIZE)
+					{
+						mMoreButton.setShowButton(mContext
+								.getString(R.string.list_item_more_msg));
+						mDataList.add(mMoreButton);
+					}
+				}
+				mAdapter.notifyDataSetChanged();
+				mlv_DataList.setSelectionAfterHeaderView(); // 列表选择项置回头部
+			}
+		});
+		
 	}
 	/**
 	 * 从服务端获取更多数据
@@ -215,7 +300,56 @@ public class ListBaseView extends BaseView
 		mMoreButton.setShowProgress(mContext
 				.getString(R.string.list_item_loading_data)); // 切换更多按钮状态 为 加载状态
 		
-		//TODO 切换标题栏更新按钮状态
+		//切换标题栏更新按钮状态		
+		MobileInfoService newsService= new MobileInfoService(mContext);
+		final long channelId = getNowChannelID();
+		keepMainTitleReflashStauts();
+		newsService.getNewsList(getNowChannelInfo().getType(), mLastNewsId, new IBaseReceiver()
+		{
+			@SuppressWarnings("unchecked")
+			@Override
+			public void receiveCompleted(boolean isSuc, String content)
+			{
+				// 刷新过程中切换频道，不对列表结果进行处理
+				if(channelId!=getNowChannelID())
+					return;
+				stopMainTitleReflashStauts();
+				if(!isSuc)
+				{
+					mMoreButton.setShowButton(mContext.getString(R.string.list_item_more_msg)); // 切换更多按钮状态
+					showHint(content);
+					return;
+				}
+				ResponseVO respVO = new ResponseVO();
+				List<?> list = JsonParser.parseJsonToList(content, respVO);
+				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
+				{
+					// 报文返回错误
+					mMoreButton.setShowButton(mContext.getString(R.string.list_item_more_msg)); // 切换更多按钮状态
+					showHint(respVO.getMsg());
+					return;
+				}
+				// 报文返回正常
+				if (mDataList.contains(mMoreButton))
+				{ // 返回正常，移除更多按钮，根据获取到的消息数判断是否继续添加到列表末尾
+					mDataList.remove(mMoreButton);
+				}
+				if (list != null && !list.isEmpty())
+				{
+					getLastNewsId(list);
+					mDataList.addAll(list);
+					// 判断是否在列表底部加上更多按钮
+					if (list.size() >= Constants.CINT_PAGE_SIZE)
+					{
+						mMoreButton.setShowButton(mContext
+								.getString(R.string.list_item_more_msg));
+						mDataList.add(mMoreButton);
+					}
+				}
+				mAdapter.notifyDataSetChanged();
+			}
+		});
+		
 		
 	}
 }

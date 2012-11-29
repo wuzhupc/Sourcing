@@ -87,7 +87,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		// 根据默认选中的ID初始化
 		setViewFlipper(getChannelIDFromList(-1), true);	
 		
-		reflashContext();
+		reflashContent();
 	}
 
 	public ExViewFlipper getViewFlipper()
@@ -106,7 +106,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			@Override
 			public void onClick(View v)
 			{
-				reflashContext();
+				reflashContent();
 			}
 		});
 	}
@@ -125,7 +125,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	/**
 	 * 更新数据
 	 */
-	private void reflashContext()
+	private void reflashContent()
 	{
 		//TODO 更新数据
 	}

@@ -274,10 +274,13 @@ public class FileUtil
 			isr = new InputStreamReader(fIn, cs);
 			br = new BufferedReader(isr);
 			String temp;
+			int line=0;
 			while ((temp = br.readLine()) != null)
 			{
+				if(line!=0)
+					result.append("\r\n");
 				result.append(temp);
-				result.append("\r\n");
+				line++;
 			}
 		} catch (Exception e)
 		{

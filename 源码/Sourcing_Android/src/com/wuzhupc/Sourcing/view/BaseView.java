@@ -102,8 +102,15 @@ public abstract class BaseView extends LinearLayout
 		setNavigationSel(mNowChannelID);
 		//根据栏目ID设置内容视图
 		reflashContentView();
-		
-		//TODO 增加对是否是第一次载入的判断，如果是第一次载入，则自动调用刷新功能
+		//增加对是否是第一次载入的判断，如果是第一次载入，则自动调用刷新功能
+		boolean isfirstload = false;
+		ChannelVO vo = getNowChannelInfo();
+		if(vo!=null)
+		{
+			isfirstload = vo.isFirstLoad;
+			vo.isFirstLoad = false;
+		}
+		loadData(isfirstload);
 	}
 	/**
      * 设置某个栏目项为选中状态
@@ -295,5 +302,35 @@ public abstract class BaseView extends LinearLayout
 	{
 		Toast toast = Toast.makeText(mContext, message, Toast.LENGTH_SHORT);
 		toast.show();
+	}
+	
+	
+	/**
+	 * 设置主标题栏刷新按钮刷新状态停止
+	 */
+	protected void stopMainTitleReflashStauts()
+	{
+		//切换栏目后就设置为非刷新状态
+		if(mContext instanceof HomeActivity)
+			((HomeActivity)mContext).setMainTitleRefStatus(false);
+	}
+	
+	/**
+	 * 保持主标题栏刷新按钮刷新状态
+	 */
+	protected void keepMainTitleReflashStauts()
+	{
+		//切换栏目后就设置为非刷新状态
+		if(mContext instanceof HomeActivity)
+			((HomeActivity)mContext).setMainTitleRefStatus(true);
+	}
+	
+	/**
+	 * 设置主标题栏刷新按钮是否可见
+	 */
+	protected void setMainTitleReflashVisibility(Boolean bvisibility)
+	{
+		if(mContext instanceof HomeActivity)
+			((HomeActivity)mContext).setMainTitleRefVisibility(bvisibility);
 	}
 }
