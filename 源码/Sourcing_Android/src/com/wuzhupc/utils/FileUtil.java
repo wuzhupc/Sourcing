@@ -329,7 +329,7 @@ public class FileUtil
 	}
 
 	/**
-	 * 写入文件内容,如果原文件存在，不保存原文件内容
+	 * 写入文件内容,如果原文件存在，不保存原文件内容(UTF-8)
 	 * 
 	 * @param file
 	 *            　文件名
@@ -342,7 +342,12 @@ public class FileUtil
 	}
 
 	/**
-	 * 保存文件内容
+	 * 保存文件内容(UTF-8)
+	 * 
+	 * @param file
+	 *            　文件名
+	 * @param data
+	 *            　要写入的数据
 	 */
 	public static void WriteFile(String file, String data, Boolean append)
 	{
@@ -354,7 +359,7 @@ public class FileUtil
 
 			File f = new File(file);
 			fOut = new FileOutputStream(f, append);
-			osw = new OutputStreamWriter(fOut);
+			osw = new OutputStreamWriter(fOut,Charset.forName("UTF-8"));
 			osw.write(data);
 			osw.flush();
 		} catch (Exception e)
