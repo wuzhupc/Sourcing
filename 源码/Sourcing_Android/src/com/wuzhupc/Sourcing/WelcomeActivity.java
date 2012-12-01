@@ -96,7 +96,7 @@ public class WelcomeActivity extends BaseActivity
 	}
 
 	@Override
-	protected void initActions()
+	protected void initDataContent()
 	{
 		setCatureBackKey(true);
 		mNowState = Cint_ShowLogo_State;

@@ -18,7 +18,7 @@
             android:id="@+id/home_data_ref_pb"
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:indeterminateDrawable="@drawable/progress_small"
+            android:indeterminateDrawable="@drawable/progress_micro"
             android:visibility="gone" />
 
         <ImageView

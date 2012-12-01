@@ -95,12 +95,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	@Override
-	protected void initActions()
+	protected void initDataContent()
 	{
 		// 根据默认选中的ID初始化
 		setViewFlipper(getChannelIDFromList(-1), true);
-
-		reflashContent();
+		//reflashContent();
 	}
 
 	public ExViewFlipper getViewFlipper()
@@ -458,7 +457,6 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	 */
 	private void setViewFlipper(long channelid, Boolean bstart)
 	{
-		// TODO
 		if (!bstart && getNowFatherChannelID() == channelid)
 			return;
 		//

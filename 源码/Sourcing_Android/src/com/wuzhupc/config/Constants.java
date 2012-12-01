@@ -10,7 +10,7 @@ public class Constants
 	/**
 	 * 缓存数据存储路径,最后包含路径符号/
 	 */
-	public static final String CSTR_DATASTOREDIR=Environment.getExternalStorageDirectory() +File.separator +"xmsourcing";//+File.separator;
+	public static final String CSTR_DATASTOREDIR=Environment.getExternalStorageDirectory() +File.separator +"xmsourcing"+File.separator;
 	
 	/**
 	 * 信息详情保存路径

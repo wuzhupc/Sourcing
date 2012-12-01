@@ -51,13 +51,13 @@ public  abstract class BaseActivity extends Activity
 
 		initView();
 
-		initActions();
+		initDataContent();
 	}
 
 	/**
-	 * 增加内容图片点击操作列表
+	 * 初始化数据内容部分
 	 */
-	protected abstract void initActions();
+	protected abstract void initDataContent();
 
 	/**
 	 * 初始化界面

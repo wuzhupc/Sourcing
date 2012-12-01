@@ -33,7 +33,7 @@
     <color name="listitem_base_normal_end">#fbf8f1</color>
     <color name="listitem_base_sel_start">#fcf0e4</color>
     <color name="listitem_base_sel_end">#fcf0e4</color>
-    <color name="listitem_base_headline_bg">#44d34306</color>
+    <color name="listitem_base_headline_bg">#44000000</color>
     <color name="listitem_base_headline_titlecolor">#f7f7f7</color>
     <color name="listitem_base_titlecolor">#222222</color>
     <color name="listitem_base_summarycolor">#909090</color>

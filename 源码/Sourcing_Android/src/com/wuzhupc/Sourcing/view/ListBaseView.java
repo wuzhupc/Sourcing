@@ -83,7 +83,7 @@ public class ListBaseView extends BaseView
 		if (list != null && !list.isEmpty())
 		{
 			getLastNewsId(list);
-			mDataList.addAll(list);
+			addDataList(list);
 			// 判断是否在列表底部加上更多按钮
 			if (list.size() >= Constants.CINT_PAGE_SIZE)
 			{
@@ -155,12 +155,12 @@ public class ListBaseView extends BaseView
 	 * 增加列表数据
 	 * @param list
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked"})
 	private void addDataList(List<?> list)
 	{
 		if(mDataList==null)			
 			clearDataList();
-		if(list!=null&&!list.isEmpty())
+		if(list==null||list.isEmpty())
 			return;
 		if(mDataList.size()==1)
 		{
@@ -303,10 +303,8 @@ public class ListBaseView extends BaseView
 				// 存储最近刷新的列表
 				CacheUtil.cacheContent(getNowChannelInfo(), content);
 				SettingUtil.setChannelLastUpdateTime(mContext, getNowChannelID(), new Date());
-				clearDataList();
-				if (list == null || list.isEmpty())// 加入无数据提示
-					clearDataList();
-				else
+				clearDataList();// 加入无数据提示
+				if (list != null && !list.isEmpty())
 				{
 					getLastNewsId(list);
 					addDataList(list);

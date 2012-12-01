@@ -243,7 +243,7 @@ public class ImageService
 		// 不存在，启动线程下载图片
 		iv.setScaleType(ScaleType.CENTER);
 		iv.setImageResource(R.drawable.progress_micro); // 设置加载动画
-		final AnimationDrawable ad = (AnimationDrawable) iv.getDrawable();
+		//final AnimationDrawable ad = (AnimationDrawable) iv.getDrawable();
 
 		FileUtil.isExistFolder(localFile.getParent());
 
@@ -280,12 +280,12 @@ public class ImageService
 								@Override
 								public void run()
 								{
-									ad.start();
+									//ad.start();
 								}
 							});
 						} else if (progress >= 100)
 						{ // 数据获取完成，停止动画
-							ad.stop();
+							//ad.stop();
 						}
 					}
 				});
