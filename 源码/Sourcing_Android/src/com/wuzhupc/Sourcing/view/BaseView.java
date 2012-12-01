@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 /**
@@ -171,9 +170,9 @@ public abstract class BaseView extends LinearLayout
 	 */
 	protected void initNavigation(View v)
 	{
-		ScrollView sv = (ScrollView)findViewById(R.id.base_subchannel_sv);
+		//HorizontalScrollView sv = (HorizontalScrollView)findViewById(R.id.base_subchannel_hsv);
 		LinearLayout ll = (LinearLayout)findViewById(R.id.base_subchannel_ll);
-		sv.setVisibility(View.GONE);
+		ll.setVisibility(View.GONE);
 		if(!(mContext instanceof HomeActivity))
 			return;
 		ArrayList<ChannelVO> channelVOs = ChannelVO.getChannels(
@@ -181,7 +180,7 @@ public abstract class BaseView extends LinearLayout
 		if(channelVOs==null||channelVOs.isEmpty())
 			return;
 		mChannelList = new ArrayList<SubChannelTabView>(channelVOs.size());
-		for(int i=0;i<mChannelList.size();i++)
+		for(int i=0;i<channelVOs.size();i++)
 		{
 			SubChannelTabView tabView = new SubChannelTabView(mContext);
 			tabView.setChannelVO(channelVOs.get(i));
@@ -190,7 +189,15 @@ public abstract class BaseView extends LinearLayout
 			mChannelList.add(tabView);
 			ll.addView(tabView);
 		}
-		sv.setVisibility(View.VISIBLE);
+		for(int i =0;i<ll.getChildCount();i++)
+		{
+			View view = ll.getChildAt(i);
+			LayoutParams lp = (LayoutParams) view.getLayoutParams();
+			lp.width = LayoutParams.FILL_PARENT;
+			lp.weight = 1f;
+			view.setLayoutParams(lp);
+		}
+		ll.setVisibility(View.VISIBLE);
 	}
 	
 	/**

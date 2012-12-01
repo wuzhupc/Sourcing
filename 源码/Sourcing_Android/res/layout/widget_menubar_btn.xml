@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:paddingTop="3dp"
-    android:background="@drawable/selector_menubar_bk_img" 
-    android:clickable="true"
+    android:background="@drawable/selector_menubar_bk_img"
     >
     <ImageView
         android:id="@+id/menubar_menuitem_icon"

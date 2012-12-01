@@ -72,7 +72,7 @@ public class ListBaseView extends BaseView
 	@SuppressWarnings("unchecked")
 	public void loadData(Boolean isfirstload)
 	{
-		mDataList.clear(); // 切换频道，清空列表数据
+		clearDataList();	
 		if (mMoreButton == null)
 			mMoreButton = new MoreButton();
 		//读取本地缓存的数据
@@ -111,7 +111,7 @@ public class ListBaseView extends BaseView
 	public void initContentView()
 	{
 		// 初始化View
-		View v = LayoutInflater.from(mContext).inflate(R.layout.listitem_base, mll_content, false);
+		View v = LayoutInflater.from(mContext).inflate(R.layout.list_base, mll_content, false);
 		setContentView(v);
 
 		mPullRefreshListView = (PullToRefreshListView) v.findViewById(R.id.list_base_datalist_lv);
@@ -131,10 +131,44 @@ public class ListBaseView extends BaseView
 		mlv_DataList.setOnItemClickListener(getDataListItemClickListener());
 		setViewGestureDetector(mlv_DataList);
 		// 数据初始化
-		mDataList = new ArrayList();
+		clearDataList();
 		// adapter 初始化
 		mAdapter = new ListBaseAdapter(mContext, mDataList);
 		mlv_DataList.setAdapter(mAdapter);
+	}
+	
+	/**
+	 * 清除所有数据
+	 */
+	@SuppressWarnings("unchecked")
+	private void clearDataList()
+	{
+		if(mDataList==null)
+			mDataList = new ArrayList();
+		else
+			mDataList.clear();
+		//增加无数据提示
+		mDataList.add(mContext.getString(R.string.list_item_no_data));
+	}
+	
+	/**
+	 * 增加列表数据
+	 * @param list
+	 */
+	@SuppressWarnings("unchecked")
+	private void addDataList(List<?> list)
+	{
+		if(mDataList==null)			
+			clearDataList();
+		if(list!=null&&!list.isEmpty())
+			return;
+		if(mDataList.size()==1)
+		{
+			Object o = mDataList.get(0);
+			if(o instanceof String)
+				mDataList.clear();
+		}
+		mDataList.addAll(list);
 	}
 
 	@Override
@@ -269,13 +303,13 @@ public class ListBaseView extends BaseView
 				// 存储最近刷新的列表
 				CacheUtil.cacheContent(getNowChannelInfo(), content);
 				SettingUtil.setChannelLastUpdateTime(mContext, getNowChannelID(), new Date());
-				mDataList.clear(); // 刷新列表，清空列表数据
+				clearDataList();
 				if (list == null || list.isEmpty())// 加入无数据提示
-					mDataList.add(mContext.getString(R.string.list_item_no_data));
+					clearDataList();
 				else
 				{
 					getLastNewsId(list);
-					mDataList.addAll(list);
+					addDataList(list);
 					// 判断是否在列表底部加上更多按钮
 					if (list.size() >= Constants.CINT_PAGE_SIZE)
 					{
@@ -337,7 +371,7 @@ public class ListBaseView extends BaseView
 				if (list != null && !list.isEmpty())
 				{
 					getLastNewsId(list);
-					mDataList.addAll(list);
+					addDataList(list);
 					// 判断是否在列表底部加上更多按钮
 					if (list.size() >= Constants.CINT_PAGE_SIZE)
 					{

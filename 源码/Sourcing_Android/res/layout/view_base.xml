@@ -4,21 +4,22 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <LinearLayout
+        android:id="@+id/base_subchannel_ll"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/subchannel_tab_height"        
+        android:background="@drawable/subchannel_tab_bg"
+        android:orientation="horizontal" >
+    </LinearLayout>
+
     <HorizontalScrollView
-        android:id="@+id/base_subchannel_sv"
+        android:id="@+id/base_subchannel_hsv"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/subchannel_tab_height"
         android:background="@drawable/subchannel_tab_bg"
         android:fadingEdge="none"
-        android:scrollbars="none" >
-
-        <LinearLayout
-            android:id="@+id/base_subchannel_ll"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
-            android:background="@android:color/transparent"
-            android:orientation="horizontal" >
-        </LinearLayout>
+        android:scrollbars="none"
+        android:visibility="gone" >
     </HorizontalScrollView>
 
     <LinearLayout

@@ -24,7 +24,7 @@ public class SubChannelTabView extends RelativeLayout
 
 	public SubChannelTabView(Context context)
 	{
-		super(context,null);
+		this(context,null);
 	}
 
 	public SubChannelTabView(Context context, AttributeSet attrs)

@@ -3,12 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    <com.wuzhu.widget.refreshview.PullToRefreshListView
+    <com.wuzhupc.widget.refreshview.PullToRefreshListView
         android:id="@+id/list_base_datalist_lv"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:divider="@drawable/list_base_divider"
         android:fadeScrollbars="true"
-        android:fadingEdge="none" />
+        android:fadingEdge="none"/>
 </LinearLayout>

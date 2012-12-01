@@ -2,13 +2,13 @@
 <!-- 热点排行、新闻纵横 列表 分类项 布局 -->
 <TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/listitem_base_label_tv"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:paddingBottom="2dip"
-    android:paddingRight="10dip"
-    android:paddingTop="2dip"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:text="@string/list_item_no_data"
-    android:textColor="@android:color/white"
-    android:textSize="@dimen/text_size_medium" >
+    android:textColor="@color/listitem_base_titlecolor"
+    android:textSize="@dimen/text_size_medium"
+    android:background="@android:color/transparent" >
 </TextView>

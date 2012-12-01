@@ -29,7 +29,7 @@
     <string name="Base_hit_nosdcard">未找到存储卡!</string>
     <string name="Base_hit_createstorefolderfail">无法创建缓存文件!</string>
     <string name="Base_hit_title">提示</string>
-    <string name="Base_hit_defaskclosemsg">确定要退出吗?</string>
+    <string name="Base_hit_defaskclosemsg">您确定要退出吗?</string>
     
     <!-- WelcomeActivity -->    
     <string name="welcome_title">欢迎界面</string>
