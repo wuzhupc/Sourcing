@@ -2,7 +2,13 @@ package com.wuzhupc.Sourcing.vo;
 
 public class ResponseVO 
 {
+	/**
+	 * 失败
+	 */
 	public static final int RESPONSE_CODE_FAIL = 1;
+	/**
+	 * 成功
+	 */
 	public static final int RESPONSE_CODE_SUCESS = 0;
 	
 	private int code;	// 返回报文状态码：1.正常  2.不正常

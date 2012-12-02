@@ -7,7 +7,6 @@ package com.wuzhupc.Sourcing.vo;
  */
 public class JobDetailVO extends JobVO
 {
-
 	/**
 	 * 
 	 */

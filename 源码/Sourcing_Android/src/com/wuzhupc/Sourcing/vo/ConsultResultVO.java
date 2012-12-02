@@ -17,7 +17,7 @@ public class ConsultResultVO extends BaseVO
 	/**
 	 * ×ÉÑ¯´ð¸´±àºÅ
 	 */
-	private long consultresultid;
+	//private long consultresultid;
 	/**
 	 * ×ÉÑ¯´ð¸´ÄÚÈÝ
 	 */
@@ -32,15 +32,15 @@ public class ConsultResultVO extends BaseVO
 	private String publishtime;
 	public long getConsultresultid()
 	{
-		return consultresultid;
+		return id;
 	}
 	public void setConsultresultid(long consultresultid)
 	{
-		this.consultresultid = consultresultid;
+		this.id = consultresultid;
 	}
 	public void setConsultresultid(String consultresultid)
 	{
-		this.consultresultid = JavaLangUtil.StrToLong(consultresultid,-1l);
+		setConsultresultid(JavaLangUtil.StrToLong(consultresultid,-1l));
 	}
 	public String getConsultresultcontent()
 	{

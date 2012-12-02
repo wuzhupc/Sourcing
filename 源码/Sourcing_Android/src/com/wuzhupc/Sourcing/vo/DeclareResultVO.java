@@ -16,7 +16,7 @@ public class DeclareResultVO extends BaseVO
 	/**
 	 * 申报结果编号
 	 */
-	private long declareresultid;
+	//private long declareresultid;
 	/**
 	 * 申报结果,1,true 通过,0,false 未通过
 	 */
@@ -36,17 +36,17 @@ public class DeclareResultVO extends BaseVO
 
 	public long getDeclareresultid()
 	{
-		return declareresultid;
+		return id;
 	}
 
 	public void setDeclareresultid(long declareresultid)
 	{
-		this.declareresultid = declareresultid;
+		this.id = declareresultid;
 	}
 
 	public void setDeclareresultid(String declareresultid)
 	{
-		this.declareresultid = JavaLangUtil.StrToLong(declareresultid,-1l);
+		setDeclareresultid(JavaLangUtil.StrToLong(declareresultid,-1l));
 	}
 
 	public boolean isDeclareresult()

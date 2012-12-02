@@ -17,7 +17,7 @@ public class DeclareVO extends BaseVO
 	/**
 	 * …Í±®±‡∫≈
 	 */
-	private long declareid;
+	//private long declareid;
 	/**
 	 * …Í±®ƒ⁄»›
 	 */
@@ -40,15 +40,15 @@ public class DeclareVO extends BaseVO
 	}
 	public long getDeclareid()
 	{
-		return declareid;
+		return id;
 	}
 	public void setDeclareid(long declareid)
 	{
-		this.declareid = declareid;
+		this.id = declareid;
 	}
 	public void setDeclareid(String declareid)
 	{
-		this.declareid = JavaLangUtil.StrToLong(declareid,-1l);
+		setDeclareid(JavaLangUtil.StrToLong(declareid,-1l));
 	}
 	public String getDeclarecontent()
 	{

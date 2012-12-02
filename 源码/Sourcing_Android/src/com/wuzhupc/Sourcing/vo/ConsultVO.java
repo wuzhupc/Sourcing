@@ -16,7 +16,7 @@ public class ConsultVO extends BaseVO
 	/**
 	 * ×ÉÑ¯±àºÅ
 	 */
-	private long consultid;
+	//private long consultid;
 	/**
 	 * ×ÉÑ¯ÄÚÈÝ
 	 */
@@ -33,17 +33,17 @@ public class ConsultVO extends BaseVO
 
 	public long getConsultid()
 	{
-		return consultid;
+		return id;
 	}
 
 	public void setConsultid(long consultid)
 	{
-		this.consultid = consultid;
+		this.id = consultid;
 	}
 
 	public void setConsultid(String consultid)
 	{
-		this.consultid = JavaLangUtil.StrToLong(consultid,-1l);
+		setConsultid(JavaLangUtil.StrToLong(consultid,-1l));
 	}
 
 	public String getConsultcontent()

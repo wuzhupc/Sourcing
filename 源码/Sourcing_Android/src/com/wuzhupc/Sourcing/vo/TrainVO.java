@@ -16,22 +16,22 @@ public class TrainVO extends BaseVO
 	/**
 	 * 培训机构编号
 	 */
-	private long trainid;
+	//private long trainid;
 	/**
 	 * 培训机构名称
 	 */
 	private String trainname;
 	public long getTrainid()
 	{
-		return trainid;
+		return id;
 	}
 	public void setTrainid(long trainid)
 	{
-		this.trainid = trainid;
+		this.id = trainid;
 	}
 	public void setTrainid(String trainid)
 	{
-		this.trainid = JavaLangUtil.StrToLong(trainid,-1l);
+		setTrainid(JavaLangUtil.StrToLong(trainid,-1l));
 	}
 	public String getTrainname()
 	{

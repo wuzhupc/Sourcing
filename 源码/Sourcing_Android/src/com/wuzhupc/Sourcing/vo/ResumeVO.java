@@ -16,7 +16,7 @@ public class ResumeVO extends BaseVO
 	/**
 	 * ¼òÀú±àºÅ
 	 */
-	private long resumeid;
+	//private long resumeid;
 	/**
 	 * ¼òÀúÃû³Æ
 	 */
@@ -36,17 +36,17 @@ public class ResumeVO extends BaseVO
 
 	public long getResumeid()
 	{
-		return resumeid;
+		return id;
 	}
 
 	public void setResumeid(long resumeid)
 	{
-		this.resumeid = resumeid;
+		this.id = resumeid;
 	}
 
 	public void setResumeid(String resumeid)
 	{
-		this.resumeid = JavaLangUtil.StrToLong(resumeid,-1l);
+		setResumeid(JavaLangUtil.StrToLong(resumeid,-1l));
 	}
 
 	public String getResumetitle()

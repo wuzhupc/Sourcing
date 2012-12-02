@@ -9,7 +9,6 @@ import com.wuzhupc.utils.JavaLangUtil;
  */
 public class JobVO extends BaseVO
 {
-
 	/**
 	 * 
 	 */
@@ -18,7 +17,7 @@ public class JobVO extends BaseVO
 	/**
 	 * 职位编号
 	 */
-	private long jobid;
+	//private long jobid;
 	/**
 	 * 职位名称
 	 */
@@ -33,15 +32,15 @@ public class JobVO extends BaseVO
 	private String publishtime;
 	public long getJobid()
 	{
-		return jobid;
+		return id;
 	}
 	public void setJobid(long jobid)
 	{
-		this.jobid = jobid;
+		this.id = jobid;
 	}
 	public void setJobid(String jobid)
 	{
-		this.jobid = JavaLangUtil.StrToLong(jobid,-1l);
+		setJobid(JavaLangUtil.StrToLong(jobid,-1l));
 	}
 	public String getJob()
 	{

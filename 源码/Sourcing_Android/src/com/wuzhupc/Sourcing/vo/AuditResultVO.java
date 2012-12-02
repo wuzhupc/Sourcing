@@ -16,7 +16,7 @@ public class AuditResultVO extends BaseVO
 	/**
 	 * 审核结果编号
 	 */
-	private long auditresultid;
+	//private long auditresultid;
 	/**
 	 * 审核结果,1,true 通过,0,false 未通过
 	 */
@@ -36,17 +36,17 @@ public class AuditResultVO extends BaseVO
 
 	public long getAuditresultid()
 	{
-		return auditresultid;
+		return id;
 	}
 
 	public void setAuditresultid(long auditresultid)
 	{
-		this.auditresultid = auditresultid;
+		this.id = auditresultid;
 	}
 
 	public void setAuditresultid(String auditresultid)
 	{
-		this.auditresultid = JavaLangUtil.StrToLong(auditresultid,-1l);
+		setAuditresultid(JavaLangUtil.StrToLong(auditresultid,-1l));
 	}
 
 	public boolean isAuditresult()

@@ -13,10 +13,23 @@ public class UserVO extends BaseVO
 	 * 
 	 */
 	private static final long serialVersionUID = -2777041706952712371L;
+
+	/**
+	 * 用户类型:个人用户
+	 */
+	public static final int USER_TYPE_PERSONAL = 1 ;
+	/**
+	 * 用户类型:企业用户
+	 */
+	public static final int USER_TYPE_ENTERPRISE = 2 ;
+	/**
+	 * 用户类型:培训机构
+	 */
+	public static final int USER_TYPE_TRAIN = 3 ;
 	/**
 	 * 用户编号
 	 */
-	private long userid;
+	//private long userid;
 	/**
 	 * 用户类型,USER_TYPE_
 	 */
@@ -56,17 +69,17 @@ public class UserVO extends BaseVO
 
 	public long getUserid()
 	{
-		return userid;
+		return id;
 	}
 
 	public void setUserid(long userid)
 	{
-		this.userid = userid;
+		this.id = userid;
 	}
 
 	public void setUserid(String userid)
 	{
-		this.userid = JavaLangUtil.StrToLong(userid,-1l);
+		setUserid(JavaLangUtil.StrToLong(userid,-1l));
 	}
 
 	public int getUsertype()

@@ -2,6 +2,8 @@ package com.wuzhupc.Sourcing.vo;
 
 import java.io.Serializable;
 
+import com.wuzhupc.utils.SerializeUtil;
+
 /**
  * 
  * @author Administrator
@@ -9,54 +11,41 @@ import java.io.Serializable;
  */
 public class BaseVO implements Serializable
 {
-
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = -3185317889045447937L;
 	/**
-	 * 资讯类型:行业新闻
+	 * ID 用于标识，所有子类如果自建id时，需要要同时给此赋值
 	 */
-	public static final int NEWS_TYPE_INDUSTRY = 1;
+	protected long id;
+	public long getId()
+	{
+		return id;
+	}
+	public void setId(long id)
+	{
+		this.id = id;
+	}
+	
 	/**
-	 * 资讯类型:政策
+	 * 重载，增加判断：类一样且id一致时返回true
 	 */
-	public static final int NEWS_TYPE_POLICY = 2;
-	/**
-	 * 资讯类型:通知
-	 */
-	public static final int NEWS_TYPE_NOTICE = 3;
-	/**
-	 * 资讯类型:专家文章
-	 */
-	public static final int NEWS_TYPE_ARTICLE = 4;
-	/**
-	 * 用户类型:个人用户
-	 */
-	public static final int USER_TYPE_PERSONAL = 1 ;
-	/**
-	 * 用户类型:企业用户
-	 */
-	public static final int USER_TYPE_ENTERPRISE = 2 ;
-	/**
-	 * 用户类型:培训机构
-	 */
-	public static final int USER_TYPE_TRAIN = 3 ;
-	/**
-	 * 推送信息类型:普通资讯信息
-	 */
-	public static final int PUSH_TYPE_NORMAL = 0;
-	/**
-	 * 推送信息类型:通知提醒
-	 */
-	public static final int PUSH_TYPE_NOTIFIER = 1;
-	/**
-	 * 推送信息类型:审核结果
-	 */
-	public static final int PUSH_TYPE_AUDIT = 2;
-	/**
-	 * 推送信息类型:申报进度
-	 */
-	public static final int PUSH_TYPE_DECLARE = 3;
+	@Override
+	public boolean equals(Object o)
+	{
+		if(super.equals(o))
+			return true;
+		if(o==null||!(o instanceof BaseVO))
+			return false;
+		return this.getClass().getSimpleName().equals(o.getClass().getSimpleName()) &&this.id==((BaseVO)o).id;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return SerializeUtil.objectSerialzeTOString(this);
+	}
+	
 
 }

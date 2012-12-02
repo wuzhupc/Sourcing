@@ -17,7 +17,7 @@ public class NewsCommentVO extends BaseVO
 	/**
 	 * 新闻编号
 	 */
-	private long newsid;
+	//private long newsid;
 	/**
 	 * 新闻类型,1：行业新闻，2：政策，3：通知，4：专家文章
 	 */
@@ -40,15 +40,15 @@ public class NewsCommentVO extends BaseVO
 	private String commentcontent;
 	public long getNewsid()
 	{
-		return newsid;
+		return id;
 	}
 	public void setNewsid(long newsid)
 	{
-		this.newsid = newsid;
+		this.id = newsid;
 	}
 	public void setNewsid(String newsid)
 	{
-		this.newsid = JavaLangUtil.StrToLong(newsid, -1l);
+		setNewsid(JavaLangUtil.StrToLong(newsid, -1l));
 	}
 	public int getNewstype()
 	{
@@ -60,7 +60,7 @@ public class NewsCommentVO extends BaseVO
 	}
 	public void setNewstype(String newstype)
 	{
-		this.newstype = JavaLangUtil.StrToInteger(newstype, NEWS_TYPE_ARTICLE);
+		this.newstype = JavaLangUtil.StrToInteger(newstype, ChannelVO.TYPE_NEWS_INDUSTR);
 	}
 	public long getNewscommentid()
 	{

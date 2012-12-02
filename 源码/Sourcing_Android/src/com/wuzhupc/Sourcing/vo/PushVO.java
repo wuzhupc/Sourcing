@@ -14,6 +14,22 @@ public class PushVO extends BaseVO
 	 */
 	private static final long serialVersionUID = -1104767207235439018L;
 	/**
+	 * 推送信息类型:普通资讯信息
+	 */
+	public static final int PUSH_TYPE_NORMAL = 0;
+	/**
+	 * 推送信息类型:通知提醒
+	 */
+	public static final int PUSH_TYPE_NOTIFIER = 1;
+	/**
+	 * 推送信息类型:审核结果
+	 */
+	public static final int PUSH_TYPE_AUDIT = 2;
+	/**
+	 * 推送信息类型:申报进度
+	 */
+	public static final int PUSH_TYPE_DECLARE = 3;
+	/**
 	 * 推送信息类型,0 普通资讯信息 1 通知提醒 2 审核结果 3 申报进度 4,PUSH_TYPE_
 	 */
 	private int pushtype;
@@ -24,7 +40,7 @@ public class PushVO extends BaseVO
 	/**
 	 * 推送信息详细内容ID,用于手机端根据推送信息类型进一步获取相应信息的详情
 	 */
-	private long id;
+	//private long id;
 	public int getPushtype()
 	{
 		return pushtype;
@@ -55,7 +71,7 @@ public class PushVO extends BaseVO
 	}
 	public void setId(String id)
 	{
-		this.id = JavaLangUtil.StrToLong(id,-1l);
+		setId(JavaLangUtil.StrToLong(id,-1l));
 	}
 	
 }

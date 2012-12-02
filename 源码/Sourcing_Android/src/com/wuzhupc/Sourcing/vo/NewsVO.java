@@ -12,11 +12,11 @@ public class NewsVO extends BaseVO
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4859611483686389471L;
+	private static final long serialVersionUID = 2357502465951410596L;
 	/**
 	 * 新闻编号
 	 */
-	private long newsid;
+	//private long newsid;
 	/**
 	 * 是否是新闻头条，默认0：不是头条，1：头条新闻
 	 */
@@ -63,15 +63,15 @@ public class NewsVO extends BaseVO
 	private int commentnum;
 	public long getNewsid()
 	{
-		return newsid;
+		return id;
 	}
 	public void setNewsid(long newsid)
 	{
-		this.newsid = newsid;
+		this.id = newsid;
 	}
 	public void setNewsid(String newsid)
 	{
-		this.newsid = JavaLangUtil.StrToLong(newsid, -1l);
+		setNewsid(JavaLangUtil.StrToLong(newsid, -1l));
 	}
 	public boolean isHeadline()
 	{
@@ -95,7 +95,7 @@ public class NewsVO extends BaseVO
 	}
 	public void setNewstype(String newstype)
 	{
-		this.newstype = JavaLangUtil.StrToInteger(newstype, NEWS_TYPE_ARTICLE);
+		this.newstype = JavaLangUtil.StrToInteger(newstype, ChannelVO.TYPE_NEWS_NEWEST);
 	}
 	public String getTitle()
 	{

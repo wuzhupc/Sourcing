@@ -17,7 +17,7 @@ public class AuditVO extends BaseVO
 	/**
 	 * 提交审核编号
 	 */
-	private long auditid;
+	//private long auditid;
 	/**
 	 * 提交审核内容
 	 */
@@ -32,15 +32,15 @@ public class AuditVO extends BaseVO
 	private AuditResultVO auditResultVO;
 	public long getAuditid()
 	{
-		return auditid;
+		return id;
 	}
 	public void setAuditid(long auditid)
 	{
-		this.auditid = auditid;
+		this.id = auditid;
 	}
 	public void setAuditid(String auditid)
 	{
-		this.auditid = JavaLangUtil.StrToLong(auditid,-1l);
+		setAuditid(JavaLangUtil.StrToLong(auditid,-1l));
 	}
 	public String getAuditcontent()
 	{

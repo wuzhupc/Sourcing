@@ -1,6 +1,5 @@
 package com.wuzhupc.Sourcing.vo;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -17,7 +16,7 @@ import com.wuzhupc.utils.json.JsonParser;
 /**
  * 栏目信息VO
  */
-public class ChannelVO implements Serializable {
+public class ChannelVO extends BaseVO {
 	
 	/**
 	 * 
@@ -26,7 +25,7 @@ public class ChannelVO implements Serializable {
 	/**
 	 * 栏目ID
 	 */
-	private long channelID;	
+	//private long channelID;	
 	/**
 	 * 栏目名称
 	 */
@@ -197,11 +196,16 @@ public class ChannelVO implements Serializable {
 	}
 	
 	public long getChannelID(){
-		return this.channelID;
+		return id;
+	}
+	
+	public void setChannelID(long channelID)
+	{
+		id=channelID;
 	}
 	
 	public void setChannelID(String channelID){
-		this.channelID = JavaLangUtil.StrToLong(channelID, 0l);
+		setChannelID(JavaLangUtil.StrToLong(channelID, 0l));
 	}
 	
 	public String getChannelName(){
@@ -262,7 +266,7 @@ public class ChannelVO implements Serializable {
 		if(lastUpdateDataTime==null)
 		{
 			//读取设置项
-			lastUpdateDataTime = SettingUtil.getChannelLastUpdateTime(c, channelID);
+			lastUpdateDataTime = SettingUtil.getChannelLastUpdateTime(c, id);
 		}
 		return lastUpdateDataTime;
 	}
@@ -271,7 +275,7 @@ public class ChannelVO implements Serializable {
 	{
 		this.lastUpdateDataTime = lastUpdateDataTime;
 		//存取配置信息
-		SettingUtil.setChannelLastUpdateTime(c, channelID, lastUpdateDataTime);
+		SettingUtil.setChannelLastUpdateTime(c, id, lastUpdateDataTime);
 	}
 
 

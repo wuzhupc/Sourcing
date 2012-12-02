@@ -16,7 +16,7 @@ public class NotifierVO extends BaseVO
 	/**
 	 * 通知提醒编号
 	 */
-	private long notifierid;
+	//private long notifierid;
 	/**
 	 * 通知提醒内容
 	 */
@@ -31,15 +31,15 @@ public class NotifierVO extends BaseVO
 	private String publishtime;
 	public long getNotifierid()
 	{
-		return notifierid;
+		return id;
 	}
 	public void setNotifierid(long notifierid)
 	{
-		this.notifierid = notifierid;
+		this.id = notifierid;
 	}
 	public void setNotifierid(String notifierid)
 	{
-		this.notifierid = JavaLangUtil.StrToLong(notifierid,-1l);
+		setNotifierid(JavaLangUtil.StrToLong(notifierid,-1l));
 	}
 	public String getNotifiercontent()
 	{

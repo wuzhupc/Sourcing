@@ -17,7 +17,7 @@ public class ProjectVO extends BaseVO
 	/**
 	 * 项目编号
 	 */
-	private long projectid;
+	//private long projectid;
 	/**
 	 * 项目名称
 	 */
@@ -33,17 +33,17 @@ public class ProjectVO extends BaseVO
 
 	public long getProjectid()
 	{
-		return projectid;
+		return id;
 	}
 
 	public void setProjectid(long projectid)
 	{
-		this.projectid = projectid;
+		this.id = projectid;
 	}
 
 	public void setProjectid(String projectid)
 	{
-		this.projectid = JavaLangUtil.StrToLong(projectid,-1l);
+		setProjectid(JavaLangUtil.StrToLong(projectid,-1l));
 	}
 
 	public String getProjectname()
