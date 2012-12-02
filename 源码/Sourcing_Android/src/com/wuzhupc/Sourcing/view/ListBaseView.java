@@ -129,12 +129,9 @@ public class ListBaseView extends BaseView
 				});
 		mlv_DataList = mPullRefreshListView.getRefreshableView();
 		mlv_DataList.setOnItemClickListener(getDataListItemClickListener());
-		setViewGestureDetector(mlv_DataList);
+		setViewGestureDetector(mPullRefreshListView);
 		// 数据初始化
 		clearDataList();
-		// adapter 初始化
-		mAdapter = new ListBaseAdapter(mContext, mDataList);
-		mlv_DataList.setAdapter(mAdapter);
 	}
 	
 	/**
@@ -144,11 +141,17 @@ public class ListBaseView extends BaseView
 	private void clearDataList()
 	{
 		if(mDataList==null)
+		{
 			mDataList = new ArrayList();
+			// adapter 初始化
+			mAdapter = new ListBaseAdapter(mContext, mDataList);
+			mlv_DataList.setAdapter(mAdapter);
+		}
 		else
 			mDataList.clear();
 		//增加无数据提示
 		mDataList.add(mContext.getString(R.string.list_item_no_data));
+		mAdapter.notifyDataSetChanged();
 	}
 	
 	/**

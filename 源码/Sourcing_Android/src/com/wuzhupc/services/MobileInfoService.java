@@ -3,6 +3,8 @@ package com.wuzhupc.services;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.config.Constants;
+import com.wuzhupc.utils.JavaLangUtil;
+import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonCreater;
 
 import android.content.Context;
@@ -23,6 +25,7 @@ public class MobileInfoService extends BaseJsonService
 	 * 获取资讯列表
 	 * @param newstype 新闻类别，0：最新资讯，1：行业新闻，2：政策，3：通知，4：专家文章
 	 * @param bottomnewsid 新闻列表下限的新闻ID，默认0，如果非0时，获取此新闻ID后pagesize条记录数
+	 * @note 读取文件名mobileinfo_getNewsList_response_data_[].json
 	 */
 	public void getNewsList(int newstype,long bottomnewsid, IBaseReceiver iReceiver)
 	{
@@ -32,6 +35,7 @@ public class MobileInfoService extends BaseJsonService
 		creater.setParam("pagesize", Constants.CINT_PAGE_SIZE);
 		creater.setParam("bottomnewsid", bottomnewsid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_news_list);
+		mSuffixStr=String.valueOf(newstype);
 		String json=creater.createJson(null, mCommandName);
 		getData(json,iReceiver);
 	}
@@ -40,6 +44,7 @@ public class MobileInfoService extends BaseJsonService
 	 * 3.3.	获取资讯详细信息
 	 * @param newstype 新闻类别，0：最新资讯，1：行业新闻，2：政策，3：通知，4：专家文章
 	 * @param newsid 新闻ID
+	 * @note 读取文件名mobileinfo_getNewsDetail_response_data_[newstype]_[newsid].json
 	 */
 	public void getNewsDetail(int newstype,long newsid, IBaseReceiver iReceiver)
 	{
@@ -48,6 +53,7 @@ public class MobileInfoService extends BaseJsonService
 		creater.setParam("newstype", newstype);
 		creater.setParam("newsid", newsid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_news_detail);
+		mSuffixStr=String.valueOf(newstype)+JavaLangUtil.LongToStr(newsid);
 		String json=creater.createJson(null, mCommandName);
 		getData(json,iReceiver);
 	}

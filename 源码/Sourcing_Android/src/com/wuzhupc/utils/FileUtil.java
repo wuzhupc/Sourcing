@@ -738,7 +738,7 @@ public class FileUtil
 				}
 			} catch (Exception e)
 			{
-				Log.e(TAG, e.getMessage());
+				Log.e(TAG,"readFileFromAssetsFile error:"+ e.getMessage());
 			} finally
 			{
 				try
@@ -749,13 +749,13 @@ public class FileUtil
 						isr.close();
 				} catch (IOException e)
 				{
-					Log.e(TAG, e.getMessage());
+					Log.e(TAG,"readFileFromAssetsFile IOError:"+ e.getMessage());
 				}
 			}
 			is.close();
 		}
 		catch (Exception e) {
-			Log.e(TAG, e.getMessage());
+			Log.e(TAG,"readFileFromAssetsFile error:"+ e.getMessage());
 		}
 		return result.toString();
 	}

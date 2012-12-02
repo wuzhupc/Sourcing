@@ -1,0 +1,80 @@
+﻿{
+    "ret":{
+        "code":"0"
+    },
+    "data":{
+        "list_vos":[
+            {
+                "NewsVO":{
+                    "headline":"1",
+                    "newstype":"1",
+                    "newsid":"34614",
+                    "title":"第九届光博会开幕 “尖板眼”产品齐聚光谷",
+                    "titlepic":"http://www.wuhansourcing.gov.cn/uploads/allimg/121102/1428_121102113603_1.jpg",
+                    "titlepic_small":"http://www.wuhansourcing.gov.cn/uploads/allimg/121102/11364IG2-0.jpg",
+                    "publishtime":"2012-11-02 11:24",
+                    "newssummary":"国内前三、中西部地区最大的光电子领域专业展会——第九届“中国光谷”国际光电子博览会暨论坛今日在武汉开幕。",
+                    "auther":"记者瞿凌云",
+                    "source":"长江日报",
+                    "readernum":"94",
+                    "commentnum":"1"
+                }
+            },
+            {
+                "NewsVO":{
+                    "headline":"0",
+                    "newstype":"1",
+                    "newsid":"34542",
+                    "title":"微软将在华建立云计算落地项目",
+                    "publishtime":"2012-10-31 15:59",
+                    "newssummary":"微软已经取得了在中国大陆地区建设公有云项目的资质，并将在下个月在华实施云计算落地项目，将在中国大陆地区建立云计算服务器，这是微软首次在中国大陆地区建立云落地项目。",
+                    "source":"中国外包网",
+                    "readernum":"126",
+                    "commentnum":"0"
+                }
+            },
+            {
+                "NewsVO":{
+                    "headline":"0",
+                    "newstype":"2",
+                    "newsid":"35890",
+                    "title":"国家级开发区和边境合作区规划印发",
+                    "publishtime":"2012-11-28 14:13",
+                    "newssummary":"商务部网站28日发布《国家级经济技术开发区和边境经济合作区“十二五”发展规划（2011-2015年）》。",
+                    "source":"中国外包网",
+                    "readernum":"188",
+                    "commentnum":"0"
+                }
+            },
+            {
+                "NewsVO":{
+                    "headline":"0",
+                    "newstype":"2",
+                    "newsid":"35315",
+                    "title":"工信部印发电子认证“十二五”规划",
+                    "publishtime":"2012-11-19 14:15",
+                    "newssummary":"近日，工业和信息化部印发了《电子认证服务业“十二五”发展规划》。",
+                    "source":"未知",
+                    "readernum":"147",
+                    "commentnum":"0"
+                }
+            },
+            {
+                "NewsVO":{
+                    "headline":"0",
+                    "newstype":"1",
+                    "newsid":"34506",
+                    "title":"中亚经济合作部长会议发表“武汉行动计划”",
+                    "titlepic":"http://www.wuhansourcing.gov.cn/uploads/allimg/121031/11060H357-0.jpg",
+                    "titlepic_small":"http://www.wuhansourcing.gov.cn/uploads/allimg/121031/11060H357-0.jpg",
+                    "publishtime":"2012-10-31 11:03",
+                    "newssummary":"10月30日，中亚区域经济合作（CAREC）第十一次部长会议在武汉东湖宾馆隆重举行，国家财政部长谢旭人率中国代表团出席会议。会议闭幕后发表了“武汉行动计划”。",
+                    "auther":"记者 张哲一",
+                    "source":"长江网",
+                    "readernum":"176",
+                    "commentnum":"0"
+                }
+            }
+        ]
+    }
+}

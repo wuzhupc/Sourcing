@@ -112,7 +112,7 @@
             }},
             {"ChannelVO":{
                 "channelID":"41",
-                "channelName":"收藏",
+                "channelName":"我的收藏",
                 "fatherchannelID":"4",
                 "isdefault":"0",
                 "sort":"1",

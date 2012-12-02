@@ -28,12 +28,18 @@ public abstract class BaseJsonService
 	 * 当前执行命令
 	 */
 	protected String mCommandName;
+	/**
+	 * 后缀名称
+	 */
+	protected String mSuffixStr;
 	
 	protected Context mContext;
 	
 	public BaseJsonService(Context c)
 	{
 		mContext=c;
+		mSuffixStr = "";
+		mCommandName = "";
 	}
 	
 	protected String getDevID()
@@ -118,8 +124,11 @@ public abstract class BaseJsonService
 		//
 		if(LOCAL_DEBUG)
 		{
-			String localjsoncontent = FileUtil.readFileFromAssetsFile(mContext, mCommandName+"_response_data.json");
-			iReceiver.receiveCompleted(true, localjsoncontent);
+			String localjsoncontent = FileUtil.readFileFromAssetsFile(mContext, mCommandName+"_response_data"+(StringUtil.isEmpty(mSuffixStr)?"":"_"+mSuffixStr)+".json");
+			if(StringUtil.isEmpty(localjsoncontent))
+				iReceiver.receiveCompleted(false, "当前暂无资讯信息");
+			else
+				iReceiver.receiveCompleted(true, localjsoncontent);
 			return;
 		}
 		

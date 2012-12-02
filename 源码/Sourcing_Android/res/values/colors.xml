@@ -31,8 +31,8 @@
     <!-- listitem相关颜色 -->
     <color name="listitem_base_normal_start">#fbf8f1</color>
     <color name="listitem_base_normal_end">#fbf8f1</color>
-    <color name="listitem_base_sel_start">#fcf0e4</color>
-    <color name="listitem_base_sel_end">#fcf0e4</color>
+    <color name="listitem_base_sel_start">#33f01e04</color>
+    <color name="listitem_base_sel_end">#33c42a06</color>
     <color name="listitem_base_headline_bg">#44000000</color>
     <color name="listitem_base_headline_titlecolor">#f7f7f7</color>
     <color name="listitem_base_titlecolor">#222222</color>
