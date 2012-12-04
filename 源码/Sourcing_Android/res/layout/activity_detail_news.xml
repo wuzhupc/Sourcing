@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <LinearLayout
+        style="@style/TitleBar">
+        <ImageView
+            android:id="@+id/detail_tb_return_iv"
+            style="@style/TitleBarAction"
+            android:onClick="onHomeClick"
+            android:src="@drawable/ic_back" />
+        <ImageView  style="@style/TitleBarSeparator"/>
+        <TextView
+            style="@style/TitleBarText"
+            android:text="@string/detail_news_title" />
+        <ImageView  style="@style/TitleBarSeparator"/>
+        <ImageView
+            android:id="@+id/detail_tb_fav_iv"
+            style="@style/TitleBarAction"
+            android:onClick="onFavClick"
+            android:src="@drawable/ic_fav" />
+        <ImageView  style="@style/TitleBarSeparator"/>
+        <ImageView
+            android:id="@+id/detail_tb_share_iv"
+            style="@style/TitleBarAction"
+            android:onClick="onShareClick"
+            android:src="@drawable/ic_share" />"
+     </LinearLayout>
+	<WebView android:id="@+id/detail_content_wv"
+	    android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+	    />
+</LinearLayout>

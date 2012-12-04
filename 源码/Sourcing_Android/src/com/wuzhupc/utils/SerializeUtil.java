@@ -5,7 +5,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 import android.util.Base64;
 import android.util.Log;
@@ -24,7 +23,7 @@ public class SerializeUtil
 	 * @param obj
 	 * @return
 	 */
-	public static String objectSerialzeTOString(Serializable obj)
+	public static String objectSerialzeTOString(Object obj)
 	{
 		String objBody = null;
 		ByteArrayOutputStream baops = null;

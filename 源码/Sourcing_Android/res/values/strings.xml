@@ -44,4 +44,10 @@
 	
 	<!-- HomeActivity -->
 	<string name="home_initchannel_fail">无法正确解析栏目信息！</string>
+	<!-- NewsDetailActivity -->
+	<string name="detail_news_title">资讯详情</string>
+	<string name="detail_news_content_empty">很抱歉，资讯内容为空。</string>
+	<!-- 收藏相关 -->
+	<string name="fav_add">已添加到“我的收藏”</string>
+	<string name="fav_remove">已取消收藏!</string>
 </resources>
