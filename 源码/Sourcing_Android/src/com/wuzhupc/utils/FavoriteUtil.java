@@ -1,8 +1,16 @@
 package com.wuzhupc.utils;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
+import android.util.Log;
+
 import com.wuzhupc.Sourcing.vo.BaseVO;
+import com.wuzhupc.config.Constants;
 
 /**
  * 收藏夹工具类
@@ -12,6 +20,13 @@ import com.wuzhupc.Sourcing.vo.BaseVO;
 @SuppressWarnings("rawtypes")
 public class FavoriteUtil
 {
+	protected static final String TAG = FavoriteUtil.class.getSimpleName();
+	
+	/**
+	 * 收藏夹文件
+	 */
+	private static final String CSTR_FAVFILE = Constants.CSTR_DATASTOREDIR+"favinfo.dat";
+	
 	/**
 	 * 数据列表
 	 */
@@ -30,11 +45,48 @@ public class FavoriteUtil
 	/**
 	 * 初始化收藏数据
 	 */
+	@SuppressWarnings("unchecked")
 	private void initFavDataList()
 	{
 		mDataList = new ArrayList();
-		//TODO 从数据中读取内容　１行一条记录
-		//反序列化读取到的字符串加入到mDataList中
+		File favfile = new File(CSTR_FAVFILE);
+		if(!favfile.exists()) return;
+		FileInputStream fIn = null;
+		InputStreamReader isr = null;
+		BufferedReader br = null;
+		try
+		{
+			fIn = new FileInputStream(favfile);
+			isr = new InputStreamReader(fIn,"UTF-8");
+			br = new BufferedReader(isr);
+			String temp;
+			while ((temp = br.readLine()) != null)
+			{
+				//从数据中读取内容　１行一条记录
+				Object o = SerializeUtil.getObjectFromString(temp);
+				//反序列化读取到的字符串加入到mDataList中
+				if(o!=null&&o instanceof BaseVO)
+					mDataList.add(o);
+			}
+		} catch (Exception e)
+		{
+			Log.e(TAG, e.getMessage());
+		}
+		finally
+		{
+			try
+			{
+				if (br != null)
+					br.close();
+				if (isr != null)
+					isr.close();
+				if (fIn != null)
+					fIn.close();
+			} catch (IOException e)
+			{
+				Log.e(TAG, e.getMessage());
+			}
+		}		
 	}
 	
 	/**
@@ -77,11 +129,38 @@ public class FavoriteUtil
 	}
 	
 	/**
+	 * 增加收藏数据
+	 * @param obj
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public boolean addFavData(BaseVO obj)
+	{
+		if(obj==null||mDataList==null||mDataList.isEmpty())
+			return false;
+		int index = hasFavData(obj);
+		if(index!=-1)
+			return true;
+		//新增加的收藏记录排在第一位
+		mDataList.add(0, obj);
+		saveFavDataList();
+		return true;
+	}
+	
+	/**
 	 * 存储
 	 */
 	private void saveFavDataList()
 	{
+		File favfile = new File(CSTR_FAVFILE);
 		//TODO
+		if(mDataList==null||mDataList.isEmpty())
+		{
+			//删除收藏文件
+			if(!favfile.exists()) return;
+			favfile.delete();
+			return;
+		}
 	}
 	
 	
