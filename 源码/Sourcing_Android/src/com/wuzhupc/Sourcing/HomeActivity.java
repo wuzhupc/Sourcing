@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import com.wuzhupc.Sourcing.view.BaseView;
 import com.wuzhupc.Sourcing.view.ListBaseView;
+import com.wuzhupc.Sourcing.view.PersonView;
+import com.wuzhupc.Sourcing.view.UserView;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
 import com.wuzhupc.utils.ViewUtil;
 import com.wuzhupc.widget.ExViewFlipper;
@@ -146,12 +148,18 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			}
 			if (vo.getType() == ChannelVO.TYPE_FATHER_PERSON)
 			{
-				// TODO 增加人才视图
+				// 增加人才视图
+				PersonView view = new PersonView(HomeActivity.this, vo.getChannelID());
+				view.setGestureDetectorContent(mgd_content);
+				mvf_content.addView(view);
 				continue;
 			}
 			if (vo.getType() == ChannelVO.TYPE_FATHER_USER)
 			{
-				// TODO 增加个人信息视图
+				// 增加个人信息视图
+				UserView view = new UserView(HomeActivity.this, vo.getChannelID());
+				view.setGestureDetectorContent(mgd_content);
+				mvf_content.addView(view);
 				continue;
 			}
 		}

@@ -13,6 +13,6 @@
     
     <dimen name="menubar_height">48dp</dimen>
     <dimen name="subchannel_tab_height">36dp</dimen>
-    <dimen name="subchannel_tab_width">60dp</dimen>
+    <dimen name="subchannel_tab_width">160dp</dimen>
     <dimen name="subchannel_tab_selimg_height">5dp</dimen>
 </resources>
