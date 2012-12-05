@@ -1,7 +1,9 @@
 package com.wuzhupc.utils;
 
+import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.widget.OnReloadListener;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -92,7 +94,7 @@ public class WebViewUtil
 	{
 		// 图像显示屏幕宽度的80%
 		String autoloadimgscript = "<script type=\"text/javascript\" language=\"javascript\"> "
-				+ "function fixImage(i,w,h){  var cw=document.body.clientWidth; if(cw*0.8<w) w=cw*0.8; var ow = i.width;  "
+				+ "function fixImage(i,w,h){  var cw=document.body.clientWidth; if(cw*0.9<w) w=cw*0.9; var ow = i.width;  "
 				+ "var oh = i.height;  var rw = w/ow; var rh = h/oh;  var r = Math.min(rw,rh);  "
 				+ "if (w ==0 && h == 0){  r = 1;  }else if (w == 0){  r = rh<1?rh:1;  }else if (h == 0){  r = rw<1?rw:1;  } "
 				+ "if (ow!=0 && oh!=0){ i.width = ow * r;  i.height = oh * r;  } "
@@ -108,6 +110,7 @@ public class WebViewUtil
 	 * @param context
 	 * @return
 	 */
+	@SuppressLint("DefaultLocale")
 	public static String getHtmlContext(Activity activity, String context)
 	{
 		if (StringUtil.isEmpty(context))
@@ -117,12 +120,14 @@ public class WebViewUtil
 		if (index == -1)
 			return context;
 
-		String tmpEndStr = ">";// "/>"
+		String tmpEndStr = "/>";// "/>"
 		int screenwidth = ViewUtil.getScreenWidth(activity) - 10;
 		String insertStr = " onload=\"fixImage(this," + screenwidth + ",0)\" ";
 		StringBuilder sBuilder = new StringBuilder();
-		String tmpRemoveStartStr = "style=\"";
+//		String tmpRemoveStartStr = "style=\"";
 		String tmpRemoveEndStr = "\"";
+		
+		String tmpsrc=" src=";
 		while (index != -1)
 		{
 			// 增加tmpStartStr之前的字符
@@ -135,26 +140,61 @@ public class WebViewUtil
 				break;
 			}
 			String tmp = context.substring(0, index);
-			// 去除移除字符
-			int index2 = tmp.indexOf(tmpRemoveStartStr);
-			if (index2 != -1)
+			int index_src=tmp.indexOf(tmpsrc);
+			String src="";
+			if(index_src!=-1)
 			{
-				sBuilder.append(tmp.substring(0, index2));
-				tmp = tmp.substring(index2);
-				index2 = tmp.indexOf(tmpRemoveEndStr);
-				if (index2 != -1 && index2 != tmp.length() - 1)
+				tmp = tmp.substring(index_src+tmpsrc.length()+1);
+				int index2 = tmp.indexOf(tmpRemoveEndStr);
+				if(index2!=-1)
 				{
-					sBuilder.append(index2 + 1);
+					src=tmp.substring(0,index2);
 				}
-
-			} else
-				sBuilder.append(tmp); // 增加tmpStartStr之后到tmpEndStr的字符
-			// 增加insertStr
-			sBuilder.append(insertStr);
-			//
-			context = context.substring(index);
+				else
+					src=tmp;
+				if(!StringUtil.isEmpty(src))
+				{
+					if(src.startsWith(activity.getResources().getString(R.string.image_servername))){
+						src=activity.getResources().getString(R.string.image_linkpre)+src;
+					}
+					sBuilder.append(" <a href=\""+src+"\"><center><img src=\""+src+"\" "+insertStr+"/></center></a>");
+				}
+			}
+			context = context.substring(index+tmpEndStr.length());
 			index = context.toLowerCase().indexOf(tmpStartStr);
 		}
+//		while (index != -1)
+//		{
+//			// 增加tmpStartStr之前的字符
+//			sBuilder.append(context.substring(0, index));
+//			context = context.substring(index);
+//			index = context.indexOf(tmpEndStr);
+//			if (index == -1)
+//			{
+//				sBuilder.append(context);
+//				break;
+//			}
+//			String tmp = context.substring(0, index);
+//			// 去除移除字符
+//			int index2 = tmp.indexOf(tmpRemoveStartStr);
+//			if (index2 != -1)
+//			{
+//				sBuilder.append(tmp.substring(0, index2));
+//				tmp = tmp.substring(index2);
+//				index2 = tmp.indexOf(tmpRemoveEndStr);
+//				if (index2 != -1 && index2 != tmp.length() - 1)
+//				{
+//					sBuilder.append(index2 + 1);
+//				}
+//
+//			} else
+//				sBuilder.append(tmp); // 增加tmpStartStr之后到tmpEndStr的字符
+//			// 增加insertStr
+//			sBuilder.append(insertStr);
+//			//
+//			context = context.substring(index);
+//			index = context.toLowerCase().indexOf(tmpStartStr);
+//		}
 		sBuilder.append(context);
 		return sBuilder.toString();
 	}

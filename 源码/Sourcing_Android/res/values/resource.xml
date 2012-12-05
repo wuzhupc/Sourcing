@@ -4,7 +4,10 @@
 <resources>
 	<!-- 服务端接口-->
 	<string name="jsonurl">http://www.wuzhupc.com/Server/mobilejson/request.do</string>
-	
+	<!-- 链接地址前缀 -->
+	<string name="image_linkpre">http://www.wuzhupc.com</string>
+	<!-- 服务名 -->
+	<string name="image_servername">/Server</string>
 	<!-- 检查客户端版本  -->
 	<string name="cmd_json_check_client_ver">mobilever_checkClientVer</string>
 	

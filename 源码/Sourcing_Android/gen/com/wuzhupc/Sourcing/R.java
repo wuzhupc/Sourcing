@@ -239,124 +239,130 @@ containing a value of this type.
         public static final int widget_subchannel_tab=0x7f030010;
     }
     public static final class string {
-        public static final int Base_hit_createstorefolderfail=0x7f08002b;
-        public static final int Base_hit_defaskclosemsg=0x7f08002d;
+        public static final int Base_hit_createstorefolderfail=0x7f08002d;
+        public static final int Base_hit_defaskclosemsg=0x7f08002f;
         /**  BaseActivity 
          */
-        public static final int Base_hit_nosdcard=0x7f08002a;
-        public static final int Base_hit_title=0x7f08002c;
-        public static final int app_name=0x7f080018;
+        public static final int Base_hit_nosdcard=0x7f08002c;
+        public static final int Base_hit_title=0x7f08002e;
+        public static final int app_name=0x7f08001a;
         /**  检查客户端版本  
          */
-        public static final int cmd_json_check_client_ver=0x7f080004;
+        public static final int cmd_json_check_client_ver=0x7f080006;
         /**  获取职位详情  
          */
-        public static final int cmd_json_get_job_detail=0x7f08000d;
+        public static final int cmd_json_get_job_detail=0x7f08000f;
         /**  获取职位列表 
          */
-        public static final int cmd_json_get_job_list=0x7f080009;
+        public static final int cmd_json_get_job_list=0x7f08000b;
         /**  获取资讯评论信息 
          */
-        public static final int cmd_json_get_news_comment=0x7f080007;
+        public static final int cmd_json_get_news_comment=0x7f080009;
         /**  获取资讯详细信息 
          */
-        public static final int cmd_json_get_news_detail=0x7f080006;
+        public static final int cmd_json_get_news_detail=0x7f080008;
         /**  获取资讯列表 
          */
-        public static final int cmd_json_get_news_list=0x7f080005;
+        public static final int cmd_json_get_news_list=0x7f080007;
         /**  获取项目详情  
          */
-        public static final int cmd_json_get_project_detail=0x7f080010;
+        public static final int cmd_json_get_project_detail=0x7f080012;
         /**  获取项目列表  
          */
-        public static final int cmd_json_get_project_list=0x7f08000c;
+        public static final int cmd_json_get_project_list=0x7f08000e;
         /**  获取用户推送信息 
          */
-        public static final int cmd_json_get_push_info=0x7f080017;
+        public static final int cmd_json_get_push_info=0x7f080019;
         /**  获取简历详情
          */
-        public static final int cmd_json_get_resume_detail=0x7f08000e;
+        public static final int cmd_json_get_resume_detail=0x7f080010;
         /**  获取简历列表 
          */
-        public static final int cmd_json_get_resume_list=0x7f08000a;
+        public static final int cmd_json_get_resume_list=0x7f08000c;
         /**  获取培训机构详情  
          */
-        public static final int cmd_json_get_train_detail=0x7f08000f;
+        public static final int cmd_json_get_train_detail=0x7f080011;
         /**  获取培训机构列表 
          */
-        public static final int cmd_json_get_train_list=0x7f08000b;
+        public static final int cmd_json_get_train_list=0x7f08000d;
         /**  获取用户审核结果 
          */
-        public static final int cmd_json_get_user_audit_info=0x7f080014;
+        public static final int cmd_json_get_user_audit_info=0x7f080016;
         /**  获取用户咨询信息 
          */
-        public static final int cmd_json_get_user_consult_info=0x7f080012;
+        public static final int cmd_json_get_user_consult_info=0x7f080014;
         /**  获取用户申报进度 
          */
-        public static final int cmd_json_get_user_declare_info=0x7f080015;
+        public static final int cmd_json_get_user_declare_info=0x7f080017;
         /**  获取用户通知提醒信息 
          */
-        public static final int cmd_json_get_user_notifier_info=0x7f080016;
+        public static final int cmd_json_get_user_notifier_info=0x7f080018;
         /**  发送资讯评论信息 
          */
-        public static final int cmd_json_send_news_commnet=0x7f080008;
+        public static final int cmd_json_send_news_commnet=0x7f08000a;
         /**  发送用户咨询信息 
          */
-        public static final int cmd_json_send_user_consult=0x7f080013;
+        public static final int cmd_json_send_user_consult=0x7f080015;
         /**  用户登录  
          */
-        public static final int cmd_json_user_login=0x7f080011;
-        public static final int detail_news_content_empty=0x7f080039;
+        public static final int cmd_json_user_login=0x7f080013;
+        public static final int detail_news_content_empty=0x7f08003b;
         /**  NewsDetailActivity 
          */
-        public static final int detail_news_title=0x7f080038;
-        public static final int dl_btn_back=0x7f080023;
-        public static final int dl_btn_cancel=0x7f080025;
-        public static final int dl_btn_confirm=0x7f080024;
-        public static final int dl_btn_ok=0x7f080022;
-        public static final int dl_btn_quit=0x7f080026;
-        public static final int dl_msg_receiving_data=0x7f080020;
-        public static final int dl_msg_update_error=0x7f080021;
-        public static final int dl_title_error=0x7f08001f;
+        public static final int detail_news_title=0x7f08003a;
+        public static final int dl_btn_back=0x7f080025;
+        public static final int dl_btn_cancel=0x7f080027;
+        public static final int dl_btn_confirm=0x7f080026;
+        public static final int dl_btn_ok=0x7f080024;
+        public static final int dl_btn_quit=0x7f080028;
+        public static final int dl_msg_receiving_data=0x7f080022;
+        public static final int dl_msg_update_error=0x7f080023;
+        public static final int dl_title_error=0x7f080021;
         /**  Dialog 提示信息  
          */
-        public static final int dl_title_prompt=0x7f08001e;
+        public static final int dl_title_prompt=0x7f080020;
         /**  收藏相关 
          */
-        public static final int fav_add=0x7f08003a;
-        public static final int fav_remove=0x7f08003b;
+        public static final int fav_add=0x7f08003c;
+        public static final int fav_remove=0x7f08003d;
         /**  HomeActivity 
          */
-        public static final int home_initchannel_fail=0x7f080037;
+        public static final int home_initchannel_fail=0x7f080039;
+        /**  链接地址前缀 
+         */
+        public static final int image_linkpre=0x7f080004;
+        /**  服务名 
+         */
+        public static final int image_servername=0x7f080005;
         /**  服务端接口
          */
         public static final int jsonurl=0x7f080003;
-        public static final int list_item_loading_data=0x7f080029;
-        public static final int list_item_more_msg=0x7f080028;
+        public static final int list_item_loading_data=0x7f08002b;
+        public static final int list_item_more_msg=0x7f08002a;
         /**  列表项相关  
          */
-        public static final int list_item_no_data=0x7f080027;
+        public static final int list_item_no_data=0x7f080029;
         /**  网络异常提示信息  
          */
-        public static final int prompt_network_connect_timeout=0x7f080019;
-        public static final int prompt_network_error=0x7f08001c;
-        public static final int prompt_network_read_timeout=0x7f08001a;
-        public static final int prompt_network_receiving_data_error=0x7f08001d;
-        public static final int prompt_network_url_error=0x7f08001b;
+        public static final int prompt_network_connect_timeout=0x7f08001b;
+        public static final int prompt_network_error=0x7f08001e;
+        public static final int prompt_network_read_timeout=0x7f08001c;
+        public static final int prompt_network_receiving_data_error=0x7f08001f;
+        public static final int prompt_network_url_error=0x7f08001d;
         public static final int pull_to_refresh_pull_label=0x7f080000;
         public static final int pull_to_refresh_refreshing_label=0x7f080002;
         public static final int pull_to_refresh_release_label=0x7f080001;
-        public static final int welcome_publish=0x7f080031;
+        public static final int welcome_publish=0x7f080033;
         /**  WelcomeActivity 
          */
-        public static final int welcome_title=0x7f08002e;
-        public static final int welcome_update_btn=0x7f080036;
-        public static final int welcome_update_content=0x7f080034;
-        public static final int welcome_update_content_ex=0x7f080035;
-        public static final int welcome_update_title=0x7f080032;
-        public static final int welcome_update_title_ex=0x7f080033;
-        public static final int welcome_url=0x7f080030;
-        public static final int welcome_ver=0x7f08002f;
+        public static final int welcome_title=0x7f080030;
+        public static final int welcome_update_btn=0x7f080038;
+        public static final int welcome_update_content=0x7f080036;
+        public static final int welcome_update_content_ex=0x7f080037;
+        public static final int welcome_update_title=0x7f080034;
+        public static final int welcome_update_title_ex=0x7f080035;
+        public static final int welcome_url=0x7f080032;
+        public static final int welcome_ver=0x7f080031;
     }
     public static final class style {
         /**  Base application theme is the default theme. 
