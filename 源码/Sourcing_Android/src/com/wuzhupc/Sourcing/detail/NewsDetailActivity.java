@@ -56,7 +56,7 @@ public class NewsDetailActivity extends BaseActivity
 	{
 		setContentView(R.layout.activity_detail_news);
 		setTitleTextBold();
-		miv_fav = (ImageView)findViewById(R.id.detail_tb_share_iv);
+		miv_fav = (ImageView)findViewById(R.id.detail_tb_fav_iv);
 		mwv_content = (WebView)findViewById(R.id.detail_content_wv);
 		WebViewUtil.setWebView(this, mwv_content,new OnReloadListener()
 		{	
@@ -112,25 +112,42 @@ public class NewsDetailActivity extends BaseActivity
 	}
 	
 	/**
-	 * 
+	 * 显示错误信息
 	 * @param msg
 	 */
 	private void setErrorInfo(String msg)
 	{
-		//TODO
+		setWebViewContent(WebViewUtil.getHtmlHead()
+				+WebViewUtil.getHtmlTitle(mNewsVO==null?"":mNewsVO.getTitle())
+				+WebViewUtil.getHtmlSubTitle(mNewsVO)
+				+WebViewUtil.getHtmlErrorHit(msg, true)
+				+WebViewUtil.getHtmlEnd());
 	}
 	
 	/**
-	 * 
+	 * 显示新闻信息
 	 */
 	private void setNewsInfo()
 	{
-		//TODO
 		if(mNewsDetailVO==null)
 		{
 			setErrorInfo(getResources().getString(R.string.detail_news_content_empty));
 			return;
 		}
+		setWebViewContent(WebViewUtil.getHtmlHead()
+				+WebViewUtil.getHtmlTitle(mNewsVO==null?"":mNewsVO.getTitle())
+				+WebViewUtil.getHtmlSubTitle(mNewsVO)
+				+WebViewUtil.getHtmlContext(NewsDetailActivity.this, mNewsDetailVO.getNewscontent())
+				+WebViewUtil.getHtmlEnd());
+	}
+	
+	/**
+	 * 设置webview内容
+	 * @param html
+	 */
+	private void setWebViewContent(String html)
+	{
+		mwv_content.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
 	}
 	
 	/**
@@ -180,9 +197,11 @@ public class NewsDetailActivity extends BaseActivity
 	 */
 	private String generateShareText()
 	{
-		String result = "";
-		//TODO
-		
+		String result = "#"+getResources().getString(R.string.app_name)+"#";
+		//生成共享内容
+		if(mNewsVO!=null)
+			result +=mNewsVO.getTitle()+" ";
+		result +="更多信息请访问"+getResources().getString(R.string.baseurl);
 		return result;
 	}
 

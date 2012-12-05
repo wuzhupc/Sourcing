@@ -1,6 +1,8 @@
 package com.wuzhupc.utils;
 
 import com.wuzhupc.Sourcing.R;
+import com.wuzhupc.Sourcing.vo.BaseVO;
+import com.wuzhupc.Sourcing.vo.NewsVO;
 import com.wuzhupc.widget.OnReloadListener;
 
 import android.annotation.SuppressLint;
@@ -23,6 +25,7 @@ public class WebViewUtil
 	 * 重载链接标签
 	 */
 	public static final String CSTR_RELOADLINK = "wuzhupc://reload";
+	@SuppressLint("SetJavaScriptEnabled")
 	public static void setWebView(Context c,WebView webview,final OnReloadListener reloadListener)
 	{
 		if(c==null||webview==null)
@@ -30,7 +33,7 @@ public class WebViewUtil
 		WebSettings websettings = webview.getSettings();
 		// 1、LayoutAlgorithm.NARROW_COLUMNS ： 适应内容大小
         // 2、LayoutAlgorithm.SINGLE_COLUMN:适应屏幕，内容将自动缩放
-		websettings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
+		websettings.setLayoutAlgorithm(LayoutAlgorithm.NARROW_COLUMNS);
 		// 设置支持JavaScript
 		webview.clearCache(true);
 		websettings.setJavaScriptEnabled(true);
@@ -103,6 +106,61 @@ public class WebViewUtil
 		return "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">"
 				+ autoloadimgscript + "</head><body>";
 	}
+	
+	/**
+	 * 生成内容标题部分
+	 * @param title
+	 * @return
+	 */
+	public static String getHtmlTitle(String title)
+	{
+		String result = "<br/><div align=\"center\"><font color=\"#111111\" size=\"4pt\"><strong>"
+				+title
+				+"</strong></font></div><br/>";
+		return result;
+	}
+	
+	/**
+	 * 生成内容子标题部分
+	 * @param vo
+	 * @return
+	 */
+	public static String getHtmlSubTitle(BaseVO vo)
+	{
+		if(vo==null)
+			return "<div style=\"height:0;border-bottom:1px solid #f00\"></div>";
+		if(vo instanceof NewsVO)
+			return getHtmlSubTitle((NewsVO)vo);
+		return "";
+	}
+	
+	/**
+	 * 
+	 * @param vo
+	 * @return
+	 */
+	private static String getHtmlSubTitle(NewsVO vo)
+	{
+		if(vo==null)
+			return "<div style=\"height:0;border-bottom:1px solid #f00\"></div>";
+		String result = "<div align=\"center\"><font color=\"#666666\" size=\"2pt\">"+vo.getPublishtime()+"&nbsp;&nbsp; 来源:"+vo.getSource()+"</font></div><div style=\"height:0;border-bottom:1px solid #f00\"></div>";
+		return result;
+	}
+	
+	/**
+	 * 返回错误提示
+	 * @param msg 错误提示信息
+	 * @param hasreload 是否有重载提示 
+	 * @return
+	 */
+	public static String getHtmlErrorHit(String msg,boolean hasreload)
+	{
+		String result = "<br/>&nbsp;&nbsp;很抱歉，您访问的内容"+(StringUtil.isEmpty(msg)?"":"因为"+msg+"的原因而")+"无法正常加载。";
+		if(hasreload)
+			result = result+"<a href=\""+CSTR_RELOADLINK+"\">请偿试重新加载</a>";
+		return result;
+	}
+	
 
 	/**
 	 * 返回HTML内容，目前的操作是对<img 增加onload="fixImage(this,screenwidth,0)"
@@ -140,7 +198,7 @@ public class WebViewUtil
 				break;
 			}
 			String tmp = context.substring(0, index);
-			int index_src=tmp.indexOf(tmpsrc);
+			int index_src=tmp.toLowerCase().indexOf(tmpsrc);
 			String src="";
 			if(index_src!=-1)
 			{
@@ -154,8 +212,8 @@ public class WebViewUtil
 					src=tmp;
 				if(!StringUtil.isEmpty(src))
 				{
-					if(src.startsWith(activity.getResources().getString(R.string.image_servername))){
-						src=activity.getResources().getString(R.string.image_linkpre)+src;
+					if(src.startsWith(activity.getResources().getString(R.string.baseurl_pro))){
+						src=activity.getResources().getString(R.string.baseurl)+src;
 					}
 					sBuilder.append(" <a href=\""+src+"\"><center><img src=\""+src+"\" "+insertStr+"/></center></a>");
 				}
@@ -163,38 +221,6 @@ public class WebViewUtil
 			context = context.substring(index+tmpEndStr.length());
 			index = context.toLowerCase().indexOf(tmpStartStr);
 		}
-//		while (index != -1)
-//		{
-//			// 增加tmpStartStr之前的字符
-//			sBuilder.append(context.substring(0, index));
-//			context = context.substring(index);
-//			index = context.indexOf(tmpEndStr);
-//			if (index == -1)
-//			{
-//				sBuilder.append(context);
-//				break;
-//			}
-//			String tmp = context.substring(0, index);
-//			// 去除移除字符
-//			int index2 = tmp.indexOf(tmpRemoveStartStr);
-//			if (index2 != -1)
-//			{
-//				sBuilder.append(tmp.substring(0, index2));
-//				tmp = tmp.substring(index2);
-//				index2 = tmp.indexOf(tmpRemoveEndStr);
-//				if (index2 != -1 && index2 != tmp.length() - 1)
-//				{
-//					sBuilder.append(index2 + 1);
-//				}
-//
-//			} else
-//				sBuilder.append(tmp); // 增加tmpStartStr之后到tmpEndStr的字符
-//			// 增加insertStr
-//			sBuilder.append(insertStr);
-//			//
-//			context = context.substring(index);
-//			index = context.toLowerCase().indexOf(tmpStartStr);
-//		}
 		sBuilder.append(context);
 		return sBuilder.toString();
 	}

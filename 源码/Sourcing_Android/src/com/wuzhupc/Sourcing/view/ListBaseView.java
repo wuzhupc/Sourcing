@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -13,6 +14,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.adapter.ListBaseAdapter;
+import com.wuzhupc.Sourcing.detail.NewsDetailActivity;
 import com.wuzhupc.Sourcing.vo.NewsVO;
 import com.wuzhupc.Sourcing.vo.ResponseVO;
 import com.wuzhupc.config.Constants;
@@ -225,7 +227,15 @@ public class ListBaseView extends BaseView
 	 */
 	protected void runDetailActivity(int position)
 	{
-		//TODO
+		if(position<0||mDataList==null||mDataList.isEmpty()||position>=mDataList.size())
+			return;
+		Object o = mDataList.get(position);
+		if(o==null||!(o instanceof NewsVO))
+			return;
+		NewsVO newsVO=(NewsVO)o;
+		Intent intent = new Intent(mContext, NewsDetailActivity.class);
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_NEWSVO, newsVO);
+		mContext.startActivity(intent);
 	}
 	/**
 	 * 获取列表最后一条新闻id

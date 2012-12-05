@@ -144,7 +144,7 @@ public class FavoriteUtil
 	@SuppressWarnings("unchecked")
 	public boolean addFavData(BaseVO obj)
 	{
-		if(obj==null||mDataList==null||mDataList.isEmpty())
+		if(obj==null||mDataList==null)
 			return false;
 		int index = hasFavData(obj);
 		if(index!=-1)

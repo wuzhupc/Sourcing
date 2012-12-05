@@ -18,7 +18,7 @@
     <color name="btn_space_deep">#ae2201</color>
     <color name="btn_space_light">#ef280f</color>
     <!-- 标题间隔线 -->
-    <color name="activity_title_separator">#40ffffff</color>
+    <color name="activity_title_separator">#f01e04</color>
     <color name="activity_title_text">#f7f7f7</color>
     
     <color name="home_toolbar_bg">#222222</color>

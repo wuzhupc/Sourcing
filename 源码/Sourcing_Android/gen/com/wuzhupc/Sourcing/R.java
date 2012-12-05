@@ -246,6 +246,12 @@ containing a value of this type.
         public static final int Base_hit_nosdcard=0x7f08002c;
         public static final int Base_hit_title=0x7f08002e;
         public static final int app_name=0x7f08001a;
+        /**  链接地址前缀 
+         */
+        public static final int baseurl=0x7f080004;
+        /**  需要增另链接地址前缀的判断地址 
+         */
+        public static final int baseurl_pro=0x7f080005;
         /**  检查客户端版本  
          */
         public static final int cmd_json_check_client_ver=0x7f080006;
@@ -328,12 +334,6 @@ containing a value of this type.
         /**  HomeActivity 
          */
         public static final int home_initchannel_fail=0x7f080039;
-        /**  链接地址前缀 
-         */
-        public static final int image_linkpre=0x7f080004;
-        /**  服务名 
-         */
-        public static final int image_servername=0x7f080005;
         /**  服务端接口
          */
         public static final int jsonurl=0x7f080003;
