@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.wuzhupc.widget.imagezoom.ImageViewTouch
+        android:id="@+id/viewimage_ivt"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" 
+    android:background="@color/white" />
+
+    <RelativeLayout
+        android:id="@+id/viewimage_top_rl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/viewimage_toolbar_bg" >
+
+        <ImageButton
+            android:id="@+id/viewimage_top_back_ib"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/icon_back"
+            android:onClick="onClick" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/viewimage_bottom_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/viewimage_toolbar_bg"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/viewimage_imageoper_left_ib"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="center"
+            android:src="@drawable/icon_imageview_left"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/viewimage_imageoper_right_ib"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/icon_imageview_right"
+            android:scaleType="center"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/viewimage_imageoper_zoomin_ib"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="center"
+            android:src="@drawable/icon_imageview_zoomin"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/viewimage_imageoper_zoomout_ib"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="center"
+            android:src="@drawable/icon_imageview_zoomout"
+            android:onClick="onClick" />
+
+        <ImageButton
+            android:id="@+id/viewimage_bottom_save_ib"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:scaleType="center"
+            android:src="@drawable/icon_imageview_save"
+            android:onClick="onClick" />
+    </LinearLayout>
+
+</RelativeLayout>

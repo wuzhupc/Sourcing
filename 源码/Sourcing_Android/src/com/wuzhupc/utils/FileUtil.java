@@ -120,6 +120,19 @@ public class FileUtil
 		intent.setDataAndType(Uri.fromFile(f), type);
 		c.startActivity(intent);
 	}
+	
+	/**
+	 * 判断是否是图片文件地址（包括URL或文件路径）
+	 * @param file
+	 * @return
+	 */
+	public static boolean isImageFile(String file)
+	{
+		String type = getMIMEType(file);
+		if(StringUtil.isEmpty(type))
+			return false;
+		return type.startsWith("image");
+	}
 
 	/**
 	 * 根据文件后缀名获得对应的MIME类型。
@@ -128,18 +141,19 @@ public class FileUtil
 	 */
 	public static String getMIMEType(File file)
 	{
+		if(file==null)
+			return "*/*";
+		return getMIMEType(file.getName());
+	}
+	
+	public static String getMIMEType(String fName)
+	{
 		String type = "*/*";
-		String fName = file.getName();
-		// 获取后缀名前的分隔符"."在fName中的位置。
-		int dotIndex = fName.lastIndexOf(".");
-		if (dotIndex < 0)
-		{
-			return type;
-		}
 		/* 获取文件的后缀名 */
-		String end = fName.substring(dotIndex, fName.length()).toLowerCase();
-		if (end == "")
+		String end = getFileExtension(fName);
+		if (StringUtil.isEmpty(end))
 			return type;
+		end="."+end;
 		// 在MIME和文件类型的匹配表中找到对应的MIME类型。
 		for (int i = 0; i < MIME_MapTable.length; i++)
 		{
@@ -154,7 +168,7 @@ public class FileUtil
 	 * 
 	 * @param filename
 	 *            文件名称
-	 * @return
+	 * @return　返回小写，(不包含.)
 	 */
 	public static String getFileExtension(String filename)
 	{
@@ -169,6 +183,7 @@ public class FileUtil
 
 	/**
 	 * 建立一个MIME类型与文件后缀名的匹配表
+	 * （都为小写）
 	 */
 	public static final String[][] MIME_MapTable = {
 			// {后缀名， MIME类型}

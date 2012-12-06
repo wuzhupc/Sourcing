@@ -4,7 +4,6 @@ import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.config.Constants;
 import com.wuzhupc.utils.JavaLangUtil;
-import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonCreater;
 
 import android.content.Context;
@@ -53,7 +52,7 @@ public class MobileInfoService extends BaseJsonService
 		creater.setParam("newstype", newstype);
 		creater.setParam("newsid", newsid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_news_detail);
-		mSuffixStr=String.valueOf(newstype)+JavaLangUtil.LongToStr(newsid);
+		mSuffixStr=String.valueOf(newstype)+"_"+JavaLangUtil.LongToStr(newsid);
 		String json=creater.createJson(null, mCommandName);
 		getData(json,iReceiver);
 	}

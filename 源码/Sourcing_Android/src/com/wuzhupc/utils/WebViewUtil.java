@@ -1,6 +1,8 @@
 package com.wuzhupc.utils;
 
+import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
+import com.wuzhupc.Sourcing.detail.ViewImageActivity;
 import com.wuzhupc.Sourcing.vo.BaseVO;
 import com.wuzhupc.Sourcing.vo.NewsVO;
 import com.wuzhupc.widget.OnReloadListener;
@@ -8,6 +10,7 @@ import com.wuzhupc.widget.OnReloadListener;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -26,14 +29,14 @@ public class WebViewUtil
 	 */
 	public static final String CSTR_RELOADLINK = "wuzhupc://reload";
 	@SuppressLint("SetJavaScriptEnabled")
-	public static void setWebView(Context c,WebView webview,final OnReloadListener reloadListener)
+	public static void setWebView(final Context c,WebView webview,final OnReloadListener reloadListener)
 	{
 		if(c==null||webview==null)
 			return;
 		WebSettings websettings = webview.getSettings();
 		// 1、LayoutAlgorithm.NARROW_COLUMNS ： 适应内容大小
         // 2、LayoutAlgorithm.SINGLE_COLUMN:适应屏幕，内容将自动缩放
-		websettings.setLayoutAlgorithm(LayoutAlgorithm.NARROW_COLUMNS);
+		websettings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
 		// 设置支持JavaScript
 		webview.clearCache(true);
 		websettings.setJavaScriptEnabled(true);
@@ -52,8 +55,8 @@ public class WebViewUtil
 					return true;
 				}
 					
-				//TODO 处理站内跳转等
-				//SitelinkJsonService.ProcessSiteLink(devid, memberid, url,c);
+				//处理站内跳转等
+				ProcessSiteLink(c, url);
 				return true;		
 			}
 			@Override
@@ -71,12 +74,24 @@ public class WebViewUtil
 		});
 	}
 	
+	public static void ProcessSiteLink(Context c,String url)
+	{
+		if(FileUtil.isImageFile(url))
+		{
+			Intent intent = new Intent(c, ViewImageActivity.class);
+			intent.putExtra(ViewImageActivity.CSTR_EXTRA_IMAGE,url);
+			c.startActivity(intent);
+			return;
+		}
+		//TODO 站内新闻处理
+		BaseActivity.runBrowser(url,c);
+	}
+	
 	private static boolean isreloadlink(String url)
 	{
 		if(StringUtil.isEmpty(url))
 			return false;
 		return url.equals(CSTR_RELOADLINK);
-			
 	}
 	
 	/**
@@ -104,7 +119,7 @@ public class WebViewUtil
 				+ "else{ var __method = this, args = $A(arguments);  window.setTimeout(function() {  "
 				+ " fixImage.apply(__method, args); }, 200); }  i.onload = function(){}  }  </script>";
 		return "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">"
-				+ autoloadimgscript + "</head><body>";
+				+ autoloadimgscript + "<style type=\"text/css\">body {background-color:#fcf2e9;}</style></head><body>";
 	}
 	
 	/**
@@ -232,6 +247,6 @@ public class WebViewUtil
 	 */
 	public static String getHtmlEnd()
 	{
-		return "</body></html>";
+		return "<br/><br/></body></html>";
 	}
 }

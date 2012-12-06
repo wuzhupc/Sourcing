@@ -92,6 +92,9 @@ containing a value of this type.
         /**  子栏目标题栏显示相关颜色 
          */
         public static final int subchanneltab_textcolor=0x7f06000d;
+        /**  ViewImageActivity 
+         */
+        public static final int viewimage_toolbar_bg=0x7f060019;
         public static final int white=0x7f060000;
     }
     public static final class dimen {
@@ -136,45 +139,50 @@ containing a value of this type.
         public static final int icon_home_tb_news=0x7f020018;
         public static final int icon_home_tb_person=0x7f020019;
         public static final int icon_home_tb_user=0x7f02001a;
-        public static final int icon_share=0x7f02001b;
-        public static final int icon_share_light=0x7f02001c;
-        public static final int icon_spinner_108=0x7f02001d;
-        public static final int icon_spinner_24=0x7f02001e;
-        public static final int icon_spinner_36=0x7f02001f;
-        public static final int icon_spinner_48=0x7f020020;
-        public static final int icon_spinner_72=0x7f020021;
-        public static final int icon_userinfo_bg=0x7f020022;
-        public static final int icon_userpic_bg=0x7f020023;
-        public static final int list_base_divider=0x7f020024;
-        public static final int loading_failed=0x7f020025;
-        public static final int logo64_48=0x7f020026;
-        public static final int progress_large=0x7f020027;
-        public static final int progress_medium=0x7f020028;
-        public static final int progress_micro=0x7f020029;
-        public static final int progress_small=0x7f02002a;
-        public static final int pulltorefresh_down_arrow=0x7f02002b;
-        public static final int pulltorefresh_up_arrow=0x7f02002c;
-        public static final int selector_menubar_bk_img=0x7f02002d;
-        public static final int selector_subchannel_tab_img=0x7f02002e;
-        public static final int subchannel_tab_bg=0x7f02002f;
-        public static final int theme_dialog_bg=0x7f020030;
-        public static final int title_bar_refresh_48=0x7f020031;
-        public static final int title_bar_refresh_48_light=0x7f020032;
-        public static final int title_button=0x7f020033;
-        public static final int toolbar_bkg=0x7f020034;
-        public static final int toolbar_bkg_sel=0x7f020035;
-        public static final int toolbar_bkg_sel2=0x7f020036;
-        public static final int top_title_bg=0x7f020037;
-        public static final int welcome=0x7f020038;
-        public static final int welcome_close_btn=0x7f020039;
-        public static final int welcome_separate_line=0x7f02003a;
+        public static final int icon_imageview_left=0x7f02001b;
+        public static final int icon_imageview_right=0x7f02001c;
+        public static final int icon_imageview_save=0x7f02001d;
+        public static final int icon_imageview_zoomin=0x7f02001e;
+        public static final int icon_imageview_zoomout=0x7f02001f;
+        public static final int icon_share=0x7f020020;
+        public static final int icon_share_light=0x7f020021;
+        public static final int icon_spinner_108=0x7f020022;
+        public static final int icon_spinner_24=0x7f020023;
+        public static final int icon_spinner_36=0x7f020024;
+        public static final int icon_spinner_48=0x7f020025;
+        public static final int icon_spinner_72=0x7f020026;
+        public static final int icon_userinfo_bg=0x7f020027;
+        public static final int icon_userpic_bg=0x7f020028;
+        public static final int list_base_divider=0x7f020029;
+        public static final int loading_failed=0x7f02002a;
+        public static final int logo64_48=0x7f02002b;
+        public static final int progress_large=0x7f02002c;
+        public static final int progress_medium=0x7f02002d;
+        public static final int progress_micro=0x7f02002e;
+        public static final int progress_small=0x7f02002f;
+        public static final int pulltorefresh_down_arrow=0x7f020030;
+        public static final int pulltorefresh_up_arrow=0x7f020031;
+        public static final int selector_menubar_bk_img=0x7f020032;
+        public static final int selector_subchannel_tab_img=0x7f020033;
+        public static final int subchannel_tab_bg=0x7f020034;
+        public static final int theme_dialog_bg=0x7f020035;
+        public static final int title_bar_refresh_48=0x7f020036;
+        public static final int title_bar_refresh_48_light=0x7f020037;
+        public static final int title_button=0x7f020038;
+        public static final int toolbar_bkg=0x7f020039;
+        public static final int toolbar_bkg_sel=0x7f02003a;
+        public static final int toolbar_bkg_sel2=0x7f02003b;
+        public static final int top_title_bg=0x7f02003c;
+        public static final int welcome=0x7f02003d;
+        public static final int welcome_close_btn=0x7f02003e;
+        public static final int welcome_separate_line=0x7f02003f;
     }
     public static final class id {
         public static final int activity_title_container=0x7f050006;
         public static final int activity_title_text=0x7f050007;
-        public static final int base_context_ll=0x7f05002c;
-        public static final int base_subchannel_hsv=0x7f05002b;
-        public static final int base_subchannel_ll=0x7f05002a;
+        public static final int base_context_ll=0x7f050035;
+        public static final int base_subchannel_hsv=0x7f050034;
+        public static final int base_subchannel_ll=0x7f050033;
         public static final int both=0x7f050002;
         public static final int detail_content_wv=0x7f05000c;
         public static final int detail_tb_fav_iv=0x7f05000a;
@@ -183,13 +191,13 @@ containing a value of this type.
         public static final int dialog_footview_btn_center=0x7f050003;
         public static final int dialog_footview_btn_left=0x7f050004;
         public static final int dialog_footview_btn_right=0x7f050005;
-        public static final int dialog_footview_spaceone_ll=0x7f05001d;
-        public static final int dialog_footview_spacetwo_ll=0x7f05001e;
-        public static final int dialog_message=0x7f05001c;
-        public static final int dialog_progressbar=0x7f050021;
-        public static final int dialog_title=0x7f050020;
-        public static final int dialog_title_left_image=0x7f05001f;
-        public static final int dialog_title_ll=0x7f05001b;
+        public static final int dialog_footview_spaceone_ll=0x7f050026;
+        public static final int dialog_footview_spacetwo_ll=0x7f050027;
+        public static final int dialog_message=0x7f050025;
+        public static final int dialog_progressbar=0x7f05002a;
+        public static final int dialog_title=0x7f050029;
+        public static final int dialog_title_left_image=0x7f050028;
+        public static final int dialog_title_ll=0x7f050024;
         public static final int home_content_vf=0x7f050014;
         public static final int home_data_ref_iv=0x7f05000e;
         public static final int home_data_ref_pb=0x7f05000d;
@@ -198,61 +206,72 @@ containing a value of this type.
         public static final int home_menubar_m2_v=0x7f050011;
         public static final int home_menubar_m3_v=0x7f050012;
         public static final int home_menubar_m4_v=0x7f050013;
-        public static final int imageButton1=0x7f05002f;
-        public static final int imageView1=0x7f05002d;
-        public static final int list_base_datalist_lv=0x7f050022;
-        public static final int listitem_base_iv=0x7f050023;
-        public static final int listitem_base_label_tv=0x7f050026;
-        public static final int listitem_base_summary_tv=0x7f050025;
-        public static final int listitem_base_title_tv=0x7f050024;
-        public static final int menubar_menuitem_icon=0x7f050030;
-        public static final int menubar_menuitem_text=0x7f050031;
-        public static final int morebotton_pb=0x7f050033;
-        public static final int morebutton_tv=0x7f050032;
+        public static final int imageButton1=0x7f050038;
+        public static final int imageView1=0x7f050036;
+        public static final int list_base_datalist_lv=0x7f05002b;
+        public static final int listitem_base_iv=0x7f05002c;
+        public static final int listitem_base_label_tv=0x7f05002f;
+        public static final int listitem_base_summary_tv=0x7f05002e;
+        public static final int listitem_base_title_tv=0x7f05002d;
+        public static final int menubar_menuitem_icon=0x7f050039;
+        public static final int menubar_menuitem_text=0x7f05003a;
+        public static final int morebotton_pb=0x7f05003c;
+        public static final int morebutton_tv=0x7f05003b;
         public static final int pullDownFromTop=0x7f050000;
         public static final int pullUpFromBottom=0x7f050001;
         public static final int pull_gridview=0x7f050008;
-        public static final int pull_to_refresh_image=0x7f050029;
-        public static final int pull_to_refresh_progress=0x7f050028;
-        public static final int pull_to_refresh_text=0x7f050027;
-        public static final int subchannel_tab_icon=0x7f050034;
-        public static final int subchannel_tab_text=0x7f050035;
-        public static final int textView1=0x7f05002e;
-        public static final int welcome_bg_iv=0x7f050015;
-        public static final int welcome_bottom_v=0x7f050016;
-        public static final int welcome_close_ib=0x7f05001a;
-        public static final int welcome_separate_iv=0x7f050017;
-        public static final int welcome_url_tv=0x7f050018;
-        public static final int welcome_ver_tv=0x7f050019;
+        public static final int pull_to_refresh_image=0x7f050032;
+        public static final int pull_to_refresh_progress=0x7f050031;
+        public static final int pull_to_refresh_text=0x7f050030;
+        public static final int subchannel_tab_icon=0x7f05003d;
+        public static final int subchannel_tab_text=0x7f05003e;
+        public static final int textView1=0x7f050037;
+        public static final int viewimage_bottom_ll=0x7f050018;
+        public static final int viewimage_bottom_save_ib=0x7f05001d;
+        public static final int viewimage_imageoper_left_ib=0x7f050019;
+        public static final int viewimage_imageoper_right_ib=0x7f05001a;
+        public static final int viewimage_imageoper_zoomin_ib=0x7f05001b;
+        public static final int viewimage_imageoper_zoomout_ib=0x7f05001c;
+        public static final int viewimage_ivt=0x7f050015;
+        public static final int viewimage_top_back_ib=0x7f050017;
+        public static final int viewimage_top_rl=0x7f050016;
+        public static final int welcome_bg_iv=0x7f05001e;
+        public static final int welcome_bottom_v=0x7f05001f;
+        public static final int welcome_close_ib=0x7f050023;
+        public static final int welcome_separate_iv=0x7f050020;
+        public static final int welcome_url_tv=0x7f050021;
+        public static final int welcome_ver_tv=0x7f050022;
     }
     public static final class layout {
         public static final int activity_detail_news=0x7f030000;
         public static final int activity_home=0x7f030001;
-        public static final int activity_welcome=0x7f030002;
-        public static final int dialog_base=0x7f030003;
-        public static final int dialog_footview=0x7f030004;
-        public static final int dialog_footview_1btn=0x7f030005;
-        public static final int dialog_footview_3btn=0x7f030006;
-        public static final int dialog_title=0x7f030007;
-        public static final int list_base=0x7f030008;
-        public static final int listitem_base=0x7f030009;
-        public static final int listitem_base_headline=0x7f03000a;
-        public static final int listitem_base_label=0x7f03000b;
-        public static final int pull_to_refresh_header=0x7f03000c;
-        public static final int view_base=0x7f03000d;
-        public static final int view_user=0x7f03000e;
-        public static final int widget_menubar_btn=0x7f03000f;
-        public static final int widget_morebutton=0x7f030010;
-        public static final int widget_subchannel_tab=0x7f030011;
+        public static final int activity_viewimage=0x7f030002;
+        public static final int activity_welcome=0x7f030003;
+        public static final int dialog_base=0x7f030004;
+        public static final int dialog_footview=0x7f030005;
+        public static final int dialog_footview_1btn=0x7f030006;
+        public static final int dialog_footview_3btn=0x7f030007;
+        public static final int dialog_title=0x7f030008;
+        public static final int list_base=0x7f030009;
+        public static final int listitem_base=0x7f03000a;
+        public static final int listitem_base_headline=0x7f03000b;
+        public static final int listitem_base_label=0x7f03000c;
+        public static final int pull_to_refresh_header=0x7f03000d;
+        public static final int view_base=0x7f03000e;
+        public static final int view_user=0x7f03000f;
+        public static final int widget_menubar_btn=0x7f030010;
+        public static final int widget_morebutton=0x7f030011;
+        public static final int widget_subchannel_tab=0x7f030012;
     }
     public static final class string {
-        public static final int Base_hit_createstorefolderfail=0x7f08002d;
-        public static final int Base_hit_defaskclosemsg=0x7f08002f;
+        public static final int Base_hit_createstorefolderfail=0x7f08002e;
+        public static final int Base_hit_defaskclosemsg=0x7f080030;
         /**  BaseActivity 
          */
-        public static final int Base_hit_nosdcard=0x7f08002c;
-        public static final int Base_hit_title=0x7f08002e;
+        public static final int Base_hit_nosdcard=0x7f08002d;
+        public static final int Base_hit_title=0x7f08002f;
         public static final int app_name=0x7f08001a;
+        public static final int app_name_full=0x7f08001b;
         /**  链接地址前缀 
          */
         public static final int baseurl=0x7f080004;
@@ -319,57 +338,57 @@ containing a value of this type.
         /**  用户登录  
          */
         public static final int cmd_json_user_login=0x7f080013;
-        public static final int detail_news_content_empty=0x7f08003b;
+        public static final int detail_news_content_empty=0x7f08003c;
         /**  NewsDetailActivity 
          */
-        public static final int detail_news_title=0x7f08003a;
-        public static final int dl_btn_back=0x7f080025;
-        public static final int dl_btn_cancel=0x7f080027;
-        public static final int dl_btn_confirm=0x7f080026;
-        public static final int dl_btn_ok=0x7f080024;
-        public static final int dl_btn_quit=0x7f080028;
-        public static final int dl_msg_receiving_data=0x7f080022;
-        public static final int dl_msg_update_error=0x7f080023;
-        public static final int dl_title_error=0x7f080021;
+        public static final int detail_news_title=0x7f08003b;
+        public static final int dl_btn_back=0x7f080026;
+        public static final int dl_btn_cancel=0x7f080028;
+        public static final int dl_btn_confirm=0x7f080027;
+        public static final int dl_btn_ok=0x7f080025;
+        public static final int dl_btn_quit=0x7f080029;
+        public static final int dl_msg_receiving_data=0x7f080023;
+        public static final int dl_msg_update_error=0x7f080024;
+        public static final int dl_title_error=0x7f080022;
         /**  Dialog 提示信息  
          */
-        public static final int dl_title_prompt=0x7f080020;
+        public static final int dl_title_prompt=0x7f080021;
         /**  收藏相关 
          */
-        public static final int fav_add=0x7f08003c;
-        public static final int fav_remove=0x7f08003d;
+        public static final int fav_add=0x7f08003d;
+        public static final int fav_remove=0x7f08003e;
         /**  HomeActivity 
          */
-        public static final int home_initchannel_fail=0x7f080039;
+        public static final int home_initchannel_fail=0x7f08003a;
         /**  服务端接口
          */
         public static final int jsonurl=0x7f080003;
-        public static final int list_item_loading_data=0x7f08002b;
-        public static final int list_item_more_msg=0x7f08002a;
+        public static final int list_item_loading_data=0x7f08002c;
+        public static final int list_item_more_msg=0x7f08002b;
         /**  列表项相关  
          */
-        public static final int list_item_no_data=0x7f080029;
+        public static final int list_item_no_data=0x7f08002a;
         /**  网络异常提示信息  
          */
-        public static final int prompt_network_connect_timeout=0x7f08001b;
-        public static final int prompt_network_error=0x7f08001e;
-        public static final int prompt_network_read_timeout=0x7f08001c;
-        public static final int prompt_network_receiving_data_error=0x7f08001f;
-        public static final int prompt_network_url_error=0x7f08001d;
+        public static final int prompt_network_connect_timeout=0x7f08001c;
+        public static final int prompt_network_error=0x7f08001f;
+        public static final int prompt_network_read_timeout=0x7f08001d;
+        public static final int prompt_network_receiving_data_error=0x7f080020;
+        public static final int prompt_network_url_error=0x7f08001e;
         public static final int pull_to_refresh_pull_label=0x7f080000;
         public static final int pull_to_refresh_refreshing_label=0x7f080002;
         public static final int pull_to_refresh_release_label=0x7f080001;
-        public static final int welcome_publish=0x7f080033;
+        public static final int welcome_publish=0x7f080034;
         /**  WelcomeActivity 
          */
-        public static final int welcome_title=0x7f080030;
-        public static final int welcome_update_btn=0x7f080038;
-        public static final int welcome_update_content=0x7f080036;
-        public static final int welcome_update_content_ex=0x7f080037;
-        public static final int welcome_update_title=0x7f080034;
-        public static final int welcome_update_title_ex=0x7f080035;
-        public static final int welcome_url=0x7f080032;
-        public static final int welcome_ver=0x7f080031;
+        public static final int welcome_title=0x7f080031;
+        public static final int welcome_update_btn=0x7f080039;
+        public static final int welcome_update_content=0x7f080037;
+        public static final int welcome_update_content_ex=0x7f080038;
+        public static final int welcome_update_title=0x7f080035;
+        public static final int welcome_update_title_ex=0x7f080036;
+        public static final int welcome_url=0x7f080033;
+        public static final int welcome_ver=0x7f080032;
     }
     public static final class style {
         /**  Base application theme is the default theme. 

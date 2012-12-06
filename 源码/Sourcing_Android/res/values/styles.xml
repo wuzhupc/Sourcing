@@ -44,7 +44,8 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">@dimen/title_height</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:background">@drawable/top_title_bg</item>
+        <!-- <item name="android:background">@color/activity_title_bg_color</item> -->
+       <item name="android:background">@drawable/top_title_bg</item> 
     </style>
 
     <style name="TitleBarAction">
