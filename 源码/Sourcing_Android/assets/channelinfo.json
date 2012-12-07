@@ -16,7 +16,7 @@
             }},
             {"ChannelVO":{
                 "channelID":"2",
-                "channelName":"人才",
+                "channelName":"服务",
                 "fatherchannelID":"0",
                 "isdefault":"0",
                 "sort":"2",

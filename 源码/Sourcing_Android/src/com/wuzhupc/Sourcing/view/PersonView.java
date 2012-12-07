@@ -1,6 +1,10 @@
 package com.wuzhupc.Sourcing.view;
 
+import com.wuzhupc.Sourcing.R;
+
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
 
 public class PersonView extends BaseView
 {
@@ -27,8 +31,8 @@ public class PersonView extends BaseView
 	@Override
 	public void initContentView()
 	{
-		// TODO Auto-generated method stub
-
+		View v = LayoutInflater.from(mContext).inflate(R.layout.view_person, mll_content, false);
+		setContentView(v);
 	}
 
 	@Override

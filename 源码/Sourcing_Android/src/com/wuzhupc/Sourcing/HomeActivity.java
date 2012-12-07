@@ -199,6 +199,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	 */
 	public void setMainTitleRefStatus(boolean ref)
 	{
+		
 		if (ref)
 		{
 			mpb_DataRef.setVisibility(View.VISIBLE);
