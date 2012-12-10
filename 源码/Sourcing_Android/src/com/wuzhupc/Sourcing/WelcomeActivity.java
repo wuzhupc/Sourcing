@@ -5,12 +5,13 @@ import java.util.Map;
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.Sourcing.vo.ClientVerVO;
 import com.wuzhupc.Sourcing.vo.ResponseVO;
+import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
 import com.wuzhupc.services.ClientJsonService;
+import com.wuzhupc.services.MobileUserService;
 import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -123,8 +124,8 @@ public class WelcomeActivity extends BaseActivity
 		else
 			mHandler.sendMessage(message);
 	}
-	
-	@SuppressLint("HandlerLeak")
+
+
 	private Handler mHandler = new Handler()
 	{
 		@Override
@@ -255,9 +256,36 @@ public class WelcomeActivity extends BaseActivity
 	 */
 	private void startUserLogin()
 	{
-		//TODO 读取之前的登录信息
-		//TODO 远程判断
-		completeUserLogin();
+		//读取之前的登录信息
+		UserVO vo = UserVO.getLastLoginUserInfo();
+		if(vo==null)
+		{
+			completeUserLogin();
+			return;
+		}
+		//远程判断
+		MobileUserService service =new MobileUserService(WelcomeActivity.this);
+		service.userLogin(vo.getUseraccount(), vo.getPassword(), new IBaseReceiver()
+		{
+			@Override
+			public void receiveCompleted(boolean isSuc, String content)
+			{
+				if(!isSuc)
+				{
+					completeUserLogin();
+					return;
+				}
+				ResponseVO responseVO = new ResponseVO();
+				UserVO userVO = (UserVO) JsonParser.parseJsonToEntity(content, responseVO);
+				if(!responseVO.isSucess()||userVO==null)
+				{
+					completeUserLogin();
+					return;
+				}
+				getApplicationSet().setUserVO(userVO,true);
+				completeUserLogin();
+			}
+		});	
 	}
 	
 	private void completeUserLogin()

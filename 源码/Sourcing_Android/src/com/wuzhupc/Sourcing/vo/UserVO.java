@@ -1,14 +1,25 @@
 package com.wuzhupc.Sourcing.vo;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import android.util.Log;
+
+import com.wuzhupc.config.Constants;
+import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
  * 用户
+ * 
  * @author wuzhu email:wuzhupc@gmail.com
  * @version 创建时间：2012-11-17 下午7:57:52
  */
 public class UserVO extends BaseVO
 {
+	protected static final String TAG = UserVO.class.getSimpleName();
 	/**
 	 * 
 	 */
@@ -17,23 +28,35 @@ public class UserVO extends BaseVO
 	/**
 	 * 用户类型:个人用户
 	 */
-	public static final int USER_TYPE_PERSONAL = 1 ;
+	public static final int USER_TYPE_PERSONAL = 1;
+	/**
+	 * 用户类型:专家用户
+	 */
+	public static final int USER_TYPE_EXPERT = 2;
 	/**
 	 * 用户类型:企业用户
 	 */
-	public static final int USER_TYPE_ENTERPRISE = 2 ;
+	public static final int USER_TYPE_ENTERPRISE = 3;
 	/**
 	 * 用户类型:培训机构
 	 */
-	public static final int USER_TYPE_TRAIN = 3 ;
+	public static final int USER_TYPE_TRAIN = 4;
 	/**
 	 * 用户编号
 	 */
-	//private long userid;
+	// private long userid;
 	/**
 	 * 用户类型,USER_TYPE_
 	 */
 	private int usertype;
+	/**
+	 * 用户登录帐号
+	 */
+	private String useraccount;
+	/**
+	 * 用户密码
+	 */
+	private String password;
 	/**
 	 * 用户名称(如果是注册为企业,则返回企业名称,培训机构,则返回培训机构名称)
 	 */
@@ -79,7 +102,7 @@ public class UserVO extends BaseVO
 
 	public void setUserid(String userid)
 	{
-		setUserid(JavaLangUtil.StrToLong(userid,-1l));
+		setUserid(JavaLangUtil.StrToLong(userid, -1l));
 	}
 
 	public int getUsertype()
@@ -94,7 +117,7 @@ public class UserVO extends BaseVO
 
 	public void setUsertype(String usertype)
 	{
-		this.usertype = JavaLangUtil.StrToInteger(usertype,USER_TYPE_PERSONAL);
+		this.usertype = JavaLangUtil.StrToInteger(usertype, USER_TYPE_PERSONAL);
 	}
 
 	public String getUsername()
@@ -144,7 +167,7 @@ public class UserVO extends BaseVO
 
 	public void setConsultcount(String consultcount)
 	{
-		this.consultcount = JavaLangUtil.StrToInteger(consultcount,0);
+		this.consultcount = JavaLangUtil.StrToInteger(consultcount, 0);
 	}
 
 	public void setConsultcount(int consultcount)
@@ -164,7 +187,7 @@ public class UserVO extends BaseVO
 
 	public void setAuditcount(String auditcount)
 	{
-		this.auditcount = JavaLangUtil.StrToInteger(auditcount,0);
+		this.auditcount = JavaLangUtil.StrToInteger(auditcount, 0);
 	}
 
 	public int getDeclarecount()
@@ -179,7 +202,7 @@ public class UserVO extends BaseVO
 
 	public void setDeclarecount(String declarecount)
 	{
-		this.declarecount = JavaLangUtil.StrToInteger(declarecount,0);
+		this.declarecount = JavaLangUtil.StrToInteger(declarecount, 0);
 	}
 
 	public int getNotifiercount()
@@ -194,7 +217,137 @@ public class UserVO extends BaseVO
 
 	public void setNotifiercount(String notifiercount)
 	{
-		this.notifiercount = JavaLangUtil.StrToInteger(notifiercount,0);
+		this.notifiercount = JavaLangUtil.StrToInteger(notifiercount, 0);
 	}
+
+	public String getUseraccount()
+	{
+		return useraccount;
+	}
+
+	public void setUseraccount(String useraccount)
+	{
+		this.useraccount = useraccount;
+	}
+
+	public String getPassword()
+	{
+		return password;
+	}
+
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
+
+	/**
+	 * 存储用户登录信息--存储文件路径
+	 */
+	private static final String CSTR_DATAFILE_USER = Constants.CSTR_DATASTOREDIR
+			+ "datafile_u.dat";
 	
+	/**
+	 * 存储最后登录信息
+	 * @param vo 如果为空，则清除之前的登录记录
+	 * @return
+	 */
+	public static boolean saveLoginUserInfo(UserVO vo)
+	{
+		if(vo==null)
+		{
+			if (FileUtil.isExistFile(CSTR_DATAFILE_USER))
+			{
+				return FileUtil.deleteFile(CSTR_DATAFILE_USER);
+			}
+			return true;
+		}
+		boolean result =false;
+		FileOutputStream fos= null;
+		ObjectOutputStream oos = null;
+		try
+		{
+			fos = new FileOutputStream(CSTR_DATAFILE_USER);
+			oos = new ObjectOutputStream(fos);
+			oos.writeObject(vo);
+			oos.flush();
+			result=true;
+		} catch (Exception e)
+		{
+			Log.e(TAG, e.getMessage());
+		} finally
+		{
+			if(oos!=null)
+			{
+				try
+				{
+					oos.close();
+					oos=null;
+				} catch (Exception e2)
+				{
+					Log.e(TAG, e2.getMessage());
+				}
+			}
+			if(fos!=null)
+			{
+				try
+				{
+					fos.close();
+					fos=null;
+				} catch (Exception e2)
+				{
+					Log.e(TAG, e2.getMessage());
+				}
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * 获取最后登录的信息数据
+	 * 
+	 * @return
+	 */
+	public static UserVO getLastLoginUserInfo()
+	{
+		UserVO vo = null;
+		if (FileUtil.isExistFile(CSTR_DATAFILE_USER))
+		{
+			FileInputStream fis = null;
+			ObjectInputStream ois = null;
+			try
+			{
+				fis = new FileInputStream(CSTR_DATAFILE_USER);
+				ois = new ObjectInputStream(fis);
+				vo = (UserVO)ois.readObject();
+			} catch (Exception e)
+			{
+				Log.e(TAG, e.getMessage());
+			} finally
+			{
+				if (ois != null)
+				{
+					try
+					{
+						ois.close();
+						ois=null;
+					} catch (Exception e2)
+					{
+						Log.e(TAG, e2.getMessage());
+					}
+				}
+				if (fis != null)
+				{
+					try
+					{
+						fis.close();
+						fis=null;
+					} catch (Exception e2)
+					{
+						Log.e(TAG, e2.getMessage());
+					}
+				}
+			}
+		}
+		return vo;
+	}
 }

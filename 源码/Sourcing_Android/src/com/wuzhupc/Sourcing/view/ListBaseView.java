@@ -255,26 +255,26 @@ public class ListBaseView extends BaseView
 		}
 	}
 	
-	/**
-	 * 从新闻列表里获取 新闻主题 的条目(除去列表头与尾的条目)
-	 * 
-	 * @param list
-	 * @return
-	 */
-	protected ArrayList<NewsVO> getNewsList(List list)
-	{
-		ArrayList<NewsVO> ls = new ArrayList<NewsVO>();
-
-		for (Object obj : list)
-		{
-			if (obj instanceof NewsVO)
-			{
-				ls.add((NewsVO) obj);
-			}
-		}
-
-		return ls;
-	}
+//	/**
+//	 * 从新闻列表里获取 新闻主题 的条目(除去列表头与尾的条目)
+//	 * 
+//	 * @param list
+//	 * @return
+//	 */
+//	protected ArrayList<NewsVO> getNewsList(List list)
+//	{
+//		ArrayList<NewsVO> ls = new ArrayList<NewsVO>();
+//
+//		for (Object obj : list)
+//		{
+//			if (obj instanceof NewsVO)
+//			{
+//				ls.add((NewsVO) obj);
+//			}
+//		}
+//
+//		return ls;
+//	}
 	
 	/**
 	 * 从服务端获取最新数据

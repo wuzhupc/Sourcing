@@ -4,6 +4,7 @@ import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.config.Constants;
 import com.wuzhupc.utils.JavaLangUtil;
+import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonCreater;
 
 import android.content.Context;
@@ -110,7 +111,8 @@ public class MobileInfoService extends BaseJsonService
 	{
 		JsonCreater creater=JsonCreater.startJson();
 		creater.setParam("devid",getDevID());
-		creater.setParam("searchkey", searchkey);
+		if(!StringUtil.isEmpty(searchkey))
+			creater.setParam("searchkey", searchkey);
 		creater.setParam("pagesize", Constants.CINT_PAGE_SIZE);
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_job_list);
@@ -127,7 +129,8 @@ public class MobileInfoService extends BaseJsonService
 	{
 		JsonCreater creater=JsonCreater.startJson();
 		creater.setParam("devid",getDevID());
-		creater.setParam("searchkey", searchkey);
+		if(!StringUtil.isEmpty(searchkey))
+			creater.setParam("searchkey", searchkey);
 		creater.setParam("pagesize", Constants.CINT_PAGE_SIZE);
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_resume_list);
@@ -144,7 +147,8 @@ public class MobileInfoService extends BaseJsonService
 	{
 		JsonCreater creater=JsonCreater.startJson();
 		creater.setParam("devid",getDevID());
-		creater.setParam("searchkey", searchkey);
+		if(!StringUtil.isEmpty(searchkey))
+			creater.setParam("searchkey", searchkey);
 		creater.setParam("pagesize", Constants.CINT_PAGE_SIZE);
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_train_list);
@@ -161,7 +165,8 @@ public class MobileInfoService extends BaseJsonService
 	{
 		JsonCreater creater=JsonCreater.startJson();
 		creater.setParam("devid",getDevID());
-		creater.setParam("searchkey", searchkey);
+		if(!StringUtil.isEmpty(searchkey))
+			creater.setParam("searchkey", searchkey);
 		creater.setParam("pagesize", Constants.CINT_PAGE_SIZE);
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_project_list);

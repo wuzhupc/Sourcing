@@ -60,89 +60,105 @@ public class ChannelVO extends BaseVO {
 	private Date lastUpdateDataTime;
 	
 	/**
+	 * 需要那些用户类型,如果null或空字符串，表示没有要求，如果是需要多种用户类型，则用;分隔开，用户类型参考UserVO
+	 */
+	private String mustusertypes;
+	
+	public String getMustusertypes()
+	{
+		return mustusertypes;
+	}
+
+	public void setMustusertypes(String mustusertypes)
+	{
+		this.mustusertypes = mustusertypes;
+	}
+
+
+	/**
 	 * 父类型的栏目ID
 	 */
-	public static final int CHANNELID_FATHER = 0;
+	private static final int CHANNELID_FATHER = 0;
 	
 	/**
 	 * 父类型－资讯
 	 */
-	public static final int TYPE_FATHER_NEWS = 1;
+	private static final int TYPE_FATHER_NEWS = 1;
 	
 	/**
-	 * 父类型－人才
+	 * 父类型－服务
 	 */
-	public static final int TYPE_FATHER_PERSON = 2;
+	private static final int TYPE_FATHER_PERSON = 2;
 	
 	/**
 	 * 父类型－用户
 	 */
-	public static final int TYPE_FATHER_USER = 3;
+	private static final int TYPE_FATHER_USER = 3;
 	
 	/**
 	 * 父类型－更多
 	 */
-	public static final int TYPE_FATHER_MORE = 4;
+	private static final int TYPE_FATHER_MORE = 4;
 	
 	/**
 	 * 资讯栏目类型-最新
 	 */
-	public static final int TYPE_NEWS_NEWEST = 0;
+	private static final int TYPE_NEWS_NEWEST = 0;
 	
 	/**
 	 * 资讯栏目类型-行业
 	 */
-	public static final int TYPE_NEWS_INDUSTR = 1;
+	private static final int TYPE_NEWS_INDUSTR = 1;
 	
 	/**
 	 * 资讯栏目类型-政策
 	 */
-	public static final int TYPE_NEWS_POLICY = 2;
+	private static final int TYPE_NEWS_POLICY = 2;
 	
 	/**
 	 * 资讯栏目类型-通知
 	 */
-	public static final int TYPE_NEWS_NOTIFICATION = 3;
+	private static final int TYPE_NEWS_NOTIFICATION = 3;
 	
 	/**
 	 * 资讯栏目类型-专家
 	 */
-	public static final int TYPE_NEWS_EXPERT = 4;
+	private static final int TYPE_NEWS_EXPERT = 4;
 	
 	/**
-	 * 人才栏目类型 -职位
+	 * 服务栏目类型 -职位
 	 */
-	public static final int TYPE_PERSON_POSITION = 1;
+	private static final int TYPE_PERSON_POSITION = 1;
 	
 	/**
-	 * 人才栏目类型 -简历
+	 * 服务栏目类型 -简历
 	 */
-	public static final int TYPE_PERSON_RESUME = 2;
+	private static final int TYPE_PERSON_RESUME = 2;
 	
 	/**
-	 * 人才栏目类型 -培训机构
+	 * 服务栏目类型 -培训机构
 	 */
-	public static final int TYPE_PERSON_TRAIN = 3;
+	private static final int TYPE_PERSON_TRAIN = 3;
 	
 	/**
-	 * 人才栏目类型 -项目
+	 * 服务栏目类型 -项目
 	 */
-	public static final int TYPE_PERSON_PROJECT = 4;
+	private static final int TYPE_PERSON_PROJECT = 4;
 	
 	/**
 	 * 更多栏目类型－收藏
 	 */
-	public static final int TYPE_MORE_FAV = 1;
+	private static final int TYPE_MORE_FAV = 1;
 	
 	/**
 	 * 更多栏目类型－系统设置
 	 */
-	public static final int TYPE_MORE_SETTING = 2;
+	private static final int TYPE_MORE_SETTING = 2;
 	
 	/**
 	 * 更多栏目类型－退出
 	 */
-	public static final int TYPE_MORE_EXIT = 0;
+	private static final int TYPE_MORE_EXIT = 0;
 	
 	public int getIsDefault()
 	{
@@ -226,9 +242,105 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
+	 * 资讯
+	 * @return
+	 */
+	public boolean isNewsChannel()
+	{
+		return fatherchannelID==CHANNELID_FATHER&&type==TYPE_FATHER_NEWS;
+	}
+	
+	/**
+	 * 服务
+	 * @return
+	 */
+	public boolean isPersonChannel()
+	{
+		return fatherchannelID==CHANNELID_FATHER&&type==TYPE_FATHER_PERSON;
+	}
+	
+	/**
+	 * 用户
+	 * @return
+	 */
+	public boolean isUserChannel()
+	{
+		return fatherchannelID==CHANNELID_FATHER&&type==TYPE_FATHER_USER;
+	}
+	
+	/**
+	 * 更多
+	 * @return
+	 */
+	public boolean isMoreChannel()
+	{
+		return fatherchannelID==CHANNELID_FATHER&&type==TYPE_FATHER_MORE;
+	}
+
+	
+	/**
+	 *获取默认资讯类型
+	 * @return
+	 */
+	public static int getDefaultNewsType()
+	{
+		return TYPE_NEWS_INDUSTR;
+	}
+	
+	public boolean isFavChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_MORE&&type==TYPE_MORE_FAV;
+	}	
+	public boolean isSettingChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_MORE&&type==TYPE_MORE_SETTING;
+	}	
+	public boolean isExitChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_MORE&&type==TYPE_MORE_EXIT;
+	}
+	
+	/**
+	 * 服务栏目类型 -职位
+	 * @return
+	 */
+	public boolean isPositionChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_PERSON&&type==TYPE_PERSON_POSITION;
+	}
+	
+	/**
+	 * 服务栏目类型 -培训机构
+	 * @return
+	 */
+	public boolean isTrainChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_PERSON&&type==TYPE_PERSON_TRAIN;
+	}
+	
+	/**
+	 * 服务栏目类型 -项目
+	 * @return
+	 */
+	public boolean isProjectChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_PERSON&&type==TYPE_PERSON_PROJECT;
+	}
+	
+	/**
+	 * 服务栏目类型 -简历
+	 * @return
+	 */
+	public boolean isResumeChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_PERSON&&type==TYPE_PERSON_RESUME;
+	}
+	
+	/**
 	 * 初始化栏目数据，从assets/channelinfo.json文件中读取
 	 * @return 如果数据文件不存在或者解析异常返回null
 	 */
+	@SuppressWarnings("unchecked")
 	public static ArrayList<ChannelVO> initChannelsFormAssets(Context context)
 	{
 		String strChannels = FileUtil.readFileFromAssetsFile(context, "channelinfo.json");
@@ -239,6 +351,16 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
+	 * 获取父级栏目内容
+	 * @param channelVOs
+	 * @return
+	 */
+	public static ArrayList<ChannelVO> getFatherChannels(ArrayList<ChannelVO> channelVOs)
+	{
+		return getChannels(channelVOs, CHANNELID_FATHER);
+	}
+	
+	/**
 	 * 获取各级栏目内容
 	 * @param channelVOs
 	 * @return
@@ -246,20 +368,40 @@ public class ChannelVO extends BaseVO {
 	public static ArrayList<ChannelVO> getChannels(ArrayList<ChannelVO> channelVOs,
 			long fatherid)
 	{
+		return getChannels(channelVOs, fatherid,null);
+	}
+	
+	/**
+	 * 获取各级栏目内容
+	 * @param channelVOs
+	 * @return
+	 */
+	public static ArrayList<ChannelVO> getChannels(ArrayList<ChannelVO> channelVOs,
+			long fatherid,String usertype)
+	{
 		if(channelVOs==null||channelVOs.isEmpty())
 			return null;
 		ArrayList<ChannelVO> result = new ArrayList<ChannelVO>();
+		
 		for(int i = 0 ;i<channelVOs.size();i++ )
 		{
 			if(channelVOs.get(i).fatherchannelID==fatherid)
+			{
+				//判断是否是需要的用户类型
+				if(!StringUtil.isEmpty(channelVOs.get(i).mustusertypes))
+				{
+					if(!StringUtil.isEmpty(usertype)&&channelVOs.get(i).mustusertypes.contains(usertype))
+						result.add(channelVOs.get(i));
+					continue;
+				}
 				result.add(channelVOs.get(i));
+			}
 		}
 		if(result.isEmpty())
 			return null;
 		Collections.sort(result,new SortByChannelSort());
 		return result;
-	}
-	
+	}	
 	
 	public Date getLastUpdateDataTime(Context c)
 	{

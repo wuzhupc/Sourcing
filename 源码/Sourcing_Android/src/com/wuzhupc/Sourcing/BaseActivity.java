@@ -1,6 +1,7 @@
 package com.wuzhupc.Sourcing;
 
 import com.wuzhupc.Sourcing.R;
+import com.wuzhupc.Sourcing.detail.UserLoginActivity;
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.config.ApplicationSet;
 import com.wuzhupc.config.Constants;

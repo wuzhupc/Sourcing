@@ -21,8 +21,12 @@ public class ApplicationSet extends Application
 		return mUserVO;
 	}
 
-	public void setUserVO(UserVO mUserVO)
+	public void setUserVO(UserVO userVO,boolean savelogininfo)
 	{
-		this.mUserVO = mUserVO;
+		this.mUserVO = userVO;
+		if(savelogininfo)
+		{
+			UserVO.saveLoginUserInfo(mUserVO);
+		}
 	} 
 }

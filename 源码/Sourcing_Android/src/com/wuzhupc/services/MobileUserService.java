@@ -19,7 +19,6 @@ public class MobileUserService extends BaseJsonService
 	{
 		super(c);
 	}
-	
 	/**
 	 * 3.14.	用户登录
 	 * @param username 登录名
@@ -27,13 +26,23 @@ public class MobileUserService extends BaseJsonService
 	 */
 	public void userLogin(String username,String password, IBaseReceiver iReceiver)
 	{
+		userLogin(username, password, iReceiver,false,null);
+	}
+	
+	/**
+	 * 3.14.	用户登录
+	 * @param username 登录名
+	 * @param password 密码
+	 */
+	public void userLogin(String username,String password, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
+	{
 		JsonCreater creater=JsonCreater.startJson();
 		creater.setParam("devid",getDevID());
 		creater.setParam("username", username);
 		creater.setParam("password", password);
 		mCommandName = mContext.getString(R.string.cmd_json_user_login);
 		String json=creater.createJson(null, mCommandName);
-		getData(json,iReceiver);
+		getData(json,iReceiver,showprogress,progressshowcontent);
 	}
 	
 	/**

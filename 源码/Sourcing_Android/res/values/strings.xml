@@ -13,7 +13,7 @@
 	<!-- Dialog 提示信息  -->
 	<string name="dl_title_prompt">提示</string>
 	<string name="dl_title_error">出错啦</string>
-	<string name="dl_msg_receiving_data">正在获取数据...</string>
+	<string name="dl_msg_receiving_data">正在获取数据&#8230;&#8230;&#8230;</string>
 	<string name="dl_msg_update_error">获取最新版本信息失败！</string>
 	<string name="dl_btn_ok">确认</string>
 	<string name="dl_btn_back">返回</string>
@@ -57,4 +57,6 @@
 	<string name="userlogin_title">用户登录</string>
 	<string name="userlogin_account_empty">请输入您的用户名</string>
 	<string name="userlogin_pwd_empty">请输入您的密码</string>
+	<string name="userlogin_logining">登录中&#8230;&#8230;&#8230;</string>
+	<string name="userlogin_login_error">登录失败:%1$s</string>
 </resources>

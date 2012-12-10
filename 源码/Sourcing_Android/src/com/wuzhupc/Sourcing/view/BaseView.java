@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import com.wuzhupc.Sourcing.HomeActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
+import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.widget.ExViewFlipper;
 import com.wuzhupc.widget.SubChannelTabView;
 
@@ -37,6 +38,11 @@ public abstract class BaseView extends LinearLayout
 	protected Context mContext;
 	
 	/**
+	 * 内容view
+	 */
+	private View mContentView;
+	
+	/**
 	 * 手势识别
 	 */
 	private GestureDetector mgd_content;
@@ -53,8 +59,18 @@ public abstract class BaseView extends LinearLayout
 	/**
 	 * 是否已经初始化过数据
 	 */
-	protected Boolean misInitData;
+	protected Boolean misInitData=false;
 	
+	public Boolean getIsInitData()
+	{
+		return misInitData;
+	}
+
+	public void setIsInitData(Boolean isInitData)
+	{
+		this.misInitData = isInitData;
+	}
+
 	/**
 	 * 
 	 */
@@ -111,9 +127,9 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * 初始化数据，如果需要初始化返回true,不需要初始化返回false
+	 * 初始化数据，每次切换父栏目时被调用 如果需要初始化返回true,不需要初始化返回false
 	 */
-	public  boolean initData()
+	public boolean initData()
 	{
 		if(misInitData)
 		{
@@ -124,7 +140,9 @@ public abstract class BaseView extends LinearLayout
 		initContentView();
 		misInitData = true;
 		if(mHasNavigation)
+		{
 			setNowChannel(getChannelIDFromList(-1));
+		}
 		else
 		{
 			hideIme();
@@ -134,6 +152,7 @@ public abstract class BaseView extends LinearLayout
 		}
 		return misInitData;
 	}
+	
 	/**
 	 * 设置现在选中的栏目
 	 * @param channelid
@@ -215,14 +234,17 @@ public abstract class BaseView extends LinearLayout
 	 */
 	private void initView()
 	{
-		View v=LayoutInflater.from(mContext).inflate(R.layout.view_base, mvf_content, false);
-		this.addView(v);
+		if(mContentView==null)
+		{
+			mContentView=LayoutInflater.from(mContext).inflate(R.layout.view_base, mvf_content, false);
+			this.addView(mContentView);
+		}
 		//
-		initNavigation(v);
+		initNavigation(mContentView);
 		//
-		RelativeLayout rl_search = (RelativeLayout)v.findViewById(R.id.base_search_rl);
+		RelativeLayout rl_search = (RelativeLayout)mContentView.findViewById(R.id.base_search_rl);
 		rl_search.setVisibility(mHasSearch?View.VISIBLE:View.GONE);
-		met_search = (EditText)v.findViewById(R.id.base_search_et);
+		met_search = (EditText)mContentView.findViewById(R.id.base_search_et);
 		met_search.setOnEditorActionListener(new OnEditorActionListener()
 		{
 			@Override
@@ -236,7 +258,7 @@ public abstract class BaseView extends LinearLayout
 				return false;
 			}
 		});
-		mll_content = (LinearLayout)v.findViewById(R.id.base_context_ll);
+		mll_content = (LinearLayout)mContentView.findViewById(R.id.base_context_ll);
 	}
 	
 	/**
@@ -249,8 +271,12 @@ public abstract class BaseView extends LinearLayout
 		ll.setVisibility(View.GONE);
 		if(!(mContext instanceof HomeActivity)||!mHasNavigation)
 			return;
+		String usertype = null;
+		UserVO uservo = ((HomeActivity)mContext).getApplicationSet().getUserVO();
+		if(uservo!=null)
+			usertype = String.valueOf(uservo.getUsertype());
 		ArrayList<ChannelVO> channelVOs = ChannelVO.getChannels(
-				((HomeActivity)mContext).getAllChannelVOs(),mFatherChannelID);
+				((HomeActivity)mContext).getAllChannelVOs(),mFatherChannelID,usertype);
 		if(channelVOs==null||channelVOs.isEmpty())
 			return;
 		mChannelList = new ArrayList<SubChannelTabView>(channelVOs.size());
@@ -414,4 +440,6 @@ public abstract class BaseView extends LinearLayout
 		if(mContext instanceof HomeActivity)
 			((HomeActivity)mContext).setMainTitleRefVisibility(bvisibility);
 	}
+	
+	
 }

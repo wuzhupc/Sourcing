@@ -2,19 +2,26 @@ package com.wuzhupc.Sourcing;
 
 import java.util.ArrayList;
 
+import com.wuzhupc.Sourcing.detail.UserLoginActivity;
 import com.wuzhupc.Sourcing.view.BaseView;
 import com.wuzhupc.Sourcing.view.ListBaseView;
 import com.wuzhupc.Sourcing.view.PersonView;
 import com.wuzhupc.Sourcing.view.UserView;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
+import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.ViewUtil;
 import com.wuzhupc.widget.ExViewFlipper;
 import com.wuzhupc.widget.MenuBarMenuItemView;
 import com.wuzhupc.widget.OnDisplayerChildChangeListener;
 
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.DialogInterface.OnCancelListener;
+import android.os.Bundle;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -32,6 +39,9 @@ import android.widget.ProgressBar;
  */
 public class HomeActivity extends BaseActivity implements OnGestureListener
 {
+	protected static final String TAG = HomeActivity.class.getSimpleName();
+	
+	public static final String CSTR_ACTION_USERLOGINCOMPLETE = "com.wuzhupc.ACTION_USERLOGINCOMPLETE";
 	/**
 	 * 手势识别
 	 */
@@ -68,6 +78,8 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	 * 底部菜单栏列表
 	 */
 	protected MenuBarMenuItemView[] mv_menubarlist;
+	
+	private HomeBroadcastReceiver mHomeBroadcastReceiver;
 
 	@Override
 	protected void initView()
@@ -94,6 +106,36 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		// if (isfirststart) {
 		// startGuideHelper(null);
 		// }
+	}
+	
+	/**
+	 * 注册接收board信息
+	 */
+	private void regBoardReceiver()
+	{
+		IntentFilter filter = new IntentFilter(CSTR_ACTION_USERLOGINCOMPLETE);
+		//filter.addAction(CSTR_ACTION_USERLOGINCOMPLETE);
+		mHomeBroadcastReceiver =new HomeBroadcastReceiver();
+		registerReceiver(mHomeBroadcastReceiver, filter);
+	}
+	
+	private void unregBoardReceiver()
+	{
+		if(mHomeBroadcastReceiver!=null)
+			unregisterReceiver(mHomeBroadcastReceiver);
+	}
+	@Override
+	protected void onCreate(Bundle savedInstanceState)
+	{
+		super.onCreate(savedInstanceState);
+		regBoardReceiver();
+	}
+
+	@Override
+	protected void onDestroy()
+	{
+		unregBoardReceiver();
+		super.onDestroy();
 	}
 
 	@Override
@@ -139,14 +181,14 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		for (int i = 0; i < mFatherChannelVOs.size(); i++)
 		{
 			ChannelVO vo = mFatherChannelVOs.get(i);
-			if (vo.getType() == ChannelVO.TYPE_FATHER_NEWS)
+			if (vo.isNewsChannel())
 			{
 				ListBaseView view = new ListBaseView(HomeActivity.this, vo.getChannelID());
 				view.setGestureDetectorContent(mgd_content);
 				mvf_content.addView(view);
 				continue;
 			}
-			if (vo.getType() == ChannelVO.TYPE_FATHER_PERSON)
+			if (vo.isPersonChannel())
 			{
 				// 增加人才视图
 				PersonView view = new PersonView(HomeActivity.this, vo.getChannelID());
@@ -154,7 +196,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				mvf_content.addView(view);
 				continue;
 			}
-			if (vo.getType() == ChannelVO.TYPE_FATHER_USER)
+			if (vo.isUserChannel())
 			{
 				// 增加个人信息视图
 				UserView view = new UserView(HomeActivity.this, vo.getChannelID());
@@ -252,7 +294,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	private void initMenuBar()
 	{
 		// 初始化栏目数据
-		mFatherChannelVOs = ChannelVO.getChannels(mChannelVOs, ChannelVO.CHANNELID_FATHER);
+		mFatherChannelVOs = ChannelVO.getFatherChannels(mChannelVOs);
 
 		// 初始化菜单栏
 		mv_menubarlist = new MenuBarMenuItemView[4];
@@ -273,13 +315,13 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			mv_menubarlist[i].setVisibility(View.VISIBLE);
 			ChannelVO vo = mFatherChannelVOs.get(i);
 			mv_menubarlist[i].getMenuText().setText(vo.getChannelName());
-			if (vo.getType() == ChannelVO.TYPE_FATHER_NEWS)
+			if (vo.isNewsChannel())
 				mv_menubarlist[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_news);
-			if (vo.getType() == ChannelVO.TYPE_FATHER_PERSON)
+			else if (vo.isPersonChannel())
 				mv_menubarlist[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_person);
-			if (vo.getType() == ChannelVO.TYPE_FATHER_USER)
+			else if (vo.isNewsChannel())
 				mv_menubarlist[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_user);
-			if (vo.getType() == ChannelVO.TYPE_FATHER_MORE)
+			else if (vo.isMoreChannel())
 				mv_menubarlist[i].getMenuIcon().setImageResource(R.drawable.icon_home_tb_more);
 			mv_menubarlist[i].setOnClickListener(mMenuBarClickListener());
 			mv_menubarlist[i].setIndex(i);
@@ -306,8 +348,14 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 						return;
 					final ChannelVO vo = mFatherChannelVOs.get(menuItemView.getIndex());
 
-					if (vo.getType() != ChannelVO.TYPE_FATHER_MORE)
+					if (!vo.isMoreChannel())
 					{
+						if(getApplicationSet().getUserVO()==null
+								&&vo.isUserChannel())
+						{
+							//显示用户登录界面
+							runActivity(false, UserLoginActivity.class);
+						}
 						setViewFlipper(vo.getChannelID(), false);
 						return;
 					}
@@ -327,17 +375,15 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 							setMenuBarNoSel(vo.getChannelID());
 							if (which < 0 || which >= morelist.size())
 								return;
-							switch (morelist.get(which).getType())
-							{
-							case ChannelVO.TYPE_MORE_EXIT:
+							if(morelist.get(which).isExitChannel())
 								askCloseApplication();
-								break;
-							case ChannelVO.TYPE_MORE_FAV:
+							else if(morelist.get(which).isFavChannel())
+							{
 								// TODO　显示收藏窗口
-								break;
-							case ChannelVO.TYPE_MORE_SETTING:
+							}
+							else if(morelist.get(which).isSettingChannel())
+							{
 								// TODO 显示设置窗口
-								break;
 							}
 						}
 					};
@@ -540,5 +586,33 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	{
 		return false;
 	}
-
+	
+	public class HomeBroadcastReceiver extends BroadcastReceiver
+	{
+		@Override
+		public void onReceive(Context arg0, Intent arg1)
+		{
+			if(arg1==null||StringUtil.isEmpty(arg1.getAction()))
+				return;
+			if(CSTR_ACTION_USERLOGINCOMPLETE.equalsIgnoreCase(arg1.getAction()))
+			{
+				//用户注册完成后处理重置服务界面和用户界面信息
+				if(mvf_content==null||mvf_content.getChildCount()==0)
+					return;
+				for(int i = 0;i<mvf_content.getChildCount();i++)
+				{
+					View v = mvf_content.getChildAt(i);
+					if(v instanceof UserView||v instanceof PersonView)
+					{
+						((BaseView) v).setIsInitData(false);
+					}
+				}
+				BaseView v = getDisplayedChildView();
+				if(v instanceof UserView)
+				{
+					((UserView) v).initData();
+				}
+			}
+		}
+	}
 }

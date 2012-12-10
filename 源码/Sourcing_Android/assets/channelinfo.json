@@ -82,6 +82,7 @@
                 "channelID":"21",
                 "channelName":"职位",
                 "fatherchannelID":"2",
+		"mustusertypes":"1",
                 "isdefault":"0",
                 "sort":"1",
                 "type":"1"
@@ -89,6 +90,7 @@
             {"ChannelVO":{
                 "channelID":"22",
                 "channelName":"简历",
+		"mustusertypes":"3",
                 "fatherchannelID":"2",
                 "isdefault":"0",
                 "sort":"2",

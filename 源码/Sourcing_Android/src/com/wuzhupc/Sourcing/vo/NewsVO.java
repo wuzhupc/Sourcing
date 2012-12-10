@@ -95,7 +95,7 @@ public class NewsVO extends BaseVO
 	}
 	public void setNewstype(String newstype)
 	{
-		this.newstype = JavaLangUtil.StrToInteger(newstype, ChannelVO.TYPE_NEWS_NEWEST);
+		this.newstype = JavaLangUtil.StrToInteger(newstype, ChannelVO.getDefaultNewsType());
 	}
 	public String getTitle()
 	{

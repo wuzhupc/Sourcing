@@ -60,7 +60,7 @@ public class NewsCommentVO extends BaseVO
 	}
 	public void setNewstype(String newstype)
 	{
-		this.newstype = JavaLangUtil.StrToInteger(newstype, ChannelVO.TYPE_NEWS_INDUSTR);
+		this.newstype = JavaLangUtil.StrToInteger(newstype, ChannelVO.getDefaultNewsType());
 	}
 	public long getNewscommentid()
 	{
