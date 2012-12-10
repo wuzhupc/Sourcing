@@ -8,6 +8,10 @@
 	<string name="baseurl">http://www.wuzhupc.com</string>
 	<!-- 需要增另链接地址前缀的判断地址 -->
 	<string name="baseurl_pro">/Server</string>
+	<!-- 忘记密码处理页面 -->
+	<string name="url_forget_pwd_progress">http://www.wuzhupc.com/member/register</string>
+	<!-- 用户注册处理页面 -->
+	<string name="url_reg_progress">http://www.wuzhupc.com/member/register</string>
 	<!-- 检查客户端版本  -->
 	<string name="cmd_json_check_client_ver">mobilever_checkClientVer</string>
 	

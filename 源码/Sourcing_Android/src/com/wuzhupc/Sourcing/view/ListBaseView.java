@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -63,7 +64,7 @@ public class ListBaseView extends BaseView
 	 */
 	public ListBaseView(Context context, long fatherchannelid)
 	{
-		super(context, fatherchannelid);
+		super(context, fatherchannelid,false,true);
 	}
 	
 	/**
@@ -179,8 +180,6 @@ public class ListBaseView extends BaseView
 	@Override
 	public void reflashContentView()
 	{
-		// TODO Auto-generated method stub
-
 	}
 	
 	/**
@@ -396,5 +395,11 @@ public class ListBaseView extends BaseView
 		});
 		
 		
+	}
+
+	@Override
+	public void searchAction(EditText et)
+	{
+		// Ã»ÓÐËÑË÷
 	}
 }

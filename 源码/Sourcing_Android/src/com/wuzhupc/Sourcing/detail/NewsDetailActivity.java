@@ -158,15 +158,6 @@ public class NewsDetailActivity extends BaseActivity
 	{
 		miv_fav.setImageResource(fav?R.drawable.ic_faved:R.drawable.ic_fav);
 	}
-	
-	/**
-	 * ∑µªÿ
-	 * @param v
-	 */
-	public void onHomeClick(View v)
-	{
-		this.finish();
-	}
 
 	/**
 	 *  ’≤ÿ

@@ -82,9 +82,6 @@ public class ViewImageActivity extends BaseActivity implements OnClickListener
 		case R.id.viewimage_bottom_save_ib:
 			saveImage();
 			break;
-		case R.id.viewimage_top_back_ib:
-			this.finish();
-			break;
 		case R.id.viewimage_imageoper_left_ib:
 			rotateImage(-90);
 			break;

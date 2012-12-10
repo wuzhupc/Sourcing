@@ -83,16 +83,6 @@ public  abstract class BaseActivity extends Activity
 		if(v!=null)
 			UIUtil.setTitleTextBold((TextView)v);
 	}
-
-	/**
-	 * 点击返回主界面
-	 * 
-	 * @param v
-	 */
-	public void onReturnClick(View v)
-	{
-		this.finish();
-	}
 	
 	/**
 	 * 检查缓存文件夹是否存在
@@ -331,5 +321,10 @@ public  abstract class BaseActivity extends Activity
 	public ApplicationSet getApplicationSet()
 	{
 		return (ApplicationSet) this.getApplicationContext();
+	}
+	
+	public void onHomeClick(View v)
+	{
+		this.finish();
 	}
 }

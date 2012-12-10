@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wuzhupc.Sourcing"
-    android:versionCode="121205"
-    android:versionName="0.3.1205" >
+    android:versionCode="121209"
+    android:versionName="0.4.1209" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -46,6 +46,16 @@
         </activity>
         <activity
             android:name=".detail.ViewImageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
+        <activity
+            android:name=".detail.UserLoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
+        <activity
+            android:name=".detail.UserInfoListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.WuzhuLight" >
         </activity>

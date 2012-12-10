@@ -3,7 +3,32 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
+    <RelativeLayout
+        android:id="@+id/base_search_rl"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@drawable/top_title_bg"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp">"
 
+        <EditText
+            android:id="@+id/base_search_et"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:hint="请输入关键字"
+            android:paddingLeft="32dp"
+            android:imeOptions="actionSearch">
+        </EditText>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="6dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_search" />
+    </RelativeLayout>
     <LinearLayout
         android:id="@+id/base_subchannel_ll"
         android:layout_width="match_parent"

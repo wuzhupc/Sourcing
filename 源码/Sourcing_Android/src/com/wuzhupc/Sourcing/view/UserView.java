@@ -5,6 +5,7 @@ import com.wuzhupc.Sourcing.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 /**
@@ -17,7 +18,7 @@ public class UserView extends BaseView
 
 	public UserView(Context context, long fatherchannelid)
 	{
-		super(context, fatherchannelid);
+		super(context, fatherchannelid,false,false);
 	}
 
 	@Override
@@ -54,6 +55,13 @@ public class UserView extends BaseView
 		//不用显示子栏目栏
 		LinearLayout ll = (LinearLayout)findViewById(R.id.base_subchannel_ll);
 		ll.setVisibility(View.GONE);
+	}
+
+	@Override
+	public void searchAction(EditText et)
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 }

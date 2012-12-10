@@ -3,14 +3,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+     <LinearLayout style="@style/TitleBar" >
 
+        <ImageView
+            android:id="@+id/detail_tb_return_iv"
+            style="@style/TitleBarAction"
+            android:onClick="onHomeClick"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TitleBarText"
+            android:text="@string/userlogin_title" />
+    </LinearLayout>
     <com.wuzhupc.widget.refreshview.PullToRefreshListView
-        android:id="@+id/list_base_datalist_lv"
+        android:id="@+id/list_datalist_lv"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:divider="@drawable/list_base_divider"
         android:fadeScrollbars="true"
-        android:fadingEdge="none" />
+        android:fadingEdge="none"/>
 
 </LinearLayout>

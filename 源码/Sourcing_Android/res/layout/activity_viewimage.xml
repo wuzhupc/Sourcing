@@ -21,7 +21,7 @@
             android:layout_height="48dp"
             android:layout_alignParentLeft="true"
             android:background="@drawable/icon_back"
-            android:onClick="onClick" />
+            android:onClick="onHomeClick" />
     </RelativeLayout>
 
     <LinearLayout

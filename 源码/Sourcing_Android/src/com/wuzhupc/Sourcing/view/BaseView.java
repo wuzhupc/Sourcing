@@ -10,10 +10,17 @@ import com.wuzhupc.widget.SubChannelTabView;
 
 import android.content.Context;
 import android.view.GestureDetector;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 /**
@@ -61,13 +68,30 @@ public abstract class BaseView extends LinearLayout
 	protected ArrayList<SubChannelTabView> mChannelList;
 	
 	/**
+	 * 是否有子栏目导航
+	 */
+	private boolean mHasNavigation;
+	
+	/**
+	 * 是否有搜索输入框
+	 */
+	private boolean mHasSearch;
+	
+	/**
+	 * 搜索输入框
+	 */
+	protected EditText met_search;
+	
+	/**
 	 * 构造函数
 	 * @param context
 	 * @param fatherchannelid 栏目ID
 	 */
-	public BaseView(Context context,long fatherchannelid) {
+	public BaseView(Context context,long fatherchannelid,boolean hassearch,boolean hasnavigation) {
 		super(context);
 		mContext=context;
+		mHasSearch=hassearch;
+		mHasNavigation=hasnavigation;
 		misInitData=false;
 		if(mContext instanceof HomeActivity)
 			mvf_content=((HomeActivity)mContext).getViewFlipper();
@@ -76,16 +100,38 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
+	 * 隐藏输入法
+	 */
+	protected void hideIme()
+	{
+		InputMethodManager imm = (InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
+		if(met_search==null||!imm.isActive()) return;
+		imm.hideSoftInputFromWindow(met_search.getWindowToken(), 0);
+		met_search.setText("");
+	}
+	
+	/**
 	 * 初始化数据，如果需要初始化返回true,不需要初始化返回false
 	 */
 	public  boolean initData()
 	{
 		if(misInitData)
+		{
+			hideIme();
 			return false;
+		}
 		initView();
 		initContentView();
 		misInitData = true;
-		setNowChannel(getChannelIDFromList(-1));
+		if(mHasNavigation)
+			setNowChannel(getChannelIDFromList(-1));
+		else
+		{
+			hideIme();
+			//根据栏目ID设置内容视图
+			reflashContentView();
+			loadData(true);
+		}
 		return misInitData;
 	}
 	/**
@@ -96,11 +142,13 @@ public abstract class BaseView extends LinearLayout
 	{
 		if(mNowChannelID == channelid)
 			return;
+		hideIme();
 		mNowChannelID=channelid;
 		//设置栏目状态
 		setNavigationSel(mNowChannelID);
 		//根据栏目ID设置内容视图
 		reflashContentView();
+		
 		//增加对是否是第一次载入的判断，如果是第一次载入，则自动调用刷新功能
 		boolean isfirstload = false;
 		ChannelVO vo = getNowChannelInfo();
@@ -146,6 +194,13 @@ public abstract class BaseView extends LinearLayout
 	 * 刷新内容视图
 	 */
 	public abstract void reflashContentView();
+	
+	/**
+	 * 搜索事件
+	 * @param et
+	 */
+	public abstract void searchAction(EditText et);
+	
 	/**
 	 * 设置内容视图
 	 * @param v
@@ -162,9 +217,28 @@ public abstract class BaseView extends LinearLayout
 	{
 		View v=LayoutInflater.from(mContext).inflate(R.layout.view_base, mvf_content, false);
 		this.addView(v);
+		//
 		initNavigation(v);
+		//
+		RelativeLayout rl_search = (RelativeLayout)v.findViewById(R.id.base_search_rl);
+		rl_search.setVisibility(mHasSearch?View.VISIBLE:View.GONE);
+		met_search = (EditText)v.findViewById(R.id.base_search_et);
+		met_search.setOnEditorActionListener(new OnEditorActionListener()
+		{
+			@Override
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+			{
+				if(actionId==EditorInfo.IME_ACTION_SEARCH)
+				{
+					searchAction(met_search);
+					return true;
+				}
+				return false;
+			}
+		});
 		mll_content = (LinearLayout)v.findViewById(R.id.base_context_ll);
 	}
+	
 	/**
 	 * 初始化栏目栏
 	 */
@@ -173,7 +247,7 @@ public abstract class BaseView extends LinearLayout
 		//HorizontalScrollView sv = (HorizontalScrollView)findViewById(R.id.base_subchannel_hsv);
 		LinearLayout ll = (LinearLayout)findViewById(R.id.base_subchannel_ll);
 		ll.setVisibility(View.GONE);
-		if(!(mContext instanceof HomeActivity))
+		if(!(mContext instanceof HomeActivity)||!mHasNavigation)
 			return;
 		ArrayList<ChannelVO> channelVOs = ChannelVO.getChannels(
 				((HomeActivity)mContext).getAllChannelVOs(),mFatherChannelID);
