@@ -1,8 +1,12 @@
 package com.wuzhupc.Sourcing.detail;
 
 import android.content.Intent;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.HomeActivity;
@@ -37,6 +41,18 @@ public class UserLoginActivity extends BaseActivity
 		setContentView(R.layout.activity_userlogin);
 		met_Account = (EditText)findViewById(R.id.userlogin_account_et);
 		met_Pwd = (EditText)findViewById(R.id.userlogin_pwd_et);
+		met_Pwd.setOnEditorActionListener(new OnEditorActionListener()
+		{
+			@Override
+			public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+			{
+				if(actionId==EditorInfo.IME_ACTION_DONE)
+				{
+					loginClick(v);
+				}
+				return false;
+			}
+		});
 	}
 
 	public void forgetPwdClick(View v)
@@ -81,6 +97,8 @@ public class UserLoginActivity extends BaseActivity
 				}
 				getApplicationSet().setUserVO(vo, true);
 				sendBroadcast(new Intent(HomeActivity.CSTR_ACTION_USERLOGINCOMPLETE));
+				displayToast(R.string.userlogin_login_sucess);
+				UserLoginActivity.this.finish();
 			}
 		}, true, getResources().getString(R.string.userlogin_logining));
 	}

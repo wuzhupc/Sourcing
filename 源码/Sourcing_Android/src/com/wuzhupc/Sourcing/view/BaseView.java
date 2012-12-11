@@ -111,7 +111,6 @@ public abstract class BaseView extends LinearLayout
 		misInitData=false;
 		if(mContext instanceof HomeActivity)
 			mvf_content=((HomeActivity)mContext).getViewFlipper();
-		mNowChannelID=-1l;
 		setFatherChannelID(fatherchannelid);
 	}
 	
@@ -136,6 +135,7 @@ public abstract class BaseView extends LinearLayout
 			hideIme();
 			return false;
 		}
+		mNowChannelID=-1l;
 		initView();
 		initContentView();
 		misInitData = true;
@@ -238,27 +238,27 @@ public abstract class BaseView extends LinearLayout
 		{
 			mContentView=LayoutInflater.from(mContext).inflate(R.layout.view_base, mvf_content, false);
 			this.addView(mContentView);
+			RelativeLayout rl_search = (RelativeLayout)mContentView.findViewById(R.id.base_search_rl);
+			rl_search.setVisibility(mHasSearch?View.VISIBLE:View.GONE);
+			met_search = (EditText)mContentView.findViewById(R.id.base_search_et);
+			met_search.setOnEditorActionListener(new OnEditorActionListener()
+			{
+				@Override
+				public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+				{
+					if(actionId==EditorInfo.IME_ACTION_SEARCH)
+					{
+						searchAction(met_search);
+						return true;
+					}
+					return false;
+				}
+			});
+			mll_content = (LinearLayout)mContentView.findViewById(R.id.base_context_ll);
 		}
 		//
 		initNavigation(mContentView);
 		//
-		RelativeLayout rl_search = (RelativeLayout)mContentView.findViewById(R.id.base_search_rl);
-		rl_search.setVisibility(mHasSearch?View.VISIBLE:View.GONE);
-		met_search = (EditText)mContentView.findViewById(R.id.base_search_et);
-		met_search.setOnEditorActionListener(new OnEditorActionListener()
-		{
-			@Override
-			public boolean onEditorAction(TextView v, int actionId, KeyEvent event)
-			{
-				if(actionId==EditorInfo.IME_ACTION_SEARCH)
-				{
-					searchAction(met_search);
-					return true;
-				}
-				return false;
-			}
-		});
-		mll_content = (LinearLayout)mContentView.findViewById(R.id.base_context_ll);
 	}
 	
 	/**
@@ -267,8 +267,9 @@ public abstract class BaseView extends LinearLayout
 	protected void initNavigation(View v)
 	{
 		//HorizontalScrollView sv = (HorizontalScrollView)findViewById(R.id.base_subchannel_hsv);
-		LinearLayout ll = (LinearLayout)findViewById(R.id.base_subchannel_ll);
+		LinearLayout ll = (LinearLayout)v.findViewById(R.id.base_subchannel_ll);
 		ll.setVisibility(View.GONE);
+		ll.removeAllViews();
 		if(!(mContext instanceof HomeActivity)||!mHasNavigation)
 			return;
 		String usertype = null;

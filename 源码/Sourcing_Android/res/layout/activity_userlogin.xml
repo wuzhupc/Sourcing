@@ -5,7 +5,6 @@
     android:orientation="vertical" >
 
     <LinearLayout style="@style/TitleBar" >
-
         <ImageView
             android:id="@+id/detail_tb_return_iv"
             style="@style/TitleBarAction"
@@ -72,11 +71,12 @@
         android:layout_height="40dip"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:singleLine="true"
         android:background="@drawable/selector_common_edittext"
         android:ems="10"
         android:hint="请输入您的密码"
         android:inputType="textPassword"
-        android:singleLine="true" />
+		android:imeOptions="actionDone"/>
 
     <Button
         android:id="@+id/userlogin_login_bt"
@@ -87,7 +87,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="15dp"
         android:onClick="loginClick"
-        android:text="登录"
+        android:text="@string/userlogin_login_bt_title"
         android:textSize="@dimen/text_size_large" />
 
     <LinearLayout

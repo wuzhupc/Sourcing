@@ -40,6 +40,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("devid",getDevID());
 		creater.setParam("username", username);
 		creater.setParam("password", password);
+		mSuffixStr = username;
 		mCommandName = mContext.getString(R.string.cmd_json_user_login);
 		String json=creater.createJson(null, mCommandName);
 		getData(json,iReceiver,showprogress,progressshowcontent);

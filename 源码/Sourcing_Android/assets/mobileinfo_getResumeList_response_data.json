@@ -1,0 +1,37 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "list_vos": [
+            {
+                "ResumeVO": {
+                    "resumeid": "30005",
+                    "resumetitle": "计算机软件/系统集成 8年 厦门",
+                    "expectjob": "计算机软件/系统集成",
+                    "name": "姓名A",
+                    "publishtime": "2012-12-12 21:09:00"
+                }
+            },
+            {
+                "ResumeVO": {
+                    "resumeid": "30003",
+                    "resumetitle": "网游开发 3年 厦门",
+                    "expectjob": "互联网/电子商务/网游",
+                    "name": "姓名B",
+                    "publishtime": "2012-12-11 21:09:00"
+                }
+            },
+            {
+                "ResumeVO": {
+                    "resumeid": "30001",
+                    "resumetitle": "电信/通信 7年 厦门",
+                    "expectjob": "电信/通信",
+                    "name": "姓名C",
+                    "publishtime": "2012-12-10 21:09:00"
+                }
+            }
+        ]
+    }
+}

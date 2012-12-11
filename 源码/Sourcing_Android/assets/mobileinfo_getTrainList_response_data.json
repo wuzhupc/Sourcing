@@ -1,0 +1,34 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "list_vos": [
+            {
+                "TrainVO": {
+                    "trainid": "1363",
+                    "trainname": "光谷软件人才与技术服务有限公司"
+                }
+            },
+            {
+                "TrainVO": {
+                    "trainid": "1308",
+                    "trainname": "十五现代心理科学研究院"
+                }
+            },
+            {
+                "TrainVO": {
+                    "trainid": "1578",
+                    "trainname": "东方立创企业管理顾问有限公司"
+                }
+            },
+            {
+                "TrainVO": {
+                    "trainid": "1297",
+                    "trainname": "思远信息技术培训学院"
+                }
+            }
+        ]
+    }
+}

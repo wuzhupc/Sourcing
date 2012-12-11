@@ -1,0 +1,34 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "list_vos": [
+            {
+                "ProjectVO": {
+                    "projectid": "20775",
+                    "projectname": "5年企业信息化建设",
+                    "projectstatus": "竞标中",
+                    "publishtime": "2012-12-10 10:22:00"
+                }
+            },
+            {
+                "ProjectVO": {
+                    "projectid": "20774",
+                    "projectname": "系统开发项目",
+                    "projectstatus": "竞标中",
+                    "publishtime": "2012-11-10 10:22:00"
+                }
+            },
+            {
+                "ProjectVO": {
+                    "projectid": "20000",
+                    "projectname": "桌面程序定制滚动条",
+                    "projectstatus": "竞标中",
+                    "publishtime": "2012-10-10 10:22:00"
+                }
+            }
+        ]
+    }
+}

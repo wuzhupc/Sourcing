@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 项目 列表项布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_listitem_base"
+    android:orientation="vertical"
+    android:paddingBottom="5dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:paddingTop="5dp" >
+    <!-- 列表项 标题 -->
+    <TextView
+        android:id="@+id/listitem_projectname_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dip"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:singleLine="true"
+        android:text="项目名称"
+        android:textColor="@color/listitem_base_titlecolor"
+        android:textSize="@dimen/text_size_medium" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        <TextView
+            android:id="@+id/listitem_project_status_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="5dp"
+            android:singleLine="true"
+            android:text="项目状态"
+            android:textColor="@color/listitem_base_summarycolor"
+            android:textSize="@dimen/text_size_small" />
+        <TextView
+            android:id="@+id/listitem_project_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:layout_marginRight="10dp"
+            android:text="2012-12-11 19:49:00"
+            android:gravity="right"
+            android:textColor="@color/listitem_base_summarycolor"
+            android:textSize="@dimen/text_size_small" />
+    </LinearLayout>
+
+</LinearLayout>

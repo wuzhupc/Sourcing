@@ -107,6 +107,8 @@ public class PersonView extends BaseView
 	@Override
 	public void initContentView()
 	{
+		if(mPullRefreshListView==null)
+		{
 		View v = LayoutInflater.from(mContext).inflate(R.layout.view_person,
 				mll_content, false);
 		setContentView(v);
@@ -127,6 +129,7 @@ public class PersonView extends BaseView
 		mlv_DataList = mPullRefreshListView.getRefreshableView();
 		mlv_DataList.setOnItemClickListener(getDataListItemClickListener());
 		setViewGestureDetector(mPullRefreshListView);
+		}
 		// 数据初始化
 		clearDataList();
 	}
