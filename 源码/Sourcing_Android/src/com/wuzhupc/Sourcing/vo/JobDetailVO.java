@@ -1,5 +1,8 @@
 package com.wuzhupc.Sourcing.vo;
 
+import com.wuzhupc.Sourcing.BaseActivity;
+import com.wuzhupc.utils.WebViewUtil;
+
 /**
  * 职位详细信息
  * @author wuzhu email:wuzhupc@gmail.com
@@ -25,5 +28,15 @@ public class JobDetailVO extends JobVO
 	public void setJobdesc(String jobdesc)
 	{
 		this.jobdesc = jobdesc;
+	}
+	
+	/**
+	 * 返回详情HTML内容
+	 * @return
+	 */
+	@Override
+	public String getHtmlContext(BaseActivity activity)
+	{
+		return WebViewUtil.getHtmlContext(activity, jobdesc);
 	}
 }

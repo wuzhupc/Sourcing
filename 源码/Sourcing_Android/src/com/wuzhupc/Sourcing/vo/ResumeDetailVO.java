@@ -1,5 +1,8 @@
 package com.wuzhupc.Sourcing.vo;
 
+import com.wuzhupc.Sourcing.BaseActivity;
+import com.wuzhupc.utils.WebViewUtil;
+
 /**
  * 简历详情
  * @author wuzhu email:wuzhupc@gmail.com
@@ -26,5 +29,15 @@ public class ResumeDetailVO extends ResumeVO
 	public void setResumecontent(String resumecontent)
 	{
 		this.resumecontent = resumecontent;
+	}
+	
+	/**
+	 * 返回详情HTML内容
+	 * @return
+	 */
+	@Override
+	public String getHtmlContext(BaseActivity activity)
+	{
+		return WebViewUtil.getHtmlContext(activity, resumecontent);
 	}
 }

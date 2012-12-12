@@ -1,0 +1,13 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "TrainDetailVO": {
+            "trainid": "1363",
+            "trainname": "光谷软件人才与技术服务有限公司",
+            "traincontent": "<h2>公司简介</h2>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;光谷软件人才与技术服务有限公司,坐落于武汉市东湖开发区文园路58号，华中科技大学文华学院实训大楼6楼，占地面积约3000平方米。是由武汉市软件行业协会、华中科技大学软件学院、华中科技大学文华学院联合成立，并倾力打造的&ldquo;武汉市中高端软件实用人才服务基地&rdquo;。 武汉光谷软件人才与技术服务有限公司成立于2011年7月15日，公司注册资金柒佰万元。以人才培养、实习派遣和就业输送为主要业务方向，涉及软件外包、软件开发以及信息化服务业务领域，是一家专业化、务实发展的软件人才服务型公司。 武汉市中高端软件实用人才服务基地简称&ldquo;武汉软件基地&rdquo;，武汉光谷软件人才与技术服务有限公司简称&ldquo;光谷人才&rdquo;。 公司英文名为Wuhan Optical Valley Software Talents and Technical Services Limited Company；基地英文名为Wuhan Middle and High Level Software Talents Service Base。 &ldquo;光谷人才&rdquo;拥有先进的现代化教学、研发设备、设施，布局贯穿开放、开阔、通透主线，分别构建了教学、项目实训、项目开发等多个功能区域，同时开通了有线、无线宽带网络。公司共享文华学院优美的校园、以及完善的体育、文化、生活设施，能同时满足500-800中高端软件人才人的教学需要。 &ldquo;光谷人才&rdquo;争创六个一流：一流的师资、一流的教学资源、一流的教学环境、一流的企业文化、一流的学生、一流的就业。 &ldquo;光谷人才&rdquo;和众多国内外知名软件企业建立了良好的合作关系，充分依托华中科技大学软件学院优秀的师资和教学资源，引进微软、IBM、英特尔等公司先进的教学理念和优质的案例教学模块，与战略合作伙伴和企业合作开发案例教学课程，聘请知名企业高管亲临一线教学，实现基地教学与企业需求的无缝对接。 &ldquo;光谷人才&rdquo;是华中科技大学软件学院本科学生、硕士研究生工程实训中心，也是湖北省以及相邻省市重点高校示范性软件学院的工程实训基地，同时&ldquo;光谷人才&rdquo;还是华中科技大学软件学院软件工程硕士学位班教学点。\r\n</p>\r\n<div style=\"height:0;border-bottom:1px solid #f00\"></div>\r\n\r\n<h2 id=\"company-headline-tab\">企业联系方式</h2>\r\n<dl>\r\n  <dd>联系人：黄珊珊</dd>\r\n  <dd>电 话：027-87539099</dd>\r\n  <dd>传 真：027-87539099</dd>\r\n  <dd>地 址：武汉市东湖开发区文园路58号</dd>\r\n  <dd>E-mail：wuhanVT2011@163.com</dd>\r\n  <dd>网 址：</dd>\r\n</dl>\r\n<div style=\"height:0;border-bottom:1px solid #f00\"></div>\r\n<h2 id=\"company-headline-tab\">招生信息</h2>\r\n<dl>\r\n  <dd>\r\n    <ul>\r\n      <li><strong>华中科技大学文华学院实训大楼6楼</strong></li>\r\n      <li>招生地址：武汉市东湖开发区文园路58号</li>\r\n      <li>招生电话：87539099</li>\r\n    </ul>\r\n  </dd>\r\n</dl>"
+        }
+    }
+}

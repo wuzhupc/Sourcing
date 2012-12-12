@@ -4,7 +4,6 @@ import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.detail.ViewImageActivity;
 import com.wuzhupc.Sourcing.vo.BaseVO;
-import com.wuzhupc.Sourcing.vo.NewsVO;
 import com.wuzhupc.widget.OnReloadListener;
 
 import android.annotation.SuppressLint;
@@ -123,19 +122,6 @@ public class WebViewUtil
 	}
 	
 	/**
-	 * 生成内容标题部分
-	 * @param title
-	 * @return
-	 */
-	public static String getHtmlTitle(String title)
-	{
-		String result = "<br/><div align=\"center\"><font color=\"#111111\" size=\"4pt\"><strong>"
-				+title
-				+"</strong></font></div><br/>";
-		return result;
-	}
-	
-	/**
 	 * 生成内容子标题部分
 	 * @param vo
 	 * @return
@@ -144,22 +130,7 @@ public class WebViewUtil
 	{
 		if(vo==null)
 			return "<div style=\"height:0;border-bottom:1px solid #f00\"></div>";
-		if(vo instanceof NewsVO)
-			return getHtmlSubTitle((NewsVO)vo);
-		return "";
-	}
-	
-	/**
-	 * 
-	 * @param vo
-	 * @return
-	 */
-	private static String getHtmlSubTitle(NewsVO vo)
-	{
-		if(vo==null)
-			return "<div style=\"height:0;border-bottom:1px solid #f00\"></div>";
-		String result = "<div align=\"center\"><font color=\"#666666\" size=\"2pt\">"+vo.getPublishtime()+"&nbsp;&nbsp; 来源:"+vo.getSource()+"</font></div><div style=\"height:0;border-bottom:1px solid #f00\"></div>";
-		return result;
+		return vo.getHtmlSubTitle();
 	}
 	
 	/**

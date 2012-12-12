@@ -1,0 +1,15 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "ProjectDetailVO": {
+            "projectid": "20775",
+            "projectname": "5年企业信息化建设",
+            "projectstatus": "竞标中",
+            "publishtime": "2012-12-10 10:22:00",
+            "projectcontent": "<h2>项目简介</h2>\r\n<p>&nbsp;&nbsp;&nbsp;&nbsp;某电子机械国营单位为满足企业发展需要,现向社会征集有实力的供应商。企业建设项目包括：硬件网络平台建设、协同管理、产品数据管理、生产管理、项目管理、仿真中心、人力资源、质量管理、软件工程化管理、财务管理、知识管理等。\r\n</p>\r\n<div style=\"height:0;border-bottom:1px solid #f00\"></div>\r\n\r\n<h2 id=\"company-headline-tab\">供应商基础要求</h2>\r\n<dl>\r\n  <dd>\r\n    <ul>\r\n      <li>系统集成类项目供应商注册资金应不少于1000万元，</li>\r\n      <li>单个软件项目供应商注册资金不少于200万元，且具有独立法人资格；</li>\r\n      <li>参与本项目的供应商须取得国家双软认证；</li>\r\n    </ul>\r\n  </dd>\r\n</dl>\r\n<div style=\"height:0;border-bottom:1px solid #f00\"></div>\r\n<h2 id=\"company-headline-tab\">其他</h2>\r\n<dl>\r\n  <dd>北京时间2011年8月18日至2011年9月23日，将报名资料（包括：法定代表人授权委托书、被委托人身份证、企业法人营业执照副本、税务登记证副本、组织机构代码证副本、系统集成资质、软件企业认定证书、三份类似业绩合同或中标通知书，以及其他供应商认为需提供的文件）进行扫描件，通过互联网上传至武务外包公共服务平台。  </dd>\r\n</dl>"
+        }
+    }
+}

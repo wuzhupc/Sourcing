@@ -1,5 +1,8 @@
 package com.wuzhupc.Sourcing.vo;
 
+import com.wuzhupc.Sourcing.BaseActivity;
+import com.wuzhupc.utils.WebViewUtil;
+
 /**
  * 资讯详细信息
  * @author wuzhu email:wuzhupc@gmail.com
@@ -23,5 +26,15 @@ public class NewsDetailVO extends NewsVO
 	public void setNewscontent(String newscontent)
 	{
 		this.newscontent = newscontent;
+	}
+	
+	/**
+	 * 返回详情HTML内容
+	 * @return
+	 */
+	@Override
+	public String getHtmlContext(BaseActivity activity)
+	{
+		return WebViewUtil.getHtmlContext(activity, newscontent);
 	}
 }

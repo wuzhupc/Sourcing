@@ -140,7 +140,7 @@ public class ListBaseView extends BaseView
 	/**
 	 * 清除所有数据
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void clearDataList()
 	{
 		if(mDataList==null)
@@ -233,7 +233,8 @@ public class ListBaseView extends BaseView
 			return;
 		NewsVO newsVO=(NewsVO)o;
 		Intent intent = new Intent(mContext, NewsDetailActivity.class);
-		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_NEWSVO, newsVO);
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_TITLE, "资讯详情");
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_DATA, newsVO);
 		mContext.startActivity(intent);
 	}
 	/**

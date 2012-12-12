@@ -1,5 +1,8 @@
 package com.wuzhupc.Sourcing.vo;
 
+import com.wuzhupc.Sourcing.BaseActivity;
+import com.wuzhupc.utils.WebViewUtil;
+
 /**
  * 
  * @author wuzhu email:wuzhupc@gmail.com
@@ -28,5 +31,14 @@ public class TrainDetailVO extends TrainVO
 	{
 		this.traincontent = traincontent;
 	}
-
+	
+	/**
+	 * ∑µªÿœÍ«ÈHTMLƒ⁄»›
+	 * @return
+	 */
+	@Override
+	public String getHtmlContext(BaseActivity activity)
+	{
+		return WebViewUtil.getHtmlContext(activity, traincontent);
+	}
 }

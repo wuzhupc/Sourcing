@@ -7,30 +7,38 @@ import android.widget.ImageView;
 
 import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
-import com.wuzhupc.Sourcing.vo.NewsDetailVO;
-import com.wuzhupc.Sourcing.vo.NewsVO;
-import com.wuzhupc.Sourcing.vo.ResponseVO;
-import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
-import com.wuzhupc.services.MobileInfoService;
+import com.wuzhupc.Sourcing.vo.BaseVO;
+import com.wuzhupc.Sourcing.vo.BaseVO.DetailInfoListener;
 import com.wuzhupc.utils.FavoriteUtil;
+import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.WebViewUtil;
-import com.wuzhupc.utils.json.JsonParser;
 import com.wuzhupc.widget.OnReloadListener;
 
 /**
  * 资讯详情
- * 支持传入参数newsvo 数据类型NewsVO
+ * 支持传入参数basevo[CSTR_EXTRA_NEWSDETAIL_DATA] 数据类型BaseVO 数据
+ * 支持传入参数title[CSTR_EXTRA_NEWSDETAIL_TITLE] 数据类型String 标题
  * @author wuzhu email:wuzhupc@gmail.com
  * @version 创建时间：2012-12-4 下午9:30:37
+ * @note 传入的数据需要重截BaseVO中的方法：
+ * 	generateShareText  
+ * 	setHtmlToShow 
+ * 	getHtmlContext 
+ * 	getHtmlSubTitle 
+ *  getHtmlTitle
  */
 public class NewsDetailActivity extends BaseActivity
 {
 	protected static final String TAG = NewsDetailActivity.class.getSimpleName();
 	
 	/**
-	 * 传入参数newsvo 数据类型NewsVO
+	 * 传入参数basevo 数据类型BaseVO 数据
 	 */
-	public static final String CSTR_EXTRA_NEWSDETAIL_NEWSVO = "newsvo";
+	public static final String CSTR_EXTRA_NEWSDETAIL_DATA = "basevo";
+	/**
+	 * 传入参数title 数据类型String 标题
+	 */
+	public static final String CSTR_EXTRA_NEWSDETAIL_TITLE = "title";
 
 	/**
 	 * 共享按钮
@@ -40,14 +48,14 @@ public class NewsDetailActivity extends BaseActivity
 	private WebView mwv_content;
 	
 	/**
-	 * 
+	 * 传入参数信息
 	 */
-	private NewsVO mNewsVO;
+	private BaseVO mBaseVO;
 	
 	/**
-	 * 
+	 * 根据传入参数获取到的具体信息
 	 */
-	private NewsDetailVO mNewsDetailVO;
+	private BaseVO mDetailVO;
 	
 	public FavoriteUtil mFavoriteUtil;
 
@@ -55,7 +63,7 @@ public class NewsDetailActivity extends BaseActivity
 	protected void initView()
 	{
 		setContentView(R.layout.activity_detail_news);
-		setTitleTextBold();
+		//setTitleTextBold();
 		miv_fav = (ImageView)findViewById(R.id.detail_tb_fav_iv);
 		mwv_content = (WebView)findViewById(R.id.detail_content_wv);
 		WebViewUtil.setWebView(this, mwv_content,new OnReloadListener()
@@ -70,45 +78,39 @@ public class NewsDetailActivity extends BaseActivity
 		mFavoriteUtil = FavoriteUtil.getFavoriteUtil();
 		
 		Intent intent = getIntent();
-		Object o = intent.getSerializableExtra(CSTR_EXTRA_NEWSDETAIL_NEWSVO);
-		if(o==null||!(o instanceof NewsVO))
+		Object o = intent.getSerializableExtra(CSTR_EXTRA_NEWSDETAIL_DATA);
+		if(o==null||!(o instanceof BaseVO))
 			return;
-		mNewsVO = (NewsVO)o;
-		setFavImageView(mFavoriteUtil.hasFavData(mNewsVO)!=-1);
+		mBaseVO = (BaseVO) o;
+		setFavImageView(mFavoriteUtil.hasFavData(mBaseVO)!=-1);
+		
+		String strtitle = intent.getStringExtra(CSTR_EXTRA_NEWSDETAIL_TITLE);
+		if(!StringUtil.isEmpty(strtitle))
+			setTitleText(strtitle);
 	}
 	
 	@Override
 	protected void initDataContent()
 	{
 		mwv_content.stopLoading();
-		if(mNewsVO==null)
-		{
+		if(mBaseVO==null)
 			return;
-		}
-
-		MobileInfoService infoService= new MobileInfoService(NewsDetailActivity.this);
-		infoService.getNewsDetail(mNewsVO.getNewstype(), mNewsVO.getNewsid(), new IBaseReceiver()
-		{
+		mBaseVO.setHtmlToShow(NewsDetailActivity.this,new DetailInfoListener()
+		{			
 			@Override
-			public void receiveCompleted(boolean isSuc, String content)
-			{
-				if (!isSuc)
-				{
-					setErrorInfo(content);
-					displayToast(content);
-					return;
-				}
-				ResponseVO respVO = new ResponseVO();
-				mNewsDetailVO = (NewsDetailVO)JsonParser.parseJsonToEntity(content, respVO);
-				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
-				{
-					setErrorInfo(respVO.getMsg());
-					displayToast(respVO.getMsg());
-					return;
-				} 
+			public void onComplete(BaseVO baseVO)
+			{	
+				mDetailVO = baseVO;
 				setNewsInfo();
 			}
-		});
+
+			@Override
+			public void onError(String msg)
+			{
+				setErrorInfo(msg);
+				displayToast(msg);
+			}
+		});		
 	}
 	
 	/**
@@ -117,9 +119,11 @@ public class NewsDetailActivity extends BaseActivity
 	 */
 	private void setErrorInfo(String msg)
 	{
+		if(mBaseVO==null)
+			return;
 		setWebViewContent(WebViewUtil.getHtmlHead()
-				+WebViewUtil.getHtmlTitle(mNewsVO==null?"":mNewsVO.getTitle())
-				+WebViewUtil.getHtmlSubTitle(mNewsVO)
+				+mBaseVO.getHtmlTitle()
+				+mBaseVO.getHtmlSubTitle()
 				+WebViewUtil.getHtmlErrorHit(msg, true)
 				+WebViewUtil.getHtmlEnd());
 	}
@@ -129,15 +133,15 @@ public class NewsDetailActivity extends BaseActivity
 	 */
 	private void setNewsInfo()
 	{
-		if(mNewsDetailVO==null)
+		if(mDetailVO==null)
 		{
 			setErrorInfo(getResources().getString(R.string.detail_news_content_empty));
 			return;
 		}
 		setWebViewContent(WebViewUtil.getHtmlHead()
-				+WebViewUtil.getHtmlTitle(mNewsVO==null?"":mNewsVO.getTitle())
-				+WebViewUtil.getHtmlSubTitle(mNewsVO)
-				+WebViewUtil.getHtmlContext(NewsDetailActivity.this, mNewsDetailVO.getNewscontent())
+				+mDetailVO.getHtmlTitle()
+				+mDetailVO.getHtmlSubTitle()
+				+mDetailVO.getHtmlContext(NewsDetailActivity.this)
 				+WebViewUtil.getHtmlEnd());
 	}
 	
@@ -165,13 +169,13 @@ public class NewsDetailActivity extends BaseActivity
 	 */
 	public void onFavClick(View v)
 	{
-		if(mNewsVO==null)
+		if(mBaseVO==null)
 			return;
-		int index = mFavoriteUtil.hasFavData(mNewsVO);
+		int index = mFavoriteUtil.hasFavData(mBaseVO);
 		if(index==-1)
 		{
 			//收藏
-			mFavoriteUtil.addFavData(mNewsVO);
+			mFavoriteUtil.addFavData(mBaseVO);
 			setFavImageView(true);
 			displayToast(R.string.fav_add);
 			return;
@@ -190,8 +194,10 @@ public class NewsDetailActivity extends BaseActivity
 	{
 		String result = "#"+getResources().getString(R.string.app_name)+"#";
 		//生成共享内容
-		if(mNewsVO!=null)
-			result +=mNewsVO.getTitle()+" ";
+		if(mBaseVO!=null)
+		{
+			result+=mBaseVO.generateShareText()+" ";
+		}
 		result +="更多信息请访问"+getResources().getString(R.string.baseurl);
 		return result;
 	}

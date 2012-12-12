@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.adapter.ListBaseAdapter;
+import com.wuzhupc.Sourcing.detail.NewsDetailActivity;
 import com.wuzhupc.Sourcing.vo.BaseVO;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
 import com.wuzhupc.Sourcing.vo.ResponseVO;
@@ -20,6 +21,7 @@ import com.wuzhupc.widget.MoreButton;
 import com.wuzhupc.widget.refreshview.PullToRefreshListView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
@@ -225,13 +227,33 @@ public class PersonView extends BaseView
 				}
 				if (obj instanceof BaseVO)
 				{
-					//TODO 点击显示详情处理
-					//runDetailActivity(position);
+					//点击显示详情处理
+					runDetailActivity(position);
 				}
 			}
 		};
 		return itemClickListener;
 	}
+	
+	/**
+	 * 跳转到详情界面
+	 * 
+	 * @param position
+	 */
+	protected void runDetailActivity(int position)
+	{
+		if(position<0||mDataList==null||mDataList.isEmpty()||position>=mDataList.size())
+			return;
+		Object o = mDataList.get(position);
+		if(o==null||!(o instanceof BaseVO))
+			return;
+		BaseVO baseVO=(BaseVO)o;
+		Intent intent = new Intent(mContext, NewsDetailActivity.class);
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_TITLE, getNowChannelInfo().getChannelName()+"详情");
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_DATA, baseVO);
+		mContext.startActivity(intent);
+	}
+	
 	/**
 	 * 获取列表最后一条新闻id
 	 * @param list

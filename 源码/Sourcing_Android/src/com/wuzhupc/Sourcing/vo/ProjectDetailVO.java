@@ -1,5 +1,8 @@
 package com.wuzhupc.Sourcing.vo;
 
+import com.wuzhupc.Sourcing.BaseActivity;
+import com.wuzhupc.utils.WebViewUtil;
+
 /**
  * 项目详情
  * @author wuzhu email:wuzhupc@gmail.com
@@ -26,5 +29,15 @@ public class ProjectDetailVO extends ProjectVO
 	public void setProjectcontent(String projectcontent)
 	{
 		this.projectcontent = projectcontent;
+	}
+	
+	/**
+	 * 返回详情HTML内容
+	 * @return
+	 */
+	@Override
+	public String getHtmlContext(BaseActivity activity)
+	{
+		return WebViewUtil.getHtmlContext(activity, projectcontent);
 	}
 }
