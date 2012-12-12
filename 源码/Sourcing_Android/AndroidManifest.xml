@@ -46,6 +46,11 @@
             android:theme="@style/Theme.WuzhuLight" >
         </activity>
         <activity
+            android:name=".detail.FavInfoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
+        <activity
             android:name=".detail.ViewImageActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.WuzhuLight" >

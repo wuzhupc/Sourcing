@@ -178,12 +178,14 @@ public class NewsDetailActivity extends BaseActivity
 			mFavoriteUtil.addFavData(mBaseVO);
 			setFavImageView(true);
 			displayToast(R.string.fav_add);
+			sendBroadcast(new Intent(FavInfoActivity.CSTR_ACTION_FAV));
 			return;
 		}
 		//»°œ˚ ’≤ÿ
 		mFavoriteUtil.removeFavData(index);
 		setFavImageView(false);
 		displayToast(R.string.fav_remove);
+		sendBroadcast(new Intent(FavInfoActivity.CSTR_ACTION_FAV));
 	}
 	
 	/**

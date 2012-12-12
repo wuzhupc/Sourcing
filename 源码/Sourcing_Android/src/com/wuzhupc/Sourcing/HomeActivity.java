@@ -2,6 +2,7 @@ package com.wuzhupc.Sourcing;
 
 import java.util.ArrayList;
 
+import com.wuzhupc.Sourcing.detail.FavInfoActivity;
 import com.wuzhupc.Sourcing.detail.UserLoginActivity;
 import com.wuzhupc.Sourcing.view.BaseView;
 import com.wuzhupc.Sourcing.view.ListBaseView;
@@ -379,7 +380,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 								askCloseApplication();
 							else if(morelist.get(which).isFavChannel())
 							{
-								// TODO°°œ‘ æ ’≤ÿ¥∞ø⁄
+								runActivity(false, FavInfoActivity.class);
 							}
 							else if(morelist.get(which).isSettingChannel())
 							{
