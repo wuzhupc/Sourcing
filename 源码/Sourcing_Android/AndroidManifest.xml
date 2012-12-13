@@ -65,6 +65,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.WuzhuLight" >
         </activity>
+        <activity
+            android:name=".detail.SettingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
+        <activity
+            android:name=".detail.AboutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
 
         <uses-library android:name="android.test.runner" />
     </application>

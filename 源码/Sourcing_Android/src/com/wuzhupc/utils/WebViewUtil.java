@@ -39,7 +39,8 @@ public class WebViewUtil
 		// 设置支持JavaScript
 		webview.clearCache(true);
 		websettings.setJavaScriptEnabled(true);
-		//TODO 设置字体 websettings.setTextSize(SettingUtil.getNewsFontSize(c));
+		//设置字体 
+		websettings.setTextSize(SettingUtil.getNewsFontSize(c));
 		webview.setWebViewClient(new WebViewClient()
 		{
 			// 解决点击跳转问题

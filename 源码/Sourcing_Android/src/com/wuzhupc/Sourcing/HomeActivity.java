@@ -3,6 +3,7 @@ package com.wuzhupc.Sourcing;
 import java.util.ArrayList;
 
 import com.wuzhupc.Sourcing.detail.FavInfoActivity;
+import com.wuzhupc.Sourcing.detail.SettingActivity;
 import com.wuzhupc.Sourcing.detail.UserLoginActivity;
 import com.wuzhupc.Sourcing.view.BaseView;
 import com.wuzhupc.Sourcing.view.ListBaseView;
@@ -384,7 +385,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 							}
 							else if(morelist.get(which).isSettingChannel())
 							{
-								// TODO œ‘ æ…Ë÷√¥∞ø⁄
+								runActivity(false, SettingActivity.class);
 							}
 						}
 					};

@@ -63,4 +63,7 @@
 	<!-- FavInfoActivity -->
 	<string name="favinfo_title">我的收藏</string>
 	<string name="favinfo_nodata">没有收藏的信息哦!</string>
+	
+	<!-- SettingActivity -->
+	<string name="setting_title">系统设置</string>
 </resources>

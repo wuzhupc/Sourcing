@@ -56,7 +56,8 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="#00000000"
-        android:src="@drawable/welcome_close_btn" 
+        android:src="@drawable/welcome_close_btn"
+        android:onClick="onHomeClick"
         android:visibility="gone"/>
 
 </RelativeLayout>

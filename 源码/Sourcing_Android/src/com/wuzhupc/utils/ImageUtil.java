@@ -187,8 +187,7 @@ public class ImageUtil
 		DateFormat format = new SimpleDateFormat("yyyyMMddHHmmss");
 		String tempfilename = format.format(Calendar.getInstance().getTime())
 				+ ".jpg";
-		String filepath = Constants.CSTR_DATASTOREDIR + "images"
-				+ File.separator;
+		String filepath = Constants.CSTR_DATASTOREDIR + Constants.CSTR_IMAGECACHE_DIR;
 		FileOutputStream fos = null;
 		if (!FileUtil.isExistFolder(filepath))
 			return "";

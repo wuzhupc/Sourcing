@@ -9,10 +9,25 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.webkit.WebSettings;
+import android.webkit.WebSettings.TextSize;
 
 public class SettingUtil
 {
 	private final static String CStr_SettingSharedPreferencesKey="sourcingsetting";
+	
+	private final static String CStr_NewsFontSize_Key="NewsFontSize";
+	
+	/**
+	 * 字体列表
+	 */
+	public final static  TextSize[] NewsFontSizes = { 
+			WebSettings.TextSize.SMALLER, WebSettings.TextSize.NORMAL,
+			WebSettings.TextSize.LARGER, WebSettings.TextSize.LARGEST };
+	/**
+	 * 字体描述列表
+	 */
+	public final static  String[] NewsFontSizesDesc={"小号字","中号字","大号字","特大字号"};
 	
 	/**
 	 * 获取某栏目最后更新时间
@@ -87,4 +102,105 @@ public class SettingUtil
 		
 		return firststart;
 	}
+	/**
+	 * 获取字体索引
+	 * @param textSize
+	 * @return
+	 */
+	public static int getIndexFromNewsFontSizes(TextSize textSize)
+	{
+		for(int i=0;i<NewsFontSizes.length;i++)
+			if(textSize.equals(NewsFontSizes[i]))
+				return i;
+		return -1;
+	}
+	/**
+	 * 获取有效的索引值
+	 * @param index
+	 * @return
+	 */
+	private static int getEffIndex(int index)
+	{
+		if(index<0)
+			index=0;
+		if(index>=NewsFontSizes.length)
+			index=NewsFontSizes.length-1;
+		return index;
+	}
+	/**
+	 * 根据索引获取字体
+	 * @param index
+	 * @return
+	 */
+	public static TextSize getNewsFontSizeFromIndex(int index)
+	{
+		return NewsFontSizes[getEffIndex(index)];
+	}
+	/**
+	 * 获取字体对应的描述
+	 * @param textSize
+	 * @return
+	 */
+	public static String getNewsFontSizeDesc(TextSize textSize)
+	{
+		return getNewsFontSizeDesc(getIndexFromNewsFontSizes(textSize));
+	}
+	
+	/**
+	 * 获取字体对应的描述
+	 * @param index
+	 * @return
+	 */
+	public static String getNewsFontSizeDesc(int index)
+	{
+		if(index<0||index>=NewsFontSizesDesc.length)
+			return "字体不存在!";
+		return NewsFontSizesDesc[index];
+	}
+	
+	/**
+	 * 获取新闻字体设置
+	 * @param c
+	 * @return
+	 */
+	public static TextSize getNewsFontSize(Context c)
+	{		
+		return NewsFontSizes[getNewsFontSizeIndex(c)];
+	} 
+	
+	/**
+	 * 获取新闻字体设置
+	 * @param c
+	 * @return
+	 */
+	public static int getNewsFontSizeIndex(Context c)
+	{
+		SharedPreferences sp=c.getSharedPreferences(CStr_SettingSharedPreferencesKey, Context.MODE_WORLD_READABLE);
+		int index=sp.getInt(CStr_NewsFontSize_Key, 1);
+		return getEffIndex(index);
+	} 
+	/**
+	 * 设置字体设置
+	 * @param c
+	 * @param textSize
+	 */
+	public static void setNewsFontSize(Context c,TextSize textSize)
+	{
+		int index=getIndexFromNewsFontSizes(textSize);
+		setNewsFontSize(c, index);
+	}
+	
+	/**
+	 * 设置字体设置
+	 * @param c
+	 * @param index
+	 */
+	public static void setNewsFontSize(Context c,int index)
+	{
+		SharedPreferences sp=c.getSharedPreferences(CStr_SettingSharedPreferencesKey, Context.MODE_WORLD_WRITEABLE);
+		Editor editor=sp.edit();
+		editor.putInt(CStr_NewsFontSize_Key,index);
+		editor.commit();
+	}
+	
 }

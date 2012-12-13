@@ -16,7 +16,10 @@ public class Constants
 	 * 信息详情保存路径
 	 */
 	public static final String CSTR_DETAIL_DIR = "detail"+File.separator;
-
+	/**
+	 * 信息详情保存路径
+	 */
+	public static final String CSTR_IMAGECACHE_DIR = "images"+File.separator;
 
 	/** 连接超时设置 /s */
 	public static final int CONNECT_TIME_OUT = 5;
