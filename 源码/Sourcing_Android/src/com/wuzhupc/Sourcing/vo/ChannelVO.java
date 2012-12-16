@@ -408,7 +408,7 @@ public class ChannelVO extends BaseVO {
 		if(lastUpdateDataTime==null)
 		{
 			//读取设置项
-			lastUpdateDataTime = SettingUtil.getChannelLastUpdateTime(c, id);
+			lastUpdateDataTime = SettingUtil.getChannelLastUpdateTime(c,fatherchannelID, id);
 		}
 		return lastUpdateDataTime;
 	}
@@ -417,7 +417,7 @@ public class ChannelVO extends BaseVO {
 	{
 		this.lastUpdateDataTime = lastUpdateDataTime;
 		//存取配置信息
-		SettingUtil.setChannelLastUpdateTime(c, id, lastUpdateDataTime);
+		SettingUtil.setChannelLastUpdateTime(c, fatherchannelID,id, lastUpdateDataTime);
 	}
 
 

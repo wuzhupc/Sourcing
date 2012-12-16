@@ -4,7 +4,9 @@ import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.config.ApplicationSet;
 import com.wuzhupc.config.Constants;
+import com.wuzhupc.push.PushService;
 import com.wuzhupc.utils.FileUtil;
+import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.UIUtil;
 import com.wuzhupc.widget.OnKeyDownListener;
@@ -252,6 +254,18 @@ public  abstract class BaseActivity extends Activity
 		{
 
 		}
+	}
+	
+	/**
+	 * 启用推送信息服务
+	 */
+	public void startPushService()
+	{
+		//判断设置项
+		if(!SettingUtil.getPushService(BaseActivity.this))
+			return;
+		Intent intent = new Intent(PushService.CSTR_ACTION_PUSH_SERVICE);
+		startService(intent);
 	}
 
 	/**

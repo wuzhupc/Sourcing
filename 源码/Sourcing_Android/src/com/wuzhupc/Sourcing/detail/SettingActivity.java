@@ -5,13 +5,17 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
 import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.config.Constants;
+import com.wuzhupc.push.PushService;
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.SettingUtil;
 
@@ -45,28 +49,25 @@ public class SettingActivity extends BaseActivity implements
 		findViewById(R.id.setting_fontsize_ll).setOnClickListener(this);
 
 		mcb_push = (CheckBox) findViewById(R.id.setting_push_checkbox);
-		// TODO
-//		if (MsgAlarmService.service != null)
-//		{
-//			mcb_push.setChecked(true);
-//		}
-//		mcb_push.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
-//		{
-//			@Override
-//			public void onCheckedChanged(CompoundButton buttonView,
-//					boolean isChecked)
-//			{
-//				if (isChecked)
-//				{
-//					startService(new Intent(SettingActivity.this,
-//							MsgAlarmService.class));
-//				} else
-//				{
-//					stopService(new Intent(SettingActivity.this,
-//							MsgAlarmService.class));
-//				}
-//			}
-//		});
+		mcb_push.setChecked(SettingUtil.getPushService(SettingActivity.this));
+		mcb_push.setOnCheckedChangeListener(new OnCheckedChangeListener()
+		{
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView,
+					boolean isChecked)
+			{
+				SettingUtil.setPushService(SettingActivity.this, isChecked);
+				if (isChecked)
+				{
+					startService(new Intent(SettingActivity.this,
+							PushService.class));
+				} else
+				{
+					stopService(new Intent(SettingActivity.this,
+							PushService.class));
+				}
+			}
+		});
 	}
 
 	@Override

@@ -74,4 +74,20 @@ public class PushVO extends BaseVO
 		setId(JavaLangUtil.StrToLong(id,-1l));
 	}
 	
+	public String getTypeStr()
+	{
+		switch (getPushtype())
+		{
+		case 0:
+			return "资讯信息";
+		case 1:
+			return "通知提醒";
+		case 2:
+			return "审核结果";
+		case 3:
+			return "申报进度";
+		default:
+			return "资讯信息";
+		}
+	}
 }

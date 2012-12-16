@@ -256,8 +256,15 @@ public class WelcomeActivity extends BaseActivity
 	 */
 	private void startUserLogin()
 	{
+		//如果之前已经登录过
+		UserVO vo = getApplicationSet().getUserVO();
+		if(vo!=null)
+		{
+			completeUserLogin();
+			return;
+		}
 		//读取之前的登录信息
-		UserVO vo = UserVO.getLastLoginUserInfo();
+		vo = UserVO.getLastLoginUserInfo();
 		if(vo==null)
 		{
 			completeUserLogin();
@@ -298,12 +305,12 @@ public class WelcomeActivity extends BaseActivity
 	 */
 	private void startHome()
 	{
-		//TODO
 		//启动接收推送信息
-//		startPushMsgService();
+		startPushService();
 //		
 //		//启动主界面
 		Intent intent=new Intent(this, HomeActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 //		//intent.putExtra(HomeActivity.CSTR_PARMS_STARTADNEWSURL, mStartLogoNewUrl);
 		runIntent(true, intent);
 	}

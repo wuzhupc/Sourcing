@@ -66,4 +66,13 @@
 	
 	<!-- SettingActivity -->
 	<string name="setting_title">系统设置</string>
+	
+	
+	
+	<!-- 通知栏提示信息 -->
+	<string name="notify_pop_msg">收到新厦门服务外包网消息</string>
+	<string name="notify_title">新厦门服务外包网消息</string>
+	<string name="notify_detail">%s条未读厦门服务外包网消息</string>
+	<string name="notify_prompt">请点击查看</string>
+	<string name="notify_single_msg_detail">[%1$s]%2$s</string>
 </resources>

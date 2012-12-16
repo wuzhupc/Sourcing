@@ -38,7 +38,8 @@
         <activity
             android:name=".HomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.WuzhuLight" >
+            android:theme="@style/Theme.WuzhuLight" 
+            android:launchMode="singleTask">
         </activity>
         <activity
             android:name=".detail.NewsDetailActivity"
@@ -76,6 +77,25 @@
             android:theme="@style/Theme.WuzhuLight" >
         </activity>
 
+        
+
+        <service android:name=".push.PushService" >
+            <intent-filter>
+                <action android:name="com.wuzhu.push.pushservice" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".push.PushReceiver" >
+            <intent-filter>
+                <action android:name="com.wuzhu.push.pushreceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".push.PushBootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        
         <uses-library android:name="android.test.runner" />
     </application>
 

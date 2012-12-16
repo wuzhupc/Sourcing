@@ -404,6 +404,13 @@ containing a value of this type.
         /**  列表项相关  
          */
         public static final int list_item_no_data=0x7f08002c;
+        public static final int notify_detail=0x7f08004e;
+        /**  通知栏提示信息 
+         */
+        public static final int notify_pop_msg=0x7f08004c;
+        public static final int notify_prompt=0x7f08004f;
+        public static final int notify_single_msg_detail=0x7f080050;
+        public static final int notify_title=0x7f08004d;
         /**  View 
          */
         public static final int person_search_empty=0x7f080041;

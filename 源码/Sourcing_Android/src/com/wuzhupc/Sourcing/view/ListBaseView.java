@@ -22,7 +22,6 @@ import com.wuzhupc.config.Constants;
 import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
 import com.wuzhupc.services.MobileInfoService;
 import com.wuzhupc.utils.CacheUtil;
-import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonParser;
 import com.wuzhupc.widget.MoreButton;
@@ -315,7 +314,7 @@ public class ListBaseView extends BaseView
 				// 报文返回正常
 				// 存储最近刷新的列表
 				CacheUtil.cacheContent(getNowChannelInfo(), content);
-				SettingUtil.setChannelLastUpdateTime(mContext, getNowChannelID(), new Date());
+				getNowChannelInfo().setLastUpdateDataTime(mContext, new Date());
 				clearDataList();// 加入无数据提示
 				if (list != null && !list.isEmpty())
 				{
