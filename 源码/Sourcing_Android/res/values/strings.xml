@@ -67,6 +67,19 @@
 	<string name="userlogin_logining">登录中&#8230;&#8230;&#8230;</string>
 	<string name="userlogin_login_sucess">登录成功</string>
 	<string name="userlogin_login_error">登录失败:%1$s</string>
+	<!-- UserChangePwdActivity -->
+	<string name="userchangepwd_title">修改密码</string>
+	<string name="userchangepwd_username">用户名</string>
+	<string name="userchangepwd_pwd">旧密码</string>
+	<string name="userchangepwd_newpwd">新密码</string>
+	<string name="userchangepwd_renewpwd">重复新密码</string>
+	<string name="userchangepwd_pwd_hit">请输入旧密码</string>
+	<string name="userchangepwd_newpwd_hit">请输入新密码</string>
+	<string name="userchangepwd_newpwd_noequal">新密码不一致</string>
+	<string name="userchangepwd_changing">修改密码中&#8230;&#8230;&#8230;</string>
+	<string name="userchangepwd_change_error">修改密码失败:%1$s</string>
+	<string name="userchangepwd_change_sucess">修改密码成功</string>
+	
 	<!-- FavInfoActivity -->
 	<string name="favinfo_title">我的收藏</string>
 	<string name="favinfo_nodata">没有收藏的信息哦!</string>

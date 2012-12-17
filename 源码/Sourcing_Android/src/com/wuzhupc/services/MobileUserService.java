@@ -47,6 +47,27 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
+	 * 修改密码
+	 * @param username　用户名
+	 * @param password　旧密码
+	 * @param newpassword　新密码
+	 * @param iReceiver
+	 * @param showprogress
+	 * @param progressshowcontent
+	 */
+	public void changePwd(String username,String password,String newpassword,IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
+	{
+		JsonCreater creater=JsonCreater.startJson();
+		creater.setParam("devid",getDevID());
+		creater.setParam("username", username);
+		creater.setParam("password", password);
+		mSuffixStr = username;
+		mCommandName = mContext.getString(R.string.cmd_json_user_change_pwd);
+		String json=creater.createJson(null, mCommandName);
+		getData(json,iReceiver,showprogress,progressshowcontent);
+	}
+	
+	/**
 	 * 3.15.	获取用户咨询信息
 	 * @param bottomid 列表下限的记录ID，默认0，如果非0时，获取此记录ID后pagesize条记录数
 	 * @param iReceiver

@@ -49,6 +49,7 @@ public class UserLoginActivity extends BaseActivity
 				if(actionId==EditorInfo.IME_ACTION_DONE)
 				{
 					loginClick(v);
+					return true;
 				}
 				return false;
 			}

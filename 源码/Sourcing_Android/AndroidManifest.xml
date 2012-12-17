@@ -63,6 +63,11 @@
             android:theme="@style/Theme.WuzhuLight" >
         </activity>
         <activity
+            android:name=".detail.UserChangePwdActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
+        <activity
             android:name=".detail.UserInfoListActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.WuzhuLight" >
@@ -80,15 +85,15 @@
 
         
 
-        <service android:name="com.wuzhupc.push.PushService" >
+        <service android:name="com.wuzhupc.push.PushService"  android:exported="false">
             <intent-filter>
-                <action android:name="com.wuzhu.push.pushservice" />
+                <action android:name="com.wuzhu.push.pushservice" android:exported="false" />
             </intent-filter>
         </service>
 
-        <receiver android:name="com.wuzhupc.push.PushReceiver" >
+        <receiver android:name="com.wuzhupc.push.PushReceiver" android:exported="false">
             <intent-filter>
-                <action android:name="com.wuzhu.push.pushreceiver" />
+                <action android:name="com.wuzhu.push.pushreceiver"  android:exported="false"/>
             </intent-filter>
         </receiver>
         <receiver android:name="com.wuzhupc.push.PushBootReceiver" >

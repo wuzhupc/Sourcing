@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/TitleBar" >
+        <ImageView
+            android:id="@+id/detail_tb_return_iv"
+            style="@style/TitleBarAction"
+            android:onClick="onHomeClick"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TitleBarText"
+            android:text="@string/userchangepwd_title" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/userchangepwd_pwd"
+        android:textColor="@color/listitem_base_titlecolor"
+        android:textSize="@dimen/text_size_medium" />
+
+    <EditText
+        android:id="@+id/userchangepwd_pwd_et"
+        style="@android:style/Widget.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/selector_common_edittext"
+        android:ems="10"
+        android:hint="@string/userchangepwd_pwd_hit"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:imeOptions="actionNext" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/userchangepwd_newpwd"
+        android:textColor="@color/listitem_base_titlecolor"
+        android:textSize="@dimen/text_size_medium" />
+
+    <EditText
+        android:id="@+id/userchangepwd_newpwd_et"
+        style="@android:style/Widget.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/selector_common_edittext"
+        android:ems="10"
+        android:hint="@string/userchangepwd_newpwd_hit"
+        android:singleLine="true"
+        android:inputType="textPassword" 
+        android:imeOptions="actionNext" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/userchangepwd_renewpwd"
+        android:textColor="@color/listitem_base_titlecolor"
+        android:textSize="@dimen/text_size_medium" />
+
+    <EditText
+        android:id="@+id/userchangepwd_renewpwd_et"
+        style="@android:style/Widget.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/selector_common_edittext"
+        android:ems="10"
+        android:hint="@string/userchangepwd_newpwd_hit"
+        android:singleLine="true"
+        android:inputType="textPassword"
+        android:imeOptions="actionDone"  />
+
+    <Button
+        android:id="@+id/userchangepwd_changepwd_bt"
+        style="@style/dialog_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:onClick="changePwdClick"
+        android:text="@string/dl_btn_confirm"
+        android:textSize="@dimen/text_size_large" />
+</LinearLayout>

@@ -52,6 +52,8 @@
 	
 	<!-- 用户登录  -->
 	<string name="cmd_json_user_login">mobileuser_userLogin</string>
+	<!-- 修改密码  -->
+	<string name="cmd_json_user_change_pwd">mobileuser_changePwd</string>
 	<!-- 获取用户咨询信息 -->
 	<string name="cmd_json_get_user_consult_info">mobileuser_getUserConsultInfo</string>
 	<!-- 发送用户咨询信息 -->

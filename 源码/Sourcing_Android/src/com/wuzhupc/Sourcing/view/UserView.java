@@ -2,6 +2,7 @@ package com.wuzhupc.Sourcing.view;
 
 import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
+import com.wuzhupc.Sourcing.detail.UserChangePwdActivity;
 import com.wuzhupc.Sourcing.detail.UserLoginActivity;
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.Sourcing.vo.UserVO;
@@ -179,7 +180,8 @@ public class UserView extends BaseView
 		} else
 		{
 			// ÐÞ¸ÄÃÜÂë
-
+			((BaseActivity) mContext).runActivity(false,
+					UserChangePwdActivity.class);
 		}
 	}
 
