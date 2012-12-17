@@ -49,6 +49,7 @@ public class UserVO extends BaseVO
 	 * 用户类型,USER_TYPE_
 	 */
 	private int usertype;
+	
 	/**
 	 * 用户登录帐号
 	 */
@@ -349,5 +350,22 @@ public class UserVO extends BaseVO
 			}
 		}
 		return vo;
+	}
+	
+	public String getStrUserType()
+	{
+		switch (usertype)
+		{
+		case USER_TYPE_PERSONAL:
+			return "个人用户";
+		case USER_TYPE_EXPERT:
+			return "专家用户";
+		case USER_TYPE_ENTERPRISE:
+			return "企业用户";
+		case USER_TYPE_TRAIN:
+			return "机构用户";
+		default:
+			return "";
+		}
 	}
 }

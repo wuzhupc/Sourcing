@@ -17,7 +17,7 @@
             <!-- 头像 -->
 
             <ImageView
-                android:id="@+id/imageView1"
+                android:id="@+id/userview_userpic_iv"
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 android:layout_alignParentLeft="true"
@@ -25,48 +25,59 @@
             <!-- 用户名 -->
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/userview_username_tv"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/imageView1"
+                android:layout_alignTop="@+id/userview_userpic_iv"
                 android:layout_marginTop="5dp"
-                android:layout_toRightOf="@+id/imageView1"
+                android:layout_toRightOf="@+id/userview_userpic_iv"
                 android:layout_marginLeft="5dp"
                 android:gravity="center_vertical"
                 android:maxLines="2"
                 android:minLines="2"
-                android:text="您还未登录"
+                android:text="@string/userview_nologin"
                 android:textSize="@dimen/text_size_large" />
+            <!-- 用户类型 -->
+            <TextView
+                android:id="@+id/userview_usertype_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/userview_username_tv"
+                android:layout_toRightOf="@+id/userview_userpic_iv"
+                android:layout_marginLeft="5dp"
+				android:singleLine="true"
+                android:textSize="@dimen/text_size_medium" />
             <!-- 注册登录按钮 -->
 
             <LinearLayout
                 android:layout_width="fill_parent"
-                android:layout_height="60dp"
-                android:layout_alignLeft="@+id/textView1"
-                android:layout_below="@+id/textView1" 
+                android:layout_height="40dp"
+                android:layout_alignLeft="@id/userview_username_tv"
+                android:layout_below="@id/userview_usertype_tv" 
                 android:gravity="center_vertical">
 
                 <Button
-                    android:id="@+id/imageButton1"
+                    android:id="@+id/userview_login_pwd_bt"
                     android:layout_width="fill_parent"
                     android:layout_height="30dp"
                     android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_btn_bg"
-                    android:text="修改密码"
+                    android:text="@string/userview_login"
                     android:textColor="@color/activity_title_text"
                     android:textSize="@dimen/text_size_small" />
 
                 <Button
-                    android:id="@+id/imageButton1"
+                    android:id="@+id/userview_reg_account_bt"
                     android:layout_width="fill_parent"
                     android:layout_height="30dp"
                     android:layout_marginLeft="5dp"
                     android:layout_weight="1"
                     android:background="@drawable/icon_btn_bg"
-                    android:text="切换帐号"
+                    android:text="@string/userview_register"
                     android:textColor="@color/activity_title_text"
-                    android:textSize="@dimen/text_size_small" />
+                    android:textSize="@dimen/text_size_small"
+                    android:onClick="onReg_AccountClick" />
             </LinearLayout>
         </RelativeLayout>
 

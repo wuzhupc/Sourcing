@@ -63,7 +63,7 @@ public class ListBaseView extends BaseView
 	 */
 	public ListBaseView(Context context, long fatherchannelid)
 	{
-		super(context, fatherchannelid,false,true);
+		super(context, fatherchannelid,false,true,true);
 	}
 	
 	/**

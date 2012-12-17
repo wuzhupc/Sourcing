@@ -52,6 +52,13 @@
 	<string name="fav_remove">已取消收藏!</string>
 	<!-- View -->
 	<string name="person_search_empty">请输入搜索关键字</string>
+	<!-- UserView -->
+	<string name="userview_nologin">您还未登录</string>
+	<string name="userview_changepwd">修改密码</string>
+	<string name="userview_changeaccount">切换帐号</string>
+	<string name="userview_changeaccount_hit">您确定退出，更换其他帐号登入吗？</string>
+	<string name="userview_login"> 登 录 </string>
+	<string name="userview_register"> 注 册 </string>
 	<!-- UserLoginActivity -->
 	<string name="userlogin_title">用户登录</string>
 	<string name="userlogin_account_empty">请输入您的用户名</string>
@@ -66,9 +73,6 @@
 	
 	<!-- SettingActivity -->
 	<string name="setting_title">系统设置</string>
-	
-	
-	
 	<!-- 通知栏提示信息 -->
 	<string name="notify_pop_msg">收到新厦门服务外包网消息</string>
 	<string name="notify_title">新厦门服务外包网消息</string>

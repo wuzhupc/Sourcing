@@ -215,8 +215,6 @@ containing a value of this type.
         public static final int home_menubar_m2_v=0x7f050012;
         public static final int home_menubar_m3_v=0x7f050013;
         public static final int home_menubar_m4_v=0x7f050014;
-        public static final int imageButton1=0x7f05004d;
-        public static final int imageView1=0x7f05004b;
         public static final int list_base_datalist_lv=0x7f050039;
         public static final int list_datalist_lv=0x7f05001d;
         public static final int listitem_base_iv=0x7f05003a;
@@ -227,10 +225,10 @@ containing a value of this type.
         public static final int listitem_project_time_tv=0x7f050040;
         public static final int listitem_projectname_tv=0x7f05003e;
         public static final int listitem_train_tv=0x7f050041;
-        public static final int menubar_menuitem_icon=0x7f05004e;
-        public static final int menubar_menuitem_text=0x7f05004f;
-        public static final int morebotton_pb=0x7f050051;
-        public static final int morebutton_tv=0x7f050050;
+        public static final int menubar_menuitem_icon=0x7f050050;
+        public static final int menubar_menuitem_text=0x7f050051;
+        public static final int morebotton_pb=0x7f050053;
+        public static final int morebutton_tv=0x7f050052;
         public static final int person_datalist_lv=0x7f05004a;
         public static final int pullDownFromTop=0x7f050000;
         public static final int pullUpFromBottom=0x7f050001;
@@ -245,14 +243,18 @@ containing a value of this type.
         public static final int setting_push_checkbox=0x7f05001a;
         public static final int setting_push_ll=0x7f050018;
         public static final int settingde_push_info_tv=0x7f050019;
-        public static final int subchannel_tab_icon=0x7f050052;
-        public static final int subchannel_tab_text=0x7f050053;
-        public static final int textView1=0x7f05004c;
+        public static final int subchannel_tab_icon=0x7f050054;
+        public static final int subchannel_tab_text=0x7f050055;
         public static final int userlogin_account_et=0x7f05001e;
         public static final int userlogin_forget_bt=0x7f05001f;
         public static final int userlogin_login_bt=0x7f050021;
         public static final int userlogin_pwd_et=0x7f050020;
         public static final int userlogin_reg_bt=0x7f050022;
+        public static final int userview_login_pwd_bt=0x7f05004e;
+        public static final int userview_reg_account_bt=0x7f05004f;
+        public static final int userview_username_tv=0x7f05004c;
+        public static final int userview_userpic_iv=0x7f05004b;
+        public static final int userview_usertype_tv=0x7f05004d;
         public static final int viewimage_bottom_ll=0x7f050026;
         public static final int viewimage_bottom_save_ib=0x7f05002b;
         public static final int viewimage_imageoper_left_ib=0x7f050027;
@@ -389,10 +391,10 @@ containing a value of this type.
         public static final int dl_title_prompt=0x7f080023;
         public static final int fav_add=0x7f08003f;
         public static final int fav_remove=0x7f080040;
-        public static final int favinfo_nodata=0x7f08004a;
+        public static final int favinfo_nodata=0x7f080050;
         /**  FavInfoActivity 
          */
-        public static final int favinfo_title=0x7f080049;
+        public static final int favinfo_title=0x7f08004f;
         /**  HomeActivity 
          */
         public static final int home_initchannel_fail=0x7f08003c;
@@ -404,13 +406,13 @@ containing a value of this type.
         /**  列表项相关  
          */
         public static final int list_item_no_data=0x7f08002c;
-        public static final int notify_detail=0x7f08004e;
+        public static final int notify_detail=0x7f080054;
         /**  通知栏提示信息 
          */
-        public static final int notify_pop_msg=0x7f08004c;
-        public static final int notify_prompt=0x7f08004f;
-        public static final int notify_single_msg_detail=0x7f080050;
-        public static final int notify_title=0x7f08004d;
+        public static final int notify_pop_msg=0x7f080052;
+        public static final int notify_prompt=0x7f080055;
+        public static final int notify_single_msg_detail=0x7f080056;
+        public static final int notify_title=0x7f080053;
         /**  View 
          */
         public static final int person_search_empty=0x7f080041;
@@ -426,22 +428,30 @@ containing a value of this type.
         public static final int pull_to_refresh_release_label=0x7f080001;
         /**  SettingActivity 
          */
-        public static final int setting_title=0x7f08004b;
+        public static final int setting_title=0x7f080051;
         /**  忘记密码处理页面 
          */
         public static final int url_forget_pwd_progress=0x7f080006;
         /**  用户注册处理页面 
          */
         public static final int url_reg_progress=0x7f080007;
-        public static final int userlogin_account_empty=0x7f080043;
-        public static final int userlogin_login_bt_title=0x7f080045;
-        public static final int userlogin_login_error=0x7f080048;
-        public static final int userlogin_login_sucess=0x7f080047;
-        public static final int userlogin_logining=0x7f080046;
-        public static final int userlogin_pwd_empty=0x7f080044;
+        public static final int userlogin_account_empty=0x7f080049;
+        public static final int userlogin_login_bt_title=0x7f08004b;
+        public static final int userlogin_login_error=0x7f08004e;
+        public static final int userlogin_login_sucess=0x7f08004d;
+        public static final int userlogin_logining=0x7f08004c;
+        public static final int userlogin_pwd_empty=0x7f08004a;
         /**  UserLoginActivity 
          */
-        public static final int userlogin_title=0x7f080042;
+        public static final int userlogin_title=0x7f080048;
+        public static final int userview_changeaccount=0x7f080044;
+        public static final int userview_changeaccount_hit=0x7f080045;
+        public static final int userview_changepwd=0x7f080043;
+        public static final int userview_login=0x7f080046;
+        /**  UserView 
+         */
+        public static final int userview_nologin=0x7f080042;
+        public static final int userview_register=0x7f080047;
         public static final int welcome_publish=0x7f080036;
         /**  WelcomeActivity 
          */

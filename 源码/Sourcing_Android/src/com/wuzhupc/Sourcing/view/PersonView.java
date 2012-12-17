@@ -56,7 +56,7 @@ public class PersonView extends BaseView
 
 	public PersonView(Context context, long fatherchannelid)
 	{
-		super(context, fatherchannelid, true, true);
+		super(context, fatherchannelid, true, true,true);
 	}
 
 	/**

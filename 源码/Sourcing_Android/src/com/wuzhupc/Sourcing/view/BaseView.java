@@ -99,15 +99,21 @@ public abstract class BaseView extends LinearLayout
 	protected EditText met_search;
 	
 	/**
+	 * 是否有刷新按钮
+	 */
+	private boolean mHasRefButton;
+	
+	/**
 	 * 构造函数
 	 * @param context
 	 * @param fatherchannelid 栏目ID
 	 */
-	public BaseView(Context context,long fatherchannelid,boolean hassearch,boolean hasnavigation) {
+	public BaseView(Context context,long fatherchannelid,boolean hassearch,boolean hasnavigation,boolean hasrefbutton) {
 		super(context);
 		mContext=context;
 		mHasSearch=hassearch;
 		mHasNavigation=hasnavigation;
+		mHasRefButton = hasrefbutton;
 		misInitData=false;
 		if(mContext instanceof HomeActivity)
 			mvf_content=((HomeActivity)mContext).getViewFlipper();
@@ -130,6 +136,13 @@ public abstract class BaseView extends LinearLayout
 	 */
 	public boolean initData()
 	{
+		//设置是否显示刷新按钮
+		if(mContext instanceof HomeActivity)
+		{
+			HomeActivity home = (HomeActivity)mContext;
+			home.setMainTitleRefVisibility(mHasRefButton);
+		}
+		//是否已经初始化过数据，已经初始化则不处理
 		if(misInitData)
 		{
 			hideIme();
