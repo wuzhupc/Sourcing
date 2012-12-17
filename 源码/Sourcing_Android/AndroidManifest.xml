@@ -11,7 +11,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />    
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
 
     <instrumentation
@@ -79,18 +80,18 @@
 
         
 
-        <service android:name=".push.PushService" >
+        <service android:name="com.wuzhupc.push.PushService" >
             <intent-filter>
                 <action android:name="com.wuzhu.push.pushservice" />
             </intent-filter>
         </service>
 
-        <receiver android:name=".push.PushReceiver" >
+        <receiver android:name="com.wuzhupc.push.PushReceiver" >
             <intent-filter>
                 <action android:name="com.wuzhu.push.pushreceiver" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".push.PushBootReceiver" >
+        <receiver android:name="com.wuzhupc.push.PushBootReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>

@@ -76,8 +76,7 @@
                     android:background="@drawable/icon_btn_bg"
                     android:text="@string/userview_register"
                     android:textColor="@color/activity_title_text"
-                    android:textSize="@dimen/text_size_small"
-                    android:onClick="onReg_AccountClick" />
+                    android:textSize="@dimen/text_size_small"/>
             </LinearLayout>
         </RelativeLayout>
 
