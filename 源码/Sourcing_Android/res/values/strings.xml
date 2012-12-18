@@ -59,6 +59,10 @@
 	<string name="userview_changeaccount_hit">您确定退出，更换其他帐号登入吗？</string>
 	<string name="userview_login"> 登 录 </string>
 	<string name="userview_register"> 注 册 </string>
+	<string name="userview_consult_info">咨询信息(未查看:&#060;font color=&#034;&#035;FF0000&#034;&#062;%1$s&#060;&#047;font&#062;  全部:&#060;font color=&#034;&#035;CC0000&#034;&#062;%2$s&#060;&#047;font&#062;)</string>
+	<string name="userview_audit_info">审核结果(未查看:&#060;font color=&#034;&#035;FF0000&#034;&#062;%1$s&#060;&#047;font&#062;  全部:&#060;font color=&#034;&#035;CC0000&#034;&#062;%2$s&#060;&#047;font&#062;)</string>
+	<string name="userview_declare_info">申报进度(未查看:&#060;font color=&#034;&#035;FF0000&#034;&#062;%1$s&#060;&#047;font&#062;  全部:&#060;font color=&#034;&#035;CC0000&#034;&#062;%2$s&#060;&#047;font&#062;)</string>
+	<string name="userview_notifier_info">通知提醒(未查看:&#060;font color=&#034;&#035;FF0000&#034;&#062;%1$s&#060;&#047;font&#062;  全部:&#060;font color=&#034;&#035;CC0000&#034;&#062;%2$s&#060;&#047;font&#062;)</string>
 	<!-- UserLoginActivity -->
 	<string name="userlogin_title">用户登录</string>
 	<string name="userlogin_account_empty">请输入您的用户名</string>

@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wuzhupc.Sourcing"
-    android:versionCode="121209"
-    android:versionName="0.4.1209" >
+    android:versionCode="121218"
+    android:versionName="0.8.1218" >
 
     <uses-sdk
         android:minSdkVersion="8"

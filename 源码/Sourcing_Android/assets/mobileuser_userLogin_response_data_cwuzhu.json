@@ -16,7 +16,11 @@
             "consultcount": "1",
             "auditcount": "0",
             "declarecount": "1",
-            "notifiercount": "2"
+            "notifiercount": "2",
+            "allconsultcount": "100",
+            "allauditcount": "98",
+            "alldeclarecount": "789",
+            "allnotifiercount": "20"
         }
     }
 }

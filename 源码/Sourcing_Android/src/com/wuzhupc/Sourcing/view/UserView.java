@@ -10,6 +10,7 @@ import com.wuzhupc.services.ImageService;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,16 @@ public class UserView extends BaseView
 	private TextView mtv_usertype;
 	private Button mbt_login_pwd;
 	private Button mbt_reg_account;
+	
+	private LinearLayout mll_consult_info;
+	private LinearLayout mll_audit_info;
+	private LinearLayout mll_declare_info;
+	private LinearLayout mll_notifier_info;
+	
+	private TextView mtv_consult_info;
+	private TextView mtv_audit_info;
+	private TextView mtv_declare_info;
+	private TextView mtv_notifier_info;
 
 	public UserView(Context context, long fatherchannelid)
 	{
@@ -47,7 +58,7 @@ public class UserView extends BaseView
 	}
 
 	/**
-	 * TODO 根据现有用户情况设置UserView相关显示
+	 * 根据现有用户情况设置UserView相关显示
 	 */
 	private void setShowUserInfo()
 	{
@@ -59,6 +70,10 @@ public class UserView extends BaseView
 			mtv_usertype.setText("");
 			mbt_login_pwd.setText(R.string.userview_login);
 			mbt_reg_account.setText(R.string.userview_register);
+			mll_audit_info.setVisibility(View.GONE);
+			mll_consult_info.setVisibility(View.GONE);
+			mll_declare_info.setVisibility(View.GONE);
+			mll_notifier_info.setVisibility(View.GONE);
 		} else
 		{
 			ImageService imageService = new ImageService(mContext);
@@ -68,6 +83,16 @@ public class UserView extends BaseView
 			mtv_usertype.setText(userVO.getStrUserType());
 			mbt_login_pwd.setText(R.string.userview_changepwd);
 			mbt_reg_account.setText(R.string.userview_changeaccount);
+			
+			mtv_audit_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_audit_info), userVO.getAuditcount(),userVO.getAllauditcount())));
+			mtv_consult_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_consult_info), userVO.getConsultcount(),userVO.getAllconsultcount())));
+			mtv_declare_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_declare_info), userVO.getDeclarecount(),userVO.getAlldeclarecount())));
+			mtv_notifier_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_notifier_info), userVO.getNotifiercount(),userVO.getAllnotifiercount())));
+
+			mll_audit_info.setVisibility(userVO.hasAudit()?View.VISIBLE:View.GONE);
+			mll_consult_info.setVisibility(userVO.hasConsult()?View.VISIBLE:View.GONE);
+			mll_declare_info.setVisibility(userVO.hasDeclare()?View.VISIBLE:View.GONE);
+			mll_notifier_info.setVisibility(userVO.hasNotifier()?View.VISIBLE:View.GONE);
 		}
 	}
 
@@ -114,7 +139,84 @@ public class UserView extends BaseView
 					onReg_AccountClick(v);
 				}
 			});
+			mll_audit_info=(LinearLayout)v.findViewById(R.id.userview_audit_info_ll);
+			mll_audit_info.setOnClickListener(new OnClickListener()
+			{	
+				@Override
+				public void onClick(View v)
+				{
+					onAuditInfoClick(v);
+				}
+			});
+			mll_consult_info=(LinearLayout)v.findViewById(R.id.userview_consult_info_ll);
+			mll_consult_info.setOnClickListener(new OnClickListener()
+			{	
+				@Override
+				public void onClick(View v)
+				{
+					onConsultInfoClick(v);
+				}
+			});
+			mll_declare_info=(LinearLayout)v.findViewById(R.id.userview_declare_info_ll);
+			mll_declare_info.setOnClickListener(new OnClickListener()
+			{	
+				@Override
+				public void onClick(View v)
+				{
+					onDeclareInfoClick(v);
+				}
+			});
+			mll_notifier_info=(LinearLayout)v.findViewById(R.id.userview_notifier_info_ll);
+			mll_notifier_info.setOnClickListener(new OnClickListener()
+			{	
+				@Override
+				public void onClick(View v)
+				{
+					onNotifierInfoClick(v);
+				}
+			});
+			mtv_audit_info=(TextView)v.findViewById(R.id.userview_audit_info_tv);
+			mtv_consult_info=(TextView)v.findViewById(R.id.userview_consult_info_tv);
+			mtv_declare_info=(TextView)v.findViewById(R.id.userview_declare_info_tv);
+			mtv_notifier_info=(TextView)v.findViewById(R.id.userview_notifier_info_tv);
+			
 		}
+	}
+	
+	/**
+	 * 咨询信息点击
+	 * @param v
+	 */
+	public void onConsultInfoClick(View v)
+	{
+		//TODO 咨询信息点击
+	}
+	
+	/**
+	 * 审核结果点击
+	 * @param v
+	 */
+	public void onAuditInfoClick(View v)
+	{
+		//TODO 审核结果点击
+	}
+	
+	/**
+	 * 申报进度点击
+	 * @param v
+	 */
+	public void onDeclareInfoClick(View v)
+	{
+		//TODO 申报进度点击
+	}
+	
+	/**
+	 * 通知提醒点击
+	 * @param v
+	 */
+	public void onNotifierInfoClick(View v)
+	{
+		//TODO 通知提醒点击
 	}
 
 	/**
@@ -157,6 +259,7 @@ public class UserView extends BaseView
 				activity.getApplicationSet().setUserVO(null, true);
 				setShowUserInfo();
 				activity.runActivity(false, UserLoginActivity.class);
+				dialog.dismiss();
 			}
 		}, BaseDialog.BTN_TYPE_LEFT);
 		dialog.setBtnText(BaseDialog.BTN_TYPE_RIGHT, R.string.dl_btn_cancel);

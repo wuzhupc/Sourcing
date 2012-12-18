@@ -28,6 +28,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.text.format.Formatter;
 import android.util.Log;
+import android.webkit.URLUtil;
 
 /**
  * 文件操作相关
@@ -602,11 +603,17 @@ public class FileUtil
 	 * @param fullfilename
 	 *            　文件的完成路径名或URL地址
 	 * @return 文件名,如果完整路径里不包括/或\则直接返回fullfilename
+	 * @note 如果是url地址，则直接把url中的\\:.等替换为_返回
 	 */
 	public static String getFileName(String fullfilename)
 	{
 		if (StringUtil.isEmpty(fullfilename))
 			return "";
+		if(URLUtil.isNetworkUrl(fullfilename))
+		{
+			return fullfilename.replace('\\', '_').replace(':', '_')
+					.replace('?', '_').replace('/', '_');
+		}
 		int index = -1;
 		if (fullfilename.contains(File.separator))
 		{

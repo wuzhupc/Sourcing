@@ -90,6 +90,22 @@ public class UserVO extends BaseVO
 	 * 用户未查看的通知提醒信息数,根据用户类型返回
 	 */
 	private int notifiercount;
+	/**
+	 * 用户总咨询答复信息数,根据用户类型返回
+	 */
+	private int allconsultcount;
+	/**
+	 * 用户总审核结果信息数,根据用户类型返回
+	 */
+	private int allauditcount;
+	/**
+	 * 用户总申报进度信息数,根据用户类型返回
+	 */
+	private int alldeclarecount;
+	/**
+	 * 用户总通知提醒信息数,根据用户类型返回
+	 */
+	private int allnotifiercount;
 
 	public long getUserid()
 	{
@@ -231,6 +247,66 @@ public class UserVO extends BaseVO
 		this.useraccount = useraccount;
 	}
 
+	public int getAllconsultcount()
+	{
+		return allconsultcount;
+	}
+
+	public void setAllconsultcount(int allconsultcount)
+	{
+		this.allconsultcount = allconsultcount;
+	}
+
+	public void setAllconsultcount(String allconsultcount)
+	{
+		this.allconsultcount = JavaLangUtil.StrToInteger(allconsultcount, 0);
+	}
+
+	public int getAllauditcount()
+	{
+		return allauditcount;
+	}
+
+	public void setAllauditcount(int allauditcount)
+	{
+		this.allauditcount = allauditcount;
+	}
+
+	public void setAllauditcount(String allauditcount)
+	{
+		this.allauditcount = JavaLangUtil.StrToInteger(allauditcount, 0);
+	}
+
+	public int getAlldeclarecount()
+	{
+		return alldeclarecount;
+	}
+
+	public void setAlldeclarecount(int alldeclarecount)
+	{
+		this.alldeclarecount = alldeclarecount;
+	}
+
+	public void setAlldeclarecount(String alldeclarecount)
+	{
+		this.alldeclarecount = JavaLangUtil.StrToInteger(alldeclarecount, 0);
+	}
+
+	public int getAllnotifiercount()
+	{
+		return allnotifiercount;
+	}
+
+	public void setAllnotifiercount(int allnotifiercount)
+	{
+		this.allnotifiercount = allnotifiercount;
+	}
+
+	public void setAllnotifiercount(String allnotifiercount)
+	{
+		this.allnotifiercount = JavaLangUtil.StrToInteger(allnotifiercount, 0);
+	}
+
 	public String getPassword()
 	{
 		return password;
@@ -368,4 +444,88 @@ public class UserVO extends BaseVO
 			return "";
 		}
 	}
+	
+	/**
+	 * 是否有咨询信息权限
+	 * @return
+	 */
+	public boolean hasConsult()
+	{
+		switch (usertype)
+		{
+		case USER_TYPE_PERSONAL:
+			return true;
+		case USER_TYPE_EXPERT:
+			return true;
+		case USER_TYPE_ENTERPRISE:
+			return true;
+		case USER_TYPE_TRAIN:
+			return true;
+		default:
+			return true;
+		}
+	}
+	
+	/**
+	 * 是否有审核结果权限
+	 * @return
+	 */
+	public boolean hasAudit()
+	{
+		switch (usertype)
+		{
+		case USER_TYPE_PERSONAL:
+			return false;
+		case USER_TYPE_EXPERT:
+			return true;
+		case USER_TYPE_ENTERPRISE:
+			return true;
+		case USER_TYPE_TRAIN:
+			return true;
+		default:
+			return true;
+		}
+	}
+	/**
+	 * 是否有申报进度权限
+	 * @return
+	 */
+	public boolean hasDeclare()
+	{
+		switch (usertype)
+		{
+		case USER_TYPE_PERSONAL:
+			return false;
+		case USER_TYPE_EXPERT:
+			return false;
+		case USER_TYPE_ENTERPRISE:
+			return true;
+		case USER_TYPE_TRAIN:
+			return true;
+		default:
+			return true;
+		}
+	}
+	
+	/**
+	 * 是否有通知提醒权限
+	 * @return
+	 */
+	public boolean hasNotifier()
+	{
+		switch (usertype)
+		{
+		case USER_TYPE_PERSONAL:
+			return true;
+		case USER_TYPE_EXPERT:
+			return true;
+		case USER_TYPE_ENTERPRISE:
+			return true;
+		case USER_TYPE_TRAIN:
+			return true;
+		default:
+			return true;
+		}
+	}
+	
 }

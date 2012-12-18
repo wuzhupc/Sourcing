@@ -14,7 +14,12 @@
             "consultcount":"用户未查看的咨询答复信息数,根据用户类型返回",
             "auditcount":"用户未查看的审核结果信息数,根据用户类型返回",
             "declarecount":"用户未查看的申报进度信息数,根据用户类型返回",
-            "notifiercount":"用户未查看的通知提醒信息数,根据用户类型返回"
+            "notifiercount":"用户未查看的通知提醒信息数,根据用户类型返回",
+            "allconsultcount":"用户总咨询答复信息数,根据用户类型返回",
+            "allauditcount":"用户总审核结果信息数,根据用户类型返回",
+            "alldeclarecount":"用户总申报进度信息数,根据用户类型返回",
+            "allnotifiercount":"用户总通知提醒信息数,根据用户类型返回"
+
         }
     }
 }

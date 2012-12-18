@@ -29,10 +29,10 @@
     <color name="subchanneltab_sel_textcolor">#bbf01e04</color>
     <color name="subchanneltab_sel_imagecolor">#bbf01e04</color>
     <!-- listitem相关颜色 -->
-    <color name="listitem_base_normal_start">#fbf8f1</color>
-    <color name="listitem_base_normal_end">#fbf8f1</color>
-    <color name="listitem_base_sel_start">#f01e04</color>
-    <color name="listitem_base_sel_end">#f01e04</color>
+    <color name="listitem_base_normal_start">#fcf2e9</color>
+    <color name="listitem_base_normal_end">#fcf2e9</color>
+    <color name="listitem_base_sel_start">#f3c5b6</color>
+    <color name="listitem_base_sel_end">#f3c5b6</color>
     <color name="listitem_base_headline_bg">#44000000</color>
     <color name="listitem_base_headline_titlecolor">#f7f7f7</color>
     <color name="listitem_base_titlecolor">#222222</color>

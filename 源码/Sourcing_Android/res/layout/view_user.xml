@@ -29,32 +29,32 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/userview_userpic_iv"
+                android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/userview_userpic_iv"
-                android:layout_marginLeft="5dp"
                 android:gravity="center_vertical"
                 android:maxLines="2"
-                android:minLines="2"
                 android:text="@string/userview_nologin"
                 android:textSize="@dimen/text_size_large" />
             <!-- 用户类型 -->
+
             <TextView
                 android:id="@+id/userview_usertype_tv"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/userview_username_tv"
-                android:layout_toRightOf="@+id/userview_userpic_iv"
                 android:layout_marginLeft="5dp"
-				android:singleLine="true"
+                android:layout_toRightOf="@+id/userview_userpic_iv"
+                android:singleLine="true"
                 android:textSize="@dimen/text_size_medium" />
             <!-- 注册登录按钮 -->
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="40dp"
+                android:layout_alignBottom="@id/userview_userpic_iv"
                 android:layout_alignLeft="@id/userview_username_tv"
-                android:layout_below="@id/userview_usertype_tv" 
-                android:gravity="center_vertical">
+                android:gravity="center_vertical" >
 
                 <Button
                     android:id="@+id/userview_login_pwd_bt"
@@ -76,15 +76,88 @@
                     android:background="@drawable/icon_btn_bg"
                     android:text="@string/userview_register"
                     android:textColor="@color/activity_title_text"
-                    android:textSize="@dimen/text_size_small"/>
+                    android:textSize="@dimen/text_size_small" />
             </LinearLayout>
         </RelativeLayout>
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="10dp" />
-        <!-- 用户基本信息 -->
+        <!-- 咨询信息 -->
 
+        <LinearLayout
+            android:id="@+id/userview_consult_info_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_userinfo_bk_img"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/userview_consult_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="咨询信息(未查看:0  全部:0)"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+        <!-- 审核结果 -->
+
+        <LinearLayout
+            android:id="@+id/userview_audit_info_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_userinfo_bk_img"
+            android:orientation="horizontal"
+            android:padding="10dp" 
+            android:layout_marginTop="5dp" >
+
+            <TextView
+                android:id="@+id/userview_audit_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="审核结果(未查看:0  全部:0)"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+        <!-- 申报进度 -->
+
+        <LinearLayout
+            android:id="@+id/userview_declare_info_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_userinfo_bk_img"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"  >
+
+            <TextView
+                android:id="@+id/userview_declare_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="申报进度(未查看:0  全部:0)"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+        <!-- 通知提醒 -->
+
+        <LinearLayout
+            android:id="@+id/userview_notifier_info_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/selector_userinfo_bk_img"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:layout_marginTop="5dp"  >
+
+            <TextView
+                android:id="@+id/userview_notifier_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="通知提醒(未查看:0  全部:0)"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+        <!-- 用户基本信息 -->
+        <!--
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -138,10 +211,7 @@
                     android:textSize="@dimen/text_size_medium" />
             </LinearLayout>
         </LinearLayout>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="10dp" />
+        -->
     </LinearLayout>
 
 </ScrollView>

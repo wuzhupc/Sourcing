@@ -133,55 +133,58 @@ containing a value of this type.
         public static final int icon_bg_input_focused=0x7f020012;
         public static final int icon_bg_input_normal=0x7f020013;
         public static final int icon_bg_input_pressed=0x7f020014;
-        public static final int icon_btn_bg=0x7f020015;
-        public static final int icon_fav=0x7f020016;
-        public static final int icon_fav_light=0x7f020017;
-        public static final int icon_faved=0x7f020018;
-        public static final int icon_faved_light=0x7f020019;
-        public static final int icon_home_tb_more=0x7f02001a;
-        public static final int icon_home_tb_news=0x7f02001b;
-        public static final int icon_home_tb_person=0x7f02001c;
-        public static final int icon_home_tb_user=0x7f02001d;
-        public static final int icon_imageview_left=0x7f02001e;
-        public static final int icon_imageview_right=0x7f02001f;
-        public static final int icon_imageview_save=0x7f020020;
-        public static final int icon_imageview_zoomin=0x7f020021;
-        public static final int icon_imageview_zoomout=0x7f020022;
-        public static final int icon_search=0x7f020023;
-        public static final int icon_search_black=0x7f020024;
-        public static final int icon_share=0x7f020025;
-        public static final int icon_share_light=0x7f020026;
-        public static final int icon_spinner_108=0x7f020027;
-        public static final int icon_spinner_24=0x7f020028;
-        public static final int icon_spinner_36=0x7f020029;
-        public static final int icon_spinner_48=0x7f02002a;
-        public static final int icon_spinner_72=0x7f02002b;
-        public static final int icon_userinfo_bg=0x7f02002c;
-        public static final int icon_userpic_bg=0x7f02002d;
-        public static final int list_base_divider=0x7f02002e;
-        public static final int loading_failed=0x7f02002f;
-        public static final int logo64_48=0x7f020030;
-        public static final int progress_large=0x7f020031;
-        public static final int progress_medium=0x7f020032;
-        public static final int progress_micro=0x7f020033;
-        public static final int progress_small=0x7f020034;
-        public static final int pulltorefresh_down_arrow=0x7f020035;
-        public static final int pulltorefresh_up_arrow=0x7f020036;
-        public static final int selector_common_edittext=0x7f020037;
-        public static final int selector_menubar_bk_img=0x7f020038;
-        public static final int selector_subchannel_tab_img=0x7f020039;
-        public static final int subchannel_tab_bg=0x7f02003a;
-        public static final int theme_dialog_bg=0x7f02003b;
-        public static final int title_bar_refresh_48=0x7f02003c;
-        public static final int title_bar_refresh_48_light=0x7f02003d;
-        public static final int title_button=0x7f02003e;
-        public static final int toolbar_bkg=0x7f02003f;
-        public static final int toolbar_bkg_sel=0x7f020040;
-        public static final int toolbar_bkg_sel2=0x7f020041;
-        public static final int top_title_bg=0x7f020042;
-        public static final int welcome=0x7f020043;
-        public static final int welcome_close_btn=0x7f020044;
-        public static final int welcome_separate_line=0x7f020045;
+        public static final int icon_bg_userinfo=0x7f020015;
+        public static final int icon_bg_userinfo_sel=0x7f020016;
+        public static final int icon_btn_bg=0x7f020017;
+        public static final int icon_fav=0x7f020018;
+        public static final int icon_fav_light=0x7f020019;
+        public static final int icon_faved=0x7f02001a;
+        public static final int icon_faved_light=0x7f02001b;
+        public static final int icon_home_tb_more=0x7f02001c;
+        public static final int icon_home_tb_news=0x7f02001d;
+        public static final int icon_home_tb_person=0x7f02001e;
+        public static final int icon_home_tb_user=0x7f02001f;
+        public static final int icon_imageview_left=0x7f020020;
+        public static final int icon_imageview_right=0x7f020021;
+        public static final int icon_imageview_save=0x7f020022;
+        public static final int icon_imageview_zoomin=0x7f020023;
+        public static final int icon_imageview_zoomout=0x7f020024;
+        public static final int icon_search=0x7f020025;
+        public static final int icon_search_black=0x7f020026;
+        public static final int icon_share=0x7f020027;
+        public static final int icon_share_light=0x7f020028;
+        public static final int icon_spinner_108=0x7f020029;
+        public static final int icon_spinner_24=0x7f02002a;
+        public static final int icon_spinner_36=0x7f02002b;
+        public static final int icon_spinner_48=0x7f02002c;
+        public static final int icon_spinner_72=0x7f02002d;
+        public static final int icon_userinfo_bg=0x7f02002e;
+        public static final int icon_userpic_bg=0x7f02002f;
+        public static final int list_base_divider=0x7f020030;
+        public static final int loading_failed=0x7f020031;
+        public static final int logo64_48=0x7f020032;
+        public static final int progress_large=0x7f020033;
+        public static final int progress_medium=0x7f020034;
+        public static final int progress_micro=0x7f020035;
+        public static final int progress_small=0x7f020036;
+        public static final int pulltorefresh_down_arrow=0x7f020037;
+        public static final int pulltorefresh_up_arrow=0x7f020038;
+        public static final int selector_common_edittext=0x7f020039;
+        public static final int selector_menubar_bk_img=0x7f02003a;
+        public static final int selector_subchannel_tab_img=0x7f02003b;
+        public static final int selector_userinfo_bk_img=0x7f02003c;
+        public static final int subchannel_tab_bg=0x7f02003d;
+        public static final int theme_dialog_bg=0x7f02003e;
+        public static final int title_bar_refresh_48=0x7f02003f;
+        public static final int title_bar_refresh_48_light=0x7f020040;
+        public static final int title_button=0x7f020041;
+        public static final int toolbar_bkg=0x7f020042;
+        public static final int toolbar_bkg_sel=0x7f020043;
+        public static final int toolbar_bkg_sel2=0x7f020044;
+        public static final int top_title_bg=0x7f020045;
+        public static final int welcome=0x7f020046;
+        public static final int welcome_close_btn=0x7f020047;
+        public static final int welcome_separate_line=0x7f020048;
     }
     public static final class id {
         public static final int activity_title_container=0x7f050006;
@@ -225,10 +228,10 @@ containing a value of this type.
         public static final int listitem_project_time_tv=0x7f050044;
         public static final int listitem_projectname_tv=0x7f050042;
         public static final int listitem_train_tv=0x7f050045;
-        public static final int menubar_menuitem_icon=0x7f050054;
-        public static final int menubar_menuitem_text=0x7f050055;
-        public static final int morebotton_pb=0x7f050057;
-        public static final int morebutton_tv=0x7f050056;
+        public static final int menubar_menuitem_icon=0x7f05005c;
+        public static final int menubar_menuitem_text=0x7f05005d;
+        public static final int morebotton_pb=0x7f05005f;
+        public static final int morebutton_tv=0x7f05005e;
         public static final int person_datalist_lv=0x7f05004e;
         public static final int pullDownFromTop=0x7f050000;
         public static final int pullUpFromBottom=0x7f050001;
@@ -243,8 +246,8 @@ containing a value of this type.
         public static final int setting_push_checkbox=0x7f05001e;
         public static final int setting_push_ll=0x7f05001c;
         public static final int settingde_push_info_tv=0x7f05001d;
-        public static final int subchannel_tab_icon=0x7f050058;
-        public static final int subchannel_tab_text=0x7f050059;
+        public static final int subchannel_tab_icon=0x7f050060;
+        public static final int subchannel_tab_text=0x7f050061;
         public static final int userchangepwd_changepwd_bt=0x7f05000d;
         public static final int userchangepwd_newpwd_et=0x7f05000b;
         public static final int userchangepwd_pwd_et=0x7f05000a;
@@ -254,7 +257,15 @@ containing a value of this type.
         public static final int userlogin_login_bt=0x7f050025;
         public static final int userlogin_pwd_et=0x7f050024;
         public static final int userlogin_reg_bt=0x7f050026;
+        public static final int userview_audit_info_ll=0x7f050056;
+        public static final int userview_audit_info_tv=0x7f050057;
+        public static final int userview_consult_info_ll=0x7f050054;
+        public static final int userview_consult_info_tv=0x7f050055;
+        public static final int userview_declare_info_ll=0x7f050058;
+        public static final int userview_declare_info_tv=0x7f050059;
         public static final int userview_login_pwd_bt=0x7f050052;
+        public static final int userview_notifier_info_ll=0x7f05005a;
+        public static final int userview_notifier_info_tv=0x7f05005b;
         public static final int userview_reg_account_bt=0x7f050053;
         public static final int userview_username_tv=0x7f050050;
         public static final int userview_userpic_iv=0x7f05004f;
@@ -399,10 +410,10 @@ containing a value of this type.
         public static final int dl_title_prompt=0x7f080024;
         public static final int fav_add=0x7f080040;
         public static final int fav_remove=0x7f080041;
-        public static final int favinfo_nodata=0x7f08005c;
+        public static final int favinfo_nodata=0x7f080060;
         /**  FavInfoActivity 
          */
-        public static final int favinfo_title=0x7f08005b;
+        public static final int favinfo_title=0x7f08005f;
         /**  HomeActivity 
          */
         public static final int home_initchannel_fail=0x7f08003d;
@@ -414,13 +425,13 @@ containing a value of this type.
         /**  列表项相关  
          */
         public static final int list_item_no_data=0x7f08002d;
-        public static final int notify_detail=0x7f080060;
+        public static final int notify_detail=0x7f080064;
         /**  通知栏提示信息 
          */
-        public static final int notify_pop_msg=0x7f08005e;
-        public static final int notify_prompt=0x7f080061;
-        public static final int notify_single_msg_detail=0x7f080062;
-        public static final int notify_title=0x7f08005f;
+        public static final int notify_pop_msg=0x7f080062;
+        public static final int notify_prompt=0x7f080065;
+        public static final int notify_single_msg_detail=0x7f080066;
+        public static final int notify_title=0x7f080063;
         /**  View 
          */
         public static final int person_search_empty=0x7f080042;
@@ -436,42 +447,46 @@ containing a value of this type.
         public static final int pull_to_refresh_release_label=0x7f080001;
         /**  SettingActivity 
          */
-        public static final int setting_title=0x7f08005d;
+        public static final int setting_title=0x7f080061;
         /**  忘记密码处理页面 
          */
         public static final int url_forget_pwd_progress=0x7f080006;
         /**  用户注册处理页面 
          */
         public static final int url_reg_progress=0x7f080007;
-        public static final int userchangepwd_change_error=0x7f080059;
-        public static final int userchangepwd_change_sucess=0x7f08005a;
-        public static final int userchangepwd_changing=0x7f080058;
-        public static final int userchangepwd_newpwd=0x7f080053;
-        public static final int userchangepwd_newpwd_hit=0x7f080056;
-        public static final int userchangepwd_newpwd_noequal=0x7f080057;
-        public static final int userchangepwd_pwd=0x7f080052;
-        public static final int userchangepwd_pwd_hit=0x7f080055;
-        public static final int userchangepwd_renewpwd=0x7f080054;
+        public static final int userchangepwd_change_error=0x7f08005d;
+        public static final int userchangepwd_change_sucess=0x7f08005e;
+        public static final int userchangepwd_changing=0x7f08005c;
+        public static final int userchangepwd_newpwd=0x7f080057;
+        public static final int userchangepwd_newpwd_hit=0x7f08005a;
+        public static final int userchangepwd_newpwd_noequal=0x7f08005b;
+        public static final int userchangepwd_pwd=0x7f080056;
+        public static final int userchangepwd_pwd_hit=0x7f080059;
+        public static final int userchangepwd_renewpwd=0x7f080058;
         /**  UserChangePwdActivity 
          */
-        public static final int userchangepwd_title=0x7f080050;
-        public static final int userchangepwd_username=0x7f080051;
-        public static final int userlogin_account_empty=0x7f08004a;
-        public static final int userlogin_login_bt_title=0x7f08004c;
-        public static final int userlogin_login_error=0x7f08004f;
-        public static final int userlogin_login_sucess=0x7f08004e;
-        public static final int userlogin_logining=0x7f08004d;
-        public static final int userlogin_pwd_empty=0x7f08004b;
+        public static final int userchangepwd_title=0x7f080054;
+        public static final int userchangepwd_username=0x7f080055;
+        public static final int userlogin_account_empty=0x7f08004e;
+        public static final int userlogin_login_bt_title=0x7f080050;
+        public static final int userlogin_login_error=0x7f080053;
+        public static final int userlogin_login_sucess=0x7f080052;
+        public static final int userlogin_logining=0x7f080051;
+        public static final int userlogin_pwd_empty=0x7f08004f;
         /**  UserLoginActivity 
          */
-        public static final int userlogin_title=0x7f080049;
+        public static final int userlogin_title=0x7f08004d;
+        public static final int userview_audit_info=0x7f08004a;
         public static final int userview_changeaccount=0x7f080045;
         public static final int userview_changeaccount_hit=0x7f080046;
         public static final int userview_changepwd=0x7f080044;
+        public static final int userview_consult_info=0x7f080049;
+        public static final int userview_declare_info=0x7f08004b;
         public static final int userview_login=0x7f080047;
         /**  UserView 
          */
         public static final int userview_nologin=0x7f080043;
+        public static final int userview_notifier_info=0x7f08004c;
         public static final int userview_register=0x7f080048;
         public static final int welcome_publish=0x7f080037;
         /**  WelcomeActivity 
