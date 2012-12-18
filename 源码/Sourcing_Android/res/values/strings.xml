@@ -72,7 +72,7 @@
 	<string name="userchangepwd_username">用户名</string>
 	<string name="userchangepwd_pwd">旧密码</string>
 	<string name="userchangepwd_newpwd">新密码</string>
-	<string name="userchangepwd_renewpwd">重复新密码</string>
+	<string name="userchangepwd_renewpwd">确认新密码</string>
 	<string name="userchangepwd_pwd_hit">请输入旧密码</string>
 	<string name="userchangepwd_newpwd_hit">请输入新密码</string>
 	<string name="userchangepwd_newpwd_noequal">新密码不一致</string>
