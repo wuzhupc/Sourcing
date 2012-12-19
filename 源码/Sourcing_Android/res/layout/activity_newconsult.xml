@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/TitleBar" >
+        <ImageView
+            style="@style/TitleBarAction"
+            android:onClick="onHomeClick"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TitleBarText"
+            android:text="@string/newconsult_title" />
+    </LinearLayout>
+    
+    <EditText
+        android:id="@+id/newconsult_conent_et"
+        style="@android:style/Widget.EditText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/selector_common_edittext"
+        android:ems="10"
+        android:gravity="left"
+        android:hint="@string/newconsult_content_hit"
+        android:maxLines="10"
+        android:minLines="5"
+        android:maxLength="200" />
+
+    <Button
+        android:id="@+id/newconsult_send_bt"
+        style="@style/dialog_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:onClick="onSendClick"
+        android:text="@string/newconsult_sendbt_text"
+        android:textSize="@dimen/text_size_large" />
+</LinearLayout>

@@ -84,6 +84,21 @@
 	<string name="userchangepwd_change_error">修改密码失败:%1$s</string>
 	<string name="userchangepwd_change_sucess">修改密码成功</string>
 	
+	<!-- UserInfoListActivity -->
+	<string name="userinfolist_consult_title">咨询信息</string>
+	<string name="userinfolist_audit_title">审核结果</string>
+	<string name="userinfolist_declare_title">申报进度</string>
+	<string name="userinfolist_notifier_title">通知提醒</string>
+	<string name="userinfolist_getdata_hit">正在获取%1$s中&#8230;&#8230;&#8230;</string>
+	
+	<!-- NewConsultActivity -->
+	<string name="newconsult_title">新增咨询</string>
+	<string name="newconsult_content_hit">请输入咨询信息，我们将尽快给予答复</string>
+	<string name="newconsult_sendbt_text">提交</string>
+	<string name="newconsult_sendconsult_hit">提交咨询信息中&#8230;&#8230;&#8230;</string>
+	<string name="newconsult_sendconsult_errorhit">提交咨询信息失败:%1$s</string>
+	<string name="newconsult_sendconsult_sucesshit">提交咨询信息成功</string>
+	
 	<!-- FavInfoActivity -->
 	<string name="favinfo_title">我的收藏</string>
 	<string name="favinfo_nodata">没有收藏的信息哦!</string>

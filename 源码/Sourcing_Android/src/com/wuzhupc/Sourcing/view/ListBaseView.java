@@ -112,6 +112,8 @@ public class ListBaseView extends BaseView
 	@Override
 	public void initContentView()
 	{
+		if(mPullRefreshListView==null)
+		{
 		// 初始化View
 		View v = LayoutInflater.from(mContext).inflate(R.layout.list_base, mll_content, false);
 		setContentView(v);
@@ -132,6 +134,7 @@ public class ListBaseView extends BaseView
 		mlv_DataList = mPullRefreshListView.getRefreshableView();
 		mlv_DataList.setOnItemClickListener(getDataListItemClickListener());
 		setViewGestureDetector(mPullRefreshListView);
+		}
 		// 数据初始化
 		clearDataList();
 	}

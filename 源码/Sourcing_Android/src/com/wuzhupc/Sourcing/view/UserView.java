@@ -3,6 +3,7 @@ package com.wuzhupc.Sourcing.view;
 import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.detail.UserChangePwdActivity;
+import com.wuzhupc.Sourcing.detail.UserInfoListActivity;
 import com.wuzhupc.Sourcing.detail.UserLoginActivity;
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.Sourcing.vo.UserVO;
@@ -10,6 +11,7 @@ import com.wuzhupc.services.ImageService;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -103,6 +105,16 @@ public class UserView extends BaseView
 			userVO = ((BaseActivity) mContext).getApplicationSet().getUserVO();
 		return userVO;
 	}
+	
+	private void saveNowUserInfo(UserVO uservo)
+	{
+		BaseActivity activity = (BaseActivity) mContext;
+		if (activity == null)
+		{
+			return;
+		}
+		activity.getApplicationSet().setUserVO(uservo, true);
+	}
 
 	@Override
 	public void reflashData()
@@ -189,7 +201,19 @@ public class UserView extends BaseView
 	 */
 	public void onConsultInfoClick(View v)
 	{
-		//TODO 咨询信息点击
+		UserVO userVO = getNowUser();
+		if(userVO==null)
+			return;
+
+		if(userVO.getConsultcount()!=0)
+		{
+			userVO.setConsultcount(0);
+			saveNowUserInfo(userVO);
+			mtv_consult_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_consult_info), userVO.getConsultcount(),userVO.getAllconsultcount())));
+		}
+		Intent intent = new Intent(mContext, UserInfoListActivity.class);
+		intent.putExtra(UserInfoListActivity.CSTR_EXTRA_INFO_TYPE, UserInfoListActivity.CINT_INFO_TYPE_CONSULT);
+		mContext.startActivity(intent);
 	}
 	
 	/**
@@ -198,7 +222,19 @@ public class UserView extends BaseView
 	 */
 	public void onAuditInfoClick(View v)
 	{
-		//TODO 审核结果点击
+		UserVO uservo = getNowUser();
+		if(uservo==null)
+			return;
+
+		if(uservo.getAuditcount()!=0)
+		{
+			uservo.setConsultcount(0);
+			saveNowUserInfo(uservo);
+			mtv_audit_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_audit_info), uservo.getAuditcount(),uservo.getAllauditcount())));
+		}
+		Intent intent = new Intent(mContext, UserInfoListActivity.class);
+		intent.putExtra(UserInfoListActivity.CSTR_EXTRA_INFO_TYPE, UserInfoListActivity.CINT_INFO_TYPE_AUDIT);
+		mContext.startActivity(intent);
 	}
 	
 	/**
@@ -207,7 +243,18 @@ public class UserView extends BaseView
 	 */
 	public void onDeclareInfoClick(View v)
 	{
-		//TODO 申报进度点击
+		UserVO uservo = getNowUser();
+		if(uservo==null)
+			return;
+		if(uservo.getDeclarecount()!=0)
+		{
+			uservo.setDeclarecount(0);
+			saveNowUserInfo(uservo);
+			mtv_declare_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_declare_info), uservo.getDeclarecount(),uservo.getAlldeclarecount())));
+		}
+		Intent intent = new Intent(mContext, UserInfoListActivity.class);
+		intent.putExtra(UserInfoListActivity.CSTR_EXTRA_INFO_TYPE, UserInfoListActivity.CINT_INFO_TYPE_DECLARE);
+		mContext.startActivity(intent);
 	}
 	
 	/**
@@ -216,7 +263,19 @@ public class UserView extends BaseView
 	 */
 	public void onNotifierInfoClick(View v)
 	{
-		//TODO 通知提醒点击
+		UserVO uservo = getNowUser();
+		if(uservo==null)
+			return;
+
+		if(uservo.getNotifiercount()!=0)
+		{
+			uservo.setNotifiercount(0);
+			saveNowUserInfo(uservo);
+			mtv_notifier_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_notifier_info), uservo.getNotifiercount(),uservo.getAllnotifiercount())));
+		}
+		Intent intent = new Intent(mContext, UserInfoListActivity.class);
+		intent.putExtra(UserInfoListActivity.CSTR_EXTRA_INFO_TYPE, UserInfoListActivity.CINT_INFO_TYPE_NOTIFIER);
+		mContext.startActivity(intent);
 	}
 
 	/**
@@ -250,15 +309,9 @@ public class UserView extends BaseView
 			@Override
 			public void onClick(DialogInterface dialog, int which)
 			{
-				BaseActivity activity = (BaseActivity) mContext;
-				if (activity == null)
-				{
-					dialog.dismiss();
-					return;
-				}
-				activity.getApplicationSet().setUserVO(null, true);
+				saveNowUserInfo(null);
 				setShowUserInfo();
-				activity.runActivity(false, UserLoginActivity.class);
+				mContext.startActivity(new Intent(mContext, UserLoginActivity.class));
 				dialog.dismiss();
 			}
 		}, BaseDialog.BTN_TYPE_LEFT);
@@ -273,7 +326,6 @@ public class UserView extends BaseView
 	 */
 	public void onLogin_PwdClick(View v)
 	{
-		// TODO
 		UserVO userVO = getNowUser();
 		if (userVO == null)
 		{

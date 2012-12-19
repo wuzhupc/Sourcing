@@ -73,6 +73,11 @@
             android:theme="@style/Theme.WuzhuLight" >
         </activity>
         <activity
+            android:name=".detail.NewConsultActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.WuzhuLight" >
+        </activity>
+        <activity
             android:name=".detail.SettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.WuzhuLight" >

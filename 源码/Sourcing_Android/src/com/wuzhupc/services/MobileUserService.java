@@ -73,7 +73,7 @@ public class MobileUserService extends BaseJsonService
 	 * @param iReceiver
 	 * @return 如果成员未登录，返回false
 	 */
-	public boolean getUserConsultInfo(long bottomid, IBaseReceiver iReceiver)
+	public boolean getUserConsultInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
 		UserVO userVO = getUserVO();
 		if(userVO==null)
@@ -85,7 +85,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_user_consult_info);
 		String json=creater.createJson(null, mCommandName);
-		getData(json,iReceiver);
+		getData(json,iReceiver,showprogress,progressshowcontent);
 		return true;
 	}
 	
@@ -95,7 +95,7 @@ public class MobileUserService extends BaseJsonService
 	 * @param iReceiver
 	 * @return 如果成员未登录，返回false
 	 */
-	public boolean sendUserConsult(String conetnt, IBaseReceiver iReceiver)
+	public boolean sendUserConsult(String conetnt, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
 		UserVO userVO = getUserVO();
 		if(userVO==null)
@@ -107,7 +107,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("conetnt", conetnt);
 		mCommandName = mContext.getString(R.string.cmd_json_send_user_consult);
 		String json=creater.createJson(null, mCommandName);
-		getData(json,iReceiver);
+		getData(json,iReceiver,showprogress,progressshowcontent);
 		return true;
 	}
 	
@@ -117,7 +117,7 @@ public class MobileUserService extends BaseJsonService
 	 * @param iReceiver
 	 * @return 如果成员未登录，返回false
 	 */
-	public boolean getUserAuditInfo(long bottomid, IBaseReceiver iReceiver)
+	public boolean getUserAuditInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
 		UserVO userVO = getUserVO();
 		if(userVO==null)
@@ -129,7 +129,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_user_audit_info);
 		String json=creater.createJson(null, mCommandName);
-		getData(json,iReceiver);
+		getData(json,iReceiver,showprogress,progressshowcontent);
 		return true;
 	}
 	
@@ -139,7 +139,7 @@ public class MobileUserService extends BaseJsonService
 	 * @param iReceiver
 	 * @return 如果成员未登录，返回false
 	 */
-	public boolean getUserDeclareInfo(long bottomid, IBaseReceiver iReceiver)
+	public boolean getUserDeclareInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
 		UserVO userVO = getUserVO();
 		if(userVO==null)
@@ -151,7 +151,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_user_declare_info);
 		String json=creater.createJson(null, mCommandName);
-		getData(json,iReceiver);
+		getData(json,iReceiver,showprogress,progressshowcontent);
 		return true;
 	}
 	
@@ -161,7 +161,7 @@ public class MobileUserService extends BaseJsonService
 	 * @param iReceiver
 	 * @return 如果成员未登录，返回false
 	 */
-	public boolean getUserNotifierInfo(long bottomid, IBaseReceiver iReceiver)
+	public boolean getUserNotifierInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
 		UserVO userVO = getUserVO();
 		if(userVO==null)
@@ -173,7 +173,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("bottomid", bottomid);
 		mCommandName = mContext.getString(R.string.cmd_json_get_user_notifier_info);
 		String json=creater.createJson(null, mCommandName);
-		getData(json,iReceiver);
+		getData(json,iReceiver,showprogress,progressshowcontent);
 		return true;
 	}
 }
