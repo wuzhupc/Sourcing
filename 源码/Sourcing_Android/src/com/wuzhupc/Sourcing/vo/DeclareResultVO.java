@@ -33,6 +33,11 @@ public class DeclareResultVO extends BaseVO
 	 * 申报结果时间，格式yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
+	
+	public String getDeclareStatus()
+	{
+		return declareresult?"申报通过":"申报未通过";
+	}
 
 	public long getDeclareresultid()
 	{

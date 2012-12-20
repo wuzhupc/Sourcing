@@ -67,4 +67,13 @@ public class AuditVO extends BaseVO
 		this.auditResultVO = auditResultVO;
 	}
 	
+	/**
+	 * ÉóºË×´Ì¬
+	 * @return
+	 */
+	public String getAuditStatus()
+	{
+		return  auditResultVO==null?"µÈ´ıÉóºËÖĞ":auditResultVO.getAuditStatus();
+	}
+	
 }

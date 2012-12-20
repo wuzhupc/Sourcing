@@ -9,7 +9,7 @@
             "auditid":"提交审核编号",
 			"auditcontent":"提交审核内容",            
             "publishtime":"提交审核时间，格式yyyy-MM-dd HH:mm:ss",
-            "AuditResultVO":{
+            "AuditResultVO_auditResultVO":{
                 "auditresultid":"审核结果编号",
                 "auditresult":"审核结果,0 通过,1 未通过",
 				"auditresultcontent":"审核结果内容",

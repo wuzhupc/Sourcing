@@ -28,8 +28,15 @@ public class ListBaseAdapter extends BaseAdapter
 	private List<?> mList;
 
 	private ImageService imageService; // 缩略图下载service
+	
+	private boolean misfav;
 
 	public ListBaseAdapter(Context ctx, List<?> list)
+	{
+		this(ctx, list, false);
+	}
+
+	public ListBaseAdapter(Context ctx, List<?> list,boolean isfav)
 	{
 		this.mContext = ctx;
 		this.mList = list;
@@ -171,7 +178,7 @@ public class ListBaseAdapter extends BaseAdapter
 	{
 		View view =null;
 		// 头条(且只有第一条才显示成头条样式)
-		if (position == 0 && vo.isHeadline())
+		if (position == 0 && vo.isHeadline()&&!misfav)
 		{
 			view = LayoutInflater.from(mContext).inflate(R.layout.listitem_base_headline, null);
 		} else

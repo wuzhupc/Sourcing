@@ -228,7 +228,7 @@ public class UserView extends BaseView
 
 		if(uservo.getAuditcount()!=0)
 		{
-			uservo.setConsultcount(0);
+			uservo.setAuditcount(0);
 			saveNowUserInfo(uservo);
 			mtv_audit_info.setText(Html.fromHtml(String.format(getResources().getString(R.string.userview_audit_info), uservo.getAuditcount(),uservo.getAllauditcount())));
 		}

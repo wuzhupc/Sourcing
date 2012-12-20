@@ -141,7 +141,7 @@ public class FavInfoActivity extends BaseActivity
 		{
 			mDataList = new ArrayList();
 			// adapter ≥ı ºªØ
-			mAdapter = new ListBaseAdapter(FavInfoActivity.this, mDataList);
+			mAdapter = new ListBaseAdapter(FavInfoActivity.this, mDataList,true);
 			mlv_DataList.setAdapter(mAdapter);
 		}
 		else

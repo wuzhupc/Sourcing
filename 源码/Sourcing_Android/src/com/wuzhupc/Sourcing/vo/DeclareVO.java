@@ -30,6 +30,12 @@ public class DeclareVO extends BaseVO
 	 * 申报结果信息,如果无申报结果,则值为null
 	 */
 	private DeclareResultVO declareResultVO;
+	
+	public String getDeclareStatus()
+	{
+		return  declareResultVO==null?"等待处理中":declareResultVO.getDeclareStatus();	
+	}
+	
 	public String getPublishtime()
 	{
 		return publishtime;

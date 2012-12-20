@@ -9,7 +9,7 @@
             "consultid":"×ÉÑ¯±àºÅ",
 			"consultcontent":"×ÉÑ¯ÄÚÈİ",            
             "publishtime":"×ÉÑ¯Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss",
-            "ConsultResultVO":{
+            "ConsultResultVO_consultResultVO":{
                 "consultresultid":"×ÉÑ¯´ğ¸´±àºÅ",
 				"consultresultcontent":"×ÉÑ¯´ğ¸´ÄÚÈİ", 
 				"publisher":"×ÉÑ¯´ğ¸´ÈËÔ±",           

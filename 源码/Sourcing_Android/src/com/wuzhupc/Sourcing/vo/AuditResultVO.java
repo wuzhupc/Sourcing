@@ -33,6 +33,11 @@ public class AuditResultVO extends BaseVO
 	 * 审核结果时间，格式yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
+	
+	public String getAuditStatus()
+	{
+		return auditresult?"审核通过":"审核未通过";
+	}
 
 	public long getAuditresultid()
 	{
