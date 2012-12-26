@@ -10,12 +10,18 @@
 #import "WelcomeViewController.h"
 #import "StringUtil.h"
 #import "ApplicationSet.h"
+#import "iVersion.h"
 
 @implementation SourcingAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+
++ (void)initialize
+{
+    [iVersion sharedInstance].localVersionsPlistPath = @"versions.plist";
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

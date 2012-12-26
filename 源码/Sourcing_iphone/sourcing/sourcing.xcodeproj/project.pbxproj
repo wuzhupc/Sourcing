@@ -52,6 +52,10 @@
 		32120AFC168B380C00DBF915 /* ResumeDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AFB168B380B00DBF915 /* ResumeDetailVO.m */; };
 		32120AFF168B384E00DBF915 /* TrainVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AFE168B384C00DBF915 /* TrainVO.m */; };
 		32120B02168B38CE00DBF915 /* TrainDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B01168B38CC00DBF915 /* TrainDetailVO.m */; };
+		32120B0B168B487300DBF915 /* versions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32120B0A168B487300DBF915 /* versions.plist */; };
+		32120B10168B498B00DBF915 /* iVersion.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32120B0D168B498B00DBF915 /* iVersion.bundle */; };
+		32120B11168B498B00DBF915 /* iVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B0F168B498B00DBF915 /* iVersion.m */; };
+		32120B14168B4B9800DBF915 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32120B13168B4B9700DBF915 /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -135,6 +139,11 @@
 		32120AFE168B384C00DBF915 /* TrainVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainVO.m; path = sourcing/VO/TrainVO.m; sourceTree = "<group>"; };
 		32120B00168B38CB00DBF915 /* TrainDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainDetailVO.h; path = sourcing/VO/TrainDetailVO.h; sourceTree = "<group>"; };
 		32120B01168B38CC00DBF915 /* TrainDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainDetailVO.m; path = sourcing/VO/TrainDetailVO.m; sourceTree = "<group>"; };
+		32120B0A168B487300DBF915 /* versions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = versions.plist; sourceTree = "<group>"; };
+		32120B0D168B498B00DBF915 /* iVersion.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = iVersion.bundle; path = sourcing/iVersion/iVersion.bundle; sourceTree = "<group>"; };
+		32120B0E168B498B00DBF915 /* iVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iVersion.h; path = sourcing/iVersion/iVersion.h; sourceTree = "<group>"; };
+		32120B0F168B498B00DBF915 /* iVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iVersion.m; path = sourcing/iVersion/iVersion.m; sourceTree = "<group>"; };
+		32120B13168B4B9700DBF915 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +151,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32120B14168B4B9800DBF915 /* StoreKit.framework in Frameworks */,
 				32120A6116897C7A00DBF915 /* UIKit.framework in Frameworks */,
 				32120A6316897C7A00DBF915 /* Foundation.framework in Frameworks */,
 				32120A6516897C7A00DBF915 /* CoreGraphics.framework in Frameworks */,
@@ -159,6 +169,7 @@
 				32120A961689858500DBF915 /* Images */,
 				32120A5D16897C7A00DBF915 /* Products */,
 				32120A6816897C7A00DBF915 /* sourcing */,
+				32120B07168B451800DBF915 /* Thirdparty */,
 				32120A9D16898D9B00DBF915 /* Utils */,
 			);
 			sourceTree = "<group>";
@@ -174,6 +185,7 @@
 		32120A5F16897C7A00DBF915 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32120B13168B4B9700DBF915 /* StoreKit.framework */,
 				32120A6016897C7A00DBF915 /* UIKit.framework */,
 				32120A6216897C7A00DBF915 /* Foundation.framework */,
 				32120A6416897C7A00DBF915 /* CoreGraphics.framework */,
@@ -207,6 +219,7 @@
 				32120A7416897C7A00DBF915 /* Default.png */,
 				32120A7616897C7A00DBF915 /* Default@2x.png */,
 				32120A7816897C7A00DBF915 /* Default-568h@2x.png */,
+				32120B0A168B487300DBF915 /* versions.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -320,6 +333,24 @@
 			name = Json;
 			sourceTree = "<group>";
 		};
+		32120B07168B451800DBF915 /* Thirdparty */ = {
+			isa = PBXGroup;
+			children = (
+				32120B0C168B497700DBF915 /* iVersion */,
+			);
+			name = Thirdparty;
+			sourceTree = "<group>";
+		};
+		32120B0C168B497700DBF915 /* iVersion */ = {
+			isa = PBXGroup;
+			children = (
+				32120B0D168B498B00DBF915 /* iVersion.bundle */,
+				32120B0E168B498B00DBF915 /* iVersion.h */,
+				32120B0F168B498B00DBF915 /* iVersion.m */,
+			);
+			name = iVersion;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -381,6 +412,8 @@
 				32120A91168983FE00DBF915 /* Icon@2x.png in Resources */,
 				32120A9C168985E000DBF915 /* WelcomeViewController.xib in Resources */,
 				32120ACC168AE43400DBF915 /* assets in Resources */,
+				32120B0B168B487300DBF915 /* versions.plist in Resources */,
+				32120B10168B498B00DBF915 /* iVersion.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +457,7 @@
 				32120AFC168B380C00DBF915 /* ResumeDetailVO.m in Sources */,
 				32120AFF168B384E00DBF915 /* TrainVO.m in Sources */,
 				32120B02168B38CE00DBF915 /* TrainDetailVO.m in Sources */,
+				32120B11168B498B00DBF915 /* iVersion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

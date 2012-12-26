@@ -31,19 +31,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //TEST
-    NSString *channelinfo =  [FileUtil getAssetsFileContent:@"channelinfo" oftype:@"json"];
-    //NSLog(@"channelinfo.json:%@" ,channelinfo);
-    ResponseVO *resp = [[ResponseVO alloc] init];
-    NSArray *array = [JsonParser parseJsonToList:channelinfo respVO:&resp ref:nil];
-    if(array == nil||[array count]==0)
-        NSLog(@"转换失败");
-    else
-    {
-        ChannelVO *channelvo = [array objectAtIndex:1];
-        
-        NSLog(@"%d 第2个对象：id:%@ channelid:%@ channelname:%@",[array count],[channelvo Id],[channelvo ChannelID],[channelvo channelName]);
-    }
+//    //TEST
+//    NSString *channelinfo =  [FileUtil getAssetsFileContent:@"channelinfo" oftype:@"json"];
+//    //NSLog(@"channelinfo.json:%@" ,channelinfo);
+//    ResponseVO *resp = [[ResponseVO alloc] init];
+//    NSArray *array = [JsonParser parseJsonToList:channelinfo respVO:&resp ref:nil];
+//    if(array == nil||[array count]==0)
+//        NSLog(@"转换失败");
+//    else
+//    {
+//        ChannelVO *channelvo = [array objectAtIndex:1];
+//        
+//        NSLog(@"%d 第2个对象：id:%@ channelid:%@ channelname:%@",[array count],[channelvo Id],[channelvo ChannelID],[channelvo channelName]);
+//    }
 }
 
 - (void)didReceiveMemoryWarning
