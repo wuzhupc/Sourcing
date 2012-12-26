@@ -7,6 +7,9 @@
 //
 
 #import "SourcingAppDelegate.h"
+#import "WelcomeViewController.h"
+#import "StringUtil.h"
+#import "ApplicationSet.h"
 
 @implementation SourcingAppDelegate
 
@@ -20,6 +23,13 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    WelcomeViewController *viewcontroller = [[WelcomeViewController alloc] initWithNibName:@"WelcomeViewController" bundle:nil];
+    self.window.rootViewController = viewcontroller;
+    
+    //信息推送相关
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+    
     return YES;
 }
 
@@ -144,6 +154,93 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+
+#pragma mark - 信息推送相关
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    NSString *deviceTokenStr = [NSString stringWithFormat:@"%@",deviceToken];
+    
+    //modify the token, remove the  "<, >"
+    if ([StringUtil isEmptyStr:deviceTokenStr]) {
+        return;
+    }
+    
+    deviceTokenStr = [deviceTokenStr substringFromIndex:1];
+    deviceTokenStr = [deviceTokenStr substringToIndex:[deviceTokenStr length]-1];
+    //并且去掉空格
+    deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [ApplicationSet shareData].deviceToken = deviceTokenStr;
+    [self registerDeviceToken];
+    NSLog(@"My device Token is:%@",deviceTokenStr);
+}
+
+-(void)registerDeviceToken
+{
+    //TODO
+//    if(![StringUtil isEmptyStr: [ApplicationSet sharedData].memberID]&&![StringUtil isEmptyStr: [ApplicationSet sharedData].deviceToken]&&
+//       [ApplicationSet sharedData].isRegisterDevToken==NO)
+//    {
+//        [ApplicationSet sharedData].isRegisterDevToken=YES;
+//        
+//        [MovementService regJsonDeviceToken:self tag:CINT_REQUEST_TAG_REGISTERDEVTOKEN];
+//    }
+    
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    NSLog(@"Failed to get token, error:%@",error);
+}
+
+//点击推送信息或程序在运行中接收到推送信息时被调用
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    if(userInfo==NULL||[userInfo objectForKey:@"aps"]==NULL||[[userInfo objectForKey:@"aps"] objectForKey:@"badge"]==NULL)
+        return;
+    NSString * badge= [NSString stringWithFormat:@"%@",
+                       [[userInfo objectForKey:@"aps"] objectForKey:@"badge"]];
+    if (![StringUtil isEmptyStr:badge]) {
+        [self setActivityTabBadge: [badge intValue]];
+    }
+    
+    NSLog(@"received badge number ---%@ ----",[[userInfo objectForKey:@"aps"] objectForKey:@"badge"]);
+    for (id key in userInfo) {
+        NSLog(@"key: %@, value: %@", key, [userInfo objectForKey:key]);
+    }
+    NSLog(@"the badge number is  %d",  [[UIApplication sharedApplication] applicationIconBadgeNumber]);
+    NSLog(@"the application  badge number is  %d",  application.applicationIconBadgeNumber);
+    //application.applicationIconBadgeNumber += 1;
+    // We can determine whether an application is launched as a result of the user tapping the action
+    // button or whether the notification was delivered to the already-running application by examining
+    // the application state.
+    
+    //当程序运行时收到提示信息时弹出提示信息
+    if (application.applicationState == UIApplicationStateActive) {
+        application.applicationIconBadgeNumber = 0;
+        // Nothing to do if applicationState is Inactive, the iOS already displayed an alert view.
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"温馨提示"
+                                                            message:[NSString stringWithFormat:@"\n%@",
+                                                                     [[userInfo objectForKey:@"aps"] objectForKey:@"alert"]]
+                                                           delegate:self
+                                                  cancelButtonTitle:@"确定"
+                                                  otherButtonTitles:nil];
+        
+        [alertView show];
+    }
+}
+
+-(void)setActivityTabBadge:(NSInteger)num
+{
+    UITabBarController *tabBarController = self.window.rootViewController.tabBarController;
+    if(tabBarController==NULL || [tabBarController.viewControllers count]<2)
+        return;
+    //处理：提醒有未读取的提醒
+    UIViewController *viewController = [tabBarController.viewControllers objectAtIndex:1];
+    if(viewController!=NULL)
+        viewController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", num];
 }
 
 @end

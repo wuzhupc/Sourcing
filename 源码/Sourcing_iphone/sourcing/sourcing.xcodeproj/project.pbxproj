@@ -18,6 +18,23 @@
 		32120A7716897C7A00DBF915 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32120A7616897C7A00DBF915 /* Default@2x.png */; };
 		32120A7916897C7A00DBF915 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32120A7816897C7A00DBF915 /* Default-568h@2x.png */; };
 		32120A7C16897C7A00DBF915 /* sourcing.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 32120A7A16897C7A00DBF915 /* sourcing.xcdatamodeld */; };
+		32120A8F168983DA00DBF915 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 32120A8E168983DA00DBF915 /* Icon.png */; };
+		32120A91168983FE00DBF915 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32120A90168983FE00DBF915 /* Icon@2x.png */; };
+		32120A9B168985E000DBF915 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120A99168985E000DBF915 /* WelcomeViewController.m */; };
+		32120A9C168985E000DBF915 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32120A9A168985E000DBF915 /* WelcomeViewController.xib */; };
+		32120AA016898EC300DBF915 /* StringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120A9F16898EC300DBF915 /* StringUtil.m */; };
+		32120AA41689918000DBF915 /* ApplicationSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AA31689918000DBF915 /* ApplicationSet.m */; };
+		32120AA816899E2D00DBF915 /* BaseVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AA716899E2D00DBF915 /* BaseVO.m */; };
+		32120AB31689DB8200DBF915 /* JsonCreater.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AB21689DB8200DBF915 /* JsonCreater.m */; };
+		32120AB61689F0D200DBF915 /* TimeUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AB51689F0D200DBF915 /* TimeUtil.m */; };
+		32120ABA1689F20000DBF915 /* JsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AB91689F20000DBF915 /* JsonParser.m */; };
+		32120ABD1689F21D00DBF915 /* ResponseVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120ABC1689F21D00DBF915 /* ResponseVO.m */; };
+		32120AC0168AA8F100DBF915 /* HtmlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120ABF168AA8F100DBF915 /* HtmlUtil.m */; };
+		32120AC3168AA91900DBF915 /* DataInterfaceUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AC2168AA91900DBF915 /* DataInterfaceUtil.m */; };
+		32120AC6168ADC0900DBF915 /* UserVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AC5168ADC0900DBF915 /* UserVO.m */; };
+		32120AC9168AE26D00DBF915 /* ChannelVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AC8168AE26D00DBF915 /* ChannelVO.m */; };
+		32120ACC168AE43400DBF915 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 32120ACB168AE43400DBF915 /* assets */; };
+		32120ACF168AE58800DBF915 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120ACE168AE58800DBF915 /* FileUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +54,36 @@
 		32120A7816897C7A00DBF915 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		32120A7B16897C7A00DBF915 /* sourcing.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sourcing.xcdatamodel; sourceTree = "<group>"; };
 		32120A8216897C8400DBF915 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		32120A8E168983DA00DBF915 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		32120A90168983FE00DBF915 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		32120A98168985E000DBF915 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		32120A99168985E000DBF915 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		32120A9A168985E000DBF915 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		32120A9E16898EC300DBF915 /* StringUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StringUtil.h; path = sourcing/StringUtil.h; sourceTree = "<group>"; };
+		32120A9F16898EC300DBF915 /* StringUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StringUtil.m; path = sourcing/StringUtil.m; sourceTree = "<group>"; };
+		32120AA21689918000DBF915 /* ApplicationSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationSet.h; sourceTree = "<group>"; };
+		32120AA31689918000DBF915 /* ApplicationSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationSet.m; sourceTree = "<group>"; };
+		32120AA616899E2D00DBF915 /* BaseVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BaseVO.h; path = sourcing/VO/BaseVO.h; sourceTree = "<group>"; };
+		32120AA716899E2D00DBF915 /* BaseVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseVO.m; path = sourcing/VO/BaseVO.m; sourceTree = "<group>"; };
+		32120AB11689DB8200DBF915 /* JsonCreater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonCreater.h; path = sourcing/JsonCreater.h; sourceTree = "<group>"; };
+		32120AB21689DB8200DBF915 /* JsonCreater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonCreater.m; path = sourcing/JsonCreater.m; sourceTree = "<group>"; };
+		32120AB41689F0D200DBF915 /* TimeUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TimeUtil.h; path = sourcing/TimeUtil.h; sourceTree = "<group>"; };
+		32120AB51689F0D200DBF915 /* TimeUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TimeUtil.m; path = sourcing/TimeUtil.m; sourceTree = "<group>"; };
+		32120AB81689F20000DBF915 /* JsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JsonParser.h; path = sourcing/JsonParser.h; sourceTree = "<group>"; };
+		32120AB91689F20000DBF915 /* JsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JsonParser.m; path = sourcing/JsonParser.m; sourceTree = "<group>"; };
+		32120ABB1689F21D00DBF915 /* ResponseVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResponseVO.h; path = sourcing/VO/ResponseVO.h; sourceTree = "<group>"; };
+		32120ABC1689F21D00DBF915 /* ResponseVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResponseVO.m; path = sourcing/VO/ResponseVO.m; sourceTree = "<group>"; };
+		32120ABE168AA8F100DBF915 /* HtmlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HtmlUtil.h; path = sourcing/HtmlUtil.h; sourceTree = "<group>"; };
+		32120ABF168AA8F100DBF915 /* HtmlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HtmlUtil.m; path = sourcing/HtmlUtil.m; sourceTree = "<group>"; };
+		32120AC1168AA91900DBF915 /* DataInterfaceUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataInterfaceUtil.h; path = sourcing/DataInterfaceUtil.h; sourceTree = "<group>"; };
+		32120AC2168AA91900DBF915 /* DataInterfaceUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataInterfaceUtil.m; path = sourcing/DataInterfaceUtil.m; sourceTree = "<group>"; };
+		32120AC4168ADC0800DBF915 /* UserVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserVO.h; path = sourcing/VO/UserVO.h; sourceTree = "<group>"; };
+		32120AC5168ADC0900DBF915 /* UserVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserVO.m; path = sourcing/VO/UserVO.m; sourceTree = "<group>"; };
+		32120AC7168AE26D00DBF915 /* ChannelVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChannelVO.h; path = sourcing/VO/ChannelVO.h; sourceTree = "<group>"; };
+		32120AC8168AE26D00DBF915 /* ChannelVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChannelVO.m; path = sourcing/VO/ChannelVO.m; sourceTree = "<group>"; };
+		32120ACB168AE43400DBF915 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
+		32120ACD168AE58800DBF915 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUtil.h; path = sourcing/FileUtil.h; sourceTree = "<group>"; };
+		32120ACE168AE58800DBF915 /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUtil.m; path = sourcing/FileUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +104,15 @@
 		32120A5116897C7A00DBF915 = {
 			isa = PBXGroup;
 			children = (
-				32120A6816897C7A00DBF915 /* sourcing */,
+				32120AA11689913100DBF915 /* Config */,
 				32120A5F16897C7A00DBF915 /* Frameworks */,
+				32120A961689858500DBF915 /* Images */,
+				32120AB01689DB0100DBF915 /* Json */,
 				32120A5D16897C7A00DBF915 /* Products */,
+				32120A6816897C7A00DBF915 /* sourcing */,
+				32120A97168985B200DBF915 /* UI */,
+				32120A9D16898D9B00DBF915 /* Utils */,
+				32120AA5168998B600DBF915 /* VO */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +149,7 @@
 		32120A6916897C7A00DBF915 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				32120ACB168AE43400DBF915 /* assets */,
 				32120A6A16897C7A00DBF915 /* sourcing-Info.plist */,
 				32120A6B16897C7A00DBF915 /* InfoPlist.strings */,
 				32120A6E16897C7A00DBF915 /* main.m */,
@@ -105,6 +159,77 @@
 				32120A7816897C7A00DBF915 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		32120A961689858500DBF915 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				32120A90168983FE00DBF915 /* Icon@2x.png */,
+				32120A8E168983DA00DBF915 /* Icon.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		32120A97168985B200DBF915 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				32120A98168985E000DBF915 /* WelcomeViewController.h */,
+				32120A99168985E000DBF915 /* WelcomeViewController.m */,
+				32120A9A168985E000DBF915 /* WelcomeViewController.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		32120A9D16898D9B00DBF915 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				32120AC1168AA91900DBF915 /* DataInterfaceUtil.h */,
+				32120AC2168AA91900DBF915 /* DataInterfaceUtil.m */,
+				32120ABE168AA8F100DBF915 /* HtmlUtil.h */,
+				32120ABF168AA8F100DBF915 /* HtmlUtil.m */,
+				32120A9E16898EC300DBF915 /* StringUtil.h */,
+				32120A9F16898EC300DBF915 /* StringUtil.m */,
+				32120AB41689F0D200DBF915 /* TimeUtil.h */,
+				32120AB51689F0D200DBF915 /* TimeUtil.m */,
+				32120ACD168AE58800DBF915 /* FileUtil.h */,
+				32120ACE168AE58800DBF915 /* FileUtil.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		32120AA11689913100DBF915 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				32120AA21689918000DBF915 /* ApplicationSet.h */,
+				32120AA31689918000DBF915 /* ApplicationSet.m */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		32120AA5168998B600DBF915 /* VO */ = {
+			isa = PBXGroup;
+			children = (
+				32120AA616899E2D00DBF915 /* BaseVO.h */,
+				32120AA716899E2D00DBF915 /* BaseVO.m */,
+				32120ABB1689F21D00DBF915 /* ResponseVO.h */,
+				32120ABC1689F21D00DBF915 /* ResponseVO.m */,
+				32120AC4168ADC0800DBF915 /* UserVO.h */,
+				32120AC5168ADC0900DBF915 /* UserVO.m */,
+				32120AC7168AE26D00DBF915 /* ChannelVO.h */,
+				32120AC8168AE26D00DBF915 /* ChannelVO.m */,
+			);
+			name = VO;
+			sourceTree = "<group>";
+		};
+		32120AB01689DB0100DBF915 /* Json */ = {
+			isa = PBXGroup;
+			children = (
+				32120AB81689F20000DBF915 /* JsonParser.h */,
+				32120AB91689F20000DBF915 /* JsonParser.m */,
+				32120AB11689DB8200DBF915 /* JsonCreater.h */,
+				32120AB21689DB8200DBF915 /* JsonCreater.m */,
+			);
+			name = Json;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +289,10 @@
 				32120A7516897C7A00DBF915 /* Default.png in Resources */,
 				32120A7716897C7A00DBF915 /* Default@2x.png in Resources */,
 				32120A7916897C7A00DBF915 /* Default-568h@2x.png in Resources */,
+				32120A8F168983DA00DBF915 /* Icon.png in Resources */,
+				32120A91168983FE00DBF915 /* Icon@2x.png in Resources */,
+				32120A9C168985E000DBF915 /* WelcomeViewController.xib in Resources */,
+				32120ACC168AE43400DBF915 /* assets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +306,19 @@
 				32120A6F16897C7A00DBF915 /* main.m in Sources */,
 				32120A7316897C7A00DBF915 /* SourcingAppDelegate.m in Sources */,
 				32120A7C16897C7A00DBF915 /* sourcing.xcdatamodeld in Sources */,
+				32120A9B168985E000DBF915 /* WelcomeViewController.m in Sources */,
+				32120AA016898EC300DBF915 /* StringUtil.m in Sources */,
+				32120AA41689918000DBF915 /* ApplicationSet.m in Sources */,
+				32120AA816899E2D00DBF915 /* BaseVO.m in Sources */,
+				32120AB31689DB8200DBF915 /* JsonCreater.m in Sources */,
+				32120AB61689F0D200DBF915 /* TimeUtil.m in Sources */,
+				32120ABA1689F20000DBF915 /* JsonParser.m in Sources */,
+				32120ABD1689F21D00DBF915 /* ResponseVO.m in Sources */,
+				32120AC0168AA8F100DBF915 /* HtmlUtil.m in Sources */,
+				32120AC3168AA91900DBF915 /* DataInterfaceUtil.m in Sources */,
+				32120AC6168ADC0900DBF915 /* UserVO.m in Sources */,
+				32120AC9168AE26D00DBF915 /* ChannelVO.m in Sources */,
+				32120ACF168AE58800DBF915 /* FileUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +428,7 @@
 				32120A8116897C7A00DBF915 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,0 +1,8 @@
+{
+    "id":"命令识别号",
+    "command":"mobileinfo_getProjectDetail",
+    "params":{
+        "devid":"设备号",
+        "projectid":"项目编号"
+    }
+}

@@ -1,0 +1,15 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "JobDetailVO": {
+            "jobid": "20001",
+            "job": "iPhone开发中高级工程师",
+            "company": "北京博看文思科技有限责任公司",
+            "publishtime": "2012-10-11 11:22:00",
+            "jobdesc": "<dl><dt>公司名称：北京博看文思科技有限责任公司</dd>\r\n  <dt>公司性质： 股份制企业</dd>\r\n  \r\r\n<dt>公司规模： 100-499人</dd>\r\n  <dt>公司行业： 计算机软件 教育/培训IT服务（系统/数据/维护）/多领域经营</dd>\r\r\r\n\n  <dd></dd>\r\n</dl>\r\n<div style=\"height:0;border-bottom:1px solid #f00\"></div>\r\n<dl>\r\n  <dt>工作经\r\r\n验： 3年以上</dd>\r\n  <dt>发布日期：<span id=\"span4freshdate\">2012-12-12</span></dd>\r\n  <dt>最低学历： 本科\r\r\n</dd>\r\n  <dt>管理经验： 否</dd>\r\n  <dt>工作性质： 全职</dd>\r\n  <dt>招聘人数： 若干</dd>\r\n  <dt>职位月薪\r\r\n： 10000-30000元/月</dd>\r\n  <dt>职位类别：系统集成</dd>\r\n  <dt>工作地点：<span id=\"positionCityCon\">厦门\r\r\n</span></dd>\r\n  <dd>&nbsp;</dd>\r\n  <dd></dd>\r\n</dl>\r\n<div style=\"height:0;border-bottom:1px solid \r\r\n#f00\"></div>\r\n\r\n<h2>职位描述</h2>\r\n<div>\r\n  <div> 1、iPhone应用软件开发；</div>\r\n  <div> 2、负责iPhone\r\r\n手机应用产品的设计，实现，测试及维护功能；</div>\r\n  <div> 3、根据项目需要快速学习并掌握新技术；</div>\r\n  \r\r\n<div> 4、与相关人员沟通配合，与团队中其他成员交流相关信息。</div>\r\n  <div> </div>\r\n  <div> 要求:</div>\r\n  \r\r\n<div>1. 计算机,通讯及相关专业；</div>\r\n  <div>2. 具备扎实的Objective C、C/C++ 基础；</div>\r\n  <div>3. 熟悉MacOS\r\r\n操作系统和XCode开发环境；</div>\r\n  <div>4. 有一年以上iPhone系统或苹果软件开发经验，熟悉iPhone SDK；</div>\r\n  \r\r\n<div>5. 具备良好的沟通能力和优秀的团队协作能力；</div>\r\n  <div>6. 优秀的文档编写和语言表达能力，良好的中英文阅读\r\r\n水平;</div>\r\n  <div>7. 诚恳、踏实、谨慎细致，对工作充满热情，优秀的学习能力，具有良好的自律意识和上进心；</div>\r\r\n\r\n  <div>8. 以手机开发做为人生技术规划；</div>\r\n</div>\r\n<div style=\"height:0;border-bottom:1px solid \r\r\n#f00\"></div>\r\n\r\n<h2 id=\"company-headline-tab\">联系方式</h2>\r\n<dl id=\"comp-contact\">\r\n  <dd>\r\n    \r\r\n<div>\r\n      <div>公司名称：蓝色光标传播集团—博看文思（北京）科技有限责任公司</div>\r\n      <div>公司地址：北京\r\r\n市石景山区石景山路42号总工会办公楼2层</div>\r\n      <div>传<img src=\r\r\n\"http://rd2.zhaopin.com/s/images/erd2/blank.gif\" alt=\"\" width=\"24\" height=\"1\" />真：</div>\r\n      <div>公\r\r\n司主页：www.ibokanwisdom.com</div>\r\n    </div>\r\n  </dd>\r\n</dl>"
+        }
+    }
+}

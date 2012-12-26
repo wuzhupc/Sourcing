@@ -1,0 +1,25 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+        "list_vos":[
+        {"ConsultVO":{
+            "consultid":"咨询编号",
+			"consultcontent":"咨询内容",            
+            "publishtime":"咨询时间，格式yyyy-MM-dd HH:mm:ss",
+            "ConsultResultVO_consultResultVO":{
+                "consultresultid":"咨询答复编号",
+				"consultresultcontent":"咨询答复内容", 
+				"publisher":"咨询答复人员",           
+            	"publishtime":"咨询答复时间，格式yyyy-MM-dd HH:mm:ss"
+            }
+        }},
+        {"ConsultVO":{
+            ...
+        }}
+        ...
+        ]  
+    }
+}

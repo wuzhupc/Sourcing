@@ -1,0 +1,11 @@
+{
+    "id":"命令识别号",
+    "command":"mobileinfo_getNewsComment",
+    "params":{
+        "devid":"设备号",
+        "newstype":"新闻类别，1：行业新闻，2：政策，3：通知，4：专家文章",
+        "newsid":"新闻ID",
+        "pagesize":"每页新闻记录数，默认20",
+        "bottomcommentid":"新闻评论列表下限的新闻ID，默认0，如果非0时，获取此新闻评论ID后pagesize条记录数"
+    }
+}

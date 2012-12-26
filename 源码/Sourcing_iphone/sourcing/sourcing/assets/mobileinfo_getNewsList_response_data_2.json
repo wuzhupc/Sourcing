@@ -1,0 +1,35 @@
+﻿{
+    "ret":{
+        "code":"0"
+    },
+    "data":{
+        "list_vos":[
+            {
+                "NewsVO":{
+                    "headline":"0",
+                    "newstype":"2",
+                    "newsid":"35890",
+                    "title":"国家级开发区和边境合作区规划印发",
+                    "publishtime":"2012-11-28 14:13",
+                    "newssummary":"商务部网站28日发布《国家级经济技术开发区和边境经济合作区“十二五”发展规划（2011-2015年）》。",
+                    "source":"中国外包网",
+                    "readernum":"188",
+                    "commentnum":"0"
+                }
+            },
+            {
+                "NewsVO":{
+                    "headline":"0",
+                    "newstype":"2",
+                    "newsid":"35315",
+                    "title":"工信部印发电子认证“十二五”规划",
+                    "publishtime":"2012-11-19 14:15",
+                    "newssummary":"近日，工业和信息化部印发了《电子认证服务业“十二五”发展规划》。",
+                    "source":"未知",
+                    "readernum":"147",
+                    "commentnum":"0"
+                }
+            }
+        ]
+    }
+}

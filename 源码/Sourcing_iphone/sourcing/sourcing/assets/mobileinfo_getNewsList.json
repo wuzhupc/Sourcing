@@ -1,0 +1,10 @@
+{
+    "id":"命令识别号",
+    "command":"mobileinfo_getNewsList",
+    "params":{
+        "devid":"设备号",
+        "newstype":"新闻类别，0：最新资讯，1：行业新闻，2：政策，3：通知，4：专家文章",
+        "pagesize":"每页新闻记录数，默认20",
+        "bottomnewsid":"新闻列表下限的新闻ID，默认0，如果非0时，获取此新闻ID后pagesize条记录数"
+    }
+}

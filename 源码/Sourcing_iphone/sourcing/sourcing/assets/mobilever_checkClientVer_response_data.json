@@ -1,0 +1,12 @@
+﻿{
+    "ret":{
+        "code":"0"
+    },
+    "data":{
+        "lastver":"1.02",
+        "lastverurl":"http://test.wuzhupc.com/android.apk",
+        "filesize":"2000000",
+        "forceupdate":"0",
+        "updatelog":"测试更新版本接口<br/>更新日志说明<br/>1.AAAAAAAAAAAAAA<br/>2.BBBBBBBBBBBBB<br/>3.其它说明"   
+    }
+}

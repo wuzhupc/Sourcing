@@ -1,0 +1,26 @@
+﻿{
+    "ret": {
+        "code": "0",
+        "msg": "提示信息"
+    },
+    "data": {
+        "UserVO": {
+            "userid": "100001",
+            "useraccount": "pwuzhu",
+            "password": "111111",
+            "usertype": "2",
+            "username": "专家用户姓名",
+            "userphoto": "http://www.wuhansourcing.gov.cn/uploads/userup/1535/myface.jpg",
+            "phonenumber": "0592-2699999",
+            "email": "test@gmail.com",
+            "consultcount": "1",
+            "auditcount": "0",
+            "declarecount": "1",
+            "notifiercount": "2",
+            "allconsultcount": "100",
+            "allauditcount": "98",
+            "alldeclarecount": "789",
+            "allnotifiercount": "22"
+        }
+    }
+}

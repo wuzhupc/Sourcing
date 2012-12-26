@@ -1,0 +1,8 @@
+{
+    "id": "命令识别号",
+    "command": "mobilever_checkClientVer",
+    "params": {
+        "devid": "设备号",
+        "clientver": "客户端版本",
+    }
+}
