@@ -35,6 +35,23 @@
 		32120AC9168AE26D00DBF915 /* ChannelVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AC8168AE26D00DBF915 /* ChannelVO.m */; };
 		32120ACC168AE43400DBF915 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 32120ACB168AE43400DBF915 /* assets */; };
 		32120ACF168AE58800DBF915 /* FileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120ACE168AE58800DBF915 /* FileUtil.m */; };
+		32120AD2168B2C2E00DBF915 /* AuditVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AD1168B2C2D00DBF915 /* AuditVO.m */; };
+		32120AD5168B2C6F00DBF915 /* AuditResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AD4168B2C6E00DBF915 /* AuditResultVO.m */; };
+		32120AD8168B2E5A00DBF915 /* ConsultResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AD7168B2E5900DBF915 /* ConsultResultVO.m */; };
+		32120ADB168B2EE700DBF915 /* ConsultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120ADA168B2EE600DBF915 /* ConsultVO.m */; };
+		32120ADE168B2FD600DBF915 /* DeclareResultVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120ADD168B2FD500DBF915 /* DeclareResultVO.m */; };
+		32120AE1168B30D800DBF915 /* DeclareVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AE0168B30D700DBF915 /* DeclareVO.m */; };
+		32120AE4168B318E00DBF915 /* JobVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AE3168B318D00DBF915 /* JobVO.m */; };
+		32120AE7168B327900DBF915 /* JobDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AE6168B327800DBF915 /* JobDetailVO.m */; };
+		32120AEA168B32E100DBF915 /* NewsVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AE9168B32E000DBF915 /* NewsVO.m */; };
+		32120AED168B351E00DBF915 /* NewsDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AEC168B351D00DBF915 /* NewsDetailVO.m */; };
+		32120AF0168B357E00DBF915 /* NotifierVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AEF168B357D00DBF915 /* NotifierVO.m */; };
+		32120AF3168B362B00DBF915 /* ProjectVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AF2168B362A00DBF915 /* ProjectVO.m */; };
+		32120AF6168B36D700DBF915 /* ProjectDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AF5168B36D500DBF915 /* ProjectDetailVO.m */; };
+		32120AF9168B376D00DBF915 /* ResumeVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AF8168B376C00DBF915 /* ResumeVO.m */; };
+		32120AFC168B380C00DBF915 /* ResumeDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AFB168B380B00DBF915 /* ResumeDetailVO.m */; };
+		32120AFF168B384E00DBF915 /* TrainVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120AFE168B384C00DBF915 /* TrainVO.m */; };
+		32120B02168B38CE00DBF915 /* TrainDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B01168B38CC00DBF915 /* TrainDetailVO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +101,40 @@
 		32120ACB168AE43400DBF915 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		32120ACD168AE58800DBF915 /* FileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileUtil.h; path = sourcing/FileUtil.h; sourceTree = "<group>"; };
 		32120ACE168AE58800DBF915 /* FileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileUtil.m; path = sourcing/FileUtil.m; sourceTree = "<group>"; };
+		32120AD0168B2C2D00DBF915 /* AuditVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditVO.h; path = sourcing/VO/AuditVO.h; sourceTree = "<group>"; };
+		32120AD1168B2C2D00DBF915 /* AuditVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditVO.m; path = sourcing/VO/AuditVO.m; sourceTree = "<group>"; };
+		32120AD3168B2C6E00DBF915 /* AuditResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditResultVO.h; path = sourcing/VO/AuditResultVO.h; sourceTree = "<group>"; };
+		32120AD4168B2C6E00DBF915 /* AuditResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditResultVO.m; path = sourcing/VO/AuditResultVO.m; sourceTree = "<group>"; };
+		32120AD6168B2E5900DBF915 /* ConsultResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsultResultVO.h; path = sourcing/VO/ConsultResultVO.h; sourceTree = "<group>"; };
+		32120AD7168B2E5900DBF915 /* ConsultResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsultResultVO.m; path = sourcing/VO/ConsultResultVO.m; sourceTree = "<group>"; };
+		32120AD9168B2EE600DBF915 /* ConsultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsultVO.h; path = sourcing/VO/ConsultVO.h; sourceTree = "<group>"; };
+		32120ADA168B2EE600DBF915 /* ConsultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsultVO.m; path = sourcing/VO/ConsultVO.m; sourceTree = "<group>"; };
+		32120ADC168B2FD500DBF915 /* DeclareResultVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeclareResultVO.h; path = sourcing/VO/DeclareResultVO.h; sourceTree = "<group>"; };
+		32120ADD168B2FD500DBF915 /* DeclareResultVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeclareResultVO.m; path = sourcing/VO/DeclareResultVO.m; sourceTree = "<group>"; };
+		32120ADF168B30D600DBF915 /* DeclareVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DeclareVO.h; path = sourcing/VO/DeclareVO.h; sourceTree = "<group>"; };
+		32120AE0168B30D700DBF915 /* DeclareVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeclareVO.m; path = sourcing/VO/DeclareVO.m; sourceTree = "<group>"; };
+		32120AE2168B318D00DBF915 /* JobVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobVO.h; path = sourcing/VO/JobVO.h; sourceTree = "<group>"; };
+		32120AE3168B318D00DBF915 /* JobVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobVO.m; path = sourcing/VO/JobVO.m; sourceTree = "<group>"; };
+		32120AE5168B327700DBF915 /* JobDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JobDetailVO.h; path = sourcing/VO/JobDetailVO.h; sourceTree = "<group>"; };
+		32120AE6168B327800DBF915 /* JobDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JobDetailVO.m; path = sourcing/VO/JobDetailVO.m; sourceTree = "<group>"; };
+		32120AE8168B32DF00DBF915 /* NewsVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsVO.h; path = sourcing/VO/NewsVO.h; sourceTree = "<group>"; };
+		32120AE9168B32E000DBF915 /* NewsVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsVO.m; path = sourcing/VO/NewsVO.m; sourceTree = "<group>"; };
+		32120AEB168B351C00DBF915 /* NewsDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsDetailVO.h; path = sourcing/VO/NewsDetailVO.h; sourceTree = "<group>"; };
+		32120AEC168B351D00DBF915 /* NewsDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsDetailVO.m; path = sourcing/VO/NewsDetailVO.m; sourceTree = "<group>"; };
+		32120AEE168B357C00DBF915 /* NotifierVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotifierVO.h; path = sourcing/VO/NotifierVO.h; sourceTree = "<group>"; };
+		32120AEF168B357D00DBF915 /* NotifierVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotifierVO.m; path = sourcing/VO/NotifierVO.m; sourceTree = "<group>"; };
+		32120AF1168B362900DBF915 /* ProjectVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectVO.h; path = sourcing/VO/ProjectVO.h; sourceTree = "<group>"; };
+		32120AF2168B362A00DBF915 /* ProjectVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectVO.m; path = sourcing/VO/ProjectVO.m; sourceTree = "<group>"; };
+		32120AF4168B36D500DBF915 /* ProjectDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectDetailVO.h; path = sourcing/VO/ProjectDetailVO.h; sourceTree = "<group>"; };
+		32120AF5168B36D500DBF915 /* ProjectDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProjectDetailVO.m; path = sourcing/VO/ProjectDetailVO.m; sourceTree = "<group>"; };
+		32120AF7168B376A00DBF915 /* ResumeVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResumeVO.h; path = sourcing/VO/ResumeVO.h; sourceTree = "<group>"; };
+		32120AF8168B376C00DBF915 /* ResumeVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResumeVO.m; path = sourcing/VO/ResumeVO.m; sourceTree = "<group>"; };
+		32120AFA168B380900DBF915 /* ResumeDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResumeDetailVO.h; path = sourcing/VO/ResumeDetailVO.h; sourceTree = "<group>"; };
+		32120AFB168B380B00DBF915 /* ResumeDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResumeDetailVO.m; path = sourcing/VO/ResumeDetailVO.m; sourceTree = "<group>"; };
+		32120AFD168B384B00DBF915 /* TrainVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainVO.h; path = sourcing/VO/TrainVO.h; sourceTree = "<group>"; };
+		32120AFE168B384C00DBF915 /* TrainVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainVO.m; path = sourcing/VO/TrainVO.m; sourceTree = "<group>"; };
+		32120B00168B38CB00DBF915 /* TrainDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainDetailVO.h; path = sourcing/VO/TrainDetailVO.h; sourceTree = "<group>"; };
+		32120B01168B38CC00DBF915 /* TrainDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainDetailVO.m; path = sourcing/VO/TrainDetailVO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,15 +155,11 @@
 		32120A5116897C7A00DBF915 = {
 			isa = PBXGroup;
 			children = (
-				32120AA11689913100DBF915 /* Config */,
 				32120A5F16897C7A00DBF915 /* Frameworks */,
 				32120A961689858500DBF915 /* Images */,
-				32120AB01689DB0100DBF915 /* Json */,
 				32120A5D16897C7A00DBF915 /* Products */,
 				32120A6816897C7A00DBF915 /* sourcing */,
-				32120A97168985B200DBF915 /* UI */,
 				32120A9D16898D9B00DBF915 /* Utils */,
-				32120AA5168998B600DBF915 /* VO */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,10 +185,13 @@
 		32120A6816897C7A00DBF915 /* sourcing */ = {
 			isa = PBXGroup;
 			children = (
+				32120AA11689913100DBF915 /* Config */,
+				32120A7A16897C7A00DBF915 /* sourcing.xcdatamodeld */,
 				32120A7116897C7A00DBF915 /* SourcingAppDelegate.h */,
 				32120A7216897C7A00DBF915 /* SourcingAppDelegate.m */,
-				32120A7A16897C7A00DBF915 /* sourcing.xcdatamodeld */,
 				32120A6916897C7A00DBF915 /* Supporting Files */,
+				32120A97168985B200DBF915 /* UI */,
+				32120AA5168998B600DBF915 /* VO */,
 			);
 			path = sourcing;
 			sourceTree = "<group>";
@@ -178,11 +228,13 @@
 				32120A9A168985E000DBF915 /* WelcomeViewController.xib */,
 			);
 			name = UI;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		32120A9D16898D9B00DBF915 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				32120AB01689DB0100DBF915 /* Json */,
 				32120AC1168AA91900DBF915 /* DataInterfaceUtil.h */,
 				32120AC2168AA91900DBF915 /* DataInterfaceUtil.m */,
 				32120ABE168AA8F100DBF915 /* HtmlUtil.h */,
@@ -204,21 +256,57 @@
 				32120AA31689918000DBF915 /* ApplicationSet.m */,
 			);
 			name = Config;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		32120AA5168998B600DBF915 /* VO */ = {
 			isa = PBXGroup;
 			children = (
+				32120AD3168B2C6E00DBF915 /* AuditResultVO.h */,
+				32120AD4168B2C6E00DBF915 /* AuditResultVO.m */,
+				32120AD0168B2C2D00DBF915 /* AuditVO.h */,
+				32120AD1168B2C2D00DBF915 /* AuditVO.m */,
 				32120AA616899E2D00DBF915 /* BaseVO.h */,
 				32120AA716899E2D00DBF915 /* BaseVO.m */,
+				32120AC7168AE26D00DBF915 /* ChannelVO.h */,
+				32120AC8168AE26D00DBF915 /* ChannelVO.m */,
+				32120AD6168B2E5900DBF915 /* ConsultResultVO.h */,
+				32120AD7168B2E5900DBF915 /* ConsultResultVO.m */,
+				32120AD9168B2EE600DBF915 /* ConsultVO.h */,
+				32120ADA168B2EE600DBF915 /* ConsultVO.m */,
+				32120ADC168B2FD500DBF915 /* DeclareResultVO.h */,
+				32120ADD168B2FD500DBF915 /* DeclareResultVO.m */,
+				32120ADF168B30D600DBF915 /* DeclareVO.h */,
+				32120AE0168B30D700DBF915 /* DeclareVO.m */,
+				32120AE5168B327700DBF915 /* JobDetailVO.h */,
+				32120AE6168B327800DBF915 /* JobDetailVO.m */,
+				32120AE2168B318D00DBF915 /* JobVO.h */,
+				32120AE3168B318D00DBF915 /* JobVO.m */,
+				32120AEB168B351C00DBF915 /* NewsDetailVO.h */,
+				32120AEC168B351D00DBF915 /* NewsDetailVO.m */,
+				32120AE8168B32DF00DBF915 /* NewsVO.h */,
+				32120AE9168B32E000DBF915 /* NewsVO.m */,
+				32120AEE168B357C00DBF915 /* NotifierVO.h */,
+				32120AEF168B357D00DBF915 /* NotifierVO.m */,
+				32120AF1168B362900DBF915 /* ProjectVO.h */,
+				32120AF2168B362A00DBF915 /* ProjectVO.m */,
 				32120ABB1689F21D00DBF915 /* ResponseVO.h */,
 				32120ABC1689F21D00DBF915 /* ResponseVO.m */,
 				32120AC4168ADC0800DBF915 /* UserVO.h */,
 				32120AC5168ADC0900DBF915 /* UserVO.m */,
-				32120AC7168AE26D00DBF915 /* ChannelVO.h */,
-				32120AC8168AE26D00DBF915 /* ChannelVO.m */,
+				32120AF4168B36D500DBF915 /* ProjectDetailVO.h */,
+				32120AF5168B36D500DBF915 /* ProjectDetailVO.m */,
+				32120AF7168B376A00DBF915 /* ResumeVO.h */,
+				32120AF8168B376C00DBF915 /* ResumeVO.m */,
+				32120AFA168B380900DBF915 /* ResumeDetailVO.h */,
+				32120AFB168B380B00DBF915 /* ResumeDetailVO.m */,
+				32120AFD168B384B00DBF915 /* TrainVO.h */,
+				32120AFE168B384C00DBF915 /* TrainVO.m */,
+				32120B00168B38CB00DBF915 /* TrainDetailVO.h */,
+				32120B01168B38CC00DBF915 /* TrainDetailVO.m */,
 			);
 			name = VO;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		32120AB01689DB0100DBF915 /* Json */ = {
@@ -319,6 +407,23 @@
 				32120AC6168ADC0900DBF915 /* UserVO.m in Sources */,
 				32120AC9168AE26D00DBF915 /* ChannelVO.m in Sources */,
 				32120ACF168AE58800DBF915 /* FileUtil.m in Sources */,
+				32120AD2168B2C2E00DBF915 /* AuditVO.m in Sources */,
+				32120AD5168B2C6F00DBF915 /* AuditResultVO.m in Sources */,
+				32120AD8168B2E5A00DBF915 /* ConsultResultVO.m in Sources */,
+				32120ADB168B2EE700DBF915 /* ConsultVO.m in Sources */,
+				32120ADE168B2FD600DBF915 /* DeclareResultVO.m in Sources */,
+				32120AE1168B30D800DBF915 /* DeclareVO.m in Sources */,
+				32120AE4168B318E00DBF915 /* JobVO.m in Sources */,
+				32120AE7168B327900DBF915 /* JobDetailVO.m in Sources */,
+				32120AEA168B32E100DBF915 /* NewsVO.m in Sources */,
+				32120AED168B351E00DBF915 /* NewsDetailVO.m in Sources */,
+				32120AF0168B357E00DBF915 /* NotifierVO.m in Sources */,
+				32120AF3168B362B00DBF915 /* ProjectVO.m in Sources */,
+				32120AF6168B36D700DBF915 /* ProjectDetailVO.m in Sources */,
+				32120AF9168B376D00DBF915 /* ResumeVO.m in Sources */,
+				32120AFC168B380C00DBF915 /* ResumeDetailVO.m in Sources */,
+				32120AFF168B384E00DBF915 /* TrainVO.m in Sources */,
+				32120B02168B38CE00DBF915 /* TrainDetailVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

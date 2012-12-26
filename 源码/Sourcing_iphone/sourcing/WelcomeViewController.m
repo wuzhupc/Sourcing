@@ -9,6 +9,7 @@
 #import "WelcomeViewController.h"
 #import "FileUtil.h"
 #import "JsonParser.h"
+#import "ChannelVO.h"
 
 @interface WelcomeViewController ()
 
@@ -39,7 +40,9 @@
         NSLog(@"转换失败");
     else
     {
-        NSLog(@"%d 第一个对象：%@",[array count],[array objectAtIndex:0]);
+        ChannelVO *channelvo = [array objectAtIndex:1];
+        
+        NSLog(@"%d 第2个对象：id:%@ channelid:%@ channelname:%@",[array count],[channelvo Id],[channelvo ChannelID],[channelvo channelName]);
     }
 }
 
