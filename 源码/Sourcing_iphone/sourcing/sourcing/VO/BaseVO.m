@@ -12,4 +12,15 @@
 
 @synthesize Id = _id;
 
+- (BOOL) isEqual:(id)object
+{
+    if(object == nil)
+        return  NO;
+    if ([object isMemberOfClass:[self class]])
+    {
+        BaseVO *other = (BaseVO *)object;
+        return [other.Id isEqual:_id];
+    }
+    return [super isEqual: object];
+}
 @end

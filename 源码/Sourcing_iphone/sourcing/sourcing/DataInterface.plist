@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>jsonurl</key>
+	<string>http://120.35.120.154:8083/EMBAServer/mobilejson/request.do</string>
+	<key>fileuploadurl</key>
+	<string>http://120.35.120.154:8083/EMBAServer/mobilejson/uploadVideo.do</string>
+	<key>sitenewslinkpre</key>
+	<string>http://120.35.120.154:8083/EMBAServer/admin/news_view.do?newsid=</string>
+	<key>cmd_json_check_channel_ver</key>
+	<string>mobileversion_checkJsonChannelVer</string>
+	<key>cmd_json_get_news_list</key>
+	<string>mobileinfo_getJsonNewsList</string>
+	<key>cmd_json_get_news_flash</key>
+	<string>mobileinfo_getJsonNewsFlash</string>
+	<key>cmd_json_get_news_comments</key>
+	<string>mobileinfo_getJsonNewsCommentList</string>
+	<key>cmd_json_get_news_detail</key>
+	<string>mobileinfo_getJsonNewsDetail</string>
+	<key>cmd_json_get_media_detail</key>
+	<string>mobileinfo_getJsonMediaDetail</string>
+	<key>cmd_json_get_vote_detail</key>
+	<string>mobileinfo_getJsonVoteDetail</string>
+	<key>cmd_json_get_ads</key>
+	<string>mobilead_getJsonAds</string>
+	<key>cmd_json_get_activity_detail</key>
+	<string>mobileinfo_getJsonActivityDetail</string>
+	<key>cmd_json_send_activity_apply</key>
+	<string>mobileactivity_sendJsonActivity</string>
+	<key>cmd_json_send_exposure_info</key>
+	<string>mobileexposure_sendJsonExposureInfo</string>
+	<key>cmd_json_get_exposure_list</key>
+	<string>mobileexposure_getJsonExposureList</string>
+	<key>cmd_json_send_topic_info</key>
+	<string>mobiletopic_sendJsonTopicInfo</string>
+	<key>cmd_json_get_topic_list</key>
+	<string>mobiletopic_getJsonTopicList</string>
+	<key>cmd_json_send_vote_info</key>
+	<string>mobilevote_sendJsonVote</string>
+	<key>cmd_json_submit_comment_info</key>
+	<string>mobilecomment_submitJsonComment</string>
+	<key>cmd_json_change_member_info</key>
+	<string>mobilemember_changeJsonMemberInfo</string>
+	<key>cmd_json_send_leavemessage_info</key>
+	<string>mobilemessage_sendJsonLeaveMessage</string>
+	<key>cmd_json_get_movements</key>
+	<string>mobliemovement_getJsonMovements</string>
+	<key>cmd_json_check_member_login</key>
+	<string>mobilemember_checkJsonMemberLogin</string>
+	<key>cmd_json_get_morelink_info</key>
+	<string>mobileinfo_getJsonMoreLinkInfo</string>
+	<key>cmd_json_get_corporation_list</key>
+	<string>mobilecorporation_getJsonCorporationList</string>
+</dict>
+</plist>

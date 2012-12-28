@@ -7,6 +7,8 @@
 //
 
 #import "UserVO.h"
+#import "FileUtil.h"
+#import "AutoCoding.h"
 
 @implementation UserVO
 
@@ -34,6 +36,35 @@
 -(NSString *)Userid
 {
     return userid;
+}
+
++(NSString *)getUserInfoFilePath
+{
+    return [FileUtil createFilePathForLocation:FileDirectoryDocuments withFileName:@"datafile_u" withExtension:@"dat"];
+}
+
++(BOOL)saveLoginUserInfo:(UserVO *)kuservo
+{
+    NSString *filepath = [UserVO getUserInfoFilePath];
+    BOOL result = NO;
+     if([[NSFileManager defaultManager] fileExistsAtPath:filepath])
+     {
+        result = [[NSFileManager defaultManager] removeItemAtPath:filepath error:nil];
+     }
+    if(kuservo != nil)
+    {
+        return [NSKeyedArchiver archiveRootObject:kuservo toFile:filepath];
+    }
+    return result;
+}
+
++(UserVO *)getLastLoginUserInfo
+{
+    NSString *filepath = [UserVO getUserInfoFilePath];
+    if(![[NSFileManager defaultManager] fileExistsAtPath:filepath])
+        return nil;
+    UserVO * result = [NSKeyedUnarchiver unarchiveObjectWithFile:filepath];
+    return result;
 }
 
 @end

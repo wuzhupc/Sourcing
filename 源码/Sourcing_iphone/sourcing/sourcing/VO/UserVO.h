@@ -44,4 +44,8 @@
 @property NSString *allnotifiercount;
 -(void)setUserid:(NSString *)kuserid;
 -(NSString *)Userid;
+
++(BOOL)saveLoginUserInfo:(UserVO *)kuservo;
++(UserVO *)getLastLoginUserInfo;
+
 @end

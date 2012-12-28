@@ -23,4 +23,5 @@
 @property NSInteger tag; //标志位
 
 -(BOOL)isSucess;
+-(id) initWithResult: (NSUInteger)mcode msg:(NSString*)mmsg tag:(NSInteger)mtag;
 @end

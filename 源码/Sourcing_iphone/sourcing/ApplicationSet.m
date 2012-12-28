@@ -12,6 +12,7 @@
 
 @synthesize isRegDevToken=_isRegDevToken;
 @synthesize deviceToken = _deviceToken;
+@synthesize channels = _channels;
 
 static ApplicationSet *_shareData = nil;
 
@@ -25,6 +26,19 @@ static ApplicationSet *_shareData = nil;
         }
         return _shareData;
     }
+}
+
+-(void)setLoginUserInfo:(UserVO *)kuserVO saveinfo:(BOOL)ksave
+{
+    //TODO 是否在这里重新判断要不要发送deviceToken
+    _userVO = kuserVO;
+    if (ksave) {
+        [UserVO saveLoginUserInfo:kuserVO];
+    }
+}
+-(UserVO *)getUserVO
+{
+    return _userVO;
 }
 
 @end
