@@ -12,23 +12,26 @@
 #import "DataInterfaceUtil.h"
 #import "ASIFormDataRequest.h"
 #import "ResponseVO.h"
+#import "UIDevice+IdentifierAddition.h"
 
 @implementation BaseJsonService
 
 
-#define CBOOL_DEBUG YES
+#define CBOOL_DEBUG_JOSN YES
+//是否读取本地assets
+#define CBOOL_READASSETS YES
 
-+(void) getData:(NSString *) json delegate:(id)delegate  tag:(NSInteger)mtag
+-(void) getData:(NSString *) json delegate:(id)delegate  tag:(NSInteger)mtag
 {
     [self getData:json url:nil delegate:delegate process:NO processcontent:nil tag:mtag];
 }
 
-+(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate tag:(NSInteger)mtag
+-(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate tag:(NSInteger)mtag
 {
     [self getData:json url:url delegate:delegate process:NO processcontent:nil tag:mtag];
 }
 
-+(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate process:(BOOL)showprocess tag:(NSInteger)mtag
+-(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate process:(BOOL)showprocess tag:(NSInteger)mtag
 {
     [self getData:json url:url delegate:delegate process:showprocess processcontent:nil tag:mtag];
 }
@@ -42,19 +45,27 @@
  * @param progressshowcontent	显示处理进度提示内容，如果为null，显示默认提示
  * @param tag 标志位
  */
-+(void) getData:(NSString *)mjson url:(NSString *)murlstr delegate:(id)mdelegate process:(BOOL)mshowprocess processcontent:(NSString *)mshowprocesscontent tag:(NSInteger)mtag
+-(void) getData:(NSString *)mjson url:(NSString *)murlstr delegate:(id)mdelegate process:(BOOL)mshowprocess processcontent:(NSString *)mshowprocesscontent tag:(NSInteger)mtag
 {
     if([StringUtil isEmptyStr:mjson]||mdelegate==nil)
         return;
-    if(CBOOL_DEBUG)
+    _delegate = mdelegate;
+    _tag  = mtag;
+    if(CBOOL_DEBUG_JOSN)
         NSLog(@"BaseJsonService:%@",mjson);
     if (![NetWorkUtil checkNetWork:NO]) 
     {
-        if (CBOOL_DEBUG) {
+        if (CBOOL_DEBUG_JOSN) {
             NSLog(@"BaseJsonService:%@",NSLocalizedString(@"Currently unable to access the server.", @"提示无法连接服务器"));
         }
-        [self sendServiceFailInfo:mdelegate msg:NSLocalizedString(@"Currently unable to access the server.", @"提示无法连接服务器") tag:mtag];
+        [BaseJsonService sendServiceFailInfo:mdelegate msg:NSLocalizedString(@"Currently unable to access the server.", @"提示无法连接服务器") tag:mtag];
         return;
+    }
+    
+    //TODO 加载本地文件
+    if(CBOOL_READASSETS)
+    {
+        
     }
     NSURL *url;
     if([StringUtil isEmptyStr:murlstr])
@@ -65,10 +76,33 @@
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setTag:mtag];
     [request setPostValue:mjson forKey:@"requestjson"];
-    [request setDelegate:mdelegate];
+    [request setDelegate:self];
     [request setRequestMethod:@"POST"];
     [request setTimeOutSeconds:20];
     [request startAsynchronous];
+    //TODO 增加显示处理进度
+}
+
+-(void)requestFailed:(ASIHTTPRequest *)request
+{
+    //TODO
+}
+
+-(void)requestFinished:(ASIHTTPRequest *)request
+{
+    //TODO
+}
+
+-(void)setAssetsFileInfo:(NSString *)kcommandName suffix:(NSString *)ksuffix
+{
+    _commandName = kcommandName;
+    _suffix = ksuffix;
+}
+
++(NSString *)getDevID
+{
+    return [[UIDevice currentDevice] uniqueDeviceIdentifier];
+    //[[UIDevice currentDevice] uniqueGlobalDeviceIdentifier]
 }
 
 /**

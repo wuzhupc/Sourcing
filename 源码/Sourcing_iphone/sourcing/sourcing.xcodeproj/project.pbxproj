@@ -60,19 +60,31 @@
 		32120B34168C9CE900DBF915 /* EGOCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B33168C9CE900DBF915 /* EGOCache.m */; };
 		32120B39168DD0DD00DBF915 /* BaseJsonService.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B37168DD0DD00DBF915 /* BaseJsonService.m */; };
 		32120B3C168DD12B00DBF915 /* NetWorkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B3B168DD12A00DBF915 /* NetWorkUtil.m */; };
-		32120B55168DD32B00DBF915 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B3F168DD32B00DBF915 /* ASIAuthenticationDialog.m */; };
-		32120B56168DD32B00DBF915 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B42168DD32B00DBF915 /* ASIDataCompressor.m */; };
-		32120B57168DD32B00DBF915 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B44168DD32B00DBF915 /* ASIDataDecompressor.m */; };
-		32120B58168DD32B00DBF915 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B46168DD32B00DBF915 /* ASIDownloadCache.m */; };
-		32120B59168DD32B00DBF915 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B48168DD32B00DBF915 /* ASIFormDataRequest.m */; };
-		32120B5A168DD32B00DBF915 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B4A168DD32B00DBF915 /* ASIHTTPRequest.m */; };
-		32120B5B168DD32B00DBF915 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B4E168DD32B00DBF915 /* ASIInputStream.m */; };
-		32120B5C168DD32B00DBF915 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B50168DD32B00DBF915 /* ASINetworkQueue.m */; };
+		32120B55168DD32B00DBF915 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B3F168DD32B00DBF915 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B56168DD32B00DBF915 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B42168DD32B00DBF915 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B57168DD32B00DBF915 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B44168DD32B00DBF915 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B58168DD32B00DBF915 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B46168DD32B00DBF915 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B59168DD32B00DBF915 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B48168DD32B00DBF915 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B5A168DD32B00DBF915 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B4A168DD32B00DBF915 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B5B168DD32B00DBF915 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B4E168DD32B00DBF915 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32120B5C168DD32B00DBF915 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B50168DD32B00DBF915 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32120B5D168DD32B00DBF915 /* ASIWebPageRequest in Resources */ = {isa = PBXBuildFile; fileRef = 32120B52168DD32B00DBF915 /* ASIWebPageRequest */; };
 		32120B5E168DD32B00DBF915 /* CloudFiles in Resources */ = {isa = PBXBuildFile; fileRef = 32120B53168DD32B00DBF915 /* CloudFiles */; };
 		32120B5F168DD32B00DBF915 /* S3 in Resources */ = {isa = PBXBuildFile; fileRef = 32120B54168DD32B00DBF915 /* S3 */; };
-		32120B63168DD39700DBF915 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B62168DD39700DBF915 /* Reachability.m */; };
+		32120B63168DD39700DBF915 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B62168DD39700DBF915 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32120B65168DD4AF00DBF915 /* DataInterface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32120B64168DD4AF00DBF915 /* DataInterface.plist */; };
+		32D0C1A4168DE75600902708 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1A3168DE75600902708 /* MBProgressHUD.m */; };
+		32D0C1AD168DEDFD00902708 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */; };
+		32D0C1AE168DEDFD00902708 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */; };
+		32D0C1B2168DEE4D00902708 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1B1168DEE4D00902708 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32D0C1B9168DEEFD00902708 /* ToastHintUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */; };
+		32D0C1BD168DEFB900902708 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1BC168DEFB800902708 /* CFNetwork.framework */; };
+		32D0C1C1168DF1BC00902708 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1C0168DF1BC00902708 /* QuartzCore.framework */; };
+		32D0C1C3168DF20B00902708 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1C2168DF20B00902708 /* SystemConfiguration.framework */; };
+		32D0C1C5168DF21200902708 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1C4168DF21200902708 /* MobileCoreServices.framework */; };
+		32D0C1C7168DF24500902708 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1C6168DF24500902708 /* libz.dylib */; };
+		32D0C1D1168DF8DD00902708 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1CE168DF8DD00902708 /* NSString+MD5Addition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32D0C1D2168DF8DD00902708 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1D0168DF8DD00902708 /* UIDevice+IdentifierAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -196,6 +208,26 @@
 		32120B61168DD39700DBF915 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = sourcing/Reachability/Reachability.h; sourceTree = "<group>"; };
 		32120B62168DD39700DBF915 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = sourcing/Reachability/Reachability.m; sourceTree = "<group>"; };
 		32120B64168DD4AF00DBF915 /* DataInterface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataInterface.plist; sourceTree = "<group>"; };
+		32D0C1A2168DE75600902708 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = sourcing/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		32D0C1A3168DE75600902708 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = sourcing/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = sourcing/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
+		32D0C1AB168DEDFD00902708 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = sourcing/SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
+		32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = sourcing/SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
+		32D0C1B0168DEE4D00902708 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = sourcing/iToast/iToast.h; sourceTree = "<group>"; };
+		32D0C1B1168DEE4D00902708 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = sourcing/iToast/iToast.m; sourceTree = "<group>"; };
+		32D0C1B7168DEEFD00902708 /* ToastHintUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastHintUtil.h; path = sourcing/ToastHintUtil.h; sourceTree = "<group>"; };
+		32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastHintUtil.m; path = sourcing/ToastHintUtil.m; sourceTree = "<group>"; };
+		32D0C1BA168DEF6A00902708 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		32D0C1BC168DEFB800902708 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		32D0C1BE168DEFDB00902708 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		32D0C1C0168DF1BC00902708 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		32D0C1C2168DF20B00902708 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		32D0C1C4168DF21200902708 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		32D0C1C6168DF24500902708 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		32D0C1CD168DF8DD00902708 /* NSString+MD5Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+MD5Addition.h"; path = "sourcing/UIDevice-with-UniqueIdentifier/NSString+MD5Addition.h"; sourceTree = "<group>"; };
+		32D0C1CE168DF8DD00902708 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5Addition.m"; path = "sourcing/UIDevice-with-UniqueIdentifier/NSString+MD5Addition.m"; sourceTree = "<group>"; };
+		32D0C1CF168DF8DD00902708 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+IdentifierAddition.h"; path = "sourcing/UIDevice-with-UniqueIdentifier/UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
+		32D0C1D0168DF8DD00902708 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+IdentifierAddition.m"; path = "sourcing/UIDevice-with-UniqueIdentifier/UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +235,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32D0C1C7168DF24500902708 /* libz.dylib in Frameworks */,
+				32D0C1C5168DF21200902708 /* MobileCoreServices.framework in Frameworks */,
+				32D0C1C3168DF20B00902708 /* SystemConfiguration.framework in Frameworks */,
+				32D0C1C1168DF1BC00902708 /* QuartzCore.framework in Frameworks */,
+				32D0C1BD168DEFB900902708 /* CFNetwork.framework in Frameworks */,
 				32120B14168B4B9800DBF915 /* StoreKit.framework in Frameworks */,
 				32120A6116897C7A00DBF915 /* UIKit.framework in Frameworks */,
 				32120A6316897C7A00DBF915 /* Foundation.framework in Frameworks */,
@@ -237,6 +274,13 @@
 		32120A5F16897C7A00DBF915 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				32D0C1C6168DF24500902708 /* libz.dylib */,
+				32D0C1C4168DF21200902708 /* MobileCoreServices.framework */,
+				32D0C1C2168DF20B00902708 /* SystemConfiguration.framework */,
+				32D0C1C0168DF1BC00902708 /* QuartzCore.framework */,
+				32D0C1BE168DEFDB00902708 /* CoreLocation.framework */,
+				32D0C1BC168DEFB800902708 /* CFNetwork.framework */,
+				32D0C1BA168DEF6A00902708 /* MapKit.framework */,
 				32120B13168B4B9700DBF915 /* StoreKit.framework */,
 				32120A6016897C7A00DBF915 /* UIKit.framework */,
 				32120A6216897C7A00DBF915 /* Foundation.framework */,
@@ -314,6 +358,8 @@
 				32120A9F16898EC300DBF915 /* StringUtil.m */,
 				32120AB41689F0D200DBF915 /* TimeUtil.h */,
 				32120AB51689F0D200DBF915 /* TimeUtil.m */,
+				32D0C1B7168DEEFD00902708 /* ToastHintUtil.h */,
+				32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -392,6 +438,10 @@
 		32120B07168B451800DBF915 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				32D0C1CC168DF8CA00902708 /* UIDevice-with-UniqueIdentifier */,
+				32D0C1AF168DEE4000902708 /* iToast */,
+				32D0C1A9168DEDE900902708 /* SVProgressHUD */,
+				32D0C1A1168DE74100902708 /* MBProgressHUD */,
 				32120B60168DD38900DBF915 /* Reachability */,
 				32120B3D168DD2B400DBF915 /* ASIHTTPRequest */,
 				32120B31168C9CDC00DBF915 /* EGOCache */,
@@ -479,6 +529,45 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		32D0C1A1168DE74100902708 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				32D0C1A2168DE75600902708 /* MBProgressHUD.h */,
+				32D0C1A3168DE75600902708 /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		32D0C1A9168DEDE900902708 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */,
+				32D0C1AB168DEDFD00902708 /* SVProgressHUD.h */,
+				32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */,
+			);
+			name = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		32D0C1AF168DEE4000902708 /* iToast */ = {
+			isa = PBXGroup;
+			children = (
+				32D0C1B0168DEE4D00902708 /* iToast.h */,
+				32D0C1B1168DEE4D00902708 /* iToast.m */,
+			);
+			name = iToast;
+			sourceTree = "<group>";
+		};
+		32D0C1CC168DF8CA00902708 /* UIDevice-with-UniqueIdentifier */ = {
+			isa = PBXGroup;
+			children = (
+				32D0C1CD168DF8DD00902708 /* NSString+MD5Addition.h */,
+				32D0C1CE168DF8DD00902708 /* NSString+MD5Addition.m */,
+				32D0C1CF168DF8DD00902708 /* UIDevice+IdentifierAddition.h */,
+				32D0C1D0168DF8DD00902708 /* UIDevice+IdentifierAddition.m */,
+			);
+			name = "UIDevice-with-UniqueIdentifier";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -546,6 +635,7 @@
 				32120B5E168DD32B00DBF915 /* CloudFiles in Resources */,
 				32120B5F168DD32B00DBF915 /* S3 in Resources */,
 				32120B65168DD4AF00DBF915 /* DataInterface.plist in Resources */,
+				32D0C1AD168DEDFD00902708 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +693,12 @@
 				32120B5B168DD32B00DBF915 /* ASIInputStream.m in Sources */,
 				32120B5C168DD32B00DBF915 /* ASINetworkQueue.m in Sources */,
 				32120B63168DD39700DBF915 /* Reachability.m in Sources */,
+				32D0C1A4168DE75600902708 /* MBProgressHUD.m in Sources */,
+				32D0C1AE168DEDFD00902708 /* SVProgressHUD.m in Sources */,
+				32D0C1B2168DEE4D00902708 /* iToast.m in Sources */,
+				32D0C1B9168DEEFD00902708 /* ToastHintUtil.m in Sources */,
+				32D0C1D1168DF8DD00902708 /* NSString+MD5Addition.m in Sources */,
+				32D0C1D2168DF8DD00902708 /* UIDevice+IdentifierAddition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
