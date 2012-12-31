@@ -61,6 +61,7 @@ public class MobileUserService extends BaseJsonService
 		creater.setParam("devid",getDevID());
 		creater.setParam("username", username);
 		creater.setParam("password", password);
+		creater.setParam("newpassword", newpassword);
 		mSuffixStr = username;
 		mCommandName = mContext.getString(R.string.cmd_json_user_change_pwd);
 		String json=creater.createJson(null, mCommandName);
