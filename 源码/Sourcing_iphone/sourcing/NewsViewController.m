@@ -51,7 +51,6 @@
 
 - (void)commonInitNewsViewController
 {
-    
     //self.tabBarController.tabBar.tintColor = [UIColor clearColor];
     //[self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_backgroundimage"]];
     //self.tabBarController.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"tabbar_selectionindicatorimage"];
