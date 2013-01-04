@@ -89,7 +89,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		setContentView(R.layout.activity_home);
 		setCatureBackKey(true);
 		mAllowFlingPix = ViewUtil.getScreenWidth(HomeActivity.this) * 2 / 3;
-		mChannelVOs = ChannelVO.initChannelsFormAssets(this);
+		mChannelVOs = ChannelVO.initChannelsFromAssets(this);
 		if (mChannelVOs == null || mChannelVOs.isEmpty())
 		{
 			hitCloseApplication(R.string.home_initchannel_fail);

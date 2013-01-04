@@ -341,7 +341,7 @@ public class ChannelVO extends BaseVO {
 	 * @return 如果数据文件不存在或者解析异常返回null
 	 */
 	@SuppressWarnings("unchecked")
-	public static ArrayList<ChannelVO> initChannelsFormAssets(Context context)
+	public static ArrayList<ChannelVO> initChannelsFromAssets(Context context)
 	{
 		String strChannels = FileUtil.readFileFromAssetsFile(context, "channelinfo.json");
 		if(StringUtil.isEmpty(strChannels))
