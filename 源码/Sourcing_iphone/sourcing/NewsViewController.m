@@ -51,6 +51,7 @@
 
 - (void)commonInitNewsViewController
 {
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"icon_home_tb_news"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_home_tb_news"]];
     //self.tabBarController.tabBar.tintColor = [UIColor clearColor];
     //[self.tabBarController.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_backgroundimage"]];
     //self.tabBarController.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"tabbar_selectionindicatorimage"];
@@ -78,15 +79,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //自定义NavigationBar
-    CustomNavigationBar* customNavigationBar2 = (CustomNavigationBar*)self.customNavigationBar;
-    [customNavigationBar2 setBackgroundWith:[UIImage imageNamed:@"navigation_bg"]];
     // your code here
 }
 
 - (void)viewDidUnload {
 	// your code here
     [self setCustomNavigationBar:nil];
+    [self setTitleNavigationItem:nil];
     [super viewDidUnload];
 }
 

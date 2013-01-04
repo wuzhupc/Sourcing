@@ -1,20 +1,16 @@
 //
-//  HomeTabBarController.m
+//  MoreViewController.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-2.
+//  Created by wuzhu on 13-1-4.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "HomeTabBarController.h"
-#import "ChannelVO.h"
-#import "StringUtil.h"
-#import "ApplicationSet.h"
-#import "BaseHomeViewController.h"
-
+#import "MoreViewController.h"
+#import "CustomNavigationBar.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -28,7 +24,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
 
-@interface HomeTabBarController ()
+@interface MoreViewController ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
@@ -39,7 +35,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation HomeTabBarController
+@implementation MoreViewController
+
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
@@ -53,12 +50,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitHomeTabBarController
+- (void)commonInitMoreViewController
 {
-    self.tabBar.tintColor = [UIColor clearColor];
-    self.tabBar.backgroundColor = [[UIColor alloc] initWithRed:48.0/255 green:48.0/255 blue:48.0/255 alpha:0.5];
-    //[self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_backgroundimage"]];
-    //self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"tabbar_selectionindicatorimage"];
+    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"icon_home_tb_more"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_home_tb_more"]];
 }
 
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
@@ -66,7 +60,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        [self commonInitHomeTabBarController];
+        [self commonInitMoreViewController];
     }
     return self;
 }
@@ -76,7 +70,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitHomeTabBarController];
+        [self commonInitMoreViewController];
     }
     return self;
 }
@@ -84,8 +78,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // your code here
-    [self setTabBarControllerTitle];
-    
 }
 
 - (void)viewDidUnload {
@@ -101,28 +93,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
--(void) setTabBarControllerTitle
-{
-    if([self.viewControllers count]==0)
-        return;
-    NSArray *channels = [ChannelVO getFatherChannels:[[ApplicationSet shareData] channels]];
-   if(channels==0||[channels count]==0)
-       return;
-    [self initHomeViewController:(BaseHomeViewController *)[self.viewControllers objectAtIndex:0] channel:[ChannelVO getChannel:channels type:TYPE_FATHER_NEWS]];
-    [self initHomeViewController:(BaseHomeViewController *)[self.viewControllers objectAtIndex:1] channel:[ChannelVO getChannel:channels type:TYPE_FATHER_PERSON]];
-    [self initHomeViewController:(BaseHomeViewController *)[self.viewControllers objectAtIndex:2] channel:[ChannelVO getChannel:channels type:TYPE_FATHER_USER]];
-    [self initHomeViewController:(BaseHomeViewController *)[self.viewControllers objectAtIndex:3] channel:[ChannelVO getChannel:channels type:TYPE_FATHER_MORE]];
-    
-}
 
--(void)initHomeViewController:(BaseHomeViewController *)kbvc channel:(ChannelVO *)kvo
-{
-    if(kvo!=nil&&kbvc!=nil)
-    {
-        [kbvc setFatherchannel:kvo];
-        [kbvc setNavTitle:kvo.channelName];
-    }
-}
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 

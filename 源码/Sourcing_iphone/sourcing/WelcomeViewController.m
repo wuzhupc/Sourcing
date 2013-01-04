@@ -7,7 +7,6 @@
 //
 
 #import "WelcomeViewController.h"
-#import "FileUtil.h"
 #import "JsonParser.h"
 #import "ChannelVO.h"
 #import "ApplicationSet.h"
@@ -76,9 +75,9 @@
 {
     if ([ApplicationSet shareData].channels == nil)
     {
-        NSString *channelinfo =  [FileUtil getAssetsFileContent:@"channelinfo" oftype:@"json"];
-        ResponseVO *resp = [[ResponseVO alloc] init];
-        NSArray *array = [JsonParser parseJsonToList:channelinfo respVO:&resp ref:nil];
+        NSArray *array = [ChannelVO initChannelsFromAssets];
+        //ChannelVO *cvo = [array objectAtIndex:0];
+        //NSLog(@"%@ type:%d",[cvo channelName],[cvo type]);
         [ApplicationSet shareData].channels = array;
     }
 }
