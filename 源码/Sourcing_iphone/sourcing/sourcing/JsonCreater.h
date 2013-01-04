@@ -15,10 +15,19 @@
 }
 @property(nonatomic,retain) NSMutableDictionary *paramsDict;
 
-- (void)setParam:(NSString *) name paramValue:(NSString *) value;
+- (void)setParam:(NSString *) name paramValue:(id) value;
 - (void)setParamAutoProEmpty:(NSString *) name paramValue:(NSString *) value;
-- (NSString*)createJson:(NSString*)id createJsonCommandName:(NSString*) commandName;
-
+/**
+ * 生成JSON语句
+ * @kcommandName commandName
+ */
+- (NSString*)createJson:(NSString*) kcommandName;
+/**
+ * 生成JSON语句
+ * @kid jsonid
+ * @kcommandName commandName
+ */
+- (NSString*)createJson:(NSString*) kcommandName jsonid:(NSString*)kid;
 
 @end
 

@@ -73,10 +73,8 @@
 		32120B5F168DD32B00DBF915 /* S3 in Resources */ = {isa = PBXBuildFile; fileRef = 32120B54168DD32B00DBF915 /* S3 */; };
 		32120B63168DD39700DBF915 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B62168DD39700DBF915 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32120B65168DD4AF00DBF915 /* DataInterface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32120B64168DD4AF00DBF915 /* DataInterface.plist */; };
-		32D0C1A4168DE75600902708 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1A3168DE75600902708 /* MBProgressHUD.m */; };
 		32D0C1AD168DEDFD00902708 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */; };
 		32D0C1AE168DEDFD00902708 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */; };
-		32D0C1B2168DEE4D00902708 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1B1168DEE4D00902708 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32D0C1B9168DEEFD00902708 /* ToastHintUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */; };
 		32D0C1BD168DEFB900902708 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1BC168DEFB800902708 /* CFNetwork.framework */; };
 		32D0C1C1168DF1BC00902708 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1C0168DF1BC00902708 /* QuartzCore.framework */; };
@@ -85,6 +83,21 @@
 		32D0C1C7168DF24500902708 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 32D0C1C6168DF24500902708 /* libz.dylib */; };
 		32D0C1D1168DF8DD00902708 /* NSString+MD5Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1CE168DF8DD00902708 /* NSString+MD5Addition.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32D0C1D2168DF8DD00902708 /* UIDevice+IdentifierAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1D0168DF8DD00902708 /* UIDevice+IdentifierAddition.m */; };
+		32D6CB391691D4FE0076B2B1 /* MobileUserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D6CB381691D4FE0076B2B1 /* MobileUserService.m */; };
+		32D6CB3C16928DB00076B2B1 /* MobileInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D6CB3B16928DB00076B2B1 /* MobileInfoService.m */; };
+		32E3A6CD16930E5300379FF6 /* iToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A6CC16930E5300379FF6 /* iToast.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32E3A6D016930E6900379FF6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A6CF16930E6900379FF6 /* MBProgressHUD.m */; };
+		32E3A6F616942E2800379FF6 /* CustomBackButtonAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A6F316942E2800379FF6 /* CustomBackButtonAppDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32E3A6F716942E2800379FF6 /* CustomNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A6F516942E2800379FF6 /* CustomNavigationBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		32E3A6F916942F0000379FF6 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A6F816942F0000379FF6 /* Home.storyboard */; };
+		32E3A6FC1694385C00379FF6 /* HomeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A6FB1694385C00379FF6 /* HomeTabBarController.m */; };
+		32E3A6FF16944F8300379FF6 /* navigation_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A6FD16944F8300379FF6 /* navigation_bg.png */; };
+		32E3A70016944F8300379FF6 /* navigation_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A6FE16944F8300379FF6 /* navigation_bg@2x.png */; };
+		32E3A7081694689000379FF6 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E3A7071694689000379FF6 /* NewsViewController.m */; };
+		32E3A70D16946A1500379FF6 /* tabbar_backgroundimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70916946A1500379FF6 /* tabbar_backgroundimage.png */; };
+		32E3A70E16946A1500379FF6 /* tabbar_backgroundimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70A16946A1500379FF6 /* tabbar_backgroundimage@2x.png */; };
+		32E3A70F16946A1500379FF6 /* tabbar_selectionindicatorimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70B16946A1500379FF6 /* tabbar_selectionindicatorimage.png */; };
+		32E3A71016946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70C16946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -208,13 +221,9 @@
 		32120B61168DD39700DBF915 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = sourcing/Reachability/Reachability.h; sourceTree = "<group>"; };
 		32120B62168DD39700DBF915 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = sourcing/Reachability/Reachability.m; sourceTree = "<group>"; };
 		32120B64168DD4AF00DBF915 /* DataInterface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataInterface.plist; sourceTree = "<group>"; };
-		32D0C1A2168DE75600902708 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = sourcing/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
-		32D0C1A3168DE75600902708 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = sourcing/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
 		32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = sourcing/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		32D0C1AB168DEDFD00902708 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = sourcing/SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = sourcing/SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
-		32D0C1B0168DEE4D00902708 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = sourcing/iToast/iToast.h; sourceTree = "<group>"; };
-		32D0C1B1168DEE4D00902708 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = sourcing/iToast/iToast.m; sourceTree = "<group>"; };
 		32D0C1B7168DEEFD00902708 /* ToastHintUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToastHintUtil.h; path = sourcing/ToastHintUtil.h; sourceTree = "<group>"; };
 		32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToastHintUtil.m; path = sourcing/ToastHintUtil.m; sourceTree = "<group>"; };
 		32D0C1BA168DEF6A00902708 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -228,6 +237,29 @@
 		32D0C1CE168DF8DD00902708 /* NSString+MD5Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+MD5Addition.m"; path = "sourcing/UIDevice-with-UniqueIdentifier/NSString+MD5Addition.m"; sourceTree = "<group>"; };
 		32D0C1CF168DF8DD00902708 /* UIDevice+IdentifierAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIDevice+IdentifierAddition.h"; path = "sourcing/UIDevice-with-UniqueIdentifier/UIDevice+IdentifierAddition.h"; sourceTree = "<group>"; };
 		32D0C1D0168DF8DD00902708 /* UIDevice+IdentifierAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+IdentifierAddition.m"; path = "sourcing/UIDevice-with-UniqueIdentifier/UIDevice+IdentifierAddition.m"; sourceTree = "<group>"; };
+		32D6CB371691D4FE0076B2B1 /* MobileUserService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileUserService.h; path = sourcing/Services/MobileUserService.h; sourceTree = "<group>"; };
+		32D6CB381691D4FE0076B2B1 /* MobileUserService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileUserService.m; path = sourcing/Services/MobileUserService.m; sourceTree = "<group>"; };
+		32D6CB3A16928DB00076B2B1 /* MobileInfoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileInfoService.h; path = sourcing/Services/MobileInfoService.h; sourceTree = "<group>"; };
+		32D6CB3B16928DB00076B2B1 /* MobileInfoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileInfoService.m; path = sourcing/Services/MobileInfoService.m; sourceTree = "<group>"; };
+		32E3A6CB16930E5300379FF6 /* iToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iToast.h; path = sourcing/iToast/iToast.h; sourceTree = "<group>"; };
+		32E3A6CC16930E5300379FF6 /* iToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iToast.m; path = sourcing/iToast/iToast.m; sourceTree = "<group>"; };
+		32E3A6CE16930E6900379FF6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = sourcing/MBProgressHUD/MBProgressHUD.h; sourceTree = "<group>"; };
+		32E3A6CF16930E6900379FF6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = sourcing/MBProgressHUD/MBProgressHUD.m; sourceTree = "<group>"; };
+		32E3A6F216942E2800379FF6 /* CustomBackButtonAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBackButtonAppDelegate.h; path = "sourcing/idev-recipes/CustomBackButtonAppDelegate.h"; sourceTree = "<group>"; };
+		32E3A6F316942E2800379FF6 /* CustomBackButtonAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomBackButtonAppDelegate.m; path = "sourcing/idev-recipes/CustomBackButtonAppDelegate.m"; sourceTree = "<group>"; };
+		32E3A6F416942E2800379FF6 /* CustomNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomNavigationBar.h; path = "sourcing/idev-recipes/CustomNavigationBar.h"; sourceTree = "<group>"; };
+		32E3A6F516942E2800379FF6 /* CustomNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomNavigationBar.m; path = "sourcing/idev-recipes/CustomNavigationBar.m"; sourceTree = "<group>"; };
+		32E3A6F816942F0000379FF6 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		32E3A6FA1694385B00379FF6 /* HomeTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTabBarController.h; sourceTree = "<group>"; };
+		32E3A6FB1694385C00379FF6 /* HomeTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTabBarController.m; sourceTree = "<group>"; };
+		32E3A6FD16944F8300379FF6 /* navigation_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navigation_bg.png; path = sourcing/Images/navigation_bg.png; sourceTree = "<group>"; };
+		32E3A6FE16944F8300379FF6 /* navigation_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navigation_bg@2x.png"; path = "sourcing/Images/navigation_bg@2x.png"; sourceTree = "<group>"; };
+		32E3A7061694689000379FF6 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		32E3A7071694689000379FF6 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		32E3A70916946A1500379FF6 /* tabbar_backgroundimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_backgroundimage.png; path = sourcing/Images/tabbar_backgroundimage.png; sourceTree = "<group>"; };
+		32E3A70A16946A1500379FF6 /* tabbar_backgroundimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_backgroundimage@2x.png"; path = "sourcing/Images/tabbar_backgroundimage@2x.png"; sourceTree = "<group>"; };
+		32E3A70B16946A1500379FF6 /* tabbar_selectionindicatorimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_selectionindicatorimage.png; path = sourcing/Images/tabbar_selectionindicatorimage.png; sourceTree = "<group>"; };
+		32E3A70C16946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_selectionindicatorimage@2x.png"; path = "sourcing/Images/tabbar_selectionindicatorimage@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -325,6 +357,12 @@
 		32120A961689858500DBF915 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				32E3A70916946A1500379FF6 /* tabbar_backgroundimage.png */,
+				32E3A70A16946A1500379FF6 /* tabbar_backgroundimage@2x.png */,
+				32E3A70B16946A1500379FF6 /* tabbar_selectionindicatorimage.png */,
+				32E3A70C16946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png */,
+				32E3A6FD16944F8300379FF6 /* navigation_bg.png */,
+				32E3A6FE16944F8300379FF6 /* navigation_bg@2x.png */,
 				32120A90168983FE00DBF915 /* Icon@2x.png */,
 				32120A8E168983DA00DBF915 /* Icon.png */,
 			);
@@ -337,6 +375,11 @@
 				32120A98168985E000DBF915 /* WelcomeViewController.h */,
 				32120A99168985E000DBF915 /* WelcomeViewController.m */,
 				32120A9A168985E000DBF915 /* WelcomeViewController.xib */,
+				32E3A6F816942F0000379FF6 /* Home.storyboard */,
+				32E3A6FA1694385B00379FF6 /* HomeTabBarController.h */,
+				32E3A6FB1694385C00379FF6 /* HomeTabBarController.m */,
+				32E3A7061694689000379FF6 /* NewsViewController.h */,
+				32E3A7071694689000379FF6 /* NewsViewController.m */,
 			);
 			name = UI;
 			path = ..;
@@ -438,6 +481,7 @@
 		32120B07168B451800DBF915 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				32E3A6F116942CED00379FF6 /* idev-recipes */,
 				32D0C1CC168DF8CA00902708 /* UIDevice-with-UniqueIdentifier */,
 				32D0C1AF168DEE4000902708 /* iToast */,
 				32D0C1A9168DEDE900902708 /* SVProgressHUD */,
@@ -485,6 +529,10 @@
 				32120B36168DD0DD00DBF915 /* BaseJsonService.h */,
 				32120B37168DD0DD00DBF915 /* BaseJsonService.m */,
 				32120B38168DD0DD00DBF915 /* BaseServiceDelegate.h */,
+				32D6CB371691D4FE0076B2B1 /* MobileUserService.h */,
+				32D6CB381691D4FE0076B2B1 /* MobileUserService.m */,
+				32D6CB3A16928DB00076B2B1 /* MobileInfoService.h */,
+				32D6CB3B16928DB00076B2B1 /* MobileInfoService.m */,
 			);
 			name = Services;
 			path = ..;
@@ -532,8 +580,8 @@
 		32D0C1A1168DE74100902708 /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				32D0C1A2168DE75600902708 /* MBProgressHUD.h */,
-				32D0C1A3168DE75600902708 /* MBProgressHUD.m */,
+				32E3A6CE16930E6900379FF6 /* MBProgressHUD.h */,
+				32E3A6CF16930E6900379FF6 /* MBProgressHUD.m */,
 			);
 			name = MBProgressHUD;
 			sourceTree = "<group>";
@@ -551,8 +599,8 @@
 		32D0C1AF168DEE4000902708 /* iToast */ = {
 			isa = PBXGroup;
 			children = (
-				32D0C1B0168DEE4D00902708 /* iToast.h */,
-				32D0C1B1168DEE4D00902708 /* iToast.m */,
+				32E3A6CB16930E5300379FF6 /* iToast.h */,
+				32E3A6CC16930E5300379FF6 /* iToast.m */,
 			);
 			name = iToast;
 			sourceTree = "<group>";
@@ -566,6 +614,17 @@
 				32D0C1D0168DF8DD00902708 /* UIDevice+IdentifierAddition.m */,
 			);
 			name = "UIDevice-with-UniqueIdentifier";
+			sourceTree = "<group>";
+		};
+		32E3A6F116942CED00379FF6 /* idev-recipes */ = {
+			isa = PBXGroup;
+			children = (
+				32E3A6F216942E2800379FF6 /* CustomBackButtonAppDelegate.h */,
+				32E3A6F316942E2800379FF6 /* CustomBackButtonAppDelegate.m */,
+				32E3A6F416942E2800379FF6 /* CustomNavigationBar.h */,
+				32E3A6F516942E2800379FF6 /* CustomNavigationBar.m */,
+			);
+			name = "idev-recipes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +695,13 @@
 				32120B5F168DD32B00DBF915 /* S3 in Resources */,
 				32120B65168DD4AF00DBF915 /* DataInterface.plist in Resources */,
 				32D0C1AD168DEDFD00902708 /* SVProgressHUD.bundle in Resources */,
+				32E3A6F916942F0000379FF6 /* Home.storyboard in Resources */,
+				32E3A6FF16944F8300379FF6 /* navigation_bg.png in Resources */,
+				32E3A70016944F8300379FF6 /* navigation_bg@2x.png in Resources */,
+				32E3A70D16946A1500379FF6 /* tabbar_backgroundimage.png in Resources */,
+				32E3A70E16946A1500379FF6 /* tabbar_backgroundimage@2x.png in Resources */,
+				32E3A70F16946A1500379FF6 /* tabbar_selectionindicatorimage.png in Resources */,
+				32E3A71016946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,12 +759,18 @@
 				32120B5B168DD32B00DBF915 /* ASIInputStream.m in Sources */,
 				32120B5C168DD32B00DBF915 /* ASINetworkQueue.m in Sources */,
 				32120B63168DD39700DBF915 /* Reachability.m in Sources */,
-				32D0C1A4168DE75600902708 /* MBProgressHUD.m in Sources */,
 				32D0C1AE168DEDFD00902708 /* SVProgressHUD.m in Sources */,
-				32D0C1B2168DEE4D00902708 /* iToast.m in Sources */,
 				32D0C1B9168DEEFD00902708 /* ToastHintUtil.m in Sources */,
 				32D0C1D1168DF8DD00902708 /* NSString+MD5Addition.m in Sources */,
 				32D0C1D2168DF8DD00902708 /* UIDevice+IdentifierAddition.m in Sources */,
+				32D6CB391691D4FE0076B2B1 /* MobileUserService.m in Sources */,
+				32D6CB3C16928DB00076B2B1 /* MobileInfoService.m in Sources */,
+				32E3A6CD16930E5300379FF6 /* iToast.m in Sources */,
+				32E3A6D016930E6900379FF6 /* MBProgressHUD.m in Sources */,
+				32E3A6F616942E2800379FF6 /* CustomBackButtonAppDelegate.m in Sources */,
+				32E3A6F716942E2800379FF6 /* CustomNavigationBar.m in Sources */,
+				32E3A6FC1694385C00379FF6 /* HomeTabBarController.m in Sources */,
+				32E3A7081694689000379FF6 /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

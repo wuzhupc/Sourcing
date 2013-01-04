@@ -12,6 +12,7 @@
 #import "ChannelVO.h"
 #import "ApplicationSet.h"
 #import "UserVO.h"
+#import "MobileUserService.h"
 
 @interface WelcomeViewController ()
 
@@ -31,23 +32,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    if ([UIScreen mainScreen].scale == 2.f && screenHeight == 568.0f) {
+        self.ivWelcome.image = [UIImage imageNamed:@"Default-568h@2x.png"];
+    } else {
+        self.ivWelcome.image = [UIImage imageNamed:@"Default.png"];
+    }
     [self showNowVerInfo];
     // Do any additional setup after loading the view from its nib.
-    
-//    //TEST
-//    NSString *channelinfo =  [FileUtil getAssetsFileContent:@"channelinfo" oftype:@"json"];
-//    //NSLog(@"channelinfo.json:%@" ,channelinfo);
-//    ResponseVO *resp = [[ResponseVO alloc] init];
-//    NSArray *array = [JsonParser parseJsonToList:channelinfo respVO:&resp ref:nil];
-//    if(array == nil||[array count]==0)
-//        NSLog(@"转换失败");
-//    else
-//    {
-//        ChannelVO *channelvo = [array objectAtIndex:1];
-//        
-//        NSLog(@"%d 第2个对象：id:%@ channelid:%@ channelname:%@",[array count],[channelvo Id],[channelvo ChannelID],[channelvo channelName]);
-//    }
-    //TODO 
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -74,7 +67,9 @@
     UserVO *userinfo  = [UserVO getLastLoginUserInfo];
     if(userinfo==nil)
         return;
-    //TODO 验证登录用户信息
+    //验证登录用户信息
+    MobileUserService *service = [[MobileUserService alloc] initWithDelegate:self tag:CINT_TAG_CHECKUSER_LOGIN];
+    [service userLogin:userinfo.useraccount password:userinfo.password];
 }
 
 -(void)loadChannelInfo
@@ -90,7 +85,8 @@
 
 -(void)showHome
 {
-    //TODO
+    UIStoryboard *stryBoard=[UIStoryboard storyboardWithName:@"Home" bundle:nil];
+    self.view.window.rootViewController=[stryBoard instantiateInitialViewController];
 }
 
 /**
@@ -113,6 +109,34 @@
 
 - (void)viewDidUnload {
     [self setLaVersion:nil];
+    [self setIvWelcome:nil];
     [super viewDidUnload];
+}
+
+-(void)serviceResult:(ResponseVO *)result
+{
+    if (result==nil) {
+        return;
+    }
+    if(result.tag == CINT_TAG_CHECKUSER_LOGIN)
+    {
+        if([result isSucess])
+        {
+            ResponseVO *resp = [[ResponseVO alloc] init];
+            UserVO *uservo = [JsonParser parseJsonToEntity:result.msg respVO:&resp ref:nil];
+            if([resp isSucess])
+            {
+                [[ApplicationSet shareData] setLoginUserInfo:uservo saveinfo:YES];
+            }
+            else
+            {
+                NSLog(@"%@ checkuserlogin JsonParser parseJsonToEntity error:%@",[[self class] description],result.msg);
+            }
+        }
+        else
+        {
+            NSLog(@"%@ checkuserlogin error:%@",[[self class] description],result.msg);
+        }
+    }
 }
 @end

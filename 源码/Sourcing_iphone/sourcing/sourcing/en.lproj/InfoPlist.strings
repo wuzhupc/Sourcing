@@ -16,3 +16,12 @@
 
 /* 取消按钮 */
 "Cancel" = "Cancel";
+
+
+/* 数据加载中 */
+"Data Loading" = "Data Loading...";
+
+/* 提示无资讯信息 */
+"Nothing info." = "Nothing info.";
+/* 提示用户未登录 */
+"No user login." = "No user login.";

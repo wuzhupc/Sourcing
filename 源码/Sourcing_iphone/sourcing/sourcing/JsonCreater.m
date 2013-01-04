@@ -32,9 +32,9 @@
  * @param value auth值，如果为空,则忽略
  */
 
-- (void)setParam:(NSString *) name paramValue:(NSString *) value{
+- (void)setParam:(NSString *) name paramValue:(id) value{
     //self.mParamsDict    = [[NSDictionary alloc] init];
-    if ([StringUtil isEmptyStr:name] || [StringUtil isEmptyStr:value]) {
+    if ([StringUtil isEmptyStr:name] || [StringUtil isEmpty:value]) {
         NSLog(@"paramName:%@ ? > paramValue:%@ ",name,value);
         return;
     }
@@ -59,38 +59,41 @@
     else
         [self.paramsDict setValue:value forKey:name];
 }
-
+/**
+ * 生成JSON语句
+ * @kcommandName commandName
+ */
+- (NSString*)createJson:(NSString*) kcommandName
+{
+    return [self createJson:kcommandName jsonid:nil];
+}
 
 /**
  * 生成JSON语句
- * @createJsonID jsonid
- * @createJsonID commandName
+ * @kid jsonid
+ * @kcommandName commandName
  */
-
-- (NSString*)createJson:(NSString*)jsonid createJsonCommandName:(NSString*) commandName
+- (NSString*)createJson:(NSString*) kcommandName jsonid:(NSString*)kid
 {
-    if ([StringUtil isEmptyStr:jsonid]) {
-        jsonid=[NSString stringWithFormat:@"%lli",[TimeUtil currentTimeMillis]];
+    if ([StringUtil isEmptyStr:kid]) {
+        kid=[NSString stringWithFormat:@"%lli",[TimeUtil currentTimeMillis]];
     }
     
-    if ([StringUtil isEmptyStr:commandName]) {
+    if ([StringUtil isEmptyStr:kcommandName]) {
         return  nil;
     }
-    NSMutableDictionary *jsonRootDic = [[NSMutableDictionary alloc]init];
     NSMutableDictionary *jsonSubDic = [[NSMutableDictionary alloc]init];
-    [jsonSubDic setObject:jsonid forKey:@"id"];
-    [jsonSubDic setObject:commandName forKey:@"command"];
+    [jsonSubDic setObject:kid forKey:@"id"];
+    [jsonSubDic setObject:kcommandName forKey:@"command"];
     
     if(self.paramsDict.count>0)
     {
         [jsonSubDic setObject:self.paramsDict forKey:@"params"];
     }
     
-    [jsonRootDic setObject:jsonSubDic forKey:@"newsreader_request"];
-    
-    if([NSJSONSerialization isValidJSONObject:jsonRootDic])
+    if([NSJSONSerialization isValidJSONObject:jsonSubDic])
     {
-        NSData *jsonData = [jsonRootDic toJSON];
+        NSData *jsonData = [jsonSubDic toJSON];
         if(jsonData != nil)
             return [[NSString alloc] initWithData:jsonData
                                          encoding:NSUTF8StringEncoding];

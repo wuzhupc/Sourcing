@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
-@class ResponseVo;
+@class ResponseVO;
 @protocol BaseServiceDelegate
 
 @optional
@@ -15,6 +15,6 @@
  * service结果
  * @param result  结果
  */
--(void)serviceResult:(ResponseVo *)result;
+-(void)serviceResult:(ResponseVO *)result;
 
 @end

@@ -15,7 +15,12 @@
  *@param str 要判断的字符串
  *@return 为空返回YES 否则返回NO
  */
-+ (BOOL) isEmptyStr:(NSString *) str;
++(BOOL) isEmptyStr:(NSString *) str;
+
+/**
+ *判断是否为空
+ */
++(BOOL)isEmpty:(id) thing;
 
 + (NSMutableString *) initMutableStr:(NSString *)str;
 @end

@@ -12,7 +12,7 @@
 
 + (BOOL) isEmptyStr:(NSString *) str
 {
-    if (!str) {
+    if ([StringUtil isEmpty:str]) {
         return YES;
     }
     if (str.length==0)
@@ -27,5 +27,14 @@
     NSMutableString *result = [NSMutableString stringWithCapacity:[str length]];
     [result appendString:str];
     return result;
+}
+
++(BOOL)isEmpty:(id) thing {
+    return thing == nil
+    || ([thing isEqual:[NSNull null]])
+    || ([thing respondsToSelector:@selector(length)]
+        && [(NSData *)thing length] == 0)
+    || ([thing respondsToSelector:@selector(count)]
+        && [(NSArray *)thing count] == 0);
 }
 @end

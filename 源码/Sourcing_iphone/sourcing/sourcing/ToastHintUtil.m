@@ -9,6 +9,7 @@
 #import "ToastHintUtil.h"
 #import "iToast.h"
 #import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
 
 @implementation ToastHintUtil
 +(void)showHint:(NSString *)msg parentview:(UIView *)view
@@ -26,4 +27,15 @@
 {
     [[[[iToast makeText:msg] setGravity:iToastGravityBottom] setDuration:iToastDurationNormal] show];
 }
+
++(void)showHintError:(NSString *)msg
+{
+    [SVProgressHUD showErrorWithStatus:msg];
+}
+
++(void)showhintSucess:(NSString *)msg
+{
+    [SVProgressHUD showSuccessWithStatus:msg];
+}
+
 @end

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ASIHTTPRequestDelegate.h"
+#import "UserVO.h"
+
+#define CINT_PAGE_SIZE [NSNumber numberWithInt:20]
 
 @interface BaseJsonService : NSObject <ASIHTTPRequestDelegate>
 {
@@ -17,18 +20,23 @@
     NSString *_suffix;
 }
 
+-(id)initWithDelegate:(id)delegate tag:(NSInteger)ktag;
+
 +(NSString *)getDevID;
+
++(UserVO *)getUserInfo;
 
 -(void)setAssetsFileInfo:(NSString *)kcommandName suffix:(NSString *)ksuffix;
 
--(void) getData:(NSString *) json delegate:(id)delegate tag:(NSInteger)mtag;
+-(void) getData:(NSString *) json;
 
--(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate tag:(NSInteger)mtag;
+-(void) getData:(NSString *) json url:(NSString *)url;
 
 
--(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate process:(BOOL)showprocess tag:(NSInteger)mtag;
+-(void) getData:(NSString *) json url:(NSString *)url process:(BOOL)showprocess;
 
--(void) getData:(NSString *) json url:(NSString *)url delegate:(id)delegate process:(BOOL)showprocess processcontent:(NSString *)showprocesscontent tag:(NSInteger)mtag;
+-(void) getData:(NSString *) json url:(NSString *)url process:(BOOL)showprocess processcontent:(NSString *)showprocesscontent;
 
-+(void) sendServiceFailInfo:(id)delegate msg:(NSString*)msgconent tag:(NSInteger)mtag;
+-(void) sendServiceFailInfo:(NSString*)msg;
+-(void) sendServiceSucessInfo:(NSString*)conent;
 @end

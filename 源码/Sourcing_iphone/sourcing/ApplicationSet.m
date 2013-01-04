@@ -27,6 +27,13 @@ static ApplicationSet *_shareData = nil;
         return _shareData;
     }
 }
+-(id)init
+{
+    if(_shareData)
+        return  _shareData;
+    self = [super init];
+    return  self;
+}
 
 -(void)setLoginUserInfo:(UserVO *)kuserVO saveinfo:(BOOL)ksave
 {

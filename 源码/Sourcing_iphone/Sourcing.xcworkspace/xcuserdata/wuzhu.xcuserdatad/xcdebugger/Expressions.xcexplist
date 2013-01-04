@@ -3,15 +3,31 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[HomeTabBarController viewDidLoad]:HomeTabBarController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.tabBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WelcomeViewController viewDidLoad]:WelcomeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController commonInitNewsViewController]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController.navigationBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
          <PersistentStrings>
             <PersistentString
                value = "[NSBundle mainBundle]">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[WelcomeViewController viewDidLoad]:WelcomeViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

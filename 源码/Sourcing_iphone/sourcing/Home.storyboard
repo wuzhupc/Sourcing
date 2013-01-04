@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="zMB-X6-2yx">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
+    </dependencies>
+    <scenes>
+        <!--Home Tab Bar Controller-->
+        <scene sceneID="F9d-sF-7hH">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="zMB-X6-2yx" customClass="HomeTabBarController" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="jOK-yf-uzf">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cbn-Ao-64b" kind="relationship" relationship="viewControllers" id="tr2-7J-avA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uKx-s5-ce3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-828"/>
+        </scene>
+        <!--News View Controller - Item-->
+        <scene sceneID="x8z-id-9w1">
+            <objects>
+                <viewController id="cbn-Ao-64b" customClass="NewsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mrb-Gd-Edu">
+                        <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dEb-lY-fb3" customClass="CustomNavigationBar">
+                                <items>
+                                    <navigationItem title="厦门服务外包网" id="ozz-ni-h4X"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dEb-lY-fb3" firstAttribute="trailing" secondItem="mrb-Gd-Edu" secondAttribute="trailing" type="default" id="GXa-LX-7q1"/>
+                            <constraint firstItem="dEb-lY-fb3" firstAttribute="leading" secondItem="mrb-Gd-Edu" secondAttribute="leading" type="default" id="vWB-Ev-smO"/>
+                            <constraint firstItem="dEb-lY-fb3" firstAttribute="top" secondItem="mrb-Gd-Edu" secondAttribute="top" type="default" id="wbL-3D-0pP"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Uar-Nx-G0r"/>
+                    <connections>
+                        <outlet property="customNavigationBar" destination="dEb-lY-fb3" id="G8w-qp-69A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ry2-e4-7jY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="561" y="-1020"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
