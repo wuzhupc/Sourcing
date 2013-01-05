@@ -191,9 +191,9 @@ static NSString *kReuseIdentifier = @"UserIndentifier";
 - (void)addTabWithTitle:(NSString *)title 
 {
     //if the new tab is about to be off the tab view's bounds , here simply not adding it ;
-    if (CINT_TAB_WIDTH *(self.NumberOfTabs)> self.bounds.size.width) {
-        return;
-    }
+//    if (CINT_TAB_WIDTH *(self.NumberOfTabs)> self.bounds.size.width) {
+//        return;
+//    }
     
 	if (!title) {
 		title = @"new Tab";
@@ -278,6 +278,8 @@ static NSString *kReuseIdentifier = @"UserIndentifier";
     // caculate and save frame for each tab
     const CGFloat tabWidth =[self getTabWidth];
     const float overlapWidth = OVERLAP_WIDTH ;
+    CGRect newframe = CGRectMake(self.frame.origin.x, self.frame.origin.y, tabWidth*self.NumberOfTabs, self.frame.size.height);
+    self.frame = newframe;
     CGFloat height = self.bounds.size.height;
     CGFloat right = 0;
     

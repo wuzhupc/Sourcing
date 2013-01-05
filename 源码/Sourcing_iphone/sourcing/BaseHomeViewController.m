@@ -81,8 +81,8 @@
     CustomNavigationBar* customNavigationBar2 = (CustomNavigationBar*)self.customNavigationBar;
     [customNavigationBar2 setBackgroundWith:[UIImage imageNamed:@"navigation_bg"]];
     //
-    //if(self.titleNavigationItem!=nil&&self.fatherchannel!=nil)
-    //    self.titleNavigationItem.title = self.fatherchannel.channelName;
+    if(self.titleNavigationItem!=nil&&self.fatherchannel!=nil)
+        self.titleNavigationItem.title = NSLocalizedString(@"applicationname", @"应用程序名称"); 
 }
 
 - (void)viewDidUnload {

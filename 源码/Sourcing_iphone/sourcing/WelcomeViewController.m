@@ -84,7 +84,7 @@
 
 -(void)showHome
 {
-    UIStoryboard *stryBoard=[UIStoryboard storyboardWithName:@"Home" bundle:nil];
+    UIStoryboard *stryBoard=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
     self.view.window.rootViewController=[stryBoard instantiateInitialViewController];
 }
 

@@ -41,6 +41,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
+@property (weak, nonatomic) IBOutlet UISearchBar *searchkeySearchBar;
 
 
 @end

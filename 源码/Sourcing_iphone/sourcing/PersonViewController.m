@@ -81,6 +81,7 @@
 
 - (void)viewDidUnload {
 	// your code here
+    [self setSearchkeySearchBar:nil];
     [super viewDidUnload];
 }
 

@@ -11,6 +11,12 @@
 
 #import "NewsViewController.h"
 #import "CustomNavigationBar.h"
+#import "ChannelVO.h"
+#import "FileUtil.h"
+#import "JsonParser.h"
+#import "MobileInfoService.h"
+#import "NewsVO.h"
+#import "ApplicationSet.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -79,13 +85,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // your code here
+    [self initSubChannels];
 }
 
 - (void)viewDidUnload {
 	// your code here
+    subChannels = nil;
+    subChannelBTV = nil;
     [self setCustomNavigationBar:nil];
     [self setTitleNavigationItem:nil];
+    [self setSubChannelScrollView:nil];
     [super viewDidUnload];
 }
 
@@ -98,11 +107,47 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
 
+-(void)initSubChannels
+{
+    if (self.fatherchannel!=nil) {
+        subChannels = [ChannelVO getChannelsWithFatherID:[ApplicationSet shareData].channels father:self.fatherchannel.ChannelID];
+    }
+    if(subChannels==nil||[subChannels count]==0)
+    {
+        [self.subChannelScrollView setHidden:YES];
+    }
+    else
+    {
+        [self.subChannelScrollView setHidden:NO];
+        NSMutableArray *channelnames = [[NSMutableArray alloc] initWithCapacity:[subChannels count]];
+        for (ChannelVO *vo in subChannels) {
+            [channelnames addObject:vo.channelName];
+        }
+        //TEST
+        //[channelnames addObject:@"AAAA"];
+        //[channelnames addObject:@"BBBB"];
+        //
+        subChannelBTV = [[BrowserTabView alloc] initWithTabTitles:channelnames andDelegate:self];
+        
+        [self.subChannelScrollView addSubview:subChannelBTV];
+        //NSLog(@"%f %f",subChannelBTV.frame.size.height,subChannelBTV.frame.size.width);
+        
+        [self.subChannelScrollView setContentSize:subChannelBTV.frame.size];
+    }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Delegate methods
-
+-(void)BrowserTabView:(BrowserTabView *)browserTabView didSelecedAtIndex:(NSUInteger)index
+{
+    if (subChannels==0||index>[subChannels count]) {
+        return;
+    }
+    ChannelVO *newselVO = [subChannels objectAtIndex:index];
+    NSLog(@"%@",newselVO.channelName);
+}
 
 @end

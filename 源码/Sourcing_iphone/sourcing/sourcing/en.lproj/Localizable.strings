@@ -1,4 +1,8 @@
 /* Localized versions of Info.plist keys */
+
+/* 应用程序名称 */
+"applicationname" = "厦门服务外包网";
+
 /* 版本提示信息 */
 "Ver:%@" = "Ver:%@";
 
