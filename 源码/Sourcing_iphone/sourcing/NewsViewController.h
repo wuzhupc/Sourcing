@@ -13,6 +13,8 @@
 #import "BaseHomeViewController.h"
 #import "BrowserTabView.h"
 #import "ChannelVO.h"
+#import "PullingRefreshTableView.h"
+
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -26,10 +28,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface NewsViewController : BaseHomeViewController<BrowserTabViewDelegate>
+@interface NewsViewController : BaseHomeViewController<BrowserTabViewDelegate,PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate>
 {
     BrowserTabView *subChannelBTV;
     NSArray *subChannels;
+    PullingRefreshTableView *tableView;
 }
 
 
@@ -39,7 +42,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Outlets
 @property (weak, nonatomic) IBOutlet UIScrollView *subChannelScrollView;
-
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods

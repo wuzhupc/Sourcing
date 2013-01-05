@@ -85,6 +85,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initTableView];
     [self initSubChannels];
 }
 
@@ -92,6 +93,7 @@
 	// your code here
     subChannels = nil;
     subChannelBTV = nil;
+    tableView = nil;
     [self setCustomNavigationBar:nil];
     [self setTitleNavigationItem:nil];
     [self setSubChannelScrollView:nil];
@@ -106,6 +108,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
+
+-(void)initTableView
+{
+    CGRect bounds = CGRectMake(0, 80, self.view.frame.size.width, self.view.frame.size.height);
+    bounds.size.height -= 80.0f;
+    tableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
+    
+    tableView.dataSource = self;
+    tableView.delegate = self;
+    [self.view addSubview:tableView];
+}
 
 -(void)initSubChannels
 {
@@ -136,6 +149,17 @@
     }
 }
 
+-(void)loadData
+{
+    [tableView tableViewDidFinishedLoading];
+    //TODO
+}
+-(void)loadMoreData
+{
+    [tableView tableViewDidFinishedLoading];
+    //TODO
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 
@@ -148,6 +172,47 @@
     }
     ChannelVO *newselVO = [subChannels objectAtIndex:index];
     NSLog(@"%@",newselVO.channelName);
+    //TODO
+    [tableView launchRefreshing];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    //TODO
+    return 0;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //TODO
+    return nil;
+}
+//下拉刷新
+-(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView
+{
+    //TODO
+    [self performSelector:@selector(loadData) withObject:nil afterDelay:1.5f];
+}
+//上拉加载更多
+-(void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView
+{
+    //TODO
+    [self performSelector:@selector(loadMoreData) withObject:nil afterDelay:1.5f];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [tableView tableViewDidScroll:scrollView];
+}
+
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [tableView tableViewDidEndDragging:scrollView];
 }
 
 @end
