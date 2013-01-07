@@ -91,8 +91,8 @@
     [self setAssetsFileInfo:_commandName suffix:nil];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
-    [creater setParam:@"userid" paramValue:uservo.Userid];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParamNSInteger:@"userid" paramValue:uservo.Userid];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kbottomid];
     [self getData:[creater createJson:_commandName] url:nil process:kshowprocess processcontent:kshowprocesscontent];
 }
@@ -108,7 +108,7 @@
     [self setAssetsFileInfo:_commandName suffix:nil];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
-    [creater setParam:@"userid" paramValue:uservo.Userid];
+    [creater setParamNSInteger:@"userid" paramValue:uservo.Userid];
     [creater setParam:@"username" paramValue:uservo.username];
     [creater setParam:@"conetnt" paramValue:kcontent];
     [self getData:[creater createJson:_commandName] url:nil process:kshowprocess processcontent:kshowprocesscontent];
@@ -126,8 +126,8 @@
     [self setAssetsFileInfo:_commandName suffix:nil];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
-    [creater setParam:@"userid" paramValue:uservo.Userid];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParamNSInteger:@"userid" paramValue:uservo.Userid];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kbottomid];
     [self getData:[creater createJson:_commandName] url:nil process:kshowprocess processcontent:kshowprocesscontent];
 }
@@ -143,8 +143,8 @@
     [self setAssetsFileInfo:_commandName suffix:nil];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
-    [creater setParam:@"userid" paramValue:uservo.Userid];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParamNSInteger:@"userid" paramValue:uservo.Userid];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kbottomid];
     [self getData:[creater createJson:_commandName] url:nil process:kshowprocess processcontent:kshowprocesscontent];
     
@@ -161,8 +161,8 @@
     [self setAssetsFileInfo:_commandName suffix:nil];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
-    [creater setParam:@"userid" paramValue:uservo.Userid];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParamNSInteger:@"userid" paramValue:uservo.Userid];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kbottomid];
     [self getData:[creater createJson:_commandName] url:nil process:kshowprocess processcontent:kshowprocesscontent];
     

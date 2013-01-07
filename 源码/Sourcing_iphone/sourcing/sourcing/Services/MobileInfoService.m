@@ -61,7 +61,7 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"newstype" paramValue:knewstype];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomnewsid" paramValue:kid];
     [self getData:[creater createJson:_commandName] url:nil];
 }
@@ -83,7 +83,7 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"searchkey" paramValue:ksearchkey];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kid];
     [self getData:[creater createJson:_commandName] url:nil];
     
@@ -95,7 +95,7 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"searchkey" paramValue:ksearchkey];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kid];
     [self getData:[creater createJson:_commandName] url:nil];
     
@@ -107,7 +107,7 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"searchkey" paramValue:ksearchkey];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kid];
     [self getData:[creater createJson:_commandName] url:nil];
     
@@ -119,7 +119,7 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"searchkey" paramValue:ksearchkey];
-    [creater setParam:@"pagesize" paramValue:CINT_PAGE_SIZE];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
     [creater setParam:@"bottomid" paramValue:kid];
     [self getData:[creater createJson:_commandName] url:nil];
     

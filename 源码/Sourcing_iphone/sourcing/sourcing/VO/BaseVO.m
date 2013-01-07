@@ -19,7 +19,7 @@
     if ([object isMemberOfClass:[self class]])
     {
         BaseVO *other = (BaseVO *)object;
-        return [other.Id isEqual:_id];
+        return other.Id == self.Id;
     }
     return [super isEqual: object];
 }

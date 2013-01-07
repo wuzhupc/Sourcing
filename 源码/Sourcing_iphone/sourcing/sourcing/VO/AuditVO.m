@@ -14,12 +14,12 @@
 @synthesize auditResultVO = auditResultVO;
 @synthesize publishtime = publishtime;
 
--(void)setAuditid:(NSString *)kauditid
+-(void)setAuditid:(NSInteger)kauditid
 {
     auditid = kauditid;
     _id = kauditid;
 }
--(NSString *)Auditid
+-(NSInteger)Auditid
 {
     return auditid;
 }

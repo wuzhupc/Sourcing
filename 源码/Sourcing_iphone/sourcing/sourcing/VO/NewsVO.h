@@ -10,28 +10,30 @@
 
 @interface NewsVO : BaseVO
 {
-    NSString *newsid;
+    NSInteger newsid;
     NSString *headline;
-    NSString *newstype;
+    NSInteger newstype;
     NSString *title;
     NSString *titlepic;
     NSString *titlepic_small;
     NSString *newssummary;
     NSString *auther;
-    NSString *readernum;
-    NSString *commentnum;
+    NSInteger readernum;
+    NSInteger commentnum;
 }
 @property NSString *headline;
-@property NSString *newstype;
+@property NSInteger newstype;
 @property NSString *title;
 @property NSString *titlepic;
 @property NSString *titlepic_small;
 @property NSString *newssummary;
 @property NSString *auther;
-@property NSString *readernum;
-@property NSString *commentnum;
+@property NSInteger readernum;
+@property NSInteger commentnum;
 
--(void)setNewsid:(NSString *)kid;
--(NSString *)Newsid;
+-(void)setNewsid:(NSInteger )kid;
+-(NSInteger )Newsid;
+
+-(BOOL)isHeadline;
 
 @end

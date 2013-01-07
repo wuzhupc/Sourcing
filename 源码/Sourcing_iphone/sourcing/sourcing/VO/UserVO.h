@@ -10,7 +10,7 @@
 
 @interface UserVO : BaseVO
 {
-    NSString *userid;
+    NSInteger userid;
     NSString *usertype;
     NSString *useraccount;
     NSString *password;
@@ -42,8 +42,8 @@
 @property NSString *allauditcount;
 @property NSString *alldeclarecount;
 @property NSString *allnotifiercount;
--(void)setUserid:(NSString *)kuserid;
--(NSString *)Userid;
+-(void)setUserid:(NSInteger )kuserid;
+-(NSInteger )Userid;
 
 +(BOOL)saveLoginUserInfo:(UserVO *)kuservo;
 +(UserVO *)getLastLoginUserInfo;

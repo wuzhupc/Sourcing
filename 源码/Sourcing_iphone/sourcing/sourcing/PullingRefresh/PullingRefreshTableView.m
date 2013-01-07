@@ -29,6 +29,7 @@
 @synthesize atTop = _atTop;
 @synthesize state = _state;
 @synthesize loading = _loading;
+@synthesize refDate = _refDate;
 
  //Default is at top
 - (id)initWithFrame:(CGRect)frame atTop:(BOOL)top {
@@ -193,7 +194,14 @@
     _loading = loading;
 }
 
-- (void)updateRefreshDate :(NSDate *)date{
+- (void)updateRefreshDate :(NSDate *)date
+{
+    _refDate = date;
+    if(date == nil)
+    {
+        _dateLabel.text = @"";
+        return;
+    }
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.dateFormat = @"yyyy-MM-dd HH:mm";
     NSString *dateString = [df stringFromDate:date];
@@ -281,6 +289,19 @@
 - (void)setHeaderOnly:(BOOL)headerOnly{
     _headerOnly = headerOnly;
     _footerView.hidden = _headerOnly;
+}
+
+-(NSDate *)getUpdateRefreshDate
+{
+    if(_headerView!=nil)
+        return  [_headerView refDate];
+    return nil;
+}
+
+-(void)setUpdateRefreshDate:(NSDate *)kdate
+{
+    if(_headerView!=nil)
+       [_headerView updateRefreshDate:kdate];
 }
 
 #pragma mark - Scroll methods
@@ -447,6 +468,15 @@
     } completion:^(BOOL bl){
         [self tableViewDidEndDragging:self];
     }];
+}
+
+-(BOOL)isLoading
+{
+    if(_headerView!=nil&&_headerView.loading)
+        return YES;
+    if(_footerView!=nil&&_footerView.loading)
+        return YES;
+    return NO;
 }
 
 #pragma mark - 

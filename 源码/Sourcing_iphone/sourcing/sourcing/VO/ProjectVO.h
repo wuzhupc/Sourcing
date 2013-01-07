@@ -10,7 +10,7 @@
 
 @interface ProjectVO : BaseVO
 {
-    NSString *projectid;
+    NSInteger projectid;
     NSString *projectname;
     NSString *projectstatus;
     NSString *publishtime;
@@ -20,7 +20,7 @@
 @property NSString *projectstatus;
 @property NSString *publishtime;
 
--(void)setProjectid:(NSString *)kid;
--(NSString *)Projectid;
+-(void)setProjectid:(NSInteger )kid;
+-(NSInteger )Projectid;
 
 @end

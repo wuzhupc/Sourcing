@@ -14,12 +14,12 @@
 @synthesize publishtime = publishtime;
 @synthesize projectstatus = projectstatus;
 
--(void)setProjectid:(NSString *)kid
+-(void)setProjectid:(NSInteger )kid
 {
     _id = kid;
     projectid = kid;
 }
--(NSString *)Projectid
+-(NSInteger )Projectid
 {
     return projectid;
 }

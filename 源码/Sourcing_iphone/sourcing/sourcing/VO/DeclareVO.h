@@ -11,7 +11,7 @@
 
 @interface DeclareVO : BaseVO
 {
-    NSString *declareid;
+    NSInteger declareid;
     NSString *declarecontent;
     NSString *publishtime;
     DeclareResultVO *declareResultVO;
@@ -20,6 +20,6 @@
 @property NSString *declarecontent;
 @property NSString *publishtime;
 @property DeclareResultVO *declareResultVO;
--(void)setDeclareid:(NSString *)kdeclareid;
--(NSString *)Declareid;
+-(void)setDeclareid:(NSInteger )kdeclareid;
+-(NSInteger )Declareid;
 @end

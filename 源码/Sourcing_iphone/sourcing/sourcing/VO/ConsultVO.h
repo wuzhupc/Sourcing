@@ -11,7 +11,7 @@
 
 @interface ConsultVO : BaseVO
 {
-    NSString *consultid;
+    NSInteger consultid;
     NSString *publishtime;
     NSString *consultcontent;
     ConsultResultVO *consultResultVO;
@@ -21,7 +21,7 @@
 @property NSString *consultcontent;
 @property ConsultResultVO *consultResultVO;
 
--(void)setConsultid:(NSString *)kconsultid;
--(NSString *)Consultid;
+-(void)setConsultid:(NSInteger )kconsultid;
+-(NSInteger )Consultid;
 
 @end

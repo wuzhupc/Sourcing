@@ -10,7 +10,7 @@
 
 @interface NotifierVO : BaseVO
 {
-    NSString *notifierid;
+    NSInteger notifierid;
     NSString *notifiercontent;
     NSString *publisher;
     NSString *publishtime;
@@ -20,7 +20,7 @@
 @property NSString *publisher;
 @property NSString *publishtime;
 
--(void)setNotifierid:(NSString *)kid;
--(NSString *)Notifierid;
+-(void)setNotifierid:(NSInteger )kid;
+-(NSInteger )Notifierid;
 
 @end

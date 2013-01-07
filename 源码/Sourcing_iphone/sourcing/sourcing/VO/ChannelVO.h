@@ -66,7 +66,7 @@ enum TYPE_MORE
 @property BOOL isFirstLoad;
 @property NSString *lastUpdateDataTime;
 @property NSString *mustusertypes;
--(void)setChannelID:(NSString *)kid;
+-(void)setChannelID:(NSInteger)kid;
 -(NSInteger)ChannelID;
 
 -(BOOL)isNewsChannel;

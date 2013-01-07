@@ -13,12 +13,12 @@
 @synthesize publishtime = publishtime;
 @synthesize declareResultVO = declareResultVO;
 
--(void)setDeclareid:(NSString *)kdeclareid
+-(void)setDeclareid:(NSInteger)kdeclareid
 {
     declareid = kdeclareid;
     _id = kdeclareid;
 }
--(NSString *)Declareid
+-(NSInteger )Declareid
 {
     return declareid;
 }

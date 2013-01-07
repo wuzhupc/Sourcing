@@ -25,6 +25,8 @@
 //是否读取本地assets
 #define CBOOL_READASSETS YES
 
+@synthesize tag2 = _tag2;
+
 /**
  
  * @param delegate 处理获取数据结果的对象，需要包括BsseServiceDelegate ASIHTTPRequestDelegate中的处理方法
@@ -37,6 +39,7 @@
     {
         _delegate = delegate;
         _tag = ktag;
+        _tag2 = 0;
     }
     return self;
 }
@@ -162,6 +165,7 @@
     if ([_delegate respondsToSelector:@selector(serviceResult:)])
     {
         ResponseVO *vo = [[ResponseVO alloc] initWithResult:CINT_CODE_ERROR msg:msg tag:_tag];
+        vo.tag2 = self.tag2;
         [_delegate performSelector:@selector(serviceResult:) withObject:vo];
     }
 }
@@ -176,6 +180,7 @@
     if ([_delegate respondsToSelector:@selector(serviceResult:)])
     {
         ResponseVO *vo = [[ResponseVO alloc] initWithResult:CINT_CODE_SUCESS msg:conent tag:_tag];
+        vo.tag2 = self.tag2;
         [_delegate performSelector:@selector(serviceResult:) withObject:vo];
     }
 }

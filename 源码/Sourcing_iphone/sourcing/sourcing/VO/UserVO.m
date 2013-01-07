@@ -28,12 +28,12 @@
 @synthesize alldeclarecount = alldeclarecount;
 @synthesize allnotifiercount = allnotifiercount;
 
--(void)setUserid:(NSString *)kuserid
+-(void)setUserid:(NSInteger )kuserid
 {
     _id = kuserid;
     userid = kuserid;
 }
--(NSString *)Userid
+-(NSInteger )Userid
 {
     return userid;
 }

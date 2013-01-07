@@ -13,12 +13,12 @@
 @synthesize company = company;
 @synthesize publishtime = publishtime;
 
--(void)setJobid:(NSString *)kid
+-(void)setJobid:(NSInteger )kid
 {
     _id =kid;
     jobid = kid;
 }
--(NSString *)Jobid
+-(NSInteger )Jobid
 {
     return jobid;
 }

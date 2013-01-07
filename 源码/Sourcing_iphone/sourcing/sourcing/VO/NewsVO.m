@@ -7,6 +7,7 @@
 //
 
 #import "NewsVO.h"
+#import "StringUtil.h"
 
 @implementation NewsVO
 
@@ -20,13 +21,20 @@
 @synthesize readernum = readernum;
 @synthesize commentnum = commentnum;
 
--(void)setNewsid:(NSString *)kid
+-(void)setNewsid:(NSInteger )kid
 {
     newsid = kid;
     _id = kid;
 }
--(NSString *)Newsid
+-(NSInteger )Newsid
 {
     return newsid;
+}
+
+-(BOOL)isHeadline
+{
+    if([StringUtil isEmpty:headline])
+        return NO;
+    return [headline isEqualToString:@"1"] || [[headline lowercaseString] isEqualToString:@"true"];
 }
 @end

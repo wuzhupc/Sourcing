@@ -10,7 +10,7 @@
 
 @interface ResumeVO : BaseVO
 {
-    NSString *resumeid;
+    NSInteger resumeid;
     NSString *expectjob;
     NSString *name;
     NSString *publishtime;
@@ -22,7 +22,7 @@
 @property NSString *publishtime;
 @property NSString *resumetitle;
 
--(void)setResumeid:(NSString *)kid;
--(NSString *)Resumeid;
+-(void)setResumeid:(NSInteger )kid;
+-(NSInteger )Resumeid;
 
 @end

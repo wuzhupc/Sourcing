@@ -16,6 +16,7 @@
 @property(nonatomic,retain) NSMutableDictionary *paramsDict;
 
 - (void)setParam:(NSString *) name paramValue:(id) value;
+- (void)setParamNSInteger:(NSString *) name paramValue:(NSInteger) value;
 - (void)setParamAutoProEmpty:(NSString *) name paramValue:(NSString *) value;
 /**
  * 生成JSON语句

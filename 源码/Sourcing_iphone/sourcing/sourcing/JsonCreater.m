@@ -42,6 +42,18 @@
     [self.paramsDict setValue:value forKey:name];
     
 }
+
+/**
+ * 添加参数
+ * @param name  auth名，如果为空,则忽略
+ * @param value auth值，如果为空,则忽略
+ */
+
+- (void)setParamNSInteger:(NSString *) name paramValue:(NSInteger) value{
+    
+    [self.paramsDict setValue:[NSNumber numberWithInteger:value]  forKey:name];
+}
+
 /**
  * 添加参数
  * @param name  auth名，如果为空,则忽略

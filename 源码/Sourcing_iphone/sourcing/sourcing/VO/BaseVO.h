@@ -10,9 +10,9 @@
 
 @interface BaseVO : NSObject
 {
-    NSString *_id;
+    NSInteger _id;
 }
 
-@property NSString *Id;
+@property NSInteger Id;
 
 @end

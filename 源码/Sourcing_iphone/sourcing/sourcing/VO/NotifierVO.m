@@ -14,12 +14,12 @@
 @synthesize publisher = publisher;
 @synthesize publishtime = publishtime;
 
--(void)setNotifierid:(NSString *)kid
+-(void)setNotifierid:(NSInteger )kid
 {
     _id = kid;
     notifierid = kid;
 }
--(NSString *)Notifierid
+-(NSInteger )Notifierid
 {
     return notifierid;
 }

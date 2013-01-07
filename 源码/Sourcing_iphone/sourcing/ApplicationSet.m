@@ -8,6 +8,7 @@
 
 #import "ApplicationSet.h"
 
+
 @implementation ApplicationSet
 
 @synthesize isRegDevToken=_isRegDevToken;

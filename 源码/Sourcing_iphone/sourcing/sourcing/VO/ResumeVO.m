@@ -15,12 +15,12 @@
 @synthesize  publishtime = publishtime;
 @synthesize  resumetitle = resumetitle;
 
--(void)setResumeid:(NSString *)kid
+-(void)setResumeid:(NSInteger )kid
 {
     _id = kid;
     resumeid = kid;
 }
--(NSString *)Resumeid
+-(NSInteger )Resumeid
 {
     return resumeid;
 }

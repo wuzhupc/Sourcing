@@ -14,12 +14,12 @@
 @synthesize publishtime = publishtime;
 @synthesize consultResultVO = consultResultVO;
 
--(void)setConsultid:(NSString *)kconsultid
+-(void)setConsultid:(NSInteger )kconsultid
 {
     consultid = kconsultid;
     _id = kconsultid;
 }
--(NSString *)Consultid
+-(NSInteger )Consultid
 {
     return consultid;
 }

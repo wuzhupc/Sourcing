@@ -23,10 +23,10 @@
 @synthesize mustusertypes;
 
 
--(void)setChannelID:(NSString *)kid
+-(void)setChannelID:(NSInteger)kid
 {
     _id = kid;
-    channelID = [kid integerValue];
+    channelID = kid;
 }
 -(NSInteger)ChannelID
 {

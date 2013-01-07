@@ -14,12 +14,12 @@
 @synthesize publishtime = publishtime;
 @synthesize publisher = publisher;
 
--(void)setDeclareresultid:(NSString *)kresultid
+-(void)setDeclareresultid:(NSInteger )kresultid
 {
     declareresultid = kresultid;
     _id = kresultid;
 }
--(NSString *)Declareresultid
+-(NSInteger )Declareresultid
 {
     return declareresultid;
 }

@@ -10,12 +10,12 @@
 
 @implementation TrainVO
 @synthesize trainname = trainname;
--(void)setTrainid:(NSString *)kid
+-(void)setTrainid:(NSInteger )kid
 {
     _id = kid;
     trainid = kid;
 }
--(NSString *)Trainid
+-(NSInteger )Trainid
 {
     return trainid;
 }

@@ -22,10 +22,12 @@ typedef enum {
     UIActivityIndicatorView *_activityView;
     CALayer *_arrow;
     BOOL _loading;
+    NSDate *_refDate;
 }
 @property (nonatomic,getter = isLoading) BOOL loading;    
 @property (nonatomic,getter = isAtTop) BOOL atTop;
 @property (nonatomic) PRState state;
+@property (nonatomic,readonly) NSDate *refDate;
 
 - (id)initWithFrame:(CGRect)frame atTop:(BOOL)top;
 
@@ -39,7 +41,6 @@ typedef enum {
     PullLoadingView *_headerView;
     PullLoadingView *_footerView;
     UILabel *_msgLabel;
-    BOOL _loading;
     BOOL _isFooterInAction;
     NSInteger _bottomRow;
 }
@@ -61,6 +62,10 @@ typedef enum {
 - (void)launchRefreshing;
 
 - (void)flashMessage:(NSString *)msg;
+
+-(NSDate *)getUpdateRefreshDate;
+-(void)setUpdateRefreshDate:(NSDate *)kdate;
+-(BOOL)isLoading;
 @end
 
 

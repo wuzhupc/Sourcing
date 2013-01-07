@@ -12,6 +12,7 @@
 @synthesize code = _code;
 @synthesize tag = _tag;
 @synthesize msg = _msg;
+@synthesize tag2 = _tag2;
 
 -(BOOL)isSucess
 {

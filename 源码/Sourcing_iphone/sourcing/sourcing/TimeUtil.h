@@ -10,6 +10,8 @@
 
 @interface TimeUtil : NSObject
 +(long long int) currentTimeMillis;
-+(NSString *)getGMTFormateDate:(NSDate *)localDate;
-+(NSString *)getDetailGMTDate:(NSDate *)localDate;
++ (NSDate *)dateFromStringWithFormat:(NSString *)dateString format:(NSString *)kformat;
++ (NSDate *)dateFromString:(NSString *)dateString;
++ (NSString *)stringFromDateWithFormat:(NSDate *)date format:(NSString *)kformat;
++ (NSString *)stringFromDate:(NSDate *)date;
 @end

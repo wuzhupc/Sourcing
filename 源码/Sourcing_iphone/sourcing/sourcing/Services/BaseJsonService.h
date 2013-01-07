@@ -10,7 +10,9 @@
 #import "ASIHTTPRequestDelegate.h"
 #import "UserVO.h"
 
-#define CINT_PAGE_SIZE [NSNumber numberWithInt:20]
+#define CINT_PAGE_SIZE_DEFAULT 20
+
+#define CNUM_PAGE_SIZE [NSNumber numberWithInt:CINT_PAGE_SIZE_DEFAULT]
 
 @interface BaseJsonService : NSObject <ASIHTTPRequestDelegate>
 {
@@ -18,7 +20,10 @@
     NSInteger _tag;
     NSString *_commandName;
     NSString *_suffix;
+    NSInteger _tag2;
 }
+
+@property NSInteger tag2;
 
 -(id)initWithDelegate:(id)delegate tag:(NSInteger)ktag;
 

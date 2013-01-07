@@ -73,6 +73,8 @@
 		32120B5F168DD32B00DBF915 /* S3 in Resources */ = {isa = PBXBuildFile; fileRef = 32120B54168DD32B00DBF915 /* S3 */; };
 		32120B63168DD39700DBF915 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 32120B62168DD39700DBF915 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		32120B65168DD4AF00DBF915 /* DataInterface.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32120B64168DD4AF00DBF915 /* DataInterface.plist */; };
+		322CA4E3169B09C000CCD216 /* NewsNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 322CA4E2169B09C000CCD216 /* NewsNormalCell.m */; };
+		322CA4E6169B137A00CCD216 /* NewsNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 322CA4E5169B137A00CCD216 /* NewsNormalCell.xib */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -123,6 +125,8 @@
 		32E3A70E16946A1500379FF6 /* tabbar_backgroundimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70A16946A1500379FF6 /* tabbar_backgroundimage@2x.png */; };
 		32E3A70F16946A1500379FF6 /* tabbar_selectionindicatorimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70B16946A1500379FF6 /* tabbar_selectionindicatorimage.png */; };
 		32E3A71016946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32E3A70C16946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png */; };
+		32FB0D1A169951A7006ADA79 /* UIColor+MGExpanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB0D19169951A7006ADA79 /* UIColor+MGExpanded.m */; };
+		32FB0D2216995DDB006ADA79 /* StyledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB0D2116995DDB006ADA79 /* StyledTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -246,6 +250,9 @@
 		32120B61168DD39700DBF915 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = sourcing/Reachability/Reachability.h; sourceTree = "<group>"; };
 		32120B62168DD39700DBF915 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = sourcing/Reachability/Reachability.m; sourceTree = "<group>"; };
 		32120B64168DD4AF00DBF915 /* DataInterface.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataInterface.plist; sourceTree = "<group>"; };
+		322CA4E1169B09C000CCD216 /* NewsNormalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsNormalCell.h; path = sourcing/TableViewCell/NewsNormalCell.h; sourceTree = "<group>"; };
+		322CA4E2169B09C000CCD216 /* NewsNormalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsNormalCell.m; path = sourcing/TableViewCell/NewsNormalCell.m; sourceTree = "<group>"; };
+		322CA4E5169B137A00CCD216 /* NewsNormalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsNormalCell.xib; path = sourcing/TableViewCell/NewsNormalCell.xib; sourceTree = "<group>"; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -317,6 +324,10 @@
 		32E3A70A16946A1500379FF6 /* tabbar_backgroundimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_backgroundimage@2x.png"; path = "sourcing/Images/tabbar_backgroundimage@2x.png"; sourceTree = "<group>"; };
 		32E3A70B16946A1500379FF6 /* tabbar_selectionindicatorimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tabbar_selectionindicatorimage.png; path = sourcing/Images/tabbar_selectionindicatorimage.png; sourceTree = "<group>"; };
 		32E3A70C16946A1500379FF6 /* tabbar_selectionindicatorimage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tabbar_selectionindicatorimage@2x.png"; path = "sourcing/Images/tabbar_selectionindicatorimage@2x.png"; sourceTree = "<group>"; };
+		32FB0D18169951A7006ADA79 /* UIColor+MGExpanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MGExpanded.h"; path = "sourcing/other/UIColor+MGExpanded.h"; sourceTree = "<group>"; };
+		32FB0D19169951A7006ADA79 /* UIColor+MGExpanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MGExpanded.m"; path = "sourcing/other/UIColor+MGExpanded.m"; sourceTree = "<group>"; };
+		32FB0D2016995DDB006ADA79 /* StyledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyledTableViewCell.h; path = sourcing/StyledTableViewCell/StyledTableViewCell.h; sourceTree = "<group>"; };
+		32FB0D2116995DDB006ADA79 /* StyledTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StyledTableViewCell.m; path = sourcing/StyledTableViewCell/StyledTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -447,6 +458,7 @@
 		32120A97168985B200DBF915 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				32FB0D2316996445006ADA79 /* TableViewCell */,
 				32CFE2B116970E7600F3C939 /* BaseHomeViewController.h */,
 				32CFE2B216970E7600F3C939 /* BaseHomeViewController.m */,
 				32E3A6FA1694385B00379FF6 /* HomeTabBarController.h */,
@@ -564,6 +576,8 @@
 		32120B07168B451800DBF915 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				32FB0D1F16995DB0006ADA79 /* StyledTableViewCell */,
+				32FB0D1616995191006ADA79 /* Other */,
 				32120B3D168DD2B400DBF915 /* ASIHTTPRequest */,
 				32120B2D168C978A00DBF915 /* AutoCoding */,
 				32CFE2C516972C6E00F3C939 /* BrowserTabView */,
@@ -732,6 +746,34 @@
 			name = "idev-recipes";
 			sourceTree = "<group>";
 		};
+		32FB0D1616995191006ADA79 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				32FB0D18169951A7006ADA79 /* UIColor+MGExpanded.h */,
+				32FB0D19169951A7006ADA79 /* UIColor+MGExpanded.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		32FB0D1F16995DB0006ADA79 /* StyledTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				32FB0D2016995DDB006ADA79 /* StyledTableViewCell.h */,
+				32FB0D2116995DDB006ADA79 /* StyledTableViewCell.m */,
+			);
+			name = StyledTableViewCell;
+			sourceTree = "<group>";
+		};
+		32FB0D2316996445006ADA79 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				322CA4E1169B09C000CCD216 /* NewsNormalCell.h */,
+				322CA4E2169B09C000CCD216 /* NewsNormalCell.m */,
+				322CA4E5169B137A00CCD216 /* NewsNormalCell.xib */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -826,6 +868,7 @@
 				32CFE2F116986FC900F3C939 /* blueArrow@2x.png in Resources */,
 				32CFE2F216986FC900F3C939 /* blueArrowDown.png in Resources */,
 				32CFE2F316986FC900F3C939 /* blueArrowDown@2x.png in Resources */,
+				322CA4E6169B137A00CCD216 /* NewsNormalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +945,9 @@
 				32CFE2CA16972C7B00F3C939 /* BrowserTab.m in Sources */,
 				32CFE2CB16972C7B00F3C939 /* BrowserTabView.m in Sources */,
 				32CFE2EB16986FB700F3C939 /* PullingRefreshTableView.m in Sources */,
+				32FB0D1A169951A7006ADA79 /* UIColor+MGExpanded.m in Sources */,
+				32FB0D2216995DDB006ADA79 /* StyledTableViewCell.m in Sources */,
+				322CA4E3169B09C000CCD216 /* NewsNormalCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

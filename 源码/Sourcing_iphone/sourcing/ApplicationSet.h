@@ -9,6 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "UserVO.h"
 
+#define CINT_BG_HEX 0xfcf2e9
+
+//需要#import "UIColor+MGExpanded.h"
+#define CCOLOR_BG_WHITE  [UIColor colorWithRGBHex:CINT_BG_HEX]
+#define CCOLOR_TABLEVIEW_BG [UIColor colorWithRGBHex:CINT_BG_HEX]
+#define CCOLOR_TABLEVIEW_SEL [UIColor colorWithRGBHex:0xf3c5b6]
+#define CCOLOR_TABLEVIEW_SEL_2 [UIColor colorWithRGBHex:0xfbc5b6]
+
 @interface ApplicationSet : NSObject
 {
     //是否已经注册过设备号

@@ -10,10 +10,10 @@
 
 @interface TrainVO : BaseVO
 {
-    NSString *trainid;
+    NSInteger trainid;
     NSString *trainname;
 }
 @property NSString *trainname;
--(void)setTrainid:(NSString *)kid;
--(NSString *)Trainid;
+-(void)setTrainid:(NSInteger )kid;
+-(NSInteger )Trainid;
 @end

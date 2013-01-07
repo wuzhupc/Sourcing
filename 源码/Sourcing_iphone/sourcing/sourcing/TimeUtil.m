@@ -7,6 +7,7 @@
 //
 
 #import "TimeUtil.h"
+#import "StringUtil.h"
 
 @implementation TimeUtil
 //获取自1970年以来的毫秒数
@@ -17,22 +18,40 @@
     return (long long int)time;
 }
 
-+(NSString *)getGMTFormateDate:(NSDate *)localDate
++ (NSDate *)dateFromStringWithFormat:(NSString *)dateString format:(NSString *)kformat
 {
+    if([StringUtil isEmpty:dateString])
+        return nil;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:kCFDateFormatterFullStyle];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    NSString *dateString = [dateFormatter stringFromDate:localDate];
-    return dateString;
+    if([StringUtil isEmpty:kformat])
+        [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss"];
+    else
+        [dateFormatter setDateFormat: kformat];
+    NSDate *destDate= [dateFormatter dateFromString:dateString];
+    return destDate;
 }
 
-+(NSString *)getDetailGMTDate:(NSDate *)localDate{
-    
++ (NSDate *)dateFromString:(NSString *)dateString{
+    return [TimeUtil dateFromStringWithFormat:dateString format:@"yyyy-MM-dd HH:mm:ss"];
+}
+
++ (NSString *)stringFromDateWithFormat:(NSDate *)date format:(NSString *)kformat
+{
+    if(date == nil)
+        return @"";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:kCFDateFormatterFullStyle];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    NSString *dateString = [dateFormatter stringFromDate:localDate];
+    if([StringUtil isEmpty:kformat])
+    {
+        //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息 +0000。
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+        return [dateFormatter stringFromDate:date];
+    }
+    [dateFormatter setDateFormat:kformat];
+    return [dateFormatter stringFromDate:date];
+}
+
++ (NSString *)stringFromDate:(NSDate *)date{
     
-    return dateString;
+    return [TimeUtil stringFromDateWithFormat:date format:@"yyyy-MM-dd HH:mm:ss"];
 }
 @end

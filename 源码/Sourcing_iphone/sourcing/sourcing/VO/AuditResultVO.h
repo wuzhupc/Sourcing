@@ -10,7 +10,7 @@
 
 @interface AuditResultVO : BaseVO
 {
-    NSString *auditresultid;
+    NSInteger auditresultid;
     NSString *auditresultcontent;
     NSString *publisher;
     NSString *publishtime;
@@ -22,7 +22,7 @@
 @property NSString *publishtime;
 @property NSString *auditresult;
 
--(void)setAuditresultid:(NSString *)kresultid;
--(NSString *)Auditresultid;
+-(void)setAuditresultid:(NSInteger)kresultid;
+-(NSInteger)Auditresultid;
 
 @end

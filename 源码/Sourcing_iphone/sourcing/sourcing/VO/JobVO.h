@@ -10,7 +10,7 @@
 
 @interface JobVO : BaseVO
 {
-    NSString *jobid;
+    NSInteger jobid;
     NSString *job;
     NSString *company;
     NSString *publishtime;
@@ -19,6 +19,6 @@
 @property NSString *job;
 @property NSString *company;
 @property NSString *publishtime;
--(void)setJobid:(NSString *)kid;
--(NSString *)Jobid;
+-(void)setJobid:(NSInteger )kid;
+-(NSInteger )Jobid;
 @end

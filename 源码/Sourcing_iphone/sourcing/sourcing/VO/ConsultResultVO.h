@@ -10,7 +10,7 @@
 
 @interface ConsultResultVO : BaseVO
 {
-    NSString *consultresultid;
+    NSInteger consultresultid;
     NSString *consultresultcontent;
     NSString *publisher;
     NSString *publishtime;
@@ -20,6 +20,6 @@
 @property NSString *publisher;
 @property NSString *publishtime;
 
--(void)setConsultresultid:(NSString *)kresultid;
--(NSString *)Consultresultid;
+-(void)setConsultresultid:(NSInteger )kresultid;
+-(NSInteger )Consultresultid;
 @end

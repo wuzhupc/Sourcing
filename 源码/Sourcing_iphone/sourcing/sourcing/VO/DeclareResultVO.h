@@ -10,7 +10,7 @@
 
 @interface DeclareResultVO : BaseVO
 {
-    NSString *declareresultid;
+    NSInteger declareresultid;
     NSString *declareresult;
     NSString *declareresultcontent;
     NSString *publisher;
@@ -22,6 +22,6 @@
 @property NSString *publisher;
 @property NSString *publishtime;
 
--(void)setDeclareresultid:(NSString *)kresultid;
--(NSString *)Declareresultid;
+-(void)setDeclareresultid:(NSInteger )kresultid;
+-(NSInteger )Declareresultid;
 @end
