@@ -247,23 +247,39 @@
     [self removeObserver:self forKeyPath:@"contentSize"];
 }
 
+-(void)commonInitPullingRefreshTableView
+{
+    CGRect frame = self.frame;
+    CGRect rect = CGRectMake(0, 0 - frame.size.height, frame.size.width, frame.size.height);
+    _headerView = [[PullLoadingView alloc] initWithFrame:rect atTop:YES];
+    _headerView.atTop = YES;
+    [self addSubview:_headerView];
+    
+    rect = CGRectMake(0, frame.size.height, frame.size.width, frame.size.height);
+    _footerView = [[PullLoadingView alloc] initWithFrame:rect atTop:NO];
+    _footerView.atTop = NO;
+    [self addSubview:_footerView];
+    
+    [self addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if(self)
+    {
+        [self commonInitPullingRefreshTableView];
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
     self = [super initWithFrame:frame style:style];
     if (self) {
         // Initialization code
         
-        CGRect rect = CGRectMake(0, 0 - frame.size.height, frame.size.width, frame.size.height);
-        _headerView = [[PullLoadingView alloc] initWithFrame:rect atTop:YES];
-        _headerView.atTop = YES;
-        [self addSubview:_headerView];
-        
-        rect = CGRectMake(0, frame.size.height, frame.size.width, frame.size.height);
-        _footerView = [[PullLoadingView alloc] initWithFrame:rect atTop:NO];
-        _footerView.atTop = NO;
-        [self addSubview:_footerView];
-        
-        [self addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+        [self commonInitPullingRefreshTableView];
         
     }
     return self;

@@ -17,7 +17,9 @@
 @synthesize titlepic = titlepic;
 @synthesize newstype = newstype;
 @synthesize titlepic_small = titlepic_small;
+@synthesize publishtime = publishtime;
 @synthesize auther = auther;
+@synthesize source = source;
 @synthesize readernum = readernum;
 @synthesize commentnum = commentnum;
 

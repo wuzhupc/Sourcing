@@ -14,8 +14,8 @@
 //需要#import "UIColor+MGExpanded.h"
 #define CCOLOR_BG_WHITE  [UIColor colorWithRGBHex:CINT_BG_HEX]
 #define CCOLOR_TABLEVIEW_BG [UIColor colorWithRGBHex:CINT_BG_HEX]
-#define CCOLOR_TABLEVIEW_SEL [UIColor colorWithRGBHex:0xf3c5b6]
-#define CCOLOR_TABLEVIEW_SEL_2 [UIColor colorWithRGBHex:0xfbc5b6]
+#define CCOLOR_TABLEVIEW_SEL [UIColor colorWithRGBHex:0xFFF3C5B6]
+#define CCOLOR_TABLEVIEW_SEL_2 [UIColor colorWithRGBHex:0xFFFBC5B6]
 
 @interface ApplicationSet : NSObject
 {

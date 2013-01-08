@@ -20,6 +20,7 @@
 #import "UIColor+MGExpanded.h"
 #import "StyledTableViewCell.h"
 #import "ToastHintUtil.h"
+#import "NewsNormalCell.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -120,6 +121,7 @@
     prTableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
     
     prTableView.backgroundColor = CCOLOR_TABLEVIEW_BG;
+    prTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     prTableView.separatorColor = CCOLOR_TABLEVIEW_SEL;
     prTableView.dataSource = self;
     prTableView.delegate = self;
@@ -323,9 +325,9 @@
     if(newslist == nil||[newslist count]==0)
         return 80.0f;
     //判断头条
-    NewsVO *vo = [newslist objectAtIndex:0];
-    if([vo isHeadline])
-        return 120.0f;
+//    NewsVO *vo = [newslist objectAtIndex:0];
+//    if([vo isHeadline])
+//        return 120.0f;
     return 80.0f;
 }
 
@@ -339,14 +341,30 @@
         {
             cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
             [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            [cell.textLabel setFont:[UIFont boldSystemFontOfSize:16]];
+            [cell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
             cell.textLabel.textAlignment = UITextAlignmentCenter;
         }
         [cell.textLabel setText:NSLocalizedString(@"没有数据,请偿试下拉刷新数据",@"没有数据时提示")];
         return cell;
     }
-    //TODO
-    return nil;
+    static NSString *newsNormCellIdentifier = @"NewsNormalCell";
+    
+    NewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:newsNormCellIdentifier];
+    if(cell==nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsNormalCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    if(indexPath.row<0||indexPath.row>=[newslist count])
+    {
+        [cell setData:nil];
+    }
+    else
+    {
+        [cell setData:[newslist objectAtIndex:indexPath.row]];
+    }
+    //TODO 增加有图及头条信息显示
+    return cell;
 }
 //下拉刷新
 -(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView

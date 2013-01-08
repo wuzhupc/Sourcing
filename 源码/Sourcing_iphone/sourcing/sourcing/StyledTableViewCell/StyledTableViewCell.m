@@ -144,23 +144,48 @@
 
 @implementation StyledTableViewCell
 
+-(void)commonInitStyledTableViewCell
+{
+    // set the background view
+    StyledTableViewCellBackgroundView *backgroundView = [[StyledTableViewCellBackgroundView alloc] initWithFrame:CGRectZero];
+    [self setBackgroundView:backgroundView];
+    
+    // set the selected background view
+    StyledTableViewCellSelectedBackgroundView *selectedBackgroundView = [[StyledTableViewCellSelectedBackgroundView alloc] initWithFrame:CGRectZero];
+    [self setSelectedBackgroundView:selectedBackgroundView];
+    
+    // clear the background color of text label because text label background overlaps with separator
+    [self.textLabel setBackgroundColor:[UIColor clearColor]];
+    
+    [self setDashWidth:1 dashGap:0 dashStroke:1];
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+    {
+        [self commonInitStyledTableViewCell];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder*)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self commonInitStyledTableViewCell];
+    }
+    return self;
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         
-        // set the background view
-        StyledTableViewCellBackgroundView *backgroundView = [[StyledTableViewCellBackgroundView alloc] initWithFrame:CGRectZero];
-        [self setBackgroundView:backgroundView];
-        
-        // set the selected background view
-        StyledTableViewCellSelectedBackgroundView *selectedBackgroundView = [[StyledTableViewCellSelectedBackgroundView alloc] initWithFrame:CGRectZero];
-        [self setSelectedBackgroundView:selectedBackgroundView];
-        
-        // clear the background color of text label because text label background overlaps with separator
-        [self.textLabel setBackgroundColor:[UIColor clearColor]];
-
-        [self setDashWidth:1 dashGap:0 dashStroke:1];
+        [self commonInitStyledTableViewCell];
     }
     return self;
 }

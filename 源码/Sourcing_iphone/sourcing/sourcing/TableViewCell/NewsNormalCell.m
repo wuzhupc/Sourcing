@@ -10,6 +10,10 @@
 #pragma mark - Imports
 
 #import "NewsNormalCell.h"
+#import "StringUtil.h"
+#import "ApplicationSet.h"
+#import "UIImageView+WebCache.h"
+#import "UIColor+MGExpanded.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -26,7 +30,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
-
+-(void)setData:(NewsVO *)kdataVO;
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +41,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
 
+@synthesize dataVO=_dataVO;
+
 /* Public *********************************************************************/
 
 /* Private ********************************************************************/
@@ -46,7 +52,12 @@
 
 - (void)commonInitNewsNormalCell
 {
-	// Your init code here
+    NSMutableArray *colors = [NSMutableArray array];
+    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
+    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL_2 CGColor]];
+    [self setSelectedBackgroundViewGradientColors:colors];
+    [self.backgroundView setBackgroundColor:CCOLOR_TABLEVIEW_BG];
+    [self setDashWidth:2 dashGap:3 dashStroke:2];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -77,6 +88,34 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
+-(void)setData:(NewsVO *)kdataVO
+{
+    _dataVO = kdataVO;
+    if (_dataVO == nil) {
+        [self.laTitle setText:@""];
+        [self.laSummary setText:@""];
+        return;
+    }
+    [self.laTitle setText:_dataVO.title];
+    if ([StringUtil isEmpty:_dataVO.newssummary]) {
+        [self.laSummary setText:@""];
+    }
+    else
+    {
+        [self.laSummary setText:_dataVO.newssummary];
+    }
+    if(![StringUtil isEmpty:_dataVO.titlepic_small])
+    {
+        [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic_small] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
+    }
+    else if (![StringUtil isEmpty:_dataVO.titlepic])
+    {
+        [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
+    }else
+    {
+        [self.ivTitlePic setImage:[UIImage imageNamed:@"icon_pic_default"]];
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
