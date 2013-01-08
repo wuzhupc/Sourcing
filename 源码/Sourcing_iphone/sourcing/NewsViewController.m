@@ -21,6 +21,9 @@
 #import "StyledTableViewCell.h"
 #import "ToastHintUtil.h"
 #import "NewsNormalCell.h"
+#import "NewsNoPicCell.h"
+#import "NewsHeadlineCell.h"
+#import "StringUtil.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -325,9 +328,11 @@
     if(newslist == nil||[newslist count]==0)
         return 80.0f;
     //判断头条
-//    NewsVO *vo = [newslist objectAtIndex:0];
-//    if([vo isHeadline])
-//        return 120.0f;
+    if (indexPath.row ==0) {
+        NewsVO *vo = [newslist objectAtIndex:indexPath.row];
+        if([vo isHeadline])
+            return 120.0f;
+    }
     return 80.0f;
 }
 
@@ -344,26 +349,46 @@
             [cell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
             cell.textLabel.textAlignment = UITextAlignmentCenter;
         }
-        [cell.textLabel setText:NSLocalizedString(@"没有数据,请偿试下拉刷新数据",@"没有数据时提示")];
+        if([(PullingRefreshTableView *)tableView isLoading])
+            [cell.textLabel setText:@""];
+        else
+            [cell.textLabel setText:NSLocalizedString(@"没有数据,请偿试下拉刷新数据",@"没有数据时提示")];
+        return cell;
+    }
+    NewsVO *vo = [newslist objectAtIndex:indexPath.row];
+    if (indexPath.row ==0&&[vo isHeadline])
+    {
+         //显示头条列表项
+        static NSString *newsHeadlineCellIdentifier = @"NewsHeadlineCell";
+        NewsHeadlineCell *cell = [tableView dequeueReusableCellWithIdentifier:newsHeadlineCellIdentifier];
+        if(cell==nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsHeadlineCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        [cell setData:vo];
+        return cell;
+    }
+    if ([StringUtil isEmpty:vo.titlepic]&&[StringUtil isEmpty:vo.titlepic_small]) {
+        //显示无图列表项
+        static NSString *newsNoPicCellIdentifier = @"NewsNoPicCell";
+        NewsNoPicCell *cell = [tableView dequeueReusableCellWithIdentifier:newsNoPicCellIdentifier];
+        if(cell==nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsNoPicCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        [cell setData:vo];
         return cell;
     }
     static NSString *newsNormCellIdentifier = @"NewsNormalCell";
-    
     NewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:newsNormCellIdentifier];
     if(cell==nil)
     {
         NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsNormalCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    if(indexPath.row<0||indexPath.row>=[newslist count])
-    {
-        [cell setData:nil];
-    }
-    else
-    {
-        [cell setData:[newslist objectAtIndex:indexPath.row]];
-    }
-    //TODO 增加有图及头条信息显示
+    [cell setData:vo];
     return cell;
 }
 //下拉刷新

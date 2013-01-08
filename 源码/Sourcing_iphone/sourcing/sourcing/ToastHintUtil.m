@@ -16,7 +16,9 @@
 {
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.mode = MBProgressHUDModeText;
-    hud.labelText = msg;
+    //hud.labelText = msg;
+    hud.detailsLabelText = msg;
+    hud.margin = 10.f;
     hud.yOffset = 150.0f;
     hud.removeFromSuperViewOnHide = YES;
     

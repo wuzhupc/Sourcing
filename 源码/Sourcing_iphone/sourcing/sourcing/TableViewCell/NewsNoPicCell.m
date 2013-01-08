@@ -1,18 +1,17 @@
 //
-//  NewsNormalCell.m
+//  NewsNoPicCell.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-7.
+//  Created by wuzhu on 13-1-8.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "NewsNormalCell.h"
+#import "NewsNoPicCell.h"
 #import "StringUtil.h"
 #import "ApplicationSet.h"
-#import "UIImageView+WebCache.h"
 #import "UIColor+MGExpanded.h"
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -26,21 +25,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
-@interface NewsNormalCell ()
+@interface NewsNoPicCell ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 -(void)setData:(NewsVO *)kdataVO;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation NewsNormalCell
+@implementation NewsNoPicCell
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
-
 @synthesize dataVO=_dataVO;
 
 /* Public *********************************************************************/
@@ -50,7 +49,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitNewsNormalCell
+- (void)commonInitNewsNoPicCell
 {
     NSMutableArray *colors = [NSMutableArray array];
     [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
@@ -65,7 +64,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self commonInitNewsNormalCell];
+        [self commonInitNewsNoPicCell];
     }
     return self;
 }
@@ -75,7 +74,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitNewsNormalCell];
+        [self commonInitNewsNoPicCell];
     }
     return self;
 }
@@ -94,7 +93,6 @@
     if (_dataVO == nil) {
         [self.laTitle setText:@""];
         [self.laSummary setText:@""];
-        [self.ivTitlePic setImage:[UIImage imageNamed:@"icon_pic_default"]];
         return;
     }
     [self.laTitle setText:_dataVO.title];
@@ -104,17 +102,6 @@
     else
     {
         [self.laSummary setText:_dataVO.newssummary];
-    }
-    if(![StringUtil isEmpty:_dataVO.titlepic_small])
-    {
-        [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic_small] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
-    }
-    else if (![StringUtil isEmpty:_dataVO.titlepic])
-    {
-        [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
-    }else
-    {
-        [self.ivTitlePic setImage:[UIImage imageNamed:@"icon_pic_default"]];
     }
 }
 

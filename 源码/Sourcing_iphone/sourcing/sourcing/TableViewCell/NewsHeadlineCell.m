@@ -1,15 +1,15 @@
 //
-//  NewsNormalCell.m
+//  NewsHeadlineCell.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-7.
+//  Created by wuzhu on 13-1-8.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "NewsNormalCell.h"
+#import "NewsHeadlineCell.h"
 #import "StringUtil.h"
 #import "ApplicationSet.h"
 #import "UIImageView+WebCache.h"
@@ -26,21 +26,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
-@interface NewsNormalCell ()
+@interface NewsHeadlineCell ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 -(void)setData:(NewsVO *)kdataVO;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation NewsNormalCell
+@implementation NewsHeadlineCell
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
-
 @synthesize dataVO=_dataVO;
 
 /* Public *********************************************************************/
@@ -50,8 +50,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitNewsNormalCell
+- (void)commonInitNewsHeadlineCell
 {
+	
     NSMutableArray *colors = [NSMutableArray array];
     [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
     [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL_2 CGColor]];
@@ -65,7 +66,7 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self commonInitNewsNormalCell];
+        [self commonInitNewsHeadlineCell];
     }
     return self;
 }
@@ -75,7 +76,7 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitNewsNormalCell];
+        [self commonInitNewsHeadlineCell];
     }
     return self;
 }
@@ -88,31 +89,24 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
+
 -(void)setData:(NewsVO *)kdataVO
 {
     _dataVO = kdataVO;
     if (_dataVO == nil) {
         [self.laTitle setText:@""];
-        [self.laSummary setText:@""];
         [self.ivTitlePic setImage:[UIImage imageNamed:@"icon_pic_default"]];
         return;
     }
     [self.laTitle setText:_dataVO.title];
-    if ([StringUtil isEmpty:_dataVO.newssummary]) {
-        [self.laSummary setText:@""];
-    }
-    else
-    {
-        [self.laSummary setText:_dataVO.newssummary];
-    }
-    if(![StringUtil isEmpty:_dataVO.titlepic_small])
-    {
-        [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic_small] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
-    }
-    else if (![StringUtil isEmpty:_dataVO.titlepic])
+    if (![StringUtil isEmpty:_dataVO.titlepic])
     {
         [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
-    }else
+    }
+    else if(![StringUtil isEmpty:_dataVO.titlepic_small])
+    {
+        [self.ivTitlePic setImageWithURL:[NSURL URLWithString:_dataVO.titlepic_small] placeholderImage:[UIImage imageNamed:@"icon_pic_loadfail"]];
+     }else
     {
         [self.ivTitlePic setImage:[UIImage imageNamed:@"icon_pic_default"]];
     }
