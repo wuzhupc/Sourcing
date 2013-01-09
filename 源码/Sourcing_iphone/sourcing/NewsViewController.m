@@ -24,6 +24,7 @@
 #import "NewsNoPicCell.h"
 #import "NewsHeadlineCell.h"
 #import "StringUtil.h"
+#import "NewsDetailViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -391,6 +392,18 @@
     [cell setData:vo];
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    //TODO
+    if(newslist==nil||[newslist count]==0)
+        return;
+    NewsVO *vo = [newslist objectAtIndex:indexPath.row];
+    NewsDetailViewController *vc = [[NewsDetailViewController alloc] initWithBaseVO:vo title:NSLocalizedString(@"资讯详情", @"详情页标题")];
+    [self presentModalViewController:vc animated:YES];
+}
+
 //下拉刷新
 -(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView
 {

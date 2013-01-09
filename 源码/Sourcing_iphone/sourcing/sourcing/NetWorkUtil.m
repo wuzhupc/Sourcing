@@ -51,13 +51,14 @@
             [[iToast makeText:NSLocalizedString(@"No network is currently.", @"提示本地无网络")] show];
         return NO;
         
-    } else if(![NetWorkUtil activeHostNetWork])
-    {
-        //提示无法连接服务器
-        if(showHit)
-            [[iToast makeText:NSLocalizedString(@"Currently unable to access the server.", @"提示无法连接服务器")] show];
-        return NO;
     }
+//    else if(![NetWorkUtil activeHostNetWork])
+//    {
+//        //提示无法连接服务器
+//        if(showHit)
+//            [[iToast makeText:NSLocalizedString(@"Currently unable to access the server.", @"提示无法连接服务器")] show];
+//        return NO;
+//    }
     return YES;
 }
 
