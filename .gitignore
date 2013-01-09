@@ -6,6 +6,7 @@
 *.so.dbg
 *.bin
 *.gz
+Thumbs.db
 
 #
 # Top-level generic files
