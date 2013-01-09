@@ -64,7 +64,7 @@
         _arrow.frame = CGRectMake(0, 0, 20, 20);
         _arrow.contentsGravity = kCAGravityResizeAspect;
       
-        _arrow.contents = (id)[UIImage imageWithCGImage:[UIImage imageNamed:@"blueArrow.png"].CGImage scale:1 orientation:UIImageOrientationDown].CGImage;
+        _arrow.contents = (id)[UIImage imageWithCGImage:[UIImage imageNamed:@"blueArrowDown"].CGImage scale:1 orientation:UIImageOrientationDown].CGImage;
 
         [self.layer addSublayer:_arrow];
         
@@ -97,7 +97,7 @@
         y = size.height - margin - kPRArrowHeight;
         arrowFrame = CGRectMake(4*x, y, kPRArrowWidth, kPRArrowHeight);
         
-        UIImage *arrow = [UIImage imageNamed:@"blueArrow"];
+        UIImage *arrow = [UIImage imageNamed:@"blueArrowDown"];
         _arrow.contents = (id)arrow.CGImage;
         
     } else {    //at bottom
@@ -111,7 +111,7 @@
         y = margin;
         arrowFrame = CGRectMake(4*x, y, kPRArrowWidth, kPRArrowHeight);
         
-        UIImage *arrow = [UIImage imageNamed:@"blueArrowDown"];        
+        UIImage *arrow = [UIImage imageNamed:@"blueArrow"];        
         _arrow.contents = (id)arrow.CGImage;
         _stateLabel.text = NSLocalizedString(@"上拉加载", @"");
     }

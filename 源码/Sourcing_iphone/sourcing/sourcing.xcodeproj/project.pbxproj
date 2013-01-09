@@ -145,6 +145,8 @@
 		32E9F49C169C52F200C3CBBE /* NewsHeadlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E9F49B169C52F200C3CBBE /* NewsHeadlineCell.xib */; };
 		32E9F49F169C535D00C3CBBE /* NewsNoPicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E9F49E169C535D00C3CBBE /* NewsNoPicCell.m */; };
 		32E9F4A2169C537E00C3CBBE /* NewsHeadlineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E9F4A1169C537E00C3CBBE /* NewsHeadlineCell.m */; };
+		32E9F4AA169C686500C3CBBE /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E9F4A8169C686500C3CBBE /* NewsDetailViewController.m */; };
+		32E9F4AB169C686500C3CBBE /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32E9F4A9169C686500C3CBBE /* NewsDetailViewController.xib */; };
 		32FB0D1A169951A7006ADA79 /* UIColor+MGExpanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB0D19169951A7006ADA79 /* UIColor+MGExpanded.m */; };
 		32FB0D2216995DDB006ADA79 /* StyledTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 32FB0D2116995DDB006ADA79 /* StyledTableViewCell.m */; };
 /* End PBXBuildFile section */
@@ -376,6 +378,9 @@
 		32E9F49E169C535D00C3CBBE /* NewsNoPicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsNoPicCell.m; path = sourcing/TableViewCell/NewsNoPicCell.m; sourceTree = "<group>"; };
 		32E9F4A0169C537E00C3CBBE /* NewsHeadlineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsHeadlineCell.h; path = sourcing/TableViewCell/NewsHeadlineCell.h; sourceTree = "<group>"; };
 		32E9F4A1169C537E00C3CBBE /* NewsHeadlineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsHeadlineCell.m; path = sourcing/TableViewCell/NewsHeadlineCell.m; sourceTree = "<group>"; };
+		32E9F4A7169C686500C3CBBE /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		32E9F4A8169C686500C3CBBE /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		32E9F4A9169C686500C3CBBE /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		32FB0D18169951A7006ADA79 /* UIColor+MGExpanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MGExpanded.h"; path = "sourcing/other/UIColor+MGExpanded.h"; sourceTree = "<group>"; };
 		32FB0D19169951A7006ADA79 /* UIColor+MGExpanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MGExpanded.m"; path = "sourcing/other/UIColor+MGExpanded.m"; sourceTree = "<group>"; };
 		32FB0D2016995DDB006ADA79 /* StyledTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StyledTableViewCell.h; path = sourcing/StyledTableViewCell/StyledTableViewCell.h; sourceTree = "<group>"; };
@@ -534,6 +539,9 @@
 				32120A98168985E000DBF915 /* WelcomeViewController.h */,
 				32120A99168985E000DBF915 /* WelcomeViewController.m */,
 				32120A9A168985E000DBF915 /* WelcomeViewController.xib */,
+				32E9F4A7169C686500C3CBBE /* NewsDetailViewController.h */,
+				32E9F4A8169C686500C3CBBE /* NewsDetailViewController.m */,
+				32E9F4A9169C686500C3CBBE /* NewsDetailViewController.xib */,
 			);
 			name = UI;
 			path = ..;
@@ -969,6 +977,7 @@
 				322CA4F6169B1BF900CCD216 /* icon_pic_loadfail@2x.png in Resources */,
 				32E9F49A169C52C200C3CBBE /* NewsNoPicCell.xib in Resources */,
 				32E9F49C169C52F200C3CBBE /* NewsHeadlineCell.xib in Resources */,
+				32E9F4AB169C686500C3CBBE /* NewsDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1060,6 +1069,7 @@
 				322CA517169B217000CCD216 /* UIImageView+WebCache.m in Sources */,
 				32E9F49F169C535D00C3CBBE /* NewsNoPicCell.m in Sources */,
 				32E9F4A2169C537E00C3CBBE /* NewsHeadlineCell.m in Sources */,
+				32E9F4AA169C686500C3CBBE /* NewsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
