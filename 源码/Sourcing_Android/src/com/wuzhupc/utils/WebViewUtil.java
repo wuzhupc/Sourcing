@@ -26,7 +26,7 @@ public class WebViewUtil
 	/**
 	 * ÷ÿ‘ÿ¡¥Ω”±Í«©
 	 */
-	public static final String CSTR_RELOADLINK = "wuzhupc://reload";
+	public static final String CSTR_RELOADLINK = "http://wuzhupc.com/reload";
 	@SuppressLint("SetJavaScriptEnabled")
 	public static void setWebView(final Context c,WebView webview,final OnReloadListener reloadListener)
 	{
