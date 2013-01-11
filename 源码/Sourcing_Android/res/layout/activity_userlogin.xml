@@ -34,9 +34,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/selector_common_edittext"
-        android:ems="10"
         android:hint="请输入您的用户名"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:maxLength="60"
+        android:typeface="monospace" />
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -73,10 +74,11 @@
         android:layout_marginRight="20dp"
         android:singleLine="true"
         android:background="@drawable/selector_common_edittext"
-        android:ems="10"
         android:hint="请输入您的密码"
         android:inputType="textPassword"
-		android:imeOptions="actionDone"/>
+		android:imeOptions="actionDone"
+        android:maxLength="20"
+        android:typeface="monospace"/>
 
     <Button
         android:id="@+id/userlogin_login_bt"

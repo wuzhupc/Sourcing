@@ -123,12 +123,13 @@ public abstract class BaseView extends LinearLayout
 	/**
 	 * 隐藏输入法
 	 */
-	protected void hideIme()
+	protected void hideIme(boolean bclear)
 	{
 		InputMethodManager imm = (InputMethodManager)mContext.getSystemService(Context.INPUT_METHOD_SERVICE);
 		if(met_search==null||!imm.isActive()) return;
 		imm.hideSoftInputFromWindow(met_search.getWindowToken(), 0);
-		met_search.setText("");
+		if(bclear)
+			met_search.setText("");
 	}
 	
 	/**
@@ -145,7 +146,7 @@ public abstract class BaseView extends LinearLayout
 		//是否已经初始化过数据，已经初始化则不处理
 		if(misInitData)
 		{
-			hideIme();
+			hideIme(true);
 			return false;
 		}
 		mNowChannelID=-1l;
@@ -158,7 +159,7 @@ public abstract class BaseView extends LinearLayout
 		}
 		else
 		{
-			hideIme();
+			hideIme(true);
 			//根据栏目ID设置内容视图
 			reflashContentView();
 			loadData(true);
@@ -174,7 +175,7 @@ public abstract class BaseView extends LinearLayout
 	{
 		if(mNowChannelID == channelid)
 			return;
-		hideIme();
+		hideIme(true);
 		mNowChannelID=channelid;
 		//设置栏目状态
 		setNavigationSel(mNowChannelID);

@@ -151,7 +151,7 @@ public class PersonView extends BaseView
 		}
 
 		// Òş²ØÈí¼üÅÌ
-		hideIme();
+		hideIme(false);
 
 		loadNewData(et.getText().toString());
 	}

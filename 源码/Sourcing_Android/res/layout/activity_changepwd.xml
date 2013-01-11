@@ -34,11 +34,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/selector_common_edittext"
-        android:ems="10"
         android:hint="@string/userchangepwd_pwd_hit"
         android:singleLine="true"
         android:inputType="textPassword"
-        android:imeOptions="actionNext" />
+        android:imeOptions="actionNext"
+        android:maxLength="20"
+        android:typeface="monospace" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,11 +59,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/selector_common_edittext"
-        android:ems="10"
         android:hint="@string/userchangepwd_newpwd_hit"
         android:singleLine="true"
         android:inputType="textPassword" 
-        android:imeOptions="actionNext" />
+        android:imeOptions="actionNext"
+        android:maxLength="20"
+        android:typeface="monospace"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -82,11 +84,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/selector_common_edittext"
-        android:ems="10"
         android:hint="@string/userchangepwd_newpwd_hit"
         android:singleLine="true"
         android:inputType="textPassword"
-        android:imeOptions="actionDone"  />
+        android:imeOptions="actionDone"
+        android:maxLength="20"
+        android:typeface="monospace"  />
 
     <Button
         android:id="@+id/userchangepwd_changepwd_bt"
