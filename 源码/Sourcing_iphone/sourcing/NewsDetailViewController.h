@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseVO.h"
-#import "BaseServiceDelegate.h"
 #import "FavoriteUtil.h"
+#import "MBProgressHUD.h"
 
-@interface NewsDetailViewController : UIViewController<BaseServiceDelegate>
+@interface NewsDetailViewController : UIViewController<UIWebViewDelegate,MBProgressHUDDelegate>
 {
     NSString *_titleText;
     BaseVO *_baseVO;
     NSObject<FavDataChangeDelegate> *_favDelegate;
+    MBProgressHUD *_HUD;
+    BaseVO *_detailVO;
 }
 
 -(id)initWithBaseVO:(BaseVO *)kvo title:(NSString *)ktitle;

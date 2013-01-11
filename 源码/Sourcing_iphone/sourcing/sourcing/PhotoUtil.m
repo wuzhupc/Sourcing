@@ -7,7 +7,7 @@
 //
 
 #import "PhotoUtil.h"
-#import "MWPhotoBrowser/MWPhoto.h"
+#import "MWPhoto.h"
 #import "HtmlUtil.h"
 
 @implementation PhotoUtil
@@ -17,18 +17,11 @@
 {
     if ((self = [self init]))
     {
-        if ([HtmlUtil isHtmlUrl:imgurl]) {
+        if ([HtmlUtil isImageUrl:imgurl]) {
             self.photos = [[NSMutableArray alloc] initWithObjects:[MWPhoto photoWithURL:[NSURL URLWithString:imgurl]],nil];
         }
     }
     return self;
-}
-
-- (void) dealloc
-{
-    if(_photos!=nil)
-        [_photos release];
-    [super dealloc];
 }
 
 
@@ -46,4 +39,14 @@
         return [_photos objectAtIndex:index];
     return nil;
 }
+
+-(void)showPhotoBrowser:(UIViewController *)kvc
+{
+    MWPhotoBrowser *browser = [[MWPhotoBrowser alloc] initWithDelegate:self];
+    browser.displayActionButton = YES;
+    UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:browser];
+    nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [kvc presentModalViewController:nc animated:YES];
+}
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "BaseVO.h"
+#import "HtmlUtil.h"
 
 @implementation BaseVO
 
@@ -22,5 +23,27 @@
         return other.Id == self.Id;
     }
     return [super isEqual: object];
+}
+
+-(NSString *)getHtmlTitle
+{
+    return [HtmlUtil getHtmlHead];
+}
+-(NSString *)getHtmlSubTitle
+{
+    return @"";
+}
+-(void)setHtmlToShow:(DetailInfoCompleteBlock)kcomblock failure:(DetailInfoErrorBlock)kerrorblock
+{
+    _comblock = kcomblock;
+    _errorblock = kerrorblock;
+}
+-(NSString *)generateShareText
+{
+    return @"";
+}
+-(NSString *)getHtmlContext
+{
+    return @"";
 }
 @end

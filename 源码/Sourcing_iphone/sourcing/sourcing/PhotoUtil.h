@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MWPhotoBrowser/MWPhotoBrowser.h"
+#import "MWPhotoBrowser.h"
 
 @interface PhotoUtil : NSObject <MWPhotoBrowserDelegate>
 {
     NSArray *_photos;
 }
-@property (nonatomic, retain) NSArray *photos;
+@property NSArray *photos;
 
 - (id)initWithImageUrl:(NSString *)imgurl;
+-(void)showPhotoBrowser:(UIViewController *)kvc;
 @end

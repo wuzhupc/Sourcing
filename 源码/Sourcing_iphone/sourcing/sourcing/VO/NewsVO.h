@@ -7,8 +7,11 @@
 //
 
 #import "BaseVO.h"
+#import "BaseServiceDelegate.h"
 
-@interface NewsVO : BaseVO
+#define CINT_TAG_GETNEWSDETAIL 10003
+
+@interface NewsVO : BaseVO<BaseServiceDelegate>
 {
     NSInteger newsid;
     NSString *headline;
@@ -22,7 +25,6 @@
     NSString *source;
     NSInteger readernum;
     NSInteger commentnum;
-    
 }
 @property NSString *headline;
 @property NSInteger newstype;

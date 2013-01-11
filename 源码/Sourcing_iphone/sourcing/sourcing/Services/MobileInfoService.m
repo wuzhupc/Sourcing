@@ -68,7 +68,7 @@
 -(void)getNewsDetail:(NSString *)knewstype newsid:(NSString *)kid
 {
     _commandName = [DataInterfaceUtil getDataInterface:@"cmd_json_get_news_detail"];
-    [self setAssetsFileInfo:_commandName suffix:knewstype];
+    [self setAssetsFileInfo:_commandName suffix:[NSString stringWithFormat:@"%@_%@",knewstype,kid]];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"newstype" paramValue:knewstype];

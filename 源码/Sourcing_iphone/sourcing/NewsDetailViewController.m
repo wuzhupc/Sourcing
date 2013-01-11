@@ -7,9 +7,14 @@
 //
 
 #import "NewsDetailViewController.h"
-#import "MobileInfoService.h"
 #import "ToastHintUtil.h"
 #import "StringUtil.h"
+#import "UIColor+MGExpanded.h"
+#import "ApplicationSet.h"
+#import "HtmlUtil.h"
+#import "SitelinkUtil.h"
+#import "PhotoUtil.h"
+#import "DataInterfaceUtil.h"
 
 @interface NewsDetailViewController ()
 
@@ -51,7 +56,10 @@
     //判断是否已经收藏过
     NSInteger index = [[FavoriteUtil favoriteUtil] hasFavData:_baseVO];
     [self setFavImageView:index!=-1];
-    
+    self.webviewDetail.opaque=NO;
+    [self.webviewDetail setBackgroundColor:CCOLOR_BG_WHITE];
+    self.webviewDetail.delegate = self;
+    [self initDetail];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,6 +76,7 @@
     [self setWebviewDetail:nil];
     [super viewDidUnload];
 }
+#pragma mark  Action
 - (IBAction)actionReturn:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -91,6 +100,46 @@
 }
 
 - (IBAction)actionShare:(id)sender {
+    //TODO 共享
+}
+#pragma mark 私有方法
+
+//加载详细信息
+-(void)initDetail
+{
+    if([self.webviewDetail isLoading])
+        [self.webviewDetail stopLoading];
+    if(_baseVO==nil)
+        return;
+    [self showLoading];
+    __block NewsDetailViewController *nvc = self;
+    [_baseVO setHtmlToShow:^(BaseVO *kvo) {
+        [nvc setNewsInfo:kvo];
+    } failure:^(NSString *kmsg) {
+        [nvc setErrorInfo:kmsg];
+    }];
+}
+
+-(void)setNewsInfo:(BaseVO *)kvo
+{
+    _detailVO = kvo;
+    if(_detailVO == nil)
+    {
+        [self setErrorInfo:NSLocalizedString(@"很抱歉，资讯内容为空。", @"资讯内容为空提示")];
+        return;
+    }
+    NSString *webcontent = [NSString stringWithFormat:@"%@%@%@%@%@",[HtmlUtil getHtmlHead],[_baseVO getHtmlTitle],[_baseVO getHtmlSubTitle],[_detailVO getHtmlContext],[HtmlUtil getHtmlEnd]];
+    [self.webviewDetail loadHTMLString:webcontent baseURL:nil];
+}
+
+-(void)setErrorInfo:(NSString *)kmsg
+{
+    [self hideLoad];
+    [ToastHintUtil showHint:kmsg parentview:self.view];
+    if(_baseVO == nil)
+        return;
+    NSString *webcontent = [NSString stringWithFormat:@"%@%@%@%@%@",[HtmlUtil getHtmlHead],[_baseVO getHtmlTitle],[_baseVO getHtmlSubTitle],[HtmlUtil getHtmlErrorHit:kmsg hasreload:YES],[HtmlUtil getHtmlEnd]];
+    [self.webviewDetail loadHTMLString:webcontent baseURL:nil];
 }
 
 -(void)setFavImageView:(BOOL)kfav
@@ -103,8 +152,83 @@
     }
 }
 
--(void)serviceResult:(ResponseVO *)result
+-(void)showLoading
+{
+    //显示加载
+    if (_HUD) {
+        [_HUD removeFromSuperview];
+        _HUD = nil;
+    }
+    _HUD = [[MBProgressHUD alloc] initWithView:self.view];
+	[self.view addSubview:_HUD];
+    _HUD.labelText = @"加载中...";
+	// Set the hud to display with a color
+	_HUD.color = CCOLOR_BG_WHITE;
+	_HUD.delegate = self;
+    [_HUD show:YES];
+}
+
+-(void)hideLoad
+{
+    [_HUD hide:YES];
+}
+
+#pragma mark UIWebViewDelegate methods
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
     //TODO
+    [self hideLoad];
+    //[ToastHintUtil showHint:NSLocalizedString(@"", @"")];
 }
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    //TODO 字体
+    //[self.webviewDetail stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '150%'"];
+    [self hideLoad];
+}
+-(void)webViewDidStartLoad:(UIWebView *)webView
+{
+    //[self.webviewDetail stringByEvaluatingJavaScriptFromString:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '150%'"];
+    //[self showLoading];
+}
+
+-(BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+    //处理跳转
+    BOOL result = YES;
+    NSURL *requestURL=[request URL];
+    NSString *requestStr=[[request URL] absoluteString];
+    
+    if ([HtmlUtil isReloadLink:requestStr]) {
+        [self initDetail];
+        return NO;
+    }
+    
+    if([HtmlUtil isImageUrl:requestStr])
+    {
+        PhotoUtil *photoutil = [[PhotoUtil alloc] initWithImageUrl:requestStr];
+        [photoutil showPhotoBrowser:self];
+        return NO;
+    }
+    //TODO 判断是否是站内新闻
+//    NSString *newsid = [SitelinkUtil isSiteLink:requestStr];
+//    if(![StringUtil isEmptyStr:newsid])
+//    {
+//        SitelinkUtil *sitelink = [[SitelinkUtil alloc] init];
+//        [sitelink processSiteLink:newsid parentViewController:self];
+//        return NO;
+//    }
+    //都不是则打开系统浏览器浏览这个地址
+    result = ![[UIApplication sharedApplication] openURL:requestURL];
+    return result;
+}
+#pragma mark MBProgressHUDDelegate methods
+-(void)hudWasHidden:(MBProgressHUD *)hud
+{
+    if(_HUD==nil)
+        return;
+    [_HUD removeFromSuperview];
+	_HUD = nil;
+}
+
 @end
