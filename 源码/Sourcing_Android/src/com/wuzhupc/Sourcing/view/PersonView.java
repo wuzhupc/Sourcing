@@ -324,22 +324,22 @@ public class PersonView extends BaseView
 		keepMainTitleReflashStauts();
 		if(vo.isPositionChannel())
 		{
-			newsService.getJobList(searchkey, mLastNewsId, getNewDataReceiver(vo.getChannelID()));
+			newsService.getJobList(searchkey, mLastNewsId, getMoreDataReciiver(vo.getChannelID()));
 			return;
 		}
 		if(vo.isProjectChannel())
 		{
-			newsService.getProjectList(searchkey, mLastNewsId, getNewDataReceiver(vo.getChannelID()));
+			newsService.getProjectList(searchkey, mLastNewsId, getMoreDataReciiver(vo.getChannelID()));
 			return;
 		}
 		if(vo.isResumeChannel())
 		{
-			newsService.getResumeList(searchkey, mLastNewsId, getNewDataReceiver(vo.getChannelID()));
+			newsService.getResumeList(searchkey, mLastNewsId, getMoreDataReciiver(vo.getChannelID()));
 			return;
 		}
 		if(vo.isTrainChannel())
 		{
-			newsService.getTrainList(searchkey, mLastNewsId, getNewDataReceiver(vo.getChannelID()));
+			newsService.getTrainList(searchkey, mLastNewsId, getMoreDataReciiver(vo.getChannelID()));
 			return;
 		}
 	}
