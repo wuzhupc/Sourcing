@@ -9,6 +9,8 @@
 #import "MWZoomingScrollView.h"
 #import "MWPhotoBrowser.h"
 #import "MWPhoto.h"
+#import "ApplicationSet.h"
+#import "UIColor+MGExpanded.h"
 
 // Declare private methods of browser
 @interface MWPhotoBrowser ()
@@ -38,7 +40,7 @@
 		_tapView = [[MWTapDetectingView alloc] initWithFrame:self.bounds];
 		_tapView.tapDelegate = self;
 		_tapView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-		_tapView.backgroundColor = [UIColor blackColor];
+		_tapView.backgroundColor = CCOLOR_BG_WHITE;//[UIColor blackColor];
 		[self addSubview:_tapView];
 		
 		// Image view
@@ -56,7 +58,7 @@
 		[self addSubview:_spinner];
 		
 		// Setup
-		self.backgroundColor = [UIColor blackColor];
+		self.backgroundColor = CCOLOR_BG_WHITE; //[UIColor blackColor];
 		self.delegate = self;
 		self.showsHorizontalScrollIndicator = NO;
 		self.showsVerticalScrollIndicator = NO;

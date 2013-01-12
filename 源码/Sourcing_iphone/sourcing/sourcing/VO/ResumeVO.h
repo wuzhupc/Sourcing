@@ -7,20 +7,14 @@
 //
 
 #import "BaseVO.h"
+#import "BaseServiceDelegate.h"
 
-@interface ResumeVO : BaseVO
-{
-    NSInteger resumeid;
-    NSString *expectjob;
-    NSString *name;
-    NSString *publishtime;
-    NSString *resumetitle;
-}
+@interface ResumeVO : BaseVO<BaseServiceDelegate>
 
-@property NSString *expectjob;
-@property NSString *name;
-@property NSString *publishtime;
-@property NSString *resumetitle;
+@property (nonatomic,strong)NSString *expectjob;
+@property (nonatomic,strong)NSString *name;
+@property (nonatomic,strong)NSString *publishtime;
+@property (nonatomic,strong)NSString *resumetitle;
 
 -(void)setResumeid:(NSInteger )kid;
 -(NSInteger )Resumeid;

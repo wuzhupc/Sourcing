@@ -9,18 +9,11 @@
 #import "BaseVO.h"
 
 @interface AuditResultVO : BaseVO
-{
-    NSInteger auditresultid;
-    NSString *auditresultcontent;
-    NSString *publisher;
-    NSString *publishtime;
-    NSString *auditresult;
-}
 
-@property NSString *auditresultcontent;
-@property NSString *publisher;
-@property NSString *publishtime;
-@property NSString *auditresult;
+@property (nonatomic,strong)NSString *auditresultcontent;
+@property (nonatomic,strong)NSString *publisher;
+@property (nonatomic,strong)NSString *publishtime;
+@property (nonatomic,strong)NSString *auditresult;
 
 -(void)setAuditresultid:(NSInteger)kresultid;
 -(NSInteger)Auditresultid;

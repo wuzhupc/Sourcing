@@ -12,17 +12,12 @@
 #define CINT_CODE_ERROR     1
 
 @interface ResponseVO : NSObject
-{
-    NSUInteger _code;
-    NSInteger _tag;
-    NSString    *_msg;
-    NSInteger _tag2;
-}
 
-@property  NSUInteger code;   // 返回报文状态码 : 1.正常 0. 不正常
-@property NSString *msg;     // 返回报文状态信息
-@property NSInteger tag; //标志位
-@property NSInteger tag2;
+@property  (nonatomic)NSUInteger code;   // 返回报文状态码 : 1.正常 0. 不正常
+@property (nonatomic,strong)NSString *msg;     // 返回报文状态信息
+@property (nonatomic)NSInteger tag; //标志位
+@property (nonatomic)NSInteger tag2;
+
 -(BOOL)isSucess;
 -(id) initWithResult: (NSUInteger)mcode msg:(NSString*)mmsg tag:(NSInteger)mtag;
 @end

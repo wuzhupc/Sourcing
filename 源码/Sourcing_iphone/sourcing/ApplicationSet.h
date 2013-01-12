@@ -18,20 +18,13 @@
 #define CCOLOR_TABLEVIEW_SEL_2 [UIColor colorWithRGBHex:0xFFFBC5B6]
 
 @interface ApplicationSet : NSObject
-{
-    //是否已经注册过设备号
-    BOOL _isRegDevToken;
-    //设备号
-    NSString *_deviceToken;
-    //所有的栏目列表
-    NSArray *_channels;
-    //用户信息
-    UserVO *_userVO;
-}
 
+//是否已经注册过设备号
 @property BOOL isRegDevToken;
-@property (nonatomic) NSString *deviceToken;
-@property NSArray *channels;
+//设备号
+@property (nonatomic,strong)NSString *deviceToken;
+//所有的栏目列表
+@property (nonatomic,strong)NSArray *channels;
 
 +(ApplicationSet *)shareData;
 

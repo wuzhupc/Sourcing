@@ -12,20 +12,27 @@
 #import "JsonParser.h"
 #import "StringUtil.h"
 
+@interface ChannelVO()
+{
+    @private
+        NSInteger channelID;
+}
+@end
+
 @implementation ChannelVO
-@synthesize channelName;
-@synthesize fatherchannelID;
-@synthesize isdefault;
-@synthesize sort;
-@synthesize type;
-@synthesize isFirstLoad;
-@synthesize lastUpdateDataTime;
-@synthesize mustusertypes;
+@synthesize channelName=channelName_;
+@synthesize fatherchannelID=fatherchannelID_;
+@synthesize isdefault=isdefault_;
+@synthesize sort=sort_;
+@synthesize type=type_;
+@synthesize isFirstLoad=isFirstLoad_;
+@synthesize lastUpdateDataTime=lastUpdateDataTime_;
+@synthesize mustusertypes=mustusertypes_;
 
 
 -(void)setChannelID:(NSInteger)kid
 {
-    _id = kid;
+    self.Id = kid;
     channelID = kid;
 }
 -(NSInteger)ChannelID
@@ -45,50 +52,50 @@
 
 -(BOOL)isNewsChannel
 {
-    return fatherchannelID == CINT_CHANNELID_FATHER && type == TYPE_FATHER_NEWS;
+    return self.fatherchannelID == CINT_CHANNELID_FATHER && self.type == TYPE_FATHER_NEWS;
 }
 -(BOOL)isPersonChannel
 {
-    return fatherchannelID == CINT_CHANNELID_FATHER && type == TYPE_FATHER_PERSON;
+    return self.fatherchannelID == CINT_CHANNELID_FATHER && self.type == TYPE_FATHER_PERSON;
     
 }
 -(BOOL)isUserChannel
 {
-    return fatherchannelID == CINT_CHANNELID_FATHER && type == TYPE_FATHER_USER;
+    return self.fatherchannelID == CINT_CHANNELID_FATHER && self.type == TYPE_FATHER_USER;
     
 }
 -(BOOL)isMoreChannel
 {
-    return fatherchannelID == CINT_CHANNELID_FATHER && type == TYPE_FATHER_MORE;
+    return self.fatherchannelID == CINT_CHANNELID_FATHER && self.type == TYPE_FATHER_MORE;
     
 }
 -(BOOL)isMore_FavChannel
 {
-    return fatherchannelID == TYPE_FATHER_MORE && type == TYPE_MORE_FAV;
+    return self.fatherchannelID == TYPE_FATHER_MORE && self.type == TYPE_MORE_FAV;
 }
 -(BOOL)isMore_SettingChannel
 {
-    return fatherchannelID == TYPE_FATHER_MORE && type == TYPE_MORE_SETTING;
+    return self.fatherchannelID == TYPE_FATHER_MORE && self.type == TYPE_MORE_SETTING;
 }
 -(BOOL)isMore_ExitChannel
 {
-    return fatherchannelID == TYPE_FATHER_MORE && type == TYPE_MORE_EXIT;
+    return self.fatherchannelID == TYPE_FATHER_MORE && self.type == TYPE_MORE_EXIT;
 }
 -(BOOL)isPerson_PositionChannel
 {
-    return fatherchannelID == TYPE_FATHER_PERSON && type == TYPE_PERSON_POSITION;
+    return self.fatherchannelID == TYPE_FATHER_PERSON && self.type == TYPE_PERSON_POSITION;
 }
 -(BOOL)isPerson_TrainChannel
 {
-    return fatherchannelID == TYPE_FATHER_PERSON && type == TYPE_PERSON_TRAIN;
+    return self.fatherchannelID == TYPE_FATHER_PERSON && self.type == TYPE_PERSON_TRAIN;
 }
 -(BOOL)isPerson_ProjectChannel
 {
-    return fatherchannelID == TYPE_FATHER_PERSON && type == TYPE_PERSON_PROJECT;
+    return self.fatherchannelID == TYPE_FATHER_PERSON && self.type == TYPE_PERSON_PROJECT;
 }
 -(BOOL)isPerson_ResumeChannel
 {
-    return fatherchannelID == TYPE_FATHER_PERSON && type == TYPE_PERSON_RESUME;
+    return self.fatherchannelID == TYPE_FATHER_PERSON && self.type == TYPE_PERSON_RESUME;
 }
 
 +(NSArray *)initChannelsFromAssets

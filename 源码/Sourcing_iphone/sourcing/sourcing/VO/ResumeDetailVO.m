@@ -9,5 +9,5 @@
 #import "ResumeDetailVO.h"
 
 @implementation ResumeDetailVO
-@synthesize resumecontent = resumecontent;
+@synthesize resumecontent = resumecontent_;
 @end

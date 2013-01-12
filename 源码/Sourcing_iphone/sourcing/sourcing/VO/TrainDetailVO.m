@@ -9,5 +9,5 @@
 #import "TrainDetailVO.h"
 
 @implementation TrainDetailVO
-@synthesize traincontent = traincontent;
+@synthesize traincontent = traincontent_;
 @end

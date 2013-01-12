@@ -1,16 +1,19 @@
 //
-//  BaseHomeViewController.m
+//  TrainCell.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-12.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "BaseHomeViewController.h"
-#import "CustomNavigationBar.h"
+#import "TrainCell.h"
+#import "StringUtil.h"
+#import "ApplicationSet.h"
+#import "UIColor+MGExpanded.h"
+#import "TrainVO.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -23,43 +26,44 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
-
-@interface BaseHomeViewController ()
+@interface TrainCell ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 
 @end
 
-
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation BaseHomeViewController
+@implementation TrainCell
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
 
-/* Outlets ********************************************************************/
-
 /* Public *********************************************************************/
-@synthesize fatherchannel=_fatherchannel;
 
 /* Private ********************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitBaseHomeViewController
+- (void)commonInitTrainCell
 {
+    NSMutableArray *colors = [NSMutableArray array];
+    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
+    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL_2 CGColor]];
+    [self setSelectedBackgroundViewGradientColors:colors];
+    [self.backgroundView setBackgroundColor:CCOLOR_TABLEVIEW_BG];
+    [self setDashWidth:2 dashGap:3 dashStroke:2];
 }
 
-- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithFrame:frame];
     if (self)
     {
-        [self commonInitBaseHomeViewController];
+        [self commonInitTrainCell];
     }
     return self;
 }
@@ -69,27 +73,9 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitBaseHomeViewController];
+        [self commonInitTrainCell];
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // your code here
-    //自定义NavigationBar
-    CustomNavigationBar* customNavigationBar2 = (CustomNavigationBar*)self.customNavigationBar;
-    [customNavigationBar2 setBackgroundWith:[UIImage imageNamed:@"navigation_bg"]];
-    //
-    if(self.titleNavigationItem!=nil&&self.fatherchannel!=nil)
-        self.titleNavigationItem.title = NSLocalizedString(@"applicationname", @"应用程序名称"); 
-}
-
-- (void)viewDidUnload {
-	// your code here
-    [self setCustomNavigationBar:nil];
-    [self setTitleNavigationItem:nil];
-    [super viewDidUnload];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -97,11 +83,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public methods
--(void)setNavTitle:(NSString *)ktitle
+-(void)setData:(BaseVO *)kdataVO
 {
-    self.tabBarItem.title = ktitle;
+    _dataVO = kdataVO;
+    if(_dataVO != nil)
+    {
+        if([_dataVO isMemberOfClass:[TrainVO class]])
+        {
+            TrainVO *vo = (TrainVO *)_dataVO;
+            [self.laTitle setText:vo.trainname];
+            return;
+        }
+    }
+    [self.laTitle setText:@""];
+    
 }
-
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
 
@@ -109,7 +105,7 @@
 #pragma mark - Actions
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Delegate methods
+#pragma mark - XXXDataSource / XXXDelegate methods
 
 
 @end

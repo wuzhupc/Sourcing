@@ -11,6 +11,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseHomeViewController.h"
+#import "BrowserTabView.h"
+#import "ChannelVO.h"
+#import "PullingRefreshTableView.h"
+#import "BaseServiceDelegate.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -18,13 +22,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Defines & Constants
 
+#define CINT_TAG_LOADNEWDATA 10005
+#define CINT_TAG_LOADMOREDATA 10006
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Macros
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface PersonViewController : BaseHomeViewController
+@interface PersonViewController : BaseHomeViewController<BrowserTabViewDelegate,PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate,BaseServiceDelegate>
+{
+    BrowserTabView *subChannelBTV;
+    NSArray *subChannels;
+    PullingRefreshTableView *prTableView;
+    NSInteger nowSelChannel;
+    NSMutableArray *datalist;
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -32,6 +46,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Outlets
+@property (weak, nonatomic) IBOutlet UISearchBar *searchkeySearchBar;
+@property (weak, nonatomic) IBOutlet UIScrollView *subChannelScrollView;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
@@ -41,7 +57,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
-@property (weak, nonatomic) IBOutlet UISearchBar *searchkeySearchBar;
 
 
 @end

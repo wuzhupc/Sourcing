@@ -11,7 +11,7 @@
 
 @implementation BaseVO
 
-@synthesize Id = _id;
+@synthesize Id = id_;
 
 - (BOOL) isEqual:(id)object
 {
@@ -46,4 +46,29 @@
 {
     return @"";
 }
+-(CGFloat)heightForCell:(NSInteger)kindex
+{
+    return 80.0f;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex
+{
+    return [BaseVO tableViewWithEmptyData:tableView title:@""];
+}
+
++(UITableViewCell *)tableViewWithEmptyData:(UITableView *)tableView title:(NSString *)ktitle
+{
+    static NSString *CellIdentifier = @"EmptyData";
+    UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (!cell)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        [cell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
+        cell.textLabel.textAlignment = UITextAlignmentCenter;
+    }
+    [cell.textLabel setText:ktitle];
+    return cell;
+}
+
 @end

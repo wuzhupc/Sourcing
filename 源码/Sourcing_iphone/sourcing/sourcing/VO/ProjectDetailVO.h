@@ -9,10 +9,7 @@
 #import "ProjectVO.h"
 
 @interface ProjectDetailVO : ProjectVO
-{
-    NSString *projectcontent;
-}
 
-@property NSString *projectcontent;
+@property (nonatomic,strong)NSString *projectcontent;
 
 @end

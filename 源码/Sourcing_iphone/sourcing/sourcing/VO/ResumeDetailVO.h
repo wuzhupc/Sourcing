@@ -9,8 +9,6 @@
 #import "ResumeVO.h"
 
 @interface ResumeDetailVO : ResumeVO
-{
-    NSString *resumecontent;
-}
-@property NSString *resumecontent;
+
+@property (nonatomic,strong)NSString *resumecontent;
 @end

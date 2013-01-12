@@ -9,16 +9,11 @@
 #import "BaseVO.h"
 
 @interface NotifierVO : BaseVO
-{
-    NSInteger notifierid;
-    NSString *notifiercontent;
-    NSString *publisher;
-    NSString *publishtime;
-}
 
-@property NSString *notifiercontent;
-@property NSString *publisher;
-@property NSString *publishtime;
+
+@property (nonatomic,strong)NSString *notifiercontent;
+@property (nonatomic,strong)NSString *publisher;
+@property (nonatomic,strong)NSString *publishtime;
 
 -(void)setNotifierid:(NSInteger )kid;
 -(NSInteger )Notifierid;

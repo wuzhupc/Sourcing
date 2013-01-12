@@ -8,16 +8,24 @@
 
 #import "AuditResultVO.h"
 
+@interface AuditResultVO()
+{
+@private
+    NSInteger auditresultid;
+}
+
+@end
+
 @implementation AuditResultVO
 
-@synthesize auditresult = auditresult;
-@synthesize auditresultcontent = auditresultcontent;
-@synthesize publisher = publisher;
-@synthesize publishtime = publishtime;
+@synthesize auditresult = auditresult_;
+@synthesize auditresultcontent = auditresultcontent_;
+@synthesize publisher = publisher_;
+@synthesize publishtime = publishtime_;
 
 -(void)setAuditresultid:(NSInteger)kresultid
 {
-    _id = kresultid;
+    self.Id = kresultid;
     auditresultid = kresultid;
 }
 -(NSInteger)Auditresultid

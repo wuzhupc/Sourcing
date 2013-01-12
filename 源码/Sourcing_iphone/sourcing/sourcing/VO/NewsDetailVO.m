@@ -10,12 +10,13 @@
 #import "HtmlUtil.h"
 
 @implementation NewsDetailVO
-@synthesize newscontent;
+
+@synthesize newscontent= newscontent_;
 
 
 #pragma mark - Superclass Overrides
 -(NSString *)getHtmlContext
 {
-    return [HtmlUtil getHtmlContext:newscontent];
+    return [HtmlUtil getHtmlContext:self.newscontent];
 }
 @end

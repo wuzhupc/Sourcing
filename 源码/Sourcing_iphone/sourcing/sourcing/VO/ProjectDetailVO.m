@@ -10,5 +10,5 @@
 
 @implementation ProjectDetailVO
 
-@synthesize projectcontent = projectcontent;
+@synthesize projectcontent = projectcontent_;
 @end

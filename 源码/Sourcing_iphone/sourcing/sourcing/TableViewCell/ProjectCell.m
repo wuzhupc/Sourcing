@@ -1,16 +1,21 @@
 //
-//  BaseHomeViewController.m
+//  ProjectCell.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-12.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "BaseHomeViewController.h"
-#import "CustomNavigationBar.h"
+#import "ProjectCell.h"
+#import "StringUtil.h"
+#import "ApplicationSet.h"
+#import "UIColor+MGExpanded.h"
+#import "ResumeVO.h"
+#import "JobVO.h"
+#import "ProjectVO.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -23,43 +28,44 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
-
-@interface BaseHomeViewController ()
+@interface ProjectCell ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 
 @end
 
-
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation BaseHomeViewController
+@implementation ProjectCell
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
 
-/* Outlets ********************************************************************/
-
 /* Public *********************************************************************/
-@synthesize fatherchannel=_fatherchannel;
 
 /* Private ********************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitBaseHomeViewController
+- (void)commonInitProjectCell
 {
+    NSMutableArray *colors = [NSMutableArray array];
+    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
+    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL_2 CGColor]];
+    [self setSelectedBackgroundViewGradientColors:colors];
+    [self.backgroundView setBackgroundColor:CCOLOR_TABLEVIEW_BG];
+    [self setDashWidth:2 dashGap:3 dashStroke:2];
 }
 
-- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithFrame:frame];
     if (self)
     {
-        [self commonInitBaseHomeViewController];
+        [self commonInitProjectCell];
     }
     return self;
 }
@@ -69,27 +75,9 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitBaseHomeViewController];
+        [self commonInitProjectCell];
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // your code here
-    //自定义NavigationBar
-    CustomNavigationBar* customNavigationBar2 = (CustomNavigationBar*)self.customNavigationBar;
-    [customNavigationBar2 setBackgroundWith:[UIImage imageNamed:@"navigation_bg"]];
-    //
-    if(self.titleNavigationItem!=nil&&self.fatherchannel!=nil)
-        self.titleNavigationItem.title = NSLocalizedString(@"applicationname", @"应用程序名称"); 
-}
-
-- (void)viewDidUnload {
-	// your code here
-    [self setCustomNavigationBar:nil];
-    [self setTitleNavigationItem:nil];
-    [super viewDidUnload];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -97,9 +85,40 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public methods
--(void)setNavTitle:(NSString *)ktitle
+-(void)setData:(BaseVO *)kdataVO
 {
-    self.tabBarItem.title = ktitle;
+    _dataVO = kdataVO;
+    if(_dataVO != nil)
+    {
+        if([_dataVO isMemberOfClass:[ResumeVO class]])
+        {
+            ResumeVO *vo = (ResumeVO *)_dataVO;
+            [self.laPublishTime setText:vo.publishtime];
+            [self.laSummary setText:vo.expectjob];
+            [self.laTitle setText:vo.resumetitle];
+            return;
+        }
+        if([_dataVO isMemberOfClass:[JobVO class]])
+        {
+            JobVO *vo = (JobVO *)_dataVO;
+            [self.laPublishTime setText:vo.publishtime];
+            [self.laSummary setText:vo.company];
+            [self.laTitle setText:vo.job];
+            return;
+        }
+        if([_dataVO isMemberOfClass:[ProjectVO class]])
+        {
+            ProjectVO *vo = (ProjectVO *)_dataVO;
+            [self.laPublishTime setText:vo.publishtime];
+            [self.laSummary setText:vo.projectstatus];
+            [self.laTitle setText:vo.projectname];
+            return;
+        }
+    }
+    [self.laTitle setText:@""];
+    [self.laSummary setText:@""];
+    [self.laPublishTime setText:@""];
+    
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -109,7 +128,7 @@
 #pragma mark - Actions
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Delegate methods
+#pragma mark - XXXDataSource / XXXDelegate methods
 
 
 @end

@@ -7,18 +7,14 @@
 //
 
 #import "BaseVO.h"
+#import "BaseServiceDelegate.h"
 
-@interface JobVO : BaseVO
-{
-    NSInteger jobid;
-    NSString *job;
-    NSString *company;
-    NSString *publishtime;
-}
+@interface JobVO : BaseVO<BaseServiceDelegate>
 
-@property NSString *job;
-@property NSString *company;
-@property NSString *publishtime;
+@property (nonatomic,strong)NSString *job;
+@property (nonatomic,strong)NSString *company;
+@property (nonatomic,strong)NSString *publishtime;
+
 -(void)setJobid:(NSInteger )kid;
 -(NSInteger )Jobid;
 @end

@@ -7,18 +7,13 @@
 //
 
 #import "BaseVO.h"
+#import "BaseServiceDelegate.h"
 
-@interface ProjectVO : BaseVO
-{
-    NSInteger projectid;
-    NSString *projectname;
-    NSString *projectstatus;
-    NSString *publishtime;
-}
+@interface ProjectVO : BaseVO<BaseServiceDelegate>
 
-@property NSString *projectname;
-@property NSString *projectstatus;
-@property NSString *publishtime;
+@property (nonatomic,strong)NSString *projectname;
+@property (nonatomic,strong)NSString *projectstatus;
+@property (nonatomic,strong)NSString *publishtime;
 
 -(void)setProjectid:(NSInteger )kid;
 -(NSInteger )Projectid;

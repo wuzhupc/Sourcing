@@ -9,8 +9,6 @@
 #import "JobVO.h"
 
 @interface JobDetailVO : JobVO
-{
-    NSString *jobdesc;
-}
-@property NSString *jobdesc;
+
+@property (nonatomic,strong)NSString *jobdesc;
 @end

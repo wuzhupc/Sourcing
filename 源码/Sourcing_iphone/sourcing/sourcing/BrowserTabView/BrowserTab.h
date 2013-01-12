@@ -52,14 +52,16 @@
     NSInteger index;
     
     BOOL previousSelected ;
-    BOOL selected;
+    BOOL _selected;
     
     UIPanGestureRecognizer *panGuesture;
     BrowserTabView *delegate;
 }
 @property UIFont *titleFont;
 @property NSString *title;
-@property BOOL selected;
+//@property BOOL selected;
+-(BOOL)getSelected;
+-(void)setSelected:(BOOL)isSelected;
 @property UIImage *tabSelectedImage;
 @property UIImage *tabNormalImage;
 @property UIColor *normalTitleColor;

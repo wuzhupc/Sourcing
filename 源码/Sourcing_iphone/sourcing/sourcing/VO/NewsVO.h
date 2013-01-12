@@ -12,31 +12,18 @@
 #define CINT_TAG_GETNEWSDETAIL 10003
 
 @interface NewsVO : BaseVO<BaseServiceDelegate>
-{
-    NSInteger newsid;
-    NSString *headline;
-    NSInteger newstype;
-    NSString *title;
-    NSString *titlepic;
-    NSString *titlepic_small;
-    NSString *publishtime;
-    NSString *newssummary;
-    NSString *auther;
-    NSString *source;
-    NSInteger readernum;
-    NSInteger commentnum;
-}
-@property NSString *headline;
-@property NSInteger newstype;
-@property NSString *title;
-@property NSString *titlepic;
-@property NSString *titlepic_small;
-@property NSString *publishtime;
-@property NSString *newssummary;
-@property NSString *auther;
-@property NSString *source;
-@property NSInteger readernum;
-@property NSInteger commentnum;
+
+@property (nonatomic,strong)NSString *headline;
+@property (nonatomic)NSInteger newstype;
+@property (nonatomic,strong)NSString *title;
+@property (nonatomic,strong)NSString *titlepic;
+@property (nonatomic,strong)NSString *titlepic_small;
+@property (nonatomic,strong)NSString *publishtime;
+@property (nonatomic,strong)NSString *newssummary;
+@property (nonatomic,strong)NSString *auther;
+@property (nonatomic,strong)NSString *source;
+@property (nonatomic)NSInteger readernum;
+@property (nonatomic)NSInteger commentnum;
 
 -(void)setNewsid:(NSInteger )kid;
 -(NSInteger )Newsid;

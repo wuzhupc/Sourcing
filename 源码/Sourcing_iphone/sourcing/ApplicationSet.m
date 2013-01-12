@@ -9,11 +9,20 @@
 #import "ApplicationSet.h"
 
 
+@interface ApplicationSet()
+{
+@private
+    //用户信息
+    UserVO *_userVO;
+}
+@end
+
+
 @implementation ApplicationSet
 
-@synthesize isRegDevToken=_isRegDevToken;
-@synthesize deviceToken = _deviceToken;
-@synthesize channels = _channels;
+@synthesize isRegDevToken=isRegDevToken_;
+@synthesize deviceToken = deviceToken_;
+@synthesize channels = channels_;
 
 static ApplicationSet *_shareData = nil;
 

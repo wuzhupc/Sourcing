@@ -9,8 +9,6 @@
 #import "NewsVO.h"
 
 @interface NewsDetailVO : NewsVO
-{
-    NSString *newscontent;
-}
-@property NSString *newscontent;
+
+@property (nonatomic,strong)NSString *newscontent;
 @end

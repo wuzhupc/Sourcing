@@ -34,11 +34,10 @@
 #import "BrowserTab.h"
 //define width of a tab ,here is the width of the image used to render tab;
 #define TAB_WIDTH 64 
-#define TAB_HEIGHT 36 
+#define TAB_HEIGHT 36
 @implementation BrowserTab
 @synthesize title;
 @synthesize titleFont;
-@synthesize selected=_selected;
 @synthesize tabNormalImage;
 @synthesize tabSelectedImage;
 @synthesize normalTitleColor;
@@ -95,6 +94,10 @@
     }
     return self;
 }
+-(BOOL)getSelected
+{
+    return _selected;
+}
 
 -(void)setSelected:(BOOL)isSelected
 {
@@ -102,12 +105,13 @@
     
     if (isSelected) {
         self.textLabel.textColor = selectedTitleColor;
-        imageView.image = self.tabSelectedImage;        
+        imageView.image = self.tabSelectedImage;
     }else{
         self.textLabel.textColor = normalTitleColor;
         imageView.image = self.tabNormalImage;
     }
 }
+
 -(void)prepareForReuse
 {
     self.textLabel.text = nil;

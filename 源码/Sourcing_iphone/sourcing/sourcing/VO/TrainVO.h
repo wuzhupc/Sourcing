@@ -7,13 +7,11 @@
 //
 
 #import "BaseVO.h"
+#import "BaseServiceDelegate.h"
 
-@interface TrainVO : BaseVO
-{
-    NSInteger trainid;
-    NSString *trainname;
-}
-@property NSString *trainname;
+@interface TrainVO : BaseVO<BaseServiceDelegate>
+
+@property (nonatomic,strong)NSString *trainname;
 -(void)setTrainid:(NSInteger )kid;
 -(NSInteger )Trainid;
 @end

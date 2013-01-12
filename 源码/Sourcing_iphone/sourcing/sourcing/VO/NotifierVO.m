@@ -8,15 +8,22 @@
 
 #import "NotifierVO.h"
 
+@interface NotifierVO  ()
+{
+@private
+    NSInteger notifierid;
+}
+@end
+
 @implementation NotifierVO
 
-@synthesize notifiercontent = notifiercontent;
-@synthesize publisher = publisher;
-@synthesize publishtime = publishtime;
+@synthesize notifiercontent = notifiercontent_;
+@synthesize publisher = publisher_;
+@synthesize publishtime = publishtime_;
 
 -(void)setNotifierid:(NSInteger )kid
 {
-    _id = kid;
+    self.Id = kid;
     notifierid = kid;
 }
 -(NSInteger )Notifierid

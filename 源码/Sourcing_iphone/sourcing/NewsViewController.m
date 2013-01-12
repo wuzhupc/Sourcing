@@ -103,8 +103,6 @@
     subChannels = nil;
     subChannelBTV = nil;
     prTableView = nil;
-    [self setCustomNavigationBar:nil];
-    [self setTitleNavigationItem:nil];
     [self setSubChannelScrollView:nil];
     [super viewDidUnload];
 }
@@ -329,74 +327,26 @@
     if(newslist == nil||[newslist count]==0)
         return 80.0f;
     //判断头条
-    if (indexPath.row ==0) {
-        NewsVO *vo = [newslist objectAtIndex:indexPath.row];
-        if([vo isHeadline])
-            return 120.0f;
-    }
-    return 80.0f;
+    NewsVO *vo = [newslist objectAtIndex:indexPath.row];
+    return [vo heightForCell:indexPath.row];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(newslist == nil||[newslist count]==0)
     {
-        static NSString *CellIdentifier = @"EmptyData";
-        UITableViewCell *cell = (UITableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (!cell)
-        {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-            [cell.textLabel setFont:[UIFont boldSystemFontOfSize:17]];
-            cell.textLabel.textAlignment = UITextAlignmentCenter;
-        }
         if([(PullingRefreshTableView *)tableView isLoading])
-            [cell.textLabel setText:@""];
+            return [BaseVO tableViewWithEmptyData:tableView title:@""];
         else
-            [cell.textLabel setText:NSLocalizedString(@"没有数据,请偿试下拉刷新数据",@"没有数据时提示")];
-        return cell;
+            return [BaseVO tableViewWithEmptyData:tableView title:NSLocalizedString(@"没有数据,请偿试下拉刷新数据",@"没有数据时提示")];
     }
     NewsVO *vo = [newslist objectAtIndex:indexPath.row];
-    if (indexPath.row ==0&&[vo isHeadline])
-    {
-         //显示头条列表项
-        static NSString *newsHeadlineCellIdentifier = @"NewsHeadlineCell";
-        NewsHeadlineCell *cell = [tableView dequeueReusableCellWithIdentifier:newsHeadlineCellIdentifier];
-        if(cell==nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsHeadlineCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        [cell setData:vo];
-        return cell;
-    }
-    if ([StringUtil isEmpty:vo.titlepic]&&[StringUtil isEmpty:vo.titlepic_small]) {
-        //显示无图列表项
-        static NSString *newsNoPicCellIdentifier = @"NewsNoPicCell";
-        NewsNoPicCell *cell = [tableView dequeueReusableCellWithIdentifier:newsNoPicCellIdentifier];
-        if(cell==nil)
-        {
-            NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsNoPicCell" owner:self options:nil];
-            cell = [nib objectAtIndex:0];
-        }
-        [cell setData:vo];
-        return cell;
-    }
-    static NSString *newsNormCellIdentifier = @"NewsNormalCell";
-    NewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:newsNormCellIdentifier];
-    if(cell==nil)
-    {
-        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:@"NewsNormalCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
-    }
-    [cell setData:vo];
-    return cell;
+    return [vo tableView:tableView index:indexPath.row];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //TODO
     if(newslist==nil||[newslist count]==0)
         return;
     NewsVO *vo = [newslist objectAtIndex:indexPath.row];

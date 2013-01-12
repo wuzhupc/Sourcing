@@ -9,9 +9,6 @@
 #import "TrainVO.h"
 
 @interface TrainDetailVO : TrainVO
-{
-    NSString *traincontent;
-}
-@property NSString *traincontent;
+@property (nonatomic,strong)NSString *traincontent;
 
 @end

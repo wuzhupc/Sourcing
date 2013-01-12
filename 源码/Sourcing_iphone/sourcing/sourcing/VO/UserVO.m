@@ -10,27 +10,34 @@
 #import "FileUtil.h"
 #import "AutoCoding.h"
 
+@interface UserVO ()
+{
+@private
+    NSInteger userid;
+}
+@end
+
 @implementation UserVO
 
-@synthesize usertype = usertype;
-@synthesize useraccount = useraccount;
-@synthesize password = password;
-@synthesize username = username;
-@synthesize userphoto = userphoto;
-@synthesize phonenumber = phonenumber;
-@synthesize email = email;
-@synthesize consultcount = consultcount;
-@synthesize auditcount = auditcount;
-@synthesize declarecount = declarecount;
-@synthesize notifiercount = notifiercount;
-@synthesize allconsultcount = allconsultcount;
-@synthesize allauditcount = allauditcount;
-@synthesize alldeclarecount = alldeclarecount;
-@synthesize allnotifiercount = allnotifiercount;
+@synthesize usertype = usertype_;
+@synthesize useraccount = useraccount_;
+@synthesize password = password_;
+@synthesize username = username_;
+@synthesize userphoto = userphoto_;
+@synthesize phonenumber = phonenumber_;
+@synthesize email = email_;
+@synthesize consultcount = consultcount_;
+@synthesize auditcount = auditcount_;
+@synthesize declarecount = declarecount_;
+@synthesize notifiercount = notifiercount_;
+@synthesize allconsultcount = allconsultcount_;
+@synthesize allauditcount = allauditcount_;
+@synthesize alldeclarecount = alldeclarecount_;
+@synthesize allnotifiercount = allnotifiercount_;
 
 -(void)setUserid:(NSInteger )kuserid
 {
-    _id = kuserid;
+    self.Id = kuserid;
     userid = kuserid;
 }
 -(NSInteger )Userid

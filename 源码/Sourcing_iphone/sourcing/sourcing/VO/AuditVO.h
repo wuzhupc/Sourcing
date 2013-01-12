@@ -10,15 +10,10 @@
 #import "AuditResultVO.h"
 
 @interface AuditVO : BaseVO
-{
-    NSInteger auditid;
-    NSString *auditcontent;
-    NSString *publishtime;
-    AuditResultVO *auditResultVO;
-}
-@property NSString *auditcontent;
-@property NSString *publishtime;
-@property AuditResultVO *auditResultVO;
+
+@property (nonatomic,strong)NSString *auditcontent;
+@property (nonatomic,strong)NSString *publishtime;
+@property (nonatomic,strong)AuditResultVO *auditResultVO;
 
 -(void)setAuditid:(NSInteger)kauditid;
 -(NSInteger)Auditid;

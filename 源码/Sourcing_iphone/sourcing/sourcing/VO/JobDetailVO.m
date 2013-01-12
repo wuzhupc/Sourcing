@@ -9,5 +9,5 @@
 #import "JobDetailVO.h"
 
 @implementation JobDetailVO
-@synthesize jobdesc = jobdesc;
+@synthesize jobdesc = jobdesc_;
 @end

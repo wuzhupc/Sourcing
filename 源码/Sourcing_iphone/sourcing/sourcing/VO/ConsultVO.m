@@ -8,16 +8,23 @@
 
 #import "ConsultVO.h"
 
+@interface ConsultVO()
+{
+@private
+    NSInteger consultid;
+}
+@end
+
 @implementation ConsultVO
 
-@synthesize consultcontent = consultcontent;
-@synthesize publishtime = publishtime;
-@synthesize consultResultVO = consultResultVO;
+@synthesize consultcontent = consultcontent_;
+@synthesize publishtime = publishtime_;
+@synthesize consultResultVO = consultResultVO_;
 
 -(void)setConsultid:(NSInteger )kconsultid
 {
     consultid = kconsultid;
-    _id = kconsultid;
+    self.Id = kconsultid;
 }
 -(NSInteger )Consultid
 {

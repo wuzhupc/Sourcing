@@ -8,21 +8,42 @@
 
 #import "ResumeVO.h"
 
+@interface ResumeVO ()
+{
+@private
+    NSInteger resumeid;
+}
+
+@end
+
 @implementation ResumeVO
 
-@synthesize  expectjob = expectjob;
-@synthesize name = name;
-@synthesize  publishtime = publishtime;
-@synthesize  resumetitle = resumetitle;
+@synthesize  expectjob = expectjob_;
+@synthesize name = name_;
+@synthesize  publishtime = publishtime_;
+@synthesize  resumetitle = resumetitle_;
 
 -(void)setResumeid:(NSInteger )kid
 {
-    _id = kid;
+    self.Id = kid;
     resumeid = kid;
 }
 -(NSInteger )Resumeid
 {
     return resumeid;
+}
+
+#pragma mark - Superclass Overrides
+
+-(CGFloat)heightForCell:(NSInteger)kindex
+{
+    return 60.0f;
+}
+
+#pragma mark - BaseServiceDelegate
+-(void)serviceResult:(ResponseVO *)result
+{
+    
 }
 
 @end

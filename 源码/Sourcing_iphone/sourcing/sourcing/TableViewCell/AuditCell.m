@@ -1,16 +1,15 @@
 //
-//  BaseHomeViewController.m
+//  AuditCell.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-12.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "BaseHomeViewController.h"
-#import "CustomNavigationBar.h"
+#import "AuditCell.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -23,43 +22,39 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
-
-@interface BaseHomeViewController ()
+@interface AuditCell ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 
 @end
 
-
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation BaseHomeViewController
+@implementation AuditCell
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
 
-/* Outlets ********************************************************************/
-
 /* Public *********************************************************************/
-@synthesize fatherchannel=_fatherchannel;
 
 /* Private ********************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitBaseHomeViewController
+- (void)commonInitAuditCell
 {
+	// Your init code here
 }
 
-- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithFrame:frame];
     if (self)
     {
-        [self commonInitBaseHomeViewController];
+        [self commonInitAuditCell];
     }
     return self;
 }
@@ -69,27 +64,9 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitBaseHomeViewController];
+        [self commonInitAuditCell];
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // your code here
-    //自定义NavigationBar
-    CustomNavigationBar* customNavigationBar2 = (CustomNavigationBar*)self.customNavigationBar;
-    [customNavigationBar2 setBackgroundWith:[UIImage imageNamed:@"navigation_bg"]];
-    //
-    if(self.titleNavigationItem!=nil&&self.fatherchannel!=nil)
-        self.titleNavigationItem.title = NSLocalizedString(@"applicationname", @"应用程序名称"); 
-}
-
-- (void)viewDidUnload {
-	// your code here
-    [self setCustomNavigationBar:nil];
-    [self setTitleNavigationItem:nil];
-    [super viewDidUnload];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -97,10 +74,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public methods
--(void)setNavTitle:(NSString *)ktitle
-{
-    self.tabBarItem.title = ktitle;
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
@@ -109,7 +82,7 @@
 #pragma mark - Actions
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Delegate methods
+#pragma mark - XXXDataSource / XXXDelegate methods
 
 
 @end

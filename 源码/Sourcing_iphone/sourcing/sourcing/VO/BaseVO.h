@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class BaseVO;
+
 typedef void(^DetailInfoCompleteBlock)(BaseVO *kvo);
 typedef void (^DetailInfoErrorBlock)(NSString *kmsg);
 
 @interface BaseVO : NSObject
 {
-    NSInteger _id;
+    @protected
     DetailInfoCompleteBlock _comblock;
     DetailInfoErrorBlock _errorblock;
 }
@@ -26,4 +27,12 @@ typedef void (^DetailInfoErrorBlock)(NSString *kmsg);
 -(void)setHtmlToShow:(DetailInfoCompleteBlock)kcomblock failure:(DetailInfoErrorBlock)kerrorblock;
 -(NSString *)generateShareText;
 -(NSString *)getHtmlContext;
+-(CGFloat)heightForCell:(NSInteger)kindex;
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex;
+
++(UITableViewCell *)tableViewWithEmptyData:(UITableView *)tableView title:(NSString *)ktitle;
+
 @end
+
+
+

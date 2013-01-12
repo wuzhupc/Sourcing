@@ -10,16 +10,10 @@
 #import "ConsultResultVO.h"
 
 @interface ConsultVO : BaseVO
-{
-    NSInteger consultid;
-    NSString *publishtime;
-    NSString *consultcontent;
-    ConsultResultVO *consultResultVO;
-}
 
-@property NSString *publishtime;
-@property NSString *consultcontent;
-@property ConsultResultVO *consultResultVO;
+@property (nonatomic,strong)NSString *publishtime;
+@property (nonatomic,strong)NSString *consultcontent;
+@property (nonatomic,strong)ConsultResultVO *consultResultVO;
 
 -(void)setConsultid:(NSInteger )kconsultid;
 -(NSInteger )Consultid;

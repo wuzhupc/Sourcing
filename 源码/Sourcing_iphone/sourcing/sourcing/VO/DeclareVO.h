@@ -10,16 +10,10 @@
 #import "DeclareResultVO.h"
 
 @interface DeclareVO : BaseVO
-{
-    NSInteger declareid;
-    NSString *declarecontent;
-    NSString *publishtime;
-    DeclareResultVO *declareResultVO;
-}
 
-@property NSString *declarecontent;
-@property NSString *publishtime;
-@property DeclareResultVO *declareResultVO;
+@property (nonatomic,strong)NSString *declarecontent;
+@property (nonatomic,strong)NSString *publishtime;
+@property (nonatomic,strong)DeclareResultVO *declareResultVO;
 -(void)setDeclareid:(NSInteger )kdeclareid;
 -(NSInteger )Declareid;
 @end

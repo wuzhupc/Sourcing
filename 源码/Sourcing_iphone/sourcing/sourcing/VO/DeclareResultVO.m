@@ -8,16 +8,23 @@
 
 #import "DeclareResultVO.h"
 
+@interface DeclareResultVO()
+{
+@private
+    NSInteger declareresultid;
+}
+@end
+
 @implementation DeclareResultVO
-@synthesize declareresult = declareresult;
-@synthesize declareresultcontent = declareresultcontent;
-@synthesize publishtime = publishtime;
-@synthesize publisher = publisher;
+@synthesize declareresult = declareresult_;
+@synthesize declareresultcontent = declareresultcontent_;
+@synthesize publishtime = publishtime_;
+@synthesize publisher = publisher_;
 
 -(void)setDeclareresultid:(NSInteger )kresultid
 {
     declareresultid = kresultid;
-    _id = kresultid;
+    self.Id = kresultid;
 }
 -(NSInteger )Declareresultid
 {

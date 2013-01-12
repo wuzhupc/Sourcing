@@ -46,26 +46,17 @@ enum TYPE_MORE
 
 
 @interface ChannelVO : BaseVO
-{
-    NSInteger channelID;
-    NSString *channelName;
-    NSInteger fatherchannelID;
-    NSInteger isdefault;
-    NSInteger sort;
-    NSInteger type;
-    BOOL isFirstLoad;
-    NSString *lastUpdateDataTime;
-    NSString *mustusertypes;
-}
 
-@property NSString *channelName;
-@property NSInteger fatherchannelID;
-@property NSInteger isdefault;
-@property NSInteger sort;
-@property NSInteger type;
-@property BOOL isFirstLoad;
-@property NSString *lastUpdateDataTime;
-@property NSString *mustusertypes;
+
+@property (nonatomic,strong)NSString *channelName;
+@property (nonatomic)NSInteger fatherchannelID;
+@property (nonatomic)NSInteger isdefault;
+@property (nonatomic)NSInteger sort;
+@property (nonatomic)NSInteger type;
+@property (nonatomic)BOOL isFirstLoad;
+@property (nonatomic,strong)NSString *lastUpdateDataTime;
+@property (nonatomic,strong)NSString *mustusertypes;
+
 -(void)setChannelID:(NSInteger)kid;
 -(NSInteger)ChannelID;
 

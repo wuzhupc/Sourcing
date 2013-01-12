@@ -9,16 +9,10 @@
 #import "BaseVO.h"
 
 @interface ConsultResultVO : BaseVO
-{
-    NSInteger consultresultid;
-    NSString *consultresultcontent;
-    NSString *publisher;
-    NSString *publishtime;
-}
 
-@property NSString *consultresultcontent;
-@property NSString *publisher;
-@property NSString *publishtime;
+@property (nonatomic,strong)NSString *consultresultcontent;
+@property (nonatomic,strong)NSString *publisher;
+@property (nonatomic,strong)NSString *publishtime;
 
 -(void)setConsultresultid:(NSInteger )kresultid;
 -(NSInteger )Consultresultid;
