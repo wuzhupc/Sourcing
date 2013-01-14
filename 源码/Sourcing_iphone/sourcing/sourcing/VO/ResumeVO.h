@@ -9,6 +9,8 @@
 #import "BaseVO.h"
 #import "BaseServiceDelegate.h"
 
+#define CINT_TAG_GETRESUMEDETAIL 10009
+
 @interface ResumeVO : BaseVO<BaseServiceDelegate>
 
 @property (nonatomic,strong)NSString *expectjob;

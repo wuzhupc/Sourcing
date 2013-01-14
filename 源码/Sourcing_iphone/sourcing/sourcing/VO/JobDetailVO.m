@@ -7,7 +7,14 @@
 //
 
 #import "JobDetailVO.h"
+#import "HtmlUtil.h"
 
 @implementation JobDetailVO
 @synthesize jobdesc = jobdesc_;
+
+#pragma mark - Superclass Overrides
+-(NSString *)getHtmlContext
+{
+    return [HtmlUtil getHtmlContext:self.jobdesc];
+}
 @end

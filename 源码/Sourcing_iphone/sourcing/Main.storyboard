@@ -75,12 +75,19 @@
                                     <navigationItem title="Title" id="4tz-Jk-Utg"/>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="请输入关键字" showsCancelButton="YES" id="t8g-yZ-nLm">
+                            <searchBar contentMode="redraw" barStyle="blackTranslucent" placeholder="请输入关键字" id="t8g-yZ-nLm">
                                 <rect key="frame" x="0.0" y="44" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93724338500000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.93724338500000004" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.88235300779342651" green="0.88627457618713379" blue="0.90588241815567017" alpha="1" colorSpace="deviceRGB"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="6dW-sZ-4wG" id="eDw-b6-Vad"/>
+                                </connections>
                             </searchBar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="t3Z-pe-UoT">
                                 <rect key="frame" x="0.0" y="88" width="320" height="36"/>
@@ -156,6 +163,44 @@
             <point key="canvasLocation" x="14" y="31"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BaseHomeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BaseHomeViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="customNavigationBar" candidateClass="UINavigationBar"/>
+                <relationship kind="outlet" name="titleNavigationItem" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="CustomNavigationBar" superclassName="UINavigationBar">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationBar.h"/>
+            <relationships>
+                <relationship kind="action" name="back:"/>
+                <relationship kind="outlet" name="navigationController" candidateClass="UINavigationController"/>
+            </relationships>
+        </class>
+        <class className="HomeTabBarController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeTabBarController.h"/>
+        </class>
+        <class className="MoreViewController" superclassName="BaseHomeViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
+        </class>
+        <class className="NewsViewController" superclassName="BaseHomeViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="subChannelScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="PersonViewController" superclassName="BaseHomeViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PersonViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="searchkeySearchBar" candidateClass="UISearchBar"/>
+                <relationship kind="outlet" name="subChannelScrollView" candidateClass="UIScrollView"/>
+            </relationships>
+        </class>
+        <class className="UserViewController" superclassName="BaseHomeViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

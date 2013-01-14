@@ -64,6 +64,8 @@
 
 - (void)commonInitPersonViewController
 {
+    usertype_ = nil;
+    subChannels = nil;
     nowSelChannel = -1;
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"icon_home_tb_person"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_home_tb_person"]];
 }
@@ -92,6 +94,10 @@
     [super viewDidLoad];
     // your code here
     [self initTableView];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
     [self initSubChannels];
 }
 
@@ -130,8 +136,25 @@
 
 -(void)initSubChannels
 {
+    NSString *usertype = nil;
+    UserVO *user = [[ApplicationSet shareData] getUserVO];
+    if(user!=nil)
+        usertype = user.usertype;
+    if(subChannels != nil)
+    {
+        //用户类型变更时，重新加载子栏目列表
+        if((usertype==usertype_)||[usertype isEqualToString:usertype_])
+        {
+            return;
+        }
+        usertype_ = usertype;
+        nowSelChannel = -1;
+        subChannels = nil;
+        if(subChannelBTV!=nil)
+           [subChannelBTV removeAllTab];   
+    }
     if (self.fatherchannel!=nil) {
-        subChannels = [ChannelVO getChannelsWithFatherID:[ApplicationSet shareData].channels father:self.fatherchannel.ChannelID];
+        subChannels = [ChannelVO getChannels:[ApplicationSet shareData].channels father:self.fatherchannel.ChannelID usertype:usertype];
     }
     if(subChannels==nil||[subChannels count]==0)
     {
@@ -144,14 +167,9 @@
         for (ChannelVO *vo in subChannels) {
             [channelnames addObject:vo.channelName];
         }
-        //TEST
-        //[channelnames addObject:@"AAAA"];
-        //[channelnames addObject:@"BBBB"];
-        //
         subChannelBTV = [[BrowserTabView alloc] initWithTabTitles:channelnames andDelegate:self];
         
         [self.subChannelScrollView addSubview:subChannelBTV];
-        //NSLog(@"%f %f",subChannelBTV.frame.size.height,subChannelBTV.frame.size.width);
         
         [self.subChannelScrollView setContentSize:subChannelBTV.frame.size];
     }
@@ -177,8 +195,20 @@
     }
     MobileInfoService *service = [[MobileInfoService alloc] initWithDelegate:self tag:CINT_TAG_LOADNEWDATA];
     [service setTag2:cvo.ChannelID];
-    //TODO
-    //[service getNewsList:[NSString stringWithFormat:@"%d",cvo.type] bottomid:@"0"];
+    if([cvo isPerson_PositionChannel])
+    {
+        [service getJobList:ksearch bottomid:@"0"];
+    }
+    else if([cvo isPerson_ResumeChannel])
+    {
+        [service getResumeList:ksearch bottomid:@"0"];
+    }else if([cvo isPerson_ProjectChannel])
+    {
+        [service getProjectList:ksearch bottomid:@"0"];
+    }else
+    {
+        [service getTrainList:ksearch bottomid:@"0"];
+    }
 }
 -(void)loadMoreData:(NSString *)ksearch
 {
@@ -190,8 +220,21 @@
     }
     MobileInfoService *service = [[MobileInfoService alloc] initWithDelegate:self tag:CINT_TAG_LOADMOREDATA];
     [service setTag2:cvo.ChannelID];
-    //TODO
-    //[service getNewsList:[NSString stringWithFormat:@"%d",cvo.type] bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
+    
+    if([cvo isPerson_PositionChannel])
+    {
+        [service getJobList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
+    }
+    else if([cvo isPerson_ResumeChannel])
+    {
+        [service getResumeList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
+    }else if([cvo isPerson_ProjectChannel])
+    {
+        [service getProjectList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
+    }else
+    {
+        [service getTrainList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
+    }
 }
 
 -(void)setTableViewData:(NSMutableArray *)list
@@ -295,6 +338,12 @@
     if (subChannels==0||index>[subChannels count]||nowSelChannel == index) {
         return;
     }
+    
+    //切换时清除查找框内容
+    self.searchkeySearchBar.showsCancelButton = NO;
+    [self.searchkeySearchBar resignFirstResponder];
+    [self.searchkeySearchBar setText:@""];
+    
     ChannelVO *newselVO = [subChannels objectAtIndex:index];
     NSLog(@"%@",newselVO.channelName);
     //切换时清除表数据
@@ -361,13 +410,12 @@
 //下拉刷新
 -(void)pullingTableViewDidStartRefreshing:(PullingRefreshTableView *)tableView
 {
-    //TODO
-    [self performSelector:@selector(loadData:) withObject:@""];
+    [self performSelector:@selector(loadData:) withObject:self.searchkeySearchBar.text];
 }
 //上拉加载更多
 -(void)pullingTableViewDidStartLoading:(PullingRefreshTableView *)tableView
 {
-    [self performSelector:@selector(loadMoreData:) withObject:@""];
+    [self performSelector:@selector(loadMoreData:) withObject:self.searchkeySearchBar.text];
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -379,4 +427,34 @@
 {
     [prTableView tableViewDidEndDragging:scrollView];
 }
+
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchkeySearchBar.showsCancelButton = NO;
+    [self.searchkeySearchBar resignFirstResponder];
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    self.searchkeySearchBar.showsCancelButton = YES;
+    for(id cc in [searchBar subviews])
+    {
+        if([cc isKindOfClass:[UIButton class]])
+        {
+            UIButton *btn = (UIButton *)cc;
+            [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [btn setTitleShadowColor:[UIColor clearColor] forState:UIControlStateNormal];
+            //[btn setTitle:@"取消"  forState:UIControlStateNormal];
+        }
+    }
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    self.searchkeySearchBar.showsCancelButton = NO;
+    [self.searchkeySearchBar resignFirstResponder];
+    //TODO 判断查找内容是否有变
+    [self performSelector:@selector(loadData:) withObject:self.searchkeySearchBar.text];
+}
+
 @end

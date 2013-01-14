@@ -9,6 +9,8 @@
 #import "BaseVO.h"
 #import "BaseServiceDelegate.h"
 
+#define CINT_TAG_GETPROJECTDETAIL 10008
+
 @interface ProjectVO : BaseVO<BaseServiceDelegate>
 
 @property (nonatomic,strong)NSString *projectname;

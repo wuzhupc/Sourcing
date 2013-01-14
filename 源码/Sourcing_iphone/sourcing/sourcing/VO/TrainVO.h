@@ -9,6 +9,8 @@
 #import "BaseVO.h"
 #import "BaseServiceDelegate.h"
 
+#define CINT_TAG_GETTRAINDETAIL 10010
+
 @interface TrainVO : BaseVO<BaseServiceDelegate>
 
 @property (nonatomic,strong)NSString *trainname;

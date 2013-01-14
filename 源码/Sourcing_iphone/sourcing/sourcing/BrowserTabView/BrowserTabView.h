@@ -78,5 +78,7 @@
 -(void)setSelectedTabIndex:(NSInteger)aSelectedTabIndex animated:(BOOL)animation;
 -(void)removeTabAtIndex:(NSInteger)index animated:(BOOL)animated;
 
+-(void)removeAllTab;
+
 -(NSUInteger)NumberOfTabs;
 @end

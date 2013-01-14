@@ -31,13 +31,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface PersonViewController : BaseHomeViewController<BrowserTabViewDelegate,PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate,BaseServiceDelegate>
+@interface PersonViewController : BaseHomeViewController<BrowserTabViewDelegate,PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate,BaseServiceDelegate,UISearchBarDelegate>
 {
     BrowserTabView *subChannelBTV;
     NSArray *subChannels;
     PullingRefreshTableView *prTableView;
     NSInteger nowSelChannel;
     NSMutableArray *datalist;
+    NSString *usertype_;
 }
 
 

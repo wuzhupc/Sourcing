@@ -96,28 +96,25 @@
             [self.laPublishTime setText:vo.publishtime];
             [self.laSummary setText:vo.expectjob];
             [self.laTitle setText:vo.resumetitle];
-            return;
-        }
-        if([_dataVO isMemberOfClass:[JobVO class]])
+        }else if([_dataVO isMemberOfClass:[JobVO class]])
         {
             JobVO *vo = (JobVO *)_dataVO;
             [self.laPublishTime setText:vo.publishtime];
             [self.laSummary setText:vo.company];
             [self.laTitle setText:vo.job];
-            return;
-        }
-        if([_dataVO isMemberOfClass:[ProjectVO class]])
+        }else if([_dataVO isMemberOfClass:[ProjectVO class]])
         {
             ProjectVO *vo = (ProjectVO *)_dataVO;
             [self.laPublishTime setText:vo.publishtime];
             [self.laSummary setText:vo.projectstatus];
             [self.laTitle setText:vo.projectname];
-            return;
         }
+    }else
+    {
+        [self.laTitle setText:@""];
+        [self.laSummary setText:@""];
+        [self.laPublishTime setText:@""];
     }
-    [self.laTitle setText:@""];
-    [self.laSummary setText:@""];
-    [self.laPublishTime setText:@""];
     
 }
 

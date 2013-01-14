@@ -273,6 +273,15 @@ static NSString *kReuseIdentifier = @"UserIndentifier";
     }
     
 }
+
+-(void)removeAllTab
+{
+    if (tabsArray == nil || [tabsArray count]==0) {
+        return;
+    }
+    [tabsArray removeAllObjects];
+}
+
 -(void)caculateFrame
 {
     // caculate and save frame for each tab

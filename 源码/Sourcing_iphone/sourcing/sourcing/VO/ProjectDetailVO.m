@@ -7,8 +7,15 @@
 //
 
 #import "ProjectDetailVO.h"
+#import "HtmlUtil.h"
 
 @implementation ProjectDetailVO
 
 @synthesize projectcontent = projectcontent_;
+
+#pragma mark - Superclass Overrides
+-(NSString *)getHtmlContext
+{
+    return [HtmlUtil getHtmlContext:self.projectcontent];
+}
 @end

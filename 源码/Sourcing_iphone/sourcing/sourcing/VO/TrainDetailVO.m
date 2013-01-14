@@ -7,7 +7,14 @@
 //
 
 #import "TrainDetailVO.h"
+#import "HtmlUtil.h"
 
 @implementation TrainDetailVO
 @synthesize traincontent = traincontent_;
+
+#pragma mark - Superclass Overrides
+-(NSString *)getHtmlContext
+{
+    return [HtmlUtil getHtmlContext:self.traincontent];
+}
 @end

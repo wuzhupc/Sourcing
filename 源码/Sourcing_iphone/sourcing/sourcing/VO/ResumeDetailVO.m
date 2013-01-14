@@ -7,7 +7,14 @@
 //
 
 #import "ResumeDetailVO.h"
+#import "HtmlUtil.h"
 
 @implementation ResumeDetailVO
 @synthesize resumecontent = resumecontent_;
+
+#pragma mark - Superclass Overrides
+-(NSString *)getHtmlContext
+{
+    return [HtmlUtil getHtmlContext:self.resumecontent];
+}
 @end

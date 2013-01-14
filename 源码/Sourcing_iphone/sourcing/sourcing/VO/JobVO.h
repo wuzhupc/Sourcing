@@ -9,6 +9,9 @@
 #import "BaseVO.h"
 #import "BaseServiceDelegate.h"
 
+
+#define CINT_TAG_GETJOBDETAIL 10007
+
 @interface JobVO : BaseVO<BaseServiceDelegate>
 
 @property (nonatomic,strong)NSString *job;
