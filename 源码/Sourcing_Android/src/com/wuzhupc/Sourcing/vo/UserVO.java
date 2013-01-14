@@ -439,7 +439,7 @@ public class UserVO extends BaseVO
 		case USER_TYPE_ENTERPRISE:
 			return "企业用户";
 		case USER_TYPE_TRAIN:
-			return "机构用户";
+			return "培训机构";
 		default:
 			return "";
 		}
