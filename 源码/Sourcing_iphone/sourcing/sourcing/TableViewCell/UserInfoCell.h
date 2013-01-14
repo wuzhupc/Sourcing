@@ -1,14 +1,16 @@
 //
-//  UserViewController.h
+//  UserInfoCell.h
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-14.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
-#import "BaseHomeViewController.h"
+
+#import "StyledTableViewCell.h"
+#import "UserVO.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -22,31 +24,19 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface UserViewController : BaseHomeViewController<UITableViewDataSource,UITableViewDelegate>
+@interface UserInfoCell : UITableViewCell//StyledTableViewCell
 
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Outlets
-@property (weak, nonatomic) IBOutlet UIImageView *imageUserPic;
-
-@property (weak, nonatomic) IBOutlet UILabel *labelUserName;
-@property (weak, nonatomic) IBOutlet UILabel *labelUserType;
-@property (weak, nonatomic) IBOutlet UIButton *buttonLogin_Pwd;
-@property (weak, nonatomic) IBOutlet UIButton *buttonReg_Account;
-@property (weak, nonatomic) IBOutlet UITableView *tableviewUserInfo;
+@property (nonatomic)USER_INFO_TYPE userinfotype;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
-
++(CGFloat)getCellHeight;
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Actions
-
-
+-(void)setShowInfo:(NSString *)kmsg userinfotype:(USER_INFO_TYPE)ktype;
+@property (weak, nonatomic) IBOutlet UILabel *labelUserInfo;
 
 @end

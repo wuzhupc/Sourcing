@@ -49,5 +49,6 @@
 -(NSInteger)hasFavData:(BaseVO *)kvo;
 -(BOOL)removeFavData:(BaseVO *)kvo;
 -(BOOL)removeFavDataWithIndex:(NSInteger)kindex;
+-(NSInteger)getFavNumber;
 
 @end

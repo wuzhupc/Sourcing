@@ -115,6 +115,13 @@ static FavoriteUtil *_favoriteUtil = nil;
     return [self saveFavDataList];
 }
 
+-(NSInteger)getFavNumber
+{
+    if(_dataList==nil)
+        return 0;
+    return [_dataList count];
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
 -(void)initFavDataList

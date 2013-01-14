@@ -10,7 +10,6 @@
 #pragma mark - Imports
 
 #import "NewsViewController.h"
-#import "CustomNavigationBar.h"
 #import "ChannelVO.h"
 #import "FileUtil.h"
 #import "JsonParser.h"

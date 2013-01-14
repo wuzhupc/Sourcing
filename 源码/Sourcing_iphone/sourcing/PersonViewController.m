@@ -139,7 +139,7 @@
     NSString *usertype = nil;
     UserVO *user = [[ApplicationSet shareData] getUserVO];
     if(user!=nil)
-        usertype = user.usertype;
+        usertype = [NSString stringWithFormat:@"%d",user.usertype];
     if(subChannels != nil)
     {
         //用户类型变更时，重新加载子栏目列表

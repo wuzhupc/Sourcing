@@ -1,15 +1,17 @@
 //
-//  MoreViewController.m
+//  UserInfoCell.m
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-14.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "MoreViewController.h"
+#import "UserInfoCell.h"
+#import "UIColor+MGExpanded.h"
+#import "ApplicationSet.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -22,44 +24,44 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Interface
-
-@interface MoreViewController ()
+@interface UserInfoCell ()
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 
 @end
 
-
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Implementation
 
-@implementation MoreViewController
-
+@implementation UserInfoCell
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Synthesize
 
-/* Outlets ********************************************************************/
-
 /* Public *********************************************************************/
-
+@synthesize userinfotype = userinfotype_;
 /* Private ********************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
-- (void)commonInitMoreViewController
+- (void)commonInitUserInfoCell
 {
-    [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"icon_home_tb_more"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_home_tb_more"]];
+//    NSMutableArray *colors = [NSMutableArray array];
+//    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
+//    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL_2 CGColor]];
+//    [self setSelectedBackgroundViewGradientColors:colors];
+//    [self.backgroundView setBackgroundColor:CCOLOR_TABLEVIEW_BG];
+//    [self setDashWidth:2 dashGap:3 dashStroke:2];
 }
 
-- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+- (id)initWithFrame:(CGRect)frame
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithFrame:frame];
     if (self)
     {
-        [self commonInitMoreViewController];
+        [self commonInitUserInfoCell];
     }
     return self;
 }
@@ -69,19 +71,9 @@
     self = [super initWithCoder:aDecoder];
     if (self)
     {
-        [self commonInitMoreViewController];
+        [self commonInitUserInfoCell];
     }
     return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // your code here
-}
-
-- (void)viewDidUnload {
-	// your code here
-    [super viewDidUnload];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -90,6 +82,16 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Public methods
 
++(CGFloat)getCellHeight
+{
+    return 40.0f;
+}
+
+-(void)setShowInfo:(NSString *)kmsg userinfotype:(USER_INFO_TYPE)ktype
+{
+    self.labelUserInfo.text = kmsg;
+    self.userinfotype = ktype;
+}
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
 
@@ -97,7 +99,7 @@
 #pragma mark - Actions
 
 ////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Delegate methods
+#pragma mark - XXXDataSource / XXXDelegate methods
 
 
 @end
