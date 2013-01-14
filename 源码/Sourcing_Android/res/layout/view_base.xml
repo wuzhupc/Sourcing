@@ -6,16 +6,16 @@
     <RelativeLayout
         android:id="@+id/base_search_rl"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="@drawable/top_title_bg"
+        android:layout_height="40dp"
+        android:background="@drawable/subchannel_tab_bg"
         android:paddingLeft="12dp"
-        android:paddingRight="12dp">"
+        android:paddingRight="12dp">
 
         <EditText
             android:id="@+id/base_search_et"
             android:layout_width="match_parent"
-            android:layout_height="44dp"
-            android:layout_centerVertical="true"
+            android:layout_height="40dp"
+            android:layout_marginTop="2dp"
             android:singleLine="true"
             android:hint="请输入关键字"
             android:paddingLeft="32dp"

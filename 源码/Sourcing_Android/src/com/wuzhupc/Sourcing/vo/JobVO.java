@@ -101,7 +101,8 @@ public class JobVO extends BaseVO
 	@Override
 	public String getHtmlSubTitle()
 	{
-		return "";
+		String result = "<div align=\"center\"><font color=\"#666666\" size=\"2pt\">"+getPublishtime()+"&nbsp;&nbsp; "+getCompany()+"</font></div><div style=\"height:0;border-bottom:1px solid #f00\"></div>";
+		return result;
 	}
 	
 	/**

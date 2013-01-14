@@ -37,8 +37,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/icon_bg_result"
         android:orientation="vertical"
-        android:padding="5dp" 
-        android:visibility="gone">
+        android:padding="5dp" >
 
         <TextView
         android:id="@+id/listitem_consult_result_tv"
