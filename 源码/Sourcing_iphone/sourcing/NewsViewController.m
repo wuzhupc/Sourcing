@@ -17,11 +17,7 @@
 #import "NewsVO.h"
 #import "ApplicationSet.h"
 #import "UIColor+MGExpanded.h"
-#import "StyledTableViewCell.h"
 #import "ToastHintUtil.h"
-#import "NewsNormalCell.h"
-#import "NewsNoPicCell.h"
-#import "NewsHeadlineCell.h"
 #import "StringUtil.h"
 #import "NewsDetailViewController.h"
 

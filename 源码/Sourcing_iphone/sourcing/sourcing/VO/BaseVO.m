@@ -51,9 +51,19 @@
     return 80.0f;
 }
 
+-(CGFloat)heightForCell:(NSInteger)kindex allowheadline:(BOOL)kallow
+{
+    return [self heightForCell:kallow];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex
 {
     return [BaseVO tableViewWithEmptyData:tableView title:@""];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex allowheadline:(BOOL)kallow
+{
+    return [self tableView:tableView index:kindex];
 }
 
 +(UITableViewCell *)tableViewWithEmptyData:(UITableView *)tableView title:(NSString *)ktitle

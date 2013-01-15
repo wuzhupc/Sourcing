@@ -41,7 +41,7 @@
 #pragma mark - Synthesize
 
 /* Public *********************************************************************/
-@synthesize dataList;
+@synthesize dataList=dataList_;
 /* Private ********************************************************************/
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -85,16 +85,16 @@ static FavoriteUtil *_favoriteUtil = nil;
     NSInteger index = [self hasFavData:kvo];
     if(index>=0)
         return YES;
-    [_dataList insertObject:kvo atIndex:0];
+    [dataList_ insertObject:kvo atIndex:0];
     return [self saveFavDataList];
 }
 
 -(NSInteger)hasFavData:(BaseVO *)kvo
 {
-    if(_dataList==nil||[_dataList count]==0||kvo==nil)
+    if(self.dataList==nil||[self.dataList count]==0||kvo==nil)
         return -1;
-    for (NSInteger i =0; i<[_dataList count]; i++) {
-        BaseVO *vo = [_dataList objectAtIndex:i];
+    for (NSInteger i =0; i<[self.dataList count]; i++) {
+        BaseVO *vo = [self.dataList objectAtIndex:i];
         if ([vo isEqual:kvo]) {
             return i;
         }
@@ -109,17 +109,17 @@ static FavoriteUtil *_favoriteUtil = nil;
 
 -(BOOL)removeFavDataWithIndex:(NSInteger)kindex
 {
-    if(kindex<0||_dataList==nil||[_dataList count]==0||kindex>=[_dataList count])
+    if(kindex<0||self.dataList==nil||[self.dataList count]==0||kindex>=[self.dataList count])
         return NO;
-    [_dataList removeObjectAtIndex:kindex];
+    [dataList_ removeObjectAtIndex:kindex];
     return [self saveFavDataList];
 }
 
 -(NSInteger)getFavNumber
 {
-    if(_dataList==nil)
+    if(self.dataList==nil)
         return 0;
-    return [_dataList count];
+    return [self.dataList count];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -129,10 +129,10 @@ static FavoriteUtil *_favoriteUtil = nil;
     NSString *filepath = [FavoriteUtil getFavInfoFilePath];
     if(![[NSFileManager defaultManager] fileExistsAtPath:filepath])
     {
-        _dataList = [[NSMutableArray alloc] init];
+        dataList_ = [[NSMutableArray alloc] init];
         return;
     }
-    _dataList = [NSKeyedUnarchiver unarchiveObjectWithFile:filepath];
+    dataList_ = [NSKeyedUnarchiver unarchiveObjectWithFile:filepath];
 }
 
 -(BOOL)saveFavDataList
@@ -143,9 +143,9 @@ static FavoriteUtil *_favoriteUtil = nil;
 //    {
 //        result = [[NSFileManager defaultManager] removeItemAtPath:filepath error:nil];
 //    }
-    if(_dataList != nil)
+    if(self.dataList != nil)
     {
-        return [NSKeyedArchiver archiveRootObject:_dataList toFile:filepath];
+        return [NSKeyedArchiver archiveRootObject:self.dataList toFile:filepath];
     }
     return result;
 }

@@ -12,6 +12,7 @@
 #import "UserInfoCell.h"
 #import "UIColor+MGExpanded.h"
 #import "ApplicationSet.h"
+#import "FavInfoController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -92,6 +93,19 @@
     self.labelUserInfo.text = kmsg;
     self.userinfotype = ktype;
 }
+
+-(void)showDetail:(UIViewController *)kvc
+{
+    //TODO
+    if(self.userinfotype == USER_INFO_TYPE_FAV)
+    {
+        FavInfoController *vc = [[FavInfoController alloc] init];
+        [kvc presentModalViewController:vc animated:YES];
+        return;
+    }
+    
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private methods
 

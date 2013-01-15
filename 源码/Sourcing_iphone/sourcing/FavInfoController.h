@@ -1,16 +1,15 @@
 //
-//  FavoriteUtil.h
+//  FavInfoController.h
 //  sourcing
 //
-//  Created by wuzhu on 13-1-9.
+//  Created by wuzhu on 13-1-15.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import <Foundation/Foundation.h>
-#import "BaseVO.h"
+#import <UIKit/UIKit.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -23,29 +22,28 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
-@protocol FavDataChangeDelegate
 
-@optional
--(void)hasRemoveFavData:(NSInteger)kindex data:(BaseVO *)kvo;
--(void)hasAddFavData:(NSInteger)kindex data:(BaseVO *)kvo;
-@end
+@interface FavInfoController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-@interface FavoriteUtil : NSObject
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
-@property (nonatomic,readonly) NSMutableArray *dataList;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UITableView *tableviewFav;
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Outlets
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
-+(FavoriteUtil *)favoriteUtil;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
--(BOOL)addFavData:(BaseVO *)kvo;
--(NSInteger)hasFavData:(BaseVO *)kvo;
--(BOOL)removeFavData:(BaseVO *)kvo;
--(BOOL)removeFavDataWithIndex:(NSInteger)kindex;
--(NSInteger)getFavNumber;
+
+- (IBAction)actionReturn:(id)sender;
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Actions
+
 
 @end

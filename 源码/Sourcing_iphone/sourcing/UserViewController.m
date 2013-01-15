@@ -163,8 +163,12 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    //TODO
+    UserInfoCell *cell = (UserInfoCell *)[tableView cellForRowAtIndexPath:indexPath];
+    if(cell==nil)
+        return;
+    [cell showDetail:self];
 }
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *userInfoCellIdentifier = @"UserInfoCell";

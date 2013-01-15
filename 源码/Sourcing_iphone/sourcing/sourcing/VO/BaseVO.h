@@ -28,7 +28,9 @@ typedef void (^DetailInfoErrorBlock)(NSString *kmsg);
 -(NSString *)generateShareText;
 -(NSString *)getHtmlContext;
 -(CGFloat)heightForCell:(NSInteger)kindex;
+-(CGFloat)heightForCell:(NSInteger)kindex allowheadline:(BOOL)kallow;
 -(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex;
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex allowheadline:(BOOL)kallow;
 
 +(UITableViewCell *)tableViewWithEmptyData:(UITableView *)tableView title:(NSString *)ktitle;
 

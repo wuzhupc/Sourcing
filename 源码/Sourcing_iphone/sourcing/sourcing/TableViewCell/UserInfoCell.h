@@ -31,12 +31,14 @@
 #pragma mark - Properties
 @property (nonatomic)USER_INFO_TYPE userinfotype;
 
+@property (weak, nonatomic) IBOutlet UILabel *labelUserInfo;
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
 +(CGFloat)getCellHeight;
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
 -(void)setShowInfo:(NSString *)kmsg userinfotype:(USER_INFO_TYPE)ktype;
-@property (weak, nonatomic) IBOutlet UILabel *labelUserInfo;
+
+-(void)showDetail:(UIViewController *)kvc;
 
 @end

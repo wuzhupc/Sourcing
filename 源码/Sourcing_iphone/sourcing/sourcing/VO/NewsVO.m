@@ -81,17 +81,26 @@
     return self.title;
 }
 
-
--(CGFloat)heightForCell:(NSInteger)kindex
+-(CGFloat)heightForCell:(NSInteger)kindex allowheadline:(BOOL)kallow
 {
-    if(kindex==0&&[self isHeadline])
+    if(kindex==0&&kallow&&[self isHeadline])
         return 120.0f;
     return 80.0f;
 }
 
+-(CGFloat)heightForCell:(NSInteger)kindex
+{
+    return [self heightForCell:kindex allowheadline:YES];
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex
 {
-    if(kindex==0&&[self isHeadline])
+    return [self tableView:tableView index:kindex allowheadline:YES];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex allowheadline:(BOOL)kallow
+{
+    if(kindex==0&&kallow&&[self isHeadline])
     {
         //显示头条列表项
         static NSString *newsHeadlineCellIdentifier = @"NewsHeadlineCell";
