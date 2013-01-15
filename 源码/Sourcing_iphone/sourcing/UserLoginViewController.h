@@ -1,14 +1,16 @@
 //
-//  UserViewController.h
+//  UserLoginViewController.h
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-15.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
-#import "BaseHomeViewController.h"
+
+#import <UIKit/UIKit.h>
+#import "RadiusView.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -22,33 +24,26 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface UserViewController : BaseHomeViewController<UITableViewDataSource,UITableViewDelegate>
+@interface UserLoginViewController : UIViewController
 
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet RadiusView *viewInput;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Outlets
-@property (weak, nonatomic) IBOutlet UIImageView *imageUserPic;
-
-@property (weak, nonatomic) IBOutlet UILabel *labelUserName;
-@property (weak, nonatomic) IBOutlet UILabel *labelUserType;
-@property (weak, nonatomic) IBOutlet UIButton *buttonLogin_Pwd;
-@property (weak, nonatomic) IBOutlet UIButton *buttonReg_Account;
-@property (weak, nonatomic) IBOutlet UITableView *tableviewUserInfo;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
+- (IBAction)actionReturn:(id)sender;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
-- (IBAction)actionLogin_Pwd:(id)sender;
-
-- (IBAction)actionReg_Account:(id)sender;
 
 
 @end

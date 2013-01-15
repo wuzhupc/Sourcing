@@ -122,6 +122,11 @@
 		327C4DB316A448DD005E6897 /* UserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DB216A448DD005E6897 /* UserInfoCell.xib */; };
 		327C4DBE16A54585005E6897 /* FavInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4DBC16A54584005E6897 /* FavInfoController.m */; };
 		327C4DBF16A54585005E6897 /* FavInfoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DBD16A54584005E6897 /* FavInfoController.xib */; };
+		327C4DC916A58C8E005E6897 /* UserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4DC716A58C8E005E6897 /* UserLoginViewController.m */; };
+		327C4DCA16A58C8E005E6897 /* UserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DC816A58C8E005E6897 /* UserLoginViewController.xib */; };
+		327C4DCE16A58CDF005E6897 /* UserChangePwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4DCC16A58CDF005E6897 /* UserChangePwdViewController.m */; };
+		327C4DCF16A58CDF005E6897 /* UserChangePwdViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DCD16A58CDF005E6897 /* UserChangePwdViewController.xib */; };
+		327C4DDA16A59C38005E6897 /* RadiusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4DD916A59C38005E6897 /* RadiusView.m */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -398,6 +403,14 @@
 		327C4DBB16A54584005E6897 /* FavInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavInfoController.h; sourceTree = "<group>"; };
 		327C4DBC16A54584005E6897 /* FavInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavInfoController.m; sourceTree = "<group>"; };
 		327C4DBD16A54584005E6897 /* FavInfoController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavInfoController.xib; sourceTree = "<group>"; };
+		327C4DC616A58C8E005E6897 /* UserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserLoginViewController.h; sourceTree = "<group>"; };
+		327C4DC716A58C8E005E6897 /* UserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserLoginViewController.m; sourceTree = "<group>"; };
+		327C4DC816A58C8E005E6897 /* UserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserLoginViewController.xib; sourceTree = "<group>"; };
+		327C4DCB16A58CDF005E6897 /* UserChangePwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserChangePwdViewController.h; sourceTree = "<group>"; };
+		327C4DCC16A58CDF005E6897 /* UserChangePwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserChangePwdViewController.m; sourceTree = "<group>"; };
+		327C4DCD16A58CDF005E6897 /* UserChangePwdViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserChangePwdViewController.xib; sourceTree = "<group>"; };
+		327C4DD816A59C38005E6897 /* RadiusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RadiusView.h; path = sourcing/RadiusView.h; sourceTree = "<group>"; };
+		327C4DD916A59C38005E6897 /* RadiusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RadiusView.m; path = sourcing/RadiusView.m; sourceTree = "<group>"; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -686,6 +699,12 @@
 				32120A98168985E000DBF915 /* WelcomeViewController.h */,
 				32120A99168985E000DBF915 /* WelcomeViewController.m */,
 				32120A9A168985E000DBF915 /* WelcomeViewController.xib */,
+				327C4DC616A58C8E005E6897 /* UserLoginViewController.h */,
+				327C4DC716A58C8E005E6897 /* UserLoginViewController.m */,
+				327C4DC816A58C8E005E6897 /* UserLoginViewController.xib */,
+				327C4DCB16A58CDF005E6897 /* UserChangePwdViewController.h */,
+				327C4DCC16A58CDF005E6897 /* UserChangePwdViewController.m */,
+				327C4DCD16A58CDF005E6897 /* UserChangePwdViewController.xib */,
 			);
 			name = UI;
 			path = ..;
@@ -715,6 +734,8 @@
 				32120AB51689F0D200DBF915 /* TimeUtil.m */,
 				32D0C1B7168DEEFD00902708 /* ToastHintUtil.h */,
 				32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */,
+				327C4DD816A59C38005E6897 /* RadiusView.h */,
+				327C4DD916A59C38005E6897 /* RadiusView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1200,6 +1221,8 @@
 				327C4DAE16A4359B005E6897 /* icon_userpic_bg@2x.png in Resources */,
 				327C4DB316A448DD005E6897 /* UserInfoCell.xib in Resources */,
 				327C4DBF16A54585005E6897 /* FavInfoController.xib in Resources */,
+				327C4DCA16A58C8E005E6897 /* UserLoginViewController.xib in Resources */,
+				327C4DCF16A58CDF005E6897 /* UserChangePwdViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1308,6 +1331,9 @@
 				324E821016A154660061C48B /* TrainCell.m in Sources */,
 				327C4DB116A448B3005E6897 /* UserInfoCell.m in Sources */,
 				327C4DBE16A54585005E6897 /* FavInfoController.m in Sources */,
+				327C4DC916A58C8E005E6897 /* UserLoginViewController.m in Sources */,
+				327C4DCE16A58CDF005E6897 /* UserChangePwdViewController.m in Sources */,
+				327C4DDA16A59C38005E6897 /* RadiusView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,6 +48,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionLogin_Pwd:" destination="7tc-Sg-OhN" eventType="touchDown" id="NAM-Zo-pFR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b4R-bg-8wz">
                                 <rect key="frame" x="227" y="138" width="80" height="36"/>
@@ -60,6 +63,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="actionReg_Account:" destination="7tc-Sg-OhN" eventType="touchDown" id="Egc-9K-OVk"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="KVH-dg-U6b">
                                 <rect key="frame" x="0.0" y="182" width="320" height="257"/>
@@ -234,6 +240,7 @@
         <class className="CustomNavigationBar" superclassName="UINavigationBar">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomNavigationBar.h"/>
             <relationships>
+                <relationship kind="action" name="back:"/>
                 <relationship kind="outlet" name="navigationController" candidateClass="UINavigationController"/>
             </relationships>
         </class>
@@ -259,6 +266,8 @@
         <class className="UserViewController" superclassName="BaseHomeViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UserViewController.h"/>
             <relationships>
+                <relationship kind="action" name="actionLogin_Pwd:"/>
+                <relationship kind="action" name="actionReg_Account:"/>
                 <relationship kind="outlet" name="buttonLogin_Pwd" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="buttonReg_Account" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageUserPic" candidateClass="UIImageView"/>

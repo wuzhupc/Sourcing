@@ -1,0 +1,105 @@
+//
+//  UserLoginViewController.m
+//  sourcing
+//
+//  Created by wuzhu on 13-1-15.
+//  Copyright (c) 2013年 wuzhu. All rights reserved.
+//
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Imports
+
+#import "UserLoginViewController.h"
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Types
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Defines & Constants
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Macros
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private Interface
+
+@interface UserLoginViewController ()
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private Properties
+
+@end
+
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Implementation
+
+@implementation UserLoginViewController
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Synthesize
+
+/* Outlets ********************************************************************/
+
+/* Public *********************************************************************/
+
+/* Private ********************************************************************/
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Setup & Teardown
+
+- (void)commonInitUserLoginViewController
+{
+}
+
+- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        [self commonInitUserLoginViewController];
+    }
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder*)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self)
+    {
+        [self commonInitUserLoginViewController];
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // your code here
+}
+
+- (void)viewDidUnload {
+	// your code here
+    [self setLabelTitle:nil];
+    [self setViewInput:nil];
+    [super viewDidUnload];
+}
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Superclass Overrides
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Public methods
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Private methods
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Actions
+- (IBAction)actionReturn:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
+}
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Delegate methods
+
+
+@end

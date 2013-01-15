@@ -17,6 +17,7 @@
 #import "UIImageView+WebCache.h"
 #import "UserInfoCell.h"
 #import "FavoriteUtil.h"
+#import "UserLoginViewController.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -152,6 +153,33 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 
+
+- (IBAction)actionLogin_Pwd:(id)sender {
+    UserVO *vo = [[ApplicationSet shareData] getUserVO];
+    if(vo==nil)
+    {
+        //登录
+        UserLoginViewController *vc = [[UserLoginViewController alloc] init];
+        [self presentModalViewController:vc animated:YES];
+    }else
+    {
+        //TODO 修改密码
+    }
+}
+
+- (IBAction)actionReg_Account:(id)sender {
+    //TODO
+    UserVO *vo = [[ApplicationSet shareData] getUserVO];
+    if(vo==nil)
+    {
+        //注册
+    }else
+    {
+        //切换帐号
+    }
+    
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Delegate methods
 
@@ -195,6 +223,4 @@
 {
     return self.userInfoCount;
 }
-
-
 @end

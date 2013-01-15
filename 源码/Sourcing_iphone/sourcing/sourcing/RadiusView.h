@@ -1,20 +1,24 @@
 //
-//  UserViewController.h
+//  RadiusView.h
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-15.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
-#import "BaseHomeViewController.h"
+
+#import <UIKit/UIKit.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Defines & Constants
+#define CCOLOR_DEFAULT_BORDERCOLOR [UIColor colorWithRed:120/255.0 green:120/255.0 blue:120/255.0 alpha:0.7]
+
+#define CINT_DEFAULT_BORDERWIDTH 1
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Macros
@@ -22,33 +26,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface UserViewController : BaseHomeViewController<UITableViewDataSource,UITableViewDelegate>
+@interface RadiusView : UIView
 
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Outlets
-@property (weak, nonatomic) IBOutlet UIImageView *imageUserPic;
-
-@property (weak, nonatomic) IBOutlet UILabel *labelUserName;
-@property (weak, nonatomic) IBOutlet UILabel *labelUserType;
-@property (weak, nonatomic) IBOutlet UIButton *buttonLogin_Pwd;
-@property (weak, nonatomic) IBOutlet UIButton *buttonReg_Account;
-@property (weak, nonatomic) IBOutlet UITableView *tableviewUserInfo;
+@property (nonatomic,readonly) NSUInteger cellCount;
+@property (nonatomic,readonly) NSUInteger cellHeight;
+@property (nonatomic,strong) UIColor *cellSeparatorColor;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Actions
-- (IBAction)actionLogin_Pwd:(id)sender;
-
-- (IBAction)actionReg_Account:(id)sender;
-
-
+-(void)setCornerRadius:(CGFloat)kcornerRadius;
+-(void)setBorderColor:(UIColor
+                       *)kcolor;
+-(void)setCellCount:(NSUInteger)kcount;
+-(void)setCellHeight:(NSUInteger)kheight;
 @end
