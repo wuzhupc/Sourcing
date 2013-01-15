@@ -40,7 +40,7 @@ public class ListBaseAdapter extends BaseAdapter
 	{
 		this.mContext = ctx;
 		this.mList = list;
-
+		this.misfav = isfav;
 		imageService = new ImageService(mContext);
 	}
 
@@ -178,7 +178,7 @@ public class ListBaseAdapter extends BaseAdapter
 	{
 		View view =null;
 		// 头条(且只有第一条才显示成头条样式)
-		if (position == 0 && vo.isHeadline()&&!misfav)
+		if (position == 0 && !misfav && vo.isHeadline()&&!misfav)
 		{
 			view = LayoutInflater.from(mContext).inflate(R.layout.listitem_base_headline, null);
 		} else
@@ -193,7 +193,7 @@ public class ListBaseAdapter extends BaseAdapter
 		summary_tv.setText(vo.getNewssummary());
 
 		// 头条(且只有第一条才显示成头条样式)
-		if (position == 0 && vo.isHeadline())
+		if (position == 0 && !misfav && vo.isHeadline())
 		{
 			// 头条时，加载中图
 			imageService.setThumbnail(titlePic_iv, vo.getTitlepic(), null, ImageUtil.IMAGE_DEFMEDIUMWIDTH,
