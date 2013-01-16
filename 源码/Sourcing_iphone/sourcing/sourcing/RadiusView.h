@@ -18,7 +18,7 @@
 #pragma mark - Defines & Constants
 #define CCOLOR_DEFAULT_BORDERCOLOR [UIColor colorWithRed:120/255.0 green:120/255.0 blue:120/255.0 alpha:0.7]
 
-#define CINT_DEFAULT_BORDERWIDTH 1
+#define CINT_DEFAULT_BORDERWIDTH 0.5
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Macros

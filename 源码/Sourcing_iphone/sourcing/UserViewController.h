@@ -22,7 +22,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface UserViewController : BaseHomeViewController<UITableViewDataSource,UITableViewDelegate>
+@interface UserViewController : BaseHomeViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 
 
 ////////////////////////////////////////////////////////////////////////////////

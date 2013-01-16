@@ -18,6 +18,9 @@
 #import "UserInfoCell.h"
 #import "FavoriteUtil.h"
 #import "UserLoginViewController.h"
+#import "DataInterfaceUtil.h"
+#import "UserChangePwdViewController.h"
+#import "ToastHintUtil.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +40,8 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
 @property (nonatomic)NSInteger userInfoCount;
+@property (nonatomic)BOOL isFirstStart;
+@property (nonatomic,strong)UserVO *preUserVO;
 @end
 
 
@@ -54,11 +59,15 @@
 
 /* Private ********************************************************************/
 @synthesize userInfoCount = userInfoCount_;
+@synthesize isFirstStart = isFirstStart_;
+@synthesize preUserVO = preUserVO_;
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
 - (void)commonInitUserViewController
 {
+    self.isFirstStart = YES;
+    preUserVO_ = nil;
     [self.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"icon_home_tb_user"] withFinishedUnselectedImage:[UIImage imageNamed:@"icon_home_tb_user"]];
 }
 
@@ -91,6 +100,27 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [self showUserInfo];
+    UserVO *userVO = [ApplicationSet shareData].getUserVO;
+    if(self.isFirstStart)
+    {
+        self.isFirstStart = NO;        
+        if(userVO==nil)
+            [self showUserLogin];
+    }else
+    {
+        if(self.preUserVO==nil&&userVO != nil)
+        {
+            //登录成功
+            [ToastHintUtil showHint:NSLocalizedString(@"登录成功", @"") parentview:self.view];
+        }else if(self.preUserVO!=nil&&userVO!=nil)
+        {
+            if(![self.preUserVO.password isEqualToString:userVO.password])//修改密码成功
+            {
+                [ToastHintUtil showHint:NSLocalizedString(@"修改密码成功", @"") parentview:self.view];
+            }
+        }
+    }
+    self.preUserVO = userVO;
 }
 
 - (void)viewDidUnload {
@@ -150,6 +180,18 @@
     [self.tableviewUserInfo reloadData];
 }
 
+-(void)showUserLogin
+{
+    UserLoginViewController *vc = [[UserLoginViewController alloc] init];
+    [self presentModalViewController:vc animated:YES];
+}
+
+-(void)showChangePwd
+{
+    UserChangePwdViewController *vc = [[UserChangePwdViewController alloc] init];
+    [self presentModalViewController:vc animated:YES];
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 
@@ -159,23 +201,25 @@
     if(vo==nil)
     {
         //登录
-        UserLoginViewController *vc = [[UserLoginViewController alloc] init];
-        [self presentModalViewController:vc animated:YES];
+        [self showUserLogin];
     }else
     {
-        //TODO 修改密码
+        //修改密码
+        [self showChangePwd];
     }
 }
 
 - (IBAction)actionReg_Account:(id)sender {
-    //TODO
     UserVO *vo = [[ApplicationSet shareData] getUserVO];
     if(vo==nil)
     {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[DataInterfaceUtil getDataInterface:@"url_reg_progress"]]];
         //注册
     }else
     {
         //切换帐号
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"切换帐号", @"") message:NSLocalizedString(@"您确认退出当前登录，更换使用其他帐号登录吗？", @"") delegate:self cancelButtonTitle:NSLocalizedString(@"取消", @"") otherButtonTitles:NSLocalizedString(@"好的", @""),nil];
+        [alert show];
     }
     
 }
@@ -222,5 +266,14 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.userInfoCount;
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1)
+    {
+        [[ApplicationSet shareData] setLoginUserInfo:nil saveinfo:YES];
+        [self showUserLogin];
+        self.preUserVO = nil;
+    }
 }
 @end

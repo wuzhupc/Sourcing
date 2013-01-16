@@ -10,6 +10,8 @@
 #pragma mark - Imports
 
 #import <UIKit/UIKit.h>
+#import "RadiusView.h"
+#import "BaseServiceDelegate.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -17,17 +19,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Defines & Constants
 
+#define CINT_TAG_USERCHANGPWD 10016
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Macros
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface UserChangePwdViewController : UIViewController
+@interface UserChangePwdViewController : UIViewController<UITextFieldDelegate,BaseServiceDelegate>
 
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
+@property (weak, nonatomic) IBOutlet RadiusView *viewInput;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldOldPwd;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldNewPwd;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldConfirmNewPwd;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Outlets
@@ -37,6 +45,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
+- (IBAction)actionReturn:(id)sender;
+- (IBAction)actonChangePwd:(id)sender;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions

@@ -718,17 +718,17 @@
 				32CFE2A81696C2E200F3C939 /* PersonViewController.h */,
 				32CFE2A91696C2E200F3C939 /* PersonViewController.m */,
 				32FB0D2316996445006ADA79 /* TableViewCell */,
+				327C4DCB16A58CDF005E6897 /* UserChangePwdViewController.h */,
+				327C4DCC16A58CDF005E6897 /* UserChangePwdViewController.m */,
+				327C4DCD16A58CDF005E6897 /* UserChangePwdViewController.xib */,
+				327C4DC616A58C8E005E6897 /* UserLoginViewController.h */,
+				327C4DC716A58C8E005E6897 /* UserLoginViewController.m */,
+				327C4DC816A58C8E005E6897 /* UserLoginViewController.xib */,
 				32CFE2AB1696C2FC00F3C939 /* UserViewController.h */,
 				32CFE2AC1696C2FC00F3C939 /* UserViewController.m */,
 				32120A98168985E000DBF915 /* WelcomeViewController.h */,
 				32120A99168985E000DBF915 /* WelcomeViewController.m */,
 				32120A9A168985E000DBF915 /* WelcomeViewController.xib */,
-				327C4DC616A58C8E005E6897 /* UserLoginViewController.h */,
-				327C4DC716A58C8E005E6897 /* UserLoginViewController.m */,
-				327C4DC816A58C8E005E6897 /* UserLoginViewController.xib */,
-				327C4DCB16A58CDF005E6897 /* UserChangePwdViewController.h */,
-				327C4DCC16A58CDF005E6897 /* UserChangePwdViewController.m */,
-				327C4DCD16A58CDF005E6897 /* UserChangePwdViewController.xib */,
 			);
 			name = UI;
 			path = ..;
