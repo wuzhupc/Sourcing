@@ -78,7 +78,9 @@
 	<string name="userchangepwd_newpwd">新密码</string>
 	<string name="userchangepwd_renewpwd">确认新密码</string>
 	<string name="userchangepwd_pwd_hit">请输入旧密码</string>
+	<string name="userchangepwd_pwd_nowvalid">请输入正确旧密码</string>
 	<string name="userchangepwd_newpwd_hit">请输入新密码</string>
+	<string name="userchangepwd_newpwd_noequal_oldpwd">新密码不能和旧密码一样</string>
 	<string name="userchangepwd_newpwd_noequal">新密码不一致</string>
 	<string name="userchangepwd_changing">修改密码中&#8230;&#8230;&#8230;</string>
 	<string name="userchangepwd_change_error">修改密码失败:%1$s</string>

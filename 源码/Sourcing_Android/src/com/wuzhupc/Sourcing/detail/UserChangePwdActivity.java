@@ -66,11 +66,26 @@ public class UserChangePwdActivity extends BaseActivity
 	{
 		//“˛≤ÿ ‰»Î∑®
 		hideIme();
+
+		final UserVO userVO = getApplicationSet().getUserVO();
+		if(userVO==null)
+		{
+			UserChangePwdActivity.this.finish();
+			displayToast(R.string.userview_nologin);
+			return;
+		}
 		//≈–∂œ
 		if(StringUtil.isEmpty(met_Pwd.getText().toString()))
 		{
 			met_Pwd.requestFocus();
 			displayToast(R.string.userchangepwd_pwd_hit);
+			return;
+		}
+		if(userVO.getPassword().equals(met_Pwd.getText().toString()))
+		{
+			met_Pwd.setText("");
+			met_Pwd.requestFocus();
+			displayToast(R.string.userchangepwd_pwd_nowvalid);
 			return;
 		}
 		if(StringUtil.isEmpty(met_NewPwd.getText().toString()))
@@ -80,18 +95,20 @@ public class UserChangePwdActivity extends BaseActivity
 			return;
 		}
 		
+		if(met_Pwd.getText().toString().equals(met_NewPwd.getText().toString()))
+		{
+			met_NewPwd.setText("");
+			met_ReNewPwd.setText("");
+			met_NewPwd.requestFocus();
+			displayToast(R.string.userchangepwd_newpwd_noequal_oldpwd);
+			return;
+		}
+		
 		if(!met_NewPwd.getText().toString().equals(met_ReNewPwd.getText().toString()))
 		{
 			met_ReNewPwd.setText("");
 			met_ReNewPwd.requestFocus();
 			displayToast(R.string.userchangepwd_newpwd_noequal);
-			return;
-		}
-		final UserVO userVO = getApplicationSet().getUserVO();
-		if(userVO==null)
-		{
-			UserChangePwdActivity.this.finish();
-			displayToast(R.string.userview_nologin);
 			return;
 		}
 		MobileUserService service = new MobileUserService(UserChangePwdActivity.this);

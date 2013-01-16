@@ -27,7 +27,7 @@
             <TextView
                 android:id="@+id/userview_username_tv"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_alignTop="@+id/userview_userpic_iv"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="5dp"
@@ -35,7 +35,7 @@
                 android:gravity="center_vertical"
                 android:maxLines="2"
                 android:text="@string/userview_nologin"
-                android:textSize="@dimen/text_size_large" />
+                android:textSize="@dimen/text_size_medium" />
             <!-- 用户类型 -->
 
             <TextView
@@ -46,7 +46,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_toRightOf="@+id/userview_userpic_iv"
                 android:singleLine="true"
-                android:textSize="@dimen/text_size_medium" />
+                android:textSize="@dimen/text_size_small" />
             <!-- 注册登录按钮 -->
 
             <LinearLayout

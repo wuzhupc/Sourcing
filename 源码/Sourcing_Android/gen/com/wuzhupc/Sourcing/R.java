@@ -436,10 +436,10 @@ containing a value of this type.
         public static final int dl_title_prompt=0x7f080024;
         public static final int fav_add=0x7f080040;
         public static final int fav_remove=0x7f080041;
-        public static final int favinfo_nodata=0x7f08006b;
+        public static final int favinfo_nodata=0x7f08006d;
         /**  FavInfoActivity 
          */
-        public static final int favinfo_title=0x7f08006a;
+        public static final int favinfo_title=0x7f08006c;
         /**  HomeActivity 
          */
         public static final int home_initchannel_fail=0x7f08003d;
@@ -451,21 +451,21 @@ containing a value of this type.
         /**  列表项相关  
          */
         public static final int list_item_no_data=0x7f08002d;
-        public static final int newconsult_content_hit=0x7f080065;
-        public static final int newconsult_sendbt_text=0x7f080066;
-        public static final int newconsult_sendconsult_errorhit=0x7f080068;
-        public static final int newconsult_sendconsult_hit=0x7f080067;
-        public static final int newconsult_sendconsult_sucesshit=0x7f080069;
+        public static final int newconsult_content_hit=0x7f080067;
+        public static final int newconsult_sendbt_text=0x7f080068;
+        public static final int newconsult_sendconsult_errorhit=0x7f08006a;
+        public static final int newconsult_sendconsult_hit=0x7f080069;
+        public static final int newconsult_sendconsult_sucesshit=0x7f08006b;
         /**  NewConsultActivity 
          */
-        public static final int newconsult_title=0x7f080064;
-        public static final int notify_detail=0x7f08006f;
+        public static final int newconsult_title=0x7f080066;
+        public static final int notify_detail=0x7f080071;
         /**  通知栏提示信息 
          */
-        public static final int notify_pop_msg=0x7f08006d;
-        public static final int notify_prompt=0x7f080070;
-        public static final int notify_single_msg_detail=0x7f080071;
-        public static final int notify_title=0x7f08006e;
+        public static final int notify_pop_msg=0x7f08006f;
+        public static final int notify_prompt=0x7f080072;
+        public static final int notify_single_msg_detail=0x7f080073;
+        public static final int notify_title=0x7f080070;
         /**  View 
          */
         public static final int person_search_empty=0x7f080042;
@@ -481,33 +481,35 @@ containing a value of this type.
         public static final int pull_to_refresh_release_label=0x7f080001;
         /**  SettingActivity 
          */
-        public static final int setting_title=0x7f08006c;
+        public static final int setting_title=0x7f08006e;
         /**  忘记密码处理页面 
          */
         public static final int url_forget_pwd_progress=0x7f080006;
         /**  用户注册处理页面 
          */
         public static final int url_reg_progress=0x7f080007;
-        public static final int userchangepwd_change_error=0x7f08005d;
-        public static final int userchangepwd_change_sucess=0x7f08005e;
-        public static final int userchangepwd_changing=0x7f08005c;
+        public static final int userchangepwd_change_error=0x7f08005f;
+        public static final int userchangepwd_change_sucess=0x7f080060;
+        public static final int userchangepwd_changing=0x7f08005e;
         public static final int userchangepwd_newpwd=0x7f080057;
-        public static final int userchangepwd_newpwd_hit=0x7f08005a;
-        public static final int userchangepwd_newpwd_noequal=0x7f08005b;
+        public static final int userchangepwd_newpwd_hit=0x7f08005b;
+        public static final int userchangepwd_newpwd_noequal=0x7f08005d;
+        public static final int userchangepwd_newpwd_noequal_oldpwd=0x7f08005c;
         public static final int userchangepwd_pwd=0x7f080056;
         public static final int userchangepwd_pwd_hit=0x7f080059;
+        public static final int userchangepwd_pwd_nowvalid=0x7f08005a;
         public static final int userchangepwd_renewpwd=0x7f080058;
         /**  UserChangePwdActivity 
          */
         public static final int userchangepwd_title=0x7f080054;
         public static final int userchangepwd_username=0x7f080055;
-        public static final int userinfolist_audit_title=0x7f080060;
+        public static final int userinfolist_audit_title=0x7f080062;
         /**  UserInfoListActivity 
          */
-        public static final int userinfolist_consult_title=0x7f08005f;
-        public static final int userinfolist_declare_title=0x7f080061;
-        public static final int userinfolist_getdata_hit=0x7f080063;
-        public static final int userinfolist_notifier_title=0x7f080062;
+        public static final int userinfolist_consult_title=0x7f080061;
+        public static final int userinfolist_declare_title=0x7f080063;
+        public static final int userinfolist_getdata_hit=0x7f080065;
+        public static final int userinfolist_notifier_title=0x7f080064;
         public static final int userlogin_account_empty=0x7f08004e;
         public static final int userlogin_login_bt_title=0x7f080050;
         public static final int userlogin_login_error=0x7f080053;
