@@ -56,7 +56,7 @@
 	<string name="userview_nologin">您还未登录</string>
 	<string name="userview_changepwd">修改密码</string>
 	<string name="userview_changeaccount">切换帐号</string>
-	<string name="userview_changeaccount_hit">您确定退出，更换其他帐号登入吗？</string>
+	<string name="userview_changeaccount_hit">您确认退出当前登录，更换使用其他帐号登录吗？</string>
 	<string name="userview_login"> 登 录 </string>
 	<string name="userview_register"> 注 册 </string>
 	<string name="userview_consult_info">咨询信息(未查看:&#060;font color=&#034;&#035;FF0000&#034;&#062;%1$s&#060;&#047;font&#062;  全部:&#060;font color=&#034;&#035;CC0000&#034;&#062;%2$s&#060;&#047;font&#062;)</string>
