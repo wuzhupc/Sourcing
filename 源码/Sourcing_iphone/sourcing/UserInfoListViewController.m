@@ -132,6 +132,7 @@
     self.labelTitle.text = self.titleText;
     [self.buttonNewConsult setHidden:self.infotype!=USER_INFO_TYPE_CONSULT];
     [self initTableView];
+    [self.prTableView launchRefreshing];
 }
 
 -(void)initTableView

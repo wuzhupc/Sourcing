@@ -53,7 +53,8 @@
 //    NSMutableArray *colors = [NSMutableArray array];
 //    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL CGColor]];
 //    [colors addObject:(id)[CCOLOR_TABLEVIEW_SEL_2 CGColor]];
-//    [self setSelectedBackgroundViewGradientColors:colors];
+    //    [self setSelectedBackgroundViewGradientColors:colors];
+    [self setSelectionStyle:UITableViewCellSelectionStyleNone];
     [self.backgroundView setBackgroundColor:CCOLOR_TABLEVIEW_BG];
     [self setDashWidth:2 dashGap:3 dashStroke:2];
 }
