@@ -42,7 +42,7 @@
 							<object class="IBUILabel" id="552091002">
 								<reference key="NSNextResponder" ref="1019720331"/>
 								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{8, 8}, {312, 26}}</string>
+								<string key="NSFrame">{{8, 8}, {312, 24}}</string>
 								<reference key="NSSuperview" ref="1019720331"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="185238190"/>
@@ -80,9 +80,10 @@
 							<object class="IBUILabel" id="841143009">
 								<reference key="NSNextResponder" ref="1019720331"/>
 								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{142, 34}, {172, 20}}</string>
+								<string key="NSFrame">{{139, 34}, {172, 20}}</string>
 								<reference key="NSSuperview" ref="1019720331"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -97,11 +98,11 @@
 								<reference key="IBUIHighlightedColor" ref="951886304"/>
 								<int key="IBUIBaselineAdjustment">0</int>
 								<int key="IBUITextAlignment">2</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="202462487">
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
 									<int key="type">1</int>
 									<double key="pointSize">14</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="271214407">
+								<object class="NSFont" key="IBUIFont">
 									<string key="NSName">Helvetica</string>
 									<double key="NSSize">14</double>
 									<int key="NSfFlags">16</int>
@@ -125,8 +126,15 @@
 								<reference key="IBUITextColor" ref="1056467200"/>
 								<reference key="IBUIHighlightedColor" ref="951886304"/>
 								<int key="IBUIBaselineAdjustment">0</int>
-								<reference key="IBUIFontDescription" ref="202462487"/>
-								<reference key="IBUIFont" ref="271214407"/>
+								<object class="IBUIFontDescription" key="IBUIFontDescription">
+									<int key="type">2</int>
+									<double key="pointSize">14</double>
+								</object>
+								<object class="NSFont" key="IBUIFont">
+									<string key="NSName">Helvetica-Bold</string>
+									<double key="NSSize">14</double>
+									<int key="NSfFlags">16</int>
+								</object>
 								<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 							</object>
 						</array>
@@ -165,19 +173,27 @@
 			<array class="NSMutableArray" key="connectionRecords">
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">laTitle</string>
+						<string key="label">labelNotifier</string>
 						<reference key="source" ref="283996903"/>
 						<reference key="destination" ref="552091002"/>
 					</object>
-					<int key="connectionID">11</int>
+					<int key="connectionID">13</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">laSummary</string>
+						<string key="label">labelPublisher</string>
+						<reference key="source" ref="283996903"/>
+						<reference key="destination" ref="185238190"/>
+					</object>
+					<int key="connectionID">14</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">labelPublishtime</string>
 						<reference key="source" ref="283996903"/>
 						<reference key="destination" ref="841143009"/>
 					</object>
-					<int key="connectionID">12</int>
+					<int key="connectionID">15</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -240,13 +256,32 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">12</int>
+			<int key="maxID">15</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">NotifierCell</string>
 					<string key="superclassName">StyledTableViewCell</string>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="labelNotifier">UILabel</string>
+						<string key="labelPublisher">UILabel</string>
+						<string key="labelPublishtime">UILabel</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="labelNotifier">
+							<string key="name">labelNotifier</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="labelPublisher">
+							<string key="name">labelPublisher</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="labelPublishtime">
+							<string key="name">labelPublishtime</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/NotifierCell.h</string>

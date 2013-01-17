@@ -13,6 +13,7 @@
 #import "UIColor+MGExpanded.h"
 #import "ApplicationSet.h"
 #import "FavInfoController.h"
+#import "UserInfoListViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -96,14 +97,17 @@
 
 -(void)showDetail:(UIViewController *)kvc
 {
-    //TODO
     if(self.userinfotype == USER_INFO_TYPE_FAV)
     {
         FavInfoController *vc = [[FavInfoController alloc] init];
         [kvc presentModalViewController:vc animated:YES];
         return;
-    }
-    
+    }else
+    {
+        UserInfoListViewController *vc = [[UserInfoListViewController alloc] initWithInfoType:self.userinfotype title:[UserVO getUserInfoDesc:self.userinfotype]];
+        [kvc presentModalViewController:vc animated:YES];
+        return;
+    } 
 }
 
 ////////////////////////////////////////////////////////////////////////////////

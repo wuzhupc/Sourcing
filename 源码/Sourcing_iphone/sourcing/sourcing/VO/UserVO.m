@@ -136,7 +136,7 @@
     
     NSArray *array = [self infoTypes];
     NSInteger result = USER_INFO_TYPE_FAV;
-    for(NSInteger i = 0;i<kindex+1&&i<CINT_USERINFOTYPE_MAXCOUNT&&result<CINT_USERINFOTYPE_MAXCOUNT;i++)
+    for(NSInteger i = 0;i<kindex&&i<CINT_USERINFOTYPE_MAXCOUNT&&result<CINT_USERINFOTYPE_MAXCOUNT;i++)
     {
         NSNumber *number = [array objectAtIndex:i];
         if([number integerValue]==1)
@@ -153,15 +153,31 @@
     
     if(type == USER_INFO_TYPE_CONSULT)
         return [NSString stringWithFormat:@"咨询信息（未查看:%d，全部:%d）",self.consultcount,self.allconsultcount];
-    else if(type == USER_INFO_TYPE_CONSULT)
-        return [NSString stringWithFormat:@"审核结果（未查看:%d，全部:%d）",self.consultcount,self.allconsultcount];
-    else if(type == USER_INFO_TYPE_CONSULT)
-        return [NSString stringWithFormat:@"申报进度（未查看:%d，全部:%d）",self.consultcount,self.allconsultcount];
-    else if(type == USER_INFO_TYPE_CONSULT)
-        return [NSString stringWithFormat:@"通知提醒（未查看:%d，全部:%d）",self.consultcount,self.allconsultcount];
+    else if(type == USER_INFO_TYPE_AUDIT)
+        return [NSString stringWithFormat:@"审核结果（未查看:%d，全部:%d）",self.auditcount,self.allauditcount];
+    else if(type == USER_INFO_TYPE_DECLARE)
+        return [NSString stringWithFormat:@"申报进度（未查看:%d，全部:%d）",self.declarecount,self.alldeclarecount];
+    else if(type == USER_INFO_TYPE_NOTIFIER)
+        return [NSString stringWithFormat:@"通知提醒（未查看:%d，全部:%d）",self.notifiercount,self.allnotifiercount];
     
     return [UserVO getInfoMsgWithFav];
     
+}
+
++(NSString *)getUserInfoDesc:(USER_INFO_TYPE)kinfotype
+{
+    switch (kinfotype) {
+        case USER_INFO_TYPE_CONSULT:
+            return @"咨询信息";
+        case USER_INFO_TYPE_AUDIT:
+            return @"审核结果";
+        case USER_INFO_TYPE_DECLARE:
+            return @"申报进度";
+        case USER_INFO_TYPE_NOTIFIER:
+            return @"通知提醒";
+        default:
+            return @"我的收藏";
+    }
 }
 
 +(NSString *)getInfoMsgWithFav

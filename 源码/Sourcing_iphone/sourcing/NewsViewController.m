@@ -306,7 +306,7 @@
 
 -(NSInteger)tableView:(UITableView *)tv numberOfRowsInSection:(NSInteger)section
 {
-    if(newslist == nil)
+    if(newslist == nil||[newslist count] == 0)
     {
         //加载时移除没有数据显示
         if([(PullingRefreshTableView *)tv isLoading])

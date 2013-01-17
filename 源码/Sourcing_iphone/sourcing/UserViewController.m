@@ -12,7 +12,6 @@
 #import "UserViewController.h"
 #import "UIColor+MGExpanded.h"
 #import "ApplicationSet.h"
-#import "UserVO.h"
 #import "StringUtil.h"
 #import "UIImageView+WebCache.h"
 #import "UserInfoCell.h"
@@ -192,6 +191,31 @@
     [self presentModalViewController:vc animated:YES];
 }
 
+-(void)changeUserInfo:(USER_INFO_TYPE)kinfotype
+{
+    UserVO *vo = [[ApplicationSet shareData] getUserVO];
+    if(kinfotype == USER_INFO_TYPE_FAV||vo==nil)
+        return;
+    switch (kinfotype) {
+        case USER_INFO_TYPE_AUDIT:
+            vo.auditcount = 0;
+            break;
+        case USER_INFO_TYPE_CONSULT:
+            vo.consultcount = 0;
+            break;
+        case USER_INFO_TYPE_NOTIFIER:
+            vo.notifiercount = 0;
+            break;
+        case USER_INFO_TYPE_DECLARE:
+            vo.declarecount = 0;
+            break;
+        default:
+            break;
+    }
+    [[ApplicationSet shareData] setLoginUserInfo:vo saveinfo:YES];
+    
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 
@@ -238,6 +262,7 @@
     UserInfoCell *cell = (UserInfoCell *)[tableView cellForRowAtIndexPath:indexPath];
     if(cell==nil)
         return;
+    [self changeUserInfo:cell.userinfotype];
     [cell showDetail:self];
 }
 

@@ -62,5 +62,6 @@ typedef enum USER_INFO_TYPE:NSInteger
 +(BOOL)saveLoginUserInfo:(UserVO *)kuservo;
 +(UserVO *)getLastLoginUserInfo;
 +(NSString *)getInfoMsgWithFav;
++(NSString *)getUserInfoDesc:(USER_INFO_TYPE)kinfotype;
 
 @end

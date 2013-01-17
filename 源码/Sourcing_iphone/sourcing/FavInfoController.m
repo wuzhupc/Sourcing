@@ -164,6 +164,7 @@
     if(resutlt == 0 )
         return;
     BaseVO *vo = [[FavoriteUtil favoriteUtil].dataList objectAtIndex:indexPath.row];
+    //NewsDetailViewController *vc = [[NewsDetailViewController alloc] initWithBaseVO:vo title:@"" favchangeDelegate:self];
     NewsDetailViewController *vc = [[NewsDetailViewController alloc] initWithBaseVO:vo title:NSLocalizedString(@"收藏详情", @"详情页标题")];
     [self presentModalViewController:vc animated:YES];
 }

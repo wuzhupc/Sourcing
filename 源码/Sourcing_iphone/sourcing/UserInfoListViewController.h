@@ -1,16 +1,19 @@
 //
-//  NotifierCell.h
+//  UserInfoListViewController.h
 //  sourcing
 //
-//  Created by wuzhu on 13-1-12.
+//  Created by wuzhu on 13-1-17.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import "StyledTableViewCell.h"
-#import "NotifierVO.h"
+#import <UIKit/UIKit.h>
+#import "BaseVO.h"
+#import "PullingRefreshTableView.h"
+#import "BaseServiceDelegate.h"
+#import "UserVO.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -18,28 +21,36 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Defines & Constants
 
+#define CINT_TAG_LOADNEWDATA 10017
+#define CINT_TAG_LOADMOREDATA 10018
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Macros
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface NotifierCell : StyledTableViewCell
+@interface UserInfoListViewController : UIViewController<PullingRefreshTableViewDelegate,UITableViewDataSource,UITableViewDelegate,BaseServiceDelegate>
 
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
-@property (weak, nonatomic) IBOutlet UILabel *labelNotifier;
-@property (weak, nonatomic) IBOutlet UILabel *labelPublisher;
-@property (weak, nonatomic) IBOutlet UILabel *labelPublishtime;
-@property (nonatomic,readonly) NotifierVO *dataVO;
+@property (weak, nonatomic) IBOutlet UILabel *labelTitle;
+@property (weak, nonatomic) IBOutlet UIButton *buttonNewConsult;
+
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Outlets
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
--(void)setData:(NotifierVO *)kvo;
-+(CGFloat)calCellHeight:(NotifierVO *)kvo;
+-(id)initWithInfoType:(USER_INFO_TYPE)kinfotype title:(NSString *)ktitle;
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Actions
+- (IBAction)actionReturn:(id)sender;
+- (IBAction)actionNewConsult:(id)sender;
+
 
 @end

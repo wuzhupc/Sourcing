@@ -7,6 +7,7 @@
 //
 
 #import "NotifierVO.h"
+#import "NotifierCell.h"
 
 @interface NotifierVO  ()
 {
@@ -31,4 +32,22 @@
     return notifierid;
 }
 
+
+-(CGFloat)heightForCell:(NSInteger)kindex
+{
+    return [NotifierCell calCellHeight:self];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex
+{
+    static NSString *cellIdentifier = @"NotifierCell";
+    NotifierCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell==nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:cellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    [cell setData:self];
+    return cell;
+}
 @end

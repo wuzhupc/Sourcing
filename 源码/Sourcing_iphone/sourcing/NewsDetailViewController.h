@@ -21,6 +21,7 @@
 }
 
 -(id)initWithBaseVO:(BaseVO *)kvo title:(NSString *)ktitle;
+-(id)initWithBaseVO:(BaseVO *)kvo title:(NSString *)ktitle favchangeDelegate:(NSObject<FavDataChangeDelegate> *)delegate;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonFav;
 @property (weak, nonatomic) IBOutlet UIButton *buttonShare;

@@ -135,6 +135,17 @@
 		327C4DEC16A5B65E005E6897 /* icon_btn_bg_red_sel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DE416A5B65E005E6897 /* icon_btn_bg_red_sel@2x.png */; };
 		327C4DED16A5B65E005E6897 /* icon_btn_bg_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DE516A5B65E005E6897 /* icon_btn_bg_red.png */; };
 		327C4DEE16A5B65E005E6897 /* icon_btn_bg_red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DE616A5B65E005E6897 /* icon_btn_bg_red@2x.png */; };
+		327C4DFC16A79E04005E6897 /* UserInfoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4DFA16A79E04005E6897 /* UserInfoListViewController.m */; };
+		327C4DFD16A79E04005E6897 /* UserInfoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4DFB16A79E04005E6897 /* UserInfoListViewController.xib */; };
+		327C4E0A16A838E8005E6897 /* RelativityLaws.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E0916A838E8005E6897 /* RelativityLaws.m */; };
+		327C4E1B16A8477D005E6897 /* NSAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E1616A8477D005E6897 /* NSAttributedString+Attributes.m */; };
+		327C4E1C16A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E1816A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.m */; };
+		327C4E1D16A8477D005E6897 /* OHAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E1A16A8477D005E6897 /* OHAttributedLabel.m */; };
+		327C4E2016A84793005E6897 /* CoreTextUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E1F16A84793005E6897 /* CoreTextUtils.m */; };
+		327C4E2716A847A0005E6897 /* OHASBasicHTMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E2216A847A0005E6897 /* OHASBasicHTMLParser.m */; };
+		327C4E2816A847A0005E6897 /* OHASBasicMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E2416A847A0005E6897 /* OHASBasicMarkupParser.m */; };
+		327C4E2916A847A0005E6897 /* OHASMarkupParserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E2616A847A0005E6897 /* OHASMarkupParserBase.m */; };
+		327C4E2B16A847CA005E6897 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327C4E2A16A847CA005E6897 /* CoreText.framework */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -427,6 +438,26 @@
 		327C4DE416A5B65E005E6897 /* icon_btn_bg_red_sel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_btn_bg_red_sel@2x.png"; path = "sourcing/Images/icon_btn_bg_red_sel@2x.png"; sourceTree = "<group>"; };
 		327C4DE516A5B65E005E6897 /* icon_btn_bg_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_btn_bg_red.png; path = sourcing/Images/icon_btn_bg_red.png; sourceTree = "<group>"; };
 		327C4DE616A5B65E005E6897 /* icon_btn_bg_red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_btn_bg_red@2x.png"; path = "sourcing/Images/icon_btn_bg_red@2x.png"; sourceTree = "<group>"; };
+		327C4DF916A79E04005E6897 /* UserInfoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoListViewController.h; sourceTree = "<group>"; };
+		327C4DFA16A79E04005E6897 /* UserInfoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoListViewController.m; sourceTree = "<group>"; };
+		327C4DFB16A79E04005E6897 /* UserInfoListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserInfoListViewController.xib; sourceTree = "<group>"; };
+		327C4E0816A838E8005E6897 /* RelativityLaws.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RelativityLaws.h; path = sourcing/Relativity/RelativityLaws.h; sourceTree = "<group>"; };
+		327C4E0916A838E8005E6897 /* RelativityLaws.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RelativityLaws.m; path = sourcing/Relativity/RelativityLaws.m; sourceTree = "<group>"; };
+		327C4E1516A8477D005E6897 /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+Attributes.h"; path = "sourcing/OHAttributedLabel/NSAttributedString+Attributes.h"; sourceTree = "<group>"; };
+		327C4E1616A8477D005E6897 /* NSAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+Attributes.m"; path = "sourcing/OHAttributedLabel/NSAttributedString+Attributes.m"; sourceTree = "<group>"; };
+		327C4E1716A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTextCheckingResult+ExtendedURL.h"; path = "sourcing/OHAttributedLabel/NSTextCheckingResult+ExtendedURL.h"; sourceTree = "<group>"; };
+		327C4E1816A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTextCheckingResult+ExtendedURL.m"; path = "sourcing/OHAttributedLabel/NSTextCheckingResult+ExtendedURL.m"; sourceTree = "<group>"; };
+		327C4E1916A8477D005E6897 /* OHAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHAttributedLabel.h; path = sourcing/OHAttributedLabel/OHAttributedLabel.h; sourceTree = "<group>"; };
+		327C4E1A16A8477D005E6897 /* OHAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHAttributedLabel.m; path = sourcing/OHAttributedLabel/OHAttributedLabel.m; sourceTree = "<group>"; };
+		327C4E1E16A84793005E6897 /* CoreTextUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreTextUtils.h; path = sourcing/OHAttributedLabel/PrivateUtils/CoreTextUtils.h; sourceTree = "<group>"; };
+		327C4E1F16A84793005E6897 /* CoreTextUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreTextUtils.m; path = sourcing/OHAttributedLabel/PrivateUtils/CoreTextUtils.m; sourceTree = "<group>"; };
+		327C4E2116A847A0005E6897 /* OHASBasicHTMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHASBasicHTMLParser.h; path = sourcing/OHAttributedLabel/TagParsers/OHASBasicHTMLParser.h; sourceTree = "<group>"; };
+		327C4E2216A847A0005E6897 /* OHASBasicHTMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHASBasicHTMLParser.m; path = sourcing/OHAttributedLabel/TagParsers/OHASBasicHTMLParser.m; sourceTree = "<group>"; };
+		327C4E2316A847A0005E6897 /* OHASBasicMarkupParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHASBasicMarkupParser.h; path = sourcing/OHAttributedLabel/TagParsers/OHASBasicMarkupParser.h; sourceTree = "<group>"; };
+		327C4E2416A847A0005E6897 /* OHASBasicMarkupParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHASBasicMarkupParser.m; path = sourcing/OHAttributedLabel/TagParsers/OHASBasicMarkupParser.m; sourceTree = "<group>"; };
+		327C4E2516A847A0005E6897 /* OHASMarkupParserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHASMarkupParserBase.h; path = sourcing/OHAttributedLabel/TagParsers/OHASMarkupParserBase.h; sourceTree = "<group>"; };
+		327C4E2616A847A0005E6897 /* OHASMarkupParserBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHASMarkupParserBase.m; path = sourcing/OHAttributedLabel/TagParsers/OHASMarkupParserBase.m; sourceTree = "<group>"; };
+		327C4E2A16A847CA005E6897 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -536,6 +567,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327C4E2B16A847CA005E6897 /* CoreText.framework in Frameworks */,
 				324E81D5169EFD880061C48B /* MessageUI.framework in Frameworks */,
 				322CA51A169B299100CCD216 /* MapKit.framework in Frameworks */,
 				322CA519169B290D00CCD216 /* ImageIO.framework in Frameworks */,
@@ -578,20 +610,21 @@
 		32120A5F16897C7A00DBF915 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				324E81D4169EFD880061C48B /* MessageUI.framework */,
+				32D0C1BC168DEFB800902708 /* CFNetwork.framework */,
+				32120A6616897C7A00DBF915 /* CoreData.framework */,
+				32120A6416897C7A00DBF915 /* CoreGraphics.framework */,
+				32D0C1BE168DEFDB00902708 /* CoreLocation.framework */,
+				327C4E2A16A847CA005E6897 /* CoreText.framework */,
+				32120A6216897C7A00DBF915 /* Foundation.framework */,
 				322CA518169B290D00CCD216 /* ImageIO.framework */,
 				32D0C1C6168DF24500902708 /* libz.dylib */,
-				32D0C1C4168DF21200902708 /* MobileCoreServices.framework */,
-				32D0C1C2168DF20B00902708 /* SystemConfiguration.framework */,
-				32D0C1C0168DF1BC00902708 /* QuartzCore.framework */,
-				32D0C1BE168DEFDB00902708 /* CoreLocation.framework */,
-				32D0C1BC168DEFB800902708 /* CFNetwork.framework */,
 				32D0C1BA168DEF6A00902708 /* MapKit.framework */,
+				324E81D4169EFD880061C48B /* MessageUI.framework */,
+				32D0C1C4168DF21200902708 /* MobileCoreServices.framework */,
+				32D0C1C0168DF1BC00902708 /* QuartzCore.framework */,
 				32120B13168B4B9700DBF915 /* StoreKit.framework */,
+				32D0C1C2168DF20B00902708 /* SystemConfiguration.framework */,
 				32120A6016897C7A00DBF915 /* UIKit.framework */,
-				32120A6216897C7A00DBF915 /* Foundation.framework */,
-				32120A6416897C7A00DBF915 /* CoreGraphics.framework */,
-				32120A6616897C7A00DBF915 /* CoreData.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -721,6 +754,9 @@
 				327C4DCB16A58CDF005E6897 /* UserChangePwdViewController.h */,
 				327C4DCC16A58CDF005E6897 /* UserChangePwdViewController.m */,
 				327C4DCD16A58CDF005E6897 /* UserChangePwdViewController.xib */,
+				327C4DF916A79E04005E6897 /* UserInfoListViewController.h */,
+				327C4DFA16A79E04005E6897 /* UserInfoListViewController.m */,
+				327C4DFB16A79E04005E6897 /* UserInfoListViewController.xib */,
 				327C4DC616A58C8E005E6897 /* UserLoginViewController.h */,
 				327C4DC716A58C8E005E6897 /* UserLoginViewController.m */,
 				327C4DC816A58C8E005E6897 /* UserLoginViewController.xib */,
@@ -838,6 +874,7 @@
 		32120B07168B451800DBF915 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				327C4E1216A846B4005E6897 /* OHAttributedLabel */,
 				32120B3D168DD2B400DBF915 /* ASIHTTPRequest */,
 				32120B2D168C978A00DBF915 /* AutoCoding */,
 				32CFE2C516972C6E00F3C939 /* BrowserTabView */,
@@ -850,6 +887,7 @@
 				32FB0D1616995191006ADA79 /* Other */,
 				32CFE2E816986FA100F3C939 /* PullingRefresh */,
 				32120B60168DD38900DBF915 /* Reachability */,
+				327C4E0716A83899005E6897 /* Relativity */,
 				322CA4F8169B212100CCD216 /* SDWebImage */,
 				32FB0D1F16995DB0006ADA79 /* StyledTableViewCell */,
 				32D0C1A9168DEDE900902708 /* SVProgressHUD */,
@@ -987,6 +1025,52 @@
 				324E81C1169EFAD80061C48B /* MWZoomingScrollView.m */,
 			);
 			name = MWPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		327C4E0716A83899005E6897 /* Relativity */ = {
+			isa = PBXGroup;
+			children = (
+				327C4E0816A838E8005E6897 /* RelativityLaws.h */,
+				327C4E0916A838E8005E6897 /* RelativityLaws.m */,
+			);
+			name = Relativity;
+			sourceTree = "<group>";
+		};
+		327C4E1216A846B4005E6897 /* OHAttributedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				327C4E1516A8477D005E6897 /* NSAttributedString+Attributes.h */,
+				327C4E1616A8477D005E6897 /* NSAttributedString+Attributes.m */,
+				327C4E1716A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.h */,
+				327C4E1816A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.m */,
+				327C4E1916A8477D005E6897 /* OHAttributedLabel.h */,
+				327C4E1A16A8477D005E6897 /* OHAttributedLabel.m */,
+				327C4E1416A8476A005E6897 /* PrivateUtils */,
+				327C4E1316A84753005E6897 /* TagParsers */,
+			);
+			name = OHAttributedLabel;
+			sourceTree = "<group>";
+		};
+		327C4E1316A84753005E6897 /* TagParsers */ = {
+			isa = PBXGroup;
+			children = (
+				327C4E2116A847A0005E6897 /* OHASBasicHTMLParser.h */,
+				327C4E2216A847A0005E6897 /* OHASBasicHTMLParser.m */,
+				327C4E2316A847A0005E6897 /* OHASBasicMarkupParser.h */,
+				327C4E2416A847A0005E6897 /* OHASBasicMarkupParser.m */,
+				327C4E2516A847A0005E6897 /* OHASMarkupParserBase.h */,
+				327C4E2616A847A0005E6897 /* OHASMarkupParserBase.m */,
+			);
+			name = TagParsers;
+			sourceTree = "<group>";
+		};
+		327C4E1416A8476A005E6897 /* PrivateUtils */ = {
+			isa = PBXGroup;
+			children = (
+				327C4E1E16A84793005E6897 /* CoreTextUtils.h */,
+				327C4E1F16A84793005E6897 /* CoreTextUtils.m */,
+			);
+			name = PrivateUtils;
 			sourceTree = "<group>";
 		};
 		32CFE2C516972C6E00F3C939 /* BrowserTabView */ = {
@@ -1255,6 +1339,7 @@
 				327C4DEC16A5B65E005E6897 /* icon_btn_bg_red_sel@2x.png in Resources */,
 				327C4DED16A5B65E005E6897 /* icon_btn_bg_red.png in Resources */,
 				327C4DEE16A5B65E005E6897 /* icon_btn_bg_red@2x.png in Resources */,
+				327C4DFD16A79E04005E6897 /* UserInfoListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1366,6 +1451,15 @@
 				327C4DC916A58C8E005E6897 /* UserLoginViewController.m in Sources */,
 				327C4DCE16A58CDF005E6897 /* UserChangePwdViewController.m in Sources */,
 				327C4DDA16A59C38005E6897 /* RadiusView.m in Sources */,
+				327C4DFC16A79E04005E6897 /* UserInfoListViewController.m in Sources */,
+				327C4E0A16A838E8005E6897 /* RelativityLaws.m in Sources */,
+				327C4E1B16A8477D005E6897 /* NSAttributedString+Attributes.m in Sources */,
+				327C4E1C16A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.m in Sources */,
+				327C4E1D16A8477D005E6897 /* OHAttributedLabel.m in Sources */,
+				327C4E2016A84793005E6897 /* CoreTextUtils.m in Sources */,
+				327C4E2716A847A0005E6897 /* OHASBasicHTMLParser.m in Sources */,
+				327C4E2816A847A0005E6897 /* OHASBasicMarkupParser.m in Sources */,
+				327C4E2916A847A0005E6897 /* OHASMarkupParserBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
