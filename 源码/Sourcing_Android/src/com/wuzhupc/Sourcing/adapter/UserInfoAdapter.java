@@ -14,6 +14,7 @@ import com.wuzhupc.widget.MoreButton;
 
 import android.content.Context;
 import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -98,6 +99,7 @@ public class UserInfoAdapter extends BaseAdapter
 	
 		TextView content_tv = (TextView) view.findViewById(R.id.listitem_notifier_tv);
 		content_tv.setText(Html.fromHtml(vo.getNotifiercontent()));
+		content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 		TextView time_tv = (TextView) view.findViewById(R.id.listitem_notifier_time_tv);
 		time_tv.setText(vo.getPublishtime());
 		TextView status_tv = (TextView)view.findViewById(R.id.listitem_notifier_status_tv);
@@ -116,6 +118,7 @@ public class UserInfoAdapter extends BaseAdapter
 	
 		TextView content_tv = (TextView) view.findViewById(R.id.listitem_audit_tv);
 		content_tv.setText(Html.fromHtml(vo.getDeclarecontent()));
+		content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 		TextView time_tv = (TextView) view.findViewById(R.id.listitem_audit_time_tv);
 		time_tv.setText(vo.getPublishtime());
 		TextView status_tv = (TextView)view.findViewById(R.id.listitem_audit_status_tv);
@@ -130,6 +133,7 @@ public class UserInfoAdapter extends BaseAdapter
 			view.findViewById(R.id.listitem_audit_result_ll).setVisibility(View.VISIBLE);
 			TextView result_content_tv = (TextView) view.findViewById(R.id.listitem_audit_result_tv);
 			result_content_tv.setText(Html.fromHtml(resultVO.getDeclareresultcontent()));
+			result_content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 			TextView result_time_tv = (TextView) view.findViewById(R.id.listitem_audit_result_time_tv);
 			result_time_tv.setText(String.format("%s  %s", resultVO.getPublisher(),resultVO.getPublishtime()));
 		}
@@ -147,6 +151,7 @@ public class UserInfoAdapter extends BaseAdapter
 	
 		TextView content_tv = (TextView) view.findViewById(R.id.listitem_audit_tv);
 		content_tv.setText(Html.fromHtml(vo.getAuditcontent()));
+		content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 		TextView time_tv = (TextView) view.findViewById(R.id.listitem_audit_time_tv);
 		time_tv.setText(vo.getPublishtime());
 		TextView status_tv = (TextView)view.findViewById(R.id.listitem_audit_status_tv);
@@ -161,6 +166,7 @@ public class UserInfoAdapter extends BaseAdapter
 			view.findViewById(R.id.listitem_audit_result_ll).setVisibility(View.VISIBLE);
 			TextView result_content_tv = (TextView) view.findViewById(R.id.listitem_audit_result_tv);
 			result_content_tv.setText(Html.fromHtml(resultVO.getAuditresultcontent()));
+			result_content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 			TextView result_time_tv = (TextView) view.findViewById(R.id.listitem_audit_result_time_tv);
 			result_time_tv.setText(String.format("%s  %s", resultVO.getPublisher(),resultVO.getPublishtime()));
 		}
@@ -178,6 +184,7 @@ public class UserInfoAdapter extends BaseAdapter
 	
 		TextView content_tv = (TextView) view.findViewById(R.id.listitem_consult_tv);
 		content_tv.setText(Html.fromHtml(vo.getConsultcontent()));
+		content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 		TextView time_tv = (TextView) view.findViewById(R.id.listitem_consult_time_tv);
 		time_tv.setText(vo.getPublishtime());
 		ConsultResultVO resultVO = vo.getConsultResultVO();
@@ -190,6 +197,7 @@ public class UserInfoAdapter extends BaseAdapter
 			view.findViewById(R.id.listitem_consult_result_ll).setVisibility(View.VISIBLE);
 			TextView result_content_tv = (TextView) view.findViewById(R.id.listitem_consult_result_tv);
 			result_content_tv.setText(Html.fromHtml(resultVO.getConsultresultcontent()));
+			result_content_tv.setMovementMethod(LinkMovementMethod.getInstance());
 			TextView result_time_tv = (TextView) view.findViewById(R.id.listitem_consult_result_time_tv);
 			result_time_tv.setText(String.format("%s  %s", resultVO.getPublisher(),resultVO.getPublishtime()));
 		}

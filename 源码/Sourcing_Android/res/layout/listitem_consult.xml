@@ -18,6 +18,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:text="咨询信息内容"
+            android:focusable="true"
             android:textColor="@color/listitem_base_titlecolor"
             android:textSize="@dimen/text_size_medium" />
 
@@ -46,6 +47,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
             android:text="咨询答复内容"
+            android:focusable="true"
             android:textColor="@color/listitem_base_titlecolor"
             android:textSize="@dimen/text_size_medium" />
 
