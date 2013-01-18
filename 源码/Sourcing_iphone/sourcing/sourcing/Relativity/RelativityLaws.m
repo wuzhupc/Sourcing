@@ -7,15 +7,41 @@
 //
 
 #import "RelativityLaws.h"
+#import "OHASBasicHTMLParser.h"
 
 @implementation RelativityLaws
 
 + (void)labelFitHeight:(UILabel*)label {
-    CGSize maximumLabelSize = CGSizeMake(label.frame.size.width,9999);
+    CGSize maximumLabelSize = CGSizeMake(label.frame.size.width,CGFLOAT_MAX);
     CGSize expectedLabelSize = [label.text sizeWithFont:label.font constrainedToSize:maximumLabelSize lineBreakMode:label.lineBreakMode];
     
     CGRect newFrame = CGRectMake(label.frame.origin.x, label.frame.origin.y, maximumLabelSize.width, expectedLabelSize.height);
     label.frame = newFrame;
+}
+
++ (void)attributedLabelFitHeight:(OHAttributedLabel *)label
+{
+    if (label == nil) {
+        return;
+    }
+    NSAttributedString* attrStr = label.attributedText;
+    CGSize sz = [attrStr sizeConstrainedToSize:CGSizeMake(label.frame.size.width, CGFLOAT_MAX)];
+    CGRect newFrame = CGRectMake(label.frame.origin.x, label.frame.origin.y, sz.width, sz.height);
+    label.frame = newFrame;
+}
+
++ (OHAttributedLabel *)attributedLabelWithUILabel:(UILabel *)label
+{
+    if (label == nil) {
+        return  nil;
+    }
+    OHAttributedLabel *result = [[OHAttributedLabel alloc] initWithFrame:label.frame];
+    result.autoresizingMask = label.autoresizingMask;
+    result.automaticallyAddLinksForType = NSTextCheckingAllTypes;
+    result.highlightedTextColor = label.highlightedTextColor;
+    result.tag = label.tag;
+    result.attributedText = [OHASBasicHTMLParser attributedStringByProcessingMarkupInString:label.text];
+    return result;
 }
 
 + (void)alignView:(UIView*)view below:(UIView*)otherView withMargin:(NSInteger)margin {

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "OHAttributedLabel.h"
+
 
 @interface RelativityLaws : NSObject
 
@@ -17,5 +19,9 @@
 + (void)alignViewTop:(UIView*)view below:(UIView*)otherView withMargin:(NSInteger)margin;
 
 + (void)alignParentBottom:(UIView*)view toView:(UIView*)otherView withPadding:(NSInteger)padding;
+
++ (void)attributedLabelFitHeight:(OHAttributedLabel *)label;
+
++ (OHAttributedLabel *)attributedLabelWithUILabel:(UILabel *)label;
 
 @end

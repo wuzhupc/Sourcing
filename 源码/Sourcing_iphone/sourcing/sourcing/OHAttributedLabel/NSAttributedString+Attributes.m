@@ -141,6 +141,13 @@ NSString* kOHLinkAttributeName = @"NSLinkAttributeName"; // Use the same value a
     return lineBreakMode;
 }
 
+-(OHParagraphStyle*)paragraphStyleAtIndex:(NSUInteger)index effectiveRange:(NSRangePointer)aRange
+{
+    id attr = [self attribute:(BRIDGE_CAST NSString*)kCTParagraphStyleAttributeName atIndex:index effectiveRange:aRange];
+    CTParagraphStyleRef style = (BRIDGE_CAST CTParagraphStyleRef)attr;
+    return [OHParagraphStyle paragraphStyleWithCTParagraphStyle:style];
+}
+
 -(NSURL*)linkAtIndex:(NSUInteger)index effectiveRange:(NSRangePointer)aRange
 {
     return [self attribute:kOHLinkAttributeName atIndex:index effectiveRange:aRange];
@@ -233,6 +240,7 @@ NSString* kOHLinkAttributeName = @"NSLinkAttributeName"; // Use the same value a
 {
 	NSUInteger startPoint = range.location;
 	NSRange effectiveRange;
+    [self beginEditing];
 	do {
 		// Get font at startPoint
 		CTFontRef currentFont = (BRIDGE_CAST CTFontRef)[self attribute:(BRIDGE_CAST NSString*)kCTFontAttributeName atIndex:startPoint effectiveRange:&effectiveRange];
@@ -245,23 +253,91 @@ NSString* kOHLinkAttributeName = @"NSLinkAttributeName"; // Use the same value a
 		NSRange fontRange = NSIntersectionRange(range, effectiveRange);
 		// Create bold/unbold font variant for this font and apply
 		CTFontRef newFont = CTFontCreateCopyWithSymbolicTraits(currentFont, 0.0, NULL, (isBold?kCTFontBoldTrait:0), kCTFontBoldTrait);
+        if (!newFont)
+        {
+            // Check if .HelveticaNeueUI font which is the default font for labels in XIB but does not seem to detect its bold variant automatically
+            CFStringRef fontFamily = CTFontCopyFamilyName(currentFont);
+            if ([(BRIDGE_CAST NSString*)fontFamily isEqualToString:@".Helvetica NeueUI"])
+            {
+                CTFontDescriptorRef fontDesc = CTFontCopyFontDescriptor(currentFont);
+                NSDictionary* nameAttr = [NSDictionary dictionaryWithObject:@".HelveticaNeueUI-Bold" forKey:@"NSFontNameAttribute"];
+                CTFontDescriptorRef fontDescBold = CTFontDescriptorCreateCopyWithAttributes(fontDesc, (BRIDGE_CAST CFDictionaryRef)nameAttr);
+                newFont = CTFontCreateWithFontDescriptor(fontDescBold, CTFontGetSize(currentFont), NULL);
+                CFRelease(fontDesc);
+                CFRelease(fontDescBold);
+            }
+            if (!newFont)
+            {
+                // Still no luck, display a warning message in console
+                NSLog(@"[OHAttributedLabel] Warning: can't find a bold font variant for font family %@. Try another font family (like Helvetica) instead.",
+                      (BRIDGE_CAST NSString*)fontFamily);
+            }
+            if (fontFamily) CFRelease(fontFamily);
+        }
+        
 		if (newFont)
         {
 			[self removeAttribute:(BRIDGE_CAST NSString*)kCTFontAttributeName range:fontRange]; // Work around for Apple leak
 			[self addAttribute:(BRIDGE_CAST NSString*)kCTFontAttributeName value:(BRIDGE_CAST id)newFont range:fontRange];
 			CFRelease(newFont);
-		} else {
-			CFStringRef fontName = CTFontCopyFullName(currentFont);
-			NSLog(@"[OHAttributedLabel] Warning: can't find a bold font variant for font %@. Try another font family (like Helvetica) instead.",
-                  (BRIDGE_CAST NSString*)fontName);
-            if (fontName) CFRelease(fontName);
 		}
-		////[self removeAttribute:(NSString*)kCTFontWeightTrait range:fontRange]; // Work around for Apple leak
-		////[self addAttribute:(NSString*)kCTFontWeightTrait value:(id)[NSNumber numberWithInt:1.0f] range:fontRange];
 		
 		// If the fontRange was not covering the whole range, continue with next run
 		startPoint = NSMaxRange(effectiveRange);
 	} while(startPoint<NSMaxRange(range));
+    [self endEditing];
+}
+
+-(void)setTextItalics:(BOOL)isItalics range:(NSRange)range
+{
+	NSUInteger startPoint = range.location;
+	NSRange effectiveRange;
+    [self beginEditing];
+	do {
+		// Get font at startPoint
+		CTFontRef currentFont = (BRIDGE_CAST CTFontRef)[self attribute:(BRIDGE_CAST NSString*)kCTFontAttributeName atIndex:startPoint effectiveRange:&effectiveRange];
+        if (!currentFont)
+        {
+            currentFont = CTFontCreateUIFontForLanguage(kCTFontLabelFontType, 0.0, NULL);
+            (void)MRC_AUTORELEASE((BRIDGE_TRANSFER_CAST id)currentFont);
+        }
+		// The range for which this font is effective
+		NSRange fontRange = NSIntersectionRange(range, effectiveRange);
+		// Create italics/unitalics font variant for this font and apply
+		CTFontRef newFont = CTFontCreateCopyWithSymbolicTraits(currentFont, 0.0, NULL, (isItalics?kCTFontTraitItalic:0), kCTFontTraitItalic);
+        if (!newFont)
+        {
+            // Check if .HelveticaNeueUI font which is the default font for labels in XIB but does not seem to detect its italic variant automatically
+            CFStringRef fontFamily = CTFontCopyFamilyName(currentFont);
+            if ([(BRIDGE_CAST NSString*)fontFamily isEqualToString:@".Helvetica NeueUI"])
+            {
+                CTFontDescriptorRef fontDesc = CTFontCopyFontDescriptor(currentFont);
+                NSDictionary* nameAttr = [NSDictionary dictionaryWithObject:@".HelveticaNeueUI-Italic" forKey:@"NSFontNameAttribute"];
+                CTFontDescriptorRef fontDescItalics = CTFontDescriptorCreateCopyWithAttributes(fontDesc, (BRIDGE_CAST CFDictionaryRef)nameAttr);
+                newFont = CTFontCreateWithFontDescriptor(fontDescItalics, CTFontGetSize(currentFont), NULL);
+                CFRelease(fontDesc);
+                CFRelease(fontDescItalics);
+            }
+            if (!newFont)
+            {
+                // Still no luck, display a warning message in console
+                NSLog(@"[OHAttributedLabel] Warning: can't find an italic font variant for font family %@. Try another font family (like Helvetica) instead.",
+                      (BRIDGE_CAST NSString*)fontFamily);
+            }
+            if (fontFamily) CFRelease(fontFamily);
+        }
+        
+		if (newFont)
+        {
+			[self removeAttribute:(BRIDGE_CAST NSString*)kCTFontAttributeName range:fontRange]; // Work around for Apple leak
+			[self addAttribute:(BRIDGE_CAST NSString*)kCTFontAttributeName value:(BRIDGE_CAST id)newFont range:fontRange];
+			CFRelease(newFont);
+		}
+		
+		// If the fontRange was not covering the whole range, continue with next run
+		startPoint = NSMaxRange(effectiveRange);
+	} while(startPoint<NSMaxRange(range));
+    [self endEditing];
 }
 
 -(void)setTextAlignment:(CTTextAlignment)alignment lineBreakMode:(CTLineBreakMode)lineBreakMode
@@ -270,15 +346,48 @@ NSString* kOHLinkAttributeName = @"NSLinkAttributeName"; // Use the same value a
 }
 -(void)setTextAlignment:(CTTextAlignment)alignment lineBreakMode:(CTLineBreakMode)lineBreakMode range:(NSRange)range
 {
-	// kCTParagraphStyleAttributeName > kCTParagraphStyleSpecifierAlignment
-	CTParagraphStyleSetting paraStyles[2] = {
-		{.spec = kCTParagraphStyleSpecifierAlignment, .valueSize = sizeof(CTTextAlignment), .value = (const void*)&alignment},
-		{.spec = kCTParagraphStyleSpecifierLineBreakMode, .valueSize = sizeof(CTLineBreakMode), .value = (const void*)&lineBreakMode},
-	};
-	CTParagraphStyleRef aStyle = CTParagraphStyleCreate(paraStyles, 2);
-	[self removeAttribute:(BRIDGE_CAST NSString*)kCTParagraphStyleAttributeName range:range]; // Work around for Apple leak
-	[self addAttribute:(BRIDGE_CAST NSString*)kCTParagraphStyleAttributeName value:(BRIDGE_CAST id)aStyle range:range];
-	CFRelease(aStyle);
+    [self modifyParagraphStylesInRange:range withBlock:^(OHParagraphStyle *paragraphStyle) {
+        paragraphStyle.textAlignment = alignment;
+        paragraphStyle.lineBreakMode = lineBreakMode;
+    }];
+}
+
+-(void)modifyParagraphStylesWithBlock:(void(^)(OHParagraphStyle* paragraphStyle))block
+{
+    [self modifyParagraphStylesInRange:NSMakeRange(0,[self length]) withBlock:block];
+}
+
+-(void)modifyParagraphStylesInRange:(NSRange)range withBlock:(void(^)(OHParagraphStyle* paragraphStyle))block
+{
+    NSParameterAssert(block != nil);
+    
+    NSRangePointer rangePtr = &range;
+    NSUInteger loc = range.location;
+    [self beginEditing];
+    while (NSLocationInRange(loc, range))
+    {
+        CTParagraphStyleRef currentCTStyle = (BRIDGE_CAST CTParagraphStyleRef)[self attribute:(BRIDGE_CAST NSString*)kCTParagraphStyleAttributeName
+                                                     atIndex:loc longestEffectiveRange:rangePtr inRange:range];
+        __block OHParagraphStyle* paraStyle = [OHParagraphStyle paragraphStyleWithCTParagraphStyle:currentCTStyle];
+        block(paraStyle);        
+        [self setParagraphStyle:paraStyle range:*rangePtr];
+        
+        loc = NSMaxRange(*rangePtr);
+    }
+    [self endEditing];
+}
+
+-(void)setParagraphStyle:(OHParagraphStyle *)style
+{
+    [self setParagraphStyle:style range:NSMakeRange(0,[self length])];
+}
+
+-(void)setParagraphStyle:(OHParagraphStyle*)style range:(NSRange)range
+{
+    CTParagraphStyleRef newParaStyle = [style createCTParagraphStyle];
+    [self removeAttribute:(BRIDGE_CAST NSString*)kCTParagraphStyleAttributeName range:range]; // Work around for Apple leak
+    [self addAttribute:(BRIDGE_CAST NSString*)kCTParagraphStyleAttributeName value:(BRIDGE_CAST id)newParaStyle range:range];
+    CFRelease(newParaStyle);
 }
 
 -(void)setLink:(NSURL*)link range:(NSRange)range

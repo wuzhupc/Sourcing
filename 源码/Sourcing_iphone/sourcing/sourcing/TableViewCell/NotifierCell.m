@@ -13,6 +13,9 @@
 #import "UIColor+MGExpanded.h"
 #import "ApplicationSet.h"
 #import "RelativityLaws.h"
+#import "OHASBasicHTMLParser.h"
+#import "NSAttributedString+Attributes.h"
+#import "StringUtil.h"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -87,10 +90,19 @@
 
 +(CGFloat)calCellHeight:(NotifierVO *)kvo
 {
-    if(kvo==nil)
+    if(kvo==nil||[StringUtil isEmpty:kvo.notifiercontent])
         return 60.0f;
-    CGSize maximumLabelSize = CGSizeMake(312,9999);
-    CGSize expectedLabelSize = [kvo.notifiercontent sizeWithFont:[UIFont boldSystemFontOfSize:16.0f] constrainedToSize:maximumLabelSize lineBreakMode:NSLineBreakByCharWrapping];
+    
+    OHAttributedLabel *label = [[OHAttributedLabel alloc] initWithFrame:CGRectMake(0,0,312.0f,26.0f)];
+    label.numberOfLines = 0;
+    label.lineBreakMode = UILineBreakModeCharacterWrap;
+    [label setFont:[UIFont boldSystemFontOfSize:16.0f]];
+    label.autoresizingMask = UIViewAutoresizingFlexibleHeight;
+    label.automaticallyAddLinksForType = NSTextCheckingAllTypes;
+    [label setText:kvo.notifiercontent];
+    label.attributedText = [OHASBasicHTMLParser attributedStringByProcessingMarkupInAttributedString:label.attributedText];
+    [RelativityLaws attributedLabelFitHeight:label];
+    CGSize expectedLabelSize = label.frame.size;
     if(expectedLabelSize.height>26.0f)//26.0为默认一行时的高度
         return expectedLabelSize.height+34.0f;//60.0f-26.0f
     else
@@ -101,10 +113,11 @@
 {
     dataVO_ = kvo;
     //调整高度
-    self.labelNotifier.text = self.dataVO.notifiercontent;
+    [self.labelNotifier setText:kvo.notifiercontent];
+     self.labelNotifier.attributedText = [OHASBasicHTMLParser attributedStringByProcessingMarkupInAttributedString:self.labelNotifier.attributedText];
     self.labelPublisher.text = self.dataVO.publisher;
     self.labelPublishtime.text = self.dataVO.publishtime;
-    [RelativityLaws labelFitHeight:self.labelNotifier];
+    [RelativityLaws attributedLabelFitHeight:self.labelNotifier];
     [RelativityLaws alignView:self.labelPublisher below:self.labelNotifier withMargin:4];
     [RelativityLaws alignView:self.labelPublishtime below:self.labelNotifier withMargin:4];
 }

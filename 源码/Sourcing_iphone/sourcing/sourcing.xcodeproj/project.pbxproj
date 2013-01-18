@@ -146,6 +146,7 @@
 		327C4E2816A847A0005E6897 /* OHASBasicMarkupParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E2416A847A0005E6897 /* OHASBasicMarkupParser.m */; };
 		327C4E2916A847A0005E6897 /* OHASMarkupParserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E2616A847A0005E6897 /* OHASMarkupParserBase.m */; };
 		327C4E2B16A847CA005E6897 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327C4E2A16A847CA005E6897 /* CoreText.framework */; };
+		327C4E4416A8E560005E6897 /* OHParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E4316A8E560005E6897 /* OHParagraphStyle.m */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -458,6 +459,8 @@
 		327C4E2516A847A0005E6897 /* OHASMarkupParserBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHASMarkupParserBase.h; path = sourcing/OHAttributedLabel/TagParsers/OHASMarkupParserBase.h; sourceTree = "<group>"; };
 		327C4E2616A847A0005E6897 /* OHASMarkupParserBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHASMarkupParserBase.m; path = sourcing/OHAttributedLabel/TagParsers/OHASMarkupParserBase.m; sourceTree = "<group>"; };
 		327C4E2A16A847CA005E6897 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		327C4E4216A8E560005E6897 /* OHParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHParagraphStyle.h; path = sourcing/OHAttributedLabel/OHParagraphStyle.h; sourceTree = "<group>"; };
+		327C4E4316A8E560005E6897 /* OHParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHParagraphStyle.m; path = sourcing/OHAttributedLabel/OHParagraphStyle.m; sourceTree = "<group>"; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -874,7 +877,6 @@
 		32120B07168B451800DBF915 /* Thirdparty */ = {
 			isa = PBXGroup;
 			children = (
-				327C4E1216A846B4005E6897 /* OHAttributedLabel */,
 				32120B3D168DD2B400DBF915 /* ASIHTTPRequest */,
 				32120B2D168C978A00DBF915 /* AutoCoding */,
 				32CFE2C516972C6E00F3C939 /* BrowserTabView */,
@@ -884,6 +886,7 @@
 				32120B0C168B497700DBF915 /* iVersion */,
 				32D0C1A1168DE74100902708 /* MBProgressHUD */,
 				324E81B2169EF9CF0061C48B /* MWPhotoBrowser */,
+				327C4E1216A846B4005E6897 /* OHAttributedLabel */,
 				32FB0D1616995191006ADA79 /* Other */,
 				32CFE2E816986FA100F3C939 /* PullingRefresh */,
 				32120B60168DD38900DBF915 /* Reachability */,
@@ -1045,6 +1048,8 @@
 				327C4E1816A8477D005E6897 /* NSTextCheckingResult+ExtendedURL.m */,
 				327C4E1916A8477D005E6897 /* OHAttributedLabel.h */,
 				327C4E1A16A8477D005E6897 /* OHAttributedLabel.m */,
+				327C4E4216A8E560005E6897 /* OHParagraphStyle.h */,
+				327C4E4316A8E560005E6897 /* OHParagraphStyle.m */,
 				327C4E1416A8476A005E6897 /* PrivateUtils */,
 				327C4E1316A84753005E6897 /* TagParsers */,
 			);
@@ -1460,6 +1465,7 @@
 				327C4E2716A847A0005E6897 /* OHASBasicHTMLParser.m in Sources */,
 				327C4E2816A847A0005E6897 /* OHASBasicMarkupParser.m in Sources */,
 				327C4E2916A847A0005E6897 /* OHASMarkupParserBase.m in Sources */,
+				327C4E4416A8E560005E6897 /* OHParagraphStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

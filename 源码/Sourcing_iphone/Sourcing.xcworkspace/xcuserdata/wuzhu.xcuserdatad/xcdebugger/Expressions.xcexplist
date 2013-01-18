@@ -6,6 +6,14 @@
          contextName = "-[WelcomeViewController viewDidLoad]:WelcomeViewController.m">
       </ContextState>
       <ContextState
+         contextName = "+[NotifierCell calCellHeight:]:NotifierCell.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "label.attributedText">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
          <PersistentStrings>
             <PersistentString
@@ -23,6 +31,9 @@
                value = "(StyledTableViewCellSelectedBackgroundView*)self.selectedBackgroundView">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NotifierCell setData:]:NotifierCell.m">
       </ContextState>
       <ContextState
          contextName = "-[HomeTabBarController viewDidLoad]:HomeTabBarController.m">

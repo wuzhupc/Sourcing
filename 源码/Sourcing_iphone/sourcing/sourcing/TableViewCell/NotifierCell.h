@@ -11,6 +11,7 @@
 
 #import "StyledTableViewCell.h"
 #import "NotifierVO.h"
+#import "OHAttributedLabel.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -29,7 +30,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
-@property (weak, nonatomic) IBOutlet UILabel *labelNotifier;
+@property (weak, nonatomic) IBOutlet OHAttributedLabel *labelNotifier;
 @property (weak, nonatomic) IBOutlet UILabel *labelPublisher;
 @property (weak, nonatomic) IBOutlet UILabel *labelPublishtime;
 @property (nonatomic,readonly) NotifierVO *dataVO;
