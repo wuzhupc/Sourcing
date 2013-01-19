@@ -7,6 +7,7 @@
 //
 
 #import "AuditResultVO.h"
+#import "StringUtil.h"
 
 @interface AuditResultVO()
 {
@@ -31,6 +32,14 @@
 -(NSInteger)Auditresultid
 {
     return auditresultid;
+}
+
+-(NSString *)getAuditStatus
+{
+    if([StringUtil strToBOOL:self.auditresult])
+        return @"审核通过";
+    else
+        return @"审核未通过";
 }
 
 @end

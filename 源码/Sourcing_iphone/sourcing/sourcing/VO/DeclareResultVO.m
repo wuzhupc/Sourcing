@@ -7,6 +7,7 @@
 //
 
 #import "DeclareResultVO.h"
+#import "StringUtil.h"
 
 @interface DeclareResultVO()
 {
@@ -30,5 +31,11 @@
 {
     return declareresultid;
 }
-
+-(NSString *)getDeclareStatus
+{
+    if([StringUtil strToBOOL:self.declareresult])
+        return @"申报通过";
+    else
+        return @"申报未通过";
+}
 @end

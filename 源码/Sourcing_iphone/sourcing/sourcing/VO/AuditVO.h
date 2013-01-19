@@ -17,5 +17,5 @@
 
 -(void)setAuditid:(NSInteger)kauditid;
 -(NSInteger)Auditid;
-
+-(NSString *)getAuditStatus;
 @end

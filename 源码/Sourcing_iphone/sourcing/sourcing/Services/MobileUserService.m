@@ -87,7 +87,7 @@
         [self sendServiceFailInfo:NSLocalizedString(@"No user login.", @"提示用户未登录")];
         return;
     }
-    _commandName = [DataInterfaceUtil getDataInterface:@"cmd_json_user_consult_info"];
+    _commandName = [DataInterfaceUtil getDataInterface:@"cmd_json_get_user_consult_info"];
     [self setAssetsFileInfo:_commandName suffix:nil];
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];

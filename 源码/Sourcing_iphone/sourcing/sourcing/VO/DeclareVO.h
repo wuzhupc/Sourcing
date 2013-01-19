@@ -16,4 +16,5 @@
 @property (nonatomic,strong)DeclareResultVO *declareResultVO;
 -(void)setDeclareid:(NSInteger )kdeclareid;
 -(NSInteger )Declareid;
+-(NSString *)getDeclareStatus;
 @end

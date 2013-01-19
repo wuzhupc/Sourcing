@@ -7,6 +7,7 @@
 //
 
 #import "DeclareVO.h"
+#import "ConsultCell.h"
 
 @interface DeclareVO()
 {
@@ -29,5 +30,29 @@
 -(NSInteger )Declareid
 {
     return declareid;
+}
+
+-(CGFloat)heightForCell:(NSInteger)kindex
+{
+    return [ConsultCell calCellHeight:self];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex
+{
+    static NSString *cellIdentifier = @"ConsultCell";
+    ConsultCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell==nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:cellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    [cell setData:self];
+    return cell;
+}
+-(NSString *)getDeclareStatus
+{
+    if(self.declareResultVO == nil)
+        return @"等待处理中";
+    return [self.declareResultVO getDeclareStatus];
 }
 @end

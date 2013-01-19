@@ -37,4 +37,11 @@
     || ([thing respondsToSelector:@selector(count)]
         && [(NSArray *)thing count] == 0);
 }
+
++(BOOL)strToBOOL:(NSString *)str
+{
+    if([StringUtil isEmpty:str])
+        return NO;
+    return [str isEqualToString:@"true"] || [str isEqualToString:@"1"];
+}
 @end

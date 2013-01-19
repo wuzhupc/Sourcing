@@ -23,4 +23,8 @@
 +(BOOL)isEmpty:(id) thing;
 
 + (NSMutableString *) initMutableStr:(NSString *)str;
+
+//字符串转BOOL
+//如果str=="true"或str=="1"，则返回YES 否则返回NO
++(BOOL)strToBOOL:(NSString *)str;
 @end

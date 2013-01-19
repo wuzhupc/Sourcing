@@ -69,7 +69,10 @@
 -(void) getData:(NSString *)mjson url:(NSString *)murlstr process:(BOOL)mshowprocess processcontent:(NSString *)mshowprocesscontent
 {
     if([StringUtil isEmptyStr:mjson])
+    {
+        [self sendServiceFailInfo:NSLocalizedString(@"未知服务请求（请求报文为空）", @"请求报文为空")];
         return;
+    }
     if(CBOOL_DEBUG_JOSN)
         NSLog(@"BaseJsonService:%@",mjson);
     if (![NetWorkUtil checkNetWork:NO]) 
@@ -92,7 +95,7 @@
         NSString *localjsoncontent = [FileUtil getAssetsFileContent:[[NSString alloc] initWithFormat:@"%@_response_data%@",_commandName,suffix] oftype:@"json"];
         if([StringUtil isEmptyStr:localjsoncontent])
         {
-            [self sendServiceFailInfo:NSLocalizedString(@"Nothing info.", @"提示无资讯信息")];
+            [self sendServiceFailInfo:NSLocalizedString(@"Nothing info", @"提示无资讯信息")];
         }else
         {
             [self sendServiceSucessInfo:localjsoncontent];

@@ -7,10 +7,10 @@
 "Ver:%@" = "版本:%@";
 
 /* 提示本地无网络 */
-"No network is currently." = "当前无网络！";
+"No network is currently." = "当前无网络";
 
 /* 提示无法连接服务器 */
-"Currently unable to access the server." = "当前无法访问到服务器！";
+"Currently unable to access the server." = "当前无法访问到服务器";
 
 /* 错误提示标题 */
 "Error" = "错误提示";
@@ -25,7 +25,7 @@
 "Data Loading" = "数据加载中...";
 
 /* 提示无资讯信息 */
-"Nothing info." = "当前无返回信息。";
+"Nothing info" = "当前无返回信息";
 
 /* 提示用户未登录 */
-"No user login." = "用户未登录。";
+"No user login." = "用户未登录";

@@ -103,12 +103,10 @@
 		324E81D8169F027C0061C48B /* PhotoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E81D7169F027C0061C48B /* PhotoUtil.m */; };
 		324E81E4169F047B0061C48B /* SitelinkUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E81E3169F047B0061C48B /* SitelinkUtil.m */; };
 		324E820316A153A60061C48B /* ConsultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E820216A153A60061C48B /* ConsultCell.m */; };
-		324E820716A153DC0061C48B /* AuditCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E820616A153DC0061C48B /* AuditCell.m */; };
 		324E820A16A1542D0061C48B /* NotifierCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E820916A1542D0061C48B /* NotifierCell.m */; };
 		324E820D16A1544E0061C48B /* ProjectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E820C16A1544E0061C48B /* ProjectCell.m */; };
 		324E821016A154660061C48B /* TrainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 324E820F16A154660061C48B /* TrainCell.m */; };
 		324E821216A154CA0061C48B /* ConsultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E821116A154CA0061C48B /* ConsultCell.xib */; };
-		324E821616A155100061C48B /* AuditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E821516A1550E0061C48B /* AuditCell.xib */; };
 		324E821816A155490061C48B /* NotifierCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E821716A155480061C48B /* NotifierCell.xib */; };
 		324E821A16A155A70061C48B /* ProjectCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E821916A155A60061C48B /* ProjectCell.xib */; };
 		324E821C16A155C50061C48B /* TrainCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E821B16A155C40061C48B /* TrainCell.xib */; };
@@ -398,8 +396,6 @@
 		324E81E3169F047B0061C48B /* SitelinkUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SitelinkUtil.m; path = sourcing/SitelinkUtil.m; sourceTree = "<group>"; };
 		324E820116A153A50061C48B /* ConsultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConsultCell.h; path = sourcing/TableViewCell/ConsultCell.h; sourceTree = "<group>"; };
 		324E820216A153A60061C48B /* ConsultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ConsultCell.m; path = sourcing/TableViewCell/ConsultCell.m; sourceTree = "<group>"; };
-		324E820516A153DC0061C48B /* AuditCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AuditCell.h; path = sourcing/TableViewCell/AuditCell.h; sourceTree = "<group>"; };
-		324E820616A153DC0061C48B /* AuditCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AuditCell.m; path = sourcing/TableViewCell/AuditCell.m; sourceTree = "<group>"; };
 		324E820816A1542C0061C48B /* NotifierCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotifierCell.h; path = sourcing/TableViewCell/NotifierCell.h; sourceTree = "<group>"; };
 		324E820916A1542D0061C48B /* NotifierCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotifierCell.m; path = sourcing/TableViewCell/NotifierCell.m; sourceTree = "<group>"; };
 		324E820B16A1544D0061C48B /* ProjectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProjectCell.h; path = sourcing/TableViewCell/ProjectCell.h; sourceTree = "<group>"; };
@@ -407,7 +403,6 @@
 		324E820E16A154650061C48B /* TrainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrainCell.h; path = sourcing/TableViewCell/TrainCell.h; sourceTree = "<group>"; };
 		324E820F16A154660061C48B /* TrainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrainCell.m; path = sourcing/TableViewCell/TrainCell.m; sourceTree = "<group>"; };
 		324E821116A154CA0061C48B /* ConsultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ConsultCell.xib; path = sourcing/TableViewCell/ConsultCell.xib; sourceTree = "<group>"; };
-		324E821516A1550E0061C48B /* AuditCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AuditCell.xib; path = sourcing/TableViewCell/AuditCell.xib; sourceTree = "<group>"; };
 		324E821716A155480061C48B /* NotifierCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NotifierCell.xib; path = sourcing/TableViewCell/NotifierCell.xib; sourceTree = "<group>"; };
 		324E821916A155A60061C48B /* ProjectCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProjectCell.xib; path = sourcing/TableViewCell/ProjectCell.xib; sourceTree = "<group>"; };
 		324E821B16A155C40061C48B /* TrainCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrainCell.xib; path = sourcing/TableViewCell/TrainCell.xib; sourceTree = "<group>"; };
@@ -1169,9 +1164,6 @@
 		32FB0D2316996445006ADA79 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				324E820516A153DC0061C48B /* AuditCell.h */,
-				324E820616A153DC0061C48B /* AuditCell.m */,
-				324E821516A1550E0061C48B /* AuditCell.xib */,
 				324E820116A153A50061C48B /* ConsultCell.h */,
 				324E820216A153A60061C48B /* ConsultCell.m */,
 				324E821116A154CA0061C48B /* ConsultCell.xib */,
@@ -1322,7 +1314,6 @@
 				32E9F520169D985800C3CBBE /* icon_share36_44@2x.png in Resources */,
 				324E81C4169EFAD80061C48B /* MWPhotoBrowser.bundle in Resources */,
 				324E821216A154CA0061C48B /* ConsultCell.xib in Resources */,
-				324E821616A155100061C48B /* AuditCell.xib in Resources */,
 				324E821816A155490061C48B /* NotifierCell.xib in Resources */,
 				324E821A16A155A70061C48B /* ProjectCell.xib in Resources */,
 				324E821C16A155C50061C48B /* TrainCell.xib in Resources */,
@@ -1447,7 +1438,6 @@
 				324E81D8169F027C0061C48B /* PhotoUtil.m in Sources */,
 				324E81E4169F047B0061C48B /* SitelinkUtil.m in Sources */,
 				324E820316A153A60061C48B /* ConsultCell.m in Sources */,
-				324E820716A153DC0061C48B /* AuditCell.m in Sources */,
 				324E820A16A1542D0061C48B /* NotifierCell.m in Sources */,
 				324E820D16A1544E0061C48B /* ProjectCell.m in Sources */,
 				324E821016A154660061C48B /* TrainCell.m in Sources */,

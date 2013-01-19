@@ -7,6 +7,7 @@
 //
 
 #import "AuditVO.h"
+#import "ConsultCell.h"
 
 @interface AuditVO()
 {
@@ -31,4 +32,27 @@
     return auditid;
 }
 
+-(CGFloat)heightForCell:(NSInteger)kindex
+{
+    return [ConsultCell calCellHeight:self];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView index:(NSInteger)kindex
+{
+    static NSString *cellIdentifier = @"ConsultCell";
+    ConsultCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if(cell==nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle]loadNibNamed:cellIdentifier owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    [cell setData:self];
+    return cell;
+}
+-(NSString *)getAuditStatus
+{
+    if(self.auditResultVO == nil)
+        return @"等待审核中";
+    return self.auditResultVO.getAuditStatus;
+}
 @end

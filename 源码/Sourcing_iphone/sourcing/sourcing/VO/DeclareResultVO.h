@@ -17,4 +17,5 @@
 
 -(void)setDeclareresultid:(NSInteger )kresultid;
 -(NSInteger )Declareresultid;
+-(NSString *)getDeclareStatus;
 @end
