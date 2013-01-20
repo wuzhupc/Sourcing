@@ -117,9 +117,12 @@
     if(self.cellCount == kcount)
         return;
     cellCount_ = kcount;
+    if(self.cellCount>1)
+    {
     CGRect frame = self.frame;
     frame.size.height = kcount * self.cellHeight;
     self.frame = frame;
+    }
 }
 -(void)setCellHeight:(NSUInteger)kheight
 {

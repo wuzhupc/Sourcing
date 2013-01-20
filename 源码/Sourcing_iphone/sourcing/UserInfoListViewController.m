@@ -18,6 +18,7 @@
 #import "StringUtil.h"
 #import "JsonParser.h"
 #import "MobileUserService.h"
+#import "NewConsultViewController.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -42,6 +43,8 @@
 @property (nonatomic)USER_INFO_TYPE infotype;
 
 @property (nonatomic,strong)NSString *titleText;
+@property (nonatomic,strong)UserVO *preUserVO;
+@property (nonatomic)BOOL isFirstStart;
 @end
 
 
@@ -62,12 +65,16 @@
 @synthesize  infolist = infolist_;
 @synthesize infotype = infotype_;
 @synthesize titleText = titleText_;
+@synthesize preUserVO = preUserVO_;
+@synthesize isFirstStart = isFirstStart_;
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Setup & Teardown
 
 - (void)commonInitUserInfoListViewController
 {
+    self.isFirstStart = YES;
+    preUserVO_ = nil;
 }
 
 - (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
@@ -108,6 +115,25 @@
     [self initView];
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    UserVO *userVO = [ApplicationSet shareData].getUserVO;
+    if(self.isFirstStart)
+    {
+        self.isFirstStart = NO;
+        [self.prTableView launchRefreshing];
+    }else if(self.infotype == USER_INFO_TYPE_CONSULT&& self.preUserVO!=nil&&userVO!=nil)
+    {
+        if(self.preUserVO.allconsultcount!=userVO.allconsultcount)
+        {
+            [self.prTableView launchRefreshing];
+            [ToastHintUtil showHint:NSLocalizedString(@"提交咨询信息成功", @"") parentview:self.view];
+        }
+    }
+    self.preUserVO = [userVO copy];
+}
+
 - (void)viewDidUnload {
 	// your code here
     [self setInfolist:nil];
@@ -132,7 +158,6 @@
     self.labelTitle.text = self.titleText;
     [self.buttonNewConsult setHidden:self.infotype!=USER_INFO_TYPE_CONSULT];
     [self initTableView];
-    [self.prTableView launchRefreshing];
 }
 
 -(void)initTableView
@@ -257,7 +282,8 @@
 }
 
 - (IBAction)actionNewConsult:(id)sender {
-    //TODO
+    NewConsultViewController *vc = [[NewConsultViewController alloc] init];
+    [self presentModalViewController:vc animated:YES];
 }
 
 ////////////////////////////////////////////////////////////////////////////////

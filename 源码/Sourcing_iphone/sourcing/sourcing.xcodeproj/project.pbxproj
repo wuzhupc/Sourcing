@@ -145,6 +145,9 @@
 		327C4E2916A847A0005E6897 /* OHASMarkupParserBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E2616A847A0005E6897 /* OHASMarkupParserBase.m */; };
 		327C4E2B16A847CA005E6897 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 327C4E2A16A847CA005E6897 /* CoreText.framework */; };
 		327C4E4416A8E560005E6897 /* OHParagraphStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E4316A8E560005E6897 /* OHParagraphStyle.m */; };
+		327C4E6616AC2B8D005E6897 /* NewConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E6416AC2B8D005E6897 /* NewConsultViewController.m */; };
+		327C4E6716AC2B8D005E6897 /* NewConsultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4E6516AC2B8D005E6897 /* NewConsultViewController.xib */; };
+		327C4E6B16AC3AB6005E6897 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E6A16AC3AB6005E6897 /* UIPlaceHolderTextView.m */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -456,6 +459,11 @@
 		327C4E2A16A847CA005E6897 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		327C4E4216A8E560005E6897 /* OHParagraphStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OHParagraphStyle.h; path = sourcing/OHAttributedLabel/OHParagraphStyle.h; sourceTree = "<group>"; };
 		327C4E4316A8E560005E6897 /* OHParagraphStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OHParagraphStyle.m; path = sourcing/OHAttributedLabel/OHParagraphStyle.m; sourceTree = "<group>"; };
+		327C4E6316AC2B8D005E6897 /* NewConsultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewConsultViewController.h; sourceTree = "<group>"; };
+		327C4E6416AC2B8D005E6897 /* NewConsultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewConsultViewController.m; sourceTree = "<group>"; };
+		327C4E6516AC2B8D005E6897 /* NewConsultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewConsultViewController.xib; sourceTree = "<group>"; };
+		327C4E6916AC3AB6005E6897 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPlaceHolderTextView.h; path = sourcing/other/UIPlaceHolderTextView.h; sourceTree = "<group>"; };
+		327C4E6A16AC3AB6005E6897 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = sourcing/other/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -741,6 +749,9 @@
 				32CFE2D81698506D00F3C939 /* Main.storyboard */,
 				32CFE2AE1696C30900F3C939 /* MoreViewController.h */,
 				32CFE2AF1696C30900F3C939 /* MoreViewController.m */,
+				327C4E6316AC2B8D005E6897 /* NewConsultViewController.h */,
+				327C4E6416AC2B8D005E6897 /* NewConsultViewController.m */,
+				327C4E6516AC2B8D005E6897 /* NewConsultViewController.xib */,
 				32E9F4A7169C686500C3CBBE /* NewsDetailViewController.h */,
 				32E9F4A8169C686500C3CBBE /* NewsDetailViewController.m */,
 				32E9F4A9169C686500C3CBBE /* NewsDetailViewController.xib */,
@@ -792,8 +803,6 @@
 				32120AB51689F0D200DBF915 /* TimeUtil.m */,
 				32D0C1B7168DEEFD00902708 /* ToastHintUtil.h */,
 				32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */,
-				327C4DD816A59C38005E6897 /* RadiusView.h */,
-				327C4DD916A59C38005E6897 /* RadiusView.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1146,8 +1155,12 @@
 		32FB0D1616995191006ADA79 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				327C4DD816A59C38005E6897 /* RadiusView.h */,
+				327C4DD916A59C38005E6897 /* RadiusView.m */,
 				32FB0D18169951A7006ADA79 /* UIColor+MGExpanded.h */,
 				32FB0D19169951A7006ADA79 /* UIColor+MGExpanded.m */,
+				327C4E6916AC3AB6005E6897 /* UIPlaceHolderTextView.h */,
+				327C4E6A16AC3AB6005E6897 /* UIPlaceHolderTextView.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -1336,6 +1349,7 @@
 				327C4DED16A5B65E005E6897 /* icon_btn_bg_red.png in Resources */,
 				327C4DEE16A5B65E005E6897 /* icon_btn_bg_red@2x.png in Resources */,
 				327C4DFD16A79E04005E6897 /* UserInfoListViewController.xib in Resources */,
+				327C4E6716AC2B8D005E6897 /* NewConsultViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1456,6 +1470,8 @@
 				327C4E2816A847A0005E6897 /* OHASBasicMarkupParser.m in Sources */,
 				327C4E2916A847A0005E6897 /* OHASMarkupParserBase.m in Sources */,
 				327C4E4416A8E560005E6897 /* OHParagraphStyle.m in Sources */,
+				327C4E6616AC2B8D005E6897 /* NewConsultViewController.m in Sources */,
+				327C4E6B16AC3AB6005E6897 /* UIPlaceHolderTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

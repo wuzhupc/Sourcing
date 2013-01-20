@@ -98,6 +98,7 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
     [self showUserInfo];
     UserVO *userVO = [ApplicationSet shareData].getUserVO;
     if(self.isFirstStart)
@@ -119,7 +120,7 @@
             }
         }
     }
-    self.preUserVO = userVO;
+    self.preUserVO = [userVO copy];
 }
 
 - (void)viewDidUnload {
