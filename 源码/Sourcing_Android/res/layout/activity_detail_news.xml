@@ -20,12 +20,12 @@
             style="@style/TitleBarAction"
             android:onClick="onFavClick"
             android:src="@drawable/ic_fav" />
-        <ImageView  style="@style/TitleBarSeparator"/>
+        <ImageView  style="@style/TitleBarSeparator" android:visibility="gone"/>
         <ImageView
             android:id="@+id/detail_tb_share_iv"
             style="@style/TitleBarAction"
             android:onClick="onShareClick"
-            android:src="@drawable/ic_share" />"
+            android:src="@drawable/ic_share" android:visibility="gone"/>"
      </LinearLayout>
 	<WebView android:id="@+id/detail_content_wv"
 	    android:layout_width="match_parent"

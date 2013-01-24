@@ -114,12 +114,6 @@ public abstract class BaseJsonService
 			return;
 
 		if(DEBUG)Log.d(TAG, " json = "+json);
-		if(NetUtil.getNetWorkType(mContext)==-1)
-		{
-			if(DEBUG)Log.d(TAG, "当前无可用网络");
-			iReceiver.receiveCompleted(false, "当前无可用网络");
-			return;
-		}
 		
 		//
 		if(LOCAL_DEBUG)
@@ -129,6 +123,12 @@ public abstract class BaseJsonService
 				iReceiver.receiveCompleted(false, "当前暂无资讯信息");
 			else
 				iReceiver.receiveCompleted(true, localjsoncontent);
+			return;
+		}
+		if(NetUtil.getNetWorkType(mContext)==-1)
+		{
+			if(DEBUG)Log.d(TAG, "当前无可用网络");
+			iReceiver.receiveCompleted(false, "当前无可用网络");
 			return;
 		}
 		
