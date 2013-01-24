@@ -217,13 +217,13 @@
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<int key="IBUIClearButtonMode">3</int>
-								<object class="IBUIFontDescription" key="IBUIFontDescription" id="989806592">
+								<object class="IBUIFontDescription" key="IBUIFontDescription" id="1013783158">
 									<int key="type">1</int>
-									<double key="pointSize">14</double>
+									<double key="pointSize">16</double>
 								</object>
-								<object class="NSFont" key="IBUIFont" id="453877639">
+								<object class="NSFont" key="IBUIFont" id="832855427">
 									<string key="NSName">Helvetica</string>
-									<double key="NSSize">14</double>
+									<double key="NSSize">16</double>
 									<int key="NSfFlags">16</int>
 								</object>
 							</object>
@@ -251,8 +251,8 @@
 									<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								</object>
 								<int key="IBUIClearButtonMode">3</int>
-								<reference key="IBUIFontDescription" ref="989806592"/>
-								<reference key="IBUIFont" ref="453877639"/>
+								<reference key="IBUIFontDescription" ref="1013783158"/>
+								<reference key="IBUIFont" ref="832855427"/>
 							</object>
 						</array>
 						<string key="NSFrame">{{10, 54}, {300, 88}}</string>

@@ -44,7 +44,6 @@
 								<int key="NSvFlags">290</int>
 								<string key="NSFrame">{{8, 8}, {312, 24}}</string>
 								<reference key="NSSuperview" ref="1019720331"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="185238190"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -80,9 +79,8 @@
 							<object class="IBUILabel" id="841143009">
 								<reference key="NSNextResponder" ref="1019720331"/>
 								<int key="NSvFlags">290</int>
-								<string key="NSFrame">{{139, 34}, {172, 20}}</string>
+								<string key="NSFrame">{{160, 34}, {150, 20}}</string>
 								<reference key="NSSuperview" ref="1019720331"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -112,9 +110,8 @@
 							<object class="IBUILabel" id="185238190">
 								<reference key="NSNextResponder" ref="1019720331"/>
 								<int key="NSvFlags">288</int>
-								<string key="NSFrame">{{8, 34}, {115, 20}}</string>
+								<string key="NSFrame">{{8, 34}, {180, 20}}</string>
 								<reference key="NSSuperview" ref="1019720331"/>
-								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="841143009"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
@@ -140,7 +137,6 @@
 						</array>
 						<string key="NSFrameSize">{320, 59}</string>
 						<reference key="NSSuperview" ref="283996903"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="552091002"/>
 						<string key="NSReuseIdentifierKey">_NS:11</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
@@ -156,7 +152,6 @@
 				</array>
 				<string key="NSFrameSize">{320, 60}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="1019720331"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -259,64 +254,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">15</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">NotifierCell</string>
-					<string key="superclassName">StyledTableViewCell</string>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="labelNotifier">OHAttributedLabel</string>
-						<string key="labelPublisher">UILabel</string>
-						<string key="labelPublishtime">UILabel</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="labelNotifier">
-							<string key="name">labelNotifier</string>
-							<string key="candidateClassName">OHAttributedLabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="labelPublisher">
-							<string key="name">labelPublisher</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="labelPublishtime">
-							<string key="name">labelPublishtime</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/NotifierCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">OHAttributedLabel</string>
-					<string key="superclassName">UILabel</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/OHAttributedLabel.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">StyledTableViewCell</string>
-					<string key="superclassName">UITableViewCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/StyledTableViewCell.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
