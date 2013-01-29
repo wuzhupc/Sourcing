@@ -174,6 +174,22 @@
 		32CFE2F116986FC900F3C939 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2ED16986FC900F3C939 /* blueArrow@2x.png */; };
 		32CFE2F216986FC900F3C939 /* blueArrowDown.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2EE16986FC900F3C939 /* blueArrowDown.png */; };
 		32CFE2F316986FC900F3C939 /* blueArrowDown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2EF16986FC900F3C939 /* blueArrowDown@2x.png */; };
+		32D0452316B7FA5E009BE470 /* NSAttributedString+MGTrim.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0451816B7FA5E009BE470 /* NSAttributedString+MGTrim.m */; };
+		32D0452416B7FA5E009BE470 /* NSObject+MGEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0451A16B7FA5E009BE470 /* NSObject+MGEvents.m */; };
+		32D0452516B7FA5E009BE470 /* UIColor+MGExpanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0451C16B7FA5E009BE470 /* UIColor+MGExpanded.m */; };
+		32D0452616B7FA5E009BE470 /* UIControl+MGEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0451E16B7FA5E009BE470 /* UIControl+MGEvents.m */; };
+		32D0452716B7FA5E009BE470 /* UIResponder+FirstResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0452016B7FA5E009BE470 /* UIResponder+FirstResponder.m */; };
+		32D0452816B7FA5E009BE470 /* UIView+MGEasyFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0452216B7FA5E009BE470 /* UIView+MGEasyFrame.m */; };
+		32D0453F16B7FA6F009BE470 /* MGBlockWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0452B16B7FA6F009BE470 /* MGBlockWrapper.m */; };
+		32D0454016B7FA6F009BE470 /* MGBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0452D16B7FA6F009BE470 /* MGBox.m */; };
+		32D0454116B7FA6F009BE470 /* MGButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0452F16B7FA6F009BE470 /* MGButton.m */; };
+		32D0454216B7FA6F009BE470 /* MGLayoutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453216B7FA6F009BE470 /* MGLayoutManager.m */; };
+		32D0454316B7FA6F009BE470 /* MGLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453416B7FA6F009BE470 /* MGLine.m */; };
+		32D0454416B7FA6F009BE470 /* MGLineStyled.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453616B7FA6F009BE470 /* MGLineStyled.m */; };
+		32D0454516B7FA6F009BE470 /* MGMushParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453816B7FA6F009BE470 /* MGMushParser.m */; };
+		32D0454616B7FA6F009BE470 /* MGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453A16B7FA6F009BE470 /* MGScrollView.m */; };
+		32D0454716B7FA6F009BE470 /* MGTableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453C16B7FA6F009BE470 /* MGTableBox.m */; };
+		32D0454816B7FA6F009BE470 /* MGTableBoxStyled.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453E16B7FA6F009BE470 /* MGTableBoxStyled.m */; };
 		32D0C1AD168DEDFD00902708 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */; };
 		32D0C1AE168DEDFD00902708 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */; };
 		32D0C1B9168DEEFD00902708 /* ToastHintUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */; };
@@ -497,6 +513,40 @@
 		32CFE2ED16986FC900F3C939 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueArrow@2x.png"; path = "sourcing/Images/blueArrow@2x.png"; sourceTree = "<group>"; };
 		32CFE2EE16986FC900F3C939 /* blueArrowDown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = blueArrowDown.png; path = sourcing/Images/blueArrowDown.png; sourceTree = "<group>"; };
 		32CFE2EF16986FC900F3C939 /* blueArrowDown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "blueArrowDown@2x.png"; path = "sourcing/Images/blueArrowDown@2x.png"; sourceTree = "<group>"; };
+		32D0451716B7FA5E009BE470 /* NSAttributedString+MGTrim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSAttributedString+MGTrim.h"; path = "sourcing/MGBox/Categories/NSAttributedString+MGTrim.h"; sourceTree = "<group>"; };
+		32D0451816B7FA5E009BE470 /* NSAttributedString+MGTrim.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSAttributedString+MGTrim.m"; path = "sourcing/MGBox/Categories/NSAttributedString+MGTrim.m"; sourceTree = "<group>"; };
+		32D0451916B7FA5E009BE470 /* NSObject+MGEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+MGEvents.h"; path = "sourcing/MGBox/Categories/NSObject+MGEvents.h"; sourceTree = "<group>"; };
+		32D0451A16B7FA5E009BE470 /* NSObject+MGEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MGEvents.m"; path = "sourcing/MGBox/Categories/NSObject+MGEvents.m"; sourceTree = "<group>"; };
+		32D0451B16B7FA5E009BE470 /* UIColor+MGExpanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+MGExpanded.h"; path = "sourcing/MGBox/Categories/UIColor+MGExpanded.h"; sourceTree = "<group>"; };
+		32D0451C16B7FA5E009BE470 /* UIColor+MGExpanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+MGExpanded.m"; path = "sourcing/MGBox/Categories/UIColor+MGExpanded.m"; sourceTree = "<group>"; };
+		32D0451D16B7FA5E009BE470 /* UIControl+MGEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIControl+MGEvents.h"; path = "sourcing/MGBox/Categories/UIControl+MGEvents.h"; sourceTree = "<group>"; };
+		32D0451E16B7FA5E009BE470 /* UIControl+MGEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIControl+MGEvents.m"; path = "sourcing/MGBox/Categories/UIControl+MGEvents.m"; sourceTree = "<group>"; };
+		32D0451F16B7FA5E009BE470 /* UIResponder+FirstResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIResponder+FirstResponder.h"; path = "sourcing/MGBox/Categories/UIResponder+FirstResponder.h"; sourceTree = "<group>"; };
+		32D0452016B7FA5E009BE470 /* UIResponder+FirstResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIResponder+FirstResponder.m"; path = "sourcing/MGBox/Categories/UIResponder+FirstResponder.m"; sourceTree = "<group>"; };
+		32D0452116B7FA5E009BE470 /* UIView+MGEasyFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+MGEasyFrame.h"; path = "sourcing/MGBox/Categories/UIView+MGEasyFrame.h"; sourceTree = "<group>"; };
+		32D0452216B7FA5E009BE470 /* UIView+MGEasyFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+MGEasyFrame.m"; path = "sourcing/MGBox/Categories/UIView+MGEasyFrame.m"; sourceTree = "<group>"; };
+		32D0452916B7FA6F009BE470 /* MGBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGBase.h; path = sourcing/MGBox/MGBase.h; sourceTree = "<group>"; };
+		32D0452A16B7FA6F009BE470 /* MGBlockWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGBlockWrapper.h; path = sourcing/MGBox/MGBlockWrapper.h; sourceTree = "<group>"; };
+		32D0452B16B7FA6F009BE470 /* MGBlockWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGBlockWrapper.m; path = sourcing/MGBox/MGBlockWrapper.m; sourceTree = "<group>"; };
+		32D0452C16B7FA6F009BE470 /* MGBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGBox.h; path = sourcing/MGBox/MGBox.h; sourceTree = "<group>"; };
+		32D0452D16B7FA6F009BE470 /* MGBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGBox.m; path = sourcing/MGBox/MGBox.m; sourceTree = "<group>"; };
+		32D0452E16B7FA6F009BE470 /* MGButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGButton.h; path = sourcing/MGBox/MGButton.h; sourceTree = "<group>"; };
+		32D0452F16B7FA6F009BE470 /* MGButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGButton.m; path = sourcing/MGBox/MGButton.m; sourceTree = "<group>"; };
+		32D0453016B7FA6F009BE470 /* MGLayoutBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGLayoutBox.h; path = sourcing/MGBox/MGLayoutBox.h; sourceTree = "<group>"; };
+		32D0453116B7FA6F009BE470 /* MGLayoutManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGLayoutManager.h; path = sourcing/MGBox/MGLayoutManager.h; sourceTree = "<group>"; };
+		32D0453216B7FA6F009BE470 /* MGLayoutManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGLayoutManager.m; path = sourcing/MGBox/MGLayoutManager.m; sourceTree = "<group>"; };
+		32D0453316B7FA6F009BE470 /* MGLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGLine.h; path = sourcing/MGBox/MGLine.h; sourceTree = "<group>"; };
+		32D0453416B7FA6F009BE470 /* MGLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGLine.m; path = sourcing/MGBox/MGLine.m; sourceTree = "<group>"; };
+		32D0453516B7FA6F009BE470 /* MGLineStyled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGLineStyled.h; path = sourcing/MGBox/MGLineStyled.h; sourceTree = "<group>"; };
+		32D0453616B7FA6F009BE470 /* MGLineStyled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGLineStyled.m; path = sourcing/MGBox/MGLineStyled.m; sourceTree = "<group>"; };
+		32D0453716B7FA6F009BE470 /* MGMushParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGMushParser.h; path = sourcing/MGBox/MGMushParser.h; sourceTree = "<group>"; };
+		32D0453816B7FA6F009BE470 /* MGMushParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGMushParser.m; path = sourcing/MGBox/MGMushParser.m; sourceTree = "<group>"; };
+		32D0453916B7FA6F009BE470 /* MGScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGScrollView.h; path = sourcing/MGBox/MGScrollView.h; sourceTree = "<group>"; };
+		32D0453A16B7FA6F009BE470 /* MGScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGScrollView.m; path = sourcing/MGBox/MGScrollView.m; sourceTree = "<group>"; };
+		32D0453B16B7FA6F009BE470 /* MGTableBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTableBox.h; path = sourcing/MGBox/MGTableBox.h; sourceTree = "<group>"; };
+		32D0453C16B7FA6F009BE470 /* MGTableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGTableBox.m; path = sourcing/MGBox/MGTableBox.m; sourceTree = "<group>"; };
+		32D0453D16B7FA6F009BE470 /* MGTableBoxStyled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTableBoxStyled.h; path = sourcing/MGBox/MGTableBoxStyled.h; sourceTree = "<group>"; };
+		32D0453E16B7FA6F009BE470 /* MGTableBoxStyled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGTableBoxStyled.m; path = sourcing/MGBox/MGTableBoxStyled.m; sourceTree = "<group>"; };
 		32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = sourcing/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		32D0C1AB168DEDFD00902708 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = sourcing/SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = sourcing/SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
@@ -889,6 +939,7 @@
 				32D0C1AF168DEE4000902708 /* iToast */,
 				32120B0C168B497700DBF915 /* iVersion */,
 				32D0C1A1168DE74100902708 /* MBProgressHUD */,
+				32D0451416B7F9AA009BE470 /* MGBox */,
 				324E81B2169EF9CF0061C48B /* MWPhotoBrowser */,
 				327C4E1216A846B4005E6897 /* OHAttributedLabel */,
 				32FB0D1616995191006ADA79 /* Other */,
@@ -1100,6 +1151,55 @@
 				32CFE2EA16986FB700F3C939 /* PullingRefreshTableView.m */,
 			);
 			name = PullingRefresh;
+			sourceTree = "<group>";
+		};
+		32D0451416B7F9AA009BE470 /* MGBox */ = {
+			isa = PBXGroup;
+			children = (
+				32D0452916B7FA6F009BE470 /* MGBase.h */,
+				32D0452A16B7FA6F009BE470 /* MGBlockWrapper.h */,
+				32D0452B16B7FA6F009BE470 /* MGBlockWrapper.m */,
+				32D0452C16B7FA6F009BE470 /* MGBox.h */,
+				32D0452D16B7FA6F009BE470 /* MGBox.m */,
+				32D0452E16B7FA6F009BE470 /* MGButton.h */,
+				32D0452F16B7FA6F009BE470 /* MGButton.m */,
+				32D0453016B7FA6F009BE470 /* MGLayoutBox.h */,
+				32D0453116B7FA6F009BE470 /* MGLayoutManager.h */,
+				32D0453216B7FA6F009BE470 /* MGLayoutManager.m */,
+				32D0453316B7FA6F009BE470 /* MGLine.h */,
+				32D0453416B7FA6F009BE470 /* MGLine.m */,
+				32D0453516B7FA6F009BE470 /* MGLineStyled.h */,
+				32D0453616B7FA6F009BE470 /* MGLineStyled.m */,
+				32D0453716B7FA6F009BE470 /* MGMushParser.h */,
+				32D0453816B7FA6F009BE470 /* MGMushParser.m */,
+				32D0453916B7FA6F009BE470 /* MGScrollView.h */,
+				32D0453A16B7FA6F009BE470 /* MGScrollView.m */,
+				32D0453B16B7FA6F009BE470 /* MGTableBox.h */,
+				32D0453C16B7FA6F009BE470 /* MGTableBox.m */,
+				32D0453D16B7FA6F009BE470 /* MGTableBoxStyled.h */,
+				32D0453E16B7FA6F009BE470 /* MGTableBoxStyled.m */,
+				32D0451616B7F9BC009BE470 /* Categories */,
+			);
+			name = MGBox;
+			sourceTree = "<group>";
+		};
+		32D0451616B7F9BC009BE470 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				32D0451716B7FA5E009BE470 /* NSAttributedString+MGTrim.h */,
+				32D0451816B7FA5E009BE470 /* NSAttributedString+MGTrim.m */,
+				32D0451916B7FA5E009BE470 /* NSObject+MGEvents.h */,
+				32D0451A16B7FA5E009BE470 /* NSObject+MGEvents.m */,
+				32D0451B16B7FA5E009BE470 /* UIColor+MGExpanded.h */,
+				32D0451C16B7FA5E009BE470 /* UIColor+MGExpanded.m */,
+				32D0451D16B7FA5E009BE470 /* UIControl+MGEvents.h */,
+				32D0451E16B7FA5E009BE470 /* UIControl+MGEvents.m */,
+				32D0451F16B7FA5E009BE470 /* UIResponder+FirstResponder.h */,
+				32D0452016B7FA5E009BE470 /* UIResponder+FirstResponder.m */,
+				32D0452116B7FA5E009BE470 /* UIView+MGEasyFrame.h */,
+				32D0452216B7FA5E009BE470 /* UIView+MGEasyFrame.m */,
+			);
+			name = Categories;
 			sourceTree = "<group>";
 		};
 		32D0C1A1168DE74100902708 /* MBProgressHUD */ = {
@@ -1472,6 +1572,22 @@
 				327C4E4416A8E560005E6897 /* OHParagraphStyle.m in Sources */,
 				327C4E6616AC2B8D005E6897 /* NewConsultViewController.m in Sources */,
 				327C4E6B16AC3AB6005E6897 /* UIPlaceHolderTextView.m in Sources */,
+				32D0452316B7FA5E009BE470 /* NSAttributedString+MGTrim.m in Sources */,
+				32D0452416B7FA5E009BE470 /* NSObject+MGEvents.m in Sources */,
+				32D0452516B7FA5E009BE470 /* UIColor+MGExpanded.m in Sources */,
+				32D0452616B7FA5E009BE470 /* UIControl+MGEvents.m in Sources */,
+				32D0452716B7FA5E009BE470 /* UIResponder+FirstResponder.m in Sources */,
+				32D0452816B7FA5E009BE470 /* UIView+MGEasyFrame.m in Sources */,
+				32D0453F16B7FA6F009BE470 /* MGBlockWrapper.m in Sources */,
+				32D0454016B7FA6F009BE470 /* MGBox.m in Sources */,
+				32D0454116B7FA6F009BE470 /* MGButton.m in Sources */,
+				32D0454216B7FA6F009BE470 /* MGLayoutManager.m in Sources */,
+				32D0454316B7FA6F009BE470 /* MGLine.m in Sources */,
+				32D0454416B7FA6F009BE470 /* MGLineStyled.m in Sources */,
+				32D0454516B7FA6F009BE470 /* MGMushParser.m in Sources */,
+				32D0454616B7FA6F009BE470 /* MGScrollView.m in Sources */,
+				32D0454716B7FA6F009BE470 /* MGTableBox.m in Sources */,
+				32D0454816B7FA6F009BE470 /* MGTableBoxStyled.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
