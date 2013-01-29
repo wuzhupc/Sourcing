@@ -56,6 +56,7 @@
 //    [self setSelectedBackgroundViewGradientColors:colors];
 //    [self.backgroundView setBackgroundColor:CCOLOR_TABLEVIEW_BG];
 //    [self setDashWidth:2 dashGap:3 dashStroke:2];
+   
 }
 
 - (id)initWithFrame:(CGRect)frame
