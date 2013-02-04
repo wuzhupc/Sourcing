@@ -1,26 +1,23 @@
 //
-//  MoreViewController.h
+//  SettingUtil.h
 //  sourcing
 //
-//  Created by wuzhu on 13-1-4.
+//  Created by wuzhu on 13-1-31.
 //  Copyright (c) 2013年 wuzhu. All rights reserved.
 //
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Imports
 
-#import <UIKit/UIKit.h>
-#import "BaseHomeViewController.h"
-#import "MGScrollView.h"
-#import "iVersion.h"
-#import "MBProgressHUD.h"
+#import <Foundation/Foundation.h>
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Defines & Constants
-#define ROW_SIZE               (CGSize){304, 44}
+#define CSTR_SETTING_FONT @"fontsetting"
+#define CSTR_SETTING_PUSH @"pushsetting"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Macros
@@ -28,25 +25,23 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface MoreViewController : BaseHomeViewController<UIActionSheetDelegate,MBProgressHUDDelegate,iVersionDelegate>
+@interface SettingUtil : NSObject
 
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Properties
-@property (weak, nonatomic) IBOutlet MGScrollView *scrollViewContent;
 
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Outlets
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Class Methods
-
++(NSArray *)getFontDesc;
++(NSString *)getFontDescWithIndex:(NSUInteger)kindex;
++(NSUInteger)getFontSetting;
++(void)setFontSetting:(NSUInteger)kindex;
++(void)setPushSetting:(BOOL)kpush;
++(BOOL)getPushSetting;
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Instance Methods
-
-////////////////////////////////////////////////////////////////////////////////
-#pragma mark - Actions
-//@property (weak, nonatomic) IBOutlet UINavigationBar *customNavigationBar;
 
 
 @end

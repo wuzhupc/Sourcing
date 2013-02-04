@@ -1,7 +1,7 @@
 //
 //  iVersion.h
 //
-//  Version 1.10
+//  Version 1.10.2
 //
 //  Created by Nick Lockwood on 26/01/2011.
 //  Copyright 2011 Charcoal Design
@@ -33,20 +33,18 @@
 
 #import <Availability.h>
 #undef weak_delegate
-#undef __weak_delegate
 #if __has_feature(objc_arc_weak) && \
 (!(defined __MAC_OS_X_VERSION_MIN_REQUIRED) || \
 __MAC_OS_X_VERSION_MIN_REQUIRED >= __MAC_10_8)
 #define weak_delegate weak
-#define __weak_delegate __weak
 #else
 #define weak_delegate unsafe_unretained
-#define __weak_delegate __unsafe_unretained
 #endif
 
 
 #ifdef __IPHONE_OS_VERSION_MAX_ALLOWED
 #import <UIKit/UIKit.h>
+#import <StoreKit/StoreKit.h>
 #else
 #import <Cocoa/Cocoa.h>
 #endif
@@ -94,6 +92,8 @@ iVersionErrorCode;
 - (void)iVersionUserDidRequestReminderForUpdate:(NSString *)version;
 - (void)iVersionUserDidIgnoreUpdate:(NSString *)version;
 - (BOOL)iVersionShouldOpenAppStore;
+- (void)iVersionDidPresentStoreKitModal;
+- (void)iVersionDidDismissStoreKitModal;
 
 @end
 
@@ -135,6 +135,7 @@ iVersionErrorCode;
 @property (nonatomic, assign) BOOL disableAlertViewResizing;
 @property (nonatomic, assign) BOOL onlyPromptIfMainWindowIsAvailable;
 @property (nonatomic, assign) BOOL displayAppUsingStorekitIfAvailable;
+@property (nonatomic, assign) BOOL useAppStoreDetailsIfNoPlistEntryFound;
 @property (nonatomic, assign) BOOL checkAtLaunch;
 @property (nonatomic, assign) BOOL verboseLogging;
 @property (nonatomic, assign) BOOL previewMode;
@@ -153,5 +154,5 @@ iVersionErrorCode;
 - (NSString *)versionDetails;
 - (BOOL)shouldCheckForNewVersion;
 - (void)checkForNewVersion;
-
+-(void)showVerInfoAlert:(NSString *)version details:(NSString *)versionDetails;
 @end

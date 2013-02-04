@@ -3,9 +3,6 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[WelcomeViewController viewDidLoad]:WelcomeViewController.m">
-      </ContextState>
-      <ContextState
          contextName = "+[NotifierCell calCellHeight:]:NotifierCell.m">
          <PersistentStrings>
             <PersistentString
@@ -14,12 +11,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[NSBundle mainBundle]">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "-[WelcomeViewController viewDidLoad]:WelcomeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NotifierCell setData:]:NotifierCell.m">
       </ContextState>
       <ContextState
          contextName = "-[StyledTableViewCell setSelectedBackgroundViewGradientColors:]:StyledTableViewCell.m">
@@ -33,7 +28,20 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[NotifierCell setData:]:NotifierCell.m">
+         contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSBundle mainBundle]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MoreViewController initTableGrid]:MoreViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.swithPush.on">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[HomeTabBarController viewDidLoad]:HomeTabBarController.m">

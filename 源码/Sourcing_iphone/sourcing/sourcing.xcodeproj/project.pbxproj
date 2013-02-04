@@ -190,6 +190,7 @@
 		32D0454616B7FA6F009BE470 /* MGScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453A16B7FA6F009BE470 /* MGScrollView.m */; };
 		32D0454716B7FA6F009BE470 /* MGTableBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453C16B7FA6F009BE470 /* MGTableBox.m */; };
 		32D0454816B7FA6F009BE470 /* MGTableBoxStyled.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0453E16B7FA6F009BE470 /* MGTableBoxStyled.m */; };
+		32D0454C16BA5208009BE470 /* SettingUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0454B16BA5208009BE470 /* SettingUtil.m */; };
 		32D0C1AD168DEDFD00902708 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */; };
 		32D0C1AE168DEDFD00902708 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */; };
 		32D0C1B9168DEEFD00902708 /* ToastHintUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */; };
@@ -547,6 +548,8 @@
 		32D0453C16B7FA6F009BE470 /* MGTableBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGTableBox.m; path = sourcing/MGBox/MGTableBox.m; sourceTree = "<group>"; };
 		32D0453D16B7FA6F009BE470 /* MGTableBoxStyled.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MGTableBoxStyled.h; path = sourcing/MGBox/MGTableBoxStyled.h; sourceTree = "<group>"; };
 		32D0453E16B7FA6F009BE470 /* MGTableBoxStyled.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MGTableBoxStyled.m; path = sourcing/MGBox/MGTableBoxStyled.m; sourceTree = "<group>"; };
+		32D0454A16BA5208009BE470 /* SettingUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingUtil.h; path = sourcing/SettingUtil.h; sourceTree = "<group>"; };
+		32D0454B16BA5208009BE470 /* SettingUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingUtil.m; path = sourcing/SettingUtil.m; sourceTree = "<group>"; };
 		32D0C1AA168DEDFD00902708 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = sourcing/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 		32D0C1AB168DEDFD00902708 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVProgressHUD.h; path = sourcing/SVProgressHUD/SVProgressHUD.h; sourceTree = "<group>"; };
 		32D0C1AC168DEDFD00902708 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVProgressHUD.m; path = sourcing/SVProgressHUD/SVProgressHUD.m; sourceTree = "<group>"; };
@@ -832,8 +835,6 @@
 		32120A9D16898D9B00DBF915 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				324E81E2169F047B0061C48B /* SitelinkUtil.h */,
-				324E81E3169F047B0061C48B /* SitelinkUtil.m */,
 				32120AC1168AA91900DBF915 /* DataInterfaceUtil.h */,
 				32120AC2168AA91900DBF915 /* DataInterfaceUtil.m */,
 				324E81A5169DB3C50061C48B /* FavoriteUtil.h */,
@@ -847,6 +848,10 @@
 				32120B3B168DD12A00DBF915 /* NetWorkUtil.m */,
 				324E81D6169F027C0061C48B /* PhotoUtil.h */,
 				324E81D7169F027C0061C48B /* PhotoUtil.m */,
+				32D0454A16BA5208009BE470 /* SettingUtil.h */,
+				32D0454B16BA5208009BE470 /* SettingUtil.m */,
+				324E81E2169F047B0061C48B /* SitelinkUtil.h */,
+				324E81E3169F047B0061C48B /* SitelinkUtil.m */,
 				32120A9E16898EC300DBF915 /* StringUtil.h */,
 				32120A9F16898EC300DBF915 /* StringUtil.m */,
 				32120AB41689F0D200DBF915 /* TimeUtil.h */,
@@ -1588,6 +1593,7 @@
 				32D0454616B7FA6F009BE470 /* MGScrollView.m in Sources */,
 				32D0454716B7FA6F009BE470 /* MGTableBox.m in Sources */,
 				32D0454816B7FA6F009BE470 /* MGTableBoxStyled.m in Sources */,
+				32D0454C16BA5208009BE470 /* SettingUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

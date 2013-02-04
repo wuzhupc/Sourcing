@@ -11,6 +11,7 @@
 #import "StringUtil.h"
 #import "ApplicationSet.h"
 #import "iVersion.h"
+#import "SettingUtil.h"
 
 @implementation SourcingAppDelegate
 
@@ -42,8 +43,10 @@
     [self.window makeKeyAndVisible];
     
     //信息推送相关
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
-    
+    if([SettingUtil getPushSetting])
+    {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
+    }
     return YES;
 }
 
