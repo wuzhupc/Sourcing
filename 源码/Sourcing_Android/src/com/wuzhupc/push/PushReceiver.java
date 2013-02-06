@@ -3,6 +3,7 @@ package com.wuzhupc.push;
 import java.util.Date;
 import java.util.List;
 
+import com.wuzhupc.Sourcing.HomeActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.WelcomeActivity;
 import com.wuzhupc.Sourcing.vo.PushVO;
@@ -10,7 +11,6 @@ import com.wuzhupc.Sourcing.vo.ResponseVO;
 import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
 import com.wuzhupc.services.MobilePushService;
-import com.wuzhupc.utils.ActivityUtil;
 import com.wuzhupc.utils.AlarmUtil;
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.NotifyUtil;
@@ -25,7 +25,6 @@ import android.util.Log;
 
 public class PushReceiver extends BroadcastReceiver
 {
-
 	private static final String TAG = PushReceiver.class.getSimpleName();
 	/**
 	 * 测试
@@ -50,14 +49,15 @@ public class PushReceiver extends BroadcastReceiver
 			return;
 		}
 
-		if (!ActivityUtil.isCurAppRunningForeground(mContext))
+		//不用判断程序是否在当前运行
+		//if (!ActivityUtil.isCurAppRunningForeground(mContext))
 			actionPushMsg();
-		else
+		/*else
 		{
 			Log.i(TAG, "推送信息检测--CurAppRunningForeground!");
 			AlarmUtil.getPushMsgAlarm(mContext).pendingBroadcastTask(
 					new Intent(CSTR_ACTION_PUSH_RECEIVER), -1);
-		}
+		}*/
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class PushReceiver extends BroadcastReceiver
 						{
 							ResponseVO respVO = new ResponseVO();
 							List<PushVO> pushVOs = (List<PushVO>) JsonParser
-									.parseJsonToEntity(content, respVO);
+									.parseJsonToList(content, respVO);
 
 							if (respVO.isSucess())
 							{
@@ -111,6 +111,7 @@ public class PushReceiver extends BroadcastReceiver
 									// (ArrayList<? extends Parcelable>)
 									// pushVOs);
 									int count = pushVOs.size();
+									intent.putExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, count);
 									if (count == 1)
 									{
 										PushVO vo = pushVOs.get(0);
@@ -129,6 +130,9 @@ public class PushReceiver extends BroadcastReceiver
 														R.string.notify_detail,
 														count));
 									}
+									Intent pushintent = new Intent(HomeActivity.CSTR_ACTION_PUSHINFO);
+									pushintent.putExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, count);
+									mContext.sendBroadcast(pushintent);
 								}
 							}
 						}

@@ -78,87 +78,87 @@ public class ChannelVO extends BaseVO {
 	/**
 	 * 父类型的栏目ID
 	 */
-	private static final int CHANNELID_FATHER = 0;
+	public static final int CHANNELID_FATHER = 0;
 	
 	/**
 	 * 父类型－资讯
 	 */
-	private static final int TYPE_FATHER_NEWS = 1;
+	public static final int TYPE_FATHER_NEWS = 1;
 	
 	/**
 	 * 父类型－服务
 	 */
-	private static final int TYPE_FATHER_PERSON = 2;
+	public static final int TYPE_FATHER_PERSON = 2;
 	
 	/**
 	 * 父类型－用户
 	 */
-	private static final int TYPE_FATHER_USER = 3;
+	public static final int TYPE_FATHER_USER = 3;
 	
 	/**
 	 * 父类型－更多
 	 */
-	private static final int TYPE_FATHER_MORE = 4;
+	public static final int TYPE_FATHER_MORE = 4;
 	
 	/**
 	 * 资讯栏目类型-最新
 	 */
-	private static final int TYPE_NEWS_NEWEST = 0;
+	public static final int TYPE_NEWS_NEWEST = 0;
 	
 	/**
 	 * 资讯栏目类型-行业
 	 */
-	private static final int TYPE_NEWS_INDUSTR = 1;
+	public static final int TYPE_NEWS_INDUSTR = 1;
 	
 	/**
 	 * 资讯栏目类型-政策
 	 */
-	private static final int TYPE_NEWS_POLICY = 2;
+	public static final int TYPE_NEWS_POLICY = 2;
 	
 	/**
 	 * 资讯栏目类型-通知
 	 */
-	private static final int TYPE_NEWS_NOTIFICATION = 3;
+	public static final int TYPE_NEWS_NOTIFICATION = 3;
 	
 	/**
 	 * 资讯栏目类型-专家
 	 */
-	private static final int TYPE_NEWS_EXPERT = 4;
+	public static final int TYPE_NEWS_EXPERT = 4;
 	
 	/**
 	 * 服务栏目类型 -职位
 	 */
-	private static final int TYPE_PERSON_POSITION = 1;
+	public static final int TYPE_PERSON_POSITION = 1;
 	
 	/**
 	 * 服务栏目类型 -简历
 	 */
-	private static final int TYPE_PERSON_RESUME = 2;
+	public static final int TYPE_PERSON_RESUME = 2;
 	
 	/**
 	 * 服务栏目类型 -培训机构
 	 */
-	private static final int TYPE_PERSON_TRAIN = 3;
+	public static final int TYPE_PERSON_TRAIN = 3;
 	
 	/**
 	 * 服务栏目类型 -项目
 	 */
-	private static final int TYPE_PERSON_PROJECT = 4;
+	public static final int TYPE_PERSON_PROJECT = 4;
 	
 	/**
 	 * 更多栏目类型－收藏
 	 */
-	private static final int TYPE_MORE_FAV = 1;
+	public static final int TYPE_MORE_FAV = 1;
 	
 	/**
 	 * 更多栏目类型－系统设置
 	 */
-	private static final int TYPE_MORE_SETTING = 2;
+	public static final int TYPE_MORE_SETTING = 2;
 	
 	/**
 	 * 更多栏目类型－退出
 	 */
-	private static final int TYPE_MORE_EXIT = 0;
+	public static final int TYPE_MORE_EXIT = 0;
 	
 	public int getIsDefault()
 	{
@@ -358,6 +358,27 @@ public class ChannelVO extends BaseVO {
 	public static ArrayList<ChannelVO> getFatherChannels(ArrayList<ChannelVO> channelVOs)
 	{
 		return getChannels(channelVOs, CHANNELID_FATHER);
+	}
+	
+	/**
+	 * 获取父栏目栏目ID
+	 * @param channelVOs
+	 * @param type
+	 * @return
+	 */
+	public static long getFatherChannelIDFromType(ArrayList<ChannelVO> channelVOs,int type)
+	{
+		if(channelVOs==null||channelVOs.isEmpty())
+			return -1l;
+		for(int i = 0 ;i<channelVOs.size();i++ )
+		{
+			if(channelVOs.get(i).fatherchannelID==CHANNELID_FATHER)
+			{
+				if(channelVOs.get(i).type == type)
+					return channelVOs.get(i).getChannelID();
+			}
+		}
+		return -1l;
 	}
 	
 	/**

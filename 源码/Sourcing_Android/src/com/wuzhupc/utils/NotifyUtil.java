@@ -24,13 +24,17 @@ public class NotifyUtil {
 		//mContext = context;
 	}
 	
+	public static boolean notify(Context context, Intent intent, String title, String detail)
+	{
+		return notify(context, intent, title, detail, Notification.FLAG_AUTO_CANCEL);
+	}
 	/**
 	 * 发布通知
 	 * @param context
 	 * @param intent
 	 * @return 是否发送通知
 	 */
-	public static boolean notify(Context context, Intent intent, String title, String detail) {
+	public static boolean notify(Context context, Intent intent, String title, String detail,int flags) {
 		final CharSequence popMsg = context.getText(R.string.notify_pop_msg);
 		long curTime = System.currentTimeMillis();
 		
@@ -49,7 +53,8 @@ public class NotifyUtil {
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
 		notification.setLatestEventInfo(context, title, detail, pendingIntent);
-		notification.flags |= Notification.FLAG_AUTO_CANCEL;	// 点击后取消显示
+		//notification.flags |= Notification.FLAG_AUTO_CANCEL;	// 点击后取消显示
+		notification.flags = flags;
 		notification.defaults |= Notification.DEFAULT_SOUND;
 		
 		nm.notify(NM_ID, notification);

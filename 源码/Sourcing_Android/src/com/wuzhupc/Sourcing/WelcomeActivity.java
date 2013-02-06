@@ -85,6 +85,8 @@ public class WelcomeActivity extends BaseActivity
 	 */
 	private ClientVerVO mClientVerVO;
 	
+	private int mPushCount;
+	
 	/**
 	 * 初始化View
 	 */
@@ -93,7 +95,9 @@ public class WelcomeActivity extends BaseActivity
 	{
 		//初始化View
 		setContentView(R.layout.activity_welcome);
-		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));		
+		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));
+		Intent intent = getIntent();
+		mPushCount = intent.getIntExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, 0);
 	}
 
 	@Override
@@ -311,6 +315,7 @@ public class WelcomeActivity extends BaseActivity
 //		//启动主界面
 		Intent intent=new Intent(this, HomeActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+		intent.putExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, mPushCount);
 //		//intent.putExtra(HomeActivity.CSTR_PARMS_STARTADNEWSURL, mStartLogoNewUrl);
 		runIntent(true, intent);
 	}

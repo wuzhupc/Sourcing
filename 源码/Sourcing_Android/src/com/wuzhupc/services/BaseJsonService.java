@@ -35,11 +35,16 @@ public abstract class BaseJsonService
 	
 	protected Context mContext;
 	
+	protected boolean mRandomReadData;
+	protected int mRandomMax;
+	
 	public BaseJsonService(Context c)
 	{
 		mContext=c;
 		mSuffixStr = "";
 		mCommandName = "";
+		mRandomMax = 10;
+		mRandomReadData = false;
 	}
 	
 	protected String getDevID()
@@ -118,7 +123,13 @@ public abstract class BaseJsonService
 		//
 		if(LOCAL_DEBUG)
 		{
-			String localjsoncontent = FileUtil.readFileFromAssetsFile(mContext, mCommandName+"_response_data"+(StringUtil.isEmpty(mSuffixStr)?"":"_"+mSuffixStr)+".json");
+			String datafilename = mCommandName+"_response_data"+(StringUtil.isEmpty(mSuffixStr)?"":"_"+mSuffixStr)+".json";
+			if(mRandomReadData)
+			{
+				int random = (int) (Math.random()*mRandomMax);
+				datafilename = mCommandName+"_response_data_"+Integer.toString(random) +(StringUtil.isEmpty(mSuffixStr)?"":"_"+mSuffixStr)+".json";
+			}
+			String localjsoncontent = FileUtil.readFileFromAssetsFile(mContext, datafilename);			
 			if(StringUtil.isEmpty(localjsoncontent))
 				iReceiver.receiveCompleted(false, "当前暂无资讯信息");
 			else

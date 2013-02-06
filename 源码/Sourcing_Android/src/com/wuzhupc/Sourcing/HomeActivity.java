@@ -10,8 +10,10 @@ import com.wuzhupc.Sourcing.view.ListBaseView;
 import com.wuzhupc.Sourcing.view.PersonView;
 import com.wuzhupc.Sourcing.view.UserView;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
+import com.wuzhupc.utils.NotifyUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.ViewUtil;
+import com.wuzhupc.widget.BadgeView;
 import com.wuzhupc.widget.ExViewFlipper;
 import com.wuzhupc.widget.MenuBarMenuItemView;
 import com.wuzhupc.widget.OnDisplayerChildChangeListener;
@@ -44,6 +46,8 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	protected static final String TAG = HomeActivity.class.getSimpleName();
 	
 	public static final String CSTR_ACTION_USERLOGINCOMPLETE = "com.wuzhupc.ACTION_USERLOGINCOMPLETE";
+	public static final String CSTR_ACTION_PUSHINFO = "com.wuzhupc.ACTION_PUSHINFO";
+	public static final String CSTR_EXTRA_ACTION_PUSHINFO = "pushinfocount";
 	/**
 	 * 手势识别
 	 */
@@ -82,6 +86,8 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	protected MenuBarMenuItemView[] mv_menubarlist;
 	
 	private HomeBroadcastReceiver mHomeBroadcastReceiver;
+	
+	private BadgeView mPushBadgeView;
 
 	@Override
 	protected void initView()
@@ -103,6 +109,9 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		// 初始化ViewFlipper
 		initVFContext();
 
+		int pushcount = getIntent().getIntExtra(CSTR_EXTRA_ACTION_PUSHINFO, 0);
+		if(pushcount>0)
+			showPushBadeView(pushcount);
 		// Boolean isfirststart=SettingUtil.isFirstStart(this, true);
 		//
 		// if (isfirststart) {
@@ -116,6 +125,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	private void regBoardReceiver()
 	{
 		IntentFilter filter = new IntentFilter(CSTR_ACTION_USERLOGINCOMPLETE);
+		filter.addAction(CSTR_ACTION_PUSHINFO);
 		//filter.addAction(CSTR_ACTION_USERLOGINCOMPLETE);
 		mHomeBroadcastReceiver =new HomeBroadcastReceiver();
 		registerReceiver(mHomeBroadcastReceiver, filter);
@@ -465,6 +475,14 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				return i;
 		return -1;
 	}
+	
+	private MenuBarMenuItemView getMenuBarFromChannelID(long channelid)
+	{
+		int index = getIndexFromList(channelid);
+		if (index < 0 || index >= mv_menubarlist.length)
+			return null;
+		return mv_menubarlist[index];
+	}
 
 	/**
 	 * 设置某个菜单项为未选中中状态
@@ -473,10 +491,9 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	 */
 	private void setMenuBarNoSel(long channelid)
 	{
-		int index = getIndexFromList(channelid);
-		if (index < 0 || index >= mv_menubarlist.length)
-			return;
-		mv_menubarlist[index].setSelected(false);
+		MenuBarMenuItemView mbiv = getMenuBarFromChannelID(channelid);
+		if(mbiv!=null)
+			mbiv.setSelected(false);
 	}
 
 	/**
@@ -495,6 +512,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		{
 			if (mFatherChannelVOs.get(i).getChannelID() == channelid)
 			{
+				if(mFatherChannelVOs.get(i).getType()==ChannelVO.TYPE_FATHER_USER)
+				{
+					//选中用户栏目时不显示隐藏信息
+					showPushBadeView(0);
+				}
 				mv_menubarlist[i].setSelected(true);
 				if (!noselother)
 					return;
@@ -534,6 +556,37 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			mvf_content.setInAnimation(AnimationUtils.loadAnimation(HomeActivity.this, R.anim.anim_view_left_out));
 		}
 		mvf_content.setDisplayedChild(index);
+	}
+	
+	/**
+	 * 显示提醒信息数（只在用户栏目）
+	 * @param count >0时显示 <0时隐藏
+	 */
+	private void showPushBadeView(int count)
+	{
+		if(mPushBadgeView == null)
+		{
+			long channelid = ChannelVO.getFatherChannelIDFromType(mChannelVOs,ChannelVO.TYPE_FATHER_USER);
+			if(channelid==-1l)
+				return;
+			MenuBarMenuItemView mbiv = getMenuBarFromChannelID(channelid);
+			if(mbiv==null)
+				return;
+			mPushBadgeView = new BadgeView(this, mbiv);
+		}
+		if(count>0)
+		{
+			mPushBadgeView.setText(Integer.toString(count));
+			if(!mPushBadgeView.isShown())
+				mPushBadgeView.toggle(true);
+		}
+		else
+		{
+			NotifyUtil.cancel(this);
+			mPushBadgeView.setText("0");
+			if(mPushBadgeView.isShown())
+				mPushBadgeView.toggle(true);
+		}
 	}
 
 	@Override
@@ -614,6 +667,10 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				{
 					((UserView) v).initData();
 				}
+			}else if(CSTR_ACTION_PUSHINFO.equalsIgnoreCase(arg1.getAction()))
+			{
+				int count = arg1.getIntExtra(CSTR_EXTRA_ACTION_PUSHINFO, 0);
+				showPushBadeView(count);
 			}
 		}
 	}

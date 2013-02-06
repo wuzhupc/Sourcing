@@ -31,6 +31,8 @@ public class MobilePushService extends BaseJsonService
 		if(userid>0l)
 			creater.setParam("userid", userid);
 		creater.setParam("lastchecktime", lastchecktime);
+		mRandomMax = 2014;
+		mRandomReadData = true;
 		mCommandName = mContext.getString(R.string.cmd_json_get_push_info);
 		String json=creater.createJson(null, mCommandName);
 		getData(json,iReceiver);

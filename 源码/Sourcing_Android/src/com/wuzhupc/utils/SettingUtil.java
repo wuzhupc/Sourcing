@@ -31,7 +31,7 @@ public class SettingUtil
 	/**
 	 * 字体描述列表
 	 */
-	public final static  String[] NewsFontSizesDesc={"小号字","中号字","大号字","特大字号"};
+	public final static  String[] NewsFontSizesDesc={"小号字","中号字","大号字","特大号字"};
 	
 	/**
 	 * 获取某栏目最后更新时间
