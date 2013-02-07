@@ -3,10 +3,32 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "+[NotifierCell calCellHeight:]:NotifierCell.m">
+         contextName = "-[NewsViewController serviceResult:]:NewsViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[NotifierCell setData:]:NotifierCell.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[HomeTabBarController viewDidLoad]:HomeTabBarController.m">
          <PersistentStrings>
             <PersistentString
-               value = "label.attributedText">
+               value = "self.tabBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[NewsViewController commonInitNewsViewController]:NewsViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationController.navigationBar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MoreViewController initTableGrid]:MoreViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.swithPush.on">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -14,7 +36,15 @@
          contextName = "-[WelcomeViewController viewDidLoad]:WelcomeViewController.m">
       </ContextState>
       <ContextState
-         contextName = "-[NotifierCell setData:]:NotifierCell.m">
+         contextName = "-[BaseHomeViewController setNavTitle:]:BaseHomeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[NSBundle mainBundle]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "-[StyledTableViewCell setSelectedBackgroundViewGradientColors:]:StyledTableViewCell.m">
@@ -28,45 +58,23 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
+         contextName = "-[UserInfoListViewController initTableView]:UserInfoListViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[NSBundle mainBundle]">
+               value = "self.view.frame.size.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[MoreViewController initTableGrid]:MoreViewController.m">
+         contextName = "+[NotifierCell calCellHeight:]:NotifierCell.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.swithPush.on">
+               value = "label.attributedText">
             </PersistentString>
          </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[HomeTabBarController viewDidLoad]:HomeTabBarController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.tabBar">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[BaseHomeViewController setNavTitle:]:BaseHomeViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[WelcomeViewController loadChannelInfo]:WelcomeViewController.m">
-      </ContextState>
-      <ContextState
-         contextName = "-[NewsViewController commonInitNewsViewController]:NewsViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.navigationController.navigationBar">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[NewsViewController serviceResult:]:NewsViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>

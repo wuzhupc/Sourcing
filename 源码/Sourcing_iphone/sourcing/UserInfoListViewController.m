@@ -162,7 +162,8 @@
 
 -(void)initTableView
 {
-    CGRect bounds = CGRectMake(0, 44, self.view.frame.size.width, self.view.frame.size.height);
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    CGRect bounds = CGRectMake(0, 44, self.view.frame.size.width, screenHeight-20.0f);
     bounds.size.height -= 44.0f;
     self.prTableView = [[PullingRefreshTableView alloc] initWithFrame:bounds pullingDelegate:self];
     

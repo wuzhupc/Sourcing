@@ -211,6 +211,14 @@ static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
 {
     [self.memCache removeAllObjects];
 }
+-(void)clearDiskNoAsync
+{
+    [[NSFileManager defaultManager] removeItemAtPath:self.diskCachePath error:nil];
+    [[NSFileManager defaultManager] createDirectoryAtPath:self.diskCachePath
+                              withIntermediateDirectories:YES
+                                               attributes:nil
+                                                    error:NULL];
+}
 
 - (void)clearDisk
 {
@@ -242,9 +250,9 @@ static const NSInteger kDefaultCacheMaxCacheAge = 60 * 60 * 24 * 7; // 1 week
     });
 }
 
--(int)getSize
+-(unsigned long long)getSize
 {
-    int size = 0;
+    unsigned long long size = 0l;
     NSDirectoryEnumerator *fileEnumerator = [[NSFileManager defaultManager] enumeratorAtPath:self.diskCachePath];
     for (NSString *fileName in fileEnumerator)
     {

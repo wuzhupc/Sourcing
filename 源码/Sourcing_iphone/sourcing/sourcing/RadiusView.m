@@ -126,7 +126,7 @@
 }
 -(void)setCellHeight:(NSUInteger)kheight
 {
-    if(self.cellHeight = kheight)
+    if(self.cellHeight == kheight)
         return;
     cellHeight_ = kheight;
     CGRect frame = self.frame;

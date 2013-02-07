@@ -28,7 +28,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 
-@interface MoreViewController : BaseHomeViewController<UIActionSheetDelegate,MBProgressHUDDelegate,iVersionDelegate>
+@interface MoreViewController : BaseHomeViewController<UIActionSheetDelegate,MBProgressHUDDelegate,iVersionDelegate,UIAlertViewDelegate>
 
 
 ////////////////////////////////////////////////////////////////////////////////

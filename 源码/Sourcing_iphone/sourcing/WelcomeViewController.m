@@ -18,6 +18,7 @@
 @end
 
 @implementation WelcomeViewController
+@synthesize isAbout = isAbout_;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,12 +46,18 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if(!self.isAbout)
+    {
     //启动加载栏目信息
     [self loadChannelInfo];
     //TODO 启动判断用户登录
     [self checkUserLogin];
     //显示两秒后切换到主界面
     [self performSelector:@selector(showHome) withObject:nil afterDelay:2];
+    }else
+    {
+        [self.buttonClose setHidden:NO];
+    }
 }
 
 -(void)checkUserLogin
@@ -109,6 +116,7 @@
 - (void)viewDidUnload {
     [self setLaVersion:nil];
     [self setIvWelcome:nil];
+    [self setButtonClose:nil];
     [super viewDidUnload];
 }
 
@@ -137,5 +145,8 @@
             NSLog(@"%@ checkuserlogin error:%@",[[self class] description],result.msg);
         }
     }
+}
+- (IBAction)actionClose:(id)sender {
+    [self dismissModalViewControllerAnimated:YES];
 }
 @end

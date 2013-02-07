@@ -13,6 +13,8 @@
 #import "MGTableBoxStyled.h"
 #import "MGLineStyled.h"
 #import "SettingUtil.h"
+#import "WelcomeViewController.h"
+#import "SDImageCache.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -34,6 +36,7 @@
 @property (nonatomic,strong) MGBox *infotable;
 @property (nonatomic,strong) MGBox *othertable;
 @property (nonatomic,strong) UILabel *labelFont;
+@property (nonatomic,strong) UILabel *labelSize;
 @property (nonatomic,strong) UISwitch *swithPush;
 
 @property (nonatomic,strong) MBProgressHUD *hud;
@@ -58,6 +61,7 @@
 @synthesize infotable = infotable_;
 @synthesize othertable = othertable_;
 @synthesize labelFont = labelFont_;
+@synthesize labelSize = labelSize_;
 @synthesize swithPush = swithPush_;
 @synthesize hud = hud_;
 ////////////////////////////////////////////////////////////////////////////////
@@ -104,6 +108,8 @@
     [super viewDidAppear:animated];
     [self willAnimateRotationToInterfaceOrientation:self.interfaceOrientation duration:1];
     [self didRotateFromInterfaceOrientation:UIInterfaceOrientationPortrait];
+    if(self.labelSize!=nil)
+        self.labelSize.text = [self getCacheSize];
 }
 
 #pragma mark - Rotation and resizing
@@ -180,7 +186,12 @@
     *header2 = [MGLineStyled lineWithLeft:@"其他设置" right:nil size:ROW_SIZE];
     header2.font = [UIFont boldSystemFontOfSize:18];
     [menu2.topLines addObject:header2];
-    MGLineStyled *lineClearCache = [MGLineStyled lineWithLeft:@"清除缓存" right:nil size:ROW_SIZE];
+    
+    self.labelSize = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 120, 26)];
+    self.labelSize.text = [self getCacheSize];
+    self.labelSize.backgroundColor = [UIColor clearColor];
+    self.labelSize.textAlignment = NSTextAlignmentRight;
+    MGLineStyled *lineClearCache = [MGLineStyled lineWithLeft:@"清除缓存" right:self.labelSize size:ROW_SIZE];
     [menu2.topLines addObject:lineClearCache];
     lineClearCache.onTap = ^{
         [self clearCacheSection];
@@ -198,6 +209,29 @@
     [self.tablesGrid layout];
     
 }
+
+-(NSString *)getCacheSize
+{
+    unsigned long long cachesize = [[SDImageCache sharedImageCache] getSize];
+    if(cachesize<1000)
+    {
+        return [NSString stringWithFormat:@"%lluB",cachesize];
+    }else if(cachesize<1024000)
+    {
+        return [NSString stringWithFormat:@"%.2fK",cachesize/1024.0f];
+    }else
+    {
+        return [NSString stringWithFormat:@"%.2fM",cachesize/1024.0f/1024.0f];
+    }
+    
+}
+
+-(void)clearCachesOper
+{
+    [[SDImageCache sharedImageCache] clearDiskNoAsync];
+    self.labelSize.text = [self getCacheSize];
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Actions
 
@@ -240,6 +274,19 @@
 	self.hud = nil;
 }
 
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==1)
+    {
+        self.hud = [[MBProgressHUD alloc] initWithView:self.view.window];
+        [self.view.window addSubview:self.hud];
+        
+        self.hud.delegate = self;
+        self.hud.labelText = @"清除缓存中...";
+        [self.hud showWhileExecuting:@selector(clearCachesOper) onTarget:self withObject:nil animated:YES];
+    }
+}
+
 #pragma mark - Layout features sections
 -(void)fontLayoutSection
 {
@@ -260,8 +307,10 @@
 
 -(void)clearCacheSection
 {
-    //TODO
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"清除缓存" message:@"你确定清除缓存数据吗?" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    [alert show];
 }
+
 -(void)checkVerSection
 {
     self.hud = [[MBProgressHUD alloc] initWithView:self.view.window];
@@ -278,7 +327,10 @@
 }
 -(void)aboutSection
 {
-    //TODO
+    WelcomeViewController *vc = [[WelcomeViewController alloc] init];
+    
+    vc.isAbout = YES;
+    [self presentModalViewController:vc animated:YES];
 }
 
 @end

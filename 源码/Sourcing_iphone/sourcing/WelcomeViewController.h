@@ -12,7 +12,11 @@
 #define CINT_TAG_CHECKUSER_LOGIN 10001
 
 @interface WelcomeViewController : UIViewController<BaseServiceDelegate>
+@property BOOL isAbout;
+
 @property (weak, nonatomic) IBOutlet UILabel *laVersion;
 @property (weak, nonatomic) IBOutlet UIImageView *ivWelcome;
+- (IBAction)actionClose:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *buttonClose;
 
 @end
