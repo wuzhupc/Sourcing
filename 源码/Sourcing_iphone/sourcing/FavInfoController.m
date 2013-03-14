@@ -151,7 +151,7 @@
     NSInteger resutlt = [[FavoriteUtil favoriteUtil] getFavNumber];
     if(resutlt == 0 )
     {
-        [BaseVO tableViewWithEmptyData:tableView title:NSLocalizedString(@"没有收藏数据",@"没有数据时提示")];
+       return [BaseVO tableViewWithEmptyData:tableView title:NSLocalizedString(@"没有收藏数据",@"没有数据时提示")];
     }
     BaseVO *vo = [[FavoriteUtil favoriteUtil].dataList objectAtIndex:indexPath.row];
     return [vo tableView:tableView index:indexPath.row allowheadline:NO];
