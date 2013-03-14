@@ -50,7 +50,7 @@ containing a value of this type.
         public static final int mode=0x7f010003;
     }
     public static final class color {
-        /**  背景颜色 
+        /**  背景颜色 bbf01e04
          */
         public static final int activity_title_bg_color=0x7f060006;
         /**  标题间隔线 
@@ -139,54 +139,54 @@ containing a value of this type.
         public static final int icon_bg_userinfo=0x7f020018;
         public static final int icon_bg_userinfo_sel=0x7f020019;
         public static final int icon_btn_bg=0x7f02001a;
-        public static final int icon_fav=0x7f02001b;
-        public static final int icon_fav_light=0x7f02001c;
-        public static final int icon_faved=0x7f02001d;
-        public static final int icon_faved_light=0x7f02001e;
-        public static final int icon_home_tb_more=0x7f02001f;
-        public static final int icon_home_tb_news=0x7f020020;
-        public static final int icon_home_tb_person=0x7f020021;
-        public static final int icon_home_tb_user=0x7f020022;
-        public static final int icon_imageview_left=0x7f020023;
-        public static final int icon_imageview_right=0x7f020024;
-        public static final int icon_imageview_save=0x7f020025;
-        public static final int icon_imageview_zoomin=0x7f020026;
-        public static final int icon_imageview_zoomout=0x7f020027;
-        public static final int icon_newconsult=0x7f020028;
-        public static final int icon_newconsult_light=0x7f020029;
-        public static final int icon_search=0x7f02002a;
-        public static final int icon_search_black=0x7f02002b;
-        public static final int icon_share=0x7f02002c;
-        public static final int icon_share_light=0x7f02002d;
-        public static final int icon_spinner_108=0x7f02002e;
-        public static final int icon_spinner_24=0x7f02002f;
-        public static final int icon_spinner_36=0x7f020030;
-        public static final int icon_spinner_48=0x7f020031;
-        public static final int icon_spinner_72=0x7f020032;
-        public static final int icon_userinfo_bg=0x7f020033;
-        public static final int icon_userpic_bg=0x7f020034;
-        public static final int list_base_divider=0x7f020035;
-        public static final int loading_failed=0x7f020036;
-        public static final int logo64_48=0x7f020037;
-        public static final int progress_large=0x7f020038;
-        public static final int progress_medium=0x7f020039;
-        public static final int progress_micro=0x7f02003a;
-        public static final int progress_small=0x7f02003b;
-        public static final int pulltorefresh_down_arrow=0x7f02003c;
-        public static final int pulltorefresh_up_arrow=0x7f02003d;
-        public static final int selector_common_edittext=0x7f02003e;
-        public static final int selector_menubar_bk_img=0x7f02003f;
-        public static final int selector_subchannel_tab_img=0x7f020040;
-        public static final int selector_userinfo_bk_img=0x7f020041;
-        public static final int subchannel_tab_bg=0x7f020042;
-        public static final int theme_dialog_bg=0x7f020043;
-        public static final int title_bar_refresh_48=0x7f020044;
-        public static final int title_bar_refresh_48_light=0x7f020045;
-        public static final int title_button=0x7f020046;
-        public static final int toolbar_bkg=0x7f020047;
-        public static final int toolbar_bkg_sel=0x7f020048;
-        public static final int toolbar_bkg_sel2=0x7f020049;
-        public static final int top_title_bg=0x7f02004a;
+        public static final int icon_btn_bg_sel=0x7f02001b;
+        public static final int icon_fav=0x7f02001c;
+        public static final int icon_fav_light=0x7f02001d;
+        public static final int icon_faved=0x7f02001e;
+        public static final int icon_faved_light=0x7f02001f;
+        public static final int icon_home_tb_more=0x7f020020;
+        public static final int icon_home_tb_news=0x7f020021;
+        public static final int icon_home_tb_person=0x7f020022;
+        public static final int icon_home_tb_user=0x7f020023;
+        public static final int icon_imageview_left=0x7f020024;
+        public static final int icon_imageview_right=0x7f020025;
+        public static final int icon_imageview_save=0x7f020026;
+        public static final int icon_imageview_zoomin=0x7f020027;
+        public static final int icon_imageview_zoomout=0x7f020028;
+        public static final int icon_newconsult=0x7f020029;
+        public static final int icon_newconsult_light=0x7f02002a;
+        public static final int icon_search=0x7f02002b;
+        public static final int icon_search_black=0x7f02002c;
+        public static final int icon_share=0x7f02002d;
+        public static final int icon_share_light=0x7f02002e;
+        public static final int icon_spinner_108=0x7f02002f;
+        public static final int icon_spinner_24=0x7f020030;
+        public static final int icon_spinner_36=0x7f020031;
+        public static final int icon_spinner_48=0x7f020032;
+        public static final int icon_spinner_72=0x7f020033;
+        public static final int icon_userinfo_bg=0x7f020034;
+        public static final int icon_userpic_bg=0x7f020035;
+        public static final int list_base_divider=0x7f020036;
+        public static final int loading_failed=0x7f020037;
+        public static final int logo64_48=0x7f020038;
+        public static final int progress_large=0x7f020039;
+        public static final int progress_medium=0x7f02003a;
+        public static final int progress_micro=0x7f02003b;
+        public static final int progress_small=0x7f02003c;
+        public static final int pulltorefresh_down_arrow=0x7f02003d;
+        public static final int pulltorefresh_up_arrow=0x7f02003e;
+        public static final int selector_common_edittext=0x7f02003f;
+        public static final int selector_menubar_bk_img=0x7f020040;
+        public static final int selector_subchannel_tab_img=0x7f020041;
+        public static final int selector_userinfo_bk_img=0x7f020042;
+        public static final int subchannel_tab_bg=0x7f020043;
+        public static final int theme_dialog_bg=0x7f020044;
+        public static final int title_bar_refresh_48=0x7f020045;
+        public static final int title_bar_refresh_48_light=0x7f020046;
+        public static final int title_button=0x7f020047;
+        public static final int toolbar_bkg=0x7f020048;
+        public static final int toolbar_bkg_sel=0x7f020049;
+        public static final int toolbar_bkg_sel2=0x7f02004a;
         public static final int welcome=0x7f02004b;
         public static final int welcome_close_btn=0x7f02004c;
         public static final int welcome_separate_line=0x7f02004d;
@@ -573,6 +573,8 @@ containing a value of this type.
         /**  Variation on the Light theme that turns off the title 
          */
         public static final int Theme_WuzhuLightFullScreen=0x7f090002;
+        /** <item name="android:background">@drawable/top_title_bg</item>  
+         */
         public static final int TitleBar=0x7f090005;
         public static final int TitleBarAction=0x7f090006;
         public static final int TitleBarLogo=0x7f090007;

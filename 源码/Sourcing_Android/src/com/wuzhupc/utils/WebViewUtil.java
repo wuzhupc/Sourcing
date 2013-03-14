@@ -119,7 +119,7 @@ public class WebViewUtil
 				+ "else{ var __method = this, args = $A(arguments);  window.setTimeout(function() {  "
 				+ " fixImage.apply(__method, args); }, 200); }  i.onload = function(){}  }  </script>";
 		return "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">"
-				+ autoloadimgscript + "<style type=\"text/css\">body {background-color:#fcf2e9;}</style></head><body>";
+				+ autoloadimgscript + "<style type=\"text/css\">body {background-color:#e9f2fc;}</style></head><body>";
 	}
 	
 	/**
@@ -130,7 +130,7 @@ public class WebViewUtil
 	public static String getHtmlSubTitle(BaseVO vo)
 	{
 		if(vo==null)
-			return "<div style=\"height:0;border-bottom:1px solid #f00\"></div>";
+			return "<div style=\"height:0;border-bottom:1px solid #00e\"></div>";
 		return vo.getHtmlSubTitle();
 	}
 	

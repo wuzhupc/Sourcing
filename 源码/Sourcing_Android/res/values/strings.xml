@@ -1,7 +1,7 @@
 <resources>
 
     <string name="app_name">厦门外包网</string>
-    <string name="app_name_full">厦门服务外包网</string>
+    <string name="app_name_full">厦门市服务外包网</string>
     
 	<!-- 网络异常提示信息  -->
 	<string name="prompt_network_connect_timeout">连接超时！</string>
@@ -108,9 +108,9 @@
 	<!-- SettingActivity -->
 	<string name="setting_title">系统设置</string>
 	<!-- 通知栏提示信息 -->
-	<string name="notify_pop_msg">收到新厦门服务外包网消息</string>
-	<string name="notify_title">新厦门服务外包网消息</string>
-	<string name="notify_detail">%s条未读厦门服务外包网消息</string>
+	<string name="notify_pop_msg">收到新厦门市服务外包网消息</string>
+	<string name="notify_title">新厦门市服务外包网消息</string>
+	<string name="notify_detail">%s条未读厦门市服务外包网消息</string>
 	<string name="notify_prompt">请点击查看</string>
 	<string name="notify_single_msg_detail">[%1$s]%2$s</string>
 </resources>

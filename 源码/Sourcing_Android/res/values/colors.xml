@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#fcf2e9</color>
+    <color name="white">#e9f2fc</color>
     
     <!-- Dialog按钮颜色 -->
-    <color name="dialog_btn_bg">#bb383D49</color>
+    <color name="dialog_btn_bg">#bb3667A2</color>
 	<color name="dialog_title_textcolor">#FFFFFF</color>
 	<color name="dialog_message_textcolor">#4E4E4E</color>
 	
     <!-- 按钮默认和按下颜色 -->
-    <color name="btn_pressed">#bbf01e04</color>
-    <color name="btn_normal">#bbc42a06</color>
+    <color name="btn_pressed">#ee3667A2</color>
+    <color name="btn_normal">#993667A2</color>
     
-    <!-- 背景颜色 -->
-    <color name="activity_title_bg_color">#bbf01e04</color>
+    <!-- 背景颜色 bbf01e04-->
+    <color name="activity_title_bg_color">#dd3667A2</color>
     
     <!-- 间隔线 -->
-    <color name="btn_space_deep">#ae2201</color>
-    <color name="btn_space_light">#ef280f</color>
+    <color name="btn_space_deep">#ff3667a2</color>
+    <color name="btn_space_light">#ff3667ff</color>
     <!-- 标题间隔线 -->
-    <color name="activity_title_separator">#f01e04</color>
+    <color name="activity_title_separator">#3667A2</color>
     <color name="activity_title_text">#f7f7f7</color>
     
     <color name="home_toolbar_bg">#222222</color>
@@ -26,13 +26,13 @@
     <color name="menubar_menuitem_textcolor">#ffffff</color>
     <!-- 子栏目标题栏显示相关颜色 -->
     <color name="subchanneltab_textcolor">#222222</color>
-    <color name="subchanneltab_sel_textcolor">#bbf01e04</color>
-    <color name="subchanneltab_sel_imagecolor">#bbf01e04</color>
+    <color name="subchanneltab_sel_textcolor">#bb3667A2</color>
+    <color name="subchanneltab_sel_imagecolor">#bb3667A2</color>
     <!-- listitem相关颜色 -->
-    <color name="listitem_base_normal_start">#fcf2e9</color>
-    <color name="listitem_base_normal_end">#fcf2e9</color>
-    <color name="listitem_base_sel_start">#f3c5b6</color>
-    <color name="listitem_base_sel_end">#f3c5b6</color>
+    <color name="listitem_base_normal_start">#e9f2fc</color>
+    <color name="listitem_base_normal_end">#e9f2fc</color>
+    <color name="listitem_base_sel_start">#b6c5f3</color>
+    <color name="listitem_base_sel_end">#b6c5f3</color>
     <color name="listitem_base_headline_bg">#44000000</color>
     <color name="listitem_base_headline_titlecolor">#f7f7f7</color>
     <color name="listitem_base_titlecolor">#222222</color>
@@ -42,5 +42,5 @@
     <color name="pull_to_refresh_text_color">#000000</color>
     
     <!-- ViewImageActivity -->
-    <color name="viewimage_toolbar_bg">#bbf01e04</color>
+    <color name="viewimage_toolbar_bg">#bb3667A2</color>
 </resources>
