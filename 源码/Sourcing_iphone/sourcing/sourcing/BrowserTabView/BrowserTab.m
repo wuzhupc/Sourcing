@@ -32,6 +32,8 @@
 //
 
 #import "BrowserTab.h"
+#import "UIColor+MGExpanded.h"
+
 //define width of a tab ,here is the width of the image used to render tab;
 #define TAB_WIDTH 64 
 #define TAB_HEIGHT 36
@@ -58,7 +60,8 @@
         delegate = aDelegate;
         reuseIdentifier = aReuseIdentifier;
         self.normalTitleColor = [UIColor blackColor];
-        self.selectedTitleColor = [UIColor redColor];
+        //3667A2
+        self.selectedTitleColor = [UIColor colorWithHexString:@"0xbb3667A2"];
         
         self.tabSelectedImage = [UIImage imageNamed:@"tab_selected.png"]; 
         self.tabNormalImage = [UIImage imageNamed:@"tab_normal.png"] ;

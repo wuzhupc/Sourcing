@@ -192,6 +192,7 @@
     [ApplicationSet shareData].deviceToken = deviceTokenStr;
     [self registerDeviceToken];
     NSLog(@"My device Token is:%@",deviceTokenStr);
+    [self setActivityTabBadge:3];
 }
 
 -(void)registerDeviceToken
@@ -252,10 +253,10 @@
 -(void)setActivityTabBadge:(NSInteger)num
 {
     UITabBarController *tabBarController = self.window.rootViewController.tabBarController;
-    if(tabBarController==NULL || [tabBarController.viewControllers count]<2)
+    if(tabBarController==NULL || [tabBarController.viewControllers count]<3)
         return;
     //处理：提醒有未读取的提醒
-    UIViewController *viewController = [tabBarController.viewControllers objectAtIndex:1];
+    UIViewController *viewController = [tabBarController.viewControllers objectAtIndex:2];
     if(viewController!=NULL)
         viewController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", num];
 }

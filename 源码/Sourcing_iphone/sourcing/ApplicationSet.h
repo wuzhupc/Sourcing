@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "UserVO.h"
 
-#define CINT_BG_HEX 0xfcf2e9
+#define CINT_BG_HEX 0xe9f2fc
 
 //需要#import "UIColor+MGExpanded.h"
 #define CCOLOR_BG_WHITE  [UIColor colorWithRGBHex:CINT_BG_HEX]
 #define CCOLOR_TABLEVIEW_BG [UIColor colorWithRGBHex:CINT_BG_HEX]
-#define CCOLOR_TABLEVIEW_SEL [UIColor colorWithRGBHex:0xFFF3C5B6]
-#define CCOLOR_TABLEVIEW_SEL_2 [UIColor colorWithRGBHex:0xFFFBC5B6]
+#define CCOLOR_TABLEVIEW_SEL [UIColor colorWithRGBHex:0xFFb6c5f3]
+#define CCOLOR_TABLEVIEW_SEL_2 [UIColor colorWithRGBHex:0xFFb6c5f3]
 
 @interface ApplicationSet : NSObject
 

@@ -54,6 +54,7 @@
 	self.layer.borderWidth = CINT_DEFAULT_BORDERWIDTH;
     [self setCornerRadius:10.0f];
     [self setBorderColor:CCOLOR_DEFAULT_BORDERCOLOR];
+    //[self setBackgroundColor:[UIColor colorWithRed:0.94 green:0.94 blue:0.95 alpha:1]];
 }
 
 - (id)initWithFrame:(CGRect)frame
