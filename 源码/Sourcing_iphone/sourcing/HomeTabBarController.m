@@ -56,7 +56,7 @@
 - (void)commonInitHomeTabBarController
 {
     self.tabBar.tintColor = [UIColor clearColor];
-    self.tabBar.backgroundColor = [[UIColor alloc] initWithRed:48.0/255 green:48.0/255 blue:48.0/255 alpha:0.5];
+    self.tabBar.backgroundColor = [[UIColor alloc] initWithRed:96.0/255 green:96.0/255 blue:96.0/255 alpha:0.5];
     //[self.tabBar setBackgroundImage:[UIImage imageNamed:@"tabbar_backgroundimage"]];
     //self.tabBar.selectionIndicatorImage = [UIImage imageNamed:@"tabbar_selectionindicatorimage"];
 }
@@ -113,6 +113,20 @@
     [self initHomeViewController:(BaseHomeViewController *)[self.viewControllers objectAtIndex:2] channel:[ChannelVO getChannel:channels type:TYPE_FATHER_USER]];
     [self initHomeViewController:(BaseHomeViewController *)[self.viewControllers objectAtIndex:3] channel:[ChannelVO getChannel:channels type:TYPE_FATHER_MORE]];
     
+    //推送信息显示
+    //debug
+    //[[UIApplication sharedApplication] setApplicationIconBadgeNumber:3];
+    UIViewController *viewController = [self.viewControllers objectAtIndex:2];
+    if(viewController!=nil)
+    {
+    NSInteger number =  [[UIApplication sharedApplication] applicationIconBadgeNumber];
+    if(number>0)
+    {
+        viewController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", number];
+    }
+    else
+        viewController.tabBarItem.badgeValue = nil;
+    }
 }
 
 -(void)initHomeViewController:(BaseHomeViewController *)kbvc channel:(ChannelVO *)kvo

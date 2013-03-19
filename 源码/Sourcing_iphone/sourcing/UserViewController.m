@@ -121,6 +121,9 @@
         }
     }
     self.preUserVO = [userVO copy];
+    //清除图标提示
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    self.tabBarItem.badgeValue = nil;
 }
 
 - (void)viewDidUnload {
