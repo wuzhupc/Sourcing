@@ -1,0 +1,15 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+            "CompanyDetailVO":{
+                "companyid":"职位编号",
+                "companyname":"职位名称",
+                "industry":"公司所属行业",
+                "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss",
+                "companydesc":"公司描述，直接将公司相关的信息返回(html格式)"
+            }
+    }
+}

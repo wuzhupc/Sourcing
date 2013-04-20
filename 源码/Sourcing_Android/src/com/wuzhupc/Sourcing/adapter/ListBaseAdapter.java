@@ -3,6 +3,7 @@ package com.wuzhupc.Sourcing.adapter;
 import java.util.List;
 
 import com.wuzhupc.Sourcing.R;
+import com.wuzhupc.Sourcing.vo.CompanyVO;
 import com.wuzhupc.Sourcing.vo.JobVO;
 import com.wuzhupc.Sourcing.vo.NewsVO;
 import com.wuzhupc.Sourcing.vo.ProjectVO;
@@ -100,6 +101,9 @@ public class ListBaseAdapter extends BaseAdapter
 		} else if (obj instanceof ResumeVO)
 		{
 			view = getResumeListItem((ResumeVO)obj);
+		}else if (obj instanceof CompanyVO)
+		{
+			view = getCompanyListItem((CompanyVO)obj);
 		}
 		return view;
 	}
@@ -152,6 +156,23 @@ public class ListBaseAdapter extends BaseAdapter
 		status_tv.setText(vo.getProjectstatus());
 		TextView time_tv = (TextView) view.findViewById(R.id.listitem_project_time_tv);
 		time_tv.setText(vo.getPublishtime());
+		return view;
+	}
+	
+	/**
+	 * 获取项目
+	 * @param vo
+	 * @return
+	 */
+	private View getCompanyListItem(CompanyVO vo)
+	{
+		View view = LayoutInflater.from(mContext).inflate(R.layout.listitem_project, null);
+		TextView title_tv = (TextView) view.findViewById(R.id.listitem_projectname_tv);
+		title_tv.setText(vo.getCompanyname());
+		TextView status_tv = (TextView) view.findViewById(R.id.listitem_project_status_tv);
+		status_tv.setText("");
+		TextView time_tv = (TextView) view.findViewById(R.id.listitem_project_time_tv);
+		time_tv.setText(vo.getIndustry());
 		return view;
 	}
 	

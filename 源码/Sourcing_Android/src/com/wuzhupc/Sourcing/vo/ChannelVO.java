@@ -146,6 +146,11 @@ public class ChannelVO extends BaseVO {
 	public static final int TYPE_PERSON_PROJECT = 4;
 	
 	/**
+	 * 服务栏目类型 -企业
+	 */
+	public static final int TYPE_PERSON_COMPANY = 5;
+	
+	/**
 	 * 更多栏目类型－收藏
 	 */
 	public static final int TYPE_MORE_FAV = 1;
@@ -325,6 +330,15 @@ public class ChannelVO extends BaseVO {
 	public boolean isProjectChannel()
 	{
 		return fatherchannelID==TYPE_FATHER_PERSON&&type==TYPE_PERSON_PROJECT;
+	}
+	
+	/**
+	 * 服务栏目类型 -企业
+	 * @return
+	 */
+	public boolean isCompanyChannel()
+	{
+		return fatherchannelID==TYPE_FATHER_PERSON&&type==TYPE_PERSON_COMPANY;
 	}
 	
 	/**

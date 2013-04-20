@@ -1,0 +1,20 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+        "list_vos":[
+            {"CompanyVO":{
+                "companyid":"企业编号",
+                "companyname":"企业名称",
+                "industry":"企业所属行业",
+                "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss"
+            }},
+            {"CompanyVO ":{
+                ......
+            }}
+            ......
+        ]
+    }
+}

@@ -304,6 +304,11 @@ public class PersonView extends BaseView
 			newsService.getTrainList(searchkey, 0l, getNewDataReceiver(vo.getChannelID()));
 			return;
 		}
+		if(vo.isCompanyChannel())
+		{
+			newsService.getCompanyList(searchkey, 0l, getNewDataReceiver(vo.getChannelID()));
+			return;
+		}
 		
 	}
 	/**
@@ -340,6 +345,11 @@ public class PersonView extends BaseView
 		if(vo.isTrainChannel())
 		{
 			newsService.getTrainList(searchkey, mLastNewsId, getMoreDataReciiver(vo.getChannelID()));
+			return;
+		}
+		if(vo.isCompanyChannel())
+		{
+			newsService.getCompanyList(searchkey, mLastNewsId, getMoreDataReciiver(vo.getChannelID()));
 			return;
 		}
 	}

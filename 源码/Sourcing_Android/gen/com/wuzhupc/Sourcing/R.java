@@ -343,14 +343,14 @@ containing a value of this type.
         public static final int widget_subchannel_tab=0x7f03001e;
     }
     public static final class string {
-        public static final int Base_hit_createstorefolderfail=0x7f080031;
-        public static final int Base_hit_defaskclosemsg=0x7f080033;
+        public static final int Base_hit_createstorefolderfail=0x7f080033;
+        public static final int Base_hit_defaskclosemsg=0x7f080035;
         /**  BaseActivity 
          */
-        public static final int Base_hit_nosdcard=0x7f080030;
-        public static final int Base_hit_title=0x7f080032;
-        public static final int app_name=0x7f08001d;
-        public static final int app_name_full=0x7f08001e;
+        public static final int Base_hit_nosdcard=0x7f080032;
+        public static final int Base_hit_title=0x7f080034;
+        public static final int app_name=0x7f08001f;
+        public static final int app_name_full=0x7f080020;
         /**  链接地址前缀 
          */
         public static final int baseurl=0x7f080004;
@@ -360,6 +360,12 @@ containing a value of this type.
         /**  检查客户端版本  
          */
         public static final int cmd_json_check_client_ver=0x7f080008;
+        /**  获取企业详情  
+         */
+        public static final int cmd_json_get_company_detail=0x7f080016;
+        /**  获取企业信息  
+         */
+        public static final int cmd_json_get_company_list=0x7f080015;
         /**  获取职位详情  
          */
         public static final int cmd_json_get_job_detail=0x7f080011;
@@ -383,7 +389,7 @@ containing a value of this type.
         public static final int cmd_json_get_project_list=0x7f080010;
         /**  获取用户推送信息 
          */
-        public static final int cmd_json_get_push_info=0x7f08001c;
+        public static final int cmd_json_get_push_info=0x7f08001e;
         /**  获取简历详情
          */
         public static final int cmd_json_get_resume_detail=0x7f080012;
@@ -398,151 +404,151 @@ containing a value of this type.
         public static final int cmd_json_get_train_list=0x7f08000f;
         /**  获取用户审核结果 
          */
-        public static final int cmd_json_get_user_audit_info=0x7f080019;
+        public static final int cmd_json_get_user_audit_info=0x7f08001b;
         /**  获取用户咨询信息 
          */
-        public static final int cmd_json_get_user_consult_info=0x7f080017;
+        public static final int cmd_json_get_user_consult_info=0x7f080019;
         /**  获取用户申报进度 
          */
-        public static final int cmd_json_get_user_declare_info=0x7f08001a;
+        public static final int cmd_json_get_user_declare_info=0x7f08001c;
         /**  获取用户通知提醒信息 
          */
-        public static final int cmd_json_get_user_notifier_info=0x7f08001b;
+        public static final int cmd_json_get_user_notifier_info=0x7f08001d;
         /**  发送资讯评论信息 
          */
         public static final int cmd_json_send_news_commnet=0x7f08000c;
         /**  发送用户咨询信息 
          */
-        public static final int cmd_json_send_user_consult=0x7f080018;
+        public static final int cmd_json_send_user_consult=0x7f08001a;
         /**  修改密码  
          */
-        public static final int cmd_json_user_change_pwd=0x7f080016;
+        public static final int cmd_json_user_change_pwd=0x7f080018;
         /**  用户登录  
          */
-        public static final int cmd_json_user_login=0x7f080015;
-        public static final int detail_news_content_empty=0x7f08003f;
+        public static final int cmd_json_user_login=0x7f080017;
+        public static final int detail_news_content_empty=0x7f080041;
         /**  NewsDetailActivity 
          */
-        public static final int detail_news_title=0x7f08003e;
-        public static final int dl_btn_back=0x7f080029;
-        public static final int dl_btn_cancel=0x7f08002b;
-        public static final int dl_btn_confirm=0x7f08002a;
-        public static final int dl_btn_ok=0x7f080028;
-        public static final int dl_btn_quit=0x7f08002c;
-        public static final int dl_msg_receiving_data=0x7f080026;
-        public static final int dl_msg_update_error=0x7f080027;
-        public static final int dl_title_error=0x7f080025;
+        public static final int detail_news_title=0x7f080040;
+        public static final int dl_btn_back=0x7f08002b;
+        public static final int dl_btn_cancel=0x7f08002d;
+        public static final int dl_btn_confirm=0x7f08002c;
+        public static final int dl_btn_ok=0x7f08002a;
+        public static final int dl_btn_quit=0x7f08002e;
+        public static final int dl_msg_receiving_data=0x7f080028;
+        public static final int dl_msg_update_error=0x7f080029;
+        public static final int dl_title_error=0x7f080027;
         /**  Dialog 提示信息  
          */
-        public static final int dl_title_prompt=0x7f080024;
-        public static final int fav_add=0x7f080040;
-        public static final int fav_remove=0x7f080041;
-        public static final int favinfo_nodata=0x7f08006d;
+        public static final int dl_title_prompt=0x7f080026;
+        public static final int fav_add=0x7f080042;
+        public static final int fav_remove=0x7f080043;
+        public static final int favinfo_nodata=0x7f08006f;
         /**  FavInfoActivity 
          */
-        public static final int favinfo_title=0x7f08006c;
+        public static final int favinfo_title=0x7f08006e;
         /**  HomeActivity 
          */
-        public static final int home_initchannel_fail=0x7f08003d;
+        public static final int home_initchannel_fail=0x7f08003f;
         /**  服务端接口
          */
         public static final int jsonurl=0x7f080003;
-        public static final int list_item_loading_data=0x7f08002f;
-        public static final int list_item_more_msg=0x7f08002e;
+        public static final int list_item_loading_data=0x7f080031;
+        public static final int list_item_more_msg=0x7f080030;
         /**  列表项相关  
          */
-        public static final int list_item_no_data=0x7f08002d;
-        public static final int newconsult_content_hit=0x7f080067;
-        public static final int newconsult_sendbt_text=0x7f080068;
-        public static final int newconsult_sendconsult_errorhit=0x7f08006a;
-        public static final int newconsult_sendconsult_hit=0x7f080069;
-        public static final int newconsult_sendconsult_sucesshit=0x7f08006b;
+        public static final int list_item_no_data=0x7f08002f;
+        public static final int newconsult_content_hit=0x7f080069;
+        public static final int newconsult_sendbt_text=0x7f08006a;
+        public static final int newconsult_sendconsult_errorhit=0x7f08006c;
+        public static final int newconsult_sendconsult_hit=0x7f08006b;
+        public static final int newconsult_sendconsult_sucesshit=0x7f08006d;
         /**  NewConsultActivity 
          */
-        public static final int newconsult_title=0x7f080066;
-        public static final int notify_detail=0x7f080071;
+        public static final int newconsult_title=0x7f080068;
+        public static final int notify_detail=0x7f080073;
         /**  通知栏提示信息 
          */
-        public static final int notify_pop_msg=0x7f08006f;
-        public static final int notify_prompt=0x7f080072;
-        public static final int notify_single_msg_detail=0x7f080073;
-        public static final int notify_title=0x7f080070;
+        public static final int notify_pop_msg=0x7f080071;
+        public static final int notify_prompt=0x7f080074;
+        public static final int notify_single_msg_detail=0x7f080075;
+        public static final int notify_title=0x7f080072;
         /**  View 
          */
-        public static final int person_search_empty=0x7f080042;
+        public static final int person_search_empty=0x7f080044;
         /**  网络异常提示信息  
          */
-        public static final int prompt_network_connect_timeout=0x7f08001f;
-        public static final int prompt_network_error=0x7f080022;
-        public static final int prompt_network_read_timeout=0x7f080020;
-        public static final int prompt_network_receiving_data_error=0x7f080023;
-        public static final int prompt_network_url_error=0x7f080021;
+        public static final int prompt_network_connect_timeout=0x7f080021;
+        public static final int prompt_network_error=0x7f080024;
+        public static final int prompt_network_read_timeout=0x7f080022;
+        public static final int prompt_network_receiving_data_error=0x7f080025;
+        public static final int prompt_network_url_error=0x7f080023;
         public static final int pull_to_refresh_pull_label=0x7f080000;
         public static final int pull_to_refresh_refreshing_label=0x7f080002;
         public static final int pull_to_refresh_release_label=0x7f080001;
         /**  SettingActivity 
          */
-        public static final int setting_title=0x7f08006e;
+        public static final int setting_title=0x7f080070;
         /**  忘记密码处理页面 
          */
         public static final int url_forget_pwd_progress=0x7f080006;
         /**  用户注册处理页面 
          */
         public static final int url_reg_progress=0x7f080007;
-        public static final int userchangepwd_change_error=0x7f08005f;
-        public static final int userchangepwd_change_sucess=0x7f080060;
-        public static final int userchangepwd_changing=0x7f08005e;
-        public static final int userchangepwd_newpwd=0x7f080057;
-        public static final int userchangepwd_newpwd_hit=0x7f08005b;
-        public static final int userchangepwd_newpwd_noequal=0x7f08005d;
-        public static final int userchangepwd_newpwd_noequal_oldpwd=0x7f08005c;
-        public static final int userchangepwd_pwd=0x7f080056;
-        public static final int userchangepwd_pwd_hit=0x7f080059;
-        public static final int userchangepwd_pwd_nowvalid=0x7f08005a;
-        public static final int userchangepwd_renewpwd=0x7f080058;
+        public static final int userchangepwd_change_error=0x7f080061;
+        public static final int userchangepwd_change_sucess=0x7f080062;
+        public static final int userchangepwd_changing=0x7f080060;
+        public static final int userchangepwd_newpwd=0x7f080059;
+        public static final int userchangepwd_newpwd_hit=0x7f08005d;
+        public static final int userchangepwd_newpwd_noequal=0x7f08005f;
+        public static final int userchangepwd_newpwd_noequal_oldpwd=0x7f08005e;
+        public static final int userchangepwd_pwd=0x7f080058;
+        public static final int userchangepwd_pwd_hit=0x7f08005b;
+        public static final int userchangepwd_pwd_nowvalid=0x7f08005c;
+        public static final int userchangepwd_renewpwd=0x7f08005a;
         /**  UserChangePwdActivity 
          */
-        public static final int userchangepwd_title=0x7f080054;
-        public static final int userchangepwd_username=0x7f080055;
-        public static final int userinfolist_audit_title=0x7f080062;
+        public static final int userchangepwd_title=0x7f080056;
+        public static final int userchangepwd_username=0x7f080057;
+        public static final int userinfolist_audit_title=0x7f080064;
         /**  UserInfoListActivity 
          */
-        public static final int userinfolist_consult_title=0x7f080061;
-        public static final int userinfolist_declare_title=0x7f080063;
-        public static final int userinfolist_getdata_hit=0x7f080065;
-        public static final int userinfolist_notifier_title=0x7f080064;
-        public static final int userlogin_account_empty=0x7f08004e;
-        public static final int userlogin_login_bt_title=0x7f080050;
-        public static final int userlogin_login_error=0x7f080053;
-        public static final int userlogin_login_sucess=0x7f080052;
-        public static final int userlogin_logining=0x7f080051;
-        public static final int userlogin_pwd_empty=0x7f08004f;
+        public static final int userinfolist_consult_title=0x7f080063;
+        public static final int userinfolist_declare_title=0x7f080065;
+        public static final int userinfolist_getdata_hit=0x7f080067;
+        public static final int userinfolist_notifier_title=0x7f080066;
+        public static final int userlogin_account_empty=0x7f080050;
+        public static final int userlogin_login_bt_title=0x7f080052;
+        public static final int userlogin_login_error=0x7f080055;
+        public static final int userlogin_login_sucess=0x7f080054;
+        public static final int userlogin_logining=0x7f080053;
+        public static final int userlogin_pwd_empty=0x7f080051;
         /**  UserLoginActivity 
          */
-        public static final int userlogin_title=0x7f08004d;
-        public static final int userview_audit_info=0x7f08004a;
-        public static final int userview_changeaccount=0x7f080045;
-        public static final int userview_changeaccount_hit=0x7f080046;
-        public static final int userview_changepwd=0x7f080044;
-        public static final int userview_consult_info=0x7f080049;
-        public static final int userview_declare_info=0x7f08004b;
-        public static final int userview_login=0x7f080047;
+        public static final int userlogin_title=0x7f08004f;
+        public static final int userview_audit_info=0x7f08004c;
+        public static final int userview_changeaccount=0x7f080047;
+        public static final int userview_changeaccount_hit=0x7f080048;
+        public static final int userview_changepwd=0x7f080046;
+        public static final int userview_consult_info=0x7f08004b;
+        public static final int userview_declare_info=0x7f08004d;
+        public static final int userview_login=0x7f080049;
         /**  UserView 
          */
-        public static final int userview_nologin=0x7f080043;
-        public static final int userview_notifier_info=0x7f08004c;
-        public static final int userview_register=0x7f080048;
-        public static final int welcome_publish=0x7f080037;
+        public static final int userview_nologin=0x7f080045;
+        public static final int userview_notifier_info=0x7f08004e;
+        public static final int userview_register=0x7f08004a;
+        public static final int welcome_publish=0x7f080039;
         /**  WelcomeActivity 
          */
-        public static final int welcome_title=0x7f080034;
-        public static final int welcome_update_btn=0x7f08003c;
-        public static final int welcome_update_content=0x7f08003a;
-        public static final int welcome_update_content_ex=0x7f08003b;
-        public static final int welcome_update_title=0x7f080038;
-        public static final int welcome_update_title_ex=0x7f080039;
-        public static final int welcome_url=0x7f080036;
-        public static final int welcome_ver=0x7f080035;
+        public static final int welcome_title=0x7f080036;
+        public static final int welcome_update_btn=0x7f08003e;
+        public static final int welcome_update_content=0x7f08003c;
+        public static final int welcome_update_content_ex=0x7f08003d;
+        public static final int welcome_update_title=0x7f08003a;
+        public static final int welcome_update_title_ex=0x7f08003b;
+        public static final int welcome_url=0x7f080038;
+        public static final int welcome_ver=0x7f080037;
     }
     public static final class style {
         /**  设置 2级副标题风格

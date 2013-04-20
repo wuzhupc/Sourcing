@@ -1,0 +1,25 @@
+﻿{
+    "ret": {
+        "code": "0"
+    },
+    "data": {
+        "list_vos": [
+            {
+                "CompanyVO": {
+                    "companyid": "250001",
+                    "companyname": "商务中国",
+                    "industry": "互联网服务",
+                    "publishtime": "2013-04-20"
+                }
+            },
+            {
+                "CompanyVO": {
+                    "companyid": "250002",
+                    "companyname": "厦门铃盛软件有限公司",
+                    "industry": "软件",
+                    "publishtime": "2013-04-20"
+                }
+            }
+        ]
+    }
+}

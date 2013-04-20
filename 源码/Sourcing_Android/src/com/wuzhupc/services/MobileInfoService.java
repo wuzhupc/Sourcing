@@ -226,4 +226,37 @@ public class MobileInfoService extends BaseJsonService
 		String json=creater.createJson(null, mCommandName);
 		getData(json,iReceiver);
 	}
+	/**
+	 * 3.14.	获取企业列表
+	 * @param searchkey
+	 * @param bottomid
+	 * @param iReceiver
+	 */
+	public void getCompanyList(String searchkey,long bottomid, IBaseReceiver iReceiver)
+	{
+		JsonCreater creater=JsonCreater.startJson();
+		creater.setParam("devid",getDevID());
+		if(!StringUtil.isEmpty(searchkey))
+			creater.setParam("searchkey", searchkey);
+		creater.setParam("pagesize", Constants.CINT_PAGE_SIZE);
+		creater.setParam("bottomid", bottomid);
+		mCommandName = mContext.getString(R.string.cmd_json_get_company_list);
+		String json=creater.createJson(null, mCommandName);
+		getData(json,iReceiver);
+	}
+
+	/**
+	 * 3.15.	获取企业详情
+	 * @param companyid
+	 * @param iReceiver
+	 */
+	public void getCompanyDetail(long companyid, IBaseReceiver iReceiver)
+	{
+		JsonCreater creater=JsonCreater.startJson();
+		creater.setParam("devid",getDevID());
+		creater.setParam("companyid", companyid);
+		mCommandName = mContext.getString(R.string.cmd_json_get_company_detail);
+		String json=creater.createJson(null, mCommandName);
+		getData(json,iReceiver);
+	}
 }
