@@ -70,9 +70,10 @@ public class UserInfoAdapter extends BaseAdapter
 			((TextView) view).setText((String) obj);
 		} else if (obj instanceof MoreButton)
 		{
-			view = LayoutInflater.from(mContext).inflate(R.layout.widget_morebutton, null);
+			view = (MoreButton) obj;
+					//LayoutInflater.from(mContext).inflate(R.layout.widget_morebutton, null);
 
-			((MoreButton) obj).setView(view);
+			//((MoreButton) obj).setView(view);
 		} else if (obj instanceof ConsultVO)
 		{
 			view = getConsultListItem((ConsultVO)obj);
@@ -89,7 +90,7 @@ public class UserInfoAdapter extends BaseAdapter
 		return view;
 	}
 	/**
-	 * 获取通知提醒View
+	 * 锟斤拷取通知锟斤拷锟斤拷View
 	 * @param vo
 	 * @return
 	 */
@@ -108,7 +109,7 @@ public class UserInfoAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * 获取申报信息View
+	 * 锟斤拷取锟疥报锟斤拷息View
 	 * @param vo
 	 * @return
 	 */
@@ -141,7 +142,7 @@ public class UserInfoAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * 获取审核信息View
+	 * 锟斤拷取锟斤拷锟斤拷锟较iew
 	 * @param vo
 	 * @return
 	 */
@@ -174,7 +175,7 @@ public class UserInfoAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * 获取咨询信息View
+	 * 锟斤拷取锟斤拷询锟斤拷息View
 	 * @param vo
 	 * @return
 	 */

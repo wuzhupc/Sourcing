@@ -83,9 +83,10 @@ public class ListBaseAdapter extends BaseAdapter
 			((TextView) view).setText((String) obj);
 		} else if (obj instanceof MoreButton)
 		{
-			view = LayoutInflater.from(mContext).inflate(R.layout.widget_morebutton, null);
+			view = (MoreButton) obj;
+			//LayoutInflater.from(mContext).inflate(R.layout.widget_morebutton, null);
 
-			((MoreButton) obj).setView(view);
+	//((MoreButton) obj).setView(view);
 		} else if (obj instanceof NewsVO)
 		{
 			view = getNewsListItem((NewsVO)obj, position);

@@ -299,7 +299,7 @@ public class UserInfoListActivity extends BaseActivity
 	private void clearDataList()
 	{	
 		if (mMoreButton == null)
-			mMoreButton = new MoreButton();
+			mMoreButton = new MoreButton(UserInfoListActivity.this);
 		if(mDataList==null)
 		{
 			mDataList = new ArrayList();

@@ -49,7 +49,7 @@ public class UserVO extends BaseVO
 	 * 用户类型,USER_TYPE_
 	 */
 	private int usertype;
-	
+
 	/**
 	 * 用户登录帐号
 	 */
@@ -322,15 +322,17 @@ public class UserVO extends BaseVO
 	 */
 	private static final String CSTR_DATAFILE_USER = Constants.CSTR_DATASTOREDIR
 			+ "datafile_u.dat";
-	
+
 	/**
 	 * 存储最后登录信息
-	 * @param vo 如果为空，则清除之前的登录记录
+	 * 
+	 * @param vo
+	 *            如果为空，则清除之前的登录记录
 	 * @return
 	 */
 	public static boolean saveLoginUserInfo(UserVO vo)
 	{
-		if(vo==null)
+		if (vo == null)
 		{
 			if (FileUtil.isExistFile(CSTR_DATAFILE_USER))
 			{
@@ -338,8 +340,8 @@ public class UserVO extends BaseVO
 			}
 			return true;
 		}
-		boolean result =false;
-		FileOutputStream fos= null;
+		boolean result = false;
+		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 		try
 		{
@@ -347,29 +349,29 @@ public class UserVO extends BaseVO
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(vo);
 			oos.flush();
-			result=true;
+			result = true;
 		} catch (Exception e)
 		{
 			Log.e(TAG, e.getMessage());
 		} finally
 		{
-			if(oos!=null)
+			if (oos != null)
 			{
 				try
 				{
 					oos.close();
-					oos=null;
+					oos = null;
 				} catch (Exception e2)
 				{
 					Log.e(TAG, e2.getMessage());
 				}
 			}
-			if(fos!=null)
+			if (fos != null)
 			{
 				try
 				{
 					fos.close();
-					fos=null;
+					fos = null;
 				} catch (Exception e2)
 				{
 					Log.e(TAG, e2.getMessage());
@@ -395,7 +397,7 @@ public class UserVO extends BaseVO
 			{
 				fis = new FileInputStream(CSTR_DATAFILE_USER);
 				ois = new ObjectInputStream(fis);
-				vo = (UserVO)ois.readObject();
+				vo = (UserVO) ois.readObject();
 			} catch (Exception e)
 			{
 				Log.e(TAG, e.getMessage());
@@ -406,7 +408,7 @@ public class UserVO extends BaseVO
 					try
 					{
 						ois.close();
-						ois=null;
+						ois = null;
 					} catch (Exception e2)
 					{
 						Log.e(TAG, e2.getMessage());
@@ -417,7 +419,7 @@ public class UserVO extends BaseVO
 					try
 					{
 						fis.close();
-						fis=null;
+						fis = null;
 					} catch (Exception e2)
 					{
 						Log.e(TAG, e2.getMessage());
@@ -427,105 +429,110 @@ public class UserVO extends BaseVO
 		}
 		return vo;
 	}
-	
+
 	public String getStrUserType()
 	{
 		switch (usertype)
 		{
-		case USER_TYPE_PERSONAL:
-			return "个人用户";
-		case USER_TYPE_EXPERT:
-			return "专家用户";
-		case USER_TYPE_ENTERPRISE:
-			return "企业用户";
-		case USER_TYPE_TRAIN:
-			return "培训机构";
-		default:
-			return "";
+			case USER_TYPE_PERSONAL:
+				return "个人用户";
+			case USER_TYPE_EXPERT:
+				return "专家用户";
+			case USER_TYPE_ENTERPRISE:
+				return "企业用户";
+			case USER_TYPE_TRAIN:
+				return "培训机构";
+			default:
+				return "";
 		}
 	}
-	
+
 	/**
 	 * 是否有咨询信息权限
+	 * 
 	 * @return
 	 */
 	public boolean hasConsult()
 	{
 		switch (usertype)
 		{
-		case USER_TYPE_PERSONAL:
-			return true;
-		case USER_TYPE_EXPERT:
-			return true;
-		case USER_TYPE_ENTERPRISE:
-			return true;
-		case USER_TYPE_TRAIN:
-			return true;
-		default:
-			return true;
+			case USER_TYPE_PERSONAL:
+				return true;
+			case USER_TYPE_EXPERT:
+				return true;
+			case USER_TYPE_ENTERPRISE:
+				return true;
+			case USER_TYPE_TRAIN:
+				return true;
+			default:
+				return true;
 		}
 	}
-	
+
 	/**
 	 * 是否有审核结果权限
+	 * 
 	 * @return
 	 */
 	public boolean hasAudit()
 	{
 		switch (usertype)
 		{
-		case USER_TYPE_PERSONAL:
-			return false;
-		case USER_TYPE_EXPERT:
-			return true;
-		case USER_TYPE_ENTERPRISE:
-			return true;
-		case USER_TYPE_TRAIN:
-			return true;
-		default:
-			return true;
+			case USER_TYPE_PERSONAL:
+				return false;
+			case USER_TYPE_EXPERT:
+				return true;
+			case USER_TYPE_ENTERPRISE:
+				return true;
+			case USER_TYPE_TRAIN:
+				return true;
+			default:
+				return true;
 		}
 	}
+
 	/**
 	 * 是否有申报进度权限
+	 * 
 	 * @return
 	 */
 	public boolean hasDeclare()
 	{
 		switch (usertype)
 		{
-		case USER_TYPE_PERSONAL:
-			return false;
-		case USER_TYPE_EXPERT:
-			return false;
-		case USER_TYPE_ENTERPRISE:
-			return true;
-		case USER_TYPE_TRAIN:
-			return true;
-		default:
-			return true;
+			case USER_TYPE_PERSONAL:
+				return false;
+			case USER_TYPE_EXPERT:
+				return false;
+			case USER_TYPE_ENTERPRISE:
+				return true;
+			case USER_TYPE_TRAIN:
+				return true;
+			default:
+				return true;
 		}
 	}
-	
+
 	/**
 	 * 是否有通知提醒权限
+	 * 
 	 * @return
 	 */
 	public boolean hasNotifier()
 	{
 		switch (usertype)
 		{
-		case USER_TYPE_PERSONAL:
-			return true;
-		case USER_TYPE_EXPERT:
-			return true;
-		case USER_TYPE_ENTERPRISE:
-			return true;
-		case USER_TYPE_TRAIN:
-			return true;
-		default:
-			return true;
+			case USER_TYPE_PERSONAL:
+				return true;
+			case USER_TYPE_EXPERT:
+				return true;
+			case USER_TYPE_ENTERPRISE:
+				return true;
+			case USER_TYPE_TRAIN:
+				return true;
+			default:
+				return true;
 		}
 	}
-	
+
 }

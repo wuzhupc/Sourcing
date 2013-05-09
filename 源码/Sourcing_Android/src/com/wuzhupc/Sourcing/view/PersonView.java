@@ -70,7 +70,7 @@ public class PersonView extends BaseView
 	{
 		clearDataList();
 		if (mMoreButton == null)
-			mMoreButton = new MoreButton();
+			mMoreButton = new MoreButton(mContext);
 		// 读取本地缓存的数据
 		List list = null;
 		String content = CacheUtil.getCacheContent(getNowChannelInfo());

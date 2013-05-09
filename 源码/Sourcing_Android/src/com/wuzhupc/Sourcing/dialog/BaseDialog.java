@@ -42,6 +42,7 @@ public class BaseDialog extends Dialog
         this.mContext = context;
         setContentView(R.layout.dialog_base);
         initContentView();
+        setCanceledOnTouchOutside(false);
     }
     
     /**
@@ -76,6 +77,7 @@ public class BaseDialog extends Dialog
 	        mbtn_right.setVisibility(View.VISIBLE);
 			break;
 		}       
+        setCanceledOnTouchOutside(false);
     }
     
     public void initContentView()
