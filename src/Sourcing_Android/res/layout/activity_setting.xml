@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout style="@style/TitleBar" >
+
+        <ImageView
+            style="@style/TitleBarAction"
+            android:onClick="onHomeClick"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TitleBarText"
+            android:text="@string/setting_title" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/white"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dip"
+                android:background="@drawable/bg_listitem_base_sel"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/SettingTVStyle"
+                    android:text="资讯设置" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setting_fontsize_ll"
+                style="@style/SettingGroupStyle" >
+
+                <TextView
+                    style="@style/Setting2TVStyle"
+                    android:text="正文字号" />
+
+                <TextView
+                    android:id="@+id/setting_fontsize_info_tv"
+                    style="@style/Setting2SubTVStyle"
+                    android:text="中字号" />
+            </LinearLayout>
+
+            <ImageView style="@style/SettingDividerHorizontal" />
+
+            <LinearLayout
+                style="@style/SettingGroupStyleH" >
+
+                <LinearLayout
+                    android:id="@+id/setting_push_ll"
+                    style="@style/SettingGroupStyle"
+                    android:layout_weight="1" >
+
+                    <TextView
+                        style="@style/Setting2TVStyle"
+                        android:text="信息推送" />
+
+                    <TextView
+                        android:id="@+id/settingde_push_info_tv"
+                        style="@style/Setting2SubTVStyle"
+                        android:text="是否自动推送信息" />
+                </LinearLayout>
+
+                <CheckBox
+                    android:id="@+id/setting_push_checkbox"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="30dip"
+                android:background="@drawable/bg_listitem_base_sel"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/SettingTVStyle"
+                    android:text="其他设置" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/setting_clearcache_ll"
+                style="@style/SettingGroupStyle" >
+
+                <TextView
+                    style="@style/Setting2TVStyle"
+                    android:text="清除缓存" />
+            </LinearLayout>
+
+            <ImageView style="@style/SettingDividerHorizontal" />
+
+            <LinearLayout
+                android:id="@+id/setting_update_ll"
+                style="@style/SettingGroupStyle" >
+
+                <TextView
+                    style="@style/Setting2TVStyle"
+                    android:text="版本更新" />
+            </LinearLayout>
+
+            <ImageView style="@style/SettingDividerHorizontal" />
+
+            <LinearLayout
+                android:id="@+id/setting_about_ll"
+                style="@style/SettingGroupStyle" >
+
+                <TextView
+                    style="@style/Setting2TVStyle"
+                    android:text="关于" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

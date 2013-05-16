@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 新闻列表 头条布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_listitem_base" >
+
+    <ImageView
+        android:id="@+id/listitem_base_iv"
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/loading_failed" />
+
+    <TextView
+        android:id="@+id/listitem_base_title_tv"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/listitem_base_iv"
+        android:background="@color/listitem_base_headline_bg"
+        android:gravity="center_horizontal"
+        android:paddingBottom="2dp"
+        android:paddingTop="2dp"
+        android:singleLine="true"
+        android:text="头条新闻标题"
+        android:textColor="@color/listitem_base_headline_titlecolor"
+        android:textSize="@dimen/text_size_medium" />
+
+    <TextView
+        android:id="@+id/listitem_base_summary_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:visibility="gone" >
+    </TextView>
+
+</RelativeLayout>

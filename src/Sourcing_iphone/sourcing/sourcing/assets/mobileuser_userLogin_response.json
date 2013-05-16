@@ -1,0 +1,25 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+        "UserVO":{
+            "userid":"用户编号",
+            "usertype":"用户类型,1 个人用户,2 企业用户 ,3 培训机构",
+            "username":"用户名称(如果是注册为企业,则返回企业名称,培训机构,则返回培训机构名称)",
+            "userphoto":"用户头像",
+            "phonenumber":"联系方式",
+            "email":"邮箱地址",
+            "consultcount":"用户未查看的咨询答复信息数,根据用户类型返回",
+            "auditcount":"用户未查看的审核结果信息数,根据用户类型返回",
+            "declarecount":"用户未查看的申报进度信息数,根据用户类型返回",
+            "notifiercount":"用户未查看的通知提醒信息数,根据用户类型返回",
+            "allconsultcount":"用户总咨询答复信息数,根据用户类型返回",
+            "allauditcount":"用户总审核结果信息数,根据用户类型返回",
+            "alldeclarecount":"用户总申报进度信息数,根据用户类型返回",
+            "allnotifiercount":"用户总通知提醒信息数,根据用户类型返回"
+
+        }
+    }
+}

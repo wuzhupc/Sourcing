@@ -1,0 +1,21 @@
+{
+    "ret":{
+        "code":"x",
+        "msg":"提示信息"
+    },
+    "data":{
+        "list_vos":[
+            {"ResumeVO":{
+                "resumeid":"简历编号",
+                "resumetitle":"简历名称",
+                "expectjob":"期望职业",
+                "name":"姓名 ",
+                "publishtime":"发布时间，格式yyyy-MM-dd HH:mm:ss"
+            }},
+            {"ResumeVO":{
+                ......
+            }}
+            ......
+        ]
+    }
+}
