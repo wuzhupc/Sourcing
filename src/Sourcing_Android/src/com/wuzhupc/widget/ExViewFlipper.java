@@ -5,14 +5,14 @@ import android.util.AttributeSet;
 import android.widget.ViewFlipper;
 
 /**
- * ExViewFlipper　扩展 ViewFlipper类，主要是增加监听View切换事件
+ * ExViewFlipper銆�鎵╁睍 ViewFlipper绫伙紝涓昏鏄鍔犵洃鍚琕iew鍒囨崲浜嬩欢
  * @author wuzhu
  * @Description 
  */
 public class ExViewFlipper extends ViewFlipper {
 
 	/**
-	 * 显示子级View变更Listener
+	 * 鏄剧ず瀛愮骇View鍙樻洿Listener
 	 */
 	private OnDisplayerChildChangeListener childChangeListener=null; 
 	
@@ -34,7 +34,7 @@ public class ExViewFlipper extends ViewFlipper {
 	 }
 	
 	/**
-	 * 设置显示子级View变更Listener　
+	 * 璁剧疆鏄剧ず瀛愮骇View鍙樻洿Listener銆�
 	 * @param listener
 	 */
 	public void setOnDisplayerChildChangeListener(OnDisplayerChildChangeListener listener)

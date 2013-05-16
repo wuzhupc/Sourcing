@@ -5,7 +5,7 @@ import com.wuzhupc.utils.JavaLangUtil;
 /**
  * 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:58:12
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:58:12
  */
 public class PushVO extends BaseVO
 {
@@ -14,31 +14,31 @@ public class PushVO extends BaseVO
 	 */
 	private static final long serialVersionUID = -1104767207235439018L;
 	/**
-	 * ÍÆËÍĞÅÏ¢ÀàĞÍ:ÆÕÍ¨×ÊÑ¶ĞÅÏ¢
+	 * æ¨é€ä¿¡æ¯ç±»å‹:æ™®é€šèµ„è®¯ä¿¡æ¯
 	 */
 	public static final int PUSH_TYPE_NORMAL = 0;
 	/**
-	 * ÍÆËÍĞÅÏ¢ÀàĞÍ:Í¨ÖªÌáĞÑ
+	 * æ¨é€ä¿¡æ¯ç±»å‹:é€šçŸ¥æé†’
 	 */
 	public static final int PUSH_TYPE_NOTIFIER = 1;
 	/**
-	 * ÍÆËÍĞÅÏ¢ÀàĞÍ:ÉóºË½á¹û
+	 * æ¨é€ä¿¡æ¯ç±»å‹:å®¡æ ¸ç»“æœ
 	 */
 	public static final int PUSH_TYPE_AUDIT = 2;
 	/**
-	 * ÍÆËÍĞÅÏ¢ÀàĞÍ:Éê±¨½ø¶È
+	 * æ¨é€ä¿¡æ¯ç±»å‹:ç”³æŠ¥è¿›åº¦
 	 */
 	public static final int PUSH_TYPE_DECLARE = 3;
 	/**
-	 * ÍÆËÍĞÅÏ¢ÀàĞÍ,0 ÆÕÍ¨×ÊÑ¶ĞÅÏ¢ 1 Í¨ÖªÌáĞÑ 2 ÉóºË½á¹û 3 Éê±¨½ø¶È 4,PUSH_TYPE_
+	 * æ¨é€ä¿¡æ¯ç±»å‹,0 æ™®é€šèµ„è®¯ä¿¡æ¯ 1 é€šçŸ¥æé†’ 2 å®¡æ ¸ç»“æœ 3 ç”³æŠ¥è¿›åº¦ 4,PUSH_TYPE_
 	 */
 	private int pushtype;
 	/**
-	 * ÍÆËÍĞÅÏ¢±êÌâ
+	 * æ¨é€ä¿¡æ¯æ ‡é¢˜
 	 */
 	private String title;
 	/**
-	 * ÍÆËÍĞÅÏ¢ÏêÏ¸ÄÚÈİID,ÓÃÓÚÊÖ»ú¶Ë¸ù¾İÍÆËÍĞÅÏ¢ÀàĞÍ½øÒ»²½»ñÈ¡ÏàÓ¦ĞÅÏ¢µÄÏêÇé
+	 * æ¨é€ä¿¡æ¯è¯¦ç»†å†…å®¹ID,ç”¨äºæ‰‹æœºç«¯æ ¹æ®æ¨é€ä¿¡æ¯ç±»å‹è¿›ä¸€æ­¥è·å–ç›¸åº”ä¿¡æ¯çš„è¯¦æƒ…
 	 */
 	//private long id;
 	public int getPushtype()
@@ -79,15 +79,15 @@ public class PushVO extends BaseVO
 		switch (getPushtype())
 		{
 		case 0:
-			return "×ÊÑ¶ĞÅÏ¢";
+			return "èµ„è®¯ä¿¡æ¯";
 		case 1:
-			return "Í¨ÖªÌáĞÑ";
+			return "é€šçŸ¥æé†’";
 		case 2:
-			return "ÉóºË½á¹û";
+			return "å®¡æ ¸ç»“æœ";
 		case 3:
-			return "Éê±¨½ø¶È";
+			return "ç”³æŠ¥è¿›åº¦";
 		default:
-			return "×ÊÑ¶ĞÅÏ¢";
+			return "èµ„è®¯ä¿¡æ¯";
 		}
 	}
 }

@@ -5,14 +5,14 @@ import com.wuzhupc.Sourcing.vo.UserVO;
 import android.app.Application;
 
 /**
- * È«¾Ö±äÁ¿
+ * å…¨å±€å˜é‡
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-19 ÏÂÎç10:23:17
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-19 ä¸‹åˆ10:23:17
  */
 public class ApplicationSet extends Application
 {
 	/**
-	 *  ÓÃ»§µÇÂ¼ĞÅÏ¢
+	 *  ç”¨æˆ·ç™»å½•ä¿¡æ¯
 	 */
 	private UserVO mUserVO;
 

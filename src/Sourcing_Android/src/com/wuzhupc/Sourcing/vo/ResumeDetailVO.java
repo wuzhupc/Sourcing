@@ -4,9 +4,9 @@ import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.utils.WebViewUtil;
 
 /**
- * ¼òÀúÏêÇé
+ * ç®€å†è¯¦æƒ…
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:04:15
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:04:15
  */
 public class ResumeDetailVO extends ResumeVO
 {
@@ -17,7 +17,7 @@ public class ResumeDetailVO extends ResumeVO
 	private static final long serialVersionUID = 6990761424865126790L;
 
 	/**
-	 * ¼òÀúÄÚÈİ£¬Ö±½Ó½«¼òÀúÏà¹ØµÄĞÅÏ¢·µ»Ø
+	 * ç®€å†å†…å®¹ï¼Œç›´æ¥å°†ç®€å†ç›¸å…³çš„ä¿¡æ¯è¿”å›
 	 */
 	private String resumecontent;
 
@@ -32,7 +32,7 @@ public class ResumeDetailVO extends ResumeVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	@Override

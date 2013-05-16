@@ -8,32 +8,32 @@ public class Constants
 {
 
 	/**
-	 * »º´æÊı¾İ´æ´¢Â·¾¶,×îºó°üº¬Â·¾¶·ûºÅ/
+	 * ç¼“å­˜æ•°æ®å­˜å‚¨è·¯å¾„,æœ€ååŒ…å«è·¯å¾„ç¬¦å·/
 	 */
 	public static final String CSTR_DATASTOREDIR=Environment.getExternalStorageDirectory() +File.separator +"xmsourcing"+File.separator;
 	
 	/**
-	 * ĞÅÏ¢ÏêÇé±£´æÂ·¾¶
+	 * ä¿¡æ¯è¯¦æƒ…ä¿å­˜è·¯å¾„
 	 */
 	public static final String CSTR_DETAIL_DIR = "detail"+File.separator;
 	/**
-	 * ĞÅÏ¢ÏêÇé±£´æÂ·¾¶
+	 * ä¿¡æ¯è¯¦æƒ…ä¿å­˜è·¯å¾„
 	 */
 	public static final String CSTR_IMAGECACHE_DIR = "images"+File.separator;
 
-	/** Á¬½Ó³¬Ê±ÉèÖÃ /s */
+	/** è¿æ¥è¶…æ—¶è®¾ç½® /s */
 	public static final int CONNECT_TIME_OUT = 5;
 
-	/** ¶ÁÈ¡³¬Ê±ÉèÖÃ /s */
+	/** è¯»å–è¶…æ—¶è®¾ç½® /s */
 	public static final int READ_TIME_OUT = 20;
 
-	/** GetÇëÇó·½Ê½ */
+	/** Getè¯·æ±‚æ–¹å¼ */
 	public static final int METHOD_GET = 0;
 
-	/** PostÇëÇó·½Ê½ */
+	/** Postè¯·æ±‚æ–¹å¼ */
 	public static final int METHOD_POST = 1;
 
-	/** Ã¿Ö¡¶ÁÈ¡µÄÊı¾İÁ÷Á¿ */
+	/** æ¯å¸§è¯»å–çš„æ•°æ®æµé‡ */
 	public static final int READ_DATA_LENGTH = 1024;
 	
 	public static final int CINT_PAGE_SIZE = 20;

@@ -4,9 +4,9 @@ import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.utils.WebViewUtil;
 
 /**
- * ×ÊÑ¶ÏêÏ¸ĞÅÏ¢
+ * èµ„è®¯è¯¦ç»†ä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç12:40:42
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ12:40:42
  */
 public class NewsDetailVO extends NewsVO
 {
@@ -16,7 +16,7 @@ public class NewsDetailVO extends NewsVO
 	 */
 	private static final long serialVersionUID = 5340215392145408724L;
 	/**
-	 * ĞÂÎÅÄÚÈİ
+	 * æ–°é—»å†…å®¹
 	 */
 	private String newscontent;
 	public String getNewscontent()
@@ -29,7 +29,7 @@ public class NewsDetailVO extends NewsVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	@Override

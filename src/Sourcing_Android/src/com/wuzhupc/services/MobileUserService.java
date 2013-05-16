@@ -8,10 +8,10 @@ import com.wuzhupc.utils.json.JsonCreater;
 import android.content.Context;
 
 /**
- * �û���Ϣservice
- * @author wuzhu email:wuzhupc@gmail.com
- * @version ����ʱ�䣺2012-11-29 ����04:06:06
- *
+ * 
+ * @author wuzhu
+ * @date 2013-5-16 下午5:08:24
+ * @version $id$
  */
 public class MobileUserService extends BaseJsonService
 {
@@ -20,9 +20,10 @@ public class MobileUserService extends BaseJsonService
 		super(c);
 	}
 	/**
-	 * 3.14.	�û���¼
-	 * @param username ��¼��
-	 * @param password ����
+	 * 
+	 * @param username
+	 * @param password
+	 * @param iReceiver
 	 */
 	public void userLogin(String username,String password, IBaseReceiver iReceiver)
 	{
@@ -30,9 +31,12 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.14.	�û���¼
-	 * @param username ��¼��
-	 * @param password ����
+	 * 
+	 * @param username
+	 * @param password
+	 * @param iReceiver
+	 * @param showprogress
+	 * @param progressshowcontent
 	 */
 	public void userLogin(String username,String password, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -47,10 +51,10 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * �޸�����
-	 * @param username���û���
-	 * @param password��������
-	 * @param newpassword��������
+	 * 
+	 * @param username
+	 * @param password
+	 * @param newpassword
 	 * @param iReceiver
 	 * @param showprogress
 	 * @param progressshowcontent
@@ -69,10 +73,12 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.15.	��ȡ�û���ѯ��Ϣ
-	 * @param bottomid �б����޵ļ�¼ID��Ĭ��0������0ʱ����ȡ�˼�¼ID��pagesize����¼��
+	 * 
+	 * @param bottomid
 	 * @param iReceiver
-	 * @return ����Աδ��¼������false
+	 * @param showprogress
+	 * @param progressshowcontent
+	 * @return
 	 */
 	public boolean getUserConsultInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -91,10 +97,12 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.16.	�����û���ѯ��Ϣ
-	 * @param conetnt ��ѯ����
+	 * 
+	 * @param content
 	 * @param iReceiver
-	 * @return ����Աδ��¼������false
+	 * @param showprogress
+	 * @param progressshowcontent
+	 * @return
 	 */
 	public boolean sendUserConsult(String content, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -113,10 +121,12 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.17.	��ȡ�û���˽��
-	 * @param bottomid �б����޵ļ�¼ID��Ĭ��0������0ʱ����ȡ�˼�¼ID��pagesize����¼��
+	 * 
+	 * @param bottomid
 	 * @param iReceiver
-	 * @return ����Աδ��¼������false
+	 * @param showprogress
+	 * @param progressshowcontent
+	 * @return
 	 */
 	public boolean getUserAuditInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -135,10 +145,12 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.18.	��ȡ�û��걨���
-	 * @param bottomid �б����޵ļ�¼ID��Ĭ��0������0ʱ����ȡ�˼�¼ID��pagesize����¼��
+	 * 
+	 * @param bottomid
 	 * @param iReceiver
-	 * @return ����Աδ��¼������false
+	 * @param showprogress
+	 * @param progressshowcontent
+	 * @return
 	 */
 	public boolean getUserDeclareInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -157,10 +169,12 @@ public class MobileUserService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.19.	��ȡ�û�֪ͨ������Ϣ
-	 * @param bottomid �б����޵ļ�¼ID��Ĭ��0������0ʱ����ȡ�˼�¼ID��pagesize����¼��
+	 * 
+	 * @param bottomid
 	 * @param iReceiver
-	 * @return ����Աδ��¼������false
+	 * @param showprogress
+	 * @param progressshowcontent
+	 * @return
 	 */
 	public boolean getUserNotifierInfo(long bottomid, IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{

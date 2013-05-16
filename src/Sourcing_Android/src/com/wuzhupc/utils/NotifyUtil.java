@@ -29,10 +29,10 @@ public class NotifyUtil {
 		return notify(context, intent, title, detail, Notification.FLAG_AUTO_CANCEL);
 	}
 	/**
-	 * ·¢²¼Í¨Öª
+	 * å‘å¸ƒé€šçŸ¥
 	 * @param context
 	 * @param intent
-	 * @return ÊÇ·ñ·¢ËÍÍ¨Öª
+	 * @return æ˜¯å¦å‘é€é€šçŸ¥
 	 */
 	public static boolean notify(Context context, Intent intent, String title, String detail,int flags) {
 		final CharSequence popMsg = context.getText(R.string.notify_pop_msg);
@@ -53,7 +53,7 @@ public class NotifyUtil {
 		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
 		notification.setLatestEventInfo(context, title, detail, pendingIntent);
-		//notification.flags |= Notification.FLAG_AUTO_CANCEL;	// µã»÷ºóÈ¡ÏûÏÔÊ¾
+		//notification.flags |= Notification.FLAG_AUTO_CANCEL;	// ç‚¹å‡»åå–æ¶ˆæ˜¾ç¤º
 		notification.flags = flags;
 		notification.defaults |= Notification.DEFAULT_SOUND;
 		

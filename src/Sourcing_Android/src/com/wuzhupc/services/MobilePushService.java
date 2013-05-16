@@ -6,10 +6,10 @@ import com.wuzhupc.utils.json.JsonCreater;
 import android.content.Context;
 
 /**
- * ÍÆËÍĞÅÏ¢»ñÈ¡service
+ * æ¨é€ä¿¡æ¯è·å–service
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-29 ÏÂÎç10:13:43
- * @note ×¢Òâ ÓÃ»§×¢²áµÇÂ¼ĞÅÏ¢Òª´ÓÄÚÈİ¶ÁÈ¡
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-29 ä¸‹åˆ10:13:43
+ * @note æ³¨æ„ ç”¨æˆ·æ³¨å†Œç™»å½•ä¿¡æ¯è¦ä»å†…å®¹è¯»å–
  */
 public class MobilePushService extends BaseJsonService
 {
@@ -19,7 +19,7 @@ public class MobilePushService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.20.	»ñÈ¡ÓÃ»§ÍÆËÍĞÅÏ¢
+	 * 3.20.	è·å–ç”¨æˆ·æ¨é€ä¿¡æ¯
 	 * @param userid
 	 * @param lastchecktime
 	 * @param iReceiver

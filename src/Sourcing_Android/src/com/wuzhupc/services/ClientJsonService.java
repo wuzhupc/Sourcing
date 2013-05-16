@@ -15,7 +15,7 @@ public class ClientJsonService extends BaseJsonService
 	}
 
 	/**
-	 * 检验客户端版本更新信息
+	 * 妫�楠屽鎴风鐗堟湰鏇存柊淇℃伅
 	 * @param curClientVer
 	 * @param iReceiver
 	 */

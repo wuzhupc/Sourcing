@@ -6,18 +6,18 @@ import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 
 /**
- * »ñÈ¡
+ * è·å–
  * @author wuzhu
  *
  */
 public class PhoneInfoUtil
 {
 	/**
-	 * »ñÈ¡ÑéÖ¤ºÅ
+	 * è·å–éªŒè¯å·
 	 * 
 	 * @param c
 	 * @param bsim
-	 *            trueÊ±£ºsim¿¨ÓĞµÄÎÊÓÅÏÈ£¬ÏÈÈ¡ÊÖ»úºÅÃ»ÓĞÔòÈ¡IMSI£¬ÔÙÈ¡²»µ½·µ»ØIMEIºÅ¡£falseÊ±Ö±½Ó·µ»ØIMEIºÅ
+	 *            trueæ—¶ï¼šsimå¡æœ‰çš„é—®ä¼˜å…ˆï¼Œå…ˆå–æ‰‹æœºå·æ²¡æœ‰åˆ™å–IMSIï¼Œå†å–ä¸åˆ°è¿”å›IMEIå·ã€‚falseæ—¶ç›´æ¥è¿”å›IMEIå·
 	 * @return
 	 */
 	public static String GetValidateID(Context c, Boolean bsim)
@@ -33,7 +33,7 @@ public class PhoneInfoUtil
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úIMEIĞÅÏ¢
+	 * è·å–æ‰‹æœºIMEIä¿¡æ¯
 	 */
 	public static String GetIMEI(Context c)
 	{
@@ -50,7 +50,7 @@ public class PhoneInfoUtil
 	}
 	
 	/**
-	 * ¶ÁÈ¡MACÎïÀíµØÖ·
+	 * è¯»å–MACç‰©ç†åœ°å€
 	 * @param c
 	 * @return
 	 */
@@ -67,7 +67,7 @@ public class PhoneInfoUtil
 	}
 
 	/**
-	 * »ñÈ¡ÊÖ»úºÅÂë
+	 * è·å–æ‰‹æœºå·ç 
 	 */
 	public static String GetPhoneNumber(Context c)
 	{
@@ -77,7 +77,7 @@ public class PhoneInfoUtil
 	}
 
 	/**
-	 * »ñÈ¡IMSIºÅ
+	 * è·å–IMSIå·
 	 * 
 	 * @param c
 	 * @return

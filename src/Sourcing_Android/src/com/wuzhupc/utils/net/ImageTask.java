@@ -24,49 +24,49 @@ import android.os.Handler;
 import android.os.Message;
 
 /**
- * Í¼Æ¬Òì²½ÏÂÔØÆ÷
+ * å›¾ç‰‡å¼‚æ­¥ä¸‹è½½å™¨
  */
 public class ImageTask extends AsyncTask<String, Integer, File>
 {
 
 	private Context mContext;
 
-	private String mUrl; // ÏÂÔØµØÖ·
-	private String mPath; // ´æ´¢Â·¾¶
+	private String mUrl; // ä¸‹è½½åœ°å€
+	private String mPath; // å­˜å‚¨è·¯å¾„
 
-	private boolean isStop; // È¡ÏûÏÂÔØ
-	private boolean canCancel; // ÊÇ·ñ¿ÉÒÔÈ¡Ïû
-	private boolean canShowErrMsg; // ÊÇ·ñÏÔÊ¾´íÎóÌáÊ¾
-	private boolean canShowProgressDialog; // ÊÇ·ñÏÔÊ¾½ø¶È¶Ô»°¿ò
+	private boolean isStop; // å–æ¶ˆä¸‹è½½
+	private boolean canCancel; // æ˜¯å¦å¯ä»¥å–æ¶ˆ
+	private boolean canShowErrMsg; // æ˜¯å¦æ˜¾ç¤ºé”™è¯¯æç¤º
+	private boolean canShowProgressDialog; // æ˜¯å¦æ˜¾ç¤ºè¿›åº¦å¯¹è¯æ¡†
 
-	private String mDlTitle; // ½ø¶È¶Ô»°¿ò±êÌâ
-	private String mDlMsg; // ½ø¶È¶Ô»°¿òÄÚÈİ
-	private ProgressDialog pDialog; // ÏÂÔØ½ø¶ÈÌáÊ¾¿ò
+	private String mDlTitle; // è¿›åº¦å¯¹è¯æ¡†æ ‡é¢˜
+	private String mDlMsg; // è¿›åº¦å¯¹è¯æ¡†å†…å®¹
+	private ProgressDialog pDialog; // ä¸‹è½½è¿›åº¦æç¤ºæ¡†
 
-	private IImageDownloader imageDownloader; // ÏÂÔØÍê³É½Ó¿Ú
-	private IProgressController progressController; // ÏÂÔØ½ø¶È½Ó¿Ú
+	private IImageDownloader imageDownloader; // ä¸‹è½½å®Œæˆæ¥å£
+	private IProgressController progressController; // ä¸‹è½½è¿›åº¦æ¥å£
 
 	/**
-	 * ¼ÓÔØÍê³É½Ó¿Ú
+	 * åŠ è½½å®Œæˆæ¥å£
 	 */
 	private IImageLoader mImageLoader;
 
 	/**
-	 * ¼ÓÔØÍê³ÉºóµÄÍ¼
+	 * åŠ è½½å®Œæˆåçš„å›¾
 	 */
 	private Bitmap mBitmap;
 
 	/**
-	 * ¼ÓÔØÍ¼×î´ó¿í¶È
+	 * åŠ è½½å›¾æœ€å¤§å®½åº¦
 	 */
 	private int mMaxWidth;
 	/**
-	 * ¼ÓÔØÍ¼×î´ó¸ß¶È
+	 * åŠ è½½å›¾æœ€å¤§é«˜åº¦
 	 */
 	private int mMaxHeight;
 	
 	/**
-	 * ÊÇ·ñ±ØĞëÖØĞÂÏÂÔØ
+	 * æ˜¯å¦å¿…é¡»é‡æ–°ä¸‹è½½
 	 */
 	private Boolean mMustReDown=true;
 	
@@ -85,19 +85,19 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ¼ÓÔØÍ¼
+	 * åŠ è½½å›¾
 	 * 
 	 * @param ctx
 	 * @param imgUrl
-	 *            Ô¶³Ì¼ÓÔØµØÖ·
+	 *            è¿œç¨‹åŠ è½½åœ°å€
 	 * @param imgPath
-	 *            ±¾µØÎÄ¼şµØÖ·£¬Èç¹û±¾µØÎÄ¼ş²»´æÊ±£¬µ±imgUrl²»Îª¿ÕÔòÏÈÏÂÔØÍê³ÉºóÔÙ¼ÓÔØ
+	 *            æœ¬åœ°æ–‡ä»¶åœ°å€ï¼Œå¦‚æœæœ¬åœ°æ–‡ä»¶ä¸å­˜æ—¶ï¼Œå½“imgUrlä¸ä¸ºç©ºåˆ™å…ˆä¸‹è½½å®Œæˆåå†åŠ è½½
 	 * @param maxwidth
-	 *            ¼ÓÔØ×î´ó¿í¶È
+	 *            åŠ è½½æœ€å¤§å®½åº¦
 	 * @param maxheight
-	 *            ¼ÓÔØ×îÔÚ¸ß¶È
+	 *            åŠ è½½æœ€åœ¨é«˜åº¦
 	 * @param imgLoader
-	 *            ¼ÓÔØÍê³É½Ó¿Ú
+	 *            åŠ è½½å®Œæˆæ¥å£
 	 */
 	public ImageTask(Context ctx, String imgUrl, String imgPath, int maxwidth,
 			int maxheight, IImageLoader imgLoader)
@@ -117,7 +117,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 
 
 	/**
-	 * ÏÔÊ¾½ø¶È¶Ô»°¿ò
+	 * æ˜¾ç¤ºè¿›åº¦å¯¹è¯æ¡†
 	 * 
 	 * @param ctx
 	 * @param title
@@ -144,7 +144,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃÈ¡ÏûÏÂÔØ
+	 * è®¾ç½®å–æ¶ˆä¸‹è½½
 	 * 
 	 * @param stop
 	 */
@@ -154,7 +154,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃÄÜ·ñÈ¡ÏûÏÂÔØ
+	 * è®¾ç½®èƒ½å¦å–æ¶ˆä¸‹è½½
 	 * 
 	 * @param canCancel
 	 */
@@ -164,7 +164,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃ³ö´íÌáÊ¾Óë·ñ
+	 * è®¾ç½®å‡ºé”™æç¤ºä¸å¦
 	 * 
 	 * @param canShowErrMsg
 	 */
@@ -174,7 +174,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃ½ø¶ÈÌáÊ¾Óë·ñ
+	 * è®¾ç½®è¿›åº¦æç¤ºä¸å¦
 	 * 
 	 * @param canShowProgressDialog
 	 */
@@ -184,7 +184,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃ½ø¶ÈÌáÊ¾¿ò±êÌâ
+	 * è®¾ç½®è¿›åº¦æç¤ºæ¡†æ ‡é¢˜
 	 * 
 	 * @param mDlTitle
 	 */
@@ -194,7 +194,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃ½ø¶ÈÌáÊ¾¿òÄÚÈİ
+	 * è®¾ç½®è¿›åº¦æç¤ºæ¡†å†…å®¹
 	 * 
 	 * @param mDlMsg
 	 */
@@ -204,7 +204,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÉèÖÃÏÂÔØ½ø¶È½Ó¿Ú
+	 * è®¾ç½®ä¸‹è½½è¿›åº¦æ¥å£
 	 * 
 	 * @param progressController
 	 */
@@ -214,7 +214,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ºóÌ¨Ö´ĞĞÊı¾İÏÂÔØ
+	 * åå°æ‰§è¡Œæ•°æ®ä¸‹è½½
 	 */
 	@Override
 	protected File doInBackground(String... params)
@@ -224,7 +224,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 			mUrl = params[0];
 		}
 		
-		//ÏÈÅĞ¶Ï±¾µØÎÄ¼şÊÇ·ñ´æÔÚ
+		//å…ˆåˆ¤æ–­æœ¬åœ°æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 		File localFile = new File(mPath);
 		if(!mMustReDown&&localFile.exists())
 		{
@@ -232,7 +232,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 			{
 				mBitmap=ImageUtil.getBitmapFromFile(mPath, mMaxWidth,
 						mMaxHeight);
-				//¼ÓÔØ³É¹¦ÔòÖ±½Ó·µ»Ø£¬Ê§°ÜÔòÖØĞÂÏÂÔØ
+				//åŠ è½½æˆåŠŸåˆ™ç›´æ¥è¿”å›ï¼Œå¤±è´¥åˆ™é‡æ–°ä¸‹è½½
 				if(mBitmap!=null)
 					return localFile;
 			}
@@ -304,7 +304,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 			conn = null;
 
 			if (isStop)
-			{ // ÖĞ¶ÏÏÂÔØ£¬É¾³ıÏÂÔØ¸±¼ş
+			{ // ä¸­æ–­ä¸‹è½½ï¼Œåˆ é™¤ä¸‹è½½å‰¯ä»¶
 				if (tmpFile.exists())
 				{
 					tmpFile.delete();
@@ -336,7 +336,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÈÎÎñÆô¶¯Ç°ÓÉÏµÍ³µ÷ÓÃ
+	 * ä»»åŠ¡å¯åŠ¨å‰ç”±ç³»ç»Ÿè°ƒç”¨
 	 */
 	@Override
 	protected void onPreExecute()
@@ -351,7 +351,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÈÎÎñÖ´ĞĞ¹ı³ÌÖĞÍ¨¹ı publishProgress (Progress... values) ·½·¨µ÷ÓÃ
+	 * ä»»åŠ¡æ‰§è¡Œè¿‡ç¨‹ä¸­é€šè¿‡ publishProgress (Progress... values) æ–¹æ³•è°ƒç”¨
 	 */
 	@Override
 	protected void onProgressUpdate(Integer... values)
@@ -361,7 +361,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÈÎÎñ½áÊøºóÓÉÏµÍ³µ÷ÓÃ
+	 * ä»»åŠ¡ç»“æŸåç”±ç³»ç»Ÿè°ƒç”¨
 	 */
 	@Override
 	protected void onPostExecute(File file)
@@ -400,7 +400,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	};
 
 	/**
-	 * ·¢ËÍ´íÎóĞÅÏ¢ÌáÊ¾¿ò
+	 * å‘é€é”™è¯¯ä¿¡æ¯æç¤ºæ¡†
 	 * 
 	 * @param errStr
 	 */
@@ -423,7 +423,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÏÔÊ¾³ö´í¶Ô»°¿ò
+	 * æ˜¾ç¤ºå‡ºé”™å¯¹è¯æ¡†
 	 * 
 	 * @param title
 	 * @param errStr
@@ -449,10 +449,10 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 //		builder.create().show();
 	}
 
-	/******************************************** ½Ó¿Ú *************************************************/
+	/******************************************** æ¥å£ *************************************************/
 
 	/**
-	 * ÏÂÔØÍê³É½Ó¿Ú
+	 * ä¸‹è½½å®Œæˆæ¥å£
 	 */
 	public interface IImageDownloader
 	{
@@ -461,7 +461,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ¼ÓÔØÍê³É½Ó¿Ú
+	 * åŠ è½½å®Œæˆæ¥å£
 	 */
 	public interface IImageLoader
 	{
@@ -469,7 +469,7 @@ public class ImageTask extends AsyncTask<String, Integer, File>
 	}
 
 	/**
-	 * ÏÂÔØ½ø¶È½Ó¿Ú
+	 * ä¸‹è½½è¿›åº¦æ¥å£
 	 */
 	public interface IProgressController
 	{

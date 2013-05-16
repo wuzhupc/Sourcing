@@ -10,7 +10,7 @@ import android.os.IBinder;
 public class PushService extends Service {
 	
 	/**
-	 * PushService ¹ýÂËaction
+	 * PushService è¿‡æ»¤action
 	 */
 	public static final String CSTR_ACTION_PUSH_SERVICE = "com.wuzhu.push.pushservice";
 

@@ -19,9 +19,9 @@ import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
 
 /**
- * Í¼Æ¬²é¿´
+ * å›¾ç‰‡æŸ¥çœ‹
  * 
- * @note ±ØĞë´«Èë²ÎÊıimage Í¼Æ¬Â·¾¶ ÀàĞÍ£ºString
+ * @note å¿…é¡»ä¼ å…¥å‚æ•°image å›¾ç‰‡è·¯å¾„ ç±»å‹ï¼šString
  * @author wuzhu
  * 
  */
@@ -42,12 +42,12 @@ public class ViewImageActivity extends BaseActivity implements OnClickListener
 	@Override
 	protected void initView()
 	{
-		// ÉèÖÃÎŞ±êÌâ
+		// è®¾ç½®æ— æ ‡é¢˜
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_viewimage);
-		// »ñÈ¡Intent
+		// è·å–Intent
 		Intent intent = getIntent();
-		// »ñÈ¡Í¼Æ¬Â·¾¶
+		// è·å–å›¾ç‰‡è·¯å¾„
 		mImagePath = intent.getStringExtra(CSTR_EXTRA_IMAGE);
 		mivt_photo = (ImageViewTouch) findViewById(R.id.viewimage_ivt);
 		mivt_photo.setScaleType(ScaleType.FIT_CENTER);
@@ -114,7 +114,7 @@ public class ViewImageActivity extends BaseActivity implements OnClickListener
 	}
 
 	/**
-	 * ±£´æÍ¼Æ¬
+	 * ä¿å­˜å›¾ç‰‡
 	 */
 	private void saveImage()
 	{
@@ -123,16 +123,16 @@ public class ViewImageActivity extends BaseActivity implements OnClickListener
 		if (bitmap != null)
 			picfile = ImageUtil.saveBitmap(bitmap, false);
 		if (StringUtil.isEmpty(picfile))
-			displayToast("Í¼Æ¬´æ´¢Ê§°Ü!");
+			displayToast("å›¾ç‰‡å­˜å‚¨å¤±è´¥!");
 		else
-			Toast.makeText(this, "Í¼Æ¬±£´æÍê³É£¬±£´æÎ»ÖÃ£º" + picfile, Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "å›¾ç‰‡ä¿å­˜å®Œæˆï¼Œä¿å­˜ä½ç½®ï¼š" + picfile, Toast.LENGTH_LONG).show();
 	}
 
 	/**
-	 * Ğı×ªÍ¼Æ¬
+	 * æ—‹è½¬å›¾ç‰‡
 	 * 
 	 * @param rotate
-	 *            Ğı×ªÍ¼Æ¬½Ç¶È
+	 *            æ—‹è½¬å›¾ç‰‡è§’åº¦
 	 */
 	private Boolean rotateImage(int rotate)
 	{
@@ -157,10 +157,10 @@ public class ViewImageActivity extends BaseActivity implements OnClickListener
 	}
 
 	/**
-	 * ÏÔÊ¾²Ù×÷ÇøÓò
+	 * æ˜¾ç¤ºæ“ä½œåŒºåŸŸ
 	 * 
 	 * @param bshow
-	 *            trueÏÔÊ¾ false²»ÏÔÊ¾
+	 *            trueæ˜¾ç¤º falseä¸æ˜¾ç¤º
 	 */
 	private void operShow(Boolean bshow)
 	{

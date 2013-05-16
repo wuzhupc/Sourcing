@@ -6,14 +6,14 @@ import com.wuzhupc.Sourcing.vo.ChannelVO;
 import com.wuzhupc.config.Constants;
 
 /**
- * »º´æ×ÊÑ¶ĞÅÏ¢Àà
+ * ç¼“å­˜èµ„è®¯ä¿¡æ¯ç±»
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-29 ÏÂÎç8:29:24
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-29 ä¸‹åˆ8:29:24
  */
 public class CacheUtil
 {
 	/**
-	 * »º´æ¼ÇÂ¼ĞÅÏ¢
+	 * ç¼“å­˜è®°å½•ä¿¡æ¯
 	 * @param vo
 	 * @return
 	 */
@@ -28,7 +28,7 @@ public class CacheUtil
 	}
 	
 	/**
-	 * »ñÈ¡»º´æ¼ÇÂ¼ĞÅÏ¢
+	 * è·å–ç¼“å­˜è®°å½•ä¿¡æ¯
 	 * @param vo
 	 * @return
 	 */

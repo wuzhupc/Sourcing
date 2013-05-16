@@ -8,9 +8,9 @@ import com.wuzhupc.utils.JavaLangUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ÅàÑµ»ú¹¹
+ * åŸ¹è®­æœºæ„
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:45:06
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:45:06
  */
 public class TrainVO extends BaseVO
 {
@@ -19,11 +19,11 @@ public class TrainVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 9193391814832088770L;
 	/**
-	 * ÅàÑµ»ú¹¹±àºÅ
+	 * åŸ¹è®­æœºæ„ç¼–å·
 	 */
 	//private long trainid;
 	/**
-	 * ÅàÑµ»ú¹¹Ãû³Æ
+	 * åŸ¹è®­æœºæ„åç§°
 	 */
 	private String trainname;
 	public long getTrainid()
@@ -48,7 +48,7 @@ public class TrainVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLæ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -61,7 +61,7 @@ public class TrainVO extends BaseVO
 	}
 
 	/**
-	 * Éú³É·ÖÏíĞÅÏ¢ÄÚÈİ²¿·Ö
+	 * ç”Ÿæˆåˆ†äº«ä¿¡æ¯å†…å®¹éƒ¨åˆ†
 	 */
 	@Override
 	public String generateShareText()
@@ -70,7 +70,7 @@ public class TrainVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML×Ó±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLå­æ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -81,7 +81,7 @@ public class TrainVO extends BaseVO
 	}
 	
 	/**
-	 * ÉèÖÃÄÚÈİHtmlÄÚÈİÏÔÊ¾
+	 * è®¾ç½®å†…å®¹Htmlå†…å®¹æ˜¾ç¤º
 	 */
 	@Override
 	public void setHtmlToShow(Context c, final DetailInfoListener detailInfoListener)

@@ -25,26 +25,26 @@ import android.widget.Toast;
 /**
  * BaseActivity
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-18 ÏÂÎç8:48:47
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-18 ä¸‹åˆ8:48:47
  */
 public  abstract class BaseActivity extends Activity
 {
 	protected static final String  TAG=BaseActivity.class.getSimpleName();
 
 	/**
-	 * ²¶»ñ·µ»Ø¼ü
+	 * æ•è·è¿”å›é”®
 	 */
 	private Boolean mCaptureBackKey = false;
 	private OnKeyDownListener mKeyDownListener = null;
 
 	/**
-	 * ¹Ø±Õ³ÌĞòÊ±µÄÌáÊ¾ĞÅÏ¢
+	 * å…³é—­ç¨‹åºæ—¶çš„æç¤ºä¿¡æ¯
 	 */
 	private String mCloseApplicationAskMsg = "";
 	
 
 	/**
-	 * onCreate µ÷ÓÃinitView³õÊ¼»¯½çÃæ µ÷ÓÃ initActions³õÊ¼»¯µã»÷²Ù×÷
+	 * onCreate è°ƒç”¨initViewåˆå§‹åŒ–ç•Œé¢ è°ƒç”¨ initActionsåˆå§‹åŒ–ç‚¹å‡»æ“ä½œ
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -57,17 +57,17 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * ³õÊ¼»¯Êı¾İÄÚÈİ²¿·Ö
+	 * åˆå§‹åŒ–æ•°æ®å†…å®¹éƒ¨åˆ†
 	 */
 	protected abstract void initDataContent();
 
 	/**
-	 * ³õÊ¼»¯½çÃæ
+	 * åˆå§‹åŒ–ç•Œé¢
 	 */
 	protected abstract void initView();
 
 	/**
-	 * ÉèÖÃ±êÌâ
+	 * è®¾ç½®æ ‡é¢˜
 	 * 
 	 * @param title
 	 */
@@ -77,7 +77,7 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * ÉèÖÃ±êÌâ×ÖÌåÎª´ÖÌå
+	 * è®¾ç½®æ ‡é¢˜å­—ä½“ä¸ºç²—ä½“
 	 */
 	public void setTitleTextBold()
 	{
@@ -87,18 +87,18 @@ public  abstract class BaseActivity extends Activity
 	}
 	
 	/**
-	 * ¼ì²é»º´æÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+	 * æ£€æŸ¥ç¼“å­˜æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
 	 */
 	protected boolean checkCacheFolder()
 	{
-		//ÅĞ¶Ï´æ´¢¿¨ÊÇ·ñ´æÔÚ
+		//åˆ¤æ–­å­˜å‚¨å¡æ˜¯å¦å­˜åœ¨
 		if(!FileUtil.hasSDCard())
 		{
-			//ÌáÊ¾
+			//æç¤º
 			hitCloseApplication(R.string.Base_hit_nosdcard);
 			return false;
 		}
-		//ÅĞ¶Ï×ÊÔ´ÎÄ¼şÊÇ·ñ¿ÉÒÔ´´½¨
+		//åˆ¤æ–­èµ„æºæ–‡ä»¶æ˜¯å¦å¯ä»¥åˆ›å»º
 		if(!FileUtil.isExistFolder(Constants.CSTR_DATASTOREDIR))
 		{
 			hitCloseApplication(R.string.Base_hit_createstorefolderfail);
@@ -108,7 +108,7 @@ public  abstract class BaseActivity extends Activity
 	}
 	
 	/**
-	 * ÌáÊ¾ÍË³ö
+	 * æç¤ºé€€å‡º
 	 * @param resid
 	 */
 	public void hitCloseApplication(int resid)
@@ -117,7 +117,7 @@ public  abstract class BaseActivity extends Activity
 	}
 	
 	/**
-	 * ÌáÊ¾ÍË³ö
+	 * æç¤ºé€€å‡º
 	 * @param str
 	 */
 	public void hitCloseApplication(String str,final boolean isExit)
@@ -139,7 +139,7 @@ public  abstract class BaseActivity extends Activity
 	}
 	
 
-	/** ¸²¸Ç°´¼üÊÂ¼ş */
+	/** è¦†ç›–æŒ‰é”®äº‹ä»¶ */
 	public boolean onKeyDown(int keyCode, KeyEvent event)
 	{
 		if (mCaptureBackKey)
@@ -154,7 +154,7 @@ public  abstract class BaseActivity extends Activity
 				return false;
 			}
 
-			// TODO ³¤°´Back¼üÔòÖ±½ÓÍË³ö Ä¿Ç°²»×÷ÓÃ ³¤°´ÎŞĞ§
+			// TODO é•¿æŒ‰Backé”®åˆ™ç›´æ¥é€€å‡º ç›®å‰ä¸ä½œç”¨ é•¿æŒ‰æ— æ•ˆ
 			if (event.getKeyCode() == KeyEvent.KEYCODE_BACK
 					&& event.getRepeatCount() > 1)
 			{
@@ -167,7 +167,7 @@ public  abstract class BaseActivity extends Activity
 
 
 	/**
-	 * Ñ¯ÎÊÊÇ·ñ¹Ø±ÕÓ¦ÓÃ³ÌĞò
+	 * è¯¢é—®æ˜¯å¦å…³é—­åº”ç”¨ç¨‹åº
 	 */
 	public void askCloseApplication()
 	{
@@ -194,12 +194,12 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * Æô¶¯ÁíÒ»¸öActivity
+	 * å¯åŠ¨å¦ä¸€ä¸ªActivity
 	 * 
 	 * @param closeMe
-	 *            ÊÇ·ñ¹Øµô×ÔÉí
+	 *            æ˜¯å¦å…³æ‰è‡ªèº«
 	 * @param c
-	 *            ÒªÆô¶¯µÄActivity
+	 *            è¦å¯åŠ¨çš„Activity
 	 */
 	public void runActivity(boolean closeMe, Class<?> c)
 	{
@@ -210,12 +210,12 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * Æô¶¯ÁíÒ»¸öActivity
+	 * å¯åŠ¨å¦ä¸€ä¸ªActivity
 	 * 
 	 * @param closeMe
-	 *            ÊÇ·ñ¹Øµô×ÔÉí
+	 *            æ˜¯å¦å…³æ‰è‡ªèº«
 	 * @param intent
-	 *            ÒªÆô¶¯µÄintent
+	 *            è¦å¯åŠ¨çš„intent
 	 */
 	public void runIntent(boolean closeMe, Intent intent)
 	{
@@ -225,10 +225,10 @@ public  abstract class BaseActivity extends Activity
 			startActivity(intent);
 	}
 	/**
-	 * Æô¶¯ä¯ÀÀÆ÷
+	 * å¯åŠ¨æµè§ˆå™¨
 	 * 
 	 * @param url
-	 *            µØÖ·
+	 *            åœ°å€
 	 */
 	public void runBrowser(String url)
 	{
@@ -236,10 +236,10 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * Æô¶¯ä¯ÀÀÆ÷
+	 * å¯åŠ¨æµè§ˆå™¨
 	 * 
 	 * @param url
-	 *            µØÖ·
+	 *            åœ°å€
 	 */
 	public static void runBrowser(String url, Context c)
 	{
@@ -257,11 +257,11 @@ public  abstract class BaseActivity extends Activity
 	}
 	
 	/**
-	 * ÆôÓÃÍÆËÍĞÅÏ¢·şÎñ
+	 * å¯ç”¨æ¨é€ä¿¡æ¯æœåŠ¡
 	 */
 	public void startPushService()
 	{
-		//ÅĞ¶ÏÉèÖÃÏî
+		//åˆ¤æ–­è®¾ç½®é¡¹
 		if(!SettingUtil.getPushService(BaseActivity.this))
 			return;
 		Intent intent = new Intent(PushService.CSTR_ACTION_PUSH_SERVICE);
@@ -269,7 +269,7 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * ÉèÖÃÎª¿É²¶»ñ·µ»Ø¼ü
+	 * è®¾ç½®ä¸ºå¯æ•è·è¿”å›é”®
 	 * 
 	 * @param bcature
 	 */
@@ -279,7 +279,7 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * ÉèÖÃ¹Ø±Õ³ÌĞòÊ±ÍË³öÊ±ÌáÊ¾ĞÅÏ¢
+	 * è®¾ç½®å…³é—­ç¨‹åºæ—¶é€€å‡ºæ—¶æç¤ºä¿¡æ¯
 	 * 
 	 * @param msg
 	 */
@@ -306,10 +306,10 @@ public  abstract class BaseActivity extends Activity
 
 
 	/**
-	 * ÏÔÊ¾ToastÌáÊ¾ĞÅÏ¢
+	 * æ˜¾ç¤ºToastæç¤ºä¿¡æ¯
 	 * 
 	 * @param str
-	 *            ÒªÏÔÊ¾µÄÌáÊ¾ĞÅÏ¢
+	 *            è¦æ˜¾ç¤ºçš„æç¤ºä¿¡æ¯
 	 */
 	public void displayToast(String str)
 	{
@@ -318,17 +318,17 @@ public  abstract class BaseActivity extends Activity
 	}
 
 	/**
-	 * ÏÔÊ¾ToastÌáÊ¾ĞÅÏ¢
+	 * æ˜¾ç¤ºToastæç¤ºä¿¡æ¯
 	 * 
 	 * @param strresid
-	 *            ÌáÊ¾ĞÅÏ¢×Ö·û´®×ÊÔ´ID
+	 *            æç¤ºä¿¡æ¯å­—ç¬¦ä¸²èµ„æºID
 	 */
 	public void displayToast(int strresid)
 	{
 		displayToast(getResources().getString(strresid));
 	}
 	/**
-	 * »ñÈ¡È«¾Ö±äÁ¿
+	 * è·å–å…¨å±€å˜é‡
 	 * 
 	 * @return
 	 */

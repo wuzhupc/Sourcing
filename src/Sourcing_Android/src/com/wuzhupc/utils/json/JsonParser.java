@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import android.annotation.SuppressLint;
 import android.util.Log;
 
 import com.google.gson.stream.JsonReader;
@@ -18,12 +17,11 @@ import com.wuzhupc.Sourcing.vo.ResponseVO;
 import com.wuzhupc.utils.StringUtil;
 
 /**
- * Json±¨ÎÄ½âÎö
- * 
+ * JsonæŠ¥æ–‡è§£æ
  * @author wuzhu
- * 
+ * @date 2013-4-24 ä¸‹åˆ8:02:52
+ * @version $id$
  */
-@SuppressLint("DefaultLocale")
 public class JsonParser
 {
 	private final static String PACKAGE_NAME = "com.wuzhupc.Sourcing.vo.";
@@ -31,7 +29,7 @@ public class JsonParser
 	private final static String TAG_DATA = "data";
 
 	/**
-	 * ÅĞ¶Ï·µ»ØµÄ½á¹û
+	 * åˆ¤æ–­è¿”å›çš„ç»“æœ
 	 * 
 	 * @param jsoncontent
 	 * @return
@@ -42,7 +40,7 @@ public class JsonParser
 	}
 
 	/**
-	 * ÅĞ¶Ï·µ»ØµÄ½á¹û
+	 * åˆ¤æ–­è¿”å›çš„ç»“æœ
 	 * 
 	 * @param jsoncontent
 	 * @return
@@ -65,7 +63,7 @@ public class JsonParser
 	}
 
 	/**
-	 * ¶ÁÈ¡ret²¿·Ö
+	 * è¯»å–retéƒ¨åˆ†
 	 * 
 	 * @param vo
 	 * @param reader
@@ -96,13 +94,13 @@ public class JsonParser
 	}
 
 	/**
-	 * ¶ÁÈ¡Json(retµÄÄÚÈİ±ØĞëÔÚdataÄÚÈİÖ®Ç°)
+	 * è¯»å–Json(retçš„å†…å®¹å¿…é¡»åœ¨dataå†…å®¹ä¹‹å‰)
 	 * 
 	 * @param content
-	 *            ±¨ÎÄÄÚÈİ
+	 *            æŠ¥æ–‡å†…å®¹
 	 * @param respVO
-	 *            ¡¡·µ»Ø±¨ÎÄResponseVO
-	 * @return data²¿·ÖµÄreader,Èç¹ûÃ»ÓĞ·µ»Ønull
+	 *            ã€€è¿”å›æŠ¥æ–‡ResponseVO
+	 * @return dataéƒ¨åˆ†çš„reader,å¦‚æœæ²¡æœ‰è¿”å›null
 	 */
 	public static JsonReader parseJson(InputStream content, ResponseVO respVO)
 	{
@@ -148,13 +146,13 @@ public class JsonParser
 					if (!hasret)
 					{
 						respVO.setCode(ResponseVO.RESPONSE_CODE_FAIL);
-						respVO.setMsg("ÎŞĞ§µÄÊı¾İ!");
+						respVO.setMsg("ï¿½ï¿½Ğ§ï¿½ï¿½ï¿½ï¿½ï¿½!");
 					}
-					// ĞŞ¸Ä ÎŞÂÛÊÇ·ñ³É¹¦¶¼·µ»Øreader
+					// ï¿½Ş¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½reader
 					// else
 					// if(respVO.getCode() != Constants.RESPONSE_CODE_ERROR)
 					{
-						// Èç¹û´æÔÚdataÖ±½Ó·µ»Ø
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½dataÖ±ï¿½Ó·ï¿½ï¿½ï¿½
 						return reader;
 					}
 				} else
@@ -178,13 +176,13 @@ public class JsonParser
 	}
 
 	/**
-	 * ¶ÁÈ¡Json
+	 * è¯»å–Json
 	 * 
 	 * @param content
-	 *            ±¨ÎÄÄÚÈİ
+	 *            æŠ¥æ–‡å†…å®¹
 	 * @param respVO
-	 *            ¡¡·µ»Ø±¨ÎÄResponseVO
-	 * @return data²¿·ÖµÄreader
+	 *            ã€€è¿”å›æŠ¥æ–‡ResponseVO
+	 * @return dataéƒ¨åˆ†çš„reader
 	 */
 	public static JsonReader parseJson(String content, ResponseVO respVO)
 	{
@@ -192,11 +190,11 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ødata½áµãÏÂµÄentity ÊµÀı
+	 * è¿”å›dataç»“ç‚¹ä¸‹çš„entity å®ä¾‹
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @return
 	 */
 	public static Object parseJsonToEntity(String content, ResponseVO respVO)
@@ -210,11 +208,11 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ødata½áµãÏÂµÄentity ÊµÀı
+	 * è¿”å›dataç»“ç‚¹ä¸‹çš„entity å®ä¾‹
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @return
 	 */
 	public static Object parseJsonToEntity(InputStream content, ResponseVO respVO)
@@ -223,13 +221,13 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ødata½áµãÏÂµÄentity ÊµÀı
+	 * è¿”å›dataç»“ç‚¹ä¸‹çš„entity å®ä¾‹
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @param ref
-	 *            refÄÚÈİ£¬Èç¹ûref==null»ò"" Ôò¶ÁÈ¡µÚÒ»¸öentity¿ªÊ¹µÄÄÚÈİ
+	 *            refå†…å®¹ï¼Œå¦‚æœref==nullæˆ–"" åˆ™è¯»å–ç¬¬ä¸€ä¸ªentityå¼€ä½¿çš„å†…å®¹
 	 * @return
 	 */
 	public static Object parseJsonToEntity(InputStream content, ResponseVO respVO, String ref)
@@ -271,11 +269,11 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ø½áµãÏÂµÄPropÊôĞÔ
+	 * è¿”å›ç»“ç‚¹ä¸‹çš„Propå±æ€§
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @return
 	 */
 	public static Map<String, String> parseJsonToMap(String content, ResponseVO respVO)
@@ -284,11 +282,11 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ø½áµãÏÂµÄPropÊôĞÔ
+	 * è¿”å›ç»“ç‚¹ä¸‹çš„Propå±æ€§
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @return
 	 */
 	public static Map<String, String> parseJsonToMap(InputStream content, ResponseVO respVO)
@@ -344,11 +342,11 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ølist½áµãÏÂµÄentity ÊµÀı
+	 * è¿”å›listç»“ç‚¹ä¸‹çš„entity å®ä¾‹
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @return
 	 */
 	public static List<?> parseJsonToList(String content, ResponseVO respVO)
@@ -357,13 +355,13 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ølist½áµãÏÂµÄentity ÊµÀı
+	 * è¿”å›listç»“ç‚¹ä¸‹çš„entity å®ä¾‹
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @param ref
-	 *            refÄÚÈİ£¬Èç¹ûref==null»ò"" Ôò¶ÁÈ¡µÚÒ»¸ölist¿ªÊ¹µÄÄÚÈİ
+	 *            refå†…å®¹ï¼Œå¦‚æœref==nullæˆ–"" åˆ™è¯»å–ç¬¬ä¸€ä¸ªlistå¼€ä½¿çš„å†…å®¹
 	 * @return
 	 */
 	public static List<?> parseJsonToList(String content, ResponseVO respVO, String ref)
@@ -372,13 +370,13 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Ølist½áµãÏÂµÄentity ÊµÀı
+	 * è¿”å›listç»“ç‚¹ä¸‹çš„entity å®ä¾‹
 	 * 
 	 * @param content
 	 * @param respVO
-	 *            ´æ´¢±¨ÎÄ×´Ì¬ĞÅÏ¢(Ğè½øĞĞÊµÀı»¯)
+	 *            å­˜å‚¨æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯(éœ€è¿›è¡Œå®ä¾‹åŒ–)
 	 * @param ref
-	 *            refÄÚÈİ£¬Èç¹ûref==null»ò"" Ôò¶ÁÈ¡µÚÒ»¸ölist¿ªÊ¹µÄÄÚÈİ
+	 *            refå†…å®¹ï¼Œå¦‚æœref==nullæˆ–"" åˆ™è¯»å–ç¬¬ä¸€ä¸ªlistå¼€ä½¿çš„å†…å®¹
 	 * @return
 	 */
 	public static List<?> parseJsonToList(InputStream content, ResponseVO respVO, String ref)
@@ -436,7 +434,7 @@ public class JsonParser
 					continue;
 				}
 				String name = reader.nextName();
-				String propName = null; // ÊôĞÔÃû
+				String propName = null; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				Object nodeObj = null;
 				String clzName = null;
 				// if(name.startsWith(TAG_PROP+"_")&&!JsonToken.NULL.equals(reader.peek()))//prop_field
@@ -457,7 +455,7 @@ public class JsonParser
 
 					// if(!StringUtil.isEmpty(propName)&&nodeObj!=null)
 					// {
-					// Field field = clazz.getField(propName); // set·½·¨ÎŞ·¨½øĞĞÀàĞÍ×ª»»£¬ËùÒÔ²ÉÓÃÖ±½Ó¸³Öµ
+					// Field field = clazz.getField(propName); // setï¿½ï¿½ï¿½ï¿½ï¿½Ş·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½Ö±ï¿½Ó¸ï¿½Öµ
 					// field.set(obj, nodeObj);
 					// }
 					// continue;
@@ -473,7 +471,7 @@ public class JsonParser
 
 				if (nodeObj == null)
 				{
-					// ¿ÕÖµ²»½øĞĞ¸³Öµ
+					// ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½Ğ¸ï¿½Öµ
 					continue;
 				}
 				Class<?> paraType = null;
@@ -504,7 +502,7 @@ public class JsonParser
 	}
 
 	/**
-	 * ½âÎöjsonÄÚÈİµ½LIST
+	 * è§£æjsonå†…å®¹åˆ°LIST
 	 * 
 	 * @param reader
 	 * @return
@@ -556,7 +554,7 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Østr[_ref]ÖĞµÄstr
+	 * è¿”å›str[_ref]ä¸­çš„str
 	 * 
 	 * @param str
 	 * @return
@@ -574,7 +572,7 @@ public class JsonParser
 	}
 
 	/**
-	 * ·µ»Østr[_ref]ÖĞµÄref
+	 * è¿”å›str[_ref]ä¸­çš„ref
 	 * 
 	 * @param str
 	 * @return

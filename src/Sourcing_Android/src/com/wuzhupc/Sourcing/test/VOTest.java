@@ -10,9 +10,9 @@ import android.test.AndroidTestCase;
 import android.util.Log;
 
 /**
- * VOÏà¹Øµ¥Ôª²âÊÔ
+ * VOç›¸å…³å•å…ƒæµ‹è¯•
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-2 ÏÂÎç9:07:28
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-2 ä¸‹åˆ9:07:28
  */
 public class VOTest extends AndroidTestCase
 {
@@ -42,7 +42,7 @@ public class VOTest extends AndroidTestCase
 		bvo1.setId(1l);
 		NewsVO nvo1 = new NewsVO();
 		nvo1.setNewsid(2l);
-		nvo1.setAuther("\\nÖĞÎÄ\\nĞòÁĞ»¯");
+		nvo1.setAuther("\\nä¸­æ–‡\\nåºåˆ—åŒ–");
 		Log.d(tag, bvo1.toString());
 		Log.d(tag, nvo1.toString());
 		BaseVO resultvo = (BaseVO)SerializeUtil.getObjectFromString(nvo1.toString());

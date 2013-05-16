@@ -21,15 +21,15 @@ public abstract class BaseJsonService
 	private static final String TAG=BaseJsonService.class.getSimpleName();
 	private static final Boolean DEBUG=true;
 	/**
-	 * ¶ÁÈ¡±¾µØÎÄ¼ş(assetsÎÄ¼ş¼ĞÖĞµÄÎÄ¼ş)
+	 * è¯»å–æœ¬åœ°æ–‡ä»¶(assetsæ–‡ä»¶å¤¹ä¸­çš„æ–‡ä»¶)
 	 */
 	private static final Boolean LOCAL_DEBUG = false;
 	/**
-	 * µ±Ç°Ö´ĞĞÃüÁî
+	 * å½“å‰æ‰§è¡Œå‘½ä»¤
 	 */
 	protected String mCommandName;
 	/**
-	 * ºó×ºÃû³Æ
+	 * åç¼€åç§°
 	 */
 	protected String mSuffixStr;
 	
@@ -62,8 +62,8 @@ public abstract class BaseJsonService
 	}
 	
 	/**
-	 * »ñÈ¡Êı¾İ
-	 * @param json¡¡ÇëÇó±¨ÎÄ
+	 * è·å–æ•°æ®
+	 * @param jsonã€€è¯·æ±‚æŠ¥æ–‡
 	 * @param iReceiver
 	 */
 	protected void getData(String json,final IBaseReceiver iReceiver)
@@ -72,10 +72,10 @@ public abstract class BaseJsonService
 	}
 
 	/**
-	 * »ñÈ¡Êı¾İ
-	 * @param json¡¡ÇëÇó±¨ÎÄ
+	 * è·å–æ•°æ®
+	 * @param jsonã€€è¯·æ±‚æŠ¥æ–‡
 	 * @param iReceiver
-	 * @param showprogress ÏÔÊ¾´¦Àí½ø¶È
+	 * @param showprogress æ˜¾ç¤ºå¤„ç†è¿›åº¦
 	 */
 	protected void getData(String json,final IBaseReceiver iReceiver,Boolean showprogress)
 	{
@@ -83,10 +83,10 @@ public abstract class BaseJsonService
 	}
 	
 	/**
-	 * »ñÈ¡Êı¾İ
-	 * @param json¡¡ÇëÇó±¨ÎÄ
+	 * è·å–æ•°æ®
+	 * @param jsonã€€è¯·æ±‚æŠ¥æ–‡
 	 * @param iReceiver
-	 * @param showprogress ÏÔÊ¾´¦Àí½ø¶È
+	 * @param showprogress æ˜¾ç¤ºå¤„ç†è¿›åº¦
 	 */
 	protected void getData(String json,final IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -94,11 +94,11 @@ public abstract class BaseJsonService
 	}
 
 	/**
-	 * »ñÈ¡Êı¾İ
-	 * @param json¡¡ÇëÇó±¨ÎÄ
-	 * @param url¡¡µØÖ·
+	 * è·å–æ•°æ®
+	 * @param jsonã€€è¯·æ±‚æŠ¥æ–‡
+	 * @param urlã€€åœ°å€
 	 * @param iReceiver
-	 * @param showprogress ÏÔÊ¾´¦Àí½ø¶È
+	 * @param showprogress æ˜¾ç¤ºå¤„ç†è¿›åº¦
 	 */
 	protected void getData(String json,String url,final IBaseReceiver iReceiver,Boolean showprogress)
 	{
@@ -106,12 +106,12 @@ public abstract class BaseJsonService
 	}
 	
 	/**
-	 * »ñÈ¡Êı¾İ
-	 * @param json¡¡ÇëÇó±¨ÎÄ
-	 * @param url¡¡µØÖ·
+	 * è·å–æ•°æ®
+	 * @param jsonã€€è¯·æ±‚æŠ¥æ–‡
+	 * @param urlã€€åœ°å€
 	 * @param iReceiver
-	 * @param showprogress ÏÔÊ¾´¦Àí½ø¶È
-	 * @param progressshowcontent	ÏÔÊ¾´¦Àí½ø¶ÈÌáÊ¾ÄÚÈİ£¬Èç¹ûÎªnull£¬ÏÔÊ¾Ä¬ÈÏÌáÊ¾
+	 * @param showprogress æ˜¾ç¤ºå¤„ç†è¿›åº¦
+	 * @param progressshowcontent	æ˜¾ç¤ºå¤„ç†è¿›åº¦æç¤ºå†…å®¹ï¼Œå¦‚æœä¸ºnullï¼Œæ˜¾ç¤ºé»˜è®¤æç¤º
 	 */
 	protected void getData(String json,String url,final IBaseReceiver iReceiver,Boolean showprogress,String progressshowcontent)
 	{
@@ -131,15 +131,15 @@ public abstract class BaseJsonService
 			}
 			String localjsoncontent = FileUtil.readFileFromAssetsFile(mContext, datafilename);			
 			if(StringUtil.isEmpty(localjsoncontent))
-				iReceiver.receiveCompleted(false, "µ±Ç°ÔİÎŞ×ÊÑ¶ĞÅÏ¢");
+				iReceiver.receiveCompleted(false, "å½“å‰æš‚æ— èµ„è®¯ä¿¡æ¯");
 			else
 				iReceiver.receiveCompleted(true, localjsoncontent);
 			return;
 		}
 		if(NetUtil.getNetWorkType(mContext)==-1)
 		{
-			if(DEBUG)Log.d(TAG, "µ±Ç°ÎŞ¿ÉÓÃÍøÂç");
-			iReceiver.receiveCompleted(false, "µ±Ç°ÎŞ¿ÉÓÃÍøÂç");
+			if(DEBUG)Log.d(TAG, "å½“å‰æ— å¯ç”¨ç½‘ç»œ");
+			iReceiver.receiveCompleted(false, "å½“å‰æ— å¯ç”¨ç½‘ç»œ");
 			return;
 		}
 		
@@ -172,16 +172,16 @@ public abstract class BaseJsonService
 	}
 	
 	/**
-	 * ĞÅÏ¢½ÓÊÕ½Ó¿Ú
+	 * ä¿¡æ¯æ¥æ”¶æ¥å£
 	 * @author wuzhu
 	 *
 	 */
 	public interface IBaseReceiver {
 		
 		/**
-		 * ½ÓÊÕÍê³É
-		 * @param isSuc  ÊÇ·ñ³É¹¦
-		 * @param content »ñÈ¡³É¹¦£¬·µ»ØÄÚÈİ£¬Ê§°Ü£¬·µ»ØÊ§°ÜÔ­Òò
+		 * æ¥æ”¶å®Œæˆ
+		 * @param isSuc  æ˜¯å¦æˆåŠŸ
+		 * @param content è·å–æˆåŠŸï¼Œè¿”å›å†…å®¹ï¼Œå¤±è´¥ï¼Œè¿”å›å¤±è´¥åŸå› 
 		 */
 		public void receiveCompleted(boolean isSuc, String content);
 	}

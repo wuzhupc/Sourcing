@@ -3,9 +3,9 @@ package com.wuzhupc.Sourcing.vo;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
- * ×ÊÑ¶ÆÀÂÛĞÅÏ¢
+ * èµ„è®¯è¯„è®ºä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç6:45:51
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ6:45:51
  */
 public class NewsCommentVO extends BaseVO
 {
@@ -15,27 +15,27 @@ public class NewsCommentVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 2465779391020740285L;
 	/**
-	 * ĞÂÎÅ±àºÅ
+	 * æ–°é—»ç¼–å·
 	 */
 	//private long newsid;
 	/**
-	 * ĞÂÎÅÀàĞÍ,1£ºĞĞÒµĞÂÎÅ£¬2£ºÕş²ß£¬3£ºÍ¨Öª£¬4£º×¨¼ÒÎÄÕÂ
+	 * æ–°é—»ç±»å‹,1ï¼šè¡Œä¸šæ–°é—»ï¼Œ2ï¼šæ”¿ç­–ï¼Œ3ï¼šé€šçŸ¥ï¼Œ4ï¼šä¸“å®¶æ–‡ç« 
 	 */
 	private int newstype;
 	/**
-	 * ÆÀÂÛ±àºÅ
+	 * è¯„è®ºç¼–å·
 	 */
 	private long newscommentid;
 	/**
-	 * ÆÀÂÛÕß
+	 * è¯„è®ºè€…
 	 */
 	private String commenter;
 	/**
-	 * ÆÀÂÛ·¢±íÊ±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * è¯„è®ºå‘è¡¨æ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String commenttime;
 	/**
-	 * ÆÀÂÛÄÚÈİ
+	 * è¯„è®ºå†…å®¹
 	 */
 	private String commentcontent;
 	public long getNewsid()

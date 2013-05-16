@@ -29,7 +29,7 @@ import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
 /**
- * ·şÎñView
+ * æœåŠ¡View
  * 
  * @author wuzhu_000
  * 
@@ -37,12 +37,12 @@ import android.widget.AdapterView.OnItemClickListener;
 public class PersonView extends BaseView
 {
 	/**
-	 * Êı¾İÁĞ±í
+	 * æ•°æ®åˆ—è¡¨
 	 */
 	@SuppressWarnings("rawtypes")
 	protected ArrayList mDataList;
 	/**
-	 * ÏÔÊ¾Êı¾İµÄÁĞ±í
+	 * æ˜¾ç¤ºæ•°æ®çš„åˆ—è¡¨
 	 */
 	protected ListView mlv_DataList;
 
@@ -50,9 +50,9 @@ public class PersonView extends BaseView
 
 	protected MoreButton mMoreButton; //
 
-	protected ListBaseAdapter mAdapter; // ÁĞ±í adapter
+	protected ListBaseAdapter mAdapter; // åˆ—è¡¨ adapter
 
-	protected long mLastNewsId; // ×îºóÒ»ÌõÏûÏ¢id
+	protected long mLastNewsId; // æœ€åä¸€æ¡æ¶ˆæ¯id
 
 	public PersonView(Context context, long fatherchannelid)
 	{
@@ -60,9 +60,9 @@ public class PersonView extends BaseView
 	}
 
 	/**
-	 * ¶ÁÈ¡ÏÔÊ¾Êı¾İ
+	 * è¯»å–æ˜¾ç¤ºæ•°æ®
 	 * 
-	 * @note ±¾µØÊı¾İ¿â¼ÓÔØÊı¾İ£¬±¾µØÎŞÊı¾İ£¬Ôò´Ó·şÎñ¶ËÏÂÔØµ½±¾µØÍêºóÔÙ½øĞĞ¼ÓÔØ
+	 * @note æœ¬åœ°æ•°æ®åº“åŠ è½½æ•°æ®ï¼Œæœ¬åœ°æ— æ•°æ®ï¼Œåˆ™ä»æœåŠ¡ç«¯ä¸‹è½½åˆ°æœ¬åœ°å®Œåå†è¿›è¡ŒåŠ è½½
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Override
@@ -71,7 +71,7 @@ public class PersonView extends BaseView
 		clearDataList();
 		if (mMoreButton == null)
 			mMoreButton = new MoreButton(mContext);
-		// ¶ÁÈ¡±¾µØ»º´æµÄÊı¾İ
+		// è¯»å–æœ¬åœ°ç¼“å­˜çš„æ•°æ®
 		List list = null;
 		String content = CacheUtil.getCacheContent(getNowChannelInfo());
 		if (!StringUtil.isEmpty(content))
@@ -80,7 +80,7 @@ public class PersonView extends BaseView
 		{
 			getLastNewsId(list);
 			addDataList(list);
-			// ÅĞ¶ÏÊÇ·ñÔÚÁĞ±íµ×²¿¼ÓÉÏ¸ü¶à°´Å¥
+			// åˆ¤æ–­æ˜¯å¦åœ¨åˆ—è¡¨åº•éƒ¨åŠ ä¸Šæ›´å¤šæŒ‰é’®
 			if (list.size() >= Constants.CINT_PAGE_SIZE)
 			{
 				mMoreButton.setShowButton(mContext
@@ -88,11 +88,11 @@ public class PersonView extends BaseView
 				mDataList.add(mMoreButton);
 			}
 			mAdapter.notifyDataSetChanged();
-			mlv_DataList.setSelectionAfterHeaderView(); // ÁĞ±íÑ¡ÔñÏîÖÃ»ØÍ·²¿
-			if (isfirstload)// Ê×´Î½øÈëÆµµÀ£¬´Ó·şÎñ¶Ë»ñÈ¡×îĞÂÊı¾İ
+			mlv_DataList.setSelectionAfterHeaderView(); // åˆ—è¡¨é€‰æ‹©é¡¹ç½®å›å¤´éƒ¨
+			if (isfirstload)// é¦–æ¬¡è¿›å…¥é¢‘é“ï¼Œä»æœåŠ¡ç«¯è·å–æœ€æ–°æ•°æ®
 				loadNewData(StringUtil.STR_EMPTY);
 		} else
-		// ±¾µØÎŞÊı¾İ£¬´Ó·şÎñ¶Ë»ñÈ¡
+		// æœ¬åœ°æ— æ•°æ®ï¼Œä»æœåŠ¡ç«¯è·å–
 		{
 			loadNewData(StringUtil.STR_EMPTY);
 		}
@@ -131,7 +131,7 @@ public class PersonView extends BaseView
 		mlv_DataList.setOnItemClickListener(getDataListItemClickListener());
 		setViewGestureDetector(mPullRefreshListView);
 		}
-		// Êı¾İ³õÊ¼»¯
+		// æ•°æ®åˆå§‹åŒ–
 		clearDataList();
 	}
 
@@ -150,14 +150,14 @@ public class PersonView extends BaseView
 			return;
 		}
 
-		// Òş²ØÈí¼üÅÌ
+		// éšè—è½¯é”®ç›˜
 		hideIme(false);
 
 		loadNewData(et.getText().toString());
 	}
 	
 	/**
-	 * Çå³ıËùÓĞÊı¾İ
+	 * æ¸…é™¤æ‰€æœ‰æ•°æ®
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void clearDataList()
@@ -165,19 +165,19 @@ public class PersonView extends BaseView
 		if(mDataList==null)
 		{
 			mDataList = new ArrayList();
-			// adapter ³õÊ¼»¯
+			// adapter åˆå§‹åŒ–
 			mAdapter = new ListBaseAdapter(mContext, mDataList);
 			mlv_DataList.setAdapter(mAdapter);
 		}
 		else
 			mDataList.clear();
-		//Ôö¼ÓÎŞÊı¾İÌáÊ¾
+		//å¢åŠ æ— æ•°æ®æç¤º
 		mDataList.add(mContext.getString(R.string.list_item_no_data));
 		mAdapter.notifyDataSetChanged();
 	}
 	
 	/**
-	 * Ôö¼ÓÁĞ±íÊı¾İ
+	 * å¢åŠ åˆ—è¡¨æ•°æ®
 	 * @param list
 	 */
 	@SuppressWarnings({ "unchecked"})
@@ -197,7 +197,7 @@ public class PersonView extends BaseView
 	}
 	
 	/**
-	 * »ñÈ¡Êı¾İÏîµã»÷Listener
+	 * è·å–æ•°æ®é¡¹ç‚¹å‡»Listener
 	 * 
 	 * @return
 	 */
@@ -209,7 +209,7 @@ public class PersonView extends BaseView
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id)
 			{
-				position -= mlv_DataList.getHeaderViewsCount(); // ¼õÈ¥ÁĞ±í header¸öÊı
+				position -= mlv_DataList.getHeaderViewsCount(); // å‡å»åˆ—è¡¨ headerä¸ªæ•°
 
 				if (position < 0 || position >= mDataList.size())
 					return;
@@ -226,7 +226,7 @@ public class PersonView extends BaseView
 				}
 				if (obj instanceof BaseVO)
 				{
-					//µã»÷ÏÔÊ¾ÏêÇé´¦Àí
+					//ç‚¹å‡»æ˜¾ç¤ºè¯¦æƒ…å¤„ç†
 					runDetailActivity(position);
 				}
 			}
@@ -235,7 +235,7 @@ public class PersonView extends BaseView
 	}
 	
 	/**
-	 * Ìø×ªµ½ÏêÇé½çÃæ
+	 * è·³è½¬åˆ°è¯¦æƒ…ç•Œé¢
 	 * 
 	 * @param position
 	 */
@@ -248,13 +248,13 @@ public class PersonView extends BaseView
 			return;
 		BaseVO baseVO=(BaseVO)o;
 		Intent intent = new Intent(mContext, NewsDetailActivity.class);
-		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_TITLE, getNowChannelInfo().getChannelName()+"ÏêÇé");
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_TITLE, getNowChannelInfo().getChannelName()+"è¯¦æƒ…");
 		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_DATA, baseVO);
 		mContext.startActivity(intent);
 	}
 	
 	/**
-	 * »ñÈ¡ÁĞ±í×îºóÒ»ÌõĞÂÎÅid
+	 * è·å–åˆ—è¡¨æœ€åä¸€æ¡æ–°é—»id
 	 * @param list
 	 */
 	private void getLastNewsId(List<?> list)
@@ -273,7 +273,7 @@ public class PersonView extends BaseView
 	}
 	
 	/**
-	 * ´Ó·şÎñ¶Ë»ñÈ¡×îĞÂÊı¾İ
+	 * ä»æœåŠ¡ç«¯è·å–æœ€æ–°æ•°æ®
 	 */
 	protected void loadNewData(String searchkey)
 	{
@@ -282,7 +282,7 @@ public class PersonView extends BaseView
 		if(vo==null)
 			return;
 		if(mPullRefreshListView!=null)
-			mPullRefreshListView.setRefreshing(true);//   Êı¾İË¢ĞÂÌáÊ¾
+			mPullRefreshListView.setRefreshing(true);//   æ•°æ®åˆ·æ–°æç¤º
 		keepMainTitleReflashStauts();
 		if(vo.isPositionChannel())
 		{
@@ -312,16 +312,16 @@ public class PersonView extends BaseView
 		
 	}
 	/**
-	 * ´Ó·şÎñ¶Ë»ñÈ¡¸ü¶àÊı¾İ
+	 * ä»æœåŠ¡ç«¯è·å–æ›´å¤šæ•°æ®
 	 */
 	private void loadMoreData(String searchkey)
 	{
 		if(mMoreButton==null)
 			return;
 		mMoreButton.setShowProgress(mContext
-				.getString(R.string.list_item_loading_data)); // ÇĞ»»¸ü¶à°´Å¥×´Ì¬ Îª ¼ÓÔØ×´Ì¬
+				.getString(R.string.list_item_loading_data)); // åˆ‡æ¢æ›´å¤šæŒ‰é’®çŠ¶æ€ ä¸º åŠ è½½çŠ¶æ€
 		
-		//ÇĞ»»±êÌâÀ¸¸üĞÂ°´Å¥×´Ì¬		
+		//åˆ‡æ¢æ ‡é¢˜æ æ›´æ–°æŒ‰é’®çŠ¶æ€		
 		MobileInfoService newsService= new MobileInfoService(mContext);
 		ChannelVO vo = getNowChannelInfo();
 		if(vo==null)
@@ -362,12 +362,12 @@ public class PersonView extends BaseView
 			@Override
 			public void receiveCompleted(boolean isSuc, String content)
 			{
-				// Ë¢ĞÂ¹ı³ÌÖĞÇĞ»»ÆµµÀ£¬²»¶ÔÁĞ±í½á¹û½øĞĞ´¦Àí
+				// åˆ·æ–°è¿‡ç¨‹ä¸­åˆ‡æ¢é¢‘é“ï¼Œä¸å¯¹åˆ—è¡¨ç»“æœè¿›è¡Œå¤„ç†
 				if(channelId!=getNowChannelID())
 					return;
 				stopMainTitleReflashStauts();
 				if(mPullRefreshListView!=null)
-					 mPullRefreshListView.onRefreshComplete();// Í£Ö¹Ë¢ĞÂ°´Å¥¶¯»­
+					 mPullRefreshListView.onRefreshComplete();// åœæ­¢åˆ·æ–°æŒ‰é’®åŠ¨ç”»
 				if(!isSuc)
 				{
 					showHint(content);
@@ -377,20 +377,20 @@ public class PersonView extends BaseView
 				List<?> list = JsonParser.parseJsonToList(content, respVO);
 				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
 				{
-					// ±¨ÎÄ·µ»Ø´íÎó
+					// æŠ¥æ–‡è¿”å›é”™è¯¯
 					showHint(respVO.getMsg());
 					return;
 				}
-				// ±¨ÎÄ·µ»ØÕı³£
-				// ´æ´¢×î½üË¢ĞÂµÄÁĞ±í
+				// æŠ¥æ–‡è¿”å›æ­£å¸¸
+				// å­˜å‚¨æœ€è¿‘åˆ·æ–°çš„åˆ—è¡¨
 				CacheUtil.cacheContent(getNowChannelInfo(), content);
 				getNowChannelInfo().setLastUpdateDataTime(mContext, new Date());
-				clearDataList();// ¼ÓÈëÎŞÊı¾İÌáÊ¾
+				clearDataList();// åŠ å…¥æ— æ•°æ®æç¤º
 				if (list != null && !list.isEmpty())
 				{
 					getLastNewsId(list);
 					addDataList(list);
-					// ÅĞ¶ÏÊÇ·ñÔÚÁĞ±íµ×²¿¼ÓÉÏ¸ü¶à°´Å¥
+					// åˆ¤æ–­æ˜¯å¦åœ¨åˆ—è¡¨åº•éƒ¨åŠ ä¸Šæ›´å¤šæŒ‰é’®
 					if (list.size() >= Constants.CINT_PAGE_SIZE)
 					{
 						mMoreButton.setShowButton(mContext
@@ -399,7 +399,7 @@ public class PersonView extends BaseView
 					}
 				}
 				mAdapter.notifyDataSetChanged();
-				mlv_DataList.setSelectionAfterHeaderView(); // ÁĞ±íÑ¡ÔñÏîÖÃ»ØÍ·²¿
+				mlv_DataList.setSelectionAfterHeaderView(); // åˆ—è¡¨é€‰æ‹©é¡¹ç½®å›å¤´éƒ¨
 			}
 		};
 	}
@@ -412,13 +412,13 @@ public class PersonView extends BaseView
 			@Override
 			public void receiveCompleted(boolean isSuc, String content)
 			{
-				// Ë¢ĞÂ¹ı³ÌÖĞÇĞ»»ÆµµÀ£¬²»¶ÔÁĞ±í½á¹û½øĞĞ´¦Àí
+				// åˆ·æ–°è¿‡ç¨‹ä¸­åˆ‡æ¢é¢‘é“ï¼Œä¸å¯¹åˆ—è¡¨ç»“æœè¿›è¡Œå¤„ç†
 				if(channelId!=getNowChannelID())
 					return;
 				stopMainTitleReflashStauts();
 				if(!isSuc)
 				{
-					mMoreButton.setShowButton(mContext.getString(R.string.list_item_more_msg)); // ÇĞ»»¸ü¶à°´Å¥×´Ì¬
+					mMoreButton.setShowButton(mContext.getString(R.string.list_item_more_msg)); // åˆ‡æ¢æ›´å¤šæŒ‰é’®çŠ¶æ€
 					showHint(content);
 					return;
 				}
@@ -426,21 +426,21 @@ public class PersonView extends BaseView
 				List<?> list = JsonParser.parseJsonToList(content, respVO);
 				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
 				{
-					// ±¨ÎÄ·µ»Ø´íÎó
-					mMoreButton.setShowButton(mContext.getString(R.string.list_item_more_msg)); // ÇĞ»»¸ü¶à°´Å¥×´Ì¬
+					// æŠ¥æ–‡è¿”å›é”™è¯¯
+					mMoreButton.setShowButton(mContext.getString(R.string.list_item_more_msg)); // åˆ‡æ¢æ›´å¤šæŒ‰é’®çŠ¶æ€
 					showHint(respVO.getMsg());
 					return;
 				}
-				// ±¨ÎÄ·µ»ØÕı³£
+				// æŠ¥æ–‡è¿”å›æ­£å¸¸
 				if (mDataList.contains(mMoreButton))
-				{ // ·µ»ØÕı³££¬ÒÆ³ı¸ü¶à°´Å¥£¬¸ù¾İ»ñÈ¡µ½µÄÏûÏ¢ÊıÅĞ¶ÏÊÇ·ñ¼ÌĞøÌí¼Óµ½ÁĞ±íÄ©Î²
+				{ // è¿”å›æ­£å¸¸ï¼Œç§»é™¤æ›´å¤šæŒ‰é’®ï¼Œæ ¹æ®è·å–åˆ°çš„æ¶ˆæ¯æ•°åˆ¤æ–­æ˜¯å¦ç»§ç»­æ·»åŠ åˆ°åˆ—è¡¨æœ«å°¾
 					mDataList.remove(mMoreButton);
 				}
 				if (list != null && !list.isEmpty())
 				{
 					getLastNewsId(list);
 					addDataList(list);
-					// ÅĞ¶ÏÊÇ·ñÔÚÁĞ±íµ×²¿¼ÓÉÏ¸ü¶à°´Å¥
+					// åˆ¤æ–­æ˜¯å¦åœ¨åˆ—è¡¨åº•éƒ¨åŠ ä¸Šæ›´å¤šæŒ‰é’®
 					if (list.size() >= Constants.CINT_PAGE_SIZE)
 					{
 						mMoreButton.setShowButton(mContext

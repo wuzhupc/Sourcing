@@ -10,16 +10,16 @@ import android.util.Base64;
 import android.util.Log;
 
 /**
- * ĞòÁĞ»¯¹¤¾ßÀà
+ * åºåˆ—åŒ–å·¥å…·ç±»
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-2 ÏÂÎç8:15:39
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-2 ä¸‹åˆ8:15:39
  */
 public class SerializeUtil
 {
 	private static final String TAG = SerializeUtil.class.getSimpleName();
 	
 	/**
-	 * ĞòÁĞ»¯Îª×Ö·û´®
+	 * åºåˆ—åŒ–ä¸ºå­—ç¬¦ä¸²
 	 * @param obj
 	 * @return
 	 */
@@ -56,7 +56,7 @@ public class SerializeUtil
 	}
 	
 	/**
-	 * ×Ö·û´®·´ĞòÁĞ»¯Îª¶ÔÏó
+	 * å­—ç¬¦ä¸²ååºåˆ—åŒ–ä¸ºå¯¹è±¡
 	 * @param objBody
 	 * @param clazz
 	 * @return

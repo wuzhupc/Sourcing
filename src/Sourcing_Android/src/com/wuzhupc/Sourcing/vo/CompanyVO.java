@@ -13,9 +13,9 @@ import com.wuzhupc.utils.JavaLangUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ÆóÒµĞÅÏ¢
+ * ä¼ä¸šä¿¡æ¯
  * @author wuzhu
- * @date 2013-4-20 ÏÂÎç3:47:10
+ * @date 2013-4-20 ä¸‹åˆ3:47:10
  * @version $id$
  */
 public class CompanyVO extends BaseVO {
@@ -26,18 +26,18 @@ public class CompanyVO extends BaseVO {
 	private static final long serialVersionUID = -4693176269500381982L;
 
 	/**
-	 * ÆóÒµÃû³Æ
+	 * ä¼ä¸šåç§°
 	 */
 	private String companyname;
 
 	/**
-	 * ÆóÒµËùÊôĞĞÒµ
+	 * ä¼ä¸šæ‰€å±è¡Œä¸š
 	 */
 	private String industry;
 	
 
 	/**
-	 * ·¢²¼Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * å‘å¸ƒæ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 
@@ -82,7 +82,7 @@ public class CompanyVO extends BaseVO {
 
 	
 	/**
-	 * ·µ»ØÏêÇéHTML±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLæ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -95,7 +95,7 @@ public class CompanyVO extends BaseVO {
 	}
 
 	/**
-	 * Éú³É·ÖÏíĞÅÏ¢ÄÚÈİ²¿·Ö
+	 * ç”Ÿæˆåˆ†äº«ä¿¡æ¯å†…å®¹éƒ¨åˆ†
 	 */
 	@Override
 	public String generateShareText()
@@ -104,7 +104,7 @@ public class CompanyVO extends BaseVO {
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML×Ó±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLå­æ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -115,7 +115,7 @@ public class CompanyVO extends BaseVO {
 	}
 	
 	/**
-	 * ÉèÖÃÄÚÈİHtmlÄÚÈİÏÔÊ¾
+	 * è®¾ç½®å†…å®¹Htmlå†…å®¹æ˜¾ç¤º
 	 */
 	@Override
 	public void setHtmlToShow(Context c, final DetailInfoListener detailInfoListener)

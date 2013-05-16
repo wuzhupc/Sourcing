@@ -3,9 +3,9 @@ package com.wuzhupc.Sourcing.vo;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
- * ×ÉÑ¯
+ * å’¨è¯¢
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:21:52
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:21:52
  */
 public class ConsultVO extends BaseVO
 {
@@ -14,20 +14,20 @@ public class ConsultVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 8311735190721341146L;
 	/**
-	 * ×ÉÑ¯±àºÅ
+	 * å’¨è¯¢ç¼–å·
 	 */
 	//private long consultid;
 	/**
-	 * ×ÉÑ¯ÄÚÈİ
+	 * å’¨è¯¢å†…å®¹
 	 */
 	private String consultcontent;
 	/**
-	 * ×ÉÑ¯Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * å’¨è¯¢æ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	
 	/**
-	 * ×ÉÑ¯´ğ¸´ĞÅÏ¢,Î´ÓĞ´ğ¸´ĞÅÏ¢Ê±Îªnull
+	 * å’¨è¯¢ç­”å¤ä¿¡æ¯,æœªæœ‰ç­”å¤ä¿¡æ¯æ—¶ä¸ºnull
 	 */
 	private ConsultResultVO consultResultVO;
 

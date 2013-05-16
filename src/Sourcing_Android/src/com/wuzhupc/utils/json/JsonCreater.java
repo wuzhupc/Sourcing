@@ -13,14 +13,14 @@ import com.google.gson.stream.JsonWriter;
 import com.wuzhupc.utils.StringUtil;
 
 /**
- * Json±¨ÎÄÉú³É
+ * JsonæŠ¥æ–‡ç”Ÿæˆ
  * @author wuzhu
  *
  */
 public class JsonCreater
 {
 	/**
-	 *  ²ÎÊı¼¯
+	 *  å‚æ•°é›†
 	 */
 	private Map<String, String> mParamsMap;	//
 	
@@ -30,16 +30,16 @@ public class JsonCreater
 	}
 	
 	/**
-	 * ´´½¨JsonÉú³ÉÆ÷
+	 * åˆ›å»ºJsonç”Ÿæˆå™¨
 	 */
 	public static JsonCreater startJson() {
 		return new JsonCreater();
 	}
 	
 	/**
-	 * Ìí¼Ó²ÎÊı
-	 * @param name ²ÎÊıÃû£¬Èç¹ûÎªnull£¬ÔòºöÂÔ
-	 * @param value ²ÎÊıÖµ£¬Èç¹ûÎªnull£¬ÔòºöÂÔ
+	 * æ·»åŠ å‚æ•°
+	 * @param name å‚æ•°åï¼Œå¦‚æœä¸ºnullï¼Œåˆ™å¿½ç•¥
+	 * @param value å‚æ•°å€¼ï¼Œå¦‚æœä¸ºnullï¼Œåˆ™å¿½ç•¥
 	 */
 	public void setParam(String name, String value) {
 		if (name == null || value == null) {

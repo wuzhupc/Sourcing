@@ -15,43 +15,43 @@ import android.webkit.WebSettings.TextSize;
 public class SettingUtil
 {
 	private final static String CStr_SettingSharedPreferencesKey="sourcingsetting";
-	
+
 	private final static String CStr_NewsFontSize_Key="NewsFontSize";
 
 	private final static String CStr_LastCheckPushMsgTime="LastCheckTime";
-	
+
 	private static final String CStr_PushService = "pushservice";
-	
+
 	/**
-	 * ×ÖÌåÁĞ±í
+	 * å­—ä½“åˆ—è¡¨
 	 */
 	public final static  TextSize[] NewsFontSizes = { 
 			WebSettings.TextSize.SMALLER, WebSettings.TextSize.NORMAL,
 			WebSettings.TextSize.LARGER, WebSettings.TextSize.LARGEST };
 	/**
-	 * ×ÖÌåÃèÊöÁĞ±í
+	 * å­—ä½“æè¿°åˆ—è¡¨
 	 */
-	public final static  String[] NewsFontSizesDesc={"Ğ¡ºÅ×Ö","ÖĞºÅ×Ö","´óºÅ×Ö","ÌØ´óºÅ×Ö"};
-	
+	public final static  String[] NewsFontSizesDesc={"å°å·å­—","ä¸­å·å­—","å¤§å·å­—","ç‰¹å¤§å·å­—"};
+
 	/**
-	 * »ñÈ¡Ä³À¸Ä¿×îºó¸üĞÂÊ±¼ä
+	 * è·å–æŸæ ç›®æœ€åæ›´æ–°æ—¶é—´
 	 * @param c
 	 * @param channelid
-	 * @return¡¡Èç¹ûÃ»ÓĞ¼ÇÂ¼·µ»Ønull
+	 * @returnã€€å¦‚æœæ²¡æœ‰è®°å½•è¿”å›null
 	 */
 	public static Date getChannelLastUpdateTime(Context c,long fatherchannelid,long channelid)
 	{
 		SharedPreferences sp=c.getSharedPreferences(CStr_SettingSharedPreferencesKey, Context.MODE_WORLD_READABLE);
 		String key="channel_lastupdatetime_"+fatherchannelid+"_"+channelid;
-		
+
 		String lastupdatetime = sp.getString(key, "");
 		if(StringUtil.isEmpty(lastupdatetime))
 			return null;
 		return TimeUtil.strToDate(lastupdatetime, null);
 	}
-	
+
 	/**
-	 * »ñÈ¡Ä³À¸Ä¿×îºó¸üĞÂÊ±¼ä
+	 * è·å–æŸæ ç›®æœ€åæ›´æ–°æ—¶é—´
 	 * @param c
 	 * @param channelid
 	 * @return
@@ -64,9 +64,9 @@ public class SettingUtil
 		editor.putString(key, TimeUtil.dateToString(lastupdatetime));
 		editor.commit();
 	}
-	
+
 	/**
-	 * ÉèÖÃÊÇ·ñÆôÓÃÍÆËÍ·şÎñ
+	 * è®¾ç½®æ˜¯å¦å¯ç”¨æ¨é€æœåŠ¡
 	 * @param c
 	 * @param pushservice
 	 */
@@ -79,7 +79,7 @@ public class SettingUtil
 	}
 
 	/**
-	 *  »ñÈ¡ÊÇ·ñÆôÓÃĞÅÏ¢ÍÆËÍ
+	 *  è·å–æ˜¯å¦å¯ç”¨ä¿¡æ¯æ¨é€
 	 * @param c
 	 * @return
 	 */
@@ -88,10 +88,10 @@ public class SettingUtil
 		SharedPreferences sp=c.getSharedPreferences(CStr_SettingSharedPreferencesKey, Context.MODE_WORLD_READABLE);
 		return sp.getBoolean(CStr_PushService, true);
 	}
-	
-	
+
+
 	/**
-	 * »ñÈ¡¿Í»§¶Ë°æ±¾
+	 * è·å–å®¢æˆ·ç«¯ç‰ˆæœ¬
 	 * @param c
 	 * @return
 	 */
@@ -105,33 +105,33 @@ public class SettingUtil
 			return "1.0.0";			
 		}
 	}
-	
+
 
 	/**
-	 * ¼ì²âÊÇ·ñÊÇµÚÒ»´ÎÆô¶¯
-	 * @param c Òª¼ì²âActivity
-	 * @param recordstart trueÊ±¼ÇÂ¼ÒÑ¾­Æô¶¯¹ı falseÔò²»½øĞĞ¼ÇÂ¼
-	 * @return true µÚÒ»´ÎÆô¶¯ false ·ÇµÚÒ»´ÎÆô¶¯
+	 * æ£€æµ‹æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡å¯åŠ¨
+	 * @param c è¦æ£€æµ‹Activity
+	 * @param recordstart trueæ—¶è®°å½•å·²ç»å¯åŠ¨è¿‡ falseåˆ™ä¸è¿›è¡Œè®°å½•
+	 * @return true ç¬¬ä¸€æ¬¡å¯åŠ¨ false éç¬¬ä¸€æ¬¡å¯åŠ¨
 	 */
 	@SuppressLint({ "WorldReadableFiles", "WorldWriteableFiles" })
 	public static Boolean isFirstStart(Activity c,Boolean recordstart)
 	{
 		String key="fs_"+c.getClass().getSimpleName();
-		
+
 		SharedPreferences sp=c.getSharedPreferences(CStr_SettingSharedPreferencesKey, Context.MODE_WORLD_READABLE|Context.MODE_WORLD_WRITEABLE);
 		Boolean firststart=sp.getBoolean(key, true);
-		
+
 		if(recordstart&&firststart)
 		{
 			Editor editor=sp.edit();
 			editor.putBoolean(key, false);
 			editor.commit();
 		}
-		
+
 		return firststart;
 	}
 	/**
-	 * »ñÈ¡×ÖÌåË÷Òı
+	 * è·å–å­—ä½“ç´¢å¼•
 	 * @param textSize
 	 * @return
 	 */
@@ -143,7 +143,7 @@ public class SettingUtil
 		return -1;
 	}
 	/**
-	 * »ñÈ¡ÓĞĞ§µÄË÷ÒıÖµ
+	 * è·å–æœ‰æ•ˆçš„ç´¢å¼•å€¼
 	 * @param index
 	 * @return
 	 */
@@ -156,7 +156,7 @@ public class SettingUtil
 		return index;
 	}
 	/**
-	 * ¸ù¾İË÷Òı»ñÈ¡×ÖÌå
+	 * æ ¹æ®ç´¢å¼•è·å–å­—ä½“
 	 * @param index
 	 * @return
 	 */
@@ -165,7 +165,7 @@ public class SettingUtil
 		return NewsFontSizes[getEffIndex(index)];
 	}
 	/**
-	 * »ñÈ¡×ÖÌå¶ÔÓ¦µÄÃèÊö
+	 * è·å–å­—ä½“å¯¹åº”çš„æè¿°
 	 * @param textSize
 	 * @return
 	 */
@@ -173,21 +173,21 @@ public class SettingUtil
 	{
 		return getNewsFontSizeDesc(getIndexFromNewsFontSizes(textSize));
 	}
-	
+
 	/**
-	 * »ñÈ¡×ÖÌå¶ÔÓ¦µÄÃèÊö
+	 * è·å–å­—ä½“å¯¹åº”çš„æè¿°
 	 * @param index
 	 * @return
 	 */
 	public static String getNewsFontSizeDesc(int index)
 	{
 		if(index<0||index>=NewsFontSizesDesc.length)
-			return "×ÖÌå²»´æÔÚ!";
+			return "å­—ä½“ä¸å­˜åœ¨!";
 		return NewsFontSizesDesc[index];
 	}
-	
+
 	/**
-	 * »ñÈ¡ĞÂÎÅ×ÖÌåÉèÖÃ
+	 * è·å–æ–°é—»å­—ä½“è®¾ç½®
 	 * @param c
 	 * @return
 	 */
@@ -195,9 +195,9 @@ public class SettingUtil
 	{		
 		return NewsFontSizes[getNewsFontSizeIndex(c)];
 	} 
-	
+
 	/**
-	 * »ñÈ¡ĞÂÎÅ×ÖÌåÉèÖÃ
+	 * è·å–æ–°é—»å­—ä½“è®¾ç½®
 	 * @param c
 	 * @return
 	 */
@@ -208,7 +208,7 @@ public class SettingUtil
 		return getEffIndex(index);
 	} 
 	/**
-	 * ÉèÖÃ×ÖÌåÉèÖÃ
+	 * è®¾ç½®å­—ä½“è®¾ç½®
 	 * @param c
 	 * @param textSize
 	 */
@@ -217,9 +217,9 @@ public class SettingUtil
 		int index=getIndexFromNewsFontSizes(textSize);
 		setNewsFontSize(c, index);
 	}
-	
+
 	/**
-	 * ÉèÖÃ×ÖÌåÉèÖÃ
+	 * è®¾ç½®å­—ä½“è®¾ç½®
 	 * @param c
 	 * @param index
 	 */
@@ -231,9 +231,9 @@ public class SettingUtil
 		editor.commit();
 	}
 
-	
+
 	/**
-	 * ÉèÖÃÉÏ´Î»ñÈ¡ÍÆËÍÏûÏ¢Ê±¼ä
+	 * è®¾ç½®ä¸Šæ¬¡è·å–æ¨é€æ¶ˆæ¯æ—¶é—´
 	 * @param c
 	 * @param time
 	 */
@@ -243,15 +243,15 @@ public class SettingUtil
 		editor.putString(CStr_LastCheckPushMsgTime, time);
 		editor.commit();
 	}
-	
+
 	/**
-	 * »ñÈ¡ÉÏ´Î»ñÈ¡ÍÆËÍÏûÏ¢Ê±¼ä
+	 * è·å–ä¸Šæ¬¡è·å–æ¨é€æ¶ˆæ¯æ—¶é—´
 	 * @param c
 	 * @return
 	 */
 	public static String getLastCheckPushMsgTime(Context c) {
 		SharedPreferences sp=c.getSharedPreferences(CStr_SettingSharedPreferencesKey, Context.MODE_WORLD_READABLE);
-		
+
 		return sp.getString(CStr_LastCheckPushMsgTime, "");
 	}
 }

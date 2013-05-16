@@ -28,7 +28,7 @@ public class ListBaseAdapter extends BaseAdapter
 	private Context mContext;
 	private List<?> mList;
 
-	private ImageService imageService; // ËõÂÔÍ¼ÏÂÔØservice
+	private ImageService imageService; // ç¼©ç•¥å›¾ä¸‹è½½service
 	
 	private boolean misfav;
 
@@ -110,7 +110,7 @@ public class ListBaseAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * Ö°Î»
+	 * èŒä½
 	 * @param vo
 	 * @return
 	 */
@@ -127,7 +127,7 @@ public class ListBaseAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * Ö°Î»
+	 * èŒä½
 	 * @param vo
 	 * @return
 	 */
@@ -144,7 +144,7 @@ public class ListBaseAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * »ñÈ¡ÏîÄ¿
+	 * è·å–é¡¹ç›®
 	 * @param vo
 	 * @return
 	 */
@@ -161,7 +161,7 @@ public class ListBaseAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * »ñÈ¡ÏîÄ¿
+	 * è·å–é¡¹ç›®
 	 * @param vo
 	 * @return
 	 */
@@ -178,7 +178,7 @@ public class ListBaseAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * »ñÈ¡ÅàÑµ»ú¹¹ÁĞ±í
+	 * è·å–åŸ¹è®­æœºæ„åˆ—è¡¨
 	 * @param vo
 	 * @return
 	 */
@@ -191,7 +191,7 @@ public class ListBaseAdapter extends BaseAdapter
 	}
 	
 	/**
-	 * Éú³É×ÊÑ¶listitem View
+	 * ç”Ÿæˆèµ„è®¯listitem View
 	 * @param vo
 	 * @param position
 	 * @return
@@ -199,7 +199,7 @@ public class ListBaseAdapter extends BaseAdapter
 	private View getNewsListItem(NewsVO vo,int position)
 	{
 		View view =null;
-		// Í·Ìõ(ÇÒÖ»ÓĞµÚÒ»Ìõ²ÅÏÔÊ¾³ÉÍ·ÌõÑùÊ½)
+		// å¤´æ¡(ä¸”åªæœ‰ç¬¬ä¸€æ¡æ‰æ˜¾ç¤ºæˆå¤´æ¡æ ·å¼)
 		if (position == 0 && !misfav && vo.isHeadline()&&!misfav)
 		{
 			view = LayoutInflater.from(mContext).inflate(R.layout.listitem_base_headline, null);
@@ -214,20 +214,20 @@ public class ListBaseAdapter extends BaseAdapter
 		title_tv.setText(vo.getTitle());
 		summary_tv.setText(vo.getNewssummary());
 
-		// Í·Ìõ(ÇÒÖ»ÓĞµÚÒ»Ìõ²ÅÏÔÊ¾³ÉÍ·ÌõÑùÊ½)
+		// å¤´æ¡(ä¸”åªæœ‰ç¬¬ä¸€æ¡æ‰æ˜¾ç¤ºæˆå¤´æ¡æ ·å¼)
 		if (position == 0 && !misfav && vo.isHeadline())
 		{
-			// Í·ÌõÊ±£¬¼ÓÔØÖĞÍ¼
+			// å¤´æ¡æ—¶ï¼ŒåŠ è½½ä¸­å›¾
 			imageService.setThumbnail(titlePic_iv, vo.getTitlepic(), null, ImageUtil.IMAGE_DEFMEDIUMWIDTH,
 					ImageUtil.IMAGE_DEFMEDIUMHEIGHT);
 		} else if (!StringUtil.isEmpty(vo.getTitlepic_small()))
 		{
-			// ·ÇÍ·ÌõÊ±£¬ÓĞĞ¡Í¼ÔØÈëĞ¡Í¼
+			// éå¤´æ¡æ—¶ï¼Œæœ‰å°å›¾è½½å…¥å°å›¾
 			imageService.setThumbnail(titlePic_iv, vo.getTitlepic_small(), null, ImageUtil.IMAGE_DEFSMALLWIDTH,
 					ImageUtil.IMAGE_DEFSMALLHEIGHT);
 		} else if (!StringUtil.isEmpty(vo.getTitlepic()))
 		{
-			// ·ÇÍ·ÌõÊ±£¬ÎŞĞ¡Í¼µ«ÓĞ´óÍ¼ÔØÈëÔÚÍ¼
+			// éå¤´æ¡æ—¶ï¼Œæ— å°å›¾ä½†æœ‰å¤§å›¾è½½å…¥åœ¨å›¾
 			imageService.setThumbnail(titlePic_iv, vo.getTitlepic(), null, ImageUtil.IMAGE_DEFSMALLWIDTH,
 					ImageUtil.IMAGE_DEFSMALLHEIGHT);
 		} else

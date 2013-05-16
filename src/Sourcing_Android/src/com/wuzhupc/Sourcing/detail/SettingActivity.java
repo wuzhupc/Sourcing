@@ -33,7 +33,7 @@ public class SettingActivity extends BaseActivity implements
 {
 
 	/**
-	 * ×ÖÌåÑ¡Ôñ¶Ô»°¿ò
+	 * å­—ä½“é€‰æ‹©å¯¹è¯æ¡†
 	 */
 	private static final int CINT_DIALOG_FONTSIZESETTING = 1;
 
@@ -51,7 +51,7 @@ public class SettingActivity extends BaseActivity implements
 		setContentView(R.layout.activity_setting);
 		int index = SettingUtil.getNewsFontSizeIndex(this);
 		mtv_fontsizeinfo = (TextView)findViewById(R.id.setting_fontsize_info_tv);
-		mtv_fontsizeinfo.setText("µ±Ç°×ÖÌåÎª£º"
+		mtv_fontsizeinfo.setText("å½“å‰å­—ä½“ä¸ºï¼š"
 				+ SettingUtil.getNewsFontSizeDesc(index));
 		findViewById(R.id.setting_about_ll).setOnClickListener(this);
 		findViewById(R.id.setting_update_ll).setOnClickListener(this);
@@ -88,7 +88,7 @@ public class SettingActivity extends BaseActivity implements
 		switch (id)
 		{
 		case CINT_DIALOG_FONTSIZESETTING:
-			builder.setTitle("ÕıÎÄ×ÖºÅ");
+			builder.setTitle("æ­£æ–‡å­—å·");
 			final ChoiceOnClickListener choiceListener = new ChoiceOnClickListener();
 			builder.setSingleChoiceItems(SettingUtil.NewsFontSizesDesc, SettingUtil.getNewsFontSizeIndex(SettingActivity.this),
 					choiceListener);
@@ -102,12 +102,12 @@ public class SettingActivity extends BaseActivity implements
 						int index = choiceListener.getWhich();
 						SettingUtil.setNewsFontSize(SettingActivity.this,
 							index);
-						mtv_fontsizeinfo.setText("µ±Ç°×ÖÌåÎª£º"
+						mtv_fontsizeinfo.setText("å½“å‰å­—ä½“ä¸ºï¼š"
 							+ SettingUtil.getNewsFontSizeDesc(index));
 					}
 				}
 			};
-			builder.setPositiveButton("È·¶¨", btnListener);
+			builder.setPositiveButton("ç¡®å®š", btnListener);
 			dialog = builder.create();
 			break;
 		}
@@ -115,7 +115,7 @@ public class SettingActivity extends BaseActivity implements
 	}
 
 	/**
-	 * ÏÔÊ¾¹ØÓÚ¶Ô»°¿ò
+	 * æ˜¾ç¤ºå…³äºå¯¹è¯æ¡†
 	 */
 	private void showAboutDialog()
 	{
@@ -174,18 +174,18 @@ public class SettingActivity extends BaseActivity implements
 	}
 	private void completeGetVersionInfo(ClientVerVO mClientVerVO)
 	{
-		//ÅĞ¶Ï°æ±¾¸üĞÂĞÅÏ¢
+		//åˆ¤æ–­ç‰ˆæœ¬æ›´æ–°ä¿¡æ¯
 		if(mClientVerVO==null||!mClientVerVO.hasUpdate())
 		{
-			hitCloseApplication("µ±Ç°ÒÑ¾­ÊÇ×îĞÂ°æ±¾!",false);
+			hitCloseApplication("å½“å‰å·²ç»æ˜¯æœ€æ–°ç‰ˆæœ¬!",false);
 			return;
 		}
-		//ÏÔÊ¾¸üĞÂĞÅÏ¢
+		//æ˜¾ç¤ºæ›´æ–°ä¿¡æ¯
 		showUpdateDialog(mClientVerVO);
 	}
 	
 	/**
-	 * ÏÔÊ¾¸üĞÂ¶Ô»°¿ò
+	 * æ˜¾ç¤ºæ›´æ–°å¯¹è¯æ¡†
 	 */
 	private void showUpdateDialog(final ClientVerVO mClientVerVO)
 	{
@@ -224,16 +224,16 @@ public class SettingActivity extends BaseActivity implements
 	{
 		AlertDialog.Builder adb = new AlertDialog.Builder(
 				SettingActivity.this);
-		adb.setTitle("ÌáÊ¾");
-		adb.setMessage("ÄãÈ·¶¨Çå³ı»º´æÊı¾İÂğ£¿");
-		adb.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener()
+		adb.setTitle("æç¤º");
+		adb.setMessage("ä½ ç¡®å®šæ¸…é™¤ç¼“å­˜æ•°æ®å—ï¼Ÿ");
+		adb.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener()
 		{
 
 			@Override
 			public void onClick(DialogInterface dialog, int which)
 			{
 				ProgressDialog pdialog = ProgressDialog.show(
-						SettingActivity.this, null, "Çå³ı»º´æÊı¾İÖĞ£¬ÇëÉÔºò...",
+						SettingActivity.this, null, "æ¸…é™¤ç¼“å­˜æ•°æ®ä¸­ï¼Œè¯·ç¨å€™...",
 						true);
 
 				Boolean bclearsucess = true;
@@ -246,15 +246,15 @@ public class SettingActivity extends BaseActivity implements
 				}
 				if (bclearsucess)
 				{
-					displayToast("Çå³ı»º´æ³É¹¦£¡");
+					displayToast("æ¸…é™¤ç¼“å­˜æˆåŠŸï¼");
 				} else
 				{
-					displayToast("Çå³ı»º´æÊ§°Ü£¡");
+					displayToast("æ¸…é™¤ç¼“å­˜å¤±è´¥ï¼");
 				}
 				pdialog.dismiss();
 			}
 		});
-		adb.setNegativeButton("È¡Ïû", null);
+		adb.setNegativeButton("å–æ¶ˆ", null);
 		adb.show();
 	}
 

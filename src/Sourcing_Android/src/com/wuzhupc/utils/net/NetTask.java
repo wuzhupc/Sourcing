@@ -29,52 +29,52 @@ import android.os.AsyncTask;
 
 public class NetTask extends AsyncTask<String, Integer, String> {
 
-	// ½ø¶ÈÌõ
+	// è¿›åº¦æ¡
 	private ProgressDialog pdialog;
 
-	// ÓĞÉèÖÃcontextÔò±íÊ¾ÒªÏÔÊ¾½ø¶ÈÌõ
+	// æœ‰è®¾ç½®contextåˆ™è¡¨ç¤ºè¦æ˜¾ç¤ºè¿›åº¦æ¡
 	private Context context;
 
-	// ÊÇ·ñÔÊĞíÈ¡Ïû
+	// æ˜¯å¦å…è®¸å–æ¶ˆ
 	private boolean canCancel;
 	
-	// ÏÔÊ¾½ø¶ÈÌõ
+	// æ˜¾ç¤ºè¿›åº¦æ¡
 	private boolean showProgress;
 
-	// ½ø¶ÈÌõ±êÌâ
+	// è¿›åº¦æ¡æ ‡é¢˜
 	private String progressTitle;
 	
-	// ½ø¶ÈÌõÄÚÈİ
+	// è¿›åº¦æ¡å†…å®¹
 	private String progressContent;
 
-	// ÇëÇóµÄURLµØÖ·
+	// è¯·æ±‚çš„URLåœ°å€
 	private String url;
 
-	// ÇëÇó²ÎÊı
+	// è¯·æ±‚å‚æ•°
 	private Hashtable para;
 
-	// Ò³Ãæ±àÂë
+	// é¡µé¢ç¼–ç 
 	private String pageCode;
 
-	// ÇëÇó·½Ê½ 0.get·½Ê½ 1.post·½Ê½
+	// è¯·æ±‚æ–¹å¼ 0.getæ–¹å¼ 1.postæ–¹å¼
 	private int method;
 
-	// ÇëÇóÍê³É»Øµ÷½Ó¿Ú
+	// è¯·æ±‚å®Œæˆå›è°ƒæ¥å£
 	private INetComplete completeController;
 
-	// ÇëÇó¹ı³Ì½ø¶È»Øµ÷½Ó¿Ú
+	// è¯·æ±‚è¿‡ç¨‹è¿›åº¦å›è°ƒæ¥å£
 	private INetProcessing processingController;
 
-	// ÍøÂçÇëÇóÊÇ·ñ³É¹¦ trueÎªÕı³£ falseÎª
+	// ç½‘ç»œè¯·æ±‚æ˜¯å¦æˆåŠŸ trueä¸ºæ­£å¸¸ falseä¸º
 	private boolean isSuccess = false;
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * 
 	 * @param pageCode
-	 *            ÇëÇóµÄÒ³Ãæ±àÂëÈçutf-8,gbkµÈ
+	 *            è¯·æ±‚çš„é¡µé¢ç¼–ç å¦‚utf-8,gbkç­‰
 	 * @param completeController
-	 *            ÇëÇó½áÊøµÄ»Øµ÷½Ó¿Ú
+	 *            è¯·æ±‚ç»“æŸçš„å›è°ƒæ¥å£
 	 */
 	public NetTask(String pageCode, INetComplete completeController) {
 		this.pageCode = pageCode;
@@ -82,14 +82,14 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 
 	/**
-	 * ¹¹Ôì·½·¨
+	 * æ„é€ æ–¹æ³•
 	 * 
 	 * @param para
-	 *            URL²ÎÊıhashtable
+	 *            URLå‚æ•°hashtable
 	 * @param pageCode
-	 *            Ò³Ãæ±àÂë
+	 *            é¡µé¢ç¼–ç 
 	 * @param completeController
-	 *            ÇëÇó½áÊø»Øµ÷½Ó¿Ú
+	 *            è¯·æ±‚ç»“æŸå›è°ƒæ¥å£
 	 */
 	public NetTask(Hashtable para, String pageCode,
 			INetComplete completeController) {
@@ -106,11 +106,11 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 
 	/**
-	 * ÏÔÊ¾½ø¶ÈÌõ
+	 * æ˜¾ç¤ºè¿›åº¦æ¡
 	 */
 	private void displayProcessBar() {
 
-		// ÓĞÉèÖÃcontextÔò±íÊ¾ÒªÏÔÊ¾½ø¶ÈÌõ
+		// æœ‰è®¾ç½®contextåˆ™è¡¨ç¤ºè¦æ˜¾ç¤ºè¿›åº¦æ¡
 		if (context == null || !showProgress)
 			return;
 		
@@ -129,11 +129,11 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 
 	/**
-	 * Ö÷Ö´ĞĞ ·µ»ØÖµÀàĞÍ ÓÉ¼Ì³ĞÖĞ¶¨Òå
+	 * ä¸»æ‰§è¡Œ è¿”å›å€¼ç±»å‹ ç”±ç»§æ‰¿ä¸­å®šä¹‰
 	 */
 	@Override
 	protected String doInBackground(String... params) {
-		/*********************** ²âÊÔ×¨ÓÃ *********************************************/
+		/*********************** æµ‹è¯•ä¸“ç”¨ *********************************************/
 //		try {
 //			FileInputStream fis = ((BaseActivity) context).openFileInput("newslist");
 //			
@@ -200,8 +200,8 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 				url_con.setRequestMethod("POST");
 			}
 			
-			url_con.setConnectTimeout(Constants.CONNECT_TIME_OUT*1000);// Á¬½Ó³¬Ê±
-			url_con.setReadTimeout(Constants.READ_TIME_OUT*1000);// ¶Á²Ù×÷³¬Ê±
+			url_con.setConnectTimeout(Constants.CONNECT_TIME_OUT*1000);// è¿æ¥è¶…æ—¶
+			url_con.setReadTimeout(Constants.READ_TIME_OUT*1000);// è¯»æ“ä½œè¶…æ—¶
 			url_con.setDoOutput(true);
 			
 			byte[] b = sb.toString().getBytes();
@@ -223,7 +223,7 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 			rd.close();
 			in.close();
 				
-			/****************** Base64½âÂë¡¢½âÑ¹ *******************/ 
+			/****************** Base64è§£ç ã€è§£å‹ *******************/ 
 				
 			isSuccess = true;
 		} catch (Exception e) {
@@ -243,7 +243,7 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 
 	/**
-	 * ÈÎÎñÖ´ĞĞÍê±Ï
+	 * ä»»åŠ¡æ‰§è¡Œå®Œæ¯•
 	 */
 	@Override
 	protected void onPostExecute(String result) {
@@ -255,18 +255,18 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 
 	/**
-	 * ÈÎÎñÖ´ĞĞÇ°Ö´ĞĞ
+	 * ä»»åŠ¡æ‰§è¡Œå‰æ‰§è¡Œ
 	 */
 	@Override
 	protected void onPreExecute() {
-		// ÏÔÊ¾½ø¶ÈÌõ
+		// æ˜¾ç¤ºè¿›åº¦æ¡
 		displayProcessBar();
 
 		onProgressUpdate(0);
 	}
 
 	/**
-	 * ½ø¶È¸üĞÂ
+	 * è¿›åº¦æ›´æ–°
 	 */
 	@Override
 	protected void onProgressUpdate(Integer... values) {
@@ -277,10 +277,10 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 
 	/**
-	 * ×¼±¸ÍêÕûµÄURLµØÖ·
+	 * å‡†å¤‡å®Œæ•´çš„URLåœ°å€
 	 */
 	public void prepUrl() {
-		// url Ô¤´¦Àí
+		// url é¢„å¤„ç†
 		if (para != null) {
 			if (url.indexOf("?") == -1)
 				url = url + "?";
@@ -295,10 +295,10 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 	
 	/**
-	 * Ö´ĞĞÉÏ±¨²Ù×÷
-	 * @param strurl¡¡µØÖ·
+	 * æ‰§è¡Œä¸ŠæŠ¥æ“ä½œ
+	 * @param strurlã€€åœ°å€
 	 * @author wuzhu 20110608
-	 * @return ·µ»ØÉÏ±¨½á¹û£¬Èç¹û³ö´í£¬Ôò·µ»Ø´íÎóÔ­Òò£¬¿É»ñÈ¡getIsSuccess()ÅĞ¶ÏÖ´ĞĞÊÇ·ñ³É¹¦
+	 * @return è¿”å›ä¸ŠæŠ¥ç»“æœï¼Œå¦‚æœå‡ºé”™ï¼Œåˆ™è¿”å›é”™è¯¯åŸå› ï¼Œå¯è·å–getIsSuccess()åˆ¤æ–­æ‰§è¡Œæ˜¯å¦æˆåŠŸ
 	 */
 	public  String uploadInfo(String strurl) {
 		this.url =strurl;
@@ -327,8 +327,8 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 				url_con.setRequestMethod("POST");
 			}
 			
-			url_con.setConnectTimeout(Constants.CONNECT_TIME_OUT*1000);// Á¬½Ó³¬Ê±
-			url_con.setReadTimeout(Constants.READ_TIME_OUT*1000);// ¶Á²Ù×÷³¬Ê±
+			url_con.setConnectTimeout(Constants.CONNECT_TIME_OUT*1000);// è¿æ¥è¶…æ—¶
+			url_con.setReadTimeout(Constants.READ_TIME_OUT*1000);// è¯»æ“ä½œè¶…æ—¶
 			url_con.setDoOutput(true);
 			
 			byte[] b = sb.toString().getBytes();
@@ -350,7 +350,7 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 			rd.close();
 			in.close();
 				
-			/****************** Base64½âÂë¡¢½âÑ¹ *******************/
+			/****************** Base64è§£ç ã€è§£å‹ *******************/
 			//Log.d("NetTask", "response:\n"+responseContent);
 //			s = StringUtil.decompress(StringUtil.decode(s));
 //			Log.i("NetTask", "__________s = "+s);
@@ -367,12 +367,12 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	
 	
 	/**
-	 * Ö´ĞĞÉÏ±¨ÎÄ¼ş²Ù×÷
+	 * æ‰§è¡Œä¸ŠæŠ¥æ–‡ä»¶æ“ä½œ
 	 * 
 	 * @param strurl
-	 *            ¡¡µØÖ·
+	 *            ã€€åœ°å€
 	 * @author wuzhu 20110811
-	 * @return ·µ»ØÉÏ±¨½á¹û£¬Èç¹û³ö´í£¬Ôò·µ»Ø´íÎóÔ­Òò£¬¿É»ñÈ¡getIsSuccess()ÅĞ¶ÏÖ´ĞĞÊÇ·ñ³É¹¦
+	 * @return è¿”å›ä¸ŠæŠ¥ç»“æœï¼Œå¦‚æœå‡ºé”™ï¼Œåˆ™è¿”å›é”™è¯¯åŸå› ï¼Œå¯è·å–getIsSuccess()åˆ¤æ–­æ‰§è¡Œæ˜¯å¦æˆåŠŸ
 	 */
 	public String uploadFile(String strurl, String filename)
 	{
@@ -387,7 +387,7 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 			if (!file.exists())
 			{
 				isSuccess = false;
-				return "ÎÄ¼ş²»´æÔÚ!";
+				return "æ–‡ä»¶ä¸å­˜åœ¨!";
 			}
 
 			URL url = new URL(this.url);
@@ -395,29 +395,29 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 
 			url_con.setRequestMethod("POST");
 
-			//ÉèÖÃÎÄ¼şÀàĞÍ
+			//è®¾ç½®æ–‡ä»¶ç±»å‹
 			url_con.setRequestProperty("file-format",
 					FileUtil.getFileExtension(filename));
 			url_con.setRequestProperty("Content-type", "application/octet-stream");
 			url_con.setRequestProperty("Content-Length",String.valueOf(file.length()));
 			url_con.setRequestProperty("Connection", "Keep-Alive");
-			url_con.setConnectTimeout(Constants.CONNECT_TIME_OUT * 1000);// Á¬½Ó³¬Ê±
-			url_con.setReadTimeout(Constants.READ_TIME_OUT * 1000);// ¶Á²Ù×÷³¬Ê±
+			url_con.setConnectTimeout(Constants.CONNECT_TIME_OUT * 1000);// è¿æ¥è¶…æ—¶
+			url_con.setReadTimeout(Constants.READ_TIME_OUT * 1000);// è¯»æ“ä½œè¶…æ—¶
 			url_con.setDoOutput(true);
 
 			DataOutputStream ds = new DataOutputStream(
 					url_con.getOutputStream());
 			FileInputStream fStream = new FileInputStream(file);
 
-			/* ÉèÖÃÃ¿´ÎĞ´Èë1024bytes */
+			/* è®¾ç½®æ¯æ¬¡å†™å…¥1024bytes */
 			int bufferSize = 1024;
 			byte[] buffer = new byte[bufferSize];
 
 			int length = -1;
-			/* ´ÓÎÄ¼ş¶ÁÈ¡Êı¾İÖÁ»º³åÇø */
+			/* ä»æ–‡ä»¶è¯»å–æ•°æ®è‡³ç¼“å†²åŒº */
 			while ((length = fStream.read(buffer)) != -1)
 			{
-				/* ½«×ÊÁÏĞ´ÈëDataOutputStreamÖĞ */
+				/* å°†èµ„æ–™å†™å…¥DataOutputStreamä¸­ */
 				ds.write(buffer, 0, length);
 			}
 			fStream.close();
@@ -445,16 +445,16 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 			rd.close();
 			in.close();
 
-			/****************** Base64½âÂë¡¢½âÑ¹ *******************/
+			/****************** Base64è§£ç ã€è§£å‹ *******************/
 			//Log.d("NetTask", "response:\n" + responseContent);
 			
-			//´íÎó±êÊ¶
+			//é”™è¯¯æ ‡è¯†
 			if(StringUtil.isEmpty(responseContent))
 			{
 				isSuccess=false;
-				return "·şÎñÆ÷¶ËÎŞ·µ»Ø½á¹û£¡";
+				return "æœåŠ¡å™¨ç«¯æ— è¿”å›ç»“æœï¼";
 			}			
-			//ĞèÒª¶Ô·µ»Ø±¨ÎÄ½øĞĞ½âÎö
+			//éœ€è¦å¯¹è¿”å›æŠ¥æ–‡è¿›è¡Œè§£æ
 			ResponseVO vo=new ResponseVO();
 			Map<String, String> vmap= JsonParser.parseJsonToMap(responseContent, vo);
 			if(vo.getCode()==ResponseVO.RESPONSE_CODE_SUCESS)
@@ -478,7 +478,7 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	}
 	
 	/**
-	 * »ñÈ¡Ö´ĞĞ½á¹ûÊÇ·ñ³É¹¦
+	 * è·å–æ‰§è¡Œç»“æœæ˜¯å¦æˆåŠŸ
 	 * @return
 	 */
 	public Boolean getIsSuccess()
@@ -534,16 +534,16 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 		this.progressContent = progressContent;
 	}
 
-	/************************************ ½Ó¿Ú¶¨Òå **************************************/
+	/************************************ æ¥å£å®šä¹‰ **************************************/
 	
 	public interface INetComplete {
 		
 		/**
-		 * ÍøÂçÇëÇó·µ»Ø´¦Àí½Ó¿Ú
-		 * ÍøÂç·ÃÎÊÇëÇó½áÊøÊ±£¬·µ»Ø²¢µ÷ÓÃ´Ë½Ó¿Ú
-		 * ½øĞĞºóĞø´¦Àí,isSuccess±íÊ¾ÍøÂç·ÃÎÊ
-		 * ÊÇ·ñ³É¹¦.contentÎª·ÃÎÊÍøÂçÇëÇó·µ»Ø
-		 * µÄ×Ö´®
+		 * ç½‘ç»œè¯·æ±‚è¿”å›å¤„ç†æ¥å£
+		 * ç½‘ç»œè®¿é—®è¯·æ±‚ç»“æŸæ—¶ï¼Œè¿”å›å¹¶è°ƒç”¨æ­¤æ¥å£
+		 * è¿›è¡Œåç»­å¤„ç†,isSuccessè¡¨ç¤ºç½‘ç»œè®¿é—®
+		 * æ˜¯å¦æˆåŠŸ.contentä¸ºè®¿é—®ç½‘ç»œè¯·æ±‚è¿”å›
+		 * çš„å­—ä¸²
 		 * by haicao 
 		 * 2011-3-10
 		 */
@@ -553,8 +553,8 @@ public class NetTask extends AsyncTask<String, Integer, String> {
 	
 	public interface INetProcessing {
 		/**
-		 * ÏÂÔØÍê³É°Ù·Ö±È
-		 * @param percent ÏÂÔØ°Ù·Ö±È
+		 * ä¸‹è½½å®Œæˆç™¾åˆ†æ¯”
+		 * @param percent ä¸‹è½½ç™¾åˆ†æ¯”
 		 */
 		public void processing(int percent);
 	}

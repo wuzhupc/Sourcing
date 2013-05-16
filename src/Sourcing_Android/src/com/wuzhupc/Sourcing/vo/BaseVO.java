@@ -19,7 +19,7 @@ public class BaseVO implements Serializable
 	 */
 	private static final long serialVersionUID = -3185317889045447937L;
 	/**
-	 * ID ÓÃÓÚ±êÊ¶£¬ËùÓĞ×ÓÀàÈç¹û×Ô½¨idÊ±£¬ĞèÒªÒªÍ¬Ê±¸ø´Ë¸³Öµ
+	 * ID ç”¨äºæ ‡è¯†ï¼Œæ‰€æœ‰å­ç±»å¦‚æœè‡ªå»ºidæ—¶ï¼Œéœ€è¦è¦åŒæ—¶ç»™æ­¤èµ‹å€¼
 	 */
 	protected long id;
 	public long getId()
@@ -32,7 +32,7 @@ public class BaseVO implements Serializable
 	}
 	
 	/**
-	 * ÖØÔØ£¬Ôö¼ÓÅĞ¶Ï£ºÀàÒ»ÑùÇÒidÒ»ÖÂÊ±·µ»Øtrue
+	 * é‡è½½ï¼Œå¢åŠ åˆ¤æ–­ï¼šç±»ä¸€æ ·ä¸”idä¸€è‡´æ—¶è¿”å›true
 	 */
 	@Override
 	public boolean equals(Object o)
@@ -51,7 +51,7 @@ public class BaseVO implements Serializable
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLæ ‡é¢˜
 	 * @return
 	 */
 	public String getHtmlTitle()
@@ -61,7 +61,7 @@ public class BaseVO implements Serializable
 
 	
 	/**
-	 * ·µ»ØÏêÇéHTML×Ó±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLå­æ ‡é¢˜
 	 * @return
 	 */
 	public String getHtmlSubTitle()
@@ -70,7 +70,7 @@ public class BaseVO implements Serializable
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	public String getHtmlContext(BaseActivity activity)
@@ -79,8 +79,8 @@ public class BaseVO implements Serializable
 	}
 	
 	/**
-	 * ÉèÖÃÄÚÈİHtmlÄÚÈİÏÔÊ¾
-	 * @return ·µ»Ø»ñÈ¡µ½µÄÏêÇéĞÅÏ¢
+	 * è®¾ç½®å†…å®¹Htmlå†…å®¹æ˜¾ç¤º
+	 * @return è¿”å›è·å–åˆ°çš„è¯¦æƒ…ä¿¡æ¯
 	 */
 	public void setHtmlToShow(Context c, final DetailInfoListener detailInfoListener)
 	{
@@ -89,7 +89,7 @@ public class BaseVO implements Serializable
 	}
 	
 	/**
-	 * Éú³É·ÖÏíĞÅÏ¢ÄÚÈİ²¿·Ö
+	 * ç”Ÿæˆåˆ†äº«ä¿¡æ¯å†…å®¹éƒ¨åˆ†
 	 */
 	public String generateShareText()
 	{

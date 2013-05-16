@@ -18,7 +18,7 @@ public class AboutActivity extends BaseActivity
 	@Override
 	protected void initView()
 	{
-		//≥ı ºªØView
+		//ÂàùÂßãÂåñView
 		setContentView(R.layout.activity_welcome);
 		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));
 		findViewById(R.id.welcome_close_ib).setVisibility(View.VISIBLE);

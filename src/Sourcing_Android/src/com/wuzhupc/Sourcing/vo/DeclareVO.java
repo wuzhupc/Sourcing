@@ -4,9 +4,9 @@ import com.wuzhupc.utils.JavaLangUtil;
 
 
 /**
- * Éê±¨ĞÅÏ¢
+ * ç”³æŠ¥ä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:46:32
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:46:32
  */
 public class DeclareVO extends BaseVO
 {
@@ -15,25 +15,25 @@ public class DeclareVO extends BaseVO
 	 */
 	private static final long serialVersionUID = -2279845658915038666L;
 	/**
-	 * Éê±¨±àºÅ
+	 * ç”³æŠ¥ç¼–å·
 	 */
 	//private long declareid;
 	/**
-	 * Éê±¨ÄÚÈİ
+	 * ç”³æŠ¥å†…å®¹
 	 */
 	private String declarecontent;
 	/**
-	 * Éê±¨Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * ç”³æŠ¥æ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	/**
-	 * Éê±¨½á¹ûĞÅÏ¢,Èç¹ûÎŞÉê±¨½á¹û,ÔòÖµÎªnull
+	 * ç”³æŠ¥ç»“æœä¿¡æ¯,å¦‚æœæ— ç”³æŠ¥ç»“æœ,åˆ™å€¼ä¸ºnull
 	 */
 	private DeclareResultVO declareResultVO;
 	
 	public String getDeclareStatus()
 	{
-		return  declareResultVO==null?"µÈ´ı´¦ÀíÖĞ":declareResultVO.getDeclareStatus();	
+		return  declareResultVO==null?"ç­‰å¾…å¤„ç†ä¸­":declareResultVO.getDeclareStatus();	
 	}
 	
 	public String getPublishtime()

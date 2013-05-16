@@ -3,16 +3,16 @@ package com.wuzhupc.Sourcing.vo;
 public class ResponseVO 
 {
 	/**
-	 * Ê§°Ü
+	 * å¤±è´¥
 	 */
 	public static final int RESPONSE_CODE_FAIL = 0;
 	/**
-	 * ³É¹¦
+	 * æˆåŠŸ
 	 */
 	public static final int RESPONSE_CODE_SUCESS = 1;
 	
-	private int code;	// ·µ»Ø±¨ÎÄ×´Ì¬Âë£º1.Õı³£  2.²»Õı³£
-	private String msg;	// ·µ»Ø±¨ÎÄ×´Ì¬ĞÅÏ¢£»
+	private int code;	// è¿”å›æŠ¥æ–‡çŠ¶æ€ç ï¼š1.æ­£å¸¸  2.ä¸æ­£å¸¸
+	private String msg;	// è¿”å›æŠ¥æ–‡çŠ¶æ€ä¿¡æ¯ï¼›
 	
 	public ResponseVO()
 	{

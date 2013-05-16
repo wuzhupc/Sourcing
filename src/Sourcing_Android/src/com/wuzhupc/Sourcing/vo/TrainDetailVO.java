@@ -6,7 +6,7 @@ import com.wuzhupc.utils.WebViewUtil;
 /**
  * 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:46:54
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:46:54
  */
 public class TrainDetailVO extends TrainVO
 {
@@ -24,7 +24,7 @@ public class TrainDetailVO extends TrainVO
 	}
 
 	/**
-	 * ÅàÑµ»ú¹¹½éÉÜÄÚÈİĞÅÏ¢£¬Ö±½Ó½«ÅàÑµ»ú¹¹Ïà¹ØµÄĞÅÏ¢·µ»Ø
+	 * åŸ¹è®­æœºæ„ä»‹ç»å†…å®¹ä¿¡æ¯ï¼Œç›´æ¥å°†åŸ¹è®­æœºæ„ç›¸å…³çš„ä¿¡æ¯è¿”å›
 	 * @param traincontent
 	 */
 	public void setTraincontent(String traincontent)
@@ -33,7 +33,7 @@ public class TrainDetailVO extends TrainVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	@Override

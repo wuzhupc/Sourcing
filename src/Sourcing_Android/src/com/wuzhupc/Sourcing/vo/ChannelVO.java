@@ -14,7 +14,7 @@ import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * À¸Ä¿ĞÅÏ¢VO
+ * æ ç›®ä¿¡æ¯VO
  */
 public class ChannelVO extends BaseVO {
 	
@@ -23,44 +23,44 @@ public class ChannelVO extends BaseVO {
 	 */
 	private static final long serialVersionUID = -802998074172715366L;
 	/**
-	 * À¸Ä¿ID
+	 * æ ç›®ID
 	 */
 	//private long channelID;	
 	/**
-	 * À¸Ä¿Ãû³Æ
+	 * æ ç›®åç§°
 	 */
 	private String channelName = "";
 	/**
-	 * ¸¸À¸Ä¿ID
+	 * çˆ¶æ ç›®ID
 	 */
 	private long fatherchannelID;
 	
 	/**
-	 * ÊÇ·ñÎªÄ¬ÈÏÏÔÊ¾
+	 * æ˜¯å¦ä¸ºé»˜è®¤æ˜¾ç¤º
 	 */
 	private int isdefault;
 	/**
-	 * ÅÅÁĞË³Ğò
+	 * æ’åˆ—é¡ºåº
 	 */
 	private int sort;
 	
 	/**
-	 * ÀàĞÍ
+	 * ç±»å‹
 	 */
 	private int type;
 	
 	/**
-	 * ÊÇ·ñÊÇµÚÒ»´ÎÔØÈë
+	 * æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡è½½å…¥
 	 */
 	public boolean isFirstLoad=true;
 	
 	/**
-	 * ×îºóÒ»´Î¸üĞÂÊı¾İÊ±¼ä
+	 * æœ€åä¸€æ¬¡æ›´æ–°æ•°æ®æ—¶é—´
 	 */
 	private Date lastUpdateDataTime;
 	
 	/**
-	 * ĞèÒªÄÇĞ©ÓÃ»§ÀàĞÍ,Èç¹ûnull»ò¿Õ×Ö·û´®£¬±íÊ¾Ã»ÓĞÒªÇó£¬Èç¹ûÊÇĞèÒª¶àÖÖÓÃ»§ÀàĞÍ£¬ÔòÓÃ;·Ö¸ô¿ª£¬ÓÃ»§ÀàĞÍ²Î¿¼UserVO
+	 * éœ€è¦é‚£äº›ç”¨æˆ·ç±»å‹,å¦‚æœnullæˆ–ç©ºå­—ç¬¦ä¸²ï¼Œè¡¨ç¤ºæ²¡æœ‰è¦æ±‚ï¼Œå¦‚æœæ˜¯éœ€è¦å¤šç§ç”¨æˆ·ç±»å‹ï¼Œåˆ™ç”¨;åˆ†éš”å¼€ï¼Œç”¨æˆ·ç±»å‹å‚è€ƒUserVO
 	 */
 	private String mustusertypes;
 	
@@ -76,92 +76,92 @@ public class ChannelVO extends BaseVO {
 
 
 	/**
-	 * ¸¸ÀàĞÍµÄÀ¸Ä¿ID
+	 * çˆ¶ç±»å‹çš„æ ç›®ID
 	 */
 	public static final int CHANNELID_FATHER = 0;
 	
 	/**
-	 * ¸¸ÀàĞÍ£­×ÊÑ¶
+	 * çˆ¶ç±»å‹ï¼èµ„è®¯
 	 */
 	public static final int TYPE_FATHER_NEWS = 1;
 	
 	/**
-	 * ¸¸ÀàĞÍ£­·şÎñ
+	 * çˆ¶ç±»å‹ï¼æœåŠ¡
 	 */
 	public static final int TYPE_FATHER_PERSON = 2;
 	
 	/**
-	 * ¸¸ÀàĞÍ£­ÓÃ»§
+	 * çˆ¶ç±»å‹ï¼ç”¨æˆ·
 	 */
 	public static final int TYPE_FATHER_USER = 3;
 	
 	/**
-	 * ¸¸ÀàĞÍ£­¸ü¶à
+	 * çˆ¶ç±»å‹ï¼æ›´å¤š
 	 */
 	public static final int TYPE_FATHER_MORE = 4;
 	
 	/**
-	 * ×ÊÑ¶À¸Ä¿ÀàĞÍ-×îĞÂ
+	 * èµ„è®¯æ ç›®ç±»å‹-æœ€æ–°
 	 */
 	public static final int TYPE_NEWS_NEWEST = 0;
 	
 	/**
-	 * ×ÊÑ¶À¸Ä¿ÀàĞÍ-ĞĞÒµ
+	 * èµ„è®¯æ ç›®ç±»å‹-è¡Œä¸š
 	 */
 	public static final int TYPE_NEWS_INDUSTR = 1;
 	
 	/**
-	 * ×ÊÑ¶À¸Ä¿ÀàĞÍ-Õş²ß
+	 * èµ„è®¯æ ç›®ç±»å‹-æ”¿ç­–
 	 */
 	public static final int TYPE_NEWS_POLICY = 2;
 	
 	/**
-	 * ×ÊÑ¶À¸Ä¿ÀàĞÍ-Í¨Öª
+	 * èµ„è®¯æ ç›®ç±»å‹-é€šçŸ¥
 	 */
 	public static final int TYPE_NEWS_NOTIFICATION = 3;
 	
 	/**
-	 * ×ÊÑ¶À¸Ä¿ÀàĞÍ-×¨¼Ò
+	 * èµ„è®¯æ ç›®ç±»å‹-ä¸“å®¶
 	 */
 	public static final int TYPE_NEWS_EXPERT = 4;
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -Ö°Î»
+	 * æœåŠ¡æ ç›®ç±»å‹ -èŒä½
 	 */
 	public static final int TYPE_PERSON_POSITION = 1;
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -¼òÀú
+	 * æœåŠ¡æ ç›®ç±»å‹ -ç®€å†
 	 */
 	public static final int TYPE_PERSON_RESUME = 2;
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -ÅàÑµ»ú¹¹
+	 * æœåŠ¡æ ç›®ç±»å‹ -åŸ¹è®­æœºæ„
 	 */
 	public static final int TYPE_PERSON_TRAIN = 3;
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -ÏîÄ¿
+	 * æœåŠ¡æ ç›®ç±»å‹ -é¡¹ç›®
 	 */
 	public static final int TYPE_PERSON_PROJECT = 4;
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -ÆóÒµ
+	 * æœåŠ¡æ ç›®ç±»å‹ -ä¼ä¸š
 	 */
 	public static final int TYPE_PERSON_COMPANY = 5;
 	
 	/**
-	 * ¸ü¶àÀ¸Ä¿ÀàĞÍ£­ÊÕ²Ø
+	 * æ›´å¤šæ ç›®ç±»å‹ï¼æ”¶è—
 	 */
 	public static final int TYPE_MORE_FAV = 1;
 	
 	/**
-	 * ¸ü¶àÀ¸Ä¿ÀàĞÍ£­ÏµÍ³ÉèÖÃ
+	 * æ›´å¤šæ ç›®ç±»å‹ï¼ç³»ç»Ÿè®¾ç½®
 	 */
 	public static final int TYPE_MORE_SETTING = 2;
 	
 	/**
-	 * ¸ü¶àÀ¸Ä¿ÀàĞÍ£­ÍË³ö
+	 * æ›´å¤šæ ç›®ç±»å‹ï¼é€€å‡º
 	 */
 	public static final int TYPE_MORE_EXIT = 0;
 	
@@ -247,7 +247,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ×ÊÑ¶
+	 * èµ„è®¯
 	 * @return
 	 */
 	public boolean isNewsChannel()
@@ -256,7 +256,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ·şÎñ
+	 * æœåŠ¡
 	 * @return
 	 */
 	public boolean isPersonChannel()
@@ -265,7 +265,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ÓÃ»§
+	 * ç”¨æˆ·
 	 * @return
 	 */
 	public boolean isUserChannel()
@@ -274,7 +274,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ¸ü¶à
+	 * æ›´å¤š
 	 * @return
 	 */
 	public boolean isMoreChannel()
@@ -284,7 +284,7 @@ public class ChannelVO extends BaseVO {
 
 	
 	/**
-	 *»ñÈ¡Ä¬ÈÏ×ÊÑ¶ÀàĞÍ
+	 *è·å–é»˜è®¤èµ„è®¯ç±»å‹
 	 * @return
 	 */
 	public static int getDefaultNewsType()
@@ -306,7 +306,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -Ö°Î»
+	 * æœåŠ¡æ ç›®ç±»å‹ -èŒä½
 	 * @return
 	 */
 	public boolean isPositionChannel()
@@ -315,7 +315,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -ÅàÑµ»ú¹¹
+	 * æœåŠ¡æ ç›®ç±»å‹ -åŸ¹è®­æœºæ„
 	 * @return
 	 */
 	public boolean isTrainChannel()
@@ -324,7 +324,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -ÏîÄ¿
+	 * æœåŠ¡æ ç›®ç±»å‹ -é¡¹ç›®
 	 * @return
 	 */
 	public boolean isProjectChannel()
@@ -333,7 +333,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -ÆóÒµ
+	 * æœåŠ¡æ ç›®ç±»å‹ -ä¼ä¸š
 	 * @return
 	 */
 	public boolean isCompanyChannel()
@@ -342,7 +342,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ·şÎñÀ¸Ä¿ÀàĞÍ -¼òÀú
+	 * æœåŠ¡æ ç›®ç±»å‹ -ç®€å†
 	 * @return
 	 */
 	public boolean isResumeChannel()
@@ -351,8 +351,8 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * ³õÊ¼»¯À¸Ä¿Êı¾İ£¬´Óassets/channelinfo.jsonÎÄ¼şÖĞ¶ÁÈ¡
-	 * @return Èç¹ûÊı¾İÎÄ¼ş²»´æÔÚ»òÕß½âÎöÒì³£·µ»Ønull
+	 * åˆå§‹åŒ–æ ç›®æ•°æ®ï¼Œä»assets/channelinfo.jsonæ–‡ä»¶ä¸­è¯»å–
+	 * @return å¦‚æœæ•°æ®æ–‡ä»¶ä¸å­˜åœ¨æˆ–è€…è§£æå¼‚å¸¸è¿”å›null
 	 */
 	@SuppressWarnings("unchecked")
 	public static ArrayList<ChannelVO> initChannelsFromAssets(Context context)
@@ -365,7 +365,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * »ñÈ¡¸¸¼¶À¸Ä¿ÄÚÈİ
+	 * è·å–çˆ¶çº§æ ç›®å†…å®¹
 	 * @param channelVOs
 	 * @return
 	 */
@@ -375,7 +375,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * »ñÈ¡¸¸À¸Ä¿À¸Ä¿ID
+	 * è·å–çˆ¶æ ç›®æ ç›®ID
 	 * @param channelVOs
 	 * @param type
 	 * @return
@@ -396,7 +396,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * »ñÈ¡¸÷¼¶À¸Ä¿ÄÚÈİ
+	 * è·å–å„çº§æ ç›®å†…å®¹
 	 * @param channelVOs
 	 * @return
 	 */
@@ -407,7 +407,7 @@ public class ChannelVO extends BaseVO {
 	}
 	
 	/**
-	 * »ñÈ¡¸÷¼¶À¸Ä¿ÄÚÈİ
+	 * è·å–å„çº§æ ç›®å†…å®¹
 	 * @param channelVOs
 	 * @return
 	 */
@@ -422,7 +422,7 @@ public class ChannelVO extends BaseVO {
 		{
 			if(channelVOs.get(i).fatherchannelID==fatherid)
 			{
-				//ÅĞ¶ÏÊÇ·ñÊÇĞèÒªµÄÓÃ»§ÀàĞÍ
+				//åˆ¤æ–­æ˜¯å¦æ˜¯éœ€è¦çš„ç”¨æˆ·ç±»å‹
 				if(!StringUtil.isEmpty(channelVOs.get(i).mustusertypes))
 				{
 					if(!StringUtil.isEmpty(usertype)&&channelVOs.get(i).mustusertypes.contains(usertype))
@@ -442,7 +442,7 @@ public class ChannelVO extends BaseVO {
 	{
 		if(lastUpdateDataTime==null)
 		{
-			//¶ÁÈ¡ÉèÖÃÏî
+			//è¯»å–è®¾ç½®é¡¹
 			lastUpdateDataTime = SettingUtil.getChannelLastUpdateTime(c,fatherchannelID, id);
 		}
 		return lastUpdateDataTime;
@@ -451,15 +451,15 @@ public class ChannelVO extends BaseVO {
 	public void setLastUpdateDataTime(Context c,Date lastUpdateDataTime)
 	{
 		this.lastUpdateDataTime = lastUpdateDataTime;
-		//´æÈ¡ÅäÖÃĞÅÏ¢
+		//å­˜å–é…ç½®ä¿¡æ¯
 		SettingUtil.setChannelLastUpdateTime(c, fatherchannelID,id, lastUpdateDataTime);
 	}
 
 
 	/**
-	 * °´sort×Ö¶ÎÅÅĞò
+	 * æŒ‰sortå­—æ®µæ’åº
 	 * @author wuzhu email:wuzhupc@gmail.com
-	 * @version ´´½¨Ê±¼ä£º2012-11-25 ÏÂÎç10:02:00
+	 * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-25 ä¸‹åˆ10:02:00
 	 */
 	public static class SortByChannelSort implements Comparator<ChannelVO> 
 	{

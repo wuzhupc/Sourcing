@@ -21,7 +21,7 @@ import com.wuzhupc.utils.FavoriteUtil;
 import com.wuzhupc.utils.StringUtil;
 
 /**
- * ÊÕ²ØĞÅÏ¢
+ * æ”¶è—ä¿¡æ¯
  * @author wuzhu_000
  *
  */
@@ -29,21 +29,21 @@ public class FavInfoActivity extends BaseActivity
 {
 	protected static final String TAG = FavInfoActivity.class.getSimpleName();
 	/**
-	 * ÊÕ²Ø±ä¶¯
+	 * æ”¶è—å˜åŠ¨
 	 */
 	public static final String CSTR_ACTION_FAV = "com.wuzhupc.ACTION_FAV";
 	/**
-	 * Êı¾İÁĞ±í
+	 * æ•°æ®åˆ—è¡¨
 	 */
 	@SuppressWarnings("rawtypes")
 	protected ArrayList mDataList;
 	
 	/**
-	 * ÏÔÊ¾Êı¾İµÄÁĞ±í
+	 * æ˜¾ç¤ºæ•°æ®çš„åˆ—è¡¨
 	 */
 	protected ListView mlv_DataList;
 
-	protected ListBaseAdapter mAdapter; // ÁĞ±í adapter
+	protected ListBaseAdapter mAdapter; // åˆ—è¡¨ adapter
 	
 	private FavChangeBroadcastReceiver mBroadcastReceiver;
 	
@@ -84,7 +84,7 @@ public class FavInfoActivity extends BaseActivity
 	}
 	
 	/**
-	 * Ìø×ªµ½ÏêÇé½çÃæ
+	 * è·³è½¬åˆ°è¯¦æƒ…ç•Œé¢
 	 * 
 	 * @param position
 	 */
@@ -97,13 +97,13 @@ public class FavInfoActivity extends BaseActivity
 			return;
 		
 		Intent intent = new Intent(FavInfoActivity.this, NewsDetailActivity.class);
-		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_TITLE, "ÊÕ²ØÏêÇé");
+		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_TITLE, "æ”¶è—è¯¦æƒ…");
 		intent.putExtra(NewsDetailActivity.CSTR_EXTRA_NEWSDETAIL_DATA, (BaseVO)o);
 		runIntent(false, intent);
 	}
 
 	/**
-	 * ×¢²á½ÓÊÕboardĞÅÏ¢
+	 * æ³¨å†Œæ¥æ”¶boardä¿¡æ¯
 	 */
 	private void regBoardReceiver()
 	{
@@ -132,7 +132,7 @@ public class FavInfoActivity extends BaseActivity
 	}
 	
 	/**
-	 * Çå³ıËùÓĞÊı¾İ
+	 * æ¸…é™¤æ‰€æœ‰æ•°æ®
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void clearDataList()
@@ -140,19 +140,19 @@ public class FavInfoActivity extends BaseActivity
 		if(mDataList==null)
 		{
 			mDataList = new ArrayList();
-			// adapter ³õÊ¼»¯
+			// adapter åˆå§‹åŒ–
 			mAdapter = new ListBaseAdapter(FavInfoActivity.this, mDataList,true);
 			mlv_DataList.setAdapter(mAdapter);
 		}
 		else
 			mDataList.clear();
-		//Ôö¼ÓÎŞÊı¾İÌáÊ¾
+		//å¢åŠ æ— æ•°æ®æç¤º
 		mDataList.add(FavInfoActivity.this.getString(R.string.favinfo_nodata));
 		mAdapter.notifyDataSetChanged();
 	}
 	
 	/**
-	 * Ôö¼ÓÁĞ±íÊı¾İ
+	 * å¢åŠ åˆ—è¡¨æ•°æ®
 	 * @param list
 	 */
 	@SuppressWarnings({ "unchecked"})

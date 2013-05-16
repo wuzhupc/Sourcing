@@ -17,7 +17,7 @@ public class ActivityUtil {
 	private static final String TAG=ActivityUtil.class.getSimpleName();
 
 	/**
-	 * 判断当前应用是否运行
+	 * 鍒ゆ柇褰撳墠搴旂敤鏄惁杩愯
 	 * @param context
 	 * @return
 	 */
@@ -47,7 +47,7 @@ public class ActivityUtil {
 	}
 	
 	/**
-	 * 判断当前应用是否位于前端显示
+	 * 鍒ゆ柇褰撳墠搴旂敤鏄惁浣嶄簬鍓嶇鏄剧ず
 	 * @param context
 	 * @return
 	 */

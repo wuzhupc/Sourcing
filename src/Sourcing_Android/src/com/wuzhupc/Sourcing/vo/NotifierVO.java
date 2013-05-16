@@ -3,9 +3,9 @@ package com.wuzhupc.Sourcing.vo;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
- * Í¨ÖªÌáĞÑ
+ * é€šçŸ¥æé†’
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:56:09
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:56:09
  */
 public class NotifierVO extends BaseVO
 {
@@ -14,19 +14,19 @@ public class NotifierVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 8813295725140035628L;
 	/**
-	 * Í¨ÖªÌáĞÑ±àºÅ
+	 * é€šçŸ¥æé†’ç¼–å·
 	 */
 	//private long notifierid;
 	/**
-	 * Í¨ÖªÌáĞÑÄÚÈİ
+	 * é€šçŸ¥æé†’å†…å®¹
 	 */
 	private String notifiercontent;
 	/**
-	 * Í¨ÖªÌáĞÑ·¢²¼Õß
+	 * é€šçŸ¥æé†’å‘å¸ƒè€…
 	 */
 	private String publisher;
 	/**
-	 * Í¨ÖªÌáĞÑÊ±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * é€šçŸ¥æé†’æ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	public long getNotifierid()

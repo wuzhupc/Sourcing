@@ -4,9 +4,9 @@ import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.utils.WebViewUtil;
 
 /**
- * Ö°Î»ÏêÏ¸ĞÅÏ¢
+ * èŒä½è¯¦ç»†ä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:00:17
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:00:17
  */
 public class JobDetailVO extends JobVO
 {
@@ -16,7 +16,7 @@ public class JobDetailVO extends JobVO
 	private static final long serialVersionUID = 7276426982805276938L;
 
 	/**
-	 * Ö°Î»ÃèÊö£¬Ö±½Ó½«Ö°Î»Ïà¹ØµÄĞÅÏ¢·µ»Ø
+	 * èŒä½æè¿°ï¼Œç›´æ¥å°†èŒä½ç›¸å…³çš„ä¿¡æ¯è¿”å›
 	 */
 	private String jobdesc;
 
@@ -31,7 +31,7 @@ public class JobDetailVO extends JobVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	@Override

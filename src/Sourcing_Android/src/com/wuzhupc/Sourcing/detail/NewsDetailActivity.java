@@ -15,12 +15,12 @@ import com.wuzhupc.utils.WebViewUtil;
 import com.wuzhupc.widget.OnReloadListener;
 
 /**
- * ×ÊÑ¶ÏêÇé
- * Ö§³Ö´«Èë²ÎÊıbasevo[CSTR_EXTRA_NEWSDETAIL_DATA] Êı¾İÀàĞÍBaseVO Êı¾İ
- * Ö§³Ö´«Èë²ÎÊıtitle[CSTR_EXTRA_NEWSDETAIL_TITLE] Êı¾İÀàĞÍString ±êÌâ
+ * èµ„è®¯è¯¦æƒ…
+ * æ”¯æŒä¼ å…¥å‚æ•°basevo[CSTR_EXTRA_NEWSDETAIL_DATA] æ•°æ®ç±»å‹BaseVO æ•°æ®
+ * æ”¯æŒä¼ å…¥å‚æ•°title[CSTR_EXTRA_NEWSDETAIL_TITLE] æ•°æ®ç±»å‹String æ ‡é¢˜
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-4 ÏÂÎç9:30:37
- * @note ´«ÈëµÄÊı¾İĞèÒªÖØ½ØBaseVOÖĞµÄ·½·¨£º
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-4 ä¸‹åˆ9:30:37
+ * @note ä¼ å…¥çš„æ•°æ®éœ€è¦é‡æˆªBaseVOä¸­çš„æ–¹æ³•ï¼š
  * 	generateShareText  
  * 	setHtmlToShow 
  * 	getHtmlContext 
@@ -32,28 +32,28 @@ public class NewsDetailActivity extends BaseActivity
 	protected static final String TAG = NewsDetailActivity.class.getSimpleName();
 	
 	/**
-	 * ´«Èë²ÎÊıbasevo Êı¾İÀàĞÍBaseVO Êı¾İ
+	 * ä¼ å…¥å‚æ•°basevo æ•°æ®ç±»å‹BaseVO æ•°æ®
 	 */
 	public static final String CSTR_EXTRA_NEWSDETAIL_DATA = "basevo";
 	/**
-	 * ´«Èë²ÎÊıtitle Êı¾İÀàĞÍString ±êÌâ
+	 * ä¼ å…¥å‚æ•°title æ•°æ®ç±»å‹String æ ‡é¢˜
 	 */
 	public static final String CSTR_EXTRA_NEWSDETAIL_TITLE = "title";
 
 	/**
-	 * ¹²Ïí°´Å¥
+	 * å…±äº«æŒ‰é’®
 	 */
 	private ImageView miv_fav;
 	
 	private WebView mwv_content;
 	
 	/**
-	 * ´«Èë²ÎÊıĞÅÏ¢
+	 * ä¼ å…¥å‚æ•°ä¿¡æ¯
 	 */
 	private BaseVO mBaseVO;
 	
 	/**
-	 * ¸ù¾İ´«Èë²ÎÊı»ñÈ¡µ½µÄ¾ßÌåĞÅÏ¢
+	 * æ ¹æ®ä¼ å…¥å‚æ•°è·å–åˆ°çš„å…·ä½“ä¿¡æ¯
 	 */
 	private BaseVO mDetailVO;
 	
@@ -114,7 +114,7 @@ public class NewsDetailActivity extends BaseActivity
 	}
 	
 	/**
-	 * ÏÔÊ¾´íÎóĞÅÏ¢
+	 * æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯
 	 * @param msg
 	 */
 	private void setErrorInfo(String msg)
@@ -129,7 +129,7 @@ public class NewsDetailActivity extends BaseActivity
 	}
 	
 	/**
-	 * ÏÔÊ¾ĞÂÎÅĞÅÏ¢
+	 * æ˜¾ç¤ºæ–°é—»ä¿¡æ¯
 	 */
 	private void setNewsInfo()
 	{
@@ -146,7 +146,7 @@ public class NewsDetailActivity extends BaseActivity
 	}
 	
 	/**
-	 * ÉèÖÃwebviewÄÚÈİ
+	 * è®¾ç½®webviewå†…å®¹
 	 * @param html
 	 */
 	private void setWebViewContent(String html)
@@ -155,7 +155,7 @@ public class NewsDetailActivity extends BaseActivity
 	}
 	
 	/**
-	 * ÉèÖÃÊÕ²ØÍ¼±ê
+	 * è®¾ç½®æ”¶è—å›¾æ ‡
 	 * @param fav
 	 */
 	private void setFavImageView(boolean fav)
@@ -164,7 +164,7 @@ public class NewsDetailActivity extends BaseActivity
 	}
 
 	/**
-	 * ÊÕ²Ø
+	 * æ”¶è—
 	 * @param v
 	 */
 	public void onFavClick(View v)
@@ -174,14 +174,14 @@ public class NewsDetailActivity extends BaseActivity
 		int index = mFavoriteUtil.hasFavData(mBaseVO);
 		if(index==-1)
 		{
-			//ÊÕ²Ø
+			//æ”¶è—
 			mFavoriteUtil.addFavData(mBaseVO);
 			setFavImageView(true);
 			displayToast(R.string.fav_add);
 			sendBroadcast(new Intent(FavInfoActivity.CSTR_ACTION_FAV));
 			return;
 		}
-		//È¡ÏûÊÕ²Ø
+		//å–æ¶ˆæ”¶è—
 		mFavoriteUtil.removeFavData(index);
 		setFavImageView(false);
 		displayToast(R.string.fav_remove);
@@ -189,23 +189,23 @@ public class NewsDetailActivity extends BaseActivity
 	}
 	
 	/**
-	 * Éú³É¹²ÏíÄÚÈİ
+	 * ç”Ÿæˆå…±äº«å†…å®¹
 	 * @return
 	 */
 	private String generateShareText()
 	{
 		String result = "#"+getResources().getString(R.string.app_name)+"#";
-		//Éú³É¹²ÏíÄÚÈİ
+		//ç”Ÿæˆå…±äº«å†…å®¹
 		if(mBaseVO!=null)
 		{
 			result+=mBaseVO.generateShareText()+" ";
 		}
-		result +="¸ü¶àĞÅÏ¢Çë·ÃÎÊ"+getResources().getString(R.string.baseurl);
+		result +="æ›´å¤šä¿¡æ¯è¯·è®¿é—®"+getResources().getString(R.string.baseurl);
 		return result;
 	}
 
 	/**
-	 * ¹²Ïí
+	 * å…±äº«
 	 * @param v
 	 */
 	public void onShareClick(View v)
@@ -213,6 +213,6 @@ public class NewsDetailActivity extends BaseActivity
 		Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT, generateShareText());
-        NewsDetailActivity.this.startActivity(Intent.createChooser(intent, "·ÖÏí·½Ê½"));
+        NewsDetailActivity.this.startActivity(Intent.createChooser(intent, "åˆ†äº«æ–¹å¼"));
 	}
 }

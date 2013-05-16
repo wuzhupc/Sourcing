@@ -2,16 +2,16 @@ package com.wuzhupc.utils;
 
 
 /**
- * JAVA»ù±¾ÀàĞÍ×ª»»Utils
+ * JAVAåŸºæœ¬ç±»å‹è½¬æ¢Utils
  * @author wuzhu
  *
  */
 public class JavaLangUtil
 {
 	/**
-	 * ×Ö·û´®×ªÊı×Ö
+	 * å­—ç¬¦ä¸²è½¬æ•°å­—
 	 * @param str
-	 * @param defvalue Ä¬ÈÏÖµ
+	 * @param defvalue é»˜è®¤å€¼
 	 * @return
 	 */
 	public static int StrToInteger(String str,int defvalue)
@@ -26,9 +26,9 @@ public class JavaLangUtil
 	}
 	
 	/**
-	 * ×Ö·û´®×ªÊı×Ö
+	 * å­—ç¬¦ä¸²è½¬æ•°å­—
 	 * @param str
-	 * @param defvalue Ä¬ÈÏÖµ
+	 * @param defvalue é»˜è®¤å€¼
 	 * @return
 	 */
 	public static Long StrToLong(String str,Long defvalue)
@@ -43,10 +43,10 @@ public class JavaLangUtil
 	}
 	
 	/**
-	 * ×Ö·û´®×ª²¼¶û
+	 * å­—ç¬¦ä¸²è½¬å¸ƒå°”
 	 * @param str 
 	 * @param defvalue
-	 * @return Èç¹ûstr=="true" »òÕßstr="1",Ôò·µ»Øtrue,·ñÔò·µ»Øfalse
+	 * @return å¦‚æœstr=="true" æˆ–è€…str="1",åˆ™è¿”å›true,å¦åˆ™è¿”å›false
 	 */
 	public static boolean StrToBool(String str, boolean defvalue)
 	{
@@ -56,9 +56,9 @@ public class JavaLangUtil
 	}
 	
 	/**
-	 * Long×ª×Ö·û´®
+	 * Longè½¬å­—ç¬¦ä¸²
 	 * @param value
-	 * @return Ê§°Ü·µ»Ø¿Õ×Ö·û´®
+	 * @return å¤±è´¥è¿”å›ç©ºå­—ç¬¦ä¸²
 	 */
 	public static String LongToStr(Long value)
 	{

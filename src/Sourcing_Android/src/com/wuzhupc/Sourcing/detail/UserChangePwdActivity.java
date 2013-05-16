@@ -20,9 +20,9 @@ import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ÓÃ»§ĞŞ¸ÄÃÜÂë
+ * ç”¨æˆ·ä¿®æ”¹å¯†ç 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-17 ÏÂÎç9:33:52
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-17 ä¸‹åˆ9:33:52
  */
 public class UserChangePwdActivity extends BaseActivity
 {
@@ -59,12 +59,12 @@ public class UserChangePwdActivity extends BaseActivity
 	}
 
 	/**
-	 * ĞŞ¸ÄÃÜÂë
+	 * ä¿®æ”¹å¯†ç 
 	 * @param v
 	 */
 	public void changePwdClick(View v)
 	{
-		//Òş²ØÊäÈë·¨
+		//éšè—è¾“å…¥æ³•
 		hideIme();
 
 		final UserVO userVO = getApplicationSet().getUserVO();
@@ -74,7 +74,7 @@ public class UserChangePwdActivity extends BaseActivity
 			displayToast(R.string.userview_nologin);
 			return;
 		}
-		//ÅĞ¶Ï
+		//åˆ¤æ–­
 		if(StringUtil.isEmpty(met_Pwd.getText().toString()))
 		{
 			met_Pwd.requestFocus();
@@ -138,7 +138,7 @@ public class UserChangePwdActivity extends BaseActivity
 	}
 	
 	/**
-	 * Òş²ØÊäÈë·¨
+	 * éšè—è¾“å…¥æ³•
 	 */
 	protected void hideIme()
 	{

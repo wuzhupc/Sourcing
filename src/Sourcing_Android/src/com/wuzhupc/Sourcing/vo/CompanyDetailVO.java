@@ -9,9 +9,9 @@ import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.utils.WebViewUtil;
 
 /**
- * ÆóÒµĞÅÏ¢ÏêÇé
+ * ä¼ä¸šä¿¡æ¯è¯¦æƒ…
  * @author wuzhu
- * @date 2013-4-20 ÏÂÎç3:55:04
+ * @date 2013-4-20 ä¸‹åˆ3:55:04
  * @version $id$
  */
 public class CompanyDetailVO extends CompanyVO {
@@ -22,7 +22,7 @@ public class CompanyDetailVO extends CompanyVO {
 	private static final long serialVersionUID = 9002877386264444781L;
 	
 	/**
-	 * ¹«Ë¾ÃèÊö£¬Ö±½Ó½«¹«Ë¾Ïà¹ØµÄĞÅÏ¢·µ»Ø(html¸ñÊ½)
+	 * å…¬å¸æè¿°ï¼Œç›´æ¥å°†å…¬å¸ç›¸å…³çš„ä¿¡æ¯è¿”å›(htmlæ ¼å¼)
 	 */
 	private String companydesc;
 
@@ -37,7 +37,7 @@ public class CompanyDetailVO extends CompanyVO {
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	@Override

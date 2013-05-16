@@ -10,9 +10,9 @@ import com.wuzhupc.utils.json.JsonCreater;
 import android.content.Context;
 
 /**
- * infoĞÅÏ¢»ñÈ¡service
+ * infoä¿¡æ¯è·å–service
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-28 ÏÂÎç10:13:43
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-28 ä¸‹åˆ10:13:43
  */
 public class MobileInfoService extends BaseJsonService
 {
@@ -22,10 +22,10 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * »ñÈ¡×ÊÑ¶ÁĞ±í
-	 * @param newstype ĞÂÎÅÀà±ğ£¬0£º×îĞÂ×ÊÑ¶£¬1£ºĞĞÒµĞÂÎÅ£¬2£ºÕş²ß£¬3£ºÍ¨Öª£¬4£º×¨¼ÒÎÄÕÂ
-	 * @param bottomnewsid ĞÂÎÅÁĞ±íÏÂÏŞµÄĞÂÎÅID£¬Ä¬ÈÏ0£¬Èç¹û·Ç0Ê±£¬»ñÈ¡´ËĞÂÎÅIDºópagesizeÌõ¼ÇÂ¼Êı
-	 * @note ¶ÁÈ¡ÎÄ¼şÃûmobileinfo_getNewsList_response_data_[].json
+	 * è·å–èµ„è®¯åˆ—è¡¨
+	 * @param newstype æ–°é—»ç±»åˆ«ï¼Œ0ï¼šæœ€æ–°èµ„è®¯ï¼Œ1ï¼šè¡Œä¸šæ–°é—»ï¼Œ2ï¼šæ”¿ç­–ï¼Œ3ï¼šé€šçŸ¥ï¼Œ4ï¼šä¸“å®¶æ–‡ç« 
+	 * @param bottomnewsid æ–°é—»åˆ—è¡¨ä¸‹é™çš„æ–°é—»IDï¼Œé»˜è®¤0ï¼Œå¦‚æœé0æ—¶ï¼Œè·å–æ­¤æ–°é—»IDåpagesizeæ¡è®°å½•æ•°
+	 * @note è¯»å–æ–‡ä»¶åmobileinfo_getNewsList_response_data_[].json
 	 */
 	public void getNewsList(int newstype,long bottomnewsid, IBaseReceiver iReceiver)
 	{
@@ -41,10 +41,10 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.3.	»ñÈ¡×ÊÑ¶ÏêÏ¸ĞÅÏ¢
-	 * @param newstype ĞÂÎÅÀà±ğ£¬0£º×îĞÂ×ÊÑ¶£¬1£ºĞĞÒµĞÂÎÅ£¬2£ºÕş²ß£¬3£ºÍ¨Öª£¬4£º×¨¼ÒÎÄÕÂ
-	 * @param newsid ĞÂÎÅID
-	 * @note ¶ÁÈ¡ÎÄ¼şÃûmobileinfo_getNewsDetail_response_data_[newstype]_[newsid].json
+	 * 3.3.	è·å–èµ„è®¯è¯¦ç»†ä¿¡æ¯
+	 * @param newstype æ–°é—»ç±»åˆ«ï¼Œ0ï¼šæœ€æ–°èµ„è®¯ï¼Œ1ï¼šè¡Œä¸šæ–°é—»ï¼Œ2ï¼šæ”¿ç­–ï¼Œ3ï¼šé€šçŸ¥ï¼Œ4ï¼šä¸“å®¶æ–‡ç« 
+	 * @param newsid æ–°é—»ID
+	 * @note è¯»å–æ–‡ä»¶åmobileinfo_getNewsDetail_response_data_[newstype]_[newsid].json
 	 */
 	public void getNewsDetail(int newstype,long newsid, IBaseReceiver iReceiver)
 	{
@@ -59,10 +59,10 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.4.	»ñÈ¡×ÊÑ¶ÆÀÂÛĞÅÏ¢
-	 * @param newstype ĞÂÎÅÀà±ğ£¬ 1£ºĞĞÒµĞÂÎÅ£¬2£ºÕş²ß£¬3£ºÍ¨Öª£¬4£º×¨¼ÒÎÄÕÂ
-	 * @param newsid ĞÂÎÅID
-	 * @param bottomcommentid ĞÂÎÅÆÀÂÛÁĞ±íÏÂÏŞµÄĞÂÎÅID£¬Ä¬ÈÏ0£¬Èç¹û·Ç0Ê±£¬»ñÈ¡´ËĞÂÎÅÆÀÂÛIDºópagesizeÌõ¼ÇÂ¼Êı
+	 * 3.4.	è·å–èµ„è®¯è¯„è®ºä¿¡æ¯
+	 * @param newstype æ–°é—»ç±»åˆ«ï¼Œ 1ï¼šè¡Œä¸šæ–°é—»ï¼Œ2ï¼šæ”¿ç­–ï¼Œ3ï¼šé€šçŸ¥ï¼Œ4ï¼šä¸“å®¶æ–‡ç« 
+	 * @param newsid æ–°é—»ID
+	 * @param bottomcommentid æ–°é—»è¯„è®ºåˆ—è¡¨ä¸‹é™çš„æ–°é—»IDï¼Œé»˜è®¤0ï¼Œå¦‚æœé0æ—¶ï¼Œè·å–æ­¤æ–°é—»è¯„è®ºIDåpagesizeæ¡è®°å½•æ•°
 	 */
 	public void getNewsComment(int newstype,long newsid,int bottomcommentid, IBaseReceiver iReceiver)
 	{
@@ -78,11 +78,11 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.5.	·¢ËÍ×ÊÑ¶ÆÀÂÛĞÅÏ¢
-	 * @param newstype ĞÂÎÅÀà±ğ£¬ 1£ºĞĞÒµĞÂÎÅ£¬2£ºÕş²ß£¬3£ºÍ¨Öª£¬4£º×¨¼ÒÎÄÕÂ
-	 * @param newsid ĞÂÎÅID
-	 * @param conetnt ÆÀÂÛÄÚÈİ
-	 * @return Èç¹û³ÉÔ±Î´µÇÂ¼£¬·µ»Øfalse
+	 * 3.5.	å‘é€èµ„è®¯è¯„è®ºä¿¡æ¯
+	 * @param newstype æ–°é—»ç±»åˆ«ï¼Œ 1ï¼šè¡Œä¸šæ–°é—»ï¼Œ2ï¼šæ”¿ç­–ï¼Œ3ï¼šé€šçŸ¥ï¼Œ4ï¼šä¸“å®¶æ–‡ç« 
+	 * @param newsid æ–°é—»ID
+	 * @param conetnt è¯„è®ºå†…å®¹
+	 * @return å¦‚æœæˆå‘˜æœªç™»å½•ï¼Œè¿”å›false
 	 */
 	public boolean sendNewsComment(int newstype,long newsid,String conetnt, IBaseReceiver iReceiver)
 	{
@@ -103,9 +103,9 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.6.	»ñÈ¡Ö°Î»ÁĞ±í
-	 * @param searchkey ËÑË÷¹Ø¼ü×Ö£¬Ä¬ÈÏÎª¿Õ£¬·Ç¿ÕÊ±ĞèÒª¸ù¾İ¹Ø¼ü×Ö·µ»Ø½øĞĞËÑË÷
-	 * @param bottomid Ö°Î»ÁĞ±íÏÂÏŞµÄĞÂÎÅID£¬Ä¬ÈÏ0£¬Èç¹û·Ç0Ê±£¬»ñÈ¡´ËĞÂÎÅIDºópagesizeÌõ¼ÇÂ¼Êı
+	 * 3.6.	è·å–èŒä½åˆ—è¡¨
+	 * @param searchkey æœç´¢å…³é”®å­—ï¼Œé»˜è®¤ä¸ºç©ºï¼Œéç©ºæ—¶éœ€è¦æ ¹æ®å…³é”®å­—è¿”å›è¿›è¡Œæœç´¢
+	 * @param bottomid èŒä½åˆ—è¡¨ä¸‹é™çš„æ–°é—»IDï¼Œé»˜è®¤0ï¼Œå¦‚æœé0æ—¶ï¼Œè·å–æ­¤æ–°é—»IDåpagesizeæ¡è®°å½•æ•°
 	 */
 	public void getJobList(String searchkey,long bottomid, IBaseReceiver iReceiver)
 	{
@@ -121,9 +121,9 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.7.	»ñÈ¡¼òÀúÁĞ±í
-	 * @param searchkey ËÑË÷¹Ø¼ü×Ö£¬Ä¬ÈÏÎª¿Õ£¬·Ç¿ÕÊ±ĞèÒª¸ù¾İ¹Ø¼ü×Ö·µ»Ø½øĞĞËÑË÷
-	 * @param bottomid ¼òÀúÁĞ±íÏÂÏŞµÄ¼ÇÂ¼ID£¬Ä¬ÈÏ0£¬Èç¹û·Ç0Ê±£¬»ñÈ¡´Ë¼ÇÂ¼IDºópagesizeÌõ¼ÇÂ¼Êı
+	 * 3.7.	è·å–ç®€å†åˆ—è¡¨
+	 * @param searchkey æœç´¢å…³é”®å­—ï¼Œé»˜è®¤ä¸ºç©ºï¼Œéç©ºæ—¶éœ€è¦æ ¹æ®å…³é”®å­—è¿”å›è¿›è¡Œæœç´¢
+	 * @param bottomid ç®€å†åˆ—è¡¨ä¸‹é™çš„è®°å½•IDï¼Œé»˜è®¤0ï¼Œå¦‚æœé0æ—¶ï¼Œè·å–æ­¤è®°å½•IDåpagesizeæ¡è®°å½•æ•°
 	 */
 	public void getResumeList(String searchkey,long bottomid, IBaseReceiver iReceiver)
 	{
@@ -139,9 +139,9 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.8.	»ñÈ¡ÅàÑµ»ú¹¹ÁĞ±í
-	 * @param searchkey ËÑË÷¹Ø¼ü×Ö£¬Ä¬ÈÏÎª¿Õ£¬·Ç¿ÕÊ±ĞèÒª¸ù¾İ¹Ø¼ü×Ö·µ»Ø½øĞĞËÑË÷
-	 * @param bottomid ÁĞ±íÏÂÏŞµÄ¼ÇÂ¼ID£¬Ä¬ÈÏ0£¬Èç¹û·Ç0Ê±£¬»ñÈ¡´Ë¼ÇÂ¼IDºópagesizeÌõ¼ÇÂ¼Êı
+	 * 3.8.	è·å–åŸ¹è®­æœºæ„åˆ—è¡¨
+	 * @param searchkey æœç´¢å…³é”®å­—ï¼Œé»˜è®¤ä¸ºç©ºï¼Œéç©ºæ—¶éœ€è¦æ ¹æ®å…³é”®å­—è¿”å›è¿›è¡Œæœç´¢
+	 * @param bottomid åˆ—è¡¨ä¸‹é™çš„è®°å½•IDï¼Œé»˜è®¤0ï¼Œå¦‚æœé0æ—¶ï¼Œè·å–æ­¤è®°å½•IDåpagesizeæ¡è®°å½•æ•°
 	 */
 	public void getTrainList(String searchkey,long bottomid, IBaseReceiver iReceiver)
 	{
@@ -157,9 +157,9 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.9.	»ñÈ¡ÏîÄ¿ÁĞ±í
-	 * @param searchkey ËÑË÷¹Ø¼ü×Ö£¬Ä¬ÈÏÎª¿Õ£¬·Ç¿ÕÊ±ĞèÒª¸ù¾İ¹Ø¼ü×Ö·µ»Ø½øĞĞËÑË÷
-	 * @param bottomid ÁĞ±íÏÂÏŞµÄ¼ÇÂ¼ID£¬Ä¬ÈÏ0£¬Èç¹û·Ç0Ê±£¬»ñÈ¡´Ë¼ÇÂ¼IDºópagesizeÌõ¼ÇÂ¼Êı
+	 * 3.9.	è·å–é¡¹ç›®åˆ—è¡¨
+	 * @param searchkey æœç´¢å…³é”®å­—ï¼Œé»˜è®¤ä¸ºç©ºï¼Œéç©ºæ—¶éœ€è¦æ ¹æ®å…³é”®å­—è¿”å›è¿›è¡Œæœç´¢
+	 * @param bottomid åˆ—è¡¨ä¸‹é™çš„è®°å½•IDï¼Œé»˜è®¤0ï¼Œå¦‚æœé0æ—¶ï¼Œè·å–æ­¤è®°å½•IDåpagesizeæ¡è®°å½•æ•°
 	 */
 	public void getProjectList(String searchkey,long bottomid, IBaseReceiver iReceiver)
 	{
@@ -175,8 +175,8 @@ public class MobileInfoService extends BaseJsonService
 	}
 	
 	/**
-	 * 3.10.	»ñÈ¡Ö°Î»ÏêÇé
-	 * @param jobid Ö°Î»±àºÅ
+	 * 3.10.	è·å–èŒä½è¯¦æƒ…
+	 * @param jobid èŒä½ç¼–å·
 	 */
 	public void getJobDetail(long jobid, IBaseReceiver iReceiver)
 	{
@@ -188,8 +188,8 @@ public class MobileInfoService extends BaseJsonService
 		getData(json,iReceiver);
 	}
 	/**
-	 * 3.11.	»ñÈ¡¼òÀúÏêÇé
-	 * @param resumeid ¼òÀú±àºÅ
+	 * 3.11.	è·å–ç®€å†è¯¦æƒ…
+	 * @param resumeid ç®€å†ç¼–å·
 	 */
 	public void getResumeDetail(long resumeid, IBaseReceiver iReceiver)
 	{
@@ -201,8 +201,8 @@ public class MobileInfoService extends BaseJsonService
 		getData(json,iReceiver);
 	}
 	/**
-	 * 3.12.	»ñÈ¡ÅàÑµ»ú¹¹ÏêÇé
-	 * @param trainid ÅàÑµ»ú¹¹±àºÅ
+	 * 3.12.	è·å–åŸ¹è®­æœºæ„è¯¦æƒ…
+	 * @param trainid åŸ¹è®­æœºæ„ç¼–å·
 	 */
 	public void getTrainDetail(long trainid, IBaseReceiver iReceiver)
 	{
@@ -214,8 +214,8 @@ public class MobileInfoService extends BaseJsonService
 		getData(json,iReceiver);
 	}
 	/**
-	 * 3.13.	»ñÈ¡ÏîÄ¿ÏêÇé
-	 * @param projectid ÏîÄ¿±àºÅ
+	 * 3.13.	è·å–é¡¹ç›®è¯¦æƒ…
+	 * @param projectid é¡¹ç›®ç¼–å·
 	 */
 	public void getProjectDetail(long projectid, IBaseReceiver iReceiver)
 	{
@@ -227,7 +227,7 @@ public class MobileInfoService extends BaseJsonService
 		getData(json,iReceiver);
 	}
 	/**
-	 * 3.14.	»ñÈ¡ÆóÒµÁĞ±í
+	 * 3.14.	è·å–ä¼ä¸šåˆ—è¡¨
 	 * @param searchkey
 	 * @param bottomid
 	 * @param iReceiver
@@ -246,7 +246,7 @@ public class MobileInfoService extends BaseJsonService
 	}
 
 	/**
-	 * 3.15.	»ñÈ¡ÆóÒµÏêÇé
+	 * 3.15.	è·å–ä¼ä¸šè¯¦æƒ…
 	 * @param companyid
 	 * @param iReceiver
 	 */

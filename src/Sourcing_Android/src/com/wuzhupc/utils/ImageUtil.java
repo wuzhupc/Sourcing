@@ -20,38 +20,38 @@ public class ImageUtil
 {
 	protected static final String Tag = ImageUtil.class.getSimpleName();
 	/**
-	 * Ğ¡Í¼Ä¬ÈÏµÄ¸ß¶È
+	 * å°å›¾é»˜è®¤çš„é«˜åº¦
 	 */
 	public static final int IMAGE_DEFSMALLHEIGHT = 120;
 	/**
-	 * Ğ¡Í¼Ä¬ÈÏµÄ¿í¶È
+	 * å°å›¾é»˜è®¤çš„å®½åº¦
 	 */
 	public static final int IMAGE_DEFSMALLWIDTH = 120;
 
 	/**
-	 * ÖĞÍ¼Ä¬ÈÏµÄ¸ß¶È
+	 * ä¸­å›¾é»˜è®¤çš„é«˜åº¦
 	 */
 	public static final int IMAGE_DEFMEDIUMHEIGHT = 480;
 	/**
-	 * ÖĞÍ¼Ä¬ÈÏµÄ¿í¶È
+	 * ä¸­å›¾é»˜è®¤çš„å®½åº¦
 	 */
 	public static final int IMAGE_DEFMEDIUMWIDTH = 480;
 
 	/**
-	 * ´óÍ¼Ä¬ÈÏµÄ¸ß¶È
+	 * å¤§å›¾é»˜è®¤çš„é«˜åº¦
 	 */
 	public static final int IMAGE_DEFLARGETHEIGHT = 1024;
 	/**
-	 * ´óÍ¼Ä¬ÈÏµÄ¿í¶È
+	 * å¤§å›¾é»˜è®¤çš„å®½åº¦
 	 */
 	public static final int IMAGE_DEFLARGETWIDTH = 1024;
 
 	/**
-	 * ±ä¸üÍ¼Æ¬ÎÄ¼ş´óĞ¡
+	 * å˜æ›´å›¾ç‰‡æ–‡ä»¶å¤§å°
 	 * 
 	 * @param bmfilename
-	 *            ¡¡Ô­Í¼ÎÄ¼şÃû
-	 * @return¡¡´¦ÀíºóµÄÎÄ¼şÃû
+	 *            ã€€åŸå›¾æ–‡ä»¶å
+	 * @returnã€€å¤„ç†åçš„æ–‡ä»¶å
 	 */
 	public static String resizeBitmapFile(String bmfilename, int newwidth)
 	{
@@ -63,14 +63,14 @@ public class ImageUtil
 			return "";
 		Bitmap bm = null;
 		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;// ¸ÃÖµÉèÎªtrueÄÇÃ´½«²»·µ»ØÊµ¼ÊµÄbitmap²»¸øÆä·ÖÅäÄÚ´æ¿Õ¼ä¶øÀïÃæÖ»°üÀ¨Ò»Ğ©½âÂë±ß½çĞÅÏ¢¼´Í¼Æ¬´óĞ¡ĞÅÏ¢,»ñÈ¡µ½outHeight(Í¼Æ¬Ô­Ê¼¸ß¶È)ºÍ
-											// outWidth(Í¼Æ¬µÄÔ­Ê¼¿í¶È)
-		bm = BitmapFactory.decodeFile(bmfilename, options); // ´ËÊ±·µ»ØbmÎª¿Õ
-		// »ñÈ¡Õâ¸öÍ¼Æ¬µÄ¿íºÍ¸ß
+		options.inJustDecodeBounds = true;// è¯¥å€¼è®¾ä¸ºtrueé‚£ä¹ˆå°†ä¸è¿”å›å®é™…çš„bitmapä¸ç»™å…¶åˆ†é…å†…å­˜ç©ºé—´è€Œé‡Œé¢åªåŒ…æ‹¬ä¸€äº›è§£ç è¾¹ç•Œä¿¡æ¯å³å›¾ç‰‡å¤§å°ä¿¡æ¯,è·å–åˆ°outHeight(å›¾ç‰‡åŸå§‹é«˜åº¦)å’Œ
+											// outWidth(å›¾ç‰‡çš„åŸå§‹å®½åº¦)
+		bm = BitmapFactory.decodeFile(bmfilename, options); // æ­¤æ—¶è¿”å›bmä¸ºç©º
+		// è·å–è¿™ä¸ªå›¾ç‰‡çš„å®½å’Œé«˜
 		int be = (int) (options.outWidth / (float) newwidth);
 		if (be <= 0)
 			be = 1;
-		options.inJustDecodeBounds = false;// ÖØĞÂÔØÈëÍ¼Æ¬
+		options.inJustDecodeBounds = false;// é‡æ–°è½½å…¥å›¾ç‰‡
 		options.inSampleSize = be;
 		bm = BitmapFactory.decodeFile(bmfilename, options);
 		return saveBitmap(bm, true);
@@ -78,21 +78,21 @@ public class ImageUtil
 	}
 
 	/**
-	 * ±ä¸üÍ¼Æ¬´óĞ¡£¨Ö»ÔÚ±ÈÔ­Í¼Ğ¡Ê±²Å±ä¸ü£©
+	 * å˜æ›´å›¾ç‰‡å¤§å°ï¼ˆåªåœ¨æ¯”åŸå›¾å°æ—¶æ‰å˜æ›´ï¼‰
 	 * 
 	 * @param bitmap
-	 *            Ô­Í¼Æ¬
+	 *            åŸå›¾ç‰‡
 	 * @param newWidth
-	 *            ¡¡ĞÂÍ¼Æ¬µÄ¿í¶È
+	 *            ã€€æ–°å›¾ç‰‡çš„å®½åº¦
 	 * @param brecycle
-	 *            ÊÇ·ñÔÚ±ä¸üÍê³Éºó»ØÊÕ
-	 * @return¡¡¡¡±ä¸üºóµÄÍ¼
+	 *            æ˜¯å¦åœ¨å˜æ›´å®Œæˆåå›æ”¶
+	 * @returnã€€ã€€å˜æ›´åçš„å›¾
 	 */
 	public static Bitmap resizeBitmap(Bitmap bitmap, int newWidth,
 			boolean brecycle)
 	{
 		int width = bitmap.getWidth();
-		// Èç¹ûÔ­Í¼
+		// å¦‚æœåŸå›¾
 		if (newWidth >= width)
 			return bitmap;
 		int height = bitmap.getHeight();
@@ -112,29 +112,29 @@ public class ImageUtil
 	}
 
 	/**
-	 * ¸ù¾İÉè¶¨µÄ×î´ó¿íºÍ¸ß·µ»Ø»ñÈ¡Í¼Æ¬
+	 * æ ¹æ®è®¾å®šçš„æœ€å¤§å®½å’Œé«˜è¿”å›è·å–å›¾ç‰‡
 	 * 
 	 * @param filename
-	 *            Í¼Æ¬ÎÄ¼şÃû³Æ
+	 *            å›¾ç‰‡æ–‡ä»¶åç§°
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
-	 * @return Í¼Æ¬²»´æÔÚ»ò²»ÄÜ¶ÁÈ¡£¬·µ»Ønull£¬Èç¹ûÔ­Í¼´óĞ¡Éè¶¨µÄ¸ß»ò¿í£¬Ôò·µ»ØËõÂÔÍ¼£¬Èç¹ûĞ¡ÓÚ¸ß»ò¿íÔò·µ»ØÔ­Í¼
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
+	 * @return å›¾ç‰‡ä¸å­˜åœ¨æˆ–ä¸èƒ½è¯»å–ï¼Œè¿”å›nullï¼Œå¦‚æœåŸå›¾å¤§å°è®¾å®šçš„é«˜æˆ–å®½ï¼Œåˆ™è¿”å›ç¼©ç•¥å›¾ï¼Œå¦‚æœå°äºé«˜æˆ–å®½åˆ™è¿”å›åŸå›¾
 	 */
 	public static Bitmap getBitmapFromFile(String filename, int maxwidth,
 			int maxheight)
 	{
 		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;// ¸ÃÖµÉèÎªtrueÄÇÃ´½«²»·µ»ØÊµ¼ÊµÄbitmap²»¸øÆä·ÖÅäÄÚ´æ¿Õ¼ä¶øÀïÃæÖ»°üÀ¨Ò»Ğ©½âÂë±ß½çĞÅÏ¢¼´Í¼Æ¬´óĞ¡ĞÅÏ¢,»ñÈ¡µ½outHeight(Í¼Æ¬Ô­Ê¼¸ß¶È)ºÍ
-											// outWidth(Í¼Æ¬µÄÔ­Ê¼¿í¶È)
-		Bitmap bm = BitmapFactory.decodeFile(filename, options); // ´ËÊ±·µ»ØbyÎª¿Õ
+		options.inJustDecodeBounds = true;// è¯¥å€¼è®¾ä¸ºtrueé‚£ä¹ˆå°†ä¸è¿”å›å®é™…çš„bitmapä¸ç»™å…¶åˆ†é…å†…å­˜ç©ºé—´è€Œé‡Œé¢åªåŒ…æ‹¬ä¸€äº›è§£ç è¾¹ç•Œä¿¡æ¯å³å›¾ç‰‡å¤§å°ä¿¡æ¯,è·å–åˆ°outHeight(å›¾ç‰‡åŸå§‹é«˜åº¦)å’Œ
+											// outWidth(å›¾ç‰‡çš„åŸå§‹å®½åº¦)
+		Bitmap bm = BitmapFactory.decodeFile(filename, options); // æ­¤æ—¶è¿”å›byä¸ºç©º
 
 		if (options == null || options.outHeight <= 0 || options.outWidth <= 0)
 			return null;
 		
 		int be =1;
-		//Í¼Ïñ¿í¶È´óÓÚ×î´ó¿í¶ÈÊ±¼ÆËãËõ·Å
+		//å›¾åƒå®½åº¦å¤§äºæœ€å¤§å®½åº¦æ—¶è®¡ç®—ç¼©æ”¾
 		if(maxwidth>0&&options.outWidth>maxwidth)
 		{
 			be=(int)(options.outWidth/(float)maxwidth);
@@ -143,11 +143,11 @@ public class ImageUtil
 		{
 			be=(int)(options.outWidth/(float)IMAGE_DEFLARGETWIDTH);
 		}
-		//Í¼Ïñ¸ß¶È´óÓÚ×î´ó¸ß¶ÈÊ±¼ÆËãËõ·Å
+		//å›¾åƒé«˜åº¦å¤§äºæœ€å¤§é«˜åº¦æ—¶è®¡ç®—ç¼©æ”¾
 		if(maxheight>0&&options.outHeight>maxheight)
 		{
 			int tmpbe=(int)(options.outHeight/(float)maxheight);
-			//Èç¹ûËõ·Å±ÈÀı´óÓÚ¿í¶È£¬ÔòÒÔ¸ß¶ÈµÄËõ·Å±ÈÀı
+			//å¦‚æœç¼©æ”¾æ¯”ä¾‹å¤§äºå®½åº¦ï¼Œåˆ™ä»¥é«˜åº¦çš„ç¼©æ”¾æ¯”ä¾‹
 			if(tmpbe>be)
 				be=tmpbe;
 		}else
@@ -159,7 +159,7 @@ public class ImageUtil
 			}
 		if (be <= 0)
 			be = 1;
-		options.inJustDecodeBounds = false;// ÖØĞÂÔØÈëÍ¼Æ¬
+		options.inJustDecodeBounds = false;// é‡æ–°è½½å…¥å›¾ç‰‡
 		options.inSampleSize = be;
 		try
 		{
@@ -173,11 +173,11 @@ public class ImageUtil
 	}
 
 	/**
-	 * ´æ´¢Í¼Æ¬£¬·µ»Ø´æ´¢ÎÄ¼ş³É¹¦ºóµÄÎÄ¼şÃû
+	 * å­˜å‚¨å›¾ç‰‡ï¼Œè¿”å›å­˜å‚¨æ–‡ä»¶æˆåŠŸåçš„æ–‡ä»¶å
 	 * 
 	 * @param bitmap
 	 * @param brecycle
-	 *            ÊÇ·ñÔÚ´æ´¢Íê³Éºó»ØÊÕ
+	 *            æ˜¯å¦åœ¨å­˜å‚¨å®Œæˆåå›æ”¶
 	 * @return
 	 */
 	public static String saveBitmap(Bitmap bitmap, boolean brecycle)
@@ -208,7 +208,7 @@ public class ImageUtil
 	}
 
 	/**
-	 * drawable ×ªÎªbitmap
+	 * drawable è½¬ä¸ºbitmap
 	 * 
 	 * @param drawable
 	 * @return

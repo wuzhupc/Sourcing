@@ -3,9 +3,9 @@ package com.wuzhupc.Sourcing.vo;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
- * Éê±¨½á¹û
+ * ç”³æŠ¥ç»“æœ
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:37:03
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:37:03
  */
 public class DeclareResultVO extends BaseVO
 {
@@ -14,29 +14,29 @@ public class DeclareResultVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 596350495022249905L;
 	/**
-	 * Éê±¨½á¹û±àºÅ
+	 * ç”³æŠ¥ç»“æœç¼–å·
 	 */
 	//private long declareresultid;
 	/**
-	 * Éê±¨½á¹û,1,true Í¨¹ı,0,false Î´Í¨¹ı
+	 * ç”³æŠ¥ç»“æœ,1,true é€šè¿‡,0,false æœªé€šè¿‡
 	 */
 	private boolean declareresult;
 	/**
-	 * Éê±¨½á¹ûÄÚÈİ
+	 * ç”³æŠ¥ç»“æœå†…å®¹
 	 */
 	private String declareresultcontent;
 	/**
-	 * Éê±¨½á¹ûÈËÔ±
+	 * ç”³æŠ¥ç»“æœäººå‘˜
 	 */
 	private String publisher;
 	/**
-	 * Éê±¨½á¹ûÊ±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * ç”³æŠ¥ç»“æœæ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	
 	public String getDeclareStatus()
 	{
-		return declareresult?"Éê±¨Í¨¹ı":"Éê±¨Î´Í¨¹ı";
+		return declareresult?"ç”³æŠ¥é€šè¿‡":"ç”³æŠ¥æœªé€šè¿‡";
 	}
 
 	public long getDeclareresultid()

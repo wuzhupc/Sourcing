@@ -17,14 +17,14 @@ import android.webkit.WebViewClient;
 import android.webkit.WebSettings.LayoutAlgorithm;
 
 /**
- * ´¦ÀíwebviewÏà¹ØµÄÄÚÈİ
+ * å¤„ç†webviewç›¸å…³çš„å†…å®¹
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-4 ÏÂÎç9:39:33
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-4 ä¸‹åˆ9:39:33
  */
 public class WebViewUtil
 {
 	/**
-	 * ÖØÔØÁ´½Ó±êÇ©
+	 * é‡è½½é“¾æ¥æ ‡ç­¾
 	 */
 	public static final String CSTR_RELOADLINK = "http://wuzhupc.com/reload";
 	@SuppressLint("SetJavaScriptEnabled")
@@ -33,29 +33,29 @@ public class WebViewUtil
 		if(c==null||webview==null)
 			return;
 		WebSettings websettings = webview.getSettings();
-		// 1¡¢LayoutAlgorithm.NARROW_COLUMNS £º ÊÊÓ¦ÄÚÈİ´óĞ¡
-        // 2¡¢LayoutAlgorithm.SINGLE_COLUMN:ÊÊÓ¦ÆÁÄ»£¬ÄÚÈİ½«×Ô¶¯Ëõ·Å
+		// 1ã€LayoutAlgorithm.NARROW_COLUMNS ï¼š é€‚åº”å†…å®¹å¤§å°
+        // 2ã€LayoutAlgorithm.SINGLE_COLUMN:é€‚åº”å±å¹•ï¼Œå†…å®¹å°†è‡ªåŠ¨ç¼©æ”¾
 		websettings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
-		// ÉèÖÃÖ§³ÖJavaScript
+		// è®¾ç½®æ”¯æŒJavaScript
 		webview.clearCache(true);
 		websettings.setJavaScriptEnabled(true);
-		//ÉèÖÃ×ÖÌå 
+		//è®¾ç½®å­—ä½“ 
 		websettings.setTextSize(SettingUtil.getNewsFontSize(c));
 		webview.setWebViewClient(new WebViewClient()
 		{
-			// ½â¾öµã»÷Ìø×ªÎÊÌâ
+			// è§£å†³ç‚¹å‡»è·³è½¬é—®é¢˜
 			public boolean shouldOverrideUrlLoading(WebView view,
 								final String url)
 			{
-				//Ôö¼Ó´¦Àíµã»÷ÖØĞÂ¼ÓÔØ±êÇ©
+				//å¢åŠ å¤„ç†ç‚¹å‡»é‡æ–°åŠ è½½æ ‡ç­¾
 				if(isreloadlink(url))
 				{
 					if(reloadListener!=null)
 						reloadListener.OnReload();
 					return true;
 				}
-					
-				//´¦ÀíÕ¾ÄÚÌø×ªµÈ
+
+				//å¤„ç†ç«™å†…è·³è½¬ç­‰
 				ProcessSiteLink(c, url);
 				return true;		
 			}
@@ -73,7 +73,7 @@ public class WebViewUtil
 			}
 		});
 	}
-	
+
 	public static void ProcessSiteLink(Context c,String url)
 	{
 		if(FileUtil.isImageFile(url))
@@ -83,24 +83,24 @@ public class WebViewUtil
 			c.startActivity(intent);
 			return;
 		}
-		//TODO Õ¾ÄÚĞÂÎÅ´¦Àí
+		//TODO ç«™å†…æ–°é—»å¤„ç†
 		BaseActivity.runBrowser(url,c);
 	}
-	
+
 	private static boolean isreloadlink(String url)
 	{
 		if(StringUtil.isEmpty(url))
 			return false;
 		return url.equals(CSTR_RELOADLINK);
 	}
-	
+
 	/**
-	 * ·µ»ØHtml¿ªÍ·
+	 * è¿”å›Htmlå¼€å¤´
 	 * 
 	 * @return <html><head><meta http-equiv="Content-Type"
 	 *         content="text/html;charset=utf-8"> <script type="text/javascript"
 	 *         language="javascript"> function fixImage(i,w,h) { var ow =
-	 *         i.width;//Í¼µÄ¿í¶È var oh = i.height; //Í¼µÄ¸ß¶È var rw = w/ow; var rh =
+	 *         i.width;//å›¾çš„å®½åº¦ var oh = i.height; //å›¾çš„é«˜åº¦ var rw = w/ow; var rh =
 	 *         h/oh; var r = Math.min(rw,rh); if (w ==0 && h == 0) { r = 1;
 	 *         }else if (w == 0) { r = rh<1?rh:1; }else if (h == 0) { r =
 	 *         rw<1?rw:1; } if (ow!=0 && oh!=0) { i.width = ow * r; i.height =
@@ -110,7 +110,7 @@ public class WebViewUtil
 	 */
 	public static String getHtmlHead()
 	{
-		// Í¼ÏñÏÔÊ¾ÆÁÄ»¿í¶ÈµÄ80%
+		// å›¾åƒæ˜¾ç¤ºå±å¹•å®½åº¦çš„80%
 		String autoloadimgscript = "<script type=\"text/javascript\" language=\"javascript\"> "
 				+ "function fixImage(i,w,h){  var cw=document.body.clientWidth; if(cw*0.9<w) w=cw*0.9; var ow = i.width;  "
 				+ "var oh = i.height;  var rw = w/ow; var rh = h/oh;  var r = Math.min(rw,rh);  "
@@ -121,9 +121,9 @@ public class WebViewUtil
 		return "<html><head><meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\">"
 				+ autoloadimgscript + "<style type=\"text/css\">body {background-color:#e9f2fc;}</style></head><body>";
 	}
-	
+
 	/**
-	 * Éú³ÉÄÚÈİ×Ó±êÌâ²¿·Ö
+	 * ç”Ÿæˆå†…å®¹å­æ ‡é¢˜éƒ¨åˆ†
 	 * @param vo
 	 * @return
 	 */
@@ -133,24 +133,24 @@ public class WebViewUtil
 			return "<div style=\"height:0;border-bottom:1px solid #00e\"></div>";
 		return vo.getHtmlSubTitle();
 	}
-	
+
 	/**
-	 * ·µ»Ø´íÎóÌáÊ¾
-	 * @param msg ´íÎóÌáÊ¾ĞÅÏ¢
-	 * @param hasreload ÊÇ·ñÓĞÖØÔØÌáÊ¾ 
+	 * è¿”å›é”™è¯¯æç¤º
+	 * @param msg é”™è¯¯æç¤ºä¿¡æ¯
+	 * @param hasreload æ˜¯å¦æœ‰é‡è½½æç¤º 
 	 * @return
 	 */
 	public static String getHtmlErrorHit(String msg,boolean hasreload)
 	{
-		String result = "<br/>&nbsp;&nbsp;ºÜ±§Ç¸£¬Äú·ÃÎÊµÄÄÚÈİ"+(StringUtil.isEmpty(msg)?"":"ÒòÎª"+msg+"µÄÔ­Òò¶ø")+"ÎŞ·¨Õı³£¼ÓÔØ¡£";
+		String result = "<br/>&nbsp;&nbsp;å¾ˆæŠ±æ­‰ï¼Œæ‚¨è®¿é—®çš„å†…å®¹"+(StringUtil.isEmpty(msg)?"":"å› ä¸º"+msg+"çš„åŸå› è€Œ")+"æ— æ³•æ­£å¸¸åŠ è½½ã€‚";
 		if(hasreload)
-			result = result+"<a href=\""+CSTR_RELOADLINK+"\">Çë³¥ÊÔÖØĞÂ¼ÓÔØ</a>";
+			result = result+"<a href=\""+CSTR_RELOADLINK+"\">è¯·å¿è¯•é‡æ–°åŠ è½½</a>";
 		return result;
 	}
-	
+
 
 	/**
-	 * ·µ»ØHTMLÄÚÈİ£¬Ä¿Ç°µÄ²Ù×÷ÊÇ¶Ô<img Ôö¼Óonload="fixImage(this,screenwidth,0)"
+	 * è¿”å›HTMLå†…å®¹ï¼Œç›®å‰çš„æ“ä½œæ˜¯å¯¹<img å¢åŠ onload="fixImage(this,screenwidth,0)"
 	 * 
 	 * @param context
 	 * @return
@@ -171,11 +171,11 @@ public class WebViewUtil
 		StringBuilder sBuilder = new StringBuilder();
 //		String tmpRemoveStartStr = "style=\"";
 		String tmpRemoveEndStr = "\"";
-		
+
 		String tmpsrc=" src=";
 		while (index != -1)
 		{
-			// Ôö¼ÓtmpStartStrÖ®Ç°µÄ×Ö·û
+			// å¢åŠ tmpStartSträ¹‹å‰çš„å­—ç¬¦
 			sBuilder.append(context.substring(0, index));
 			context = context.substring(index);
 			index = context.indexOf(tmpEndStr);
@@ -213,7 +213,7 @@ public class WebViewUtil
 	}
 
 	/**
-	 * ·µ»ØHtml½áÎ²
+	 * è¿”å›Htmlç»“å°¾
 	 * 
 	 * @return
 	 */

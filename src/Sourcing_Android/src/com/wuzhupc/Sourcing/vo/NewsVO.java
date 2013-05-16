@@ -8,7 +8,7 @@ import com.wuzhupc.utils.JavaLangUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ×ÊÑ¶ĞÅÏ¢
+ * èµ„è®¯ä¿¡æ¯
  * @author Administrator
  *
  */
@@ -19,51 +19,51 @@ public class NewsVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 2357502465951410596L;
 	/**
-	 * ĞÂÎÅ±àºÅ
+	 * æ–°é—»ç¼–å·
 	 */
 	//private long newsid;
 	/**
-	 * ÊÇ·ñÊÇĞÂÎÅÍ·Ìõ£¬Ä¬ÈÏ0£º²»ÊÇÍ·Ìõ£¬1£ºÍ·ÌõĞÂÎÅ
+	 * æ˜¯å¦æ˜¯æ–°é—»å¤´æ¡ï¼Œé»˜è®¤0ï¼šä¸æ˜¯å¤´æ¡ï¼Œ1ï¼šå¤´æ¡æ–°é—»
 	 */
 	private boolean headline;
 	/**
-	 * ĞÂÎÅÀàĞÍ,1£ºĞĞÒµĞÂÎÅ£¬2£ºÕş²ß£¬3£ºÍ¨Öª£¬4£º×¨¼ÒÎÄÕÂ
+	 * æ–°é—»ç±»å‹,1ï¼šè¡Œä¸šæ–°é—»ï¼Œ2ï¼šæ”¿ç­–ï¼Œ3ï¼šé€šçŸ¥ï¼Œ4ï¼šä¸“å®¶æ–‡ç« 
 	 */
 	private int newstype;
 	/**
-	 * ĞÂÎÅ±êÌâ
+	 * æ–°é—»æ ‡é¢˜
 	 */
 	private String title;
 	/**
-	 * ÌâÍ¼ URL
+	 * é¢˜å›¾ URL
 	 */
 	private String titlepic;
 	/**
-	 * ÌâÍ¼ËõÂÔÍ¼URL
+	 * é¢˜å›¾ç¼©ç•¥å›¾URL
 	 */
 	private String titlepic_small;
 	/**
-	 * ĞÂÎÅ·¢±íÈÕÆÚ£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * æ–°é—»å‘è¡¨æ—¥æœŸï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	/**
-	 * ĞÂÎÅĞÅÏ¢ÕªÒª
+	 * æ–°é—»ä¿¡æ¯æ‘˜è¦
 	 */
 	private String newssummary;
 	/**
-	 * ĞÂÎÅ×÷Õß
+	 * æ–°é—»ä½œè€…
 	 */
 	private String auther;
 	/**
-	 * ĞÂÎÅÀ´Ô´
+	 * æ–°é—»æ¥æº
 	 */
 	private String source;
 	/**
-	 * ÔÄ¶Á´ÎÊı
+	 * é˜…è¯»æ¬¡æ•°
 	 */
 	private int readernum;
 	/**
-	 * ÆÀÂÛ×ÜÊı
+	 * è¯„è®ºæ€»æ•°
 	 */
 	private int commentnum;
 	public long getNewsid()
@@ -184,7 +184,7 @@ public class NewsVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLæ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -197,7 +197,7 @@ public class NewsVO extends BaseVO
 	}
 
 	/**
-	 * Éú³É·ÖÏíĞÅÏ¢ÄÚÈİ²¿·Ö
+	 * ç”Ÿæˆåˆ†äº«ä¿¡æ¯å†…å®¹éƒ¨åˆ†
 	 */
 	@Override
 	public String generateShareText()
@@ -206,18 +206,18 @@ public class NewsVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML×Ó±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLå­æ ‡é¢˜
 	 * @return
 	 */
 	@Override
 	public String getHtmlSubTitle()
 	{
-		String result = "<div align=\"center\"><font color=\"#666666\" size=\"2pt\">"+getPublishtime()+"&nbsp;&nbsp; À´Ô´:"+getSource()+"</font></div><div style=\"height:0;border-bottom:1px solid #f00\"></div>";
+		String result = "<div align=\"center\"><font color=\"#666666\" size=\"2pt\">"+getPublishtime()+"&nbsp;&nbsp; æ¥æº:"+getSource()+"</font></div><div style=\"height:0;border-bottom:1px solid #f00\"></div>";
 		return result;
 	}
 	
 	/**
-	 * ÉèÖÃÄÚÈİHtmlÄÚÈİÏÔÊ¾
+	 * è®¾ç½®å†…å®¹Htmlå†…å®¹æ˜¾ç¤º
 	 */
 	@Override
 	public void setHtmlToShow(Context c, final DetailInfoListener detailInfoListener)

@@ -12,10 +12,10 @@ import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
- * ÓÃ»§
+ * ç”¨æˆ·
  * 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:57:52
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:57:52
  */
 public class UserVO extends BaseVO
 {
@@ -26,84 +26,84 @@ public class UserVO extends BaseVO
 	private static final long serialVersionUID = -2777041706952712371L;
 
 	/**
-	 * ÓÃ»§ÀàĞÍ:¸öÈËÓÃ»§
+	 * ç”¨æˆ·ç±»å‹:ä¸ªäººç”¨æˆ·
 	 */
 	public static final int USER_TYPE_PERSONAL = 1;
 	/**
-	 * ÓÃ»§ÀàĞÍ:×¨¼ÒÓÃ»§
+	 * ç”¨æˆ·ç±»å‹:ä¸“å®¶ç”¨æˆ·
 	 */
 	public static final int USER_TYPE_EXPERT = 2;
 	/**
-	 * ÓÃ»§ÀàĞÍ:ÆóÒµÓÃ»§
+	 * ç”¨æˆ·ç±»å‹:ä¼ä¸šç”¨æˆ·
 	 */
 	public static final int USER_TYPE_ENTERPRISE = 3;
 	/**
-	 * ÓÃ»§ÀàĞÍ:ÅàÑµ»ú¹¹
+	 * ç”¨æˆ·ç±»å‹:åŸ¹è®­æœºæ„
 	 */
 	public static final int USER_TYPE_TRAIN = 4;
 	/**
-	 * ÓÃ»§±àºÅ
+	 * ç”¨æˆ·ç¼–å·
 	 */
 	// private long userid;
 	/**
-	 * ÓÃ»§ÀàĞÍ,USER_TYPE_
+	 * ç”¨æˆ·ç±»å‹,USER_TYPE_
 	 */
 	private int usertype;
 
 	/**
-	 * ÓÃ»§µÇÂ¼ÕÊºÅ
+	 * ç”¨æˆ·ç™»å½•å¸å·
 	 */
 	private String useraccount;
 	/**
-	 * ÓÃ»§ÃÜÂë
+	 * ç”¨æˆ·å¯†ç 
 	 */
 	private String password;
 	/**
-	 * ÓÃ»§Ãû³Æ(Èç¹ûÊÇ×¢²áÎªÆóÒµ,Ôò·µ»ØÆóÒµÃû³Æ,ÅàÑµ»ú¹¹,Ôò·µ»ØÅàÑµ»ú¹¹Ãû³Æ)
+	 * ç”¨æˆ·åç§°(å¦‚æœæ˜¯æ³¨å†Œä¸ºä¼ä¸š,åˆ™è¿”å›ä¼ä¸šåç§°,åŸ¹è®­æœºæ„,åˆ™è¿”å›åŸ¹è®­æœºæ„åç§°)
 	 */
 	private String username;
 	/**
-	 * ÓÃ»§Í·Ïñ
+	 * ç”¨æˆ·å¤´åƒ
 	 */
 	private String userphoto;
 	/**
-	 * ÁªÏµ·½Ê½
+	 * è”ç³»æ–¹å¼
 	 */
 	private String phonenumber;
 	/**
-	 * ÓÊÏäµØÖ·
+	 * é‚®ç®±åœ°å€
 	 */
 	private String email;
 	/**
-	 * ÓÃ»§Î´²é¿´µÄ×ÉÑ¯´ğ¸´ĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æœªæŸ¥çœ‹çš„å’¨è¯¢ç­”å¤ä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int consultcount;
 	/**
-	 * ÓÃ»§Î´²é¿´µÄÉóºË½á¹ûĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æœªæŸ¥çœ‹çš„å®¡æ ¸ç»“æœä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int auditcount;
 	/**
-	 * ÓÃ»§Î´²é¿´µÄÉê±¨½ø¶ÈĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æœªæŸ¥çœ‹çš„ç”³æŠ¥è¿›åº¦ä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int declarecount;
 	/**
-	 * ÓÃ»§Î´²é¿´µÄÍ¨ÖªÌáĞÑĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æœªæŸ¥çœ‹çš„é€šçŸ¥æé†’ä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int notifiercount;
 	/**
-	 * ÓÃ»§×Ü×ÉÑ¯´ğ¸´ĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æ€»å’¨è¯¢ç­”å¤ä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int allconsultcount;
 	/**
-	 * ÓÃ»§×ÜÉóºË½á¹ûĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æ€»å®¡æ ¸ç»“æœä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int allauditcount;
 	/**
-	 * ÓÃ»§×ÜÉê±¨½ø¶ÈĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æ€»ç”³æŠ¥è¿›åº¦ä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int alldeclarecount;
 	/**
-	 * ÓÃ»§×ÜÍ¨ÖªÌáĞÑĞÅÏ¢Êı,¸ù¾İÓÃ»§ÀàĞÍ·µ»Ø
+	 * ç”¨æˆ·æ€»é€šçŸ¥æé†’ä¿¡æ¯æ•°,æ ¹æ®ç”¨æˆ·ç±»å‹è¿”å›
 	 */
 	private int allnotifiercount;
 
@@ -318,16 +318,16 @@ public class UserVO extends BaseVO
 	}
 
 	/**
-	 * ´æ´¢ÓÃ»§µÇÂ¼ĞÅÏ¢--´æ´¢ÎÄ¼şÂ·¾¶
+	 * å­˜å‚¨ç”¨æˆ·ç™»å½•ä¿¡æ¯--å­˜å‚¨æ–‡ä»¶è·¯å¾„
 	 */
 	private static final String CSTR_DATAFILE_USER = Constants.CSTR_DATASTOREDIR
 			+ "datafile_u.dat";
 
 	/**
-	 * ´æ´¢×îºóµÇÂ¼ĞÅÏ¢
+	 * å­˜å‚¨æœ€åç™»å½•ä¿¡æ¯
 	 * 
 	 * @param vo
-	 *            Èç¹ûÎª¿Õ£¬ÔòÇå³ıÖ®Ç°µÄµÇÂ¼¼ÇÂ¼
+	 *            å¦‚æœä¸ºç©ºï¼Œåˆ™æ¸…é™¤ä¹‹å‰çš„ç™»å½•è®°å½•
 	 * @return
 	 */
 	public static boolean saveLoginUserInfo(UserVO vo)
@@ -382,7 +382,7 @@ public class UserVO extends BaseVO
 	}
 
 	/**
-	 * »ñÈ¡×îºóµÇÂ¼µÄĞÅÏ¢Êı¾İ
+	 * è·å–æœ€åç™»å½•çš„ä¿¡æ¯æ•°æ®
 	 * 
 	 * @return
 	 */
@@ -435,20 +435,20 @@ public class UserVO extends BaseVO
 		switch (usertype)
 		{
 			case USER_TYPE_PERSONAL:
-				return "¸öÈËÓÃ»§";
+				return "ä¸ªäººç”¨æˆ·";
 			case USER_TYPE_EXPERT:
-				return "×¨¼ÒÓÃ»§";
+				return "ä¸“å®¶ç”¨æˆ·";
 			case USER_TYPE_ENTERPRISE:
-				return "ÆóÒµÓÃ»§";
+				return "ä¼ä¸šç”¨æˆ·";
 			case USER_TYPE_TRAIN:
-				return "ÅàÑµ»ú¹¹";
+				return "åŸ¹è®­æœºæ„";
 			default:
 				return "";
 		}
 	}
 
 	/**
-	 * ÊÇ·ñÓĞ×ÉÑ¯ĞÅÏ¢È¨ÏŞ
+	 * æ˜¯å¦æœ‰å’¨è¯¢ä¿¡æ¯æƒé™
 	 * 
 	 * @return
 	 */
@@ -470,7 +470,7 @@ public class UserVO extends BaseVO
 	}
 
 	/**
-	 * ÊÇ·ñÓĞÉóºË½á¹ûÈ¨ÏŞ
+	 * æ˜¯å¦æœ‰å®¡æ ¸ç»“æœæƒé™
 	 * 
 	 * @return
 	 */
@@ -492,7 +492,7 @@ public class UserVO extends BaseVO
 	}
 
 	/**
-	 * ÊÇ·ñÓĞÉê±¨½ø¶ÈÈ¨ÏŞ
+	 * æ˜¯å¦æœ‰ç”³æŠ¥è¿›åº¦æƒé™
 	 * 
 	 * @return
 	 */
@@ -514,7 +514,7 @@ public class UserVO extends BaseVO
 	}
 
 	/**
-	 * ÊÇ·ñÓĞÍ¨ÖªÌáĞÑÈ¨ÏŞ
+	 * æ˜¯å¦æœ‰é€šçŸ¥æé†’æƒé™
 	 * 
 	 * @return
 	 */

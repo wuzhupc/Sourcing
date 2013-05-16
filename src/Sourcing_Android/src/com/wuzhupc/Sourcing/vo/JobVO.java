@@ -8,9 +8,9 @@ import com.wuzhupc.utils.JavaLangUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * Ö°Î»ĞÅÏ¢
+ * èŒä½ä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç6:57:03
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ6:57:03
  */
 public class JobVO extends BaseVO
 {
@@ -20,19 +20,19 @@ public class JobVO extends BaseVO
 	private static final long serialVersionUID = 4793481217858034470L;
 
 	/**
-	 * Ö°Î»±àºÅ
+	 * èŒä½ç¼–å·
 	 */
 	//private long jobid;
 	/**
-	 * Ö°Î»Ãû³Æ
+	 * èŒä½åç§°
 	 */
 	private String job;
 	/**
-	 * ÕĞÆ¸¹«Ë¾Ãû³Æ
+	 * æ‹›è˜å…¬å¸åç§°
 	 */
 	private String company;
 	/**
-	 * ·¢²¼Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * å‘å¸ƒæ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	public long getJobid()
@@ -73,7 +73,7 @@ public class JobVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLæ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -86,7 +86,7 @@ public class JobVO extends BaseVO
 	}
 
 	/**
-	 * Éú³É·ÖÏíĞÅÏ¢ÄÚÈİ²¿·Ö
+	 * ç”Ÿæˆåˆ†äº«ä¿¡æ¯å†…å®¹éƒ¨åˆ†
 	 */
 	@Override
 	public String generateShareText()
@@ -95,7 +95,7 @@ public class JobVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML×Ó±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLå­æ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -106,7 +106,7 @@ public class JobVO extends BaseVO
 	}
 	
 	/**
-	 * ÉèÖÃÄÚÈİHtmlÄÚÈİÏÔÊ¾
+	 * è®¾ç½®å†…å®¹Htmlå†…å®¹æ˜¾ç¤º
 	 */
 	@Override
 	public void setHtmlToShow(Context c, final DetailInfoListener detailInfoListener)

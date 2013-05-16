@@ -25,11 +25,11 @@ import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 /**
- * BaseView ËùÓĞµÄViewFlipperÉÏµÄ×Ó¼¶View¶¼Ó¦¼Ì³Ğ×Ô±¾Àà
+ * BaseView æ‰€æœ‰çš„ViewFlipperä¸Šçš„å­çº§Viewéƒ½åº”ç»§æ‰¿è‡ªæœ¬ç±»
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-25 ÏÂÎç8:35:31
- * @description ÔÚViewÇĞ»»ÏÔÊ¾Ê±±»µ÷ÓÃinitData£¨¼´ÔÚ×ÓÆµµÀÄ¿£¨»òÀ¸Ä¿£©ÇĞ»»Ê±£©
- *  ÓÉinitData½Ó×Åµ÷ÓÃ×ÓÀàinitContextView->reflashContextView->loadData
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-25 ä¸‹åˆ8:35:31
+ * @description åœ¨Viewåˆ‡æ¢æ˜¾ç¤ºæ—¶è¢«è°ƒç”¨initDataï¼ˆå³åœ¨å­é¢‘é“ç›®ï¼ˆæˆ–æ ç›®ï¼‰åˆ‡æ¢æ—¶ï¼‰
+ *  ç”±initDataæ¥ç€è°ƒç”¨å­ç±»initContextView->reflashContextView->loadData
  */
 public abstract class BaseView extends LinearLayout
 {
@@ -38,26 +38,26 @@ public abstract class BaseView extends LinearLayout
 	protected Context mContext;
 	
 	/**
-	 * ÄÚÈİview
+	 * å†…å®¹view
 	 */
 	private View mContentView;
 	
 	/**
-	 * ÊÖÊÆÊ¶±ğ
+	 * æ‰‹åŠ¿è¯†åˆ«
 	 */
 	private GestureDetector mgd_content;
 	/**
-	 * À¸Ä¿ID
+	 * æ ç›®ID
 	 */
 	private long mFatherChannelID;
 	
 	/**
-	 * µ±Ç°À¸Ä¿ID
+	 * å½“å‰æ ç›®ID
 	 */
 	private long mNowChannelID;
 
 	/**
-	 * ÊÇ·ñÒÑ¾­³õÊ¼»¯¹ıÊı¾İ
+	 * æ˜¯å¦å·²ç»åˆå§‹åŒ–è¿‡æ•°æ®
 	 */
 	protected Boolean misInitData=false;
 	
@@ -79,34 +79,34 @@ public abstract class BaseView extends LinearLayout
 	protected LinearLayout mll_content;
 	
 	/**
-	 * À¸Ä¿ÁĞ±í
+	 * æ ç›®åˆ—è¡¨
 	 */
 	protected ArrayList<SubChannelTabView> mChannelList;
 	
 	/**
-	 * ÊÇ·ñÓĞ×ÓÀ¸Ä¿µ¼º½
+	 * æ˜¯å¦æœ‰å­æ ç›®å¯¼èˆª
 	 */
 	private boolean mHasNavigation;
 	
 	/**
-	 * ÊÇ·ñÓĞËÑË÷ÊäÈë¿ò
+	 * æ˜¯å¦æœ‰æœç´¢è¾“å…¥æ¡†
 	 */
 	private boolean mHasSearch;
 	
 	/**
-	 * ËÑË÷ÊäÈë¿ò
+	 * æœç´¢è¾“å…¥æ¡†
 	 */
 	protected EditText met_search;
 	
 	/**
-	 * ÊÇ·ñÓĞË¢ĞÂ°´Å¥
+	 * æ˜¯å¦æœ‰åˆ·æ–°æŒ‰é’®
 	 */
 	private boolean mHasRefButton;
 	
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 * @param context
-	 * @param fatherchannelid À¸Ä¿ID
+	 * @param fatherchannelid æ ç›®ID
 	 */
 	public BaseView(Context context,long fatherchannelid,boolean hassearch,boolean hasnavigation,boolean hasrefbutton) {
 		super(context);
@@ -121,7 +121,7 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * Òş²ØÊäÈë·¨
+	 * éšè—è¾“å…¥æ³•
 	 */
 	protected void hideIme(boolean bclear)
 	{
@@ -133,17 +133,17 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * ³õÊ¼»¯Êı¾İ£¬Ã¿´ÎÇĞ»»¸¸À¸Ä¿Ê±±»µ÷ÓÃ Èç¹ûĞèÒª³õÊ¼»¯·µ»Øtrue,²»ĞèÒª³õÊ¼»¯·µ»Øfalse
+	 * åˆå§‹åŒ–æ•°æ®ï¼Œæ¯æ¬¡åˆ‡æ¢çˆ¶æ ç›®æ—¶è¢«è°ƒç”¨ å¦‚æœéœ€è¦åˆå§‹åŒ–è¿”å›true,ä¸éœ€è¦åˆå§‹åŒ–è¿”å›false
 	 */
 	public boolean initData()
 	{
-		//ÉèÖÃÊÇ·ñÏÔÊ¾Ë¢ĞÂ°´Å¥
+		//è®¾ç½®æ˜¯å¦æ˜¾ç¤ºåˆ·æ–°æŒ‰é’®
 		if(mContext instanceof HomeActivity)
 		{
 			HomeActivity home = (HomeActivity)mContext;
 			home.setMainTitleRefVisibility(mHasRefButton);
 		}
-		//ÊÇ·ñÒÑ¾­³õÊ¼»¯¹ıÊı¾İ£¬ÒÑ¾­³õÊ¼»¯Ôò²»´¦Àí
+		//æ˜¯å¦å·²ç»åˆå§‹åŒ–è¿‡æ•°æ®ï¼Œå·²ç»åˆå§‹åŒ–åˆ™ä¸å¤„ç†
 		if(misInitData)
 		{
 			hideIme(true);
@@ -160,7 +160,7 @@ public abstract class BaseView extends LinearLayout
 		else
 		{
 			hideIme(true);
-			//¸ù¾İÀ¸Ä¿IDÉèÖÃÄÚÈİÊÓÍ¼
+			//æ ¹æ®æ ç›®IDè®¾ç½®å†…å®¹è§†å›¾
 			reflashContentView();
 			loadData(true);
 		}
@@ -168,7 +168,7 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * ÉèÖÃÏÖÔÚÑ¡ÖĞµÄÀ¸Ä¿
+	 * è®¾ç½®ç°åœ¨é€‰ä¸­çš„æ ç›®
 	 * @param channelid
 	 */
 	protected void setNowChannel(long channelid)
@@ -177,12 +177,12 @@ public abstract class BaseView extends LinearLayout
 			return;
 		hideIme(true);
 		mNowChannelID=channelid;
-		//ÉèÖÃÀ¸Ä¿×´Ì¬
+		//è®¾ç½®æ ç›®çŠ¶æ€
 		setNavigationSel(mNowChannelID);
-		//¸ù¾İÀ¸Ä¿IDÉèÖÃÄÚÈİÊÓÍ¼
+		//æ ¹æ®æ ç›®IDè®¾ç½®å†…å®¹è§†å›¾
 		reflashContentView();
 		
-		//Ôö¼Ó¶ÔÊÇ·ñÊÇµÚÒ»´ÎÔØÈëµÄÅĞ¶Ï£¬Èç¹ûÊÇµÚÒ»´ÎÔØÈë£¬Ôò×Ô¶¯µ÷ÓÃË¢ĞÂ¹¦ÄÜ
+		//å¢åŠ å¯¹æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡è½½å…¥çš„åˆ¤æ–­ï¼Œå¦‚æœæ˜¯ç¬¬ä¸€æ¬¡è½½å…¥ï¼Œåˆ™è‡ªåŠ¨è°ƒç”¨åˆ·æ–°åŠŸèƒ½
 		boolean isfirstload = false;
 		ChannelVO vo = getNowChannelInfo();
 		if(vo!=null)
@@ -193,7 +193,7 @@ public abstract class BaseView extends LinearLayout
 		loadData(isfirstload);
 	}
 	/**
-     * ÉèÖÃÄ³¸öÀ¸Ä¿ÏîÎªÑ¡ÖĞ×´Ì¬
+     * è®¾ç½®æŸä¸ªæ ç›®é¡¹ä¸ºé€‰ä¸­çŠ¶æ€
      * @param channelid
      */
     private void setNavigationSel(long channelid)
@@ -208,34 +208,34 @@ public abstract class BaseView extends LinearLayout
     }
 
     /**
-	 * ¸ù¾İµ±Ç°À¸Ä¿ID£¨mNowChannelID£©£¬¼ÓÔØÄÚÈİÊı¾İ
-	 * @param isfirstload ÊÇ·ñÊÇµÚÒ»´ÎÔØÈë
+	 * æ ¹æ®å½“å‰æ ç›®IDï¼ˆmNowChannelIDï¼‰ï¼ŒåŠ è½½å†…å®¹æ•°æ®
+	 * @param isfirstload æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡è½½å…¥
 	 */
 	public abstract void loadData(Boolean isfirstload);
 	
 	/**
-	 * ¸ù¾İµ±Ç°À¸Ä¿ID£¨mNowChannelID£©£¬Ë¢ĞÂÊı¾İ
+	 * æ ¹æ®å½“å‰æ ç›®IDï¼ˆmNowChannelIDï¼‰ï¼Œåˆ·æ–°æ•°æ®
 	 */
 	public abstract void reflashData();
 	
 	/**
-	 * ³õÊ¼»¯ÄÚÈİ²¿·ÖµÄView
+	 * åˆå§‹åŒ–å†…å®¹éƒ¨åˆ†çš„View
 	 */
 	public abstract void initContentView();
 	
 	/**
-	 * Ë¢ĞÂÄÚÈİÊÓÍ¼
+	 * åˆ·æ–°å†…å®¹è§†å›¾
 	 */
 	public abstract void reflashContentView();
 	
 	/**
-	 * ËÑË÷ÊÂ¼ş
+	 * æœç´¢äº‹ä»¶
 	 * @param et
 	 */
 	public abstract void searchAction(EditText et);
 	
 	/**
-	 * ÉèÖÃÄÚÈİÊÓÍ¼
+	 * è®¾ç½®å†…å®¹è§†å›¾
 	 * @param v
 	 */
 	public void setContentView(View v)
@@ -244,7 +244,7 @@ public abstract class BaseView extends LinearLayout
 		mll_content.addView(v);
 	}
 	/**
-	 * ³õÊ¼»¯View
+	 * åˆå§‹åŒ–View
 	 */
 	private void initView()
 	{
@@ -276,7 +276,7 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * ³õÊ¼»¯À¸Ä¿À¸
+	 * åˆå§‹åŒ–æ ç›®æ 
 	 */
 	protected void initNavigation(View v)
 	{
@@ -316,7 +316,7 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * ×ÓÀ¸Ä¿À¸µã»÷¼àÌı£¨¸ù¾İµã»÷ID³õÊ¼»¯ViewFlipperÀïµÄÄÚÈİ£©
+	 * å­æ ç›®æ ç‚¹å‡»ç›‘å¬ï¼ˆæ ¹æ®ç‚¹å‡»IDåˆå§‹åŒ–ViewFlipperé‡Œçš„å†…å®¹ï¼‰
 	 */
 	private View.OnClickListener mSubChannelTabViewClickListener = new OnClickListener()
 	{
@@ -331,8 +331,8 @@ public abstract class BaseView extends LinearLayout
 	};
 	
 	/**
-     * ¸ù¾İË÷Òı»ñÈ¡À¸Ä¿ID´ÓÁĞ±íÖĞ
-     * @param index¡¡Ë÷Òı£¬Îª-1Ê±£¬È¡Ä¬ÈÏÏÔÊ¾Öµ 
+     * æ ¹æ®ç´¢å¼•è·å–æ ç›®IDä»åˆ—è¡¨ä¸­
+     * @param indexã€€ç´¢å¼•ï¼Œä¸º-1æ—¶ï¼Œå–é»˜è®¤æ˜¾ç¤ºå€¼ 
      * @return
      */
     private long getChannelIDFromList(int index)
@@ -341,18 +341,18 @@ public abstract class BaseView extends LinearLayout
     		return -1l;
     	if(index<0||index>=mChannelList.size())
     	{
-    		//Èç¹ûindex<0ÔòÄ¬ÈÏÎª»ñÈ¡ÁĞ±íÀïChannelVOÀïisdefaultÖµÎªtrueµÄµÄID
+    		//å¦‚æœindex<0åˆ™é»˜è®¤ä¸ºè·å–åˆ—è¡¨é‡ŒChannelVOé‡Œisdefaultå€¼ä¸ºtrueçš„çš„ID
     		for(int i=0;i<mChannelList.size();i++)
     			if(mChannelList.get(i).getChannelVO().getIsDefault()==1)
     				return mChannelList.get(i).getChannelVO().getChannelID();
-    		//Èç¹ûindex<0ÇÒÁĞ±íÀïChannelVOÀïisdefaultÖµ¶¼ÎªfalseµÄ£¬Ôò·µ»ØµÚÒ»Ïî
+    		//å¦‚æœindex<0ä¸”åˆ—è¡¨é‡ŒChannelVOé‡Œisdefaultå€¼éƒ½ä¸ºfalseçš„ï¼Œåˆ™è¿”å›ç¬¬ä¸€é¡¹
     		return mChannelList.get(0).getChannelVO().getChannelID();
     	}
     	return mChannelList.get(index).getChannelVO().getChannelID();
     }
     
     /**
-     * »ñÈ¡µ±Ç°À¸Ä¿ĞÅÏ¢
+     * è·å–å½“å‰æ ç›®ä¿¡æ¯
      * @return
      */
     public ChannelVO getNowChannelInfo()
@@ -365,7 +365,7 @@ public abstract class BaseView extends LinearLayout
 		return null;
     }
     /**
-	 * »ñÈ¡µ±Ç°À¸Ä¿ID
+	 * è·å–å½“å‰æ ç›®ID
 	 * @return
 	 */
 	public long getNowChannelID()
@@ -394,7 +394,7 @@ public abstract class BaseView extends LinearLayout
 	}
 	
 	/**
-	 * ÉèÖÃÄ³¸öViewÖ§³ÖÊÖÊÆÊ¶±ğ
+	 * è®¾ç½®æŸä¸ªViewæ”¯æŒæ‰‹åŠ¿è¯†åˆ«
 	 * @param v
 	 */
 	public void setViewGestureDetector(View v)
@@ -409,7 +409,7 @@ public abstract class BaseView extends LinearLayout
 		});
 	}
 	/**
-	 * ÏÔÊ¾ÌáÊ¾ĞÅÏ¢
+	 * æ˜¾ç¤ºæç¤ºä¿¡æ¯
 	 * @param resid
 	 */
 	public void showHint(int resid)
@@ -417,7 +417,7 @@ public abstract class BaseView extends LinearLayout
 		showHint(getResources().getString(resid));
 	}
 	/**
-	 * ÏÔÊ¾ÌáÊ¾ĞÅÏ¢
+	 * æ˜¾ç¤ºæç¤ºä¿¡æ¯
 	 * @param resid
 	 */
 	public void showHint(String message)
@@ -428,27 +428,27 @@ public abstract class BaseView extends LinearLayout
 	
 	
 	/**
-	 * ÉèÖÃÖ÷±êÌâÀ¸Ë¢ĞÂ°´Å¥Ë¢ĞÂ×´Ì¬Í£Ö¹
+	 * è®¾ç½®ä¸»æ ‡é¢˜æ åˆ·æ–°æŒ‰é’®åˆ·æ–°çŠ¶æ€åœæ­¢
 	 */
 	protected void stopMainTitleReflashStauts()
 	{
-		//ÇĞ»»À¸Ä¿ºó¾ÍÉèÖÃÎª·ÇË¢ĞÂ×´Ì¬
+		//åˆ‡æ¢æ ç›®åå°±è®¾ç½®ä¸ºéåˆ·æ–°çŠ¶æ€
 		if(mContext instanceof HomeActivity)
 			((HomeActivity)mContext).setMainTitleRefStatus(false);
 	}
 	
 	/**
-	 * ±£³ÖÖ÷±êÌâÀ¸Ë¢ĞÂ°´Å¥Ë¢ĞÂ×´Ì¬
+	 * ä¿æŒä¸»æ ‡é¢˜æ åˆ·æ–°æŒ‰é’®åˆ·æ–°çŠ¶æ€
 	 */
 	protected void keepMainTitleReflashStauts()
 	{
-		//ÇĞ»»À¸Ä¿ºó¾ÍÉèÖÃÎª·ÇË¢ĞÂ×´Ì¬
+		//åˆ‡æ¢æ ç›®åå°±è®¾ç½®ä¸ºéåˆ·æ–°çŠ¶æ€
 		if(mContext instanceof HomeActivity)
 			((HomeActivity)mContext).setMainTitleRefStatus(true);
 	}
 	
 	/**
-	 * ÉèÖÃÖ÷±êÌâÀ¸Ë¢ĞÂ°´Å¥ÊÇ·ñ¿É¼û
+	 * è®¾ç½®ä¸»æ ‡é¢˜æ åˆ·æ–°æŒ‰é’®æ˜¯å¦å¯è§
 	 */
 	protected void setMainTitleReflashVisibility(Boolean bvisibility)
 	{

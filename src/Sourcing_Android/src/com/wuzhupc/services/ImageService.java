@@ -15,7 +15,6 @@ import com.wuzhupc.widget.imagezoom.ImageViewTouchBase;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask.Status;
 import android.os.Handler;
@@ -26,15 +25,15 @@ import android.widget.ImageView.ScaleType;
 public class ImageService
 {
 	/**
-	 * ¼ÓÔØÊ§°Ü
+	 * åŠ è½½å¤±è´¥
 	 */
 	public static final int CINT_LOAD_FAILURE=0;
 	/**
-	 * ¼ÓÔØ³É¹¦£­ÍøÂç¼ÓÔØ
+	 * åŠ è½½æˆåŠŸï¼ç½‘ç»œåŠ è½½
 	 */
 	public static final int CINT_LOAD_SUCESS_LOCAL=1;
 	/**
-	 * ¼ÓÔØ³É¹¦£­ÍøÂç¼ÓÔØ
+	 * åŠ è½½æˆåŠŸï¼ç½‘ç»œåŠ è½½
 	 */
 	public static final int CINT_LOAD_SUCESS_NETWORK=2;
 	
@@ -47,12 +46,12 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable)
@@ -61,13 +60,13 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃÍ¼Ïñ
+	 * è®¾ç½®å›¾åƒ
 	 * 
 	 * @param iv
 	 * @param bm
 	 * @param defdrawable
 	 * @param lp
-	 *            ivµÄÑùÊ½
+	 *            ivçš„æ ·å¼
 	 */
 	private void setImage(ImageView iv, Bitmap bm, Drawable defdrawable,
 			ScaleType st, LayoutParams lp,Boolean adjustViewBounds)
@@ -102,16 +101,16 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable, final int maxwidth, final int maxheight)
@@ -121,16 +120,16 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable, final int maxwidth, final int maxheight,LayoutParams lastlp)
@@ -140,16 +139,16 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable, final int maxwidth, final int maxheight,
@@ -159,17 +158,17 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
-	 * @param adjustViewBounds Í¼ÏñÊÇ·ñ×Ô¶¯¶ÔÆë¿Ø¼ş±ß¿ò£¬Èç¹ûÊÇScaleType ÊÇMATRIX ĞèÒªÉèÖÃÎªfalse
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
+	 * @param adjustViewBounds å›¾åƒæ˜¯å¦è‡ªåŠ¨å¯¹é½æ§ä»¶è¾¹æ¡†ï¼Œå¦‚æœæ˜¯ScaleType æ˜¯MATRIX éœ€è¦è®¾ç½®ä¸ºfalse
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable, final int maxwidth, final int maxheight,
@@ -179,18 +178,18 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param lastlp
-	 *            ×îÖÕimageview ÏÔÊ¾µÄ²¼¾ÖÑùÊ½
+	 *            æœ€ç»ˆimageview æ˜¾ç¤ºçš„å¸ƒå±€æ ·å¼
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable, final int maxwidth, final int maxheight,
@@ -200,18 +199,18 @@ public class ImageService
 	}
 
 	/**
-	 * ÉèÖÃTNNDËõÂÔÍ¼
+	 * è®¾ç½®TNNDç¼©ç•¥å›¾
 	 * 
 	 * @param iv
 	 * @param imageUrl
 	 * @param drawable
-	 *            ¼ÓÔØÊ§°ÜÊ±Ä¬ÈÏÏÔÊ¾Í¼Æ¬
+	 *            åŠ è½½å¤±è´¥æ—¶é»˜è®¤æ˜¾ç¤ºå›¾ç‰‡
 	 * @param maxwidth
-	 *            ×î´ó¿í¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            æœ€å¤§å®½åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param maxheight
-	 *            ¡¡×î´ó¸ß¶È,ÉèÖÃÖµĞ¡ÓÚµÈÓÚ0Ê±ºöÂÔ
+	 *            ã€€æœ€å¤§é«˜åº¦,è®¾ç½®å€¼å°äºç­‰äº0æ—¶å¿½ç•¥
 	 * @param lastlp
-	 *            ×îÖÕimageview ÏÔÊ¾µÄ²¼¾ÖÑùÊ½
+	 *            æœ€ç»ˆimageview æ˜¾ç¤ºçš„å¸ƒå±€æ ·å¼
 	 */
 	public void setThumbnail(final ImageView iv, String imageUrl,
 			final Drawable drawable, final int maxwidth, final int maxheight,
@@ -231,7 +230,7 @@ public class ImageService
 		File localFile = new File(filePath);
 
 		if (localFile.exists())
-		{ // ÎÄ¼şÒÑ¾­´æÔÚ
+		{ // æ–‡ä»¶å·²ç»å­˜åœ¨
 			Bitmap bitmap = ImageUtil.getBitmapFromFile(filePath, maxwidth,
 					maxheight);
 			setImage(iv, bitmap, drawable, st,lastlp,adjustViewBounds);
@@ -240,9 +239,9 @@ public class ImageService
 			return;
 		}
 
-		// ²»´æÔÚ£¬Æô¶¯Ïß³ÌÏÂÔØÍ¼Æ¬
+		// ä¸å­˜åœ¨ï¼Œå¯åŠ¨çº¿ç¨‹ä¸‹è½½å›¾ç‰‡
 		iv.setScaleType(ScaleType.CENTER);
-		iv.setImageResource(R.drawable.progress_micro); // ÉèÖÃ¼ÓÔØ¶¯»­
+		iv.setImageResource(R.drawable.progress_micro); // è®¾ç½®åŠ è½½åŠ¨ç”»
 		//final AnimationDrawable ad = (AnimationDrawable) iv.getDrawable();
 
 		FileUtil.isExistFolder(localFile.getParent());
@@ -252,9 +251,9 @@ public class ImageService
 				{
 					@Override
 					public void downloadComplete(File file)
-					{ // ÏÂÔØ½á¹û
+					{ // ä¸‹è½½ç»“æœ
 						if (file == null || !file.exists())
-						{ // ÏÂÔØÊ§°Ü£¬Í¼Æ¬²»´æÔÚ
+						{ // ä¸‹è½½å¤±è´¥ï¼Œå›¾ç‰‡ä¸å­˜åœ¨
 							setImage(iv, null, drawable, st,lastlp,adjustViewBounds);
 							if(imageLoadeReceiver!=null)
 								imageLoadeReceiver.loadCompleted(CINT_LOAD_FAILURE);
@@ -269,12 +268,12 @@ public class ImageService
 					}
 				});
 		imageTask.setProgressController(new IProgressController()
-		{ // ÉèÖÃÍ¼Æ¬Êı¾İ¶ÁÈ¡½ø¶È½Ó¿Ú
+		{ // è®¾ç½®å›¾ç‰‡æ•°æ®è¯»å–è¿›åº¦æ¥å£
 					@Override
 					public void progressUpdate(int progress)
 					{
 						if (progress == -1)
-						{ // ´Ó·şÎñ¶Ë¿ªÊ¼»ñÈ¡Êı¾İ£¬Æô¶¯¶¯»­Ğ§¹û
+						{ // ä»æœåŠ¡ç«¯å¼€å§‹è·å–æ•°æ®ï¼Œå¯åŠ¨åŠ¨ç”»æ•ˆæœ
 							new Handler().post(new Runnable()
 							{
 								@Override
@@ -284,17 +283,17 @@ public class ImageService
 								}
 							});
 						} else if (progress >= 100)
-						{ // Êı¾İ»ñÈ¡Íê³É£¬Í£Ö¹¶¯»­
+						{ // æ•°æ®è·å–å®Œæˆï¼Œåœæ­¢åŠ¨ç”»
 							//ad.stop();
 						}
 					}
 				});
 		
-		imageTask.execute(); // Æô¶¯Òì²½Ïß³Ì
+		imageTask.execute(); // å¯åŠ¨å¼‚æ­¥çº¿ç¨‹
 	}
 	
 	/**
-	 * È¡ÏûÒ»²½Ïß³ÌÏÂÔØ
+	 * å–æ¶ˆä¸€æ­¥çº¿ç¨‹ä¸‹è½½
 	 */
 	public void isImageTask(){
 		if(imageTask!=null){
@@ -306,13 +305,13 @@ public class ImageService
 	}
 
 	/**
-	 * ¼ÓÔØÍê³É»Øµ÷½Ó¿Ú
+	 * åŠ è½½å®Œæˆå›è°ƒæ¥å£
 	 */
 	public interface IImageServiceReceiver
 	{
 		/**
-		 * ¼ÓÔØÍê³É
-		 * @param result¡¡¼ÓÔØ½á¹û£¬ÖµÎªCINT_LOAD_FAILURE CINT_LOAD_SUCESS_LOCAL CINT_LOAD_SUCESS_NETWORK
+		 * åŠ è½½å®Œæˆ
+		 * @param resultã€€åŠ è½½ç»“æœï¼Œå€¼ä¸ºCINT_LOAD_FAILURE CINT_LOAD_SUCESS_LOCAL CINT_LOAD_SUCESS_NETWORK
 		 */
 		public void loadCompleted(int result);
 	}

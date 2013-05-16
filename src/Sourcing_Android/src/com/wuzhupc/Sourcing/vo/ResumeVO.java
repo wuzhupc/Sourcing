@@ -8,9 +8,9 @@ import com.wuzhupc.utils.JavaLangUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ¼òÀú
+ * ç®€å†
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:01:57
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:01:57
  */
 public class ResumeVO extends BaseVO
 {
@@ -19,23 +19,23 @@ public class ResumeVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 4251598675905669576L;
 	/**
-	 * ¼òÀú±àºÅ
+	 * ç®€å†ç¼–å·
 	 */
 	//private long resumeid;
 	/**
-	 * ¼òÀúÃû³Æ
+	 * ç®€å†åç§°
 	 */
 	private String resumetitle;
 	/**
-	 * ÆÚÍûÖ°Òµ
+	 * æœŸæœ›èŒä¸š
 	 */
 	private String expectjob;
 	/**
-	 * ĞÕÃû
+	 * å§“å
 	 */
 	private String name;
 	/**
-	 * ·¢²¼Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * å‘å¸ƒæ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 
@@ -95,7 +95,7 @@ public class ResumeVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLæ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -108,7 +108,7 @@ public class ResumeVO extends BaseVO
 	}
 
 	/**
-	 * Éú³É·ÖÏíĞÅÏ¢ÄÚÈİ²¿·Ö
+	 * ç”Ÿæˆåˆ†äº«ä¿¡æ¯å†…å®¹éƒ¨åˆ†
 	 */
 	@Override
 	public String generateShareText()
@@ -117,7 +117,7 @@ public class ResumeVO extends BaseVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTML×Ó±êÌâ
+	 * è¿”å›è¯¦æƒ…HTMLå­æ ‡é¢˜
 	 * @return
 	 */
 	@Override
@@ -128,7 +128,7 @@ public class ResumeVO extends BaseVO
 	}
 	
 	/**
-	 * ÉèÖÃÄÚÈİHtmlÄÚÈİÏÔÊ¾
+	 * è®¾ç½®å†…å®¹Htmlå†…å®¹æ˜¾ç¤º
 	 */
 	@Override
 	public void setHtmlToShow(Context c, final DetailInfoListener detailInfoListener)

@@ -4,19 +4,19 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 
 /**
- * ×Ö·û´®¹¤¾ßÀà
+ * å­—ç¬¦ä¸²å·¥å…·ç±»
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç12:05:26
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ12:05:26
  */
 public class StringUtil
 {
 	/**
-	 * ¿Õ×Ö·û´®
+	 * ç©ºå­—ç¬¦ä¸²
 	 */
 	public static final String STR_EMPTY="";
 	
 	/**
-	 * ÅĞ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ
+	 * åˆ¤æ–­å­—ç¬¦ä¸²æ˜¯å¦ä¸ºç©º
 	 * @param str
 	 * @return
 	 */
@@ -26,7 +26,7 @@ public class StringUtil
 	
 
 	/**
-	 * ×Ö·û´®×ªstream
+	 * å­—ç¬¦ä¸²è½¬stream
 	 * @param str
 	 * @return
 	 */

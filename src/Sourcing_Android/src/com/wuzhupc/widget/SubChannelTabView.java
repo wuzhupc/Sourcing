@@ -11,9 +11,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 /**
- * ×ÓÀ¸Ä¿±êÌâÏÔÊ¾
+ * å­æ ç›®æ ‡é¢˜æ˜¾ç¤º
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-26 ÏÂÎç9:47:18
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-26 ä¸‹åˆ9:47:18
  */
 public class SubChannelTabView extends RelativeLayout
 {

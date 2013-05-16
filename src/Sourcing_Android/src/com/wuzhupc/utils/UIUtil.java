@@ -8,7 +8,7 @@ import android.widget.TextView;
 public class UIUtil
 {
     /**
-     * ÉèÖÃ±êÌâÎª´ÖÌå
+     * è®¾ç½®æ ‡é¢˜ä¸ºç²—ä½“
      */
     public static void setTitleTextBold(TextView tv)
     {

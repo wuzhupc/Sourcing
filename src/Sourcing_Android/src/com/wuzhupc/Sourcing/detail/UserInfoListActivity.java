@@ -23,9 +23,9 @@ import com.wuzhupc.widget.MoreButton;
 import com.wuzhupc.widget.refreshview.PullToRefreshListView;
 
 /**
- * ÓÃ»§ĞÅÏ¢À©Õ¹ÁĞ±í
+ * ç”¨æˆ·ä¿¡æ¯æ‰©å±•åˆ—è¡¨
  * @author wuzhu
- * Ö§³Ö´«Èë²ÎÊıinfotype[CSTR_EXTRA_INFO_TYPE] Êı¾İÀàĞÍint [CINT_INFO_TYPE_*]
+ * æ”¯æŒä¼ å…¥å‚æ•°infotype[CSTR_EXTRA_INFO_TYPE] æ•°æ®ç±»å‹int [CINT_INFO_TYPE_*]
  */
 public class UserInfoListActivity extends BaseActivity
 {
@@ -38,12 +38,12 @@ public class UserInfoListActivity extends BaseActivity
 	public static final int CINT_INFO_TYPE_NOTIFIER = 4;
 	
 	/**
-	 * ĞÅÏ¢ÀàĞÍ
+	 * ä¿¡æ¯ç±»å‹
 	 */
 	private int mInfoType;
 	
 	/**
-	 * Êı¾İÁĞ±í
+	 * æ•°æ®åˆ—è¡¨
 	 */
 	@SuppressWarnings("rawtypes")
 	protected ArrayList mDataList;
@@ -51,17 +51,17 @@ public class UserInfoListActivity extends BaseActivity
 	private LinearLayout mll_addconsult;
 
 	/**
-	 * ×îºóÒ»ÌõÏûÏ¢id
+	 * æœ€åä¸€æ¡æ¶ˆæ¯id
 	 */
 	protected long mLastInfoId; // 
 
 	/**
-	 * ÁĞ±í adapter
+	 * åˆ—è¡¨ adapter
 	 */
 	protected UserInfoAdapter mAdapter; // 
 
 	/**
-	 * ÏÔÊ¾Êı¾İµÄÁĞ±í
+	 * æ˜¾ç¤ºæ•°æ®çš„åˆ—è¡¨
 	 */
 	protected ListView mlv_DataList;
 
@@ -121,7 +121,7 @@ public class UserInfoListActivity extends BaseActivity
 	}
 	
 	/**
-	 * ĞÂÔö×ÉÑ¯
+	 * æ–°å¢å’¨è¯¢
 	 * @param v
 	 */
 	public void onAddConsultClick(View v)
@@ -145,14 +145,14 @@ public class UserInfoListActivity extends BaseActivity
 	}
 
 	/**
-	 * ¶ÁÈ¡ÏÔÊ¾Êı¾İ
+	 * è¯»å–æ˜¾ç¤ºæ•°æ®
 	 */
 	private void loadInfoData()
 	{
 		MobileUserService service = new MobileUserService(UserInfoListActivity.this);
 
 		if(mPullRefreshListView!=null)
-			mPullRefreshListView.setRefreshing(true);//   Êı¾İË¢ĞÂÌáÊ¾
+			mPullRefreshListView.setRefreshing(true);//   æ•°æ®åˆ·æ–°æç¤º
 		switch(mInfoType)
 		{
 		case  CINT_INFO_TYPE_AUDIT:
@@ -171,7 +171,7 @@ public class UserInfoListActivity extends BaseActivity
 	}
 	
 	/**
-	 * Ë¢ĞÂĞÅÏ¢Receiver
+	 * åˆ·æ–°ä¿¡æ¯Receiver
 	 * @return
 	 */
 	private IBaseReceiver getNewUserInfoReceiver()
@@ -183,7 +183,7 @@ public class UserInfoListActivity extends BaseActivity
 			public void receiveCompleted(boolean isSuc, String content)
 			{
 				if(mPullRefreshListView!=null)
-					 mPullRefreshListView.onRefreshComplete();// Í£Ö¹Ë¢ĞÂ°´Å¥¶¯»­
+					 mPullRefreshListView.onRefreshComplete();// åœæ­¢åˆ·æ–°æŒ‰é’®åŠ¨ç”»
 				if(!isSuc)
 				{
 					displayToast(content);
@@ -194,16 +194,16 @@ public class UserInfoListActivity extends BaseActivity
 				List<?> list = JsonParser.parseJsonToList(content, respVO);
 				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
 				{
-					// ±¨ÎÄ·µ»Ø´íÎó
+					// æŠ¥æ–‡è¿”å›é”™è¯¯
 					displayToast(respVO.getMsg());
 					return;
 				}
-				clearDataList();// ¼ÓÈëÎŞÊı¾İÌáÊ¾
+				clearDataList();// åŠ å…¥æ— æ•°æ®æç¤º
 				if (list != null && !list.isEmpty())
 				{
 					getLastNewsId(list);
 					addDataList(list);
-					// ÅĞ¶ÏÊÇ·ñÔÚÁĞ±íµ×²¿¼ÓÉÏ¸ü¶à°´Å¥
+					// åˆ¤æ–­æ˜¯å¦åœ¨åˆ—è¡¨åº•éƒ¨åŠ ä¸Šæ›´å¤šæŒ‰é’®
 					if (list.size() >= Constants.CINT_PAGE_SIZE)
 					{
 						mMoreButton.setShowButton(UserInfoListActivity.this
@@ -212,20 +212,20 @@ public class UserInfoListActivity extends BaseActivity
 					}
 				}
 				mAdapter.notifyDataSetChanged();
-				mlv_DataList.setSelectionAfterHeaderView(); // ÁĞ±íÑ¡ÔñÏîÖÃ»ØÍ·²¿
+				mlv_DataList.setSelectionAfterHeaderView(); // åˆ—è¡¨é€‰æ‹©é¡¹ç½®å›å¤´éƒ¨
 			}
 		};
 	}
 
 	/**
-	 * ¼ÓÔØ¸ü¶àÊı¾İ
+	 * åŠ è½½æ›´å¤šæ•°æ®
 	 */
 	private void loadMoreData()
 	{
 		if(mMoreButton==null)
 			return;
 		mMoreButton.setShowProgress(UserInfoListActivity.this
-				.getString(R.string.list_item_loading_data)); // ÇĞ»»¸ü¶à°´Å¥×´Ì¬ Îª ¼ÓÔØ×´Ì¬
+				.getString(R.string.list_item_loading_data)); // åˆ‡æ¢æ›´å¤šæŒ‰é’®çŠ¶æ€ ä¸º åŠ è½½çŠ¶æ€
 		MobileUserService service = new MobileUserService(UserInfoListActivity.this);
 		switch(mInfoType)
 		{
@@ -245,7 +245,7 @@ public class UserInfoListActivity extends BaseActivity
 	}
 	
 	/**
-	 * ¼ÓÔØ¸ü¶àÊı¾İReceiver
+	 * åŠ è½½æ›´å¤šæ•°æ®Receiver
 	 * @return
 	 */
 	private IBaseReceiver getMoreUserInfoReceiver()
@@ -258,7 +258,7 @@ public class UserInfoListActivity extends BaseActivity
 			{
 				if(!isSuc)
 				{
-					mMoreButton.setShowButton(getString(R.string.list_item_more_msg)); // ÇĞ»»¸ü¶à°´Å¥×´Ì¬
+					mMoreButton.setShowButton(getString(R.string.list_item_more_msg)); // åˆ‡æ¢æ›´å¤šæŒ‰é’®çŠ¶æ€
 					displayToast(content);
 					return;
 				}
@@ -266,21 +266,21 @@ public class UserInfoListActivity extends BaseActivity
 				List<?> list = JsonParser.parseJsonToList(content, respVO);
 				if(respVO.getCode()!=ResponseVO.RESPONSE_CODE_SUCESS)
 				{
-					// ±¨ÎÄ·µ»Ø´íÎó
-					mMoreButton.setShowButton(getString(R.string.list_item_more_msg)); // ÇĞ»»¸ü¶à°´Å¥×´Ì¬
+					// æŠ¥æ–‡è¿”å›é”™è¯¯
+					mMoreButton.setShowButton(getString(R.string.list_item_more_msg)); // åˆ‡æ¢æ›´å¤šæŒ‰é’®çŠ¶æ€
 					displayToast(respVO.getMsg());
 					return;
 				}
-				// ±¨ÎÄ·µ»ØÕı³£
+				// æŠ¥æ–‡è¿”å›æ­£å¸¸
 				if (mDataList.contains(mMoreButton))
-				{ // ·µ»ØÕı³££¬ÒÆ³ı¸ü¶à°´Å¥£¬¸ù¾İ»ñÈ¡µ½µÄÏûÏ¢ÊıÅĞ¶ÏÊÇ·ñ¼ÌĞøÌí¼Óµ½ÁĞ±íÄ©Î²
+				{ // è¿”å›æ­£å¸¸ï¼Œç§»é™¤æ›´å¤šæŒ‰é’®ï¼Œæ ¹æ®è·å–åˆ°çš„æ¶ˆæ¯æ•°åˆ¤æ–­æ˜¯å¦ç»§ç»­æ·»åŠ åˆ°åˆ—è¡¨æœ«å°¾
 					mDataList.remove(mMoreButton);
 				}
 				if (list != null && !list.isEmpty())
 				{
 					getLastNewsId(list);
 					addDataList(list);
-					// ÅĞ¶ÏÊÇ·ñÔÚÁĞ±íµ×²¿¼ÓÉÏ¸ü¶à°´Å¥
+					// åˆ¤æ–­æ˜¯å¦åœ¨åˆ—è¡¨åº•éƒ¨åŠ ä¸Šæ›´å¤šæŒ‰é’®
 					if (list.size() >= Constants.CINT_PAGE_SIZE)
 					{
 						mMoreButton.setShowButton(getString(R.string.list_item_more_msg));
@@ -293,7 +293,7 @@ public class UserInfoListActivity extends BaseActivity
 	};
 	
 	/**
-	 * Çå³ıËùÓĞÊı¾İ
+	 * æ¸…é™¤æ‰€æœ‰æ•°æ®
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void clearDataList()
@@ -303,19 +303,19 @@ public class UserInfoListActivity extends BaseActivity
 		if(mDataList==null)
 		{
 			mDataList = new ArrayList();
-			// adapter ³õÊ¼»¯
+			// adapter åˆå§‹åŒ–
 			mAdapter = new UserInfoAdapter(UserInfoListActivity.this, mDataList);
 			mlv_DataList.setAdapter(mAdapter);
 		}
 		else
 			mDataList.clear();
-		//Ôö¼ÓÎŞÊı¾İÌáÊ¾
+		//å¢åŠ æ— æ•°æ®æç¤º
 		mDataList.add(getString(R.string.list_item_no_data));
 		mAdapter.notifyDataSetChanged();
 	}
 	
 	/**
-	 * »ñÈ¡Êı¾İÏîµã»÷Listener
+	 * è·å–æ•°æ®é¡¹ç‚¹å‡»Listener
 	 * 
 	 * @return
 	 */
@@ -327,7 +327,7 @@ public class UserInfoListActivity extends BaseActivity
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id)
 			{
-				position -= mlv_DataList.getHeaderViewsCount(); // ¼õÈ¥ÁĞ±í header¸öÊı
+				position -= mlv_DataList.getHeaderViewsCount(); // å‡å»åˆ—è¡¨ headerä¸ªæ•°
 
 				if (position < 0 || position >= mDataList.size())
 					return;
@@ -348,7 +348,7 @@ public class UserInfoListActivity extends BaseActivity
 	}
 	
 	/**
-	 * Ôö¼ÓÁĞ±íÊı¾İ
+	 * å¢åŠ åˆ—è¡¨æ•°æ®
 	 * @param list
 	 */
 	@SuppressWarnings({ "unchecked"})
@@ -368,7 +368,7 @@ public class UserInfoListActivity extends BaseActivity
 	}
 
 	/**
-	 * »ñÈ¡ÁĞ±í×îºóÒ»ÌõĞÅÏ¢id
+	 * è·å–åˆ—è¡¨æœ€åä¸€æ¡ä¿¡æ¯id
 	 * @param list
 	 */
 	private void getLastNewsId(List<?> list)

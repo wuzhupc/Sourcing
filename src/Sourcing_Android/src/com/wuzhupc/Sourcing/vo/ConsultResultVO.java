@@ -4,9 +4,9 @@ import com.wuzhupc.utils.JavaLangUtil;
 
 
 /**
- * ×ÉÑ¯´ğ¸´
+ * å’¨è¯¢ç­”å¤
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:05:53
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:05:53
  */
 public class ConsultResultVO extends BaseVO
 {
@@ -15,19 +15,19 @@ public class ConsultResultVO extends BaseVO
 	 */
 	private static final long serialVersionUID = -1533848997978545169L;
 	/**
-	 * ×ÉÑ¯´ğ¸´±àºÅ
+	 * å’¨è¯¢ç­”å¤ç¼–å·
 	 */
 	//private long consultresultid;
 	/**
-	 * ×ÉÑ¯´ğ¸´ÄÚÈİ
+	 * å’¨è¯¢ç­”å¤å†…å®¹
 	 */
 	private String consultresultcontent;
 	/**
-	 * ×ÉÑ¯´ğ¸´ÈËÔ±
+	 * å’¨è¯¢ç­”å¤äººå‘˜
 	 */
 	private String publisher;
 	/**
-	 * ×ÉÑ¯´ğ¸´Ê±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * å’¨è¯¢ç­”å¤æ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	public long getConsultresultid()

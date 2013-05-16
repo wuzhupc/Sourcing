@@ -7,10 +7,10 @@ import android.net.NetworkInfo;
 public class NetUtil
 {
 	/**
-	 * »ñµÃµ±Ç°ÁªÍøÀàĞÍ
+	 * è·å¾—å½“å‰è”ç½‘ç±»å‹
 	 * 
-	 * @return -1: ÎŞÁ¬½ÓÀàĞÍ; ConnectivityManager.TYPE_WIFI: wifi;
-	 *         ConnectivityManager.TYPE_MOBILE:mobile¡£ÅĞ¶ÏÍøÂçÁ¬½Ó×´Ì¬ÎªÊ±mobile×îºÃÔö¼ÓÅĞ¶ÏÊÇnet»¹ÊÇwapÍøÂç
+	 * @return -1: æ— è¿æ¥ç±»å‹; ConnectivityManager.TYPE_WIFI: wifi;
+	 *         ConnectivityManager.TYPE_MOBILE:mobileã€‚åˆ¤æ–­ç½‘ç»œè¿æ¥çŠ¶æ€ä¸ºæ—¶mobileæœ€å¥½å¢åŠ åˆ¤æ–­æ˜¯netè¿˜æ˜¯wapç½‘ç»œ
 	 */
 	public static int getNetWorkType(Context c)
 	{

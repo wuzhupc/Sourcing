@@ -45,7 +45,7 @@ public class TimeUtil {
     }
     
     /**
-     * ¸ñÊ½»¯ÏÔÊ¾ÈÕÆÚ(¶Ô¡°½ñÌì¡±¡¢¡°×òÌì¡±½øĞĞÌØÊâ´¦Àí)
+     * æ ¼å¼åŒ–æ˜¾ç¤ºæ—¥æœŸ(å¯¹â€œä»Šå¤©â€ã€â€œæ˜¨å¤©â€è¿›è¡Œç‰¹æ®Šå¤„ç†)
      * @param context
      * @param when
      * @return
@@ -66,10 +66,10 @@ public class TimeUtil {
             format_flags |= DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_SHOW_DATE;
         }
         else if (then.yearDay == now.yearDay-1) {
-			return "×òÌì";
+			return "æ˜¨å¤©";
 		}
         else if (then.yearDay == now.yearDay) {
-			return "½ñÌì";
+			return "ä»Šå¤©";
 		}
         else {
 			format_flags |= DateUtils.FORMAT_SHOW_DATE;
@@ -86,9 +86,9 @@ public class TimeUtil {
     }
 	
 	/**
-	 * ×Ö·û´®×ªÈÕÆÚ
-	 * @param str ×Ö·û´®
-	 * @param def Ä¬ÈÏÊ±¼ä£¬Èç¹û×ª»»Ê§°ÜÔò·µ»ØÄ¬ÈÏÊ±¼ä
+	 * å­—ç¬¦ä¸²è½¬æ—¥æœŸ
+	 * @param str å­—ç¬¦ä¸²
+	 * @param def é»˜è®¤æ—¶é—´ï¼Œå¦‚æœè½¬æ¢å¤±è´¥åˆ™è¿”å›é»˜è®¤æ—¶é—´
 	 */
 	public static Date strToDate(String str,Date def)
 	{
@@ -96,10 +96,10 @@ public class TimeUtil {
 	}
 	
 	/**
-	 * ×Ö·û´®×ªÈÕÆÚ
-	 * @param str ×Ö·û´®
-	 * @param formatstr ÈÕÆÚ¸ñÊ½»¯×Ö·û´®
-	 * @param def Ä¬ÈÏÊ±¼ä£¬Èç¹û×ª»»Ê§°ÜÔò·µ»ØÄ¬ÈÏÊ±¼ä
+	 * å­—ç¬¦ä¸²è½¬æ—¥æœŸ
+	 * @param str å­—ç¬¦ä¸²
+	 * @param formatstr æ—¥æœŸæ ¼å¼åŒ–å­—ç¬¦ä¸²
+	 * @param def é»˜è®¤æ—¶é—´ï¼Œå¦‚æœè½¬æ¢å¤±è´¥åˆ™è¿”å›é»˜è®¤æ—¶é—´
 	 */
 	public static Date strToDate(String str,String formatstr,Date def)
 	{
@@ -116,7 +116,7 @@ public class TimeUtil {
 	}
 	
 	/**
-	 * ÈÕÆÚ×ªÎª×Ö·û´®
+	 * æ—¥æœŸè½¬ä¸ºå­—ç¬¦ä¸²
 	 */
 	public static String dateToString(Date date) {
 		if(date==null)
@@ -125,7 +125,7 @@ public class TimeUtil {
     } 
 	
 	/**
-	 * ÈÕÆÚ×ªÎª×Ö·û´®
+	 * æ—¥æœŸè½¬ä¸ºå­—ç¬¦ä¸²
 	 */
 	public static String dateToString(Date date,String formatstring) 
 	{

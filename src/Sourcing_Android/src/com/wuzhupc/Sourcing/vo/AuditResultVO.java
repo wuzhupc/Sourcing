@@ -3,9 +3,9 @@ package com.wuzhupc.Sourcing.vo;
 import com.wuzhupc.utils.JavaLangUtil;
 
 /**
- * ÉóºË½á¹û
+ * å®¡æ ¸ç»“æœ
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç8:37:03
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ8:37:03
  */
 public class AuditResultVO extends BaseVO
 {
@@ -14,29 +14,29 @@ public class AuditResultVO extends BaseVO
 	 */
 	private static final long serialVersionUID = 66310021634062178L;
 	/**
-	 * ÉóºË½á¹û±àºÅ
+	 * å®¡æ ¸ç»“æœç¼–å·
 	 */
 	//private long auditresultid;
 	/**
-	 * ÉóºË½á¹û,1,true Í¨¹ı,0,false Î´Í¨¹ı
+	 * å®¡æ ¸ç»“æœ,1,true é€šè¿‡,0,false æœªé€šè¿‡
 	 */
 	private boolean auditresult;
 	/**
-	 * ÉóºË½á¹ûÄÚÈİ
+	 * å®¡æ ¸ç»“æœå†…å®¹
 	 */
 	private String auditresultcontent;
 	/**
-	 * ÉóºËÈËÔ±
+	 * å®¡æ ¸äººå‘˜
 	 */
 	private String publisher;
 	/**
-	 * ÉóºË½á¹ûÊ±¼ä£¬¸ñÊ½yyyy-MM-dd HH:mm:ss
+	 * å®¡æ ¸ç»“æœæ—¶é—´ï¼Œæ ¼å¼yyyy-MM-dd HH:mm:ss
 	 */
 	private String publishtime;
 	
 	public String getAuditStatus()
 	{
-		return auditresult?"ÉóºËÍ¨¹ı":"ÉóºËÎ´Í¨¹ı";
+		return auditresult?"å®¡æ ¸é€šè¿‡":"å®¡æ ¸æœªé€šè¿‡";
 	}
 
 	public long getAuditresultid()

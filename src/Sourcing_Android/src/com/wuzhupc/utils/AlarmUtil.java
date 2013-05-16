@@ -8,7 +8,7 @@ import android.os.SystemClock;
 import android.util.Log;
 
 /**
- * ¶¨Ê±
+ * å®šæ—¶
  * @author wuzhu
  *
  */
@@ -17,22 +17,22 @@ public class AlarmUtil
 	private static final String TAG = AlarmUtil.class.getSimpleName();
 	
 	/**
-	 * Ä¬ÈÏµÚÒ»´ÎË¢ĞÂÔÚÆô¶¯ºó¶à¾Ã(µ¥Î»S)
+	 * é»˜è®¤ç¬¬ä¸€æ¬¡åˆ·æ–°åœ¨å¯åŠ¨åå¤šä¹…(å•ä½S)
 	 */
 	public static final int CINT_DEFAULT_AFTERFIRSTSTART_DELAY = 5;
 
 	/**
-	 * Ä¬ÈÏË¢ĞÂÊ±¼ä(µ¥Î»S)
+	 * é»˜è®¤åˆ·æ–°æ—¶é—´(å•ä½S)
 	 */
 	public static final int CINT_DEFAULT_REFRESH_DELAY = 60;
 	
 	/**
-	 * ÊÇ·ñÍ£Ö¹¶¨Ê±Æ÷
+	 * æ˜¯å¦åœæ­¢å®šæ—¶å™¨
 	 */
 	private boolean isPaused=false;
 	
 	/**
-	 * Ä¬ÈÏË¢ĞÂÊ±¼ä¼ä¸ô
+	 * é»˜è®¤åˆ·æ–°æ—¶é—´é—´éš”
 	 */
 	private int minterval;
 	
@@ -43,7 +43,7 @@ public class AlarmUtil
 	private  PendingIntent msender = null;
 	private  AlarmManager mam = null;
 	
-	private static AlarmUtil pushMsgAlarm;		// ÍÆËÍÏûÏ¢×¨ÓÃ¶¨Ê±Æ÷
+	private static AlarmUtil pushMsgAlarm;		// æ¨é€æ¶ˆæ¯ä¸“ç”¨å®šæ—¶å™¨
 	
 	public static AlarmUtil getPushMsgAlarm(Context context) {
 		if (pushMsgAlarm == null) {
@@ -54,7 +54,7 @@ public class AlarmUtil
 	}
 	
 	/**
-	 * Ê¹ÓÃÄ¬ÈÏµÄÊ±¼ä
+	 * ä½¿ç”¨é»˜è®¤çš„æ—¶é—´
 	 * @param context
 	 */
 	public AlarmUtil(Context context)
@@ -65,9 +65,9 @@ public class AlarmUtil
 	
 	/**
 	 * 
-	 * @param context µ±Ç°context
-	 * @param afterfirststart µÚÒ»´ÎÊÇÔÚÆô¶¯ºó¶à¾Ã´¥·¢£¬µ¥Î»S£¬±ØĞë´óÓÚ0
-	 * @param interval ÒÔºó´¥·¢¼ä¸ôÊ±¼ä£¬µ¥Î»S£¬±ØĞë´óÓÚµÈÓÚ0(µÈÓÚ0±íÊ¾Ö»´¥·¢Ò»´Î)
+	 * @param context å½“å‰context
+	 * @param afterfirststart ç¬¬ä¸€æ¬¡æ˜¯åœ¨å¯åŠ¨åå¤šä¹…è§¦å‘ï¼Œå•ä½Sï¼Œå¿…é¡»å¤§äº0
+	 * @param interval ä»¥åè§¦å‘é—´éš”æ—¶é—´ï¼Œå•ä½Sï¼Œå¿…é¡»å¤§äºç­‰äº0(ç­‰äº0è¡¨ç¤ºåªè§¦å‘ä¸€æ¬¡)
 	 */
 	public AlarmUtil(Context context,int afterfirststart,int interval)
 	{
@@ -83,7 +83,7 @@ public class AlarmUtil
 	}
 	
 	/**
-	 * ÉèÖÃÖ´ĞĞ¹ã²¥ÈÎÎñ(×Ô¶¯¸ù¾İintervalÖµÉèÖÃÖØ¸´(Öµ´óÓÚ0Ê±)»¹ÊÇÖ»Ö´ĞĞÒ»´Î(ÖµµÈÓÚ0Ê±))
+	 * è®¾ç½®æ‰§è¡Œå¹¿æ’­ä»»åŠ¡(è‡ªåŠ¨æ ¹æ®intervalå€¼è®¾ç½®é‡å¤(å€¼å¤§äº0æ—¶)è¿˜æ˜¯åªæ‰§è¡Œä¸€æ¬¡(å€¼ç­‰äº0æ—¶))
 	 * @param clazz extends BroadcastReceiver
 	 */
 	public void pendingBroadcastTask(String action)
@@ -93,7 +93,7 @@ public class AlarmUtil
 	}
 	
 	/**
-	 * ÉèÖÃÖ´ĞĞ¹ã²¥ÈÎÎñ(×Ô¶¯¸ù¾İintervalÖµÉèÖÃÖØ¸´(Öµ´óÓÚ0Ê±)»¹ÊÇÖ»Ö´ĞĞÒ»´Î(ÖµµÈÓÚ0Ê±))
+	 * è®¾ç½®æ‰§è¡Œå¹¿æ’­ä»»åŠ¡(è‡ªåŠ¨æ ¹æ®intervalå€¼è®¾ç½®é‡å¤(å€¼å¤§äº0æ—¶)è¿˜æ˜¯åªæ‰§è¡Œä¸€æ¬¡(å€¼ç­‰äº0æ—¶))
 	 * @param clazz extends BroadcastReceiver
 	 */
 	public void pendingBroadcastTask(Class<?> clazz) 
@@ -104,7 +104,7 @@ public class AlarmUtil
 	}
 	
 	/**
-	 * ÉèÖÃÏÂÒ»´Î¼ä¸ôintervalÃëÖ®ºóÖ´ĞĞ¹ã²¥ÈÎÎñ
+	 * è®¾ç½®ä¸‹ä¸€æ¬¡é—´éš”intervalç§’ä¹‹åæ‰§è¡Œå¹¿æ’­ä»»åŠ¡
 	 * @param intent
 	 * @param interval
 	 */
@@ -147,7 +147,7 @@ public class AlarmUtil
 	}
 	
 	/**
-	 * ÖĞÖ¹Ö´ĞĞÈÎÎñ
+	 * ä¸­æ­¢æ‰§è¡Œä»»åŠ¡
 	 */
 	public void stopTask()
 	{

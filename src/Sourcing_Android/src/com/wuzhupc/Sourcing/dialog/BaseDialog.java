@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-18 ÏÂÎç11:14:47
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-18 ä¸‹åˆ11:14:47
  */
 public class BaseDialog extends Dialog
 {
@@ -48,7 +48,7 @@ public class BaseDialog extends Dialog
     /**
      * 
      * @param context
-     * @param dialog_type ¶Ô»°¿òÀàĞÍ
+     * @param dialog_type å¯¹è¯æ¡†ç±»å‹
      */
     public BaseDialog(Context context,int dialog_type)
     {

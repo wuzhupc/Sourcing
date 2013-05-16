@@ -7,7 +7,7 @@ import android.view.WindowManager;
 public class ViewUtil
 {
 	/**
-	 * »ñÈ¡ÆÁÄ»¿í
+	 * è·å–å±å¹•å®½
 	 * @param act
 	 */
 	public static int getScreenWidth(Activity act)
@@ -18,7 +18,7 @@ public class ViewUtil
 		return display.getWidth();
 	}
 	/**
-	 * »ñÈ¡ÆÁÄ»¿í
+	 * è·å–å±å¹•å®½
 	 * @param act
 	 */
 	public static int getScreenHeight(Activity act)
@@ -30,10 +30,10 @@ public class ViewUtil
 	}
 	
 	/**
-	 * »ñÈ¡ÊÖ»úÆÁÄ»ÀàĞÍ
+	 * è·å–æ‰‹æœºå±å¹•ç±»å‹
 	 * @param act 
-	 * @return ·µ»ØÖµ¶ÔÓ¦ÀàĞÍ
-	 * -1:ÆäËüÆÁÄ»  0:HVGA 1:QVGA 2:WQVGA 400  3:WQVGA 432 4:WVGA 800 5:WVGA 854 6:VGA
+	 * @return è¿”å›å€¼å¯¹åº”ç±»å‹
+	 * -1:å…¶å®ƒå±å¹•  0:HVGA 1:QVGA 2:WQVGA 400  3:WQVGA 432 4:WVGA 800 5:WVGA 854 6:VGA
 	 */
 	public static int getScreenType(Activity act)
 	{

@@ -1,16 +1,16 @@
 package com.wuzhupc.widget;
 
 /**
- * 子级View变更监听接口
+ * 瀛愮骇View鍙樻洿鐩戝惉鎺ュ彛
  * @author wuzhu
  *
  */
 public interface OnDisplayerChildChangeListener {
 
 	/**
-	 * 显示子级View变动回调函数
-	 * @param oldWhichChild 变动前的子级索引
-	 * @param whichChild 变动后的子级索引
+	 * 鏄剧ず瀛愮骇View鍙樺姩鍥炶皟鍑芥暟
+	 * @param oldWhichChild 鍙樺姩鍓嶇殑瀛愮骇绱㈠紩
+	 * @param whichChild 鍙樺姩鍚庣殑瀛愮骇绱㈠紩
 	 */
 	public void onChanged(int oldWhichChild,int whichChild);
 }

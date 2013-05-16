@@ -36,10 +36,10 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 /**
- * Ö÷½çÃæ
+ * ä¸»ç•Œé¢
  * 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-22 ÏÂÎç3:32:01
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-22 ä¸‹åˆ3:32:01
  */
 public class HomeActivity extends BaseActivity implements OnGestureListener
 {
@@ -49,39 +49,39 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	public static final String CSTR_ACTION_PUSHINFO = "com.wuzhupc.ACTION_PUSHINFO";
 	public static final String CSTR_EXTRA_ACTION_PUSHINFO = "pushinfocount";
 	/**
-	 * ÊÖÊÆÊ¶±ğ
+	 * æ‰‹åŠ¿è¯†åˆ«
 	 */
 	private GestureDetector mgd_content;
 
 	/**
-	 * ÔÊĞíÀ¸Ä¿ÇĞ»»µÄ¿í¶È
+	 * å…è®¸æ ç›®åˆ‡æ¢çš„å®½åº¦
 	 */
 	private int mAllowFlingPix = 120;
 
 	private ExViewFlipper mvf_content;
 
 	/**
-	 * Êı¾İË¢ĞÂ×´Ì¬
+	 * æ•°æ®åˆ·æ–°çŠ¶æ€
 	 */
 	private ProgressBar mpb_DataRef;
 
 	/**
-	 * Êı¾İË¢ĞÂ°´Å¥
+	 * æ•°æ®åˆ·æ–°æŒ‰é’®
 	 */
 	private ImageView miv_DataRef;
 
 	/**
-	 * ËùÓĞÀ¸Ä¿ÁĞ±í
+	 * æ‰€æœ‰æ ç›®åˆ—è¡¨
 	 */
 	private ArrayList<ChannelVO> mChannelVOs;
 
 	/**
-	 * ¸¸À¸Ä¿ÁĞ±í
+	 * çˆ¶æ ç›®åˆ—è¡¨
 	 */
 	protected ArrayList<ChannelVO> mFatherChannelVOs;
 
 	/**
-	 * µ×²¿²Ëµ¥À¸ÁĞ±í
+	 * åº•éƒ¨èœå•æ åˆ—è¡¨
 	 */
 	protected MenuBarMenuItemView[] mv_menubarlist;
 	
@@ -102,11 +102,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			return;
 		}
 		// setTitleTextBold();
-		// ÉèÖÃ±êÌâÀ¸
+		// è®¾ç½®æ ‡é¢˜æ 
 		initMainTitleBar();
-		// ÉèÖÃ²Ëµ¥À¸
+		// è®¾ç½®èœå•æ 
 		initMenuBar();
-		// ³õÊ¼»¯ViewFlipper
+		// åˆå§‹åŒ–ViewFlipper
 		initVFContext();
 
 		int pushcount = getIntent().getIntExtra(CSTR_EXTRA_ACTION_PUSHINFO, 0);
@@ -120,7 +120,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 	
 	/**
-	 * ×¢²á½ÓÊÕboardĞÅÏ¢
+	 * æ³¨å†Œæ¥æ”¶boardä¿¡æ¯
 	 */
 	private void regBoardReceiver()
 	{
@@ -153,7 +153,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	@Override
 	protected void initDataContent()
 	{
-		// ¸ù¾İÄ¬ÈÏÑ¡ÖĞµÄID³õÊ¼»¯
+		// æ ¹æ®é»˜è®¤é€‰ä¸­çš„IDåˆå§‹åŒ–
 		setViewFlipper(getChannelIDFromList(-1), true);
 		//reflashContent();
 	}
@@ -164,7 +164,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ÉèÖÃ±êÌâÀ¸(°üÀ¨Ë¢ĞÂ°´Å¥)
+	 * è®¾ç½®æ ‡é¢˜æ (åŒ…æ‹¬åˆ·æ–°æŒ‰é’®)
 	 */
 	private void initMainTitleBar()
 	{
@@ -181,7 +181,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ³õÊ¼»¯ViewFlipperÖĞµÄÊÓÍ¼ÄÚÈİ
+	 * åˆå§‹åŒ–ViewFlipperä¸­çš„è§†å›¾å†…å®¹
 	 */
 	private void initVFContext()
 	{
@@ -189,7 +189,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		mvf_content = (ExViewFlipper) findViewById(R.id.home_content_vf);
 		if (mFatherChannelVOs == null || mFatherChannelVOs.isEmpty())
 			return;
-		// ¸ù¾İÀ¸Ä¿Êı¾İ³õÊ¼»¯¸÷¼¶View
+		// æ ¹æ®æ ç›®æ•°æ®åˆå§‹åŒ–å„çº§View
 		for (int i = 0; i < mFatherChannelVOs.size(); i++)
 		{
 			ChannelVO vo = mFatherChannelVOs.get(i);
@@ -202,7 +202,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			}
 			if (vo.isPersonChannel())
 			{
-				// Ôö¼ÓÈË²ÅÊÓÍ¼
+				// å¢åŠ äººæ‰è§†å›¾
 				PersonView view = new PersonView(HomeActivity.this, vo.getChannelID());
 				view.setGestureDetectorContent(mgd_content);
 				mvf_content.addView(view);
@@ -210,20 +210,20 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			}
 			if (vo.isUserChannel())
 			{
-				// Ôö¼Ó¸öÈËĞÅÏ¢ÊÓÍ¼
+				// å¢åŠ ä¸ªäººä¿¡æ¯è§†å›¾
 				UserView view = new UserView(HomeActivity.this, vo.getChannelID());
 				view.setGestureDetectorContent(mgd_content);
 				mvf_content.addView(view);
 				continue;
 			}
 		}
-		// ÉèÖÃÇĞ»»Ğ§¹û
+		// è®¾ç½®åˆ‡æ¢æ•ˆæœ
 		mvf_content.setOnDisplayerChildChangeListener(new OnDisplayerChildChangeListener()
 		{
 			@Override
 			public void onChanged(int oldWhichChild, int whichChild)
 			{
-				// ÅĞ¶ÏÏàÓ¦µÄ×Ó¼¶ViewÊÇ·ñÒÑ¾­³õÊ¼»¯Êı¾İ£¬Î´³õÊ¼»¯Êı¾İÔòµ÷ÓÃ³õÊ¼»¯Êı¾İ
+				// åˆ¤æ–­ç›¸åº”çš„å­çº§Viewæ˜¯å¦å·²ç»åˆå§‹åŒ–æ•°æ®ï¼Œæœªåˆå§‹åŒ–æ•°æ®åˆ™è°ƒç”¨åˆå§‹åŒ–æ•°æ®
 				BaseView bv = getDisplayedChildView();
 				if (bv != null)
 					bv.initData();
@@ -232,11 +232,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ¸üĞÂÊı¾İ
+	 * æ›´æ–°æ•°æ®
 	 */
 	private void reflashContent()
 	{
-		// ¸ù¾İµ±Ç°ÔÚÄÇ¸öÒ³,Ë¢ĞÂÏàÓ¦µÄÄÚÈİ
+		// æ ¹æ®å½“å‰åœ¨é‚£ä¸ªé¡µ,åˆ·æ–°ç›¸åº”çš„å†…å®¹
 		BaseView bv = getDisplayedChildView();
 		if (bv != null)
 		{
@@ -246,10 +246,10 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ÉèÖÃ±êÌâÀ¸Ë¢ĞÂ×´Ì¬
+	 * è®¾ç½®æ ‡é¢˜æ åˆ·æ–°çŠ¶æ€
 	 * 
 	 * @param ref
-	 *            ¡¡ÊÇ·ñÕıÔÚË¢ĞÂÊı¾İ
+	 *            ã€€æ˜¯å¦æ­£åœ¨åˆ·æ–°æ•°æ®
 	 */
 	public void setMainTitleRefStatus(boolean ref)
 	{
@@ -266,7 +266,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ÉèÖÃ±êÌâÀ¸Ë¢ĞÂ°´Å¥ÊÇ·ñ¿É¼û
+	 * è®¾ç½®æ ‡é¢˜æ åˆ·æ–°æŒ‰é’®æ˜¯å¦å¯è§
 	 * 
 	 * @param bvisibility
 	 */
@@ -284,7 +284,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°ÏÔÊ¾µÄView
+	 * è·å–å½“å‰æ˜¾ç¤ºçš„View
 	 * 
 	 * @return
 	 */
@@ -301,14 +301,14 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ³õÊ¼»¯²Ëµ¥À¸
+	 * åˆå§‹åŒ–èœå•æ 
 	 */
 	private void initMenuBar()
 	{
-		// ³õÊ¼»¯À¸Ä¿Êı¾İ
+		// åˆå§‹åŒ–æ ç›®æ•°æ®
 		mFatherChannelVOs = ChannelVO.getFatherChannels(mChannelVOs);
 
-		// ³õÊ¼»¯²Ëµ¥À¸
+		// åˆå§‹åŒ–èœå•æ 
 		mv_menubarlist = new MenuBarMenuItemView[4];
 
 		mv_menubarlist[0] = (MenuBarMenuItemView) findViewById(R.id.home_menubar_m1_v);
@@ -341,7 +341,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ²Ëµ¥µã»÷¼àÌı£¨¸ù¾İµã»÷ID³õÊ¼»¯ViewFlipperÀïµÄÄÚÈİ£©
+	 * èœå•ç‚¹å‡»ç›‘å¬ï¼ˆæ ¹æ®ç‚¹å‡»IDåˆå§‹åŒ–ViewFlipperé‡Œçš„å†…å®¹ï¼‰
 	 */
 	private View.OnClickListener mMenuBarClickListener()
 	{
@@ -365,13 +365,13 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 						if(getApplicationSet().getUserVO()==null
 								&&vo.isUserChannel())
 						{
-							//ÏÔÊ¾ÓÃ»§µÇÂ¼½çÃæ
+							//æ˜¾ç¤ºç”¨æˆ·ç™»å½•ç•Œé¢
 							runActivity(false, UserLoginActivity.class);
 						}
 						setViewFlipper(vo.getChannelID(), false);
 						return;
 					}
-					// µã»÷¸ü¶àÊ±´¦Àí
+					// ç‚¹å‡»æ›´å¤šæ—¶å¤„ç†
 					final ArrayList<ChannelVO> morelist = ChannelVO.getChannels(mChannelVOs, vo.getChannelID());
 					if (morelist == null || morelist.isEmpty())
 						return;
@@ -383,7 +383,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 						@Override
 						public void onClick(DialogInterface dialog, int which)
 						{
-							// ÉèÖÃ¸ü¶à²»ÎªÑ¡ÖĞ
+							// è®¾ç½®æ›´å¤šä¸ä¸ºé€‰ä¸­
 							setMenuBarNoSel(vo.getChannelID());
 							if (which < 0 || which >= morelist.size())
 								return;
@@ -421,7 +421,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * »ñÈ¡µ±Ç°ÏÔÊ¾µÄ¸¸À¸Ä¿ID
+	 * è·å–å½“å‰æ˜¾ç¤ºçš„çˆ¶æ ç›®ID
 	 * 
 	 * @return
 	 */
@@ -434,24 +434,24 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ¸ù¾İË÷Òı»ñÈ¡À¸Ä¿ID´ÓÁĞ±íÖĞ
+	 * æ ¹æ®ç´¢å¼•è·å–æ ç›®IDä»åˆ—è¡¨ä¸­
 	 * 
 	 * @param index
-	 *            Ë÷Òı£¬Îª-1Ê±£¬È¡Ä¬ÈÏÏÔÊ¾Öµ
+	 *            ç´¢å¼•ï¼Œä¸º-1æ—¶ï¼Œå–é»˜è®¤æ˜¾ç¤ºå€¼
 	 * @return
 	 */
 	private long getChannelIDFromList(int index)
 	{
-		// ´ÓÀ¸Ä¿ÁĞ±ímFatherChannelListÀï»ñÈ¡ÏàÓ¦indexµÄID
+		// ä»æ ç›®åˆ—è¡¨mFatherChannelListé‡Œè·å–ç›¸åº”indexçš„ID
 		if (mFatherChannelVOs == null || mFatherChannelVOs.isEmpty())
 			return -1l;
 		if (index < 0 || index >= mFatherChannelVOs.size())
 		{
-			// Èç¹ûindex<0ÔòÄ¬ÈÏÎª»ñÈ¡ÁĞ±íÀïChannelVOÀïisdefaultÖµÎªtrueµÄµÄID
+			// å¦‚æœindex<0åˆ™é»˜è®¤ä¸ºè·å–åˆ—è¡¨é‡ŒChannelVOé‡Œisdefaultå€¼ä¸ºtrueçš„çš„ID
 			for (int i = 0; i < mFatherChannelVOs.size(); i++)
 				if (mFatherChannelVOs.get(i).getIsDefault() == 1)
 					return mFatherChannelVOs.get(i).getChannelID();
-			// Èç¹ûindex<0ÇÒÁĞ±íÀïChannelVOÀïisdefaultÖµ¶¼ÎªfalseµÄ£¬Ôò·µ»ØµÚÒ»Ïî
+			// å¦‚æœindex<0ä¸”åˆ—è¡¨é‡ŒChannelVOé‡Œisdefaultå€¼éƒ½ä¸ºfalseçš„ï¼Œåˆ™è¿”å›ç¬¬ä¸€é¡¹
 			return mFatherChannelVOs.get(0).getChannelID();
 		}
 
@@ -459,10 +459,10 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ¸ù¾İÀ¸Ä¿£É£Ä¡¡»ñÈ¡ÔÚ¸¸À¸Ä¿ÖĞµÄË÷ÒıÖµ
+	 * æ ¹æ®æ ç›®ï¼©ï¼¤ã€€è·å–åœ¨çˆ¶æ ç›®ä¸­çš„ç´¢å¼•å€¼
 	 * 
 	 * @param channelID
-	 * @return¡¡Èç¹ûÎ´ÕÒµ½·µ»Ø-1
+	 * @returnã€€å¦‚æœæœªæ‰¾åˆ°è¿”å›-1
 	 */
 	private int getIndexFromList(long channelID)
 	{
@@ -485,7 +485,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ÉèÖÃÄ³¸ö²Ëµ¥ÏîÎªÎ´Ñ¡ÖĞÖĞ×´Ì¬
+	 * è®¾ç½®æŸä¸ªèœå•é¡¹ä¸ºæœªé€‰ä¸­ä¸­çŠ¶æ€
 	 * 
 	 * @param channelid
 	 */
@@ -497,12 +497,12 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ÉèÖÃÄ³¸ö²Ëµ¥ÏîÎªÑ¡ÖĞ×´Ì¬
+	 * è®¾ç½®æŸä¸ªèœå•é¡¹ä¸ºé€‰ä¸­çŠ¶æ€
 	 * 
 	 * @param channelid
-	 *            ÒªÉèÖÃÎªÑ¡ÖĞ×´Ì¬µÄ²Ëµ¥ID
+	 *            è¦è®¾ç½®ä¸ºé€‰ä¸­çŠ¶æ€çš„èœå•ID
 	 * @param noselother
-	 *            ÊÇ·ñÆäËü²Ëµ¥Ïî¶¼ÎªÎ´Ñ¡ÖĞ
+	 *            æ˜¯å¦å…¶å®ƒèœå•é¡¹éƒ½ä¸ºæœªé€‰ä¸­
 	 */
 	private void setMenuBarSel(long channelid, Boolean noselother)
 	{
@@ -514,7 +514,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			{
 				if(mFatherChannelVOs.get(i).getType()==ChannelVO.TYPE_FATHER_USER)
 				{
-					//Ñ¡ÖĞÓÃ»§À¸Ä¿Ê±²»ÏÔÊ¾Òş²ØĞÅÏ¢
+					//é€‰ä¸­ç”¨æˆ·æ ç›®æ—¶ä¸æ˜¾ç¤ºéšè—ä¿¡æ¯
 					showPushBadeView(0);
 				}
 				mv_menubarlist[i].setSelected(true);
@@ -528,11 +528,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 
 	/**
-	 * ÉèÖÃViewFlipperµÄÄÚÈİ
+	 * è®¾ç½®ViewFlipperçš„å†…å®¹
 	 * 
 	 * @param channelid
 	 * @param bstart
-	 *            ¸ÕÆô¶¯
+	 *            åˆšå¯åŠ¨
 	 */
 	private void setViewFlipper(long channelid, Boolean bstart)
 	{
@@ -540,7 +540,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			return;
 		//
 		setMainTitleRefVisibility(true);
-		// Í£Ö¹Ö÷²Ëµ¥Ë¢ĞÂ°´Å¥
+		// åœæ­¢ä¸»èœå•åˆ·æ–°æŒ‰é’®
 		setMainTitleRefStatus(false);
 		setMenuBarSel(channelid, true);
 		int index = getIndexFromList(channelid);
@@ -559,8 +559,8 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	}
 	
 	/**
-	 * ÏÔÊ¾ÌáĞÑĞÅÏ¢Êı£¨Ö»ÔÚÓÃ»§À¸Ä¿£©
-	 * @param count >0Ê±ÏÔÊ¾ <0Ê±Òş²Ø
+	 * æ˜¾ç¤ºæé†’ä¿¡æ¯æ•°ï¼ˆåªåœ¨ç”¨æˆ·æ ç›®ï¼‰
+	 * @param count >0æ—¶æ˜¾ç¤º <0æ—¶éšè—
 	 */
 	private void showPushBadeView(int count)
 	{
@@ -604,7 +604,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			return false;
 		int nowchild = mvf_content.getDisplayedChild();
 		int childcount = mvf_content.getChildCount();
-		// Èç¹ûÊÇ´ÓÓÒÏò×ó»¬¶¯
+		// å¦‚æœæ˜¯ä»å³å‘å·¦æ»‘åŠ¨
 		if (e1.getX() - e2.getX() < 0)
 		{
 			nowchild--;
@@ -651,7 +651,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				return;
 			if(CSTR_ACTION_USERLOGINCOMPLETE.equalsIgnoreCase(arg1.getAction()))
 			{
-				//ÓÃ»§×¢²áÍê³Éºó´¦ÀíÖØÖÃ·şÎñ½çÃæºÍÓÃ»§½çÃæĞÅÏ¢
+				//ç”¨æˆ·æ³¨å†Œå®Œæˆåå¤„ç†é‡ç½®æœåŠ¡ç•Œé¢å’Œç”¨æˆ·ç•Œé¢ä¿¡æ¯
 				if(mvf_content==null||mvf_content.getChildCount()==0)
 					return;
 				for(int i = 0;i<mvf_content.getChildCount();i++)

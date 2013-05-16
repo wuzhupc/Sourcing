@@ -16,9 +16,9 @@ import com.wuzhupc.Sourcing.vo.BaseVO;
 import com.wuzhupc.config.Constants;
 
 /**
- * ÊÕ²Ø¼Ğ¹¤¾ßÀà
+ * æ”¶è—å¤¹å·¥å…·ç±»
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-2 ÏÂÎç8:22:29
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-2 ä¸‹åˆ8:22:29
  */
 @SuppressWarnings("rawtypes")
 public class FavoriteUtil
@@ -26,7 +26,7 @@ public class FavoriteUtil
 	protected static final String TAG = FavoriteUtil.class.getSimpleName();
 	
 	/**
-	 * ÊÕ²Ø¼ĞÎÄ¼ş
+	 * æ”¶è—å¤¹æ–‡ä»¶
 	 */
 	private static final String CSTR_FAVFILE = Constants.CSTR_DATASTOREDIR+"favinfo.dat";
 	
@@ -36,7 +36,7 @@ public class FavoriteUtil
 	private static FavoriteUtil favoriteUtil;
 	
 	/**
-	 * Êı¾İÁĞ±í
+	 * æ•°æ®åˆ—è¡¨
 	 */
 	private ArrayList mDataList;
 
@@ -51,7 +51,7 @@ public class FavoriteUtil
 	}
 	
 	/**
-	 * ³õÊ¼»¯ÊÕ²ØÊı¾İ
+	 * åˆå§‹åŒ–æ”¶è—æ•°æ®
 	 */
 	@SuppressWarnings("unchecked")
 	private void initFavDataList()
@@ -70,9 +70,9 @@ public class FavoriteUtil
 			String temp;
 			while ((temp = br.readLine()) != null)
 			{
-				//´ÓÊı¾İÖĞ¶ÁÈ¡ÄÚÈİ¡¡£±ĞĞÒ»Ìõ¼ÇÂ¼
+				//ä»æ•°æ®ä¸­è¯»å–å†…å®¹ã€€ï¼‘è¡Œä¸€æ¡è®°å½•
 				Object o = SerializeUtil.getObjectFromString(temp);
-				//·´ĞòÁĞ»¯¶ÁÈ¡µ½µÄ×Ö·û´®¼ÓÈëµ½mDataListÖĞ
+				//ååºåˆ—åŒ–è¯»å–åˆ°çš„å­—ç¬¦ä¸²åŠ å…¥åˆ°mDataListä¸­
 				if(o!=null&&o instanceof BaseVO)
 					mDataList.add(o);
 			}
@@ -98,7 +98,7 @@ public class FavoriteUtil
 	}
 	
 	/**
-	 * ÒÆ³ıÖ¸¶¨Ë÷ÒıµÄÊÕ²ØÊı¾İ
+	 * ç§»é™¤æŒ‡å®šç´¢å¼•çš„æ”¶è—æ•°æ®
 	 * @param index
 	 */
 	public boolean removeFavData(int index)
@@ -111,7 +111,7 @@ public class FavoriteUtil
 	}
 	
 	/**
-	 * ÒÆ³ıÖ¸¶¨ÊÕ²ØÊı¾İ
+	 * ç§»é™¤æŒ‡å®šæ”¶è—æ•°æ®
 	 * @param obj
 	 */
 	public boolean removeFavData(BaseVO obj)
@@ -120,7 +120,7 @@ public class FavoriteUtil
 	}
 	
 	/**
-	 * ·µ»ØÊÇÊÕ²ØË÷ÒıÖµ£¬Èç¹ûÃ»ÓĞ£¬·µ»Ø-1
+	 * è¿”å›æ˜¯æ”¶è—ç´¢å¼•å€¼ï¼Œå¦‚æœæ²¡æœ‰ï¼Œè¿”å›-1
 	 * @param obj
 	 * @return
 	 */
@@ -137,7 +137,7 @@ public class FavoriteUtil
 	}
 	
 	/**
-	 * Ôö¼ÓÊÕ²ØÊı¾İ
+	 * å¢åŠ æ”¶è—æ•°æ®
 	 * @param obj
 	 * @return
 	 */
@@ -149,21 +149,21 @@ public class FavoriteUtil
 		int index = hasFavData(obj);
 		if(index!=-1)
 			return true;
-		//ĞÂÔö¼ÓµÄÊÕ²Ø¼ÇÂ¼ÅÅÔÚµÚÒ»Î»
+		//æ–°å¢åŠ çš„æ”¶è—è®°å½•æ’åœ¨ç¬¬ä¸€ä½
 		mDataList.add(0, obj);
 		saveFavDataList();
 		return true;
 	}
 	
 	/**
-	 * ´æ´¢
+	 * å­˜å‚¨
 	 */
 	private void saveFavDataList()
 	{
 		File favfile = new File(CSTR_FAVFILE);
 		if(mDataList==null||mDataList.isEmpty())
 		{
-			//É¾³ıÊÕ²ØÎÄ¼ş
+			//åˆ é™¤æ”¶è—æ–‡ä»¶
 			if(!favfile.exists()) return;
 			favfile.delete();
 			return;
@@ -173,7 +173,7 @@ public class FavoriteUtil
 		//BufferedWriter bw=null;
 		try
 		{
-			FileUtil.isExistFolderFromFile(CSTR_FAVFILE); // ÎÄ¼ş¼Ğ´æÔÚÓë·ñ¼ì²â£¬²»´æÔÚÔò´´½¨
+			FileUtil.isExistFolderFromFile(CSTR_FAVFILE); // æ–‡ä»¶å¤¹å­˜åœ¨ä¸å¦æ£€æµ‹ï¼Œä¸å­˜åœ¨åˆ™åˆ›å»º
 			File f = new File(CSTR_FAVFILE);
 			fOut = new FileOutputStream(f);
 			osw = new OutputStreamWriter(fOut,Charset.forName("UTF-8"));

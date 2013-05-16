@@ -22,15 +22,15 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * ÓÃ»§ĞÅÏ¢View
+ * ç”¨æˆ·ä¿¡æ¯View
  * 
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-5 ÏÂÎç9:53:48
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-5 ä¸‹åˆ9:53:48
  */
 public class UserView extends BaseView
 {
 	/**
-	 * ÓÃ»§Í·Ïñ
+	 * ç”¨æˆ·å¤´åƒ
 	 */
 	private ImageView miv_userpic;
 	private TextView mtv_username;
@@ -60,7 +60,7 @@ public class UserView extends BaseView
 	}
 
 	/**
-	 * ¸ù¾İÏÖÓĞÓÃ»§Çé¿öÉèÖÃUserViewÏà¹ØÏÔÊ¾
+	 * æ ¹æ®ç°æœ‰ç”¨æˆ·æƒ…å†µè®¾ç½®UserViewç›¸å…³æ˜¾ç¤º
 	 */
 	private void setShowUserInfo()
 	{
@@ -196,7 +196,7 @@ public class UserView extends BaseView
 	}
 	
 	/**
-	 * ×ÉÑ¯ĞÅÏ¢µã»÷
+	 * å’¨è¯¢ä¿¡æ¯ç‚¹å‡»
 	 * @param v
 	 */
 	public void onConsultInfoClick(View v)
@@ -217,7 +217,7 @@ public class UserView extends BaseView
 	}
 	
 	/**
-	 * ÉóºË½á¹ûµã»÷
+	 * å®¡æ ¸ç»“æœç‚¹å‡»
 	 * @param v
 	 */
 	public void onAuditInfoClick(View v)
@@ -238,7 +238,7 @@ public class UserView extends BaseView
 	}
 	
 	/**
-	 * Éê±¨½ø¶Èµã»÷
+	 * ç”³æŠ¥è¿›åº¦ç‚¹å‡»
 	 * @param v
 	 */
 	public void onDeclareInfoClick(View v)
@@ -258,7 +258,7 @@ public class UserView extends BaseView
 	}
 	
 	/**
-	 * Í¨ÖªÌáĞÑµã»÷
+	 * é€šçŸ¥æé†’ç‚¹å‡»
 	 * @param v
 	 */
 	public void onNotifierInfoClick(View v)
@@ -279,7 +279,7 @@ public class UserView extends BaseView
 	}
 
 	/**
-	 * ×¢²á»òÇĞ»»ÕÊºÅ°´Å¥ÊÂ¼ş
+	 * æ³¨å†Œæˆ–åˆ‡æ¢å¸å·æŒ‰é’®äº‹ä»¶
 	 * 
 	 * @param v
 	 */
@@ -287,7 +287,7 @@ public class UserView extends BaseView
 	{
 		UserVO userVO = getNowUser();
 		if (userVO == null)
-			// ×¢²á
+			// æ³¨å†Œ
 			((BaseActivity) mContext).runBrowser(getResources().getString(
 					R.string.url_reg_progress));
 		else
@@ -295,7 +295,7 @@ public class UserView extends BaseView
 	}
 
 	/**
-	 * ÇĞ»»ÕÊºÅ
+	 * åˆ‡æ¢å¸å·
 	 */
 	private void changeAccount()
 	{
@@ -320,7 +320,7 @@ public class UserView extends BaseView
 	}
 
 	/**
-	 * µÇÂ¼»òĞŞ¸ÄÃÜÂëÊÂ¼ş°´Å¥
+	 * ç™»å½•æˆ–ä¿®æ”¹å¯†ç äº‹ä»¶æŒ‰é’®
 	 * 
 	 * @param v
 	 */
@@ -329,12 +329,12 @@ public class UserView extends BaseView
 		UserVO userVO = getNowUser();
 		if (userVO == null)
 		{
-			// µÇÂ¼
+			// ç™»å½•
 			((BaseActivity) mContext).runActivity(false,
 					UserLoginActivity.class);
 		} else
 		{
-			// ĞŞ¸ÄÃÜÂë
+			// ä¿®æ”¹å¯†ç 
 			((BaseActivity) mContext).runActivity(false,
 					UserChangePwdActivity.class);
 		}
@@ -348,7 +348,7 @@ public class UserView extends BaseView
 	@Override
 	protected void initNavigation(View v)
 	{
-		// ²»ÓÃÏÔÊ¾×ÓÀ¸Ä¿À¸
+		// ä¸ç”¨æ˜¾ç¤ºå­æ ç›®æ 
 		LinearLayout ll = (LinearLayout) findViewById(R.id.base_subchannel_ll);
 		ll.setVisibility(View.GONE);
 	}

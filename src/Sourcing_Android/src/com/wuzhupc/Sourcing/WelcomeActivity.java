@@ -20,80 +20,80 @@ import android.text.Html;
 import android.util.Log;
 import android.widget.TextView;
 /**
- * Æô¶¯½çÃæ ÏÔÊ¾ÉÁÆÁ£¬²¢´Ó·şÎñÆ÷¶Ë¼ÓÔØÀ¸Ä¿ĞÅÏ¢
+ * å¯åŠ¨ç•Œé¢ æ˜¾ç¤ºé—ªå±ï¼Œå¹¶ä»æœåŠ¡å™¨ç«¯åŠ è½½æ ç›®ä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-20 ÏÂÎç9:05:36
- * @note Æô¶¯(×´Ì¬Cint_ShowLogo_State)
- * 			.->ÏÔÊ¾logo(·¢ËÍCint_ShowLogoComplete_MessageID) 2Ãë ¼ÆÊı +1
- *          .->»ñÈ¡°æ±¾ĞÅÏ¢->ÓĞ¸üĞÂ,½øĞĞÌáÊ¾ÅĞ¶ÏÊÇ·ñĞèÒª¸üĞÂ(Èç¹ûµã»÷¸üĞÂ,ÔòÖ±½Ó´ò¿ªä¯ÀÀÆ÷ÏÂÔØ,²¢ÍË³ö³ÌĞò.Èç¹û±ØĞëÉı¼¶°æ±¾,µã»÷È¡Ïû¸üĞÂÔòÖ±½ÓÍË³ö) ¼ÆÊı+1
- *          	.->ÅĞ¶ÏÓÃ»§µÇÂ¼Çé¿ö(·¢ËÍCint_UserLogin_MessageID) ¼ÆÊı+1
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-20 ä¸‹åˆ9:05:36
+ * @note å¯åŠ¨(çŠ¶æ€Cint_ShowLogo_State)
+ * 			.->æ˜¾ç¤ºlogo(å‘é€Cint_ShowLogoComplete_MessageID) 2ç§’ è®¡æ•° +1
+ *          .->è·å–ç‰ˆæœ¬ä¿¡æ¯->æœ‰æ›´æ–°,è¿›è¡Œæç¤ºåˆ¤æ–­æ˜¯å¦éœ€è¦æ›´æ–°(å¦‚æœç‚¹å‡»æ›´æ–°,åˆ™ç›´æ¥æ‰“å¼€æµè§ˆå™¨ä¸‹è½½,å¹¶é€€å‡ºç¨‹åº.å¦‚æœå¿…é¡»å‡çº§ç‰ˆæœ¬,ç‚¹å‡»å–æ¶ˆæ›´æ–°åˆ™ç›´æ¥é€€å‡º) è®¡æ•°+1
+ *          	.->åˆ¤æ–­ç”¨æˆ·ç™»å½•æƒ…å†µ(å‘é€Cint_UserLogin_MessageID) è®¡æ•°+1
  */
 public class WelcomeActivity extends BaseActivity
 {
 	protected static final String Tag=WelcomeActivity.class.getSimpleName();
 	
 	/**
-	 * ×´Ì¬Öµ-µ±Ç°ÏÔÊ¾logo
+	 * çŠ¶æ€å€¼-å½“å‰æ˜¾ç¤ºlogo
 	 */
 	private static final int Cint_ShowLogo_State=1;
 	/**
-	 * ×´Ì¬Öµ-µ±Ç°ÏÔÊ¾¸üĞÂ×´Ì¬
+	 * çŠ¶æ€å€¼-å½“å‰æ˜¾ç¤ºæ›´æ–°çŠ¶æ€
 	 */
 	private static final int Cint_ShowClientUpdate_State=2;
 	/**
-	 * ÄÜ½øÈëÏÔÊ¾Ö÷½çÃæ¼ÆÊı
+	 * èƒ½è¿›å…¥æ˜¾ç¤ºä¸»ç•Œé¢è®¡æ•°
 	 */
 	private static final int Cint_CanShowHomeMessageNumber = 3;
 	/**
-	 * LogoÏÔÊ¾½áÊøÏûÏ¢ID
+	 * Logoæ˜¾ç¤ºç»“æŸæ¶ˆæ¯ID
 	 */
 	private static final int Cint_CompleteShowLogo_MessageID=101;
 	
 	/**
-	 * ¿ªÊ¼¼ì²â×îĞÂ¿Í»§¶Ë°æ±¾ĞÅÏ¢ID
+	 * å¼€å§‹æ£€æµ‹æœ€æ–°å®¢æˆ·ç«¯ç‰ˆæœ¬ä¿¡æ¯ID
 	 */
 	private static final int Cint_StartCheckClientVer_MessageID = 103;
 	
 	/**
-	 * Íê³É¼ì²â×îĞÂ¿Í»§¶Ë°æ±¾ĞÅÏ¢ID
+	 * å®Œæˆæ£€æµ‹æœ€æ–°å®¢æˆ·ç«¯ç‰ˆæœ¬ä¿¡æ¯ID
 	 */
 	private static final int Cint_CompleteCheckClientVer_MessageID = 104;
 
 	/**
-	 * ¿ªÊ¼ÓÃ»§µÇÂ¼ĞÅÏ¢ID
+	 * å¼€å§‹ç”¨æˆ·ç™»å½•ä¿¡æ¯ID
 	 */
 	private static final int Cint_StartUserLogin_MessageID=105;
 	
 	/**
-	 * Íê³ÉÓÃ»§µÇÂ¼ĞÅÏ¢ID
+	 * å®Œæˆç”¨æˆ·ç™»å½•ä¿¡æ¯ID
 	 */
 	private static final int Cint_CompleteUserLogin_MessageID=106;
 	
 	
 	/**
-	 * µ±Ç°×´Ì¬
+	 * å½“å‰çŠ¶æ€
 	 */
 	private int mNowState;
 	
 	/**
-	 * ÏûÏ¢Êı
+	 * æ¶ˆæ¯æ•°
 	 */
 	private int mMessageNumber;
 	
 	/**
-	 * ¿Í»§¶Ë°æ±¾ĞÅÏ¢
+	 * å®¢æˆ·ç«¯ç‰ˆæœ¬ä¿¡æ¯
 	 */
 	private ClientVerVO mClientVerVO;
 	
 	private int mPushCount;
 	
 	/**
-	 * ³õÊ¼»¯View
+	 * åˆå§‹åŒ–View
 	 */
 	@Override
 	protected void initView()
 	{
-		//³õÊ¼»¯View
+		//åˆå§‹åŒ–View
 		setContentView(R.layout.activity_welcome);
 		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));
 		Intent intent = getIntent();
@@ -114,9 +114,9 @@ public class WelcomeActivity extends BaseActivity
 	}
 	
 	/**
-	 * ·¢ËÍÏûÏ¢
+	 * å‘é€æ¶ˆæ¯
 	 * @param what
-	 * @param delay ÑÓÊ±¶à¾Ã£¬µ¥Î»ms£¬Èç¹ûÎª0£¬ÔòÁ¢¼´·¢ËÍÏûÏ¢
+	 * @param delay å»¶æ—¶å¤šä¹…ï¼Œå•ä½msï¼Œå¦‚æœä¸º0ï¼Œåˆ™ç«‹å³å‘é€æ¶ˆæ¯
 	 */
 	private void sendMsg(int what,int delay)
 	{
@@ -144,7 +144,7 @@ public class WelcomeActivity extends BaseActivity
 				startGetVersionInfo();
 				break;
 			case Cint_CompleteCheckClientVer_MessageID:
-				//ÖØĞÂ»ØÀ´ÏÔÊ¾logo×´Ì¬
+				//é‡æ–°å›æ¥æ˜¾ç¤ºlogoçŠ¶æ€
 				mNowState=Cint_ShowLogo_State;
 				mMessageNumber++;
 				break;
@@ -155,7 +155,7 @@ public class WelcomeActivity extends BaseActivity
 				mMessageNumber++;
 				break;
 			}
-			//Ö»ÓĞÏÔÊ¾logo×´Ì¬ÇÒµ½¼ÆÊıÖµµ½ÁË²ÅÄÜÇĞ»»µ½Ö÷½çÃæ
+			//åªæœ‰æ˜¾ç¤ºlogoçŠ¶æ€ä¸”åˆ°è®¡æ•°å€¼åˆ°äº†æ‰èƒ½åˆ‡æ¢åˆ°ä¸»ç•Œé¢
 			if(mNowState==Cint_ShowLogo_State&&mMessageNumber>=Cint_CanShowHomeMessageNumber)
 			{
 				startHome();
@@ -164,7 +164,7 @@ public class WelcomeActivity extends BaseActivity
 	};
 
 	/**
-	 * Æô¶¯»ñÈ¡°æ±¾ĞÅÏ¢
+	 * å¯åŠ¨è·å–ç‰ˆæœ¬ä¿¡æ¯
 	 */
 	private void startGetVersionInfo()
 	{
@@ -207,18 +207,18 @@ public class WelcomeActivity extends BaseActivity
 			sendMsg(Cint_CompleteCheckClientVer_MessageID, 0);
 			return;
 		}
-		//ÅĞ¶Ï°æ±¾¸üĞÂĞÅÏ¢
+		//åˆ¤æ–­ç‰ˆæœ¬æ›´æ–°ä¿¡æ¯
 		if(!mClientVerVO.hasUpdate())
 		{
 			sendMsg(Cint_CompleteCheckClientVer_MessageID, 0);
 			return;
 		}
-		//ÏÔÊ¾¸üĞÂĞÅÏ¢
+		//æ˜¾ç¤ºæ›´æ–°ä¿¡æ¯
 		showUpdateDialog();
 	}
 	
 	/**
-	 * ÏÔÊ¾¸üĞÂ¶Ô»°¿ò
+	 * æ˜¾ç¤ºæ›´æ–°å¯¹è¯æ¡†
 	 */
 	private void showUpdateDialog()
 	{
@@ -256,25 +256,25 @@ public class WelcomeActivity extends BaseActivity
 	}
 	
 	/**
-	 * ¼ì²éÓÃ»§µÇÂ¼
+	 * æ£€æŸ¥ç”¨æˆ·ç™»å½•
 	 */
 	private void startUserLogin()
 	{
-		//Èç¹ûÖ®Ç°ÒÑ¾­µÇÂ¼¹ı
+		//å¦‚æœä¹‹å‰å·²ç»ç™»å½•è¿‡
 		UserVO vo = getApplicationSet().getUserVO();
 		if(vo!=null)
 		{
 			completeUserLogin();
 			return;
 		}
-		//¶ÁÈ¡Ö®Ç°µÄµÇÂ¼ĞÅÏ¢
+		//è¯»å–ä¹‹å‰çš„ç™»å½•ä¿¡æ¯
 		vo = UserVO.getLastLoginUserInfo();
 		if(vo==null)
 		{
 			completeUserLogin();
 			return;
 		}
-		//Ô¶³ÌÅĞ¶Ï
+		//è¿œç¨‹åˆ¤æ–­
 		MobileUserService service =new MobileUserService(WelcomeActivity.this);
 		service.userLogin(vo.getUseraccount(), vo.getPassword(), new IBaseReceiver()
 		{
@@ -305,14 +305,14 @@ public class WelcomeActivity extends BaseActivity
 	}
 	
 	/**
-	 * Æô¶¯Ö÷´°Ìå
+	 * å¯åŠ¨ä¸»çª—ä½“
 	 */
 	private void startHome()
 	{
-		//Æô¶¯½ÓÊÕÍÆËÍĞÅÏ¢
+		//å¯åŠ¨æ¥æ”¶æ¨é€ä¿¡æ¯
 		startPushService();
 //		
-//		//Æô¶¯Ö÷½çÃæ
+//		//å¯åŠ¨ä¸»ç•Œé¢
 		Intent intent=new Intent(this, HomeActivity.class);
 		intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 		intent.putExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, mPushCount);

@@ -4,7 +4,7 @@ import com.wuzhupc.utils.JavaLangUtil;
 import com.wuzhupc.utils.StringUtil;
 
 /**
- * ¿Í»§¶Ë°æ±¾ĞÅÏ¢VO
+ * å®¢æˆ·ç«¯ç‰ˆæœ¬ä¿¡æ¯VO
  * @author Administrator
  *
  */
@@ -17,27 +17,27 @@ public class ClientVerVO extends BaseVO
 	private static final long serialVersionUID = 6380397370847413254L;
 	
 	/**
-	 * ÏÖÔÚ°æ±¾
+	 * ç°åœ¨ç‰ˆæœ¬
 	 */
 	private String clientver;
 	/**
-	 * ¿Í»§¶Ë×îĞÂ°æ±¾ºÅ
+	 * å®¢æˆ·ç«¯æœ€æ–°ç‰ˆæœ¬å·
 	 */
 	private String lastver;
 	/**
-	 * ×îºó¿Í»§¶Ë°æ±¾ÏÂÔØµØÖ·
+	 * æœ€åå®¢æˆ·ç«¯ç‰ˆæœ¬ä¸‹è½½åœ°å€
 	 */
 	private String lastverurl;
 	/**
-	 * ×îĞÂ¿Í»§¶ËÎÄ¼ş´óĞ¡£¬µ¥Î»×Ö½Ú
+	 * æœ€æ–°å®¢æˆ·ç«¯æ–‡ä»¶å¤§å°ï¼Œå•ä½å­—èŠ‚
 	 */
 	private long filesize;
 	/**
-	 * ÊÇ·ñĞèÒªÇ¿ÖÆ¸üĞÂ(0.·ñ 1.ÊÇ)
+	 * æ˜¯å¦éœ€è¦å¼ºåˆ¶æ›´æ–°(0.å¦ 1.æ˜¯)
 	 */
 	private boolean forceupdate;
 	/**
-	 * ¸üĞÂËµÃ÷
+	 * æ›´æ–°è¯´æ˜
 	 */
 	private String updatelog;
 	public String getClientver()
@@ -98,7 +98,7 @@ public class ClientVerVO extends BaseVO
 	}
 	
 	/**
-	 * ÊÇ·ñĞèÒª¸üĞÂ,±È½ÏÖ®Ç°ĞèÒª¶Ôclientver¸³µ±Ç°°æ±¾Öµ
+	 * æ˜¯å¦éœ€è¦æ›´æ–°,æ¯”è¾ƒä¹‹å‰éœ€è¦å¯¹clientverèµ‹å½“å‰ç‰ˆæœ¬å€¼
 	 * @return
 	 */
 	public boolean hasUpdate()

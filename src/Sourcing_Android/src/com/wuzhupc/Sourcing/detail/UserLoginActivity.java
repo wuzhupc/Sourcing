@@ -19,7 +19,7 @@ import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ÓÃ»§µÇÂ¼
+ * ç”¨æˆ·ç™»å½•
  * @author wuzhu
  *
  */
@@ -58,7 +58,7 @@ public class UserLoginActivity extends BaseActivity
 
 	public void forgetPwdClick(View v)
 	{
-		//Íü¼ÇÃÜÂë
+		//å¿˜è®°å¯†ç 
 		runBrowser(getResources().getString(R.string.url_forget_pwd_progress));
 	}
 	

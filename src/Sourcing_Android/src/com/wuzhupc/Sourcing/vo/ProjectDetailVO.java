@@ -4,9 +4,9 @@ import com.wuzhupc.Sourcing.BaseActivity;
 import com.wuzhupc.utils.WebViewUtil;
 
 /**
- * ÏîÄ¿ÏêÇé
+ * é¡¹ç›®è¯¦æƒ…
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-11-17 ÏÂÎç7:53:44
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-11-17 ä¸‹åˆ7:53:44
  */
 public class ProjectDetailVO extends ProjectVO
 {
@@ -17,7 +17,7 @@ public class ProjectDetailVO extends ProjectVO
 	private static final long serialVersionUID = -6102401878309897984L;
 
 	/**
-	 * ÏîÄ¿½éÉÜÄÚÈİĞÅÏ¢£¬Ö±½Ó½«ÏîÄ¿Ïà¹ØµÄĞÅÏ¢·µ»Ø
+	 * é¡¹ç›®ä»‹ç»å†…å®¹ä¿¡æ¯ï¼Œç›´æ¥å°†é¡¹ç›®ç›¸å…³çš„ä¿¡æ¯è¿”å›
 	 */
 	private String projectcontent;
 
@@ -32,7 +32,7 @@ public class ProjectDetailVO extends ProjectVO
 	}
 	
 	/**
-	 * ·µ»ØÏêÇéHTMLÄÚÈİ
+	 * è¿”å›è¯¦æƒ…HTMLå†…å®¹
 	 * @return
 	 */
 	@Override

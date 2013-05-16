@@ -27,7 +27,7 @@ public class PushReceiver extends BroadcastReceiver
 {
 	private static final String TAG = PushReceiver.class.getSimpleName();
 	/**
-	 * ²âÊÔ
+	 * æµ‹è¯•
 	 */
 	private static final Boolean DEBUG = false;
 
@@ -39,34 +39,34 @@ public class PushReceiver extends BroadcastReceiver
 	public void onReceive(Context context, Intent intent)
 	{
 		this.mContext = context;
-		// ÅĞ¶Ï´æ´¢¿¨ÊÇ·ñ´æÔÚ
+		// åˆ¤æ–­å­˜å‚¨å¡æ˜¯å¦å­˜åœ¨
 		if (!FileUtil.hasSDCard())
 		{
 			AlarmUtil.getPushMsgAlarm(mContext).pendingBroadcastTask(
 					new Intent(CSTR_ACTION_PUSH_RECEIVER), -1);
 
-			Log.i(TAG, "ÍÆËÍĞÅÏ¢¼ì²â--NOT SD¡¡CARD!");
+			Log.i(TAG, "æ¨é€ä¿¡æ¯æ£€æµ‹--NOT SDã€€CARD!");
 			return;
 		}
 
-		//²»ÓÃÅĞ¶Ï³ÌĞòÊÇ·ñÔÚµ±Ç°ÔËĞĞ
+		//ä¸ç”¨åˆ¤æ–­ç¨‹åºæ˜¯å¦åœ¨å½“å‰è¿è¡Œ
 		//if (!ActivityUtil.isCurAppRunningForeground(mContext))
 			actionPushMsg();
 		/*else
 		{
-			Log.i(TAG, "ÍÆËÍĞÅÏ¢¼ì²â--CurAppRunningForeground!");
+			Log.i(TAG, "æ¨é€ä¿¡æ¯æ£€æµ‹--CurAppRunningForeground!");
 			AlarmUtil.getPushMsgAlarm(mContext).pendingBroadcastTask(
 					new Intent(CSTR_ACTION_PUSH_RECEIVER), -1);
 		}*/
 	}
 
 	/**
-	 * ¶¨Ê±½ÓÊÕÍÆËÍÏûÏ¢
+	 * å®šæ—¶æ¥æ”¶æ¨é€æ¶ˆæ¯
 	 */
 	private void actionPushMsg()
 	{
 		String lastCheckTimeSP = SettingUtil.getLastCheckPushMsgTime(mContext);
-		// TODO »ñÈ¡Êı¾İ×îºó¸üĞÂÊı¾İÊ±¼ä
+		// TODO è·å–æ•°æ®æœ€åæ›´æ–°æ•°æ®æ—¶é—´
 		String lastCheckTime = lastCheckTimeSP;
 
 		// Log.i(TAG, "db time = "+DateFormat.format("yyyy-MM-dd hh:mm:ss",
@@ -81,7 +81,7 @@ public class PushReceiver extends BroadcastReceiver
 			lastCheckTime = TimeUtil.dateToString(new Date(System
 					.currentTimeMillis() - 1000 * 3600));// 60s*60m*1000ms
 		UserVO userVO = UserVO.getLastLoginUserInfo();
-		if (userVO == null)// ÓÃ»§Î´µÇÂ¼£¬Ôò²»»ñÈ¡ÍÆËÍĞÅÏ¢
+		if (userVO == null)// ç”¨æˆ·æœªç™»å½•ï¼Œåˆ™ä¸è·å–æ¨é€ä¿¡æ¯
 			return;
 		MobilePushService service = new MobilePushService(mContext);
 		service.getPushInfo(userVO.getUserid(), lastCheckTime,
@@ -147,7 +147,7 @@ public class PushReceiver extends BroadcastReceiver
 	}
 
 	/**
-	 * Éú³É¼ä¸ôËæ»úÊı
+	 * ç”Ÿæˆé—´éš”éšæœºæ•°
 	 * 
 	 * @return
 	 */

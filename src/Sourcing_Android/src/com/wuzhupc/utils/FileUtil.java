@@ -31,7 +31,7 @@ import android.util.Log;
 import android.webkit.URLUtil;
 
 /**
- * ÎÄ¼ş²Ù×÷Ïà¹Ø
+ * æ–‡ä»¶æ“ä½œç›¸å…³
  * 
  * @author wuzhu 20110603
  * 
@@ -42,10 +42,10 @@ public class FileUtil
 	private static final String TAG = FileUtil.class.getSimpleName();
 
 	/**
-	 * »ñÈ¡Êµ¼ÊµÄÍ¼Æ¬Â·¾¶
+	 * è·å–å®é™…çš„å›¾ç‰‡è·¯å¾„
 	 * 
 	 * @param contentUri
-	 *            ¡¡UriÂ·¾¶
+	 *            ã€€Uriè·¯å¾„
 	 * @param activity
 	 * @return
 	 */
@@ -63,7 +63,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ÅĞ¶Ï´æ´¢¿¨ÊÇ·ñ´æÔÚ
+	 * åˆ¤æ–­å­˜å‚¨å¡æ˜¯å¦å­˜åœ¨
 	 */
 	public static Boolean hasSDCard()
 	{
@@ -71,7 +71,7 @@ public class FileUtil
 	}
 
 	/**
-	 * »ñÈ¡´æ´¢¿¨Â·¾¶£¬Â·¾¶´ø/ Èç¹ûÃ»ÓĞ´æ´¢¿¨£¬·µ»Ø¿Õ×Ö·û´®
+	 * è·å–å­˜å‚¨å¡è·¯å¾„ï¼Œè·¯å¾„å¸¦/ å¦‚æœæ²¡æœ‰å­˜å‚¨å¡ï¼Œè¿”å›ç©ºå­—ç¬¦ä¸²
 	 */
 	public static String getSDCardPath()
 	{
@@ -82,7 +82,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ÁÙÊ±´æ´¢ÕÕÆ¬Â·¾¶
+	 * ä¸´æ—¶å­˜å‚¨ç…§ç‰‡è·¯å¾„
 	 * 
 	 * @return
 	 */
@@ -92,7 +92,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ÁÙÊ±´æ´¢ÊÓÆµÂ·¾¶
+	 * ä¸´æ—¶å­˜å‚¨è§†é¢‘è·¯å¾„
 	 * 
 	 * @return
 	 */
@@ -103,7 +103,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ´ò¿ªÎÄ¼ş
+	 * æ‰“å¼€æ–‡ä»¶
 	 * 
 	 **/
 	public static void OpenFile(File f, Context c)
@@ -115,15 +115,15 @@ public class FileUtil
 		intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		intent.setAction(android.content.Intent.ACTION_VIEW);
 
-		/* µ÷ÓÃgetMIMEType()À´È¡µÃMimeType */
+		/* è°ƒç”¨getMIMEType()æ¥å–å¾—MimeType */
 		String type = getMIMEType(f);
-		/* ÉèÖÃintentµÄfileÓëMimeType */
+		/* è®¾ç½®intentçš„fileä¸MimeType */
 		intent.setDataAndType(Uri.fromFile(f), type);
 		c.startActivity(intent);
 	}
-	
+
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÊÇÍ¼Æ¬ÎÄ¼şµØÖ·£¨°üÀ¨URL»òÎÄ¼şÂ·¾¶£©
+	 * åˆ¤æ–­æ˜¯å¦æ˜¯å›¾ç‰‡æ–‡ä»¶åœ°å€ï¼ˆåŒ…æ‹¬URLæˆ–æ–‡ä»¶è·¯å¾„ï¼‰
 	 * @param file
 	 * @return
 	 */
@@ -136,7 +136,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ¸ù¾İÎÄ¼şºó×ºÃû»ñµÃ¶ÔÓ¦µÄMIMEÀàĞÍ¡£
+	 * æ ¹æ®æ–‡ä»¶åç¼€åè·å¾—å¯¹åº”çš„MIMEç±»å‹ã€‚
 	 * 
 	 * @param file
 	 */
@@ -146,16 +146,16 @@ public class FileUtil
 			return "*/*";
 		return getMIMEType(file.getName());
 	}
-	
+
 	public static String getMIMEType(String fName)
 	{
 		String type = "*/*";
-		/* »ñÈ¡ÎÄ¼şµÄºó×ºÃû */
+		/* è·å–æ–‡ä»¶çš„åç¼€å */
 		String end = getFileExtension(fName);
 		if (StringUtil.isEmpty(end))
 			return type;
 		end="."+end;
-		// ÔÚMIMEºÍÎÄ¼şÀàĞÍµÄÆ¥Åä±íÖĞÕÒµ½¶ÔÓ¦µÄMIMEÀàĞÍ¡£
+		// åœ¨MIMEå’Œæ–‡ä»¶ç±»å‹çš„åŒ¹é…è¡¨ä¸­æ‰¾åˆ°å¯¹åº”çš„MIMEç±»å‹ã€‚
 		for (int i = 0; i < MIME_MapTable.length; i++)
 		{
 			if (end.equals(MIME_MapTable[i][0]))
@@ -165,11 +165,11 @@ public class FileUtil
 	}
 
 	/**
-	 * »ñÈ¡ÎÄ¼şºó×ºÃû
+	 * è·å–æ–‡ä»¶åç¼€å
 	 * 
 	 * @param filename
-	 *            ÎÄ¼şÃû³Æ
-	 * @return¡¡·µ»ØĞ¡Ğ´£¬(²»°üº¬.)
+	 *            æ–‡ä»¶åç§°
+	 * @returnã€€è¿”å›å°å†™ï¼Œ(ä¸åŒ…å«.)
 	 */
 	public static String getFileExtension(String filename)
 	{
@@ -178,16 +178,16 @@ public class FileUtil
 		int dotIndex = filename.lastIndexOf(".");
 		if (dotIndex < 0)
 			return "";
-		/* »ñÈ¡ÎÄ¼şµÄºó×ºÃû */
+		/* è·å–æ–‡ä»¶çš„åç¼€å */
 		return filename.substring(dotIndex + 1, filename.length()).toLowerCase();
 	}
 
 	/**
-	 * ½¨Á¢Ò»¸öMIMEÀàĞÍÓëÎÄ¼şºó×ºÃûµÄÆ¥Åä±í
-	 * £¨¶¼ÎªĞ¡Ğ´£©
+	 * å»ºç«‹ä¸€ä¸ªMIMEç±»å‹ä¸æ–‡ä»¶åç¼€åçš„åŒ¹é…è¡¨
+	 * ï¼ˆéƒ½ä¸ºå°å†™ï¼‰
 	 */
 	public static final String[][] MIME_MapTable = {
-			// {ºó×ºÃû£¬ MIMEÀàĞÍ}
+			// {åç¼€åï¼Œ MIMEç±»å‹}
 			{ ".3gp", "video/3gpp" }, { ".apk", "application/vnd.android.package-archive" },
 			{ ".asf", "video/x-ms-asf" }, { ".avi", "video/x-msvideo" }, { ".bin", "application/octet-stream" },
 			{ ".bmp", "image/bmp" }, { ".c", "text/plain" }, { ".class", "application/octet-stream" },
@@ -212,10 +212,10 @@ public class FileUtil
 			{ ".xml", "text/plain" }, { ".z", "application/x-compress" }, { ".zip", "application/zip" }, { "", "*/*" } };
 
 	/**
-	 * ¶ÁÈ¡ÎÄ¼ş
+	 * è¯»å–æ–‡ä»¶
 	 * 
 	 * @param file
-	 *            Íê³ÉÎÄ¼şÂ·¾¶
+	 *            å®Œæˆæ–‡ä»¶è·¯å¾„
 	 * @return
 	 */
 	public static byte[] ReadFileToBytes(String file)
@@ -247,10 +247,10 @@ public class FileUtil
 	}
 
 	/**
-	 * ¶ÁÈ¡ÎÄ¼ş
+	 * è¯»å–æ–‡ä»¶
 	 * 
 	 * @param file
-	 *            Íê³ÉÎÄ¼şÂ·¾¶
+	 *            å®Œæˆæ–‡ä»¶è·¯å¾„
 	 * @return
 	 */
 	public static String ReadFile(String file)
@@ -259,12 +259,12 @@ public class FileUtil
 	}
 
 	/**
-	 * ¶ÁÈ¡ÎÄ¼ş
+	 * è¯»å–æ–‡ä»¶
 	 * 
 	 * @param file
-	 *            Íê³ÉÎÄ¼şÂ·¾¶
+	 *            å®Œæˆæ–‡ä»¶è·¯å¾„
 	 * @param charset
-	 *            ×Ö·û¼¯,Ä¬ÈÏUTF-8
+	 *            å­—ç¬¦é›†,é»˜è®¤UTF-8
 	 * @return
 	 */
 	public static String ReadFile(String file, String charset)
@@ -320,7 +320,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ±£´æÎÄ¼şÄÚÈİ
+	 * ä¿å­˜æ–‡ä»¶å†…å®¹
 	 */
 	public static void WriteFile(String file, byte[] data)
 	{
@@ -348,12 +348,12 @@ public class FileUtil
 	}
 
 	/**
-	 * Ğ´ÈëÎÄ¼şÄÚÈİ,Èç¹ûÔ­ÎÄ¼ş´æÔÚ£¬²»±£´æÔ­ÎÄ¼şÄÚÈİ(UTF-8)
+	 * å†™å…¥æ–‡ä»¶å†…å®¹,å¦‚æœåŸæ–‡ä»¶å­˜åœ¨ï¼Œä¸ä¿å­˜åŸæ–‡ä»¶å†…å®¹(UTF-8)
 	 * 
 	 * @param file
-	 *            ¡¡ÎÄ¼şÃû
+	 *            ã€€æ–‡ä»¶å
 	 * @param data
-	 *            ¡¡ÒªĞ´ÈëµÄÊı¾İ
+	 *            ã€€è¦å†™å…¥çš„æ•°æ®
 	 */
 	public static void WriteFile(String file, String data)
 	{
@@ -361,12 +361,12 @@ public class FileUtil
 	}
 
 	/**
-	 * ±£´æÎÄ¼şÄÚÈİ(UTF-8)
+	 * ä¿å­˜æ–‡ä»¶å†…å®¹(UTF-8)
 	 * 
 	 * @param file
-	 *            ¡¡ÎÄ¼şÃû
+	 *            ã€€æ–‡ä»¶å
 	 * @param data
-	 *            ¡¡ÒªĞ´ÈëµÄÊı¾İ
+	 *            ã€€è¦å†™å…¥çš„æ•°æ®
 	 */
 	public static void WriteFile(String file, String data, Boolean append)
 	{
@@ -374,7 +374,7 @@ public class FileUtil
 		OutputStreamWriter osw = null;
 		try
 		{
-			isExistFolderFromFile(file); // ÎÄ¼ş¼Ğ´æÔÚÓë·ñ¼ì²â£¬²»´æÔÚÔò´´½¨
+			isExistFolderFromFile(file); // æ–‡ä»¶å¤¹å­˜åœ¨ä¸å¦æ£€æµ‹ï¼Œä¸å­˜åœ¨åˆ™åˆ›å»º
 
 			File f = new File(file);
 			fOut = new FileOutputStream(f, append);
@@ -401,10 +401,10 @@ public class FileUtil
 	}
 
 	/**
-	 * É¾³ıÎÄ¼ş
+	 * åˆ é™¤æ–‡ä»¶
 	 * 
 	 * @param filename
-	 *            ÎÄ¼şÃû
+	 *            æ–‡ä»¶å
 	 * @return
 	 */
 	public static boolean deleteFile(String filename)
@@ -422,10 +422,10 @@ public class FileUtil
 	}
 
 	/**
-	 * É¾³ıÎÄ¼ş¼Ğ
+	 * åˆ é™¤æ–‡ä»¶å¤¹
 	 * 
 	 * @param filePathAndName
-	 *            String ÎÄ¼ş¼ĞÂ·¾¶¼°Ãû³Æ Èçc:/fqf
+	 *            String æ–‡ä»¶å¤¹è·¯å¾„åŠåç§° å¦‚c:/fqf
 	 * @param fileContent
 	 *            String
 	 * @return boolean
@@ -435,27 +435,27 @@ public class FileUtil
 	{
 		try
 		{
-			delAllFile(folderPath); // É¾³ıÍêÀïÃæËùÓĞÄÚÈİ
+			delAllFile(folderPath); // åˆ é™¤å®Œé‡Œé¢æ‰€æœ‰å†…å®¹
 			String filePath = folderPath;
 			filePath = filePath.toString();
 			// Log.d("delFolder", filePath.toString());
 			File f = new File(filePath);
 			if (f.exists())
-				f.delete(); // É¾³ı¿ÕÎÄ¼ş¼Ğ
+				f.delete(); // åˆ é™¤ç©ºæ–‡ä»¶å¤¹
 			return true;
 
 		} catch (Exception e)
 		{
-			Log.e("delFolder", "É¾³ıÎÄ¼ş¼Ğ²Ù×÷³ö´í:" + e.getMessage());
+			Log.e("delFolder", "åˆ é™¤æ–‡ä»¶å¤¹æ“ä½œå‡ºé”™:" + e.getMessage());
 			return false;
 		}
 	}
 
 	/**
-	 * É¾³ıÎÄ¼ş¼ĞÀïÃæµÄËùÓĞÎÄ¼ş
+	 * åˆ é™¤æ–‡ä»¶å¤¹é‡Œé¢çš„æ‰€æœ‰æ–‡ä»¶
 	 * 
 	 * @param path
-	 *            String ÎÄ¼ş¼ĞÂ·¾¶ Èç c:/fqf
+	 *            String æ–‡ä»¶å¤¹è·¯å¾„ å¦‚ c:/fqf
 	 */
 	public static boolean delAllFile(String path)
 	{
@@ -490,15 +490,15 @@ public class FileUtil
 			}
 			if (temp.isDirectory())
 			{
-				delAllFile(path + "/" + tempList[i]);// ÏÈÉ¾³ıÎÄ¼ş¼ĞÀïÃæµÄÎÄ¼ş
-				delFolder(path + "/" + tempList[i]);// ÔÙÉ¾³ı¿ÕÎÄ¼ş¼Ğ
+				delAllFile(path + "/" + tempList[i]);// å…ˆåˆ é™¤æ–‡ä»¶å¤¹é‡Œé¢çš„æ–‡ä»¶
+				delFolder(path + "/" + tempList[i]);// å†åˆ é™¤ç©ºæ–‡ä»¶å¤¹
 			}
 		}
 		return true;
 	}
 
 	/**
-	 * inputstream ´æÎªÎÄ¼ş£¬¾ÉÎÄ¼ş´æÔÚµÄ»°»á±»É¾³ı
+	 * inputstream å­˜ä¸ºæ–‡ä»¶ï¼Œæ—§æ–‡ä»¶å­˜åœ¨çš„è¯ä¼šè¢«åˆ é™¤
 	 * 
 	 * @param inputStream
 	 * @param destFile
@@ -537,7 +537,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ÅĞ¶ÏÎÄ¼şÊÇ·ñ´æÔÚ
+	 * åˆ¤æ–­æ–‡ä»¶æ˜¯å¦å­˜åœ¨
 	 * 
 	 * @param strfilename
 	 * @return
@@ -553,10 +553,10 @@ public class FileUtil
 	}
 
 	/**
-	 * ÅĞ¶ÏÎÄ¼şµÄÎÄ¼ş¼ĞÊÇ·ñ´æÔÚ
+	 * åˆ¤æ–­æ–‡ä»¶çš„æ–‡ä»¶å¤¹æ˜¯å¦å­˜åœ¨
 	 * 
 	 * @param strfilename
-	 *            ÎÄ¼şµÄÍêÕûÎÄ¼şÃû
+	 *            æ–‡ä»¶çš„å®Œæ•´æ–‡ä»¶å
 	 * @return
 	 */
 	public static boolean isExistFolderFromFile(String strfilename)
@@ -571,7 +571,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñ´æÔÚÎÄ¼ş¼Ğ,²»´æÔÚÔò»á³¥ÊÔ½øĞĞ´´½¨
+	 * åˆ¤æ–­æ˜¯å¦å­˜åœ¨æ–‡ä»¶å¤¹,ä¸å­˜åœ¨åˆ™ä¼šå¿è¯•è¿›è¡Œåˆ›å»º
 	 */
 	public static boolean isExistFolder(String strFolder)
 	{
@@ -582,7 +582,7 @@ public class FileUtil
 		File f = new File(strFolder);
 		if (!f.exists())
 		{
-			/* ´´½¨ÎÄ¼ş¼Ğ */
+			/* åˆ›å»ºæ–‡ä»¶å¤¹ */
 			if (f.mkdirs())
 			{
 				bReturn = true;
@@ -598,12 +598,12 @@ public class FileUtil
 	}
 
 	/**
-	 * »ñÈ¡ÎÄ¼şÃû
+	 * è·å–æ–‡ä»¶å
 	 * 
 	 * @param fullfilename
-	 *            ¡¡ÎÄ¼şµÄÍê³ÉÂ·¾¶Ãû»òURLµØÖ·
-	 * @return ÎÄ¼şÃû,Èç¹ûÍêÕûÂ·¾¶Àï²»°üÀ¨/»ò\ÔòÖ±½Ó·µ»Øfullfilename
-	 * @note Èç¹ûÊÇurlµØÖ·£¬ÔòÖ±½Ó°ÑurlÖĞµÄ\\:.µÈÌæ»»Îª_·µ»Ø
+	 *            ã€€æ–‡ä»¶çš„å®Œæˆè·¯å¾„åæˆ–URLåœ°å€
+	 * @return æ–‡ä»¶å,å¦‚æœå®Œæ•´è·¯å¾„é‡Œä¸åŒ…æ‹¬/æˆ–\åˆ™ç›´æ¥è¿”å›fullfilename
+	 * @note å¦‚æœæ˜¯urlåœ°å€ï¼Œåˆ™ç›´æ¥æŠŠurlä¸­çš„\\:.ç­‰æ›¿æ¢ä¸º_è¿”å›
 	 */
 	public static String getFileName(String fullfilename)
 	{
@@ -628,12 +628,12 @@ public class FileUtil
 	}
 
 	/**
-	 * ´æ´¢ÄÚÈİ
+	 * å­˜å‚¨å†…å®¹
 	 * 
 	 * @param filename
-	 *            ÎÄ¼şÃû£¬Èç¹û²»°üÀ¨/Â·¾¶£¬Ôò´æ´¢µ½´æ´¢¿¨Ä¿Â¼ÏÂ
+	 *            æ–‡ä»¶åï¼Œå¦‚æœä¸åŒ…æ‹¬/è·¯å¾„ï¼Œåˆ™å­˜å‚¨åˆ°å­˜å‚¨å¡ç›®å½•ä¸‹
 	 * @param filecontent
-	 *            Òª´æ´¢µÄÄÚÈİ
+	 *            è¦å­˜å‚¨çš„å†…å®¹
 	 */
 	public static void saveContent(String filename, String filecontent)
 	{
@@ -648,10 +648,10 @@ public class FileUtil
 	}
 
 	/**
-	 * ¶ÁÈ¡ÎÄ¼şµÄÄÚÈİ
+	 * è¯»å–æ–‡ä»¶çš„å†…å®¹
 	 * 
 	 * @param filename
-	 *            ÎÄ¼şÃû£¬Èç¹û²»°üÀ¨/Â·¾¶£¬Ôò´æ´¢µ½´æ´¢¿¨Ä¿Â¼ÏÂ
+	 *            æ–‡ä»¶åï¼Œå¦‚æœä¸åŒ…æ‹¬/è·¯å¾„ï¼Œåˆ™å­˜å‚¨åˆ°å­˜å‚¨å¡ç›®å½•ä¸‹
 	 * @return
 	 */
 	public static String readContent(String filename)
@@ -667,7 +667,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ¸ñÊ½»¯´óĞ¡
+	 * æ ¼å¼åŒ–å¤§å°
 	 */
 	public static String FormatFileSize(Context c, long size)
 	{
@@ -675,7 +675,7 @@ public class FileUtil
 	}
 
 	/**
-	 * »ñÈ¡ÎÄ¼ş±£´æÍêÕûÂ·¾¶
+	 * è·å–æ–‡ä»¶ä¿å­˜å®Œæ•´è·¯å¾„
 	 * 
 	 * @param urlPath
 	 * @return
@@ -688,7 +688,7 @@ public class FileUtil
 	}
 
 	/**
-	 * »ñÈ¡Í¼Æ¬ËõÂÔÍ¼ Ö»ÓĞAndroid2.1ÒÔÉÏ°æ±¾Ö§³Ö
+	 * è·å–å›¾ç‰‡ç¼©ç•¥å›¾ åªæœ‰Android2.1ä»¥ä¸Šç‰ˆæœ¬æ”¯æŒ
 	 * 
 	 * @param imgName
 	 * @param kind
@@ -715,7 +715,7 @@ public class FileUtil
 	}
 
 	/**
-	 * ´ÓAssetsÖĞ¶ÁÈ¡Í¼Æ¬
+	 * ä»Assetsä¸­è¯»å–å›¾ç‰‡
 	 */
 	@TargetApi(5)
 	public static Bitmap getImageFromAssetsFile(Activity activity, String fileName)
@@ -734,9 +734,9 @@ public class FileUtil
 
 		return image;
 	}
-	
+
 	/**
-	 * ´ÓAssetsÖĞ¶ÁÈ¡ÎÄ¼ş
+	 * ä»Assetsä¸­è¯»å–æ–‡ä»¶
 	 */
 	public static String readFileFromAssetsFile(Context context, String fileName)
 	{

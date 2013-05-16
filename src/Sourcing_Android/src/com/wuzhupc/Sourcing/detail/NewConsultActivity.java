@@ -12,9 +12,9 @@ import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
 /**
- * ĞÂ×ÉÑ¯ĞÅÏ¢
+ * æ–°å’¨è¯¢ä¿¡æ¯
  * @author wuzhu email:wuzhupc@gmail.com
- * @version ´´½¨Ê±¼ä£º2012-12-19 ÏÂÎç11:46:12
+ * @version åˆ›å»ºæ—¶é—´ï¼š2012-12-19 ä¸‹åˆ11:46:12
  */
 public class NewConsultActivity extends BaseActivity
 {
@@ -36,7 +36,7 @@ public class NewConsultActivity extends BaseActivity
 	}
 
 	/**
-	 * Ìá½»×ÉÑ¯ĞÅÏ¢
+	 * æäº¤å’¨è¯¢ä¿¡æ¯
 	 * @param v
 	 */
 	public void onSendClick(View v)
