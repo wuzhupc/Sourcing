@@ -15,6 +15,7 @@ import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.widget.MoreButton;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -212,7 +213,7 @@ public class ListBaseAdapter extends BaseAdapter
 		TextView summary_tv = (TextView) view.findViewById(R.id.listitem_base_summary_tv);// lbi_content_tv
 		ImageView titlePic_iv = (ImageView) view.findViewById(R.id.listitem_base_iv);// lbi_image_iv
 		title_tv.setText(vo.getTitle());
-		summary_tv.setText(vo.getNewssummary());
+		summary_tv.setText(Html.fromHtml(vo.getNewssummary()));
 
 		// 头条(且只有第一条才显示成头条样式)
 		if (position == 0 && !misfav && vo.isHeadline())

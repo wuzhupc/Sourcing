@@ -81,7 +81,7 @@ public class UserChangePwdActivity extends BaseActivity
 			displayToast(R.string.userchangepwd_pwd_hit);
 			return;
 		}
-		if(userVO.getPassword().equals(met_Pwd.getText().toString()))
+		if(!userVO.getPassword().equals(met_Pwd.getText().toString()))
 		{
 			met_Pwd.setText("");
 			met_Pwd.requestFocus();

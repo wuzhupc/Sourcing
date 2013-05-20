@@ -160,8 +160,8 @@ public class WebViewUtil
 	{
 		if (StringUtil.isEmpty(context))
 			return context;
-		String tmpStartStr = "<img ";
-		int index = context.toLowerCase().indexOf(tmpStartStr);
+		String tmpStartStr_img = "<img ";
+		int index = context.toLowerCase().indexOf(tmpStartStr_img);
 		if (index == -1)
 			return context;
 
@@ -171,7 +171,8 @@ public class WebViewUtil
 		StringBuilder sBuilder = new StringBuilder();
 //		String tmpRemoveStartStr = "style=\"";
 		String tmpRemoveEndStr = "\"";
-
+		String tmpRemoveEndStr2 = "'";
+		
 		String tmpsrc=" src=";
 		while (index != -1)
 		{
@@ -191,6 +192,8 @@ public class WebViewUtil
 			{
 				tmp = tmp.substring(index_src+tmpsrc.length()+1);
 				int index2 = tmp.indexOf(tmpRemoveEndStr);
+				if(index2==-1)
+					index2 = tmp.indexOf(tmpRemoveEndStr2);
 				if(index2!=-1)
 				{
 					src=tmp.substring(0,index2);
@@ -206,7 +209,7 @@ public class WebViewUtil
 				}
 			}
 			context = context.substring(index+tmpEndStr.length());
-			index = context.toLowerCase().indexOf(tmpStartStr);
+			index = context.toLowerCase().indexOf(tmpStartStr_img);
 		}
 		sBuilder.append(context);
 		return sBuilder.toString();

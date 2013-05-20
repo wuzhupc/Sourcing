@@ -10,6 +10,7 @@ import com.wuzhupc.Sourcing.vo.ConsultVO;
 import com.wuzhupc.Sourcing.vo.DeclareResultVO;
 import com.wuzhupc.Sourcing.vo.DeclareVO;
 import com.wuzhupc.Sourcing.vo.NotifierVO;
+import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.widget.MoreButton;
 
 import android.content.Context;
@@ -125,7 +126,7 @@ public class UserInfoAdapter extends BaseAdapter
 		TextView status_tv = (TextView)view.findViewById(R.id.listitem_audit_status_tv);
 		status_tv.setText(vo.getDeclareStatus());
 		DeclareResultVO resultVO = vo.getDeclareResultVO();
-		if(resultVO==null)
+		if(resultVO==null||StringUtil.isEmpty(resultVO.getDeclareresultcontent()))
 		{
 			view.findViewById(R.id.listitem_audit_result_ll).setVisibility(View.GONE);
 		}
@@ -158,7 +159,7 @@ public class UserInfoAdapter extends BaseAdapter
 		TextView status_tv = (TextView)view.findViewById(R.id.listitem_audit_status_tv);
 		status_tv.setText(vo.getAuditStatus());
 		AuditResultVO resultVO = vo.getAuditResultVO();
-		if(resultVO==null)
+		if(resultVO==null||StringUtil.isEmpty(resultVO.getAuditresultcontent()))
 		{
 			view.findViewById(R.id.listitem_audit_result_ll).setVisibility(View.GONE);
 		}
@@ -189,7 +190,7 @@ public class UserInfoAdapter extends BaseAdapter
 		TextView time_tv = (TextView) view.findViewById(R.id.listitem_consult_time_tv);
 		time_tv.setText(vo.getPublishtime());
 		ConsultResultVO resultVO = vo.getConsultResultVO();
-		if(resultVO==null)
+		if(resultVO==null||StringUtil.isEmpty(resultVO.getConsultresultcontent()))
 		{
 			view.findViewById(R.id.listitem_consult_result_ll).setVisibility(View.GONE);
 		}
