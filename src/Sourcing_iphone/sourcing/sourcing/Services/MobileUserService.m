@@ -110,7 +110,7 @@
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParamNSInteger:@"userid" paramValue:uservo.Userid];
     [creater setParam:@"username" paramValue:uservo.username];
-    [creater setParam:@"conetnt" paramValue:kcontent];
+    [creater setParam:@"content" paramValue:kcontent];
     [self getData:[creater createJson:_commandName] url:nil process:kshowprocess processcontent:kshowprocesscontent];
     
 }

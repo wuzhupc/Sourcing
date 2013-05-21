@@ -79,12 +79,20 @@
                 "type":"4"
             }},
             {"ChannelVO":{
+                "channelID":"25",
+                "channelName":"企业",
+                "fatherchannelID":"2",
+                "isdefault":"0",
+                "sort":"1",
+                "type":"5"
+            }},
+            {"ChannelVO":{
                 "channelID":"21",
                 "channelName":"职位",
                 "fatherchannelID":"2",
 		"mustusertypes":"1",
                 "isdefault":"0",
-                "sort":"1",
+                "sort":"2",
                 "type":"1"
             }},
             {"ChannelVO":{
@@ -93,7 +101,7 @@
 		"mustusertypes":"3",
                 "fatherchannelID":"2",
                 "isdefault":"0",
-                "sort":"2",
+                "sort":"3",
                 "type":"2"
             }},
             {"ChannelVO":{
@@ -101,7 +109,7 @@
                 "channelName":"培训机构",
                 "fatherchannelID":"2",
                 "isdefault":"0",
-                "sort":"3",
+                "sort":"4",
                 "type":"3"
             }},
             {"ChannelVO":{
@@ -109,7 +117,7 @@
                 "channelName":"项目",
                 "fatherchannelID":"2",
                 "isdefault":"0",
-                "sort":"4",
+                "sort":"5",
                 "type":"4"
             }},
             {"ChannelVO":{

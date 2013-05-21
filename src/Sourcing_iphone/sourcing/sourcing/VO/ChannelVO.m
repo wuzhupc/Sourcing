@@ -97,6 +97,10 @@
 {
     return self.fatherchannelID == TYPE_FATHER_PERSON && self.type == TYPE_PERSON_RESUME;
 }
+-(BOOL)isPerson_CompanyChannel
+{
+    return self.fatherchannelID == TYPE_FATHER_PERSON && self.type == TYPE_PERSON_COMPANY;
+}
 
 +(NSArray *)initChannelsFromAssets
 {

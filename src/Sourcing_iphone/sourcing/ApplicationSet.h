@@ -19,12 +19,11 @@
 
 @interface ApplicationSet : NSObject
 
-//是否已经注册过设备号
-@property BOOL isRegDevToken;
-//设备号
-@property (nonatomic,strong)NSString *deviceToken;
+
 //所有的栏目列表
 @property (nonatomic,strong)NSArray *channels;
+
+-(void)setDeviceToken:(NSString *)deviceToken;
 
 +(ApplicationSet *)shareData;
 

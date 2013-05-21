@@ -4,19 +4,19 @@
 <dict>
 	<!-- 服务端接口-->
 	<key>jsonurl</key>
-	<string>http://www.wuzhupc.com/Server/mobilejson/request.do</string>
+	<string>http://110.80.10.54:8008/api.aspx</string>
 	<!-- 链接地址前缀 -->
 	<key>baseurl</key>
-	<string>http://www.wuzhupc.com</string>
+	<string>http://110.80.10.54:8008</string>
 	<!-- 需要增另链接地址前缀的判断地址 -->
 	<key>baseurl_pro</key>
 	<string>/Server</string>
 	<!-- 忘记密码处理页面 -->
 	<key>url_forget_pwd_progress</key>
-	<string>http://www.wuzhupc.com/member/register</string>
+	<string>http://110.80.10.54:8008/getpwd.html</string>
 	<!-- 用户注册处理页面 -->
 	<key>url_reg_progress</key>
-	<string>http://www.wuzhupc.com/member/register</string>	
+	<string>http://110.80.10.54:8008/reg.html</string>	
 	<!-- 检查客户端版本  -->
 	<key>cmd_json_check_client_ver</key>
 	<string>mobilever_checkClientVer</string>
@@ -44,7 +44,12 @@
 	<!-- 获取项目列表  -->
 	<key>cmd_json_get_project_list</key>
 	<string>mobileinfo_getProjectList</string>
-	
+	<!--  获取企业列表 -->
+	<key>cmd_json_get_company_list</key>
+	<string>mobileinfo_getCompanyList</string>
+	<!--  获取企业详情 -->
+	<key>cmd_json_get_company_detail</key>
+	<string>mobileinfo_getCompanyDetail</string>
 	<!-- 获取职位详情  -->
 	<key>cmd_json_get_job_detail</key>
 	<string>mobileinfo_getJobDetail</string>
@@ -81,5 +86,8 @@
 	<!-- 获取用户推送信息 -->
 	<key>cmd_json_get_push_info</key>
 	<string>mobilepush_getPushInfo</string>
+	<!-- 获取用户推送信息 -->
+	<key>cmd_json_send_devicetoken</key>
+	<string>mobilepush_sendDeviceToken</string>
 </dict>
 </plist>

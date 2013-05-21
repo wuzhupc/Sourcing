@@ -12,6 +12,9 @@
 #import "ApplicationSet.h"
 #import "iVersion.h"
 #import "SettingUtil.h"
+#import "MobileUserService.h"
+#import "ResponseVO.h"
+#import "JsonParser.h"
 
 @implementation SourcingAppDelegate
 
@@ -189,23 +192,9 @@
     deviceTokenStr = [deviceTokenStr substringToIndex:[deviceTokenStr length]-1];
     //并且去掉空格
     deviceTokenStr = [deviceTokenStr stringByReplacingOccurrencesOfString:@" " withString:@""];
-    [ApplicationSet shareData].deviceToken = deviceTokenStr;
-    [self registerDeviceToken];
+    [[ApplicationSet shareData] setDeviceToken:deviceTokenStr];
     NSLog(@"My device Token is:%@",deviceTokenStr);
     [self setActivityTabBadge:3];
-}
-
--(void)registerDeviceToken
-{
-    //TODO
-//    if(![StringUtil isEmptyStr: [ApplicationSet sharedData].memberID]&&![StringUtil isEmptyStr: [ApplicationSet sharedData].deviceToken]&&
-//       [ApplicationSet sharedData].isRegisterDevToken==NO)
-//    {
-//        [ApplicationSet sharedData].isRegisterDevToken=YES;
-//        
-//        [MovementService regJsonDeviceToken:self tag:CINT_REQUEST_TAG_REGISTERDEVTOKEN];
-//    }
-    
 }
 
 -(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
@@ -222,6 +211,7 @@
                        [[userInfo objectForKey:@"aps"] objectForKey:@"badge"]];
     if (![StringUtil isEmptyStr:badge]) {
         [self setActivityTabBadge: [badge intValue]];
+        [self updateUserInfo];
     }
     
     NSLog(@"received badge number ---%@ ----",[[userInfo objectForKey:@"aps"] objectForKey:@"badge"]);
@@ -234,7 +224,6 @@
     // We can determine whether an application is launched as a result of the user tapping the action
     // button or whether the notification was delivered to the already-running application by examining
     // the application state.
-    
     //当程序运行时收到提示信息时弹出提示信息
     if (application.applicationState == UIApplicationStateActive) {
         application.applicationIconBadgeNumber = 0;
@@ -259,6 +248,44 @@
     UIViewController *viewController = [tabBarController.viewControllers objectAtIndex:2];
     if(viewController!=NULL)
         viewController.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", num];
+    [self updateUserInfo];
 }
 
+
+//更新用户信息
+-(void)updateUserInfo
+{
+    UserVO *uservo = [[ApplicationSet shareData] getUserVO];
+    if(uservo==nil)
+        return;
+    MobileUserService *service = [[MobileUserService alloc] initWithDelegate:self tag:CINT_TAG_UPDATEUSERINFO];
+    [service userLogin:uservo.useraccount password:uservo.password];
+}
+
+-(void)serviceResult:(ResponseVO *)result
+{
+    if (result==nil) {
+        return;
+    }
+    if(result.tag == CINT_TAG_UPDATEUSERINFO)
+    {
+        if([result isSucess])
+        {
+            ResponseVO *resp = [[ResponseVO alloc] init];
+            UserVO *uservo = [JsonParser parseJsonToEntity:result.msg respVO:&resp ref:nil];
+            if([resp isSucess])
+            {
+                [[ApplicationSet shareData] setLoginUserInfo:uservo saveinfo:YES];
+            }
+            else
+            {
+                NSLog(@"%@ updateUserInfo JsonParser parseJsonToEntity error:%@",[[self class] description],result.msg);
+            }
+        }
+        else
+        {
+            NSLog(@"%@ updateUserInfo error:%@",[[self class] description],result.msg);
+        }
+    }
+}
 @end

@@ -62,14 +62,6 @@
 
 -(void)checkUserLogin
 {
-    //DEBUG
-//    UserVO *u = [[UserVO alloc] init];
-//    [u setUseraccount:@"1"];
-//    [u setUserid:@"1"];
-//    [u setUsername:@"test"];
-//    [u setPassword:@"tset"];
-//    [UserVO saveLoginUserInfo:u];
-    //
     UserVO *userinfo  = [UserVO getLastLoginUserInfo];
     if(userinfo==nil)
         return;

@@ -148,6 +148,9 @@
 		327C4E6616AC2B8D005E6897 /* NewConsultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E6416AC2B8D005E6897 /* NewConsultViewController.m */; };
 		327C4E6716AC2B8D005E6897 /* NewConsultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 327C4E6516AC2B8D005E6897 /* NewConsultViewController.xib */; };
 		327C4E6B16AC3AB6005E6897 /* UIPlaceHolderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 327C4E6A16AC3AB6005E6897 /* UIPlaceHolderTextView.m */; };
+		3292CC69174B3C41001A1950 /* MobilePushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3292CC68174B3C41001A1950 /* MobilePushService.m */; };
+		3292CC6C174B5D61001A1950 /* CompanyVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3292CC6B174B5D61001A1950 /* CompanyVO.m */; };
+		3292CC6F174B5DA4001A1950 /* CompanyDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3292CC6E174B5DA4001A1950 /* CompanyDetailVO.m */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -481,6 +484,12 @@
 		327C4E6516AC2B8D005E6897 /* NewConsultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewConsultViewController.xib; sourceTree = "<group>"; };
 		327C4E6916AC3AB6005E6897 /* UIPlaceHolderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UIPlaceHolderTextView.h; path = sourcing/other/UIPlaceHolderTextView.h; sourceTree = "<group>"; };
 		327C4E6A16AC3AB6005E6897 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = sourcing/other/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
+		3292CC67174B3C41001A1950 /* MobilePushService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobilePushService.h; path = sourcing/Services/MobilePushService.h; sourceTree = "<group>"; };
+		3292CC68174B3C41001A1950 /* MobilePushService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobilePushService.m; path = sourcing/Services/MobilePushService.m; sourceTree = "<group>"; };
+		3292CC6A174B5D60001A1950 /* CompanyVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompanyVO.h; path = sourcing/VO/CompanyVO.h; sourceTree = "<group>"; };
+		3292CC6B174B5D61001A1950 /* CompanyVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompanyVO.m; path = sourcing/VO/CompanyVO.m; sourceTree = "<group>"; };
+		3292CC6D174B5DA4001A1950 /* CompanyDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompanyDetailVO.h; path = sourcing/VO/CompanyDetailVO.h; sourceTree = "<group>"; };
+		3292CC6E174B5DA4001A1950 /* CompanyDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompanyDetailVO.m; path = sourcing/VO/CompanyDetailVO.m; sourceTree = "<group>"; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -886,6 +895,8 @@
 				32120AD6168B2E5900DBF915 /* ConsultResultVO.h */,
 				32120AD7168B2E5900DBF915 /* ConsultResultVO.m */,
 				32120AD9168B2EE600DBF915 /* ConsultVO.h */,
+				3292CC6A174B5D60001A1950 /* CompanyVO.h */,
+				3292CC6B174B5D61001A1950 /* CompanyVO.m */,
 				32120ADA168B2EE600DBF915 /* ConsultVO.m */,
 				32120ADC168B2FD500DBF915 /* DeclareResultVO.h */,
 				32120ADD168B2FD500DBF915 /* DeclareResultVO.m */,
@@ -917,6 +928,8 @@
 				32120AFE168B384C00DBF915 /* TrainVO.m */,
 				32120AC4168ADC0800DBF915 /* UserVO.h */,
 				32120AC5168ADC0900DBF915 /* UserVO.m */,
+				3292CC6D174B5DA4001A1950 /* CompanyDetailVO.h */,
+				3292CC6E174B5DA4001A1950 /* CompanyDetailVO.m */,
 			);
 			name = VO;
 			path = ..;
@@ -997,6 +1010,8 @@
 				32D6CB381691D4FE0076B2B1 /* MobileUserService.m */,
 				32D6CB3A16928DB00076B2B1 /* MobileInfoService.h */,
 				32D6CB3B16928DB00076B2B1 /* MobileInfoService.m */,
+				3292CC67174B3C41001A1950 /* MobilePushService.h */,
+				3292CC68174B3C41001A1950 /* MobilePushService.m */,
 			);
 			name = Services;
 			path = ..;
@@ -1594,6 +1609,9 @@
 				32D0454716B7FA6F009BE470 /* MGTableBox.m in Sources */,
 				32D0454816B7FA6F009BE470 /* MGTableBoxStyled.m in Sources */,
 				32D0454C16BA5208009BE470 /* SettingUtil.m in Sources */,
+				3292CC69174B3C41001A1950 /* MobilePushService.m in Sources */,
+				3292CC6C174B5D61001A1950 /* CompanyVO.m in Sources */,
+				3292CC6F174B5DA4001A1950 /* CompanyDetailVO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1621,7 +1639,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: å¼  é¸¿é£ (T8H8Z7SKH7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: å¼  é¸¿é£ (T8H8Z7SKH7)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1636,6 +1655,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "1F8BBCC4-BEBA-4354-A5D7-499C224D301B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "1F8BBCC4-BEBA-4354-A5D7-499C224D301B";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1649,7 +1670,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zhang hongfei (8LQCFBPEX7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zhang hongfei (8LQCFBPEX7)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -1657,6 +1679,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "D6AA9467-089B-4913-BFFA-72FDDE2F678C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6AA9467-089B-4913-BFFA-72FDDE2F678C";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1665,10 +1689,12 @@
 		32120A8016897C7A00DBF915 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: å¼  é¸¿é£ (T8H8Z7SKH7)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sourcing/sourcing-Prefix.pch";
 				INFOPLIST_FILE = "sourcing/sourcing-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1F8BBCC4-BEBA-4354-A5D7-499C224D301B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1676,10 +1702,14 @@
 		32120A8116897C7A00DBF915 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: zhang hongfei (8LQCFBPEX7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: zhang hongfei (8LQCFBPEX7)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "sourcing/sourcing-Prefix.pch";
 				INFOPLIST_FILE = "sourcing/sourcing-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D6AA9467-089B-4913-BFFA-72FDDE2F678C";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D6AA9467-089B-4913-BFFA-72FDDE2F678C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

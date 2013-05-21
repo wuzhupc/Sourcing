@@ -205,6 +205,9 @@
     }else if([cvo isPerson_ProjectChannel])
     {
         [service getProjectList:ksearch bottomid:@"0"];
+    }else if([cvo isPerson_CompanyChannel])
+    {
+        [service getCompanyList:ksearch bottomid:@"0"];
     }else
     {
         [service getTrainList:ksearch bottomid:@"0"];
@@ -231,6 +234,9 @@
     }else if([cvo isPerson_ProjectChannel])
     {
         [service getProjectList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
+    }else if([cvo isPerson_CompanyChannel])
+    {
+        [service getCompanyList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];
     }else
     {
         [service getTrainList:ksearch bottomid:[NSString stringWithFormat:@"%d",[self getBottomid]]];

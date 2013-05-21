@@ -7,6 +7,8 @@
 //
 
 #import "ApplicationSet.h"
+#import "StringUtil.h"
+#import "MobilePushService.h"
 
 
 @interface ApplicationSet()
@@ -14,14 +16,13 @@
 @private
     //用户信息
     UserVO *_userVO;
+    //设备号
+    NSString *_deviceToken;
 }
 @end
 
 
 @implementation ApplicationSet
-
-@synthesize isRegDevToken=isRegDevToken_;
-@synthesize deviceToken = deviceToken_;
 @synthesize channels = channels_;
 
 static ApplicationSet *_shareData = nil;
@@ -45,14 +46,43 @@ static ApplicationSet *_shareData = nil;
     return  self;
 }
 
+-(void)setDeviceToken:(NSString *)deviceToken
+{
+    if(_userVO!=nil&&![StringUtil isEmptyStr:deviceToken])
+    {
+        MobilePushService *service = [[MobilePushService alloc] initWithDelegate:nil tag:0];
+        [service sendDeviceToken:_userVO.Userid devicetoken:deviceToken];
+    }
+    _deviceToken = deviceToken;
+}
+
 -(void)setLoginUserInfo:(UserVO *)kuserVO saveinfo:(BOOL)ksave
 {
-    //TODO 是否在这里重新判断要不要发送deviceToken
+    //是否在这里重新判断要不要发送deviceToken
+    if((_userVO==nil&&kuserVO!=nil)||(_userVO!=nil&&kuserVO==nil)||
+       (_userVO!=nil&&kuserVO!=nil&&_userVO.Userid!=kuserVO.Userid))
+    {
+        MobilePushService *service = [[MobilePushService alloc] initWithDelegate:nil tag:0];
+        if(![StringUtil isEmptyStr:_deviceToken])
+        {
+            if(_userVO!=nil)
+            {
+                //清除旧的devicetoken
+                [service sendDeviceToken:_userVO.Userid devicetoken:@""];
+            }
+            if(kuserVO!=nil)
+            {
+                //设置新的设备
+                [service sendDeviceToken:kuserVO.Userid devicetoken:_deviceToken];
+            }
+        }
+    }
     _userVO = kuserVO;
     if (ksave) {
         [UserVO saveLoginUserInfo:kuserVO];
     }
 }
+
 -(UserVO *)getUserVO
 {
     return _userVO;

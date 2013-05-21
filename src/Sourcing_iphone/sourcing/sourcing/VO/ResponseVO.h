@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define CINT_CODE_SUCESS    0
-#define CINT_CODE_ERROR     1
+#define CINT_CODE_SUCESS    1
+#define CINT_CODE_ERROR     0
 
 @interface ResponseVO : NSObject
 

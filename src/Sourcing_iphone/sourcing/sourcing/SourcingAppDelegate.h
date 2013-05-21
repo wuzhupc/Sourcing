@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseServiceDelegate.h"
 
-@interface SourcingAppDelegate : UIResponder <UIApplicationDelegate>
+#define CINT_TAG_UPDATEUSERINFO 10001
+
+@interface SourcingAppDelegate : UIResponder <UIApplicationDelegate,BaseServiceDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

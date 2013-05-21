@@ -16,6 +16,7 @@
 #import "ResumeVO.h"
 #import "JobVO.h"
 #import "ProjectVO.h"
+#import "CompanyVO.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -108,6 +109,12 @@
             [self.laPublishTime setText:vo.publishtime];
             [self.laSummary setText:vo.projectstatus];
             [self.laTitle setText:vo.projectname];
+        }else if([_dataVO isMemberOfClass:[CompanyVO class]])
+        {
+            CompanyVO *vo=(CompanyVO *)_dataVO;
+            [self.laPublishTime setText:vo.industry];
+            [self.laTitle setText:vo.companyname];
+            [self.laSummary setText:@""];
         }
     }else
     {

@@ -23,7 +23,7 @@
 
 #define CBOOL_DEBUG_JOSN YES
 //是否读取本地assets
-#define CBOOL_READASSETS YES
+#define CBOOL_READASSETS NO
 
 @synthesize tag2 = _tag2;
 
@@ -117,14 +117,35 @@
             [SVProgressHUD showWithStatus:mshowprocesscontent maskType:SVProgressHUDMaskTypeClear];
         }
     }
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setTag:_tag];
-    [request setPostValue:mjson forKey:@"requestjson"];
-    [request setDelegate:self];
     [request setRequestMethod:@"POST"];
+    [request setPostValue:mjson forKey:@"request"];
+    //[request setDelegate:self];
+    //[request setDidFailSelector:@selector(requestFailed:)];
+    //[request setDidFinishSelector:@selector(requestFinished:)];
     [request setTimeOutSeconds:20];
+    
+    [request setCompletionBlock:^{
+         [self requestFinished:request];
+    }];
+    [request setFailedBlock:^{
+        //NSError *error = [request error];
+        [self requestFailed:request];
+    }];
     [request startAsynchronous];
+//    [request startSynchronous];
+//    
+//   NSError *error = [request error];
+//    if(error)
+//    {
+//        [self requestFailed:request];
+//    }else
+//    {
+//        [self requestFinished:request];
+//    }
 }
+
 
 -(void)requestFailed:(ASIHTTPRequest *)request
 {
@@ -162,7 +183,7 @@
 {
     if (CBOOL_DEBUG_JOSN)
     {
-        NSLog(@"BaseJsonService sendServiceFailInfo:%@",msg);
+        NSLog(@"BaseJsonService sendServiceFailInfo:%@ %@",_commandName,msg);
     }
     if(!_delegate) return;
     if ([_delegate respondsToSelector:@selector(serviceResult:)])
@@ -177,7 +198,7 @@
 {
     if (CBOOL_DEBUG_JOSN)
     {
-        NSLog(@"BaseJsonService sendServiceSucessInfo:%@",conent);
+        NSLog(@"BaseJsonService sendServiceSucessInfo:%@ %@",_commandName,conent);
     }
     if(!_delegate) return;
     if ([_delegate respondsToSelector:@selector(serviceResult:)])

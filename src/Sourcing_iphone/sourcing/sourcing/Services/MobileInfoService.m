@@ -124,6 +124,18 @@
     [self getData:[creater createJson:_commandName] url:nil];
     
 }
+-(void)getCompanyList:(NSString *)ksearchkey bottomid:(NSString *)kid
+{
+    _commandName = [DataInterfaceUtil getDataInterface:@"cmd_json_get_company_list"];
+    [self setAssetsFileInfo:_commandName suffix:nil];
+    JsonCreater *creater = [[JsonCreater alloc] init];
+    [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
+    [creater setParam:@"searchkey" paramValue:ksearchkey];
+    [creater setParam:@"pagesize" paramValue:CNUM_PAGE_SIZE];
+    [creater setParam:@"bottomid" paramValue:kid];
+    [self getData:[creater createJson:_commandName] url:nil];
+    
+}
 -(void)getJobDetail:(NSString *)kid
 {
     _commandName = [DataInterfaceUtil getDataInterface:@"cmd_json_get_job_detail"];
@@ -131,6 +143,16 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParam:@"jobid" paramValue:kid];
+    [self getData:[creater createJson:_commandName] url:nil];
+    
+}
+-(void)getCompanyDetail:(NSString *)kid
+{
+    _commandName = [DataInterfaceUtil getDataInterface:@"cmd_json_get_company_detail"];
+    [self setAssetsFileInfo:_commandName suffix:nil];
+    JsonCreater *creater = [[JsonCreater alloc] init];
+    [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
+    [creater setParam:@"companyid" paramValue:kid];
     [self getData:[creater createJson:_commandName] url:nil];
     
 }

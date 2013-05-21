@@ -45,5 +45,6 @@
 -(void)getResumeDetail:(NSString *)kid;
 -(void)getTrainDetail:(NSString *)kid;
 -(void)getProjectDetail:(NSString *)kid;
-
+-(void)getCompanyDetail:(NSString *)kid;
+-(void)getCompanyList:(NSString *)ksearchkey bottomid:(NSString *)kid;
 @end

@@ -121,30 +121,26 @@
 -(NSArray *)infoTypes
 {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:CINT_USERINFOTYPE_MAXCOUNT];
-    [result addObject:[NSNumber numberWithInt:1]];
-    [result addObject:[NSNumber numberWithInt:[self hasConsult]?1:0]];
-    [result addObject:[NSNumber numberWithInt:[self hasAudit]?1:0]];
-    [result addObject:[NSNumber numberWithInt:[self hasDeclare]?1:0]];
-    [result addObject:[NSNumber numberWithInt:[self hasNotifier]?1:0]];
+    [result addObject:[NSNumber numberWithInteger:USER_INFO_TYPE_FAV]];
+    if([self hasConsult])
+        [result addObject:[NSNumber numberWithInteger:USER_INFO_TYPE_CONSULT]];
+    if([self hasAudit])
+        [result addObject:[NSNumber numberWithInteger:USER_INFO_TYPE_AUDIT]];
+    if([self hasDeclare])
+        [result addObject:[NSNumber numberWithInteger:USER_INFO_TYPE_DECLARE]];
+    if([self hasNotifier])
+        [result addObject:[NSNumber numberWithInteger:USER_INFO_TYPE_NOTIFIER]];
     return result;
 }
 
 -(USER_INFO_TYPE)getInfoType:(NSInteger)kindex
 {
+    //第一个默认是收藏
     if(kindex<=0||kindex>=CINT_USERINFOTYPE_MAXCOUNT)
         return USER_INFO_TYPE_FAV;
     
     NSArray *array = [self infoTypes];
-    NSInteger result = USER_INFO_TYPE_FAV;
-    for(NSInteger i = 0;i<kindex&&i<CINT_USERINFOTYPE_MAXCOUNT&&result<CINT_USERINFOTYPE_MAXCOUNT;i++)
-    {
-        NSNumber *number = [array objectAtIndex:i];
-        if([number integerValue]==1)
-            result++;
-        else
-            result += 2;
-    }
-    return result;
+    return [[array objectAtIndex:kindex] integerValue];
 }
 
 -(NSString *)getInfoMsg:(NSInteger)kindex

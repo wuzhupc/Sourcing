@@ -33,7 +33,8 @@ enum TYPE_PERSON
     TYPE_PERSON_POSITION = 1,
     TYPE_PERSON_RESUME = 2,
     TYPE_PERSON_TRAIN = 3,
-    TYPE_PERSON_PROJECT = 4
+    TYPE_PERSON_PROJECT = 4,
+    TYPE_PERSON_COMPANY = 5
 };
 
 enum TYPE_MORE
@@ -73,6 +74,7 @@ enum TYPE_MORE
 -(BOOL)isPerson_TrainChannel;
 -(BOOL)isPerson_ProjectChannel;
 -(BOOL)isPerson_ResumeChannel;
+-(BOOL)isPerson_CompanyChannel;
 
 +(NSArray *)initChannelsFromAssets;
 +(NSArray *)getFatherChannels:(NSArray *)kchannels;
