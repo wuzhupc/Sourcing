@@ -166,7 +166,8 @@ public class ImageUtil
 			bm = BitmapFactory.decodeFile(filename, options);
 		} catch (Exception e)
 		{
-			Log.e(Tag, e.getMessage());
+			e.printStackTrace();
+			//Log.e(Tag, e.getMessage());
 			bm = null;
 		}
 		return bm;

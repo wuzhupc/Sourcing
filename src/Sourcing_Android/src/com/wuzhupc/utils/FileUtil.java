@@ -231,7 +231,8 @@ public class FileUtil
 			fIn.read(buffer);
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.getMessage());
+			e.printStackTrace();
+			//Log.e(TAG, e.getMessage());
 		} finally
 		{
 			try
@@ -240,7 +241,7 @@ public class FileUtil
 					fIn.close();
 			} catch (IOException e)
 			{
-				Log.e(TAG, e.getMessage());
+				e.printStackTrace();
 			}
 		}
 		return buffer;
@@ -300,7 +301,8 @@ public class FileUtil
 			}
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.getMessage());
+			e.printStackTrace();
+			//Log.e(TAG, e.getMessage());
 		} finally
 		{
 			try
@@ -313,7 +315,8 @@ public class FileUtil
 					fIn.close();
 			} catch (IOException e)
 			{
-				Log.e(TAG, e.getMessage());
+				e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 			}
 		}
 		return result.toString();
@@ -332,7 +335,8 @@ public class FileUtil
 			fOut.write(data);
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.getMessage());
+			e.printStackTrace();
+			//Log.e(TAG, e.getMessage());
 		} finally
 		{
 			try
@@ -341,8 +345,8 @@ public class FileUtil
 					fOut.close();
 			} catch (IOException e)
 			{
-
-				Log.e(TAG, e.getMessage());
+				e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 			}
 		}
 	}
@@ -383,7 +387,8 @@ public class FileUtil
 			osw.flush();
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.toString());
+			e.printStackTrace();
+			//Log.e(TAG, e.toString());
 		} finally
 		{
 			try
@@ -394,8 +399,9 @@ public class FileUtil
 					fOut.close();
 			} catch (IOException e)
 			{
+				e.printStackTrace();
 
-				Log.e(TAG, e.getMessage());
+				//Log.e(TAG, e.getMessage());
 			}
 		}
 	}
@@ -446,7 +452,8 @@ public class FileUtil
 
 		} catch (Exception e)
 		{
-			Log.e("delFolder", "删除文件夹操作出错:" + e.getMessage());
+			e.printStackTrace();
+			//Log.e("delFolder", "删除文件夹操作出错:" + e.getMessage());
 			return false;
 		}
 	}
@@ -760,7 +767,8 @@ public class FileUtil
 				}
 			} catch (Exception e)
 			{
-				Log.e(TAG,"readFileFromAssetsFile error:"+ e.getMessage());
+				e.printStackTrace();
+				//Log.e(TAG,"readFileFromAssetsFile error:"+ e.getMessage());
 			} finally
 			{
 				try
@@ -771,7 +779,8 @@ public class FileUtil
 						isr.close();
 				} catch (IOException e)
 				{
-					Log.e(TAG,"readFileFromAssetsFile IOError:"+ e.getMessage());
+					e.printStackTrace();
+					//Log.e(TAG,"readFileFromAssetsFile IOError:"+ e.getMessage());
 				}
 			}
 			is.close();

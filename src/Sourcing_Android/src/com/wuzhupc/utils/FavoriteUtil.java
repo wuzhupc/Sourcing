@@ -78,7 +78,8 @@ public class FavoriteUtil
 			}
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.getMessage());
+			e.printStackTrace();
+			//Log.e(TAG, e.getMessage());
 		}
 		finally
 		{
@@ -92,7 +93,8 @@ public class FavoriteUtil
 					fIn.close();
 			} catch (IOException e)
 			{
-				Log.e(TAG, e.getMessage());
+				e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 			}
 		}		
 	}
@@ -187,7 +189,8 @@ public class FavoriteUtil
 			osw.flush();
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.toString());
+			e.printStackTrace();
+			//Log.e(TAG, e.toString());
 		} finally
 		{
 			try
@@ -199,7 +202,8 @@ public class FavoriteUtil
 			} catch (IOException e)
 			{
 
-				Log.e(TAG, e.getMessage());
+				e.printStackTrace();
+				//Log.e(TAG, e.getMessage());
 			}
 		}
 		

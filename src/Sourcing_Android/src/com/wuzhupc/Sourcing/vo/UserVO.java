@@ -352,7 +352,8 @@ public class UserVO extends BaseVO
 			result = true;
 		} catch (Exception e)
 		{
-			Log.e(TAG, e.getMessage());
+			e.printStackTrace();
+			//Log.e(TAG, e.getMessage());
 		} finally
 		{
 			if (oos != null)
@@ -363,7 +364,8 @@ public class UserVO extends BaseVO
 					oos = null;
 				} catch (Exception e2)
 				{
-					Log.e(TAG, e2.getMessage());
+					e2.printStackTrace();
+					//Log.e(TAG, e2.getMessage());
 				}
 			}
 			if (fos != null)
@@ -374,7 +376,8 @@ public class UserVO extends BaseVO
 					fos = null;
 				} catch (Exception e2)
 				{
-					Log.e(TAG, e2.getMessage());
+					e2.printStackTrace();
+					//Log.e(TAG, e2.getMessage());
 				}
 			}
 		}
@@ -400,7 +403,7 @@ public class UserVO extends BaseVO
 				vo = (UserVO) ois.readObject();
 			} catch (Exception e)
 			{
-				Log.e(TAG, e.getMessage());
+				//Log.e(TAG, e.getMessage());
 			} finally
 			{
 				if (ois != null)
@@ -411,7 +414,7 @@ public class UserVO extends BaseVO
 						ois = null;
 					} catch (Exception e2)
 					{
-						Log.e(TAG, e2.getMessage());
+						//Log.e(TAG, e2.getMessage());
 					}
 				}
 				if (fis != null)
@@ -422,7 +425,7 @@ public class UserVO extends BaseVO
 						fis = null;
 					} catch (Exception e2)
 					{
-						Log.e(TAG, e2.getMessage());
+						//Log.e(TAG, e2.getMessage());
 					}
 				}
 			}

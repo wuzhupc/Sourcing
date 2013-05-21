@@ -38,7 +38,8 @@ public class SerializeUtil
 			//objBody = new String(bytes);
 		} catch (IOException e)
 		{
-			Log.e(TAG, e.toString());
+			e.printStackTrace();
+			//Log.e(TAG, e.toString());
 		} finally
 		{
 			try
@@ -49,7 +50,8 @@ public class SerializeUtil
 					baops.close();
 			} catch (IOException e)
 			{
-				Log.e(TAG, e.toString());
+				e.printStackTrace();
+				//Log.e(TAG, e.toString());
 			}
 		}
 		return objBody;
@@ -76,10 +78,12 @@ public class SerializeUtil
 			obj = ois.readObject();
 		} catch (IOException e)
 		{
-			Log.e(TAG, e.toString());
+			e.printStackTrace();
+			//Log.e(TAG, e.toString());
 		} catch (ClassNotFoundException e)
 		{
-			Log.e(TAG, e.toString());
+			e.printStackTrace();
+			//Log.e(TAG, e.toString());
 		} finally
 		{
 			try
@@ -88,7 +92,8 @@ public class SerializeUtil
 					ois.close();
 			} catch (IOException e)
 			{
-				Log.e(TAG, e.toString());
+				e.printStackTrace();
+				//Log.e(TAG, e.toString());
 			}
 		}
 
