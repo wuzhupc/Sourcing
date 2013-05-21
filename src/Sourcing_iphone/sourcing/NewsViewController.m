@@ -20,6 +20,7 @@
 #import "ToastHintUtil.h"
 #import "StringUtil.h"
 #import "NewsDetailViewController.h"
+#import "CacheUtil.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -260,7 +261,8 @@
     if(result.tag2 != vo.ChannelID)
     {
         if ([result isSucess]&&result.tag == CINT_TAG_LOADNEWDATA) {
-            //TODO 缓存数据
+            //缓存数据
+            [CacheUtil cacheContent:[ChannelVO getChannel:subChannels WithChannelID:result.tag2] content:result.msg];
         }
         return;
     }
@@ -278,6 +280,7 @@
     }
     if (result.tag == CINT_TAG_LOADNEWDATA) {
         [self setTableViewData:list];
+        [CacheUtil cacheContent:vo content:result.msg];
     }else
     {
         [self addTableViewData:list];
@@ -286,6 +289,8 @@
 
 -(void)BrowserTabView:(BrowserTabView *)browserTabView didSelecedAtIndex:(NSUInteger)index
 {
+    BOOL isfirstload = browserTabView.isfirstload;
+    [browserTabView setIsfirstload:NO];
     if (subChannels==0||index>[subChannels count]||nowSelChannel == index) {
         return;
     }
@@ -294,8 +299,22 @@
     //切换时清除表数据
     [prTableView setUpdateRefreshDate:nil];
     [self setTableViewData:nil];
-    //TODO 读取缓存数据
+    //读取缓存数据    
     nowSelChannel = index;
+    NSString *cachecontent =[CacheUtil getCacheContent:newselVO];
+    if(![StringUtil isEmptyStr:cachecontent])
+    {
+        ResponseVO *rvo = [[ResponseVO alloc] init];
+        NSMutableArray *list = [JsonParser parseJsonToList:cachecontent respVO:&rvo ref:nil];
+        if([rvo isSucess])
+        {
+            [self setTableViewData:list];
+            if(!isfirstload)
+            {
+                return;
+            }
+        }
+    }
     [prTableView launchRefreshing];
 }
 

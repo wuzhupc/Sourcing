@@ -9,7 +9,7 @@
 #import "ApplicationSet.h"
 #import "StringUtil.h"
 #import "MobilePushService.h"
-
+#import "SettingUtil.h"
 
 @interface ApplicationSet()
 {
@@ -46,9 +46,17 @@ static ApplicationSet *_shareData = nil;
     return  self;
 }
 
+-(void)setPushSetting:(BOOL)allowpush
+{
+    if(_userVO==nil||[StringUtil isEmptyStr:_deviceToken])
+        return;
+    MobilePushService *service = [[MobilePushService alloc] initWithDelegate:nil tag:0];
+    [service sendDeviceToken:_userVO.Userid devicetoken:(allowpush?_deviceToken:@"")];
+}
+
 -(void)setDeviceToken:(NSString *)deviceToken
 {
-    if(_userVO!=nil&&![StringUtil isEmptyStr:deviceToken])
+    if(_userVO!=nil)
     {
         MobilePushService *service = [[MobilePushService alloc] initWithDelegate:nil tag:0];
         [service sendDeviceToken:_userVO.Userid devicetoken:deviceToken];
@@ -70,7 +78,7 @@ static ApplicationSet *_shareData = nil;
                 //清除旧的devicetoken
                 [service sendDeviceToken:_userVO.Userid devicetoken:@""];
             }
-            if(kuserVO!=nil)
+            if(kuserVO!=nil&&[SettingUtil getPushSetting])
             {
                 //设置新的设备
                 [service sendDeviceToken:kuserVO.Userid devicetoken:_deviceToken];

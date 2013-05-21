@@ -16,12 +16,14 @@
 #import "NewsNormalCell.h"
 #import "NewsHeadlineCell.h"
 #import "NewsNoPicCell.h"
-
+#import "FileUtil.h"
+#import "TimeUtil.h"
 
 @interface NewsVO ()
 {
 @private
     NSInteger newsid;
+    NSString *newssummary;
 }
 
 @end
@@ -29,7 +31,7 @@
 @implementation NewsVO
 
 @synthesize headline = headline_;
-@synthesize newssummary = newssummary_;
+//@synthesize newssummary = newssummary_;
 @synthesize title = title_;
 @synthesize titlepic = titlepic_;
 @synthesize newstype = newstype_;
@@ -52,6 +54,21 @@
 
 #pragma mark - public methods
 
+-(void)setNewssummary:(NSString *)summary
+{
+    if([StringUtil isEmptyStr:summary])
+    {
+        newssummary = summary;
+        return;
+    }
+    newssummary =[summary stringByReplacingOccurrencesOfString:@"&nbsp;" withString:@" "];
+    newssummary = [newssummary stringByReplacingOccurrencesOfString:@"\r\n" withString:@" "];
+}
+-(NSString *)getNewssummary
+{
+    return newssummary;
+}
+
 -(BOOL)isHeadline
 {
     if([StringUtil isEmpty:self.headline])
@@ -71,6 +88,19 @@
 -(void)setHtmlToShow:(DetailInfoCompleteBlock)kcomblock failure:(DetailInfoErrorBlock)kerrorblock
 {
     [super setHtmlToShow:kcomblock failure:kerrorblock];
+    //判断读取缓存
+    NSError* error = nil;
+    NSString *cachecontent = [NSString stringWithContentsOfFile:[self getCacheFileName] encoding:NSUTF8StringEncoding error:&error];
+    if(error==nil&&![StringUtil isEmptyStr:cachecontent])
+    {
+        ResponseVO *rvo = [[ResponseVO alloc] init];
+        NewsDetailVO *vo = [JsonParser parseJsonToEntity:cachecontent respVO:&rvo ref:nil];
+        if([rvo isSucess])
+        {
+            if(_comblock) _comblock(vo);
+            return;
+        }
+    }
     MobileInfoService *service = [[MobileInfoService alloc] initWithDelegate:self tag:CINT_TAG_GETNEWSDETAIL];
     service.tag2 = newsid;
     [service getNewsDetail:[NSString stringWithFormat:@"%d",self.newstype] newsid:[NSString stringWithFormat:@"%d",newsid]];
@@ -136,6 +166,12 @@
     return cell;
 }
 
+-(NSString *)getCacheFileName
+{
+    NSString *ptime = [TimeUtil stringFromDateWithFormat:[TimeUtil dateFromString:self.publishtime] format:@"yyyyMMddHHmmss"];
+    return [FileUtil createFilePathForLocation:FileDirectoryDocuments withFileName:[NSString stringWithFormat:@"nd%d_%@",self.Newsid,ptime] withExtension:@"cache"];
+}
+
 #pragma mark - BaseServiceDelegate
 -(void)serviceResult:(ResponseVO *)result
 {
@@ -146,6 +182,8 @@
             NewsDetailVO *vo = [JsonParser parseJsonToEntity:result.msg respVO:&rvo ref:nil];
             if([rvo isSucess])
             {
+                //缓存
+                [result.msg writeToFile:[self getCacheFileName] atomically:YES encoding:NSUTF8StringEncoding error:nil];
                 if(_comblock) _comblock(vo);
             }
             else

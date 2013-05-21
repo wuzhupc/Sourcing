@@ -53,6 +53,7 @@ static NSString *kReuseIdentifier = @"UserIndentifier";
 @synthesize tabViewBackImage;
 @synthesize selectedTabIndex;
 @synthesize tabsArray,tabFramesArray;
+@synthesize isfirstload;
 
 @synthesize reuseQueue;
 @synthesize delegate;
@@ -64,6 +65,7 @@ static NSString *kReuseIdentifier = @"UserIndentifier";
     self = [super init];
     if (self) {
         self.frame = kDefaultFrame;
+        isfirstload = YES;
         tabFramesArray = [[NSMutableArray alloc]initWithCapacity:0 ];
         
         self.tabViewBackImage = [UIImage imageNamed:@"tab_background.png"]; 

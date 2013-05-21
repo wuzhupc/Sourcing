@@ -43,7 +43,7 @@
     if([StringUtil isEmpty:kformat])
     {
         //zzz表示时区，zzz可以删除，这样返回的日期字符将不包含时区信息 +0000。
-        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         return [dateFormatter stringFromDate:date];
     }
     [dateFormatter setDateFormat:kformat];

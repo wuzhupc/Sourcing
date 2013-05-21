@@ -19,7 +19,7 @@
 @property (nonatomic,strong)NSString *titlepic;
 @property (nonatomic,strong)NSString *titlepic_small;
 @property (nonatomic,strong)NSString *publishtime;
-@property (nonatomic,strong)NSString *newssummary;
+//@property (nonatomic,strong)NSString *newssummary;
 @property (nonatomic,strong)NSString *auther;
 @property (nonatomic,strong)NSString *source;
 @property (nonatomic)NSInteger readernum;
@@ -27,6 +27,9 @@
 
 -(void)setNewsid:(NSInteger )kid;
 -(NSInteger )Newsid;
+
+-(void)setNewssummary:(NSString *)summary;
+-(NSString *)getNewssummary;
 
 -(BOOL)isHeadline;
 

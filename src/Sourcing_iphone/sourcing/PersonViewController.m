@@ -24,6 +24,7 @@
 #import "NewsDetailViewController.h"
 #import "ProjectCell.h"
 #import "TrainCell.h"
+#import "CacheUtil.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -41,7 +42,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Private Properties
-
+{
+    @private
+    NSString *_searchkey;
+}
 @end
 
 
@@ -187,6 +191,7 @@
 
 -(void)loadData:(NSString *)ksearch
 {
+    _searchkey = ksearch;
     ChannelVO *cvo = [self getNowChannel];
     if(cvo==nil)
     {
@@ -215,6 +220,7 @@
 }
 -(void)loadMoreData:(NSString *)ksearch
 {
+    _searchkey = ksearch;
     ChannelVO *cvo = [self getNowChannel];
     if(cvo==nil)
     {
@@ -333,6 +339,9 @@
     }
     if (result.tag == CINT_TAG_LOADNEWDATA) {
         [self setTableViewData:list];
+        //只缓存无搜索关键字的内容
+        if([StringUtil isEmptyStr:_searchkey])
+            [CacheUtil cacheContent:vo content:result.msg];
     }else
     {
         [self addTableViewData:list];
@@ -341,6 +350,8 @@
 
 -(void)BrowserTabView:(BrowserTabView *)browserTabView didSelecedAtIndex:(NSUInteger)index
 {
+    BOOL isfirstload = browserTabView.isfirstload;
+    [browserTabView setIsfirstload:NO];
     if (subChannels==0||index>[subChannels count]||nowSelChannel == index) {
         return;
     }
@@ -355,8 +366,18 @@
     //切换时清除表数据
     [prTableView setUpdateRefreshDate:nil];
     [self setTableViewData:nil];
-    //TODO 读取缓存数据
+    //读取缓存数据
     nowSelChannel = index;
+    NSString *cachecontent = [CacheUtil getCacheContent:newselVO];
+    if (![StringUtil isEmptyStr:cachecontent]) {
+        ResponseVO *rvo = [[ResponseVO alloc] init];
+        NSMutableArray *list = [JsonParser parseJsonToList:cachecontent respVO:&rvo ref:nil];
+        if ([rvo isSucess]) {
+            [self setTableViewData:list];
+            if(!isfirstload)
+                return;
+        }
+    }
     [prTableView launchRefreshing];
 }
 

@@ -24,9 +24,10 @@
 @property (nonatomic,strong)NSArray *channels;
 
 -(void)setDeviceToken:(NSString *)deviceToken;
-
+-(void)setPushSetting:(BOOL)allowpush;
 +(ApplicationSet *)shareData;
 
 -(void)setLoginUserInfo:(UserVO *)kuserVO saveinfo:(BOOL)ksave;
 -(UserVO *)getUserVO;
+
 @end

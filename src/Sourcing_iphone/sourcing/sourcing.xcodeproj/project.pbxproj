@@ -151,6 +151,7 @@
 		3292CC69174B3C41001A1950 /* MobilePushService.m in Sources */ = {isa = PBXBuildFile; fileRef = 3292CC68174B3C41001A1950 /* MobilePushService.m */; };
 		3292CC6C174B5D61001A1950 /* CompanyVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3292CC6B174B5D61001A1950 /* CompanyVO.m */; };
 		3292CC6F174B5DA4001A1950 /* CompanyDetailVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 3292CC6E174B5DA4001A1950 /* CompanyDetailVO.m */; };
+		32AE85D4174BAD8500E34351 /* CacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 32AE85D3174BAD8500E34351 /* CacheUtil.m */; };
 		32CFE29B1696C07300F3C939 /* icon_home_tb_more.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2931696C07300F3C939 /* icon_home_tb_more.png */; };
 		32CFE29C1696C07300F3C939 /* icon_home_tb_more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */; };
 		32CFE29D1696C07300F3C939 /* icon_home_tb_news.png in Resources */ = {isa = PBXBuildFile; fileRef = 32CFE2951696C07300F3C939 /* icon_home_tb_news.png */; };
@@ -490,6 +491,8 @@
 		3292CC6B174B5D61001A1950 /* CompanyVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompanyVO.m; path = sourcing/VO/CompanyVO.m; sourceTree = "<group>"; };
 		3292CC6D174B5DA4001A1950 /* CompanyDetailVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CompanyDetailVO.h; path = sourcing/VO/CompanyDetailVO.h; sourceTree = "<group>"; };
 		3292CC6E174B5DA4001A1950 /* CompanyDetailVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CompanyDetailVO.m; path = sourcing/VO/CompanyDetailVO.m; sourceTree = "<group>"; };
+		32AE85D2174BAD8500E34351 /* CacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CacheUtil.h; path = sourcing/CacheUtil.h; sourceTree = "<group>"; };
+		32AE85D3174BAD8500E34351 /* CacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CacheUtil.m; path = sourcing/CacheUtil.m; sourceTree = "<group>"; };
 		32CFE2931696C07300F3C939 /* icon_home_tb_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_more.png; path = sourcing/Images/icon_home_tb_more.png; sourceTree = "<group>"; };
 		32CFE2941696C07300F3C939 /* icon_home_tb_more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_home_tb_more@2x.png"; path = "sourcing/Images/icon_home_tb_more@2x.png"; sourceTree = "<group>"; };
 		32CFE2951696C07300F3C939 /* icon_home_tb_news.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_home_tb_news.png; path = sourcing/Images/icon_home_tb_news.png; sourceTree = "<group>"; };
@@ -867,6 +870,8 @@
 				32120AB51689F0D200DBF915 /* TimeUtil.m */,
 				32D0C1B7168DEEFD00902708 /* ToastHintUtil.h */,
 				32D0C1B8168DEEFD00902708 /* ToastHintUtil.m */,
+				32AE85D2174BAD8500E34351 /* CacheUtil.h */,
+				32AE85D3174BAD8500E34351 /* CacheUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1612,6 +1617,7 @@
 				3292CC69174B3C41001A1950 /* MobilePushService.m in Sources */,
 				3292CC6C174B5D61001A1950 /* CompanyVO.m in Sources */,
 				3292CC6F174B5DA4001A1950 /* CompanyDetailVO.m in Sources */,
+				32AE85D4174BAD8500E34351 /* CacheUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

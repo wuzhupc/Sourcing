@@ -145,6 +145,18 @@
     return result;
 }
 
++(ChannelVO *)getChannel:(NSArray *)kchannels WithChannelID:(NSInteger) kchannelid
+{
+    if(kchannels==nil||[kchannels count]==0)
+        return nil;
+    for (ChannelVO *vo in kchannels) {
+        if (vo.ChannelID == kchannelid) {
+            return vo;
+        }
+    }
+    return nil;
+}
+
 +(ChannelVO *)getChannel:(NSArray *)kchannels type:(NSInteger) ktype
 {
     if(kchannels==nil||[kchannels count]==0)

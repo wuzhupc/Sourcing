@@ -79,6 +79,7 @@ enum TYPE_MORE
 +(NSArray *)initChannelsFromAssets;
 +(NSArray *)getFatherChannels:(NSArray *)kchannels;
 +(NSArray *)getChannelsWithFatherID:(NSArray *)kchannels father:(NSInteger)kfatherid;
++(ChannelVO *)getChannel:(NSArray *)kchannels WithChannelID:(NSInteger) kchannelid;
 +(NSArray *)getChannels:(NSArray *)kchannels father:(NSInteger)kfatherid  usertype:(NSString *)kusertype;
 +(ChannelVO *)getChannel:(NSArray *)kchannels type:(NSInteger) ktype;
 @end

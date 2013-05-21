@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "sourcing/NewsViewController.m"
-         timestampString = "390745507.542329"
+         timestampString = "390839184.029287"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "257"
-         endingLineNumber = "257"
+         startingLineNumber = "258"
+         endingLineNumber = "258"
          landmarkName = "-serviceResult:"
          landmarkType = "5">
       </FileBreakpoint>

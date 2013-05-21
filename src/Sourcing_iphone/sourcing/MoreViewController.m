@@ -15,6 +15,7 @@
 #import "SettingUtil.h"
 #import "WelcomeViewController.h"
 #import "SDImageCache.h"
+#import "ApplicationSet.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Types
@@ -162,7 +163,7 @@
     [menu.topLines addObject:header];
     
     // layout menu line
-    self.labelFont = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 60, 26)];
+    self.labelFont = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 75, 26)];
     self.labelFont.text = [SettingUtil getFontDescWithIndex:[SettingUtil getFontSetting]];
     self.labelFont.backgroundColor = [UIColor clearColor];
     self.labelFont.textAlignment = NSTextAlignmentRight;
@@ -303,6 +304,7 @@
 -(void)pushSwithAction
 {
     [SettingUtil setPushSetting:self.swithPush.on];
+    [[ApplicationSet shareData] setPushSetting:self.swithPush.on];
 }
 
 -(void)clearCacheSection

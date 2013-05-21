@@ -98,12 +98,12 @@
         return;
     }
     [self.laTitle setText:_dataVO.title];
-    if ([StringUtil isEmpty:_dataVO.newssummary]) {
+    if ([StringUtil isEmpty:_dataVO.getNewssummary]) {
         [self.laSummary setText:@""];
     }
     else
     {
-        [self.laSummary setText:_dataVO.newssummary];
+        [self.laSummary setText:_dataVO.getNewssummary];
     }
     if(![StringUtil isEmpty:_dataVO.titlepic_small])
     {

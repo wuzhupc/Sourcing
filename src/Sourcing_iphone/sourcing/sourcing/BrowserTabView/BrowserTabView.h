@@ -62,9 +62,11 @@
      // reuse queue holds unused tabs
      NSMutableArray *reuseQueue;                        
     id<BrowserTabViewDelegate> delegate;
+    BOOL isfirstload;
     
 }
 
+@property BOOL isfirstload;
 @property UIImage *tabViewBackImage;
 @property NSInteger selectedTabIndex;
 @property NSMutableArray *tabsArray;

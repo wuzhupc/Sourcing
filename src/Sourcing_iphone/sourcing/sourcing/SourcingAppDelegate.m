@@ -11,7 +11,6 @@
 #import "StringUtil.h"
 #import "ApplicationSet.h"
 #import "iVersion.h"
-#import "SettingUtil.h"
 #import "MobileUserService.h"
 #import "ResponseVO.h"
 #import "JsonParser.h"
@@ -46,10 +45,7 @@
     [self.window makeKeyAndVisible];
     
     //信息推送相关
-    if([SettingUtil getPushSetting])
-    {
-        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
-    }
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert)];
     return YES;
 }
 
