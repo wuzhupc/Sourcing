@@ -54,6 +54,8 @@ public class PersonView extends BaseView
 
 	protected long mLastNewsId; // 最后一条消息id
 
+	private String mSearchkey;
+	
 	public PersonView(Context context, long fatherchannelid)
 	{
 		super(context, fatherchannelid, true, true,true);
@@ -277,6 +279,7 @@ public class PersonView extends BaseView
 	 */
 	protected void loadNewData(String searchkey)
 	{
+		mSearchkey = searchkey;
 		MobileInfoService newsService= new MobileInfoService(mContext);
 		ChannelVO vo = getNowChannelInfo();
 		if(vo==null)
@@ -316,6 +319,7 @@ public class PersonView extends BaseView
 	 */
 	private void loadMoreData(String searchkey)
 	{
+		mSearchkey = searchkey;
 		if(mMoreButton==null)
 			return;
 		mMoreButton.setShowProgress(mContext
@@ -383,7 +387,8 @@ public class PersonView extends BaseView
 				}
 				// 报文返回正常
 				// 存储最近刷新的列表
-				CacheUtil.cacheContent(getNowChannelInfo(), content);
+				if(StringUtil.isEmpty(mSearchkey))
+					CacheUtil.cacheContent(getNowChannelInfo(), content);
 				getNowChannelInfo().setLastUpdateDataTime(mContext, new Date());
 				clearDataList();// 加入无数据提示
 				if (list != null && !list.isEmpty())
