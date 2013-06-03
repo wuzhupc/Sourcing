@@ -4,19 +4,19 @@
 <dict>
 	<!-- 服务端接口-->
 	<key>jsonurl</key>
-	<string>http://110.80.10.54:8008/api.aspx</string>
+	<string>http://www.xmsourcing.com/api.aspx</string>
 	<!-- 链接地址前缀 -->
 	<key>baseurl</key>
-	<string>http://110.80.10.54:8008</string>
+	<string>http://www.xmsourcing.com</string>
 	<!-- 需要增另链接地址前缀的判断地址 -->
 	<key>baseurl_pro</key>
 	<string>/Server</string>
 	<!-- 忘记密码处理页面 -->
 	<key>url_forget_pwd_progress</key>
-	<string>http://110.80.10.54:8008/getpwd.html</string>
+	<string>http://www.xmsourcing.com/getpwd.html</string>
 	<!-- 用户注册处理页面 -->
 	<key>url_reg_progress</key>
-	<string>http://110.80.10.54:8008/reg.html</string>	
+	<string>http://www.xmsourcing.com/reg.html</string>	
 	<!-- 检查客户端版本  -->
 	<key>cmd_json_check_client_ver</key>
 	<string>mobilever_checkClientVer</string>

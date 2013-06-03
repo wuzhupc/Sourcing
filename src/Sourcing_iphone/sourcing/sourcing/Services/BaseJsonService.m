@@ -117,7 +117,9 @@
             [SVProgressHUD showWithStatus:mshowprocesscontent maskType:SVProgressHUDMaskTypeClear];
         }
     }
-    __block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    ASIFormDataRequest *_request = [ASIFormDataRequest requestWithURL:url];
+    __weak ASIFormDataRequest *request = _request;
+    //__block ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request setTag:_tag];
     [request setRequestMethod:@"POST"];
     [request setPostValue:mjson forKey:@"request"];
