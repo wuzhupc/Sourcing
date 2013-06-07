@@ -6,6 +6,7 @@
 
     <LinearLayout
         style="@style/TitleBar"
+        android:id="@id/activity_title_container"
         android:layout_alignParentTop="true" >
 
         <ImageView style="@style/TitleBarLogo" />

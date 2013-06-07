@@ -2,13 +2,18 @@ package com.wuzhupc.Sourcing;
 
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.dialog.BaseDialog;
+import com.wuzhupc.Sourcing.vo.ResponseVO;
+import com.wuzhupc.Sourcing.vo.UserVO;
 import com.wuzhupc.config.ApplicationSet;
 import com.wuzhupc.config.Constants;
 import com.wuzhupc.push.PushService;
+import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
+import com.wuzhupc.services.MobileUserService;
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.UIUtil;
+import com.wuzhupc.utils.json.JsonParser;
 import com.wuzhupc.widget.OnKeyDownListener;
 
 import android.app.Activity;
@@ -341,4 +346,32 @@ public  abstract class BaseActivity extends Activity
 	{
 		this.finish();
 	}
+	
+	public void updatePushUserinfo()
+	{
+		Intent pushintent = new Intent(HomeActivity.CSTR_ACTION_PUSHINFO);
+		this.sendBroadcast(pushintent);
+	}
+	
+	public void updateUserInfo()
+	{
+		UserVO userVO = getApplicationSet().getUserVO();
+		if(userVO==null)
+			return;
+		MobileUserService service = new MobileUserService(this);
+		service.userLogin(userVO.getUseraccount(), userVO.getPassword(), new IBaseReceiver()
+		{
+			@Override
+			public void receiveCompleted(boolean isSuc, String content)
+			{
+				if(!isSuc)
+					return;
+				UserVO userVO = (UserVO)JsonParser.parseJsonToEntity(content, new ResponseVO());
+				if(userVO==null)
+					return;
+				getApplicationSet().setUserVO(userVO, true);
+				updatePushUserinfo();
+			}
+		});
+	};
 }

@@ -121,7 +121,7 @@ public class PushReceiver extends BroadcastReceiver
 												null,
 												mContext.getString(
 														R.string.notify_single_msg_detail,
-														vo.getPushtype(),
+														vo.getTypeStr(),
 														vo.getTitle()));
 									} else
 									{

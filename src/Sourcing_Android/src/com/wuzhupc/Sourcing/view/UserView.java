@@ -1,6 +1,7 @@
 package com.wuzhupc.Sourcing.view;
 
 import com.wuzhupc.Sourcing.BaseActivity;
+import com.wuzhupc.Sourcing.HomeActivity;
 import com.wuzhupc.Sourcing.R;
 import com.wuzhupc.Sourcing.detail.UserChangePwdActivity;
 import com.wuzhupc.Sourcing.detail.UserInfoListActivity;
@@ -62,8 +63,14 @@ public class UserView extends BaseView
 	/**
 	 * 根据现有用户情况设置UserView相关显示
 	 */
-	private void setShowUserInfo()
+	public void setShowUserInfo()
 	{
+		if(mtv_username==null)
+			return;
+		if(mContext instanceof HomeActivity)
+		{
+			((HomeActivity)mContext).showPushBadeView();
+		}
 		UserVO userVO = getNowUser();
 		if (userVO == null)
 		{
@@ -114,6 +121,7 @@ public class UserView extends BaseView
 			return;
 		}
 		activity.getApplicationSet().setUserVO(uservo, true);
+		activity.updatePushUserinfo();
 	}
 
 	@Override
