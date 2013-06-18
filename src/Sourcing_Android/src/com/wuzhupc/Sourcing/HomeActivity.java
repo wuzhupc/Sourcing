@@ -21,7 +21,6 @@ import com.wuzhupc.widget.MenuBarMenuItemView;
 import com.wuzhupc.widget.OnDisplayerChildChangeListener;
 
 import android.app.AlertDialog;
-import android.app.Application;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -29,7 +28,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.DialogInterface.OnCancelListener;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -586,7 +584,8 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				return;
 			mPushBadgeView = new BadgeView(this, mbiv);
 		}
-		
+		if(mPushBadgeView == null)
+			return;
 		UserVO userVO = getApplicationSet().getUserVO();
 		if(userVO==null|userVO.getNotReadCount()==0)
 		{
