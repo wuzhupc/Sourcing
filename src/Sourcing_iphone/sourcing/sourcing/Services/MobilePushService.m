@@ -22,7 +22,7 @@
     JsonCreater *creater = [[JsonCreater alloc] init];
     [creater setParam:@"devid" paramValue:[BaseJsonService getDevID]];
     [creater setParamNSInteger:@"userid" paramValue:uid];
-    [creater setParam:@"devicetoken" paramValue:kDeviceToken];
+    [creater setParamAutoProEmpty:@"devicetoken" paramValue:kDeviceToken];
     [self getData:[creater createJson:_commandName] url:nil];
 }
 @end

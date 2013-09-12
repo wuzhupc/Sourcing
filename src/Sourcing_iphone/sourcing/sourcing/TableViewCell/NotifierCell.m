@@ -93,7 +93,7 @@
     if(kvo==nil||[StringUtil isEmpty:kvo.notifiercontent])
         return 60.0f;
     
-    OHAttributedLabel *label = [[OHAttributedLabel alloc] initWithFrame:CGRectMake(0,0,312.0f,26.0f)];
+    OHAttributedLabel *label = [[OHAttributedLabel alloc] initWithFrame:CGRectMake(8,8,312.0f,26.0f)];
     label.numberOfLines = 0;
     label.lineBreakMode = UILineBreakModeCharacterWrap;
     [label setFont:[UIFont boldSystemFontOfSize:16.0f]];
@@ -113,6 +113,7 @@
 {
     dataVO_ = kvo;
     //调整高度
+    [self.labelNotifier setFrame:CGRectMake(8,8,312.0f,26.0f)];
     [self.labelNotifier setText:kvo.notifiercontent];
      self.labelNotifier.attributedText = [OHASBasicHTMLParser attributedStringByProcessingMarkupInAttributedString:self.labelNotifier.attributedText];
     self.labelPublisher.text = self.dataVO.publisher;

@@ -24,10 +24,13 @@
     if (label == nil) {
         return;
     }
+    NSLog(@"label before:%f",label.frame.size.width);
     NSAttributedString* attrStr = label.attributedText;
     CGSize sz = [attrStr sizeConstrainedToSize:CGSizeMake(label.frame.size.width, CGFLOAT_MAX)];
     CGRect newFrame = CGRectMake(label.frame.origin.x, label.frame.origin.y, sz.width, sz.height);
     label.frame = newFrame;
+    
+    NSLog(@"label after:%f",label.frame.size.width);
 }
 
 + (OHAttributedLabel *)attributedLabelWithUILabel:(UILabel *)label

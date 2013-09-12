@@ -58,6 +58,7 @@ typedef enum USER_INFO_TYPE:NSInteger
 -(NSInteger)hasInfoCount;
 -(USER_INFO_TYPE)getInfoType:(NSInteger)kindex;
 -(NSString *)getInfoMsg:(NSInteger)kindex;
+-(NSInteger)getNotReadCount;
 
 +(BOOL)saveLoginUserInfo:(UserVO *)kuservo;
 +(UserVO *)getLastLoginUserInfo;

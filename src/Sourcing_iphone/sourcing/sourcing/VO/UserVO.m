@@ -66,6 +66,11 @@
     return result;
 }
 
+-(NSInteger)getNotReadCount
+{
+    return self.consultcount+self.auditcount+self.declarecount+self.notifiercount;
+}
+
 +(UserVO *)getLastLoginUserInfo
 {
     NSString *filepath = [UserVO getUserInfoFilePath];

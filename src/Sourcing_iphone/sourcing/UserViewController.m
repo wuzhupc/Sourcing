@@ -121,9 +121,6 @@
         }
     }
     self.preUserVO = [userVO copy];
-    //清除图标提示
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
-    self.tabBarItem.badgeValue = nil;
 }
 
 - (void)viewDidUnload {
@@ -157,6 +154,10 @@
         [self.buttonLogin_Pwd setTitle:NSLocalizedString(@"登 录", @"") forState:UIControlStateNormal];
         [self.buttonReg_Account setTitle:NSLocalizedString(@"注 册", @"") forState:UIControlStateNormal];
         
+        //清除图标提示
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+        self.tabBarItem.badgeValue = nil;
+        
     }else
     {
         self.userInfoCount = [userVO hasInfoCount]+1;
@@ -168,6 +169,13 @@
         [self.labelUserType setText:[userVO getStrUserType]];
         [self.buttonLogin_Pwd setTitle:NSLocalizedString(@"修改密码", @"") forState:UIControlStateNormal];
         [self.buttonReg_Account setTitle:NSLocalizedString(@"切换帐号", @"") forState:UIControlStateNormal];
+        
+        //图标提示
+        [[UIApplication sharedApplication] setApplicationIconBadgeNumber:[userVO getNotReadCount]];
+        if([userVO getNotReadCount]>0)
+            self.tabBarItem.badgeValue = [NSString stringWithFormat:@"%d", [userVO getNotReadCount]];
+        else
+            self.tabBarItem.badgeValue = nil;
             
     }
     [self initTableView];

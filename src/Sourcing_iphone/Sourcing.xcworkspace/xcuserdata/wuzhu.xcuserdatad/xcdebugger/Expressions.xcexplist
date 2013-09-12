@@ -3,7 +3,7 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[NewsViewController serviceResult:]:NewsViewController.m">
+         contextName = "-[WelcomeViewController loadChannelInfo]:WelcomeViewController.m">
       </ContextState>
       <ContextState
          contextName = "-[NotifierCell setData:]:NotifierCell.m">
@@ -37,6 +37,14 @@
       </ContextState>
       <ContextState
          contextName = "-[BaseHomeViewController setNavTitle:]:BaseHomeViewController.m">
+      </ContextState>
+      <ContextState
+         contextName = "-[SourcingAppDelegate setActivityTabBadge:]:SourcingAppDelegate.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.window">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "+[FileUtil getAssetsFileContent:oftype:]:FileUtil.m">
@@ -74,7 +82,7 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WelcomeViewController loadChannelInfo]:WelcomeViewController.m">
+         contextName = "-[NewsViewController serviceResult:]:NewsViewController.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
