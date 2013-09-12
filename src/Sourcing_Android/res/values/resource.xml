@@ -3,7 +3,7 @@
 <!-- 资源类字符串定义 -->
 <resources>
 	<!-- 服务端接口-->
-	<string name="jsonurl">http://218.5.77.11/api.aspx</string>
+	<string name="jsonurl">http://www.xmsourcing.com/api.aspx</string>
 	<!-- 链接地址前缀 -->
 	<string name="baseurl">http://www.xmsourcing.com</string>
 	<!-- 需要增另链接地址前缀的判断地址 -->

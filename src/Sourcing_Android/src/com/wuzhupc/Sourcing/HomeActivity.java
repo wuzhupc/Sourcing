@@ -587,7 +587,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		if(mPushBadgeView == null)
 			return;
 		UserVO userVO = getApplicationSet().getUserVO();
-		if(userVO==null|userVO.getNotReadCount()==0)
+		if(userVO==null||userVO.getNotReadCount()==0)
 		{
 			mPushBadgeView.setText("0");
 			if(mPushBadgeView.isShown())

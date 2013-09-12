@@ -10,8 +10,10 @@ import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
 import com.wuzhupc.services.ClientJsonService;
 import com.wuzhupc.services.MobileUserService;
 import com.wuzhupc.utils.SettingUtil;
+import com.wuzhupc.utils.ShortcutUtil;
 import com.wuzhupc.utils.json.JsonParser;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -98,6 +100,12 @@ public class WelcomeActivity extends BaseActivity
 		((TextView)findViewById(R.id.welcome_ver_tv)).setText(String.format(getResources().getString(R.string.welcome_ver), SettingUtil.getClientVersion(this)));
 		Intent intent = getIntent();
 		mPushCount = intent.getIntExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, 0);
+
+		//增加桌面快捷方式
+		if(SettingUtil.isFirstStart(this, true))
+		{
+			ShortcutUtil.createShortCut(this, R.drawable.ic_launcher, R.string.app_name);
+		}
 	}
 
 	@Override
@@ -130,6 +138,7 @@ public class WelcomeActivity extends BaseActivity
 	}
 
 
+	@SuppressLint("HandlerLeak")
 	private Handler mHandler = new Handler()
 	{
 		@Override

@@ -10,7 +10,6 @@ import com.wuzhupc.push.PushService;
 import com.wuzhupc.services.BaseJsonService.IBaseReceiver;
 import com.wuzhupc.services.MobileUserService;
 import com.wuzhupc.utils.FileUtil;
-import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.UIUtil;
 import com.wuzhupc.utils.json.JsonParser;
@@ -266,9 +265,6 @@ public  abstract class BaseActivity extends Activity
 	 */
 	public void startPushService()
 	{
-		//判断设置项
-		if(!SettingUtil.getPushService(BaseActivity.this))
-			return;
 		Intent intent = new Intent(PushService.CSTR_ACTION_PUSH_SERVICE);
 		startService(intent);
 	}

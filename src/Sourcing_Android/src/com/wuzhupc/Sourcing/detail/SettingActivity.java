@@ -7,7 +7,6 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.app.AlertDialog.Builder;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.text.Html;
 import android.view.View;
 import android.widget.CheckBox;
@@ -21,7 +20,6 @@ import com.wuzhupc.Sourcing.dialog.BaseDialog;
 import com.wuzhupc.Sourcing.vo.ClientVerVO;
 import com.wuzhupc.Sourcing.vo.ResponseVO;
 import com.wuzhupc.config.Constants;
-import com.wuzhupc.push.PushService;
 import com.wuzhupc.utils.FileUtil;
 import com.wuzhupc.utils.SettingUtil;
 import com.wuzhupc.utils.json.JsonParser;
@@ -67,15 +65,15 @@ public class SettingActivity extends BaseActivity implements
 					boolean isChecked)
 			{
 				SettingUtil.setPushService(SettingActivity.this, isChecked);
-				if (isChecked)
-				{
-					startService(new Intent(SettingActivity.this,
-							PushService.class));
-				} else
-				{
-					stopService(new Intent(SettingActivity.this,
-							PushService.class));
-				}
+//				if (isChecked)
+//				{
+//					startService(new Intent(SettingActivity.this,
+//							PushService.class));
+//				} else
+//				{
+//					stopService(new Intent(SettingActivity.this,
+//							PushService.class));
+//				}
 			}
 		});
 	}
