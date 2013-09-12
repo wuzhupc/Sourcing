@@ -3,15 +3,15 @@
 <!-- 资源类字符串定义 -->
 <resources>
 	<!-- 服务端接口-->
-	<string name="jsonurl">http://110.80.10.54:8008/api.aspx</string>
+	<string name="jsonurl">http://www.xmsourcing.com/api.aspx</string>
 	<!-- 链接地址前缀 -->
-	<string name="baseurl">http://110.80.10.54:8008</string>
+	<string name="baseurl">http://www.xmsourcing.com</string>
 	<!-- 需要增另链接地址前缀的判断地址 -->
 	<string name="baseurl_pro">/Server</string>
 	<!-- 忘记密码处理页面 -->
-	<string name="url_forget_pwd_progress">http://110.80.10.54:8008/getpwd.html</string>
+	<string name="url_forget_pwd_progress">http://www.xmsourcing.com/getpwd.html</string>
 	<!-- 用户注册处理页面 -->
-	<string name="url_reg_progress">http://110.80.10.54:8008/reg.html</string>
+	<string name="url_reg_progress">http://www.xmsourcing.com/reg.html</string>
 	<!-- 检查客户端版本  -->
 	<string name="cmd_json_check_client_ver">mobilever_checkClientVer</string>
 	

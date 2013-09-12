@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wuzhupc.Sourcing"
-    android:versionCode="130312"
-    android:versionName="0.9.0312" >
+    android:versionCode="130912"
+    android:versionName="1.0.0912" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -14,7 +14,10 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />    
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.RUN_INSTRUMENTATION" />
-
+	<uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT"/>
+	<uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
         android:label="wuzhupc.com test"

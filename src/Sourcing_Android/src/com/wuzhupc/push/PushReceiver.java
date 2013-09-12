@@ -49,15 +49,22 @@ public class PushReceiver extends BroadcastReceiver
 			return;
 		}
 
-		//不用判断程序是否在当前运行
-		//if (!ActivityUtil.isCurAppRunningForeground(mContext))
-			actionPushMsg();
-		/*else
+		if (SettingUtil.getPushService(mContext))
 		{
-			Log.i(TAG, "推送信息检测--CurAppRunningForeground!");
-			AlarmUtil.getPushMsgAlarm(mContext).pendingBroadcastTask(
-					new Intent(CSTR_ACTION_PUSH_RECEIVER), -1);
-		}*/
+			// 不用判断程序是否在当前运行
+			// if (!ActivityUtil.isCurAppRunningForeground(mContext))
+			actionPushMsg();
+		} else
+		{
+			// Log.i(TAG, "推送信息检测--CurAppRunningForeground!");
+			nextAlarm(-1);
+		}
+	}
+
+	private void nextAlarm(int interval)
+	{
+		AlarmUtil.getPushMsgAlarm(mContext).pendingBroadcastTask(
+				new Intent(CSTR_ACTION_PUSH_RECEIVER), DEBUG ? -1 : interval);
 	}
 
 	/**
@@ -68,7 +75,6 @@ public class PushReceiver extends BroadcastReceiver
 		String lastCheckTimeSP = SettingUtil.getLastCheckPushMsgTime(mContext);
 		// TODO 获取数据最后更新数据时间
 		String lastCheckTime = lastCheckTimeSP;
-
 		// Log.i(TAG, "db time = "+DateFormat.format("yyyy-MM-dd hh:mm:ss",
 		// lastCheckTimeDB)+
 		// "\n sp time = "+DateFormat.format("yyyy-MM-dd hh:mm:ss",
@@ -82,7 +88,10 @@ public class PushReceiver extends BroadcastReceiver
 					.currentTimeMillis() - 1000 * 3600));// 60s*60m*1000ms
 		UserVO userVO = UserVO.getLastLoginUserInfo();
 		if (userVO == null)// 用户未登录，则不获取推送信息
+		{
+			nextAlarm(-1);
 			return;
+		}
 		MobilePushService service = new MobilePushService(mContext);
 		service.getPushInfo(userVO.getUserid(), lastCheckTime,
 				new IBaseReceiver()
@@ -111,7 +120,9 @@ public class PushReceiver extends BroadcastReceiver
 									// (ArrayList<? extends Parcelable>)
 									// pushVOs);
 									int count = pushVOs.size();
-									intent.putExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, count);
+									intent.putExtra(
+											HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO,
+											count);
 									if (count == 1)
 									{
 										PushVO vo = pushVOs.get(0);
@@ -121,7 +132,7 @@ public class PushReceiver extends BroadcastReceiver
 												null,
 												mContext.getString(
 														R.string.notify_single_msg_detail,
-														vo.getPushtype(),
+														vo.getTypeStr(),
 														vo.getTitle()));
 									} else
 									{
@@ -130,18 +141,19 @@ public class PushReceiver extends BroadcastReceiver
 														R.string.notify_detail,
 														count));
 									}
-									Intent pushintent = new Intent(HomeActivity.CSTR_ACTION_PUSHINFO);
-									pushintent.putExtra(HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO, count);
+									Intent pushintent = new Intent(
+											HomeActivity.CSTR_ACTION_PUSHINFO);
+									pushintent
+											.putExtra(
+													HomeActivity.CSTR_EXTRA_ACTION_PUSHINFO,
+													count);
 									mContext.sendBroadcast(pushintent);
 								}
 							}
 						}
 						if (interval < AlarmUtil.CINT_DEFAULT_REFRESH_DELAY)
 							interval = getDefaultInterval();
-						AlarmUtil.getPushMsgAlarm(mContext)
-								.pendingBroadcastTask(
-										new Intent(CSTR_ACTION_PUSH_RECEIVER),
-										DEBUG ? -1 : interval);
+						nextAlarm(interval);
 					}
 				});
 	}

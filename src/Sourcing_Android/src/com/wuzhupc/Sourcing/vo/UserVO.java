@@ -383,6 +383,11 @@ public class UserVO extends BaseVO
 		}
 		return result;
 	}
+	
+	public int getNotReadCount()
+	{
+		return getConsultcount()+getAuditcount()+getDeclarecount()+getNotifiercount();
+	}
 
 	/**
 	 * 获取最后登录的信息数据

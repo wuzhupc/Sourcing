@@ -130,6 +130,7 @@ public class UserChangePwdActivity extends BaseActivity
 				}
 				userVO.setPassword(met_NewPwd.getText().toString());
 				getApplicationSet().setUserVO(userVO, true);
+				updatePushUserinfo();
 				displayToast(R.string.userchangepwd_change_sucess);
 				UserChangePwdActivity.this.finish();
 				return;

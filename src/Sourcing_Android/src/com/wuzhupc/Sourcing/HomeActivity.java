@@ -10,6 +10,8 @@ import com.wuzhupc.Sourcing.view.ListBaseView;
 import com.wuzhupc.Sourcing.view.PersonView;
 import com.wuzhupc.Sourcing.view.UserView;
 import com.wuzhupc.Sourcing.vo.ChannelVO;
+import com.wuzhupc.Sourcing.vo.UserVO;
+import com.wuzhupc.utils.ActivityUtil;
 import com.wuzhupc.utils.NotifyUtil;
 import com.wuzhupc.utils.StringUtil;
 import com.wuzhupc.utils.ViewUtil;
@@ -88,6 +90,8 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	private HomeBroadcastReceiver mHomeBroadcastReceiver;
 	
 	private BadgeView mPushBadgeView;
+	
+	private  UserView mUserView;
 
 	@Override
 	protected void initView()
@@ -111,12 +115,7 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 
 		int pushcount = getIntent().getIntExtra(CSTR_EXTRA_ACTION_PUSHINFO, 0);
 		if(pushcount>0)
-			showPushBadeView(pushcount);
-		// Boolean isfirststart=SettingUtil.isFirstStart(this, true);
-		//
-		// if (isfirststart) {
-		// startGuideHelper(null);
-		// }
+			updatePushUserinfo();
 	}
 	
 	/**
@@ -148,6 +147,16 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	{
 		unregBoardReceiver();
 		super.onDestroy();
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume()
+	{
+		refSubViewInfo();
+		super.onResume();
 	}
 
 	@Override
@@ -211,9 +220,9 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 			if (vo.isUserChannel())
 			{
 				// 增加个人信息视图
-				UserView view = new UserView(HomeActivity.this, vo.getChannelID());
-				view.setGestureDetectorContent(mgd_content);
-				mvf_content.addView(view);
+				mUserView = new UserView(HomeActivity.this, vo.getChannelID());
+				mUserView.setGestureDetectorContent(mgd_content);
+				mvf_content.addView(mUserView);
 				continue;
 			}
 		}
@@ -512,11 +521,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		{
 			if (mFatherChannelVOs.get(i).getChannelID() == channelid)
 			{
-				if(mFatherChannelVOs.get(i).getType()==ChannelVO.TYPE_FATHER_USER)
-				{
-					//选中用户栏目时不显示隐藏信息
-					showPushBadeView(0);
-				}
+//				if(mFatherChannelVOs.get(i).getType()==ChannelVO.TYPE_FATHER_USER)
+//				{
+//					//选中用户栏目时不显示隐藏信息
+//					showPushBadeView(0);
+//				}
 				mv_menubarlist[i].setSelected(true);
 				if (!noselother)
 					return;
@@ -560,10 +569,11 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 	
 	/**
 	 * 显示提醒信息数（只在用户栏目）
-	 * @param count >0时显示 <0时隐藏
 	 */
-	private void showPushBadeView(int count)
+	public void showPushBadeView()
 	{
+		if(ActivityUtil.isCurAppRunningForeground(this))
+			NotifyUtil.cancel(this);
 		if(mPushBadgeView == null)
 		{
 			long channelid = ChannelVO.getFatherChannelIDFromType(mChannelVOs,ChannelVO.TYPE_FATHER_USER);
@@ -574,17 +584,18 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				return;
 			mPushBadgeView = new BadgeView(this, mbiv);
 		}
-		if(count>0)
+		if(mPushBadgeView == null)
+			return;
+		UserVO userVO = getApplicationSet().getUserVO();
+		if(userVO==null||userVO.getNotReadCount()==0)
 		{
-			mPushBadgeView.setText(Integer.toString(count));
-			if(!mPushBadgeView.isShown())
-				mPushBadgeView.toggle(true);
-		}
-		else
-		{
-			NotifyUtil.cancel(this);
 			mPushBadgeView.setText("0");
 			if(mPushBadgeView.isShown())
+				mPushBadgeView.toggle(true);
+		}else
+		{
+			mPushBadgeView.setText(Integer.toString(userVO.getNotReadCount()));
+			if(!mPushBadgeView.isShown())
 				mPushBadgeView.toggle(true);
 		}
 	}
@@ -642,6 +653,15 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 		return false;
 	}
 	
+	/**
+	 * 更新一些必须的子view信息
+	 */
+	private void refSubViewInfo()
+	{
+		if(mUserView!=null)
+			mUserView.setShowUserInfo();
+	}
+	
 	public class HomeBroadcastReceiver extends BroadcastReceiver
 	{
 		@Override
@@ -667,10 +687,14 @@ public class HomeActivity extends BaseActivity implements OnGestureListener
 				{
 					((UserView) v).initData();
 				}
+				updatePushUserinfo();
 			}else if(CSTR_ACTION_PUSHINFO.equalsIgnoreCase(arg1.getAction()))
 			{
-				int count = arg1.getIntExtra(CSTR_EXTRA_ACTION_PUSHINFO, 0);
-				showPushBadeView(count);
+				int count = arg1.getIntExtra(CSTR_EXTRA_ACTION_PUSHINFO, -1);
+				if(count>0)//推送时才会有这个参数，才需要重新获取
+					updateUserInfo();
+				else
+					refSubViewInfo();
 			}
 		}
 	}
