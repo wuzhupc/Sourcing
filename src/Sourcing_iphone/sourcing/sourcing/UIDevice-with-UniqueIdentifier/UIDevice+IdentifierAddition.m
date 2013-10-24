@@ -74,12 +74,24 @@
     
     return outstring;
 }
-
+- (BOOL)isIOS6above
+{
+    static int __isIOS6above = -1;
+    if (__isIOS6above == -1) {
+        __isIOS6above = (int)([[[UIDevice currentDevice] systemVersion] floatValue]) >= 6;
+    }
+    return __isIOS6above ;
+}
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 #pragma mark Public Methods
 
 - (NSString *) uniqueDeviceIdentifier{
+    //判断版本后
+    if ([self isIOS6above]) {
+        NSString *idfv = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+        return idfv;
+    }
     NSString *macaddress = [[UIDevice currentDevice] macaddress];
     NSString *bundleIdentifier = [[NSBundle mainBundle] bundleIdentifier];
     
